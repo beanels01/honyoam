@@ -1,0 +1,35 @@
+body{
+    overflow-y:scroll;
+}
+.manage{
+    width:600px;
+    margin:0 auto;
+}
+.manage a:link,a:hover,a:active,a:visited{
+    color:blue;
+}
+.manage table{
+    border-collapse:collapse;
+}
+.manage td{
+    padding:4px;
+}
+.manage tr+tr>td{
+    border-top:1px solid lightgray;
+}
+.manage select:invalid{
+    color:gray;
+}
+.manage select:invalid option{
+    color:black;
+}
+.manage input:not([type]),.manage input[type=text]{
+    width:480px;
+}
+.manage textarea{
+    width:480px;
+    height:80px;
+}
+.manage .indent{
+    margin-left:32px;
+}

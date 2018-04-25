@@ -1,0 +1,59 @@
+import classes from './classes.js'
+let classTableCell={
+    props:['value','content'],
+    template:`
+        <div>
+            <label>
+                <input
+                    type=checkbox
+                    @change="e=>$emit('input',e.target.checked)"
+                >
+                {{content}}
+            </label>
+        </div>
+    `
+}
+let classesComponent={
+    components:{
+        classTableCell,
+    },
+    data:()=>({
+        classes,
+    }),
+    props:['value'],
+    template:`
+        <div class=c>
+            <div>
+                <classTableCell
+                    v-model=value[0]
+                    :content=classes[0]
+                ></classTableCell>
+                <classTableCell
+                    v-model=value[1]
+                    :content=classes[1]
+                ></classTableCell>
+            </div>
+            <div>
+                <classTableCell
+                    v-model=value[2]
+                    :content=classes[2]
+                ></classTableCell>
+                <classTableCell
+                    v-model=value[3]
+                    :content=classes[3]
+                ></classTableCell>
+            </div>
+            <div>
+                <classTableCell
+                    v-model=value[4]
+                    :content=classes[4]
+                ></classTableCell>
+                <classTableCell
+                    v-model=value[5]
+                    :content=classes[5]
+                ></classTableCell>
+            </div>
+        </div>
+    `
+}
+export default classesComponent

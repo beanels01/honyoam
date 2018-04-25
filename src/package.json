@@ -1,0 +1,22 @@
+{
+    "name":"honyoam",
+    "version":"0.0.0",
+    "description":"Honyoam",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/anliting/honyoam.git"
+    },
+    "dependencies":{
+        "etag":                 "*",
+        "events":               "*",
+        "formidable":           "*",
+        "mime":                 "*",
+        "mongodb":              "3.0.1",
+        "mz":                   "*",
+        "node-es-module-loader":"*",
+        "rfc6265":              "*",
+        "rollup":               "*",
+        "vue":                  "*",
+        "vue-server-renderer":  "*" 
+    }
+}

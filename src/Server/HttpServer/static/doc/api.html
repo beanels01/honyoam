@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<title>anliting/honyoam API</title
+<body>
+<div style='width:600px;margin:0 auto'>
+<p>
+對於 anliting/honyoam，這份文件定義並規範 client 與 server 之間的 API。
+<p>
+Client 可以向 /api POST 一個 JSON string。Server 忽略所有不合乎規範的 request。對於合乎規範的 request，server 回傳一個 JSON string。
+<p>
+Client 向 server 發送的 JSON string 稱作 request document。它總表示一個包含 method 屬性的物件，如：
+<pre>
+{
+    "method":"aaa"
+}
+</pre>
+<p>
+Server 向 client 回傳的 JSON string 稱作 response document。
+<h2>login method</h2>
+<pre>
+{
+    "method":"login",
+    "username:"aaa",
+    "password:"bbb"
+}
+</pre>
+<p>
+這個方法查詢資料庫中是否有符合特徵的用戶。對於無，回傳 null；對於有，回傳該用戶資料。
+<h2>getCurrentUser method</h2>
+<pre>
+{
+    "method":"getCurrentUser"
+}
+</pre>
+<p>
+這個方法查詢當前用戶。對於無，回傳 null；對於有，回傳該用戶資料。
+<h2>updatePassword method</h2>
+<pre>
+{
+    "method":"updatePassword",
+    "user":"aaa",
+    "password":"bbb"
+}
+</pre>
+<p>
+這個方法更新 ID 為 doc.user 的用戶的密碼為 doc.password。當前用戶必須有權限更新 ID 為 doc.user 的用戶的密碼。總是回傳 null。
+<h2>getInvitationCode method</h2>
+<pre>
+{
+    "method":"getInvitationCode"
+}
+</pre>
+<p>
+這個方法查詢所有的 invitation code。當前用戶必須為 sysadmin。回傳一個表示物件的、包含 register 屬性與 resetPassword 屬性的 document，如：
+<pre>
+{
+    "register":"aaa",
+    "resetPassword":"bbb"
+}
+</pre>
+<h2>refreshInvitationCode method</h2>
+<pre>
+{
+    "method":"refreshInvitationCode"
+}
+</pre>
+<p>
+這個方法更新並查詢所有的 invitation code。當前用戶必須為 sysadmin。回傳一個表示物件的、包含 register 屬性與 resetPassword 屬性的 document，如：
+<pre>
+{
+    "register":"aaa",
+    "resetPassword":"bbb"
+}
+</pre>
+<hr>
+<p>
+By <a href=https://anliting.com/>An-Li Ting</a>.
+<p>
+Last modified date: 2017-09-12
+</div>
+</html>
