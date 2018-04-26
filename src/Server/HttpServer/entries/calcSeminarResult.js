@@ -13,10 +13,10 @@ async function main(rq,rs,lang,patch,id){
             value:data,
         },
         og:{
-            title:data[lang].block0.title,
-            description:data[lang].block1.subtitle,
+            title:data.block0.title,
+            description:data.block1.subtitle,
             image:`https://honyoam.anliting.com/image/${
-                data[lang].block1.banner
+                data.block1.banner
             }`,
         },
     })

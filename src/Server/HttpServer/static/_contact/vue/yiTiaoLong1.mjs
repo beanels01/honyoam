@@ -15,7 +15,7 @@ let yiTiaoLong1={
         <div class=h>
             <div class=tvl></div>
             <div class=n>{{language.title}}</div>
-            <div class=o>{{date}}</div>
+            <div class=o>{{this.value.date?date:''}}</div>
             <div class=p>
                 <img
                     v-for="a in value.images"
