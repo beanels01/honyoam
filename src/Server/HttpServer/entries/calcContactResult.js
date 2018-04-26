@@ -6,9 +6,9 @@ async function main(rq,rs,lang,patch){
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
         title:              language.contact.title,
-        clientScript:       '_contact/main.js',
+        clientScript:       '_contact/main.mjs',
         css:                '_contact/main.css',
-        vue:                '_contact/vue.js',
+        vue:                '_contact/vue.mjs',
         vueData:{
             value:data[lang],
         },

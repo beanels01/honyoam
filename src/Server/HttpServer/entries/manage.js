@@ -5,7 +5,7 @@ let
     manageResult
 async function calcManageJs(){
     let
-        bundle=await rollup.rollup({input:'honyoam/src/Server/HttpServer/static/_manage/main.js'}),
+        bundle=await rollup.rollup({input:'honyoam/src/Server/HttpServer/static/_manage/main.mjs'}),
         {code}=await bundle.generate({format:'iife'})
     return code
 }

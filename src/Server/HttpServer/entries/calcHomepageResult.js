@@ -4,9 +4,9 @@ async function main(rq,rs,lang,patch){
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
         title:              '首頁',
-        clientScript:       '_homepage/main.js',
+        clientScript:       '_homepage/main.mjs',
         css:                '_homepage/main.css',
-        vue:                '_homepage/vue.js',
+        vue:                '_homepage/vue.mjs',
         vueData:{
             homepage:{
                 mission:data.mission,
