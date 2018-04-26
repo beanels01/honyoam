@@ -13,7 +13,6 @@
         "mime":                 "*",
         "mongodb":              "3.0.1",
         "mz":                   "*",
-        "node-es-module-loader":"*",
         "rfc6265":              "*",
         "rollup":               "*",
         "vue":                  "*",

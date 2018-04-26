@@ -1,0 +1,76 @@
+/*
+    這些是核心方法；它們提供功能、保證資料一致性並控制權限。
+    慣例：
+        參數：
+            doc
+        回傳：
+            {err:...} 或 {res:...}
+*/
+import user from            './methods/user'
+import add from             './methods/add'
+import get from             './methods/get'
+import update from          './methods/update'
+export default Object.assign({
+    async deleteApply(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.deleteApply(
+            doc.id
+        )}
+    },
+    async deleteFeedback(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.deleteFeedback(
+            doc.id
+        )}
+    },
+    async freezeUser(doc){
+        if(!(
+            doc.currentUser&&
+            ['root','sysadmin'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        await this.honyoamMongoClient.freezeUser(doc.targetUser)
+        return{res:null}
+    },
+    async refreshInvitationCode(doc){
+        if(!(
+            doc.currentUser&&
+            ['root','sysadmin'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        this.invitationCode={
+            register:      Math.random().toString(36).substr(2,8),
+            resetPassword: Math.random().toString(36).substr(2,8),
+        }
+        return{res:this.invitationCode}
+    },
+    register(doc){
+        return this.flow.register=(async()=>{
+            await this.flow.register
+            if(!user.isValidUsername(doc.username))
+                return{err:'帳號格式不符。'}
+            if(await this.honyoamMongoClient.getUserByUsername(
+                doc.username
+            ))
+                return{err:'帳號已被使用。'}
+            if(!user.isValidPassword(doc.password))
+                return{err:'密碼格式不符。'}
+            if(!['salesman','editor'].includes(doc.type))
+                return{err:'未填職稱。'}
+            if(this.invitationCode.register!=doc.invitationCode)
+                return{err:'邀請碼錯誤。'}
+            let res=await this.honyoamMongoClient.addUser(doc)
+            this.invitationCode.register=
+                Math.random().toString(36).substr(2,8)
+            return{res}
+        })()
+    },
+},add,get,update)
