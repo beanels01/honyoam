@@ -125,6 +125,12 @@ let inputForSpecificLanguage={
                 class=indent
                 v-model=value.block1
             ></block1>
+            <h3>主講者簡介</h3>
+            <div class=indent>
+                <textarea
+                    v-model=value.presidentsProfile
+                ></textarea>
+            </div>
             <h3>精選預售房</h3>
             <presale
                 class=indent

@@ -10,14 +10,14 @@ import block0 from          './vue/block0.mjs'
 import block1 from          './vue/block1.mjs'
 import presale from         './vue/presale.mjs'
 let presidentsProfile={
-    props:['language'],
+    props:['data','language'],
     template:`
         <div class=l>
             <div class=n>{{
                 language.title
             }}</div>
             <div class=o>{{
-                language.content
+                data
             }}</div>
         </div>
     `,
@@ -87,6 +87,7 @@ let aMain={
                     :block1=value.block1
                 ></block1>
                 <presidentsProfile
+                    :data=value.presidentsProfile
                     :language=language.contact.presidentsProfile
                 ></presidentsProfile>
                 <presale
