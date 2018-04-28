@@ -18,7 +18,9 @@ let aMain={
     template:`
         <div id=main>
             <template v-if=!menu>
-                <hlFooter></hlFooter>
+                <hlFooter
+                    :language=language.homepageLike.footer
+                ></hlFooter>
                 <floatBall
                     value=立即聯絡
                     :href=href.qaForm

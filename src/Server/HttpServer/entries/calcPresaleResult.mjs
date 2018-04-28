@@ -4,8 +4,8 @@ async function main(rq,rs,lang,patch){
         currentLanguage:    lang,
         title:              '新成屋',
         css:                '_presale/main.css',
-        clientScript:       '_presale/main.js',
-        vue:                '_presale/vue.js',
+        clientScript:       '_presale/main.mjs',
+        vue:                '_presale/vue.mjs',
         vueData:{
         },
     })

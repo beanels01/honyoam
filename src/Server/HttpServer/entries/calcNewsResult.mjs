@@ -4,8 +4,8 @@ async function main(rq,rs,lang,patch){
         currentLanguage:    lang,
         title:              '最新消息',
         css:                '_news/main.css',
-        clientScript:       '_news/main.js',
-        vue:                '_news/vue.js',
+        clientScript:       '_news/main.mjs',
+        vue:                '_news/vue.mjs',
         vueData:{
         },
     })
