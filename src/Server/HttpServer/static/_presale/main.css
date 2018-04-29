@@ -1,0 +1,167 @@
+#main .blueBar{
+    display:inline-block;
+    height:35px;
+    width:5px;
+    margin-right:20px;
+    background-color:#1d98df;
+}
+#main .title{
+    font-size:24px;
+    color:#133466;
+}
+#main>.static{
+    display:table;
+    width:100%;
+    height:155px;
+}
+#main>.static>*{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+    background-image:url('/_presale/pre_tilte.jpg');
+    color:rgb(255,255,255);
+}
+#main>.static>*>.a{
+    font-size:40px;
+    font-weight:bold;
+    text-shadow:2px 1px 1px black;
+}
+#main>.static>*>.b{
+    font-size:16px;
+    text-shadow:1px 1px 1px black;
+}
+@media(max-width:1279px){
+    #main>.static{
+        margin-top:50px;
+    }
+}
+@media(min-width:1280px){
+    #main>.static{
+        margin-top:90px;
+    }
+}
+#main>.a>*{
+    color:#797979;
+    font-size:16px;
+    width:1170px;
+    margin:35px auto;
+}
+#main>.a>*>.current{
+    color:#133466;
+}
+#main>.b>*{
+    width:1170px;
+    margin:0 auto 15px;
+}
+#main>.b>*>*{
+    vertical-align:middle;
+}
+#main>.c>*{
+    width:1170px;
+    margin:0 auto;
+    box-sizing:border-box;
+    padding-left:25px;
+}
+#main>.c>* .block{
+    box-sizing:border-box;
+    padding:15px;
+    font-size:16px;
+    color:#797979;
+    background-color:#edeced;
+    border:1px solid #cfcfcf;
+    height:70px;
+    vertical-align:middle;
+}
+#main>.c>* .block>*{
+}
+#main>.c>*>*+*{
+    margin-top:15px;
+}
+#main>.c>*>*{
+    display:table;
+}
+#main>.c>*>*>*{
+    display:table-cell;
+}
+#main>.c>*>.a>.block{
+    width:1145px;
+}
+#main>.c>*>.b>.block{
+    width:565px;
+}
+#main>.c>*>.b>.margin{
+    width:15px;
+}
+#main>.c>*>.b>*+*{
+    margin-left:15px;
+}
+#main>.c>*>.c{
+    width:1145px;
+    text-align:right;
+}
+#main>.d>*{
+    width:1170px;
+    margin:20px auto;
+}
+#main>.d>*>*{
+    vertical-align:middle;
+}
+#main>.e{
+    background-color:#f6f5f6;
+}
+#main>.e>*{
+    width:1170px;
+    margin:0 auto;
+    padding:40px 0 60px;
+}
+#main>.e>*>*{
+    display:table;
+    width:100%;
+}
+#main>.e>*>*>*{
+    display:table-cell;
+}
+#main>.e>*>*>*>.presale{
+    display:table;
+    width:572px;
+    height:245px;
+    background-color:white;
+}
+#main>.e>*>*>*>.presale>*{
+    display:table-cell;
+}
+#main>.e>*>*>*>.presale>.a{
+    width:235px;
+}
+#main>.e>*>*>*>.presale>.b{
+    padding:15px;
+}
+#main>.e>*>*>*>.presale>.b>.title{
+    font-size:22px;
+    color:#1d98df;
+}
+#main>.e>*>*>*>.presale>.b>.subtitle{
+    font-size:16px;
+    color:#797979;
+}
+#main>.e>*>*>*>.presale>.b>.a{
+    font-size:16px;
+    color:#133466;
+    padding:10px 0;
+}
+#main>.e>*>*>*>.presale>.b>.a+.a{
+    border-top:1px dotted #cfcfcf;
+}
+#main>.f>*{
+    width:1170px;
+    margin:45px auto;
+}
+#main>.f>*>*{
+    vertical-align:middle;
+}
+#main>.g>*{
+    width:1170px;
+    margin:0 auto 50px;
+}
