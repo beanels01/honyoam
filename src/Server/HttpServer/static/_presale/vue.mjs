@@ -1,16 +1,26 @@
 import homepageLike from    '../_homepageLike.mjs'
 let presale={
+    methods:{
+        click(){
+            location='/zh-Hant/presaleId'
+        },
+    },
     template:`
-        <div class=presale>
+        <div
+            class=presale
+            @click=click
+        >
             <div class=a>
                 圖片
             </div>
             <div class=b>
-                <div class=title>標題</div>
-                <div class=subtitle>副標</div>
-                <div class=a>格局：</div>
-                <div class=a>面積：</div>
-                <div class=a>價格：</div>
+                <div class=title>
+                    ザ・パークワンズ 渋谷本町
+                </div>
+                <div class=subtitle>構成東京中核之一的副都心「新宿」</div>
+                <div class=a>格局：2LDK~4LDK</div>
+                <div class=a>面積：64.69M2~87.58M2</div>
+                <div class=a>價格：3758萬円~5408萬円</div>
             </div>
         </div>
     `
