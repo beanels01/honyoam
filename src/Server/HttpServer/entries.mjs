@@ -12,6 +12,7 @@ import calcHomepageResult from  './entries/calcHomepageResult'
 import calcNewsResult from      './entries/calcNewsResult'
 import calcMedievalResult from  './entries/calcMedievalResult'
 import calcPresaleResult from   './entries/calcPresaleResult'
+import calcPresaleIdResult from './entries/calcPresaleIdResult'
 import calcSeminarResult from   './entries/calcSeminarResult'
 import manage from              './entries/manage'
 import form from                './entries/form'
@@ -112,6 +113,8 @@ export default async function(pathname){
                 f=calcMedievalResult
             else if(a[2]=='presale')
                 f=calcPresaleResult
+            else if(a[2]=='presaleId')
+                f=calcPresaleIdResult
             if(f)
                 return function(rq,rs){
                     if(!(

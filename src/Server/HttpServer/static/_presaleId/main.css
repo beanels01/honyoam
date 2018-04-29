@@ -1,0 +1,54 @@
+#main>.static{
+    height:633px;
+    background-size:cover;
+    background-position:center;
+    background-image:url('/_presaleId/pre_top_banner.jpg');
+}
+#main>.static>*{
+    width:1170px;
+    margin:0 auto;
+}
+@media(max-width:1279px){
+    #main>.static{
+        margin-top:50px;
+    }
+}
+@media(min-width:1280px){
+    #main>.static{
+        margin-top:90px;
+    }
+}
+#main>.a>*{
+    width:1170px;
+    margin:0 auto;
+}
+#main>.b>*{
+    width:1170px;
+    margin:0 auto;
+}
+#main>.c>*{
+    width:1170px;
+    margin:0 auto;
+}
+#main>.d{
+    background-size:cover;
+    background-position:center;
+    height:550px;
+}
+#main>.d>*{
+    width:1170px;
+    margin:0 auto;
+}
+#main>.e{
+    background-image:url('/_presaleId/pre01.jpg');
+}
+#main>.f{
+    background-image:url('/_presaleId/pre02.jpg');
+}
+#main>.g{
+    background-image:url('/_presaleId/pre03.jpg');
+}
+#main>.h>*{
+    width:1170px;
+    margin:0 auto;
+}
