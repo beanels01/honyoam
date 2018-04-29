@@ -1,4 +1,5 @@
 import calcHomepageLikeResult from './calcHomepageLikeResult'
+import vue from '../static/_homepage/vue'
 async function main(rq,rs,lang,patch){
     let data=patch||(await this._getHomepage()).res
     return calcHomepageLikeResult.call(this,{
@@ -6,7 +7,7 @@ async function main(rq,rs,lang,patch){
         title:              '首頁',
         clientScript:       '_homepage/main.mjs',
         css:                '_homepage/main.css',
-        vue:                '_homepage/vue.mjs',
+        vue,
         vueData:{
             homepage:{
                 mission:data.mission,

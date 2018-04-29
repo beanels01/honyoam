@@ -3,7 +3,7 @@ The server-side version of Vue is different from the client-size one. So I pass 
 */
 import vue from 'vue'
 import formidable from          'formidable'
-import fs from                  'mz/fs'
+import fsPromises from          'fs/promises'
 import rfc6265 from             'rfc6265'
 import json from                './entries/json'
 import calcFaqResult from       './entries/calcFaqResult'
@@ -79,7 +79,7 @@ async function formData(rq,rs,currentUser){
     if(formData.fields.method=='addImage'){
         res=await this._addImage(currentUser)
         let f=formData.files.file
-        await fs.rename(f.path,`static/image/${res.res}`)
+        await fsPromises.rename(f.path,`static/image/${res.res}`)
     }
     rs.writeHead(200,{
         'content-type':'text/plain;charset=utf-8'

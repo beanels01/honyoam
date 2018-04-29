@@ -1,7 +1,7 @@
-import MongoClient from './Server/MongoClient'
-import HttpServer from './Server/HttpServer'
-import fs from 'mz/fs'
-import methods from './Server/methods'
+import fsPromises from      'fs/promises'
+import MongoClient from     './Server/MongoClient'
+import HttpServer from      './Server/HttpServer'
+import methods from         './Server/methods'
 function Server(config){
     this.config=config
     if(!('dev' in this.config.mongo))
@@ -36,7 +36,7 @@ Server.prototype.handleRequest=async function(doc){
 }
 async function ensureDirectory(path){
     try{
-        await fs.mkdir(path)
+        await fsPromises.mkdir(path)
     }catch(e){
         if(!(e.code=='EEXIST'))
             throw e

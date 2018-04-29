@@ -1,4 +1,5 @@
 import calcHomepageLikeResult from './calcHomepageLikeResult'
+import vue from '../static/_contact/vue'
 async function main(rq,rs,lang,patch,id){
     let
         data=patch||(await this._getSeminar(id)).res,
@@ -8,7 +9,7 @@ async function main(rq,rs,lang,patch,id){
         title:              language.contact.title,
         clientScript:       '_contact/main.mjs',
         css:                '_contact/main.css',
-        vue:                '_contact/vue.mjs',
+        vue,
         vueData:{
             value:data,
         },

@@ -3,21 +3,18 @@ import etag from                'etag'
 import render from              './render'
 let
     staticDir=          'honyoam/src/Server/HttpServer/static',
-    js={},
-    vue={}
+    js={}
 async function calcJs(doc){
     let
-        bundle=await rollup.rollup({input:`${staticDir}/${doc.clientScript}`}),
+        bundle=await rollup.rollup({
+            input:`${staticDir}/${doc.clientScript}`
+        }),
         {code}=await bundle.generate({format:'iife'})
     return code
 }
 async function calcResult(doc){
     if(!js[doc.clientScript])
         js[doc.clientScript]=await calcJs.call(this,doc)
-    if(!vue[doc.vue])
-        vue[doc.vue]=(await import(
-            `../static/${doc.vue}`
-        )).default
     let
         language=(await this._getLanguage()).res[doc.currentLanguage],
         vueData=Object.assign({
@@ -42,7 +39,7 @@ ${doc.og&&doc.og.description?
 <link rel=stylesheet href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel=icon href=_favicon.png>
 <body>
-${await render(Object.setPrototypeOf({data:vueData},vue[doc.vue]))}
+${await render(Object.setPrototypeOf({data:vueData},doc.vue))}
 <script id=arg type=a>${encodeURIComponent(JSON.stringify({
     dev:this.config.dev,
     vueData,

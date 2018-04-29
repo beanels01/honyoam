@@ -1,5 +1,6 @@
 import http from                'http'
-import fs from                  'mz/fs'
+import fs from                  'fs'
+import fsPromises from          'fs/promises'
 import url from                 'url'
 import EventEmmiter from        'events'
 import etag from                'etag'
@@ -71,7 +72,7 @@ HttpServer.prototype.handleRequest=async function(rq,rs){
         }`,
         `static${parsedUrl.pathname}`,
     ])if(await fileExist(p)){
-        let et=etag(await fs.stat(p))
+        let et=etag(await fsPromises.stat(p))
         if(et==rq.headers['if-none-match']){
             rs.writeHead(304)
             rs.end()
@@ -88,7 +89,7 @@ HttpServer.prototype.handleRequest=async function(rq,rs){
     return rs.end()
     async function fileExist(p){
         try{
-            return(await fs.stat(p)).isFile()
+            return(await fsPromises.stat(p)).isFile()
         }catch(e){
             if(e.code=='ENOENT')
                 return 0

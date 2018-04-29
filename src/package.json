@@ -12,7 +12,6 @@
         "formidable":           "*",
         "mime":                 "*",
         "mongodb":              "3.0.1",
-        "mz":                   "*",
         "rfc6265":              "*",
         "rollup":               "*",
         "vue":                  "*",
