@@ -156,7 +156,7 @@ let aMain={
             </div>
             <div class=e>
                 <div>
-                    <div>
+                    <div v-for="a in [,,,]">
                         <div>
                             <presale></presale>
                         </div>
