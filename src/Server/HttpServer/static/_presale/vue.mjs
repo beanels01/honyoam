@@ -186,8 +186,14 @@ let aMain={
                     </div>
                 </div>
                 <div class=g>
-                    <div>
-                        ......
+                    <div v-for="e in [,,,,]">
+                        <div class=a>
+                            <img src=/_presale/test>
+                        </div>
+                        <div class=b>
+                            標題可能很長 長到會換行 不夠 再長一點
+                        </div>
+                        <div class=c>副標</div>
                     </div>
                 </div>
                 <hlFooter
