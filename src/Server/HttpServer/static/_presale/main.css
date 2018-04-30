@@ -74,6 +74,7 @@
     vertical-align:middle;
 }
 #main>.c>* .block>*{
+    vertical-align:middle;
 }
 #main>.c>*>*+*{
     margin-top:15px;
@@ -86,6 +87,9 @@
 }
 #main>.c>*>.a>.block{
     width:1145px;
+}
+#main>.c>*>.a>.block>.a{
+    display:inline-block;
 }
 #main>.c>*>.b>.block{
     width:565px;
@@ -100,9 +104,24 @@
     width:1145px;
     text-align:right;
 }
+#main>.c>*>.c>*{
+    width:145px;
+    height:45px;
+    color:white;
+    font-size:18px;
+    background-color:#3f7897;
+    border:unset;
+    border-radius:2px;
+}
+#main>.c>*>.c>:active{
+    background-color:#1d98df;
+}
+#main>.c>*>.c>*+*{
+    margin-left:10px;
+}
 #main>.d>*{
     width:1170px;
-    margin:20px auto;
+    margin:15px auto 20px;
 }
 #main>.d>*>*{
     vertical-align:middle;

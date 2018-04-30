@@ -120,7 +120,10 @@ let aMain={
                         </div>
                         <div class=a>
                             <div class=block>
-                                房屋格局
+                                <span class=a>
+                                    房屋格局<br>
+                                    ＊可複選
+                                </span>
                                 <label>
                                     <input type=checkbox>
                                     1K

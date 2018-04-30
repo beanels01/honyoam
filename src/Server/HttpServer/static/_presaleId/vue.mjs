@@ -15,13 +15,13 @@ let block={
     },
     props:['background','title','content','more'],
     template:`
-        <div class=d :style=style>
+        <div class=d :style=style><div>
             <div>
                 <div class=a>{{title}}</div>
                 <div class=b>{{content}}</div>
                 <button class=c @click=click>+ 了解更多</button>
             </div>
-        </div>
+        </div></div>
     `,
 }
 let aMain={
@@ -57,17 +57,21 @@ let aMain={
                 </div>
                 <div class=b>
                     <div>
-                        <div>
+                        <div class=a>
                             <div class=title>
                                 摩登與沉穩的美麗結合
                             </div>
                             <div class=content>
-                                人不外乎是自己認為的東西。
+                                這樣用一個作為一切二元論基礎的二元論來取代各式各樣的對立，我們是有所得還是有所失？我們馬上就會討論這一點。現在可以說，「現象理論」的第一個結論就是，顯現並不像康德的現象返回到本體那樣返回到存在。因為顯現背後什麼也沒有，它只表明它自身（和整個顯現系列），它只能被他自己的存在，而不能被別的的存在所支持，它不可能成為一層將「主體存在」和「絕對存在」隔開了的虛無薄膜。如果顯現的本質就是一種不再與任何存在對立的「顯現」，那自然就產生了關於這個顯現的存在的問題。我們這裡研究的正是這個問題，它將是我們探索存在與虛無的出發點。
                             </div>
                         </div>
-                        <div>
-                            <button>預約看房</button>
-                            <button>更多訊息</button>
+                        <div class=b>
+                            <div class=n>
+                                <a><span>> 預約看房<span></a>
+                            </div>
+                            <div class=o>
+                                <a><span>> 更多訊息<span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
