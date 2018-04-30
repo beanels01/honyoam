@@ -4,6 +4,7 @@ export default{
             doc.people,
             doc.interested,
             doc.title,
+            doc.currentLanguage,
         )}
     },
     async addFeedback(doc){

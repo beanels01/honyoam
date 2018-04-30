@@ -17,6 +17,7 @@ export default o=>{
             })),
             interested:         doc.interested,
             title:              doc.title,
+            currentLanguage:    doc.currentLanguage,
         })
     }
     o._addFeedback=function(doc){

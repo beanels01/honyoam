@@ -118,6 +118,7 @@ let aMain={
                     :value=value.investJapan
                 ></yiTiaoLong2>
                 <apply
+                    :currentLanguage=currentLanguage
                     :language=language.contact.apply
                     :topics=value.topics
                     :content=value.block0

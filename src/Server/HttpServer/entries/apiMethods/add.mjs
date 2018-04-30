@@ -11,6 +11,7 @@ let add={
             )&&
             typeof doc.interested=='string'&&
             typeof doc.title=='string'&&
+            typeof doc.currentLanguage=='string'&&
             await verifyRecaptchaUsersResponse(
                 this.config.recaptchaSecret,
                 doc.recaptcha

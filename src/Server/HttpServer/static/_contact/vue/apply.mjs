@@ -36,11 +36,13 @@ let apply={
                 ),
                 interested:     this.interested.map((a,i)=>a&&this.topics[i]).filter(a=>a).join('\n'),
                 title:          this.content.title,
+                currentLanguage:this.currentLanguage,
             })
             this.success=1
         },
     },
     props:[
+        'currentLanguage',
         'language',
         'topics',
         'content',

@@ -3,12 +3,14 @@ o.addApply=async function(
     people,
     interested,
     title,
+    currentLanguage,
 ){
     return(await this._applyCol.insertOne({
         people,
         interested,
         status:0,
         title,
+        currentLanguage,
     })).insertedId
 }
 o.addFeedback=async function(
