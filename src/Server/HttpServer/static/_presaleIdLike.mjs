@@ -1,14 +1,36 @@
 let presaleIdLike={
     header:{
+        props:['data'],
         template:`
             <div class=presaleIdLikeHeader>
-                <a href=/zh-Hant/presaleId>TOP</a>
-                <a href=/zh-Hant/presaleIdConcept>建築概念</a>
-                <a href=/zh-Hant/presaleIdEnvironment>周邊環境</a>
-                <a href=/zh-Hant/presaleIdTraffic>交通方式</a>
-                <a href=/zh-Hant/presaleIdPattern>空間格局</a>
-                <a href=/zh-Hant/presaleIdSummary>物件概要</a>
-                <a href=/zh-Hant/presaleIdAv>影音介紹</a>
+                <a
+                    href=/zh-Hant/presaleId
+                    :class="{active:data.focus=='top'}"
+                >TOP</a>
+                <a
+                    href=/zh-Hant/presaleIdConcept
+                    :class="{active:data.focus=='concept'}"
+                >建築概念</a>
+                <a
+                    href=/zh-Hant/presaleIdEnvironment
+                    :class="{active:data.focus=='environment'}"
+                >周邊環境</a>
+                <a
+                    href=/zh-Hant/presaleIdTraffic
+                    :class="{active:data.focus=='traffic'}"
+                >交通方式</a>
+                <a
+                    href=/zh-Hant/presaleIdPattern
+                    :class="{active:data.focus=='pattern'}"
+                >空間格局</a>
+                <a
+                    href=/zh-Hant/presaleIdSummary
+                    :class="{active:data.focus=='summary'}"
+                >物件概要</a>
+                <a
+                    href=/zh-Hant/presaleIdAv
+                    :class="{active:data.focus=='video'}"
+                >影音介紹</a>
             </div>
         `,
     },

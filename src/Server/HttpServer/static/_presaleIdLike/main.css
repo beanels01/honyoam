@@ -1,3 +1,6 @@
+#main{
+    --headerHeight:59px;
+}
 #main>.presaleIdLikeHeader{
     position:fixed;
     top:90px;
@@ -6,6 +9,7 @@
     font-size:16px;
     width:100%;
     line-height:1em;
+    border-top:3px solid #1d98df;
 }
 #main>.presaleIdLikeHeader>*{
     display:inline-block;
@@ -29,12 +33,12 @@
 }
 @media(max-width:1279px){
     #main>.presaleIdLikeTop{
-        margin-top:calc(50px + 56px);
+        margin-top:calc(50px + var(--headerHeight));
     }
 }
 @media(min-width:1280px){
     #main>.presaleIdLikeTop{
-        margin-top:calc(90px + 56px);
+        margin-top:calc(90px + var(--headerHeight));
     }
 }
 #main>.presaleIdLikeMain{

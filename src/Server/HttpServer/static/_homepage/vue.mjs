@@ -75,6 +75,7 @@ let aMain={
                 :currentLanguage=currentLanguage
             ></hlMenu>
             <hlHeader
+                shadow=1
                 :language=language
                 :currentLanguage=currentLanguage
                 v-model=menu

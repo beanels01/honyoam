@@ -296,6 +296,8 @@ body{
     width:100%;
     z-index:3;
     background-color:white;
+}
+#main>.header.shadow{
     box-shadow:0 8px 8px rgba(0,0,0,.2);
 }
 #main>.header>.a{

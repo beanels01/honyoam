@@ -65,7 +65,9 @@ let aMain={
                     value=立即聯絡
                     :href=href.qaForm
                 ></floatBall>
-                <presaleIdLikeHeader></presaleIdLikeHeader>
+                <presaleIdLikeHeader
+                    :data="{focus:'environment'}"
+                ></presaleIdLikeHeader>
             </template>
             <hlMenu
                 v-if=menu

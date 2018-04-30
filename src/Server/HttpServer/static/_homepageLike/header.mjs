@@ -1,12 +1,13 @@
 import languageComputed from './languageComputed.mjs'
 let header={
     computed:languageComputed,
-    props:['language','currentLanguage','value'],
+    props:['language','currentLanguage','value','shadow'],
     template:`
         <div
             class=header
             :class="{
                 active:value,
+                shadow:shadow,
             }"
         >
             <div class="a left">
