@@ -72,7 +72,22 @@ let presaleIdLike={
                 </div>
                 <div class=b>
                     <div>
-                        超文本
+                        <img src=/_presaleIdLike/test-hypertext-0>
+                        新宿2KM商業圈內，位於山手線內側的都心<br>
+                        這個物件的特點在，位於「JR山手線」內側的位置<br>
+                        伊勢丹與高島屋的左近，感受最佳的生活便利性<br>
+                        受鄰近文教地區的薰陶，周圍也是綠地滿溢<br>
+                        感受都市躍動的同時，也有住宅區安穩的氛圍
+                        <img src=/_presaleIdLike/test-hypertext-1>
+                        運動、文化設施健全，充實每一天的生活<br>
+                        徒步1分鐘「新宿區立新宿交流活動中心」<br>
+                        設有標準制/兒童用泳池、籃球場、桌球桌等運動場地<br>
+                        天花板上的天象儀更是一大特色，且距離圖書館只要徒步3分鐘<br>
+                        無論大人小孩都能在這裡享受自己的假日<br>
+                        (愛子公主上的學校就在對面
+                        <img src=/_presaleIdLike/test-hypertext-2>
+                        <img src=/_presaleIdLike/test-hypertext-3>
+                        <img src=/_presaleIdLike/test-hypertext-4>
                     </div>
                 </div>
             </div>

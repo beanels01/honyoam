@@ -122,6 +122,9 @@
     margin:0 auto;
     padding:55px 0;
 }
+#main>.presaleIdLikeHypertext>.b>* img{
+    width:100%;
+}
 #main>.presaleIdLikeFooter{
     border-top:1px solid #797979;
 }
