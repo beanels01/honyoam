@@ -8,6 +8,7 @@ let aMain={
         floatBall:              homepageLike.floatBall,
         presaleIdLikeTop:       presaleIdLike.top,
         presaleIdLikeMain:      presaleIdLike.main,
+        presaleIdLikeHypertext: presaleIdLike.hypertext,
         presaleIdLikeFooter:    presaleIdLike.footer,
         presaleIdLikeHeader:    presaleIdLike.header,
     },
@@ -38,6 +39,7 @@ let aMain={
                 <presaleIdLikeMain
                     :data=presaleIdLikeMain
                 ></presaleIdLikeMain>
+                <presaleIdLikeHypertext></presaleIdLikeHypertext>
                 <presaleIdLikeFooter></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer

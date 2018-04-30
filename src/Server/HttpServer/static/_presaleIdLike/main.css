@@ -91,6 +91,37 @@
     margin-top:10px;
     background:linear-gradient(#78a976,#093930);
 }
+#main>.presaleIdLikeHypertext>.a{
+    background-color:#f9f9f9;
+    padding:25px 0;
+}
+#main>.presaleIdLikeHypertext>.a>.n{
+    width:1170px;
+    margin:0 auto;
+    font-size:14px;
+    color:#06182c;
+}
+#main>.presaleIdLikeHypertext>.a>.n>.a{
+    font-size:24px;
+}
+#main>.presaleIdLikeHypertext>.a>.o{
+    width:1170px;
+    margin:25px auto 0;
+}
+#main>.presaleIdLikeHypertext>.a>.o>*+*{
+    margin-left:15px;
+}
+#main>.presaleIdLikeHypertext>.a>.o>*>*{
+    box-sizing:border-box;
+    width:185px;
+    height:185px;
+    border:3px solid white;
+}
+#main>.presaleIdLikeHypertext>.b>*{
+    width:1170px;
+    margin:0 auto;
+    padding:55px 0;
+}
 #main>.presaleIdLikeFooter{
     border-top:1px solid #797979;
 }

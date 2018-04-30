@@ -51,6 +51,27 @@ let presaleIdLike={
             </div>
         `
     },
+    hypertext:{
+        template:`
+            <div class=presaleIdLikeHypertext>
+                <div class=a>
+                    <div class=n>
+                        <span class=a>建案相關介紹<span> / INFORMATION
+                    </div>
+                    <div class=o>
+                        <span v-for="e in [,,,,,]">
+                            <img src=/_presale/test>
+                        </span>
+                    </div>
+                </div>
+                <div class=b>
+                    <div>
+                        超文本
+                    </div>
+                </div>
+            </div>
+        `,
+    },
     footer:{
         template:`
             <div class=presaleIdLikeFooter>
