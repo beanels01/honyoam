@@ -38,6 +38,9 @@ let aMain={
                 <presaleIdLikeMain
                     :data=presaleIdLikeMain
                 ></presaleIdLikeMain>
+                <div class=a>
+                    <iframe src="https://www.youtube.com/embed/rNsgHMklBW0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
                 <presaleIdLikeFooter></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer

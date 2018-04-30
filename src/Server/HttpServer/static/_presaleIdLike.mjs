@@ -56,7 +56,7 @@ let presaleIdLike={
             <div class=presaleIdLikeHypertext>
                 <div class=a>
                     <div class=n>
-                        <span class=a>建案相關介紹<span> / INFORMATION
+                        <span class=a>建案相關介紹</span> / INFORMATION
                     </div>
                     <div class=o>
                         <span v-for="e in [,,,,,]">

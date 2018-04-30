@@ -38,6 +38,30 @@ let aMain={
                 <presaleIdLikeMain
                     :data=presaleIdLikeMain
                 ></presaleIdLikeMain>
+                <div class=a>
+                    <div class=n>
+                        <span class=a>空間格局</span> / PLAN
+                    </div>
+                    <div class=o>
+                        <div v-for="e in [,,,,,]">
+                            <div class=n>
+                                <img src=/_presale/test>
+                            </div>
+                            <div class=o>
+                                <div class=a>
+                                    A Type
+                                </div>
+                                <div class=b>
+                                    <div>格局：2LDK</div>
+                                    <div>面積：76.62m</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=b>
+                    <img src=/_presale/test>
+                </div>
                 <presaleIdLikeFooter></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
