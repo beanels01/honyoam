@@ -27,6 +27,9 @@
     height:185px;
     border:3px solid white;
 }
+#main>.a>.o>*>.n>.active{
+    border:3px solid #133466;
+}
 #main>.a>.o>*>.o>.a{
     padding:15px 30px;
     font-size:24px;

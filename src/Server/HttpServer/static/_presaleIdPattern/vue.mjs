@@ -1,5 +1,28 @@
 import homepageLike from    '../_homepageLike.mjs'
 import presaleIdLike from   '../_presaleIdLike.mjs'
+let patternInput={
+    props:['data','value'],
+    template:`
+        <div class=o>
+            <div v-for="(e,i) in data.array">
+                <div class=n>
+                    <img
+                        :src=e.image
+                        @click="$emit('input',i)"
+                        :class="{active:value==i}"
+                    >
+                </div>
+                <div class=o>
+                    <div class=a>{{e.type}}</div>
+                    <div class=b>
+                        <div>格局：{{e.pattern}}</div>
+                        <div>面積：{{e.area}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `,
+}
 let aMain={
     components:{
         hlFooter:               homepageLike.footer,
@@ -10,6 +33,7 @@ let aMain={
         presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeFooter:    presaleIdLike.footer,
         presaleIdLikeHeader:    presaleIdLike.header,
+        patternInput,
     },
     computed:{
         href(){
@@ -40,6 +64,7 @@ let aMain={
                 area:       '66.08m²',
             }],
         },
+        selectPattern:0,
     }),
     props:['language','currentLanguage'],
     template:`
@@ -55,23 +80,13 @@ let aMain={
                     <div class=n>
                         <span class=a>空間格局</span> / PLAN
                     </div>
-                    <div class=o>
-                        <div v-for="(e,i) in data.array">
-                            <div class=n>
-                                <img :src=e.image>
-                            </div>
-                            <div class=o>
-                                <div class=a>{{e.type}}</div>
-                                <div class=b>
-                                    <div>格局：{{e.pattern}}</div>
-                                    <div>面積：{{e.area}}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <patternInput
+                        :data=data
+                        v-model=selectPattern
+                    ></patternInput>
                 </div>
                 <div class=b>
-                    <img src=/_presaleIdPattern/test-0>
+                    <img :src=data.array[selectPattern].image>
                 </div>
                 <presaleIdLikeFooter></presaleIdLikeFooter>
                 <hlFooter

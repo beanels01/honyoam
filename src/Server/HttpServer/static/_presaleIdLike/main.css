@@ -31,6 +31,14 @@
     width:1170px;
     margin:0 auto;
 }
+#main>.presaleIdLikeTop>*>*{
+    margin-top:70px;
+    display:inline-block;
+    font-size:22px;
+    color:white;
+    padding:15px;
+    background-color:#1d98df;
+}
 @media(max-width:1279px){
     #main>.presaleIdLikeTop{
         margin-top:calc(50px + var(--headerHeight));
