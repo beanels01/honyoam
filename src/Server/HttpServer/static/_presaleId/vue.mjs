@@ -67,10 +67,10 @@ let aMain={
                         </div>
                         <div class=b>
                             <div class=n>
-                                <a><span>> 預約看房<span></a>
+                                <a><span>> 預約看房</span></a>
                             </div>
                             <div class=o>
-                                <a><span>> 更多訊息<span></a>
+                                <a><span>> 更多訊息</span></a>
                             </div>
                         </div>
                     </div>
