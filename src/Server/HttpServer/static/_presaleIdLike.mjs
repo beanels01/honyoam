@@ -13,11 +13,17 @@ let presaleIdLike={
         `,
     },
     top:{
+        computed:{
+            title(){
+                return this.data.title+
+                    (this.data.part?` > ${this.data.part}`:'')
+            },
+        },
         props:['data'],
         template:`
             <div class=presaleIdLikeTop>
                 <div>
-                    <div>{{data.title}} > {{data.part}}</div>
+                    <div>{{title}}</div>
                 </div>
             </div>
         `,

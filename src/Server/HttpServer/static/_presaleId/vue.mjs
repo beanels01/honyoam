@@ -45,7 +45,6 @@ let aMain={
         menu:0,
         presaleIdLikeTop:{
             title:'ウエリス新宿早稲田の森',
-            part:'建案介紹',
         },
         presaleIdLikeMain:{
             part:['建案介紹','INFORMATION'],
