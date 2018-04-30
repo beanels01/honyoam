@@ -8,7 +8,7 @@ async function main(rq,rs,lang,patch){
                                 '_presaleIdLike/main.css',
                                 '_presaleIdConcept/main.css'
                             ],
-        clientScript:       '_presaleId/main.mjs',
+        clientScript:       '_presaleIdConcept/main.mjs',
         vue,
         vueData:{
         },

@@ -20,7 +20,7 @@ let aMain={
         menu:0,
         presaleIdLikeTop:{
             title:'ウエリス新宿早稲田の森',
-            part:'建築概念',
+            part:'交通方式',
         },
         presaleIdLikeMain:{
             part:['建案介紹','INFORMATION'],

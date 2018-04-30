@@ -1,14 +1,14 @@
 import calcHomepageLikeResult from './calcHomepageLikeResult'
-import vue from '../static/_presaleIdConcept/vue'
+import vue from '../static/_presaleIdEnvironment/vue'
 async function main(rq,rs,lang,patch){
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
-        title:              '新成屋 - ID - 建築概念',
+        title:              '新成屋 - ID - 周邊環境',
         css:                [
                                 '_presaleIdLike/main.css',
-                                '_presaleIdConcept/main.css'
+                                '_presaleIdEnvironment/main.css',
                             ],
-        clientScript:       '_presaleId/main.mjs',
+        clientScript:       '_presaleIdEnvironment/main.mjs',
         vue,
         vueData:{
         },
