@@ -88,8 +88,8 @@ let presaleIdLike={
                         <span class=a>建案相關介紹</span> / INFORMATION
                     </div>
                     <div class=o>
-                        <span v-for="e in [,,,,,]">
-                            <img src=/_presale/test>
+                        <span v-for="(e,i) in [,,,,,]">
+                            <img :src="'/_presaleIdConcept/test-hypertext-'+i">
                         </span>
                     </div>
                 </div>
