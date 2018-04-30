@@ -80,7 +80,6 @@ let aMain={
                     content='有些人把希望寄託在人類的智慧上——那是一種悲慘的智慧——但是發現我們的智慧更加悲慘。然而還有比「施捨先及親友」或「提拔一個壞蛋，他要控訴你賠償損失；打倒他，他反而奉承你」，這類的格言更加使人喪氣的呢？'
                     more='/zh-Hant/presaleIdTraffic'
                 ></block>
-                ></block>
                 <presaleIdLikeFooter></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
