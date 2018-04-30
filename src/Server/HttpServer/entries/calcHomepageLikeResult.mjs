@@ -35,7 +35,14 @@ ${doc.og&&doc.og.description?
     `<meta property=og:description content='${doc.og.description}'>`
 :''}
 <link rel=stylesheet href=_homepageLike/main.css>
-<link rel=stylesheet href=${doc.css}>
+${
+    doc.css instanceof Array?
+        doc.css.map(a=>
+            `<link rel=stylesheet href=${a}>`
+        ).join('')
+    :
+        `<link rel=stylesheet href=${doc.css}>`
+}
 <link rel=stylesheet href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel=icon href=_favicon.png>
 <body>

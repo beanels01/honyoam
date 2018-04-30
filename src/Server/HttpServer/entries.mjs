@@ -13,6 +13,12 @@ import calcNewsResult from      './entries/calcNewsResult'
 import calcMedievalResult from  './entries/calcMedievalResult'
 import calcPresaleResult from   './entries/calcPresaleResult'
 import calcPresaleIdResult from './entries/calcPresaleIdResult'
+import calcPresaleIdConceptResult from './entries/calcPresaleIdConceptResult'
+import calcPresaleIdEnvironmentResult from './entries/calcPresaleIdEnvironmentResult'
+import calcPresaleIdTrafficResult from './entries/calcPresaleIdTrafficResult'
+import calcPresaleIdPatternResult from './entries/calcPresaleIdPatternResult'
+import calcPresaleIdSummaryResult from './entries/calcPresaleIdSummaryResult'
+import calcPresaleIdVideoResult from './entries/calcPresaleIdVideoResult'
 import calcSeminarResult from   './entries/calcSeminarResult'
 import manage from              './entries/manage'
 import form from                './entries/form'
@@ -115,6 +121,18 @@ export default async function(pathname){
                 f=calcPresaleResult
             else if(a[2]=='presaleId')
                 f=calcPresaleIdResult
+            else if(a[2]=='presaleIdConcept')
+                f=calcPresaleIdConceptResult
+            else if(a[2]=='presaleIdEnvironment')
+                f=calcPresaleIdEnvironmentResult
+            else if(a[2]=='presaleIdTraffic')
+                f=calcPresaleIdTrafficResult
+            else if(a[2]=='presaleIdPattern')
+                f=calcPresaleIdPatternResult
+            else if(a[2]=='presaleIdSummary')
+                f=calcPresaleIdSummaryResult
+            else if(a[2]=='presaleIdAv')
+                f=calcPresaleIdVideoResult
             if(f)
                 return function(rq,rs){
                     if(!(
