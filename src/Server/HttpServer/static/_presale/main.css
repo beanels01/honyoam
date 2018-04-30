@@ -57,6 +57,9 @@
 #main>.b>*>*{
     vertical-align:middle;
 }
+#main>.b>*>*>*{
+    vertical-align:middle;
+}
 #main>.c>*{
     width:1170px;
     margin:0 auto;
@@ -85,11 +88,23 @@
 #main>.c>*>*>*{
     display:table-cell;
 }
+#main>.c>*>*>.block>.a{
+    display:inline-block;
+    margin-right:15px;
+}
+#main>.c>*>*>.block>select{
+    background-color:white;
+    padding:8px;
+}
+#main>.c>*>*>.block>input:not([type]){
+    width:140px;
+    padding:8px;
+}
 #main>.c>*>.a>.block{
     width:1145px;
 }
-#main>.c>*>.a>.block>.a{
-    display:inline-block;
+#main>.c>*>.a>.block>select{
+    width:320px;
 }
 #main>.c>*>.b>.block{
     width:565px;
@@ -135,17 +150,20 @@
     padding:40px 0 60px;
 }
 #main>.e>*>*{
-    display:table;
     width:100%;
 }
 #main>.e>*>*+*{
     margin-top:30px;
 }
 #main>.e>*>*>*{
-    display:table-cell;
+    display:inline-block;
+}
+#main>.e>*>*>*+*{
+    margin-left:26px;
 }
 #main>.e>*>*>*>.presale{
     display:table;
+    position:relative;
     width:572px;
     height:245px;
     background-color:white;
@@ -206,6 +224,20 @@
 }
 #main>.e>*>*>*>.presale>.b>*>*>*>.a+.a{
     border-top:1px dotted #cfcfcf;
+}
+#main>.e>*>*>*>.presale>.c{
+    display:table;
+    position:absolute;
+    top:0;
+    left:0;
+    width:572px;
+    height:245px;
+    background-color:rgba(0,0,0,.5);
+}
+#main>.e>*>*>*>.presale>.c>*{
+    display:table-cell;
+    text-align:center;
+    vertical-align:middle;
 }
 #main>.f>*{
     width:1170px;
