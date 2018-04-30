@@ -55,19 +55,19 @@ let aMain={
             <template v-if=!menu>
                 <div class=static>
                     <div>
-                        <div class=a>預售屋</div>
+                        <div class=a>新成屋</div>
                         <div class=b>PRESOLD HOUSE</div>
                     </div>
                 </div>
                 <div class=a>
                     <div>
-                        首頁 > <span class=current>預售屋</span>
+                        首頁 > <span class=current>新成屋</span>
                     </div>
                 </div>
                 <div class=b>
                     <div>
                         <span class=blueBar></span>
-                        <span class=title>尋找您想要的預售屋 v</span>
+                        <span class=title>尋找您想要的新成屋 v</span>
                     </div>
                 </div>
                 <div class=c>
@@ -163,7 +163,7 @@ let aMain={
                 <div class=d>
                     <div>
                         <span class=blueBar></span>
-                        <span class=title>預售屋物件</span>
+                        <span class=title>新成屋物件</span>
                     </div>
                 </div>
                 <div class=e>
