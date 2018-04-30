@@ -25,12 +25,11 @@
 }
 #main>.static>*>.a{
     font-size:40px;
-    font-weight:bold;
-    text-shadow:2px 1px 1px black;
+    text-shadow:0 1px 2px rgba(0,0,0,.8);
 }
 #main>.static>*>.b{
     font-size:16px;
-    text-shadow:1px 1px 1px black;
+    text-shadow:0 1px 1px rgba(0,0,0,.8);
 }
 @media(max-width:1279px){
     #main>.static{
@@ -120,6 +119,9 @@
     display:table;
     width:100%;
 }
+#main>.e>*>*+*{
+    margin-top:30px;
+}
 #main>.e>*>*>*{
     display:table-cell;
 }
@@ -128,30 +130,62 @@
     width:572px;
     height:245px;
     background-color:white;
+    box-shadow:0 1px 2px rgba(0,0,0,.2),0 1px 2px rgba(0,0,0,.2);
+    transition:all .4s cubic-bezier(.2,.8,.2,1);
+}
+#main>.e>*>*>*>.presale:hover{
+    box-shadow:0 1px 2px rgba(0,0,0,.2),0 8px 16px rgba(0,0,0,.2);
+}
+#main>.e>*>*>*>.presale:active{
+    box-shadow:0 1px 2px rgba(0,0,0,.2),0 16px 32px rgba(0,0,0,.2);
 }
 #main>.e>*>*>*>.presale>*{
     display:table-cell;
+    vertical-align:top;
 }
 #main>.e>*>*>*>.presale>.a{
     width:235px;
+    line-height:0;
+}
+#main>.e>*>*>*>.presale>.a>*{
+    width:235px;
+    height:245px;
 }
 #main>.e>*>*>*>.presale>.b{
+    box-sizing:border-box;
     padding:15px;
 }
-#main>.e>*>*>*>.presale>.b>.title{
+#main>.e>*>*>*>.presale>.b>*{
+    display:table;
+    width:307px;
+    height:215px;
+}
+#main>.e>*>*>*>.presale>.b>*>*{
+    display:table-row;
+}
+#main>.e>*>*>*>.presale>.b>*>*>*{
+    display:table-cell;
+}
+#main>.e>*>*>*>.presale>.b>*>.a>*{
+    vertical-align:top;
+}
+#main>.e>*>*>*>.presale>.b>*>.b>*{
+    vertical-align:bottom;
+}
+#main>.e>*>*>*>.presale>.b>*>*>*>.title{
     font-size:22px;
     color:#1d98df;
 }
-#main>.e>*>*>*>.presale>.b>.subtitle{
+#main>.e>*>*>*>.presale>.b>*>*>*>.subtitle{
     font-size:16px;
     color:#797979;
 }
-#main>.e>*>*>*>.presale>.b>.a{
+#main>.e>*>*>*>.presale>.b>*>*>*>.a{
     font-size:16px;
     color:#133466;
     padding:10px 0;
 }
-#main>.e>*>*>*>.presale>.b>.a+.a{
+#main>.e>*>*>*>.presale>.b>*>*>*>.a+.a{
     border-top:1px dotted #cfcfcf;
 }
 #main>.f>*{
