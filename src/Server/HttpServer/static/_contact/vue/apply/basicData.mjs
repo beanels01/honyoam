@@ -31,10 +31,9 @@ let personData={
                     required
                     v-model=value.gender
                 >
-                    <option value hidden>性別</option>
-                    <option value="male">男</option>
-                    <option value="female">女</option>
-                    <option value="else">其他</option>
+                    <option value hidden>稱謂</option>
+                    <option value=male>先生</option>
+                    <option value=female>小姐</option>
                 </select>
             </div>
             <div></div>

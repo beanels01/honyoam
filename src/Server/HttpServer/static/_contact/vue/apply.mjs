@@ -87,7 +87,7 @@ let apply={
                 v-if=success
                 class="alert success"
             >
-                送出成功。
+                感謝您報名「{{content.seminarName}}」，在活動開始的前一周我們會有專人與您聯繫。
             </div>
         </div></div>
     `
