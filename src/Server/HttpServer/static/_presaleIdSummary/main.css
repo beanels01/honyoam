@@ -40,3 +40,6 @@
 #main>.a>.p>*>*+*>*{
     border-top:1px solid #797979;
 }
+#main>.a>.p>*>*>.b{
+    white-space:pre-line;
+}

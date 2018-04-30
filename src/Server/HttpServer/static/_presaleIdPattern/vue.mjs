@@ -27,6 +27,19 @@ let aMain={
             title:'絕對的安靜空間',
             content:'這樣用一個作為一切二元論基礎的二元論來取代各式各樣的對立，我們是有所得還是有所失？我們馬上就會討論這一點。現在可以說，「現象理論」的第一個結論就是，顯現並不像康德的現象返回到本體那樣返回到存在。因為顯現背後什麼也沒有，它只表明它自身（和整個顯現系列），它只能被他自己的存在，而不能被別的的存在所支持，它不可能成為一層將「主體存在」和「絕對存在」隔開了的虛無薄膜。\n\n\n\n\n\n2020 年的港區開發再進化',
         },
+        data:{
+            array:[{
+                image:      '/_presaleIdPattern/test-0',
+                type:       '45R Type',
+                pattern:    '1LDK',
+                area:       '44.77m²',
+            },{
+                image:      '/_presaleIdPattern/test-1',
+                type:       '65O Type',
+                pattern:    '2LDK',
+                area:       '66.08m²',
+            }],
+        },
     }),
     props:['language','currentLanguage'],
     template:`
@@ -43,24 +56,22 @@ let aMain={
                         <span class=a>空間格局</span> / PLAN
                     </div>
                     <div class=o>
-                        <div v-for="e in [,,,,,]">
+                        <div v-for="(e,i) in data.array">
                             <div class=n>
-                                <img src=/_presale/test>
+                                <img :src=e.image>
                             </div>
                             <div class=o>
-                                <div class=a>
-                                    A Type
-                                </div>
+                                <div class=a>{{e.type}}</div>
                                 <div class=b>
-                                    <div>格局：2LDK</div>
-                                    <div>面積：76.62m</div>
+                                    <div>格局：{{e.pattern}}</div>
+                                    <div>面積：{{e.area}}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class=b>
-                    <img src=/_presale/test>
+                    <img src=/_presaleIdPattern/test-0>
                 </div>
                 <presaleIdLikeFooter></presaleIdLikeFooter>
                 <hlFooter
