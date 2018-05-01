@@ -44,6 +44,7 @@ ${
         `<link rel=stylesheet href=${doc.css}>`
 }
 <link rel=stylesheet href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel=stylesheet href="https://unpkg.com/swiper@4.2.6/dist/css/swiper.min.css">
 <link rel=icon href=_favicon.png>
 <body>
 ${await render(Object.setPrototypeOf({data:vueData},doc.vue))}
@@ -57,13 +58,13 @@ let
     recaptchaLoad=new Promise(rs=>window.onRecaptchaLoad=rs)
 </script>
 <script async src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit"></script>
+<script src="https://unpkg.com/swiper@4.2.6/dist/js/swiper.min.js"></script>
 <script async src=_vue/vue.min.js onload=onVueLoad()></script>
 ${
     this.config.dev
     ?`<script type=module src=${doc.clientScript}></script>`
     :`<script>${js[doc.clientScript]}</script>`
 }
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114920020-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

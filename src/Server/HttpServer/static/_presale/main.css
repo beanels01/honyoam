@@ -310,59 +310,85 @@
         width:572px;
     }
 }
-#main>.f>*>*{
+#main>.mightLike>.f>*>*{
     vertical-align:middle;
 }
 @media(max-width:1279px){
-    #main>.f>*{
+    #main>.mightLike>.f>*{
         margin:25px 10px;
     }
 }
 @media(min-width:1280px){
-    #main>.f>*{
+    #main>.mightLike>.f>*{
         width:1170px;
         margin:45px auto;
     }
 }
-#main>.g>*{
-    display:inline-block;
-    width:227px;
-}
-#main>.g>*>.a>*{
-    width:227px;
-    height:227px;
-}
-#main>.g>*>.b{
-    color:#133466;
-}
-#main>.g>*>.c{
-    font-size:16px;
-    color:#797979;
-    padding:8px 0;
-    border-top:1px solid #797979;
-    border-bottom:1px solid #797979;
-}
-@media(max-width:1279px){
-    #main>.g{
-        padding-bottom:35px;
-        margin:0 10px;
-    }
-    #main>.g>*>.b{
-        font-size:18px;
-        padding:13px 0;
-    }
+#main>.mightLike>.g{
+    display:none;
 }
 @media(min-width:1280px){
-    #main>.g{
+    #main>.mightLike>.g{
+        display:block;
         padding-bottom:50px;
         width:1170px;
         margin:0 auto;
     }
-    #main>.g>*+*{
+    #main>.mightLike>.g>*{
+        display:inline-block;
+        width:227px;
+    }
+    #main>.mightLike>.g>*+*{
         margin-left:20px;
     }
-    #main>.g>*>.b{
+    #main>.mightLike>.g>*>.a>*{
+        width:227px;
+        height:227px;
+    }
+    #main>.mightLike>.g>*>.b{
         height:70px;
         font-size:20px;
+        color:#133466;
+    }
+    #main>.mightLike>.g>*>.c{
+        font-size:16px;
+        color:#797979;
+        padding:8px 0;
+        border-top:1px solid #797979;
+        border-bottom:1px solid #797979;
+    }
+}
+#main>.mightLike>.h{
+    display:none;
+}
+@media(max-width:1279px){
+    #main>.mightLike>.h{
+        display:block;
+        position:relative;
+        height:400px;
+        margin-bottom:20px;
+    }
+    #main>.mightLike>.h>*{
+        --width:1440px; /* 5*280+4*10 */
+        position:absolute;
+        left:calc(50% - var(--width) / 2);
+        width:var(--width);
+        height:400px;
+    }
+    #main>.mightLike>.h>*>*>*>.a>*{
+        width:280px;
+        height:280px;
+    }
+    #main>.mightLike>.h>*>*>*>.b{
+        color:#133466;
+        font-size:18px;
+        padding:13px 0;
+    }
+    #main>.mightLike>.h>*>*>*>.c{
+        font-size:16px;
+        color:#797979;
+        padding:8px 0;
+        border-top:1px solid #797979;
+        border-bottom:1px solid #797979;
     }
 }

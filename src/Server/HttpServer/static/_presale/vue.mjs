@@ -1,5 +1,96 @@
 import homepageLike from    '../_homepageLike.mjs'
 import presaleLike from     '../_presaleLike.mjs'
+let swiper={
+    mounted(){
+        if(typeof window!='undefined'){
+            this.$el.innerHTML=`
+                <div class=swiper-container>
+                    <div class=swiper-wrapper>
+                        <div class=swiper-slide>
+                            <div class=a>
+                                <img src=/_presale/test>
+                            </div>
+                            <div class=b>
+                                標題可能很長 長到會換行 不夠 再長一點
+                            </div>
+                            <div class=c>副標</div>
+                        </div>
+                        <div class=swiper-slide>
+                            <div class=a>
+                                <img src=/_presale/test>
+                            </div>
+                            <div class=b>
+                                標題可能很長 長到會換行 不夠 再長一點
+                            </div>
+                            <div class=c>副標</div>
+                        </div>
+                        <div class=swiper-slide>
+                            <div class=a>
+                                <img src=/_presale/test>
+                            </div>
+                            <div class=b>
+                                標題可能很長 長到會換行 不夠 再長一點
+                            </div>
+                            <div class=c>副標</div>
+                        </div>
+                        <div class=swiper-slide>
+                            <div class=a>
+                                <img src=/_presale/test>
+                            </div>
+                            <div class=b>
+                                標題可能很長 長到會換行 不夠 再長一點
+                            </div>
+                            <div class=c>副標</div>
+                        </div>
+                        <div class=swiper-slide>
+                            <div class=a>
+                                <img src=/_presale/test>
+                            </div>
+                            <div class=b>
+                                標題可能很長 長到會換行 不夠 再長一點
+                            </div>
+                            <div class=c>副標</div>
+                        </div>
+                    </div>
+                </div>
+            `
+            new Swiper('.swiper-container',{
+                centeredSlides:true,
+                loop:true,
+                slidesPerView:5,
+                spaceBetween:10,
+            })
+        }
+    },
+    template:`
+        <div class=h></div>
+    `,
+}
+let mightLike={
+    components:{swiper},
+    template:`
+        <div class=mightLike>
+            <div class=f>
+                <div>
+                    <span class=blueBar></span>
+                    <span class=title>您可能會喜歡</span>
+                </div>
+            </div>
+            <div class=g>
+                <div v-for="e in [,,,,]">
+                    <div class=a>
+                        <img src=/_presale/test>
+                    </div>
+                    <div class=b>
+                        標題可能很長 長到會換行 不夠 再長一點
+                    </div>
+                    <div class=c>副標</div>
+                </div>
+            </div>
+            <swiper></swiper>
+        </div>
+    `,
+}
 let presale={
     methods:{
         click(){
@@ -51,6 +142,7 @@ let aMain={
         floatBall:      homepageLike.floatBall,
         presaleLikeTop: presaleLike.top,
         presale,
+        mightLike,
     },
     computed:{
         href(){
@@ -244,23 +336,7 @@ let aMain={
                         </div>
                     </div>
                 </div>
-                <div class=f>
-                    <div>
-                        <span class=blueBar></span>
-                        <span class=title>您可能會喜歡</span>
-                    </div>
-                </div>
-                <div class=g>
-                    <div v-for="e in [,,,,]">
-                        <div class=a>
-                            <img src=/_presale/test>
-                        </div>
-                        <div class=b>
-                            標題可能很長 長到會換行 不夠 再長一點
-                        </div>
-                        <div class=c>副標</div>
-                    </div>
-                </div>
+                <mightLike></mightLike>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>

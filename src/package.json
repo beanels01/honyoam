@@ -15,6 +15,6 @@
         "rfc6265":              "*",
         "rollup":               "*",
         "vue":                  "*",
-        "vue-server-renderer":  "*" 
+        "vue-server-renderer":  "*"
     }
 }

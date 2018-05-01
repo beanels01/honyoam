@@ -1,7 +1,4 @@
-/*
-The server-side version of Vue is different from the client-size one. So I pass it to the ES modules through the global object.
-*/
-import vue from 'vue'
+import Vue from                 'vue'
 import formidable from          'formidable'
 import fsPromises from          'fs/promises'
 import rfc6265 from             'rfc6265'
@@ -22,7 +19,10 @@ import calcPresaleIdVideoResult from './entries/calcPresaleIdVideoResult'
 import calcSeminarResult from   './entries/calcSeminarResult'
 import manage from              './entries/manage'
 import form from                './entries/form'
-global.Vue=vue
+/*
+The server-side version of Vue is different from the client-size one. So I pass it to the ES modules through the global object.
+*/
+global.Vue=Vue
 async function root(rq,rs){
     if(!(
         rq.method=='GET'
