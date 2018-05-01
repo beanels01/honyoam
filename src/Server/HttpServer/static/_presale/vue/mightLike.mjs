@@ -1,4 +1,4 @@
-import{dom}from'./simple.mjs'
+import{dom}from'../../_simple.mjs'
 function createSwiperContainer(a){
     return dom.div({className:'swiper-container'},
         dom.div({className:'swiper-wrapper'},
