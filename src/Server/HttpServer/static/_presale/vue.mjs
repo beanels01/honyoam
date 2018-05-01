@@ -230,8 +230,7 @@ let aMain={
                         </div>
                     </div>
                     <div class=c>
-                        <button>清除</button>
-                        <button>搜尋</button>
+                        <button>清除</button><button>搜尋</button>
                     </div>
                 </div></div>
                 <div class=d>
