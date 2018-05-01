@@ -324,6 +324,16 @@
         margin:45px auto;
     }
 }
+#main .mightLikeBlock>.b{
+    color:#133466;
+}
+#main .mightLikeBlock>.c{
+    font-size:16px;
+    color:#797979;
+    padding:8px 0;
+    border-top:1px solid #797979;
+    border-bottom:1px solid #797979;
+}
 #main>.mightLike>.g{
     display:none;
 }
@@ -341,21 +351,13 @@
     #main>.mightLike>.g>*+*{
         margin-left:20px;
     }
-    #main>.mightLike>.g>*>.a>*{
+    #main>.mightLike>.g>.mightLikeBlock>.a>*{
         width:227px;
         height:227px;
     }
-    #main>.mightLike>.g>*>.b{
+    #main>.mightLike>.g>.mightLikeBlock>.b{
         height:70px;
         font-size:20px;
-        color:#133466;
-    }
-    #main>.mightLike>.g>*>.c{
-        font-size:16px;
-        color:#797979;
-        padding:8px 0;
-        border-top:1px solid #797979;
-        border-bottom:1px solid #797979;
     }
 }
 #main>.mightLike>.h{
@@ -375,20 +377,12 @@
         width:var(--width);
         height:400px;
     }
-    #main>.mightLike>.h>*>*>*>.a>*{
+    #main>.mightLike>.h>*>*>*>.mightLikeBlock>.a>*{
         width:280px;
         height:280px;
     }
-    #main>.mightLike>.h>*>*>*>.b{
-        color:#133466;
+    #main>.mightLike>.h>*>*>*>.mightLikeBlock>.b{
         font-size:18px;
         padding:13px 0;
-    }
-    #main>.mightLike>.h>*>*>*>.c{
-        font-size:16px;
-        color:#797979;
-        padding:8px 0;
-        border-top:1px solid #797979;
-        border-bottom:1px solid #797979;
     }
 }
