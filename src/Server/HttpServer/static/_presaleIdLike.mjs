@@ -60,12 +60,8 @@ let presaleIdLike={
                 </div>
                 <div class=c>
                     <div class=a>
-                        <div class=title>
-                            {{data.title}}
-                        </div>
-                        <div class=content>
-                            {{data.content}}
-                        </div>
+                        <div class=title>{{data.title}}</div>
+                        <div class=content>{{data.content}}</div>
                     </div>
                     <div class=b>
                         <div class=n>

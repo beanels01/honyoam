@@ -70,19 +70,19 @@ let aMain={
                 <block
                     background='/_presaleId/pre01.jpg'
                     title='建築概念'
-                    content='新宿2KM商業圈內，位於山手線內側的都心\n這個物件的特點在，位於「JR山手線」內側的位置\n伊勢丹與高島屋的左近，感受最佳的生活便利性\n受鄰近文教地區的薰陶，周圍也是綠地滿溢\n感受都市躍動的同時，也有住宅區安穩的氛圍\n'
+                    content='新宿2KM商業圈內，位於山手線內側的都心'
                     more='/zh-Hant/presaleIdConcept'
                 ></block>
                 <block
                     background='/_presaleId/pre02.jpg'
                     title='周邊環境'
-                    content='「Wellith新宿早稻田之森」就建在文教地區的旁邊\n鄰近早稻田大學與學習院女子大學(愛子公主上學的地方)\n都立戶山高等學校、私立海城中學/高等學校等歷史長久的學校\n整合成一塊安穩，適合孩子成長的區域\n'
+                    content='「Wellith新宿早稻田之森」就建在文教地區的旁邊'
                     more='/zh-Hant/presaleIdEnvironment'
                 ></block>
                 <block
                     background='/_presaleId/pre03.jpg'
                     title='交通方式'
-                    content='有些人把希望寄託在人類的智慧上——那是一種悲慘的智慧——但是發現我們的智慧更加悲慘。然而還有比「施捨先及親友」或「提拔一個壞蛋，他要控訴你賠償損失；打倒他，他反而奉承你」，這類的格言更加使人喪氣的呢？'
+                    content='有些人把希望寄託在人類的智慧上——那是一種悲慘的智慧——但是發現我們的智慧更加悲慘。'
                     more='/zh-Hant/presaleIdTraffic'
                 ></block>
                 <presaleIdLikeFooter></presaleIdLikeFooter>
