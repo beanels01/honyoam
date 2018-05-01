@@ -21,6 +21,7 @@ let aMain={
     data:()=>({
         menu:0,
         presaleIdLikeTop:{
+            focus:'video',
             title:'ウエリス新宿早稲田の森',
             part:'影音介紹',
         },

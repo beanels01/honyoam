@@ -7,7 +7,7 @@ let aMain={
         hlMenu:                 homepageLike.menu,
         hlHeader:               homepageLike.header,
         floatBall:              homepageLike.floatBall,
-        presaleLikeTop: presaleLike.top,
+        presaleLikeTop:         presaleLike.top,
         presaleIdLikeTop:       presaleIdLike.top,
         presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeHypertext: presaleIdLike.hypertext,
@@ -22,6 +22,7 @@ let aMain={
     data:()=>({
         menu:0,
         presaleIdLikeTop:{
+            focus:'traffic',
             title:'ウエリス新宿早稲田の森',
             part:'交通方式',
         },

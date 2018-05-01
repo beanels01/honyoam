@@ -1,45 +1,76 @@
-#main>.a{
-    width:1170px;
-    margin:55px auto;
-    display:table;
-}
-#main>.a>*{
-    display:table-cell;
-    vertical-align:top;
-}
 #main>.a>.n{
-    color: #06182c;
-    font-size: 14px;
+    color:#06182c;
 }
-#main>.a>.n>.a{
-    font-size: 24px;
-}
-#main>.a>.p{
-    width:993px;
-    border-top:3px solid #1d98df;
-    border-bottom:3px solid #1d98df;
-    padding-left:50px;
-    box-sizing:border-box;
-}
-#main>.a>.p>*{
-    display:table;
-    width:100%;
-}
-#main>.a>.p>*>*{
-    display:table-row;
-}
-#main>.a>.p>*>*>*{
-    display:table-cell;
-    font-size:22px;
+#main>.a>.o>*>*>*{
     color:#797979;
-    padding:18px 0;
 }
-#main>.a>.p>*>*>.a{
+#main>.a>.o>*>*>.a{
     font-weight:bold;
 }
-#main>.a>.p>*>*+*>*{
-    border-top:1px solid #797979;
-}
-#main>.a>.p>*>*>.b{
+#main>.a>.o>*>*>.b{
     white-space:pre-line;
+}
+@media(max-width:1279px){
+    #main>.a{
+        margin:20px 10px;
+    }
+    #main>.a>.n{
+        font-size:13px;
+    }
+    #main>.a>.n>.a{
+        font-size:18px;
+    }
+    #main>.a>.o{
+        margin-top:20px;
+        border-top:2px solid #1d98df;
+        border-bottom:2px solid #1d98df;
+    }
+    #main>.a>.o>*>*{
+        padding:18px 0;
+    }
+    #main>.a>.o>*>*+*{
+        border-top:1px solid #797979;
+    }
+    #main>.a>.o>*>*>*{
+        font-size:15px;
+    }
+}
+@media(min-width:1280px){
+    #main>.a{
+        width:1170px;
+        margin:55px auto;
+        display:table;
+    }
+    #main>.a>*{
+        display:table-cell;
+        vertical-align:top;
+    }
+    #main>.a>.n{
+        font-size:14px;
+    }
+    #main>.a>.n>.a{
+        font-size:24px;
+    }
+    #main>.a>.o{
+        box-sizing:border-box;
+        border-top:3px solid #1d98df;
+        border-bottom:3px solid #1d98df;
+        padding-left:50px;
+        width:993px;
+    }
+    #main>.a>.o>*{
+        display:table;
+        width:100%;
+    }
+    #main>.a>.o>*>*{
+        display:table-row;
+    }
+    #main>.a>.o>*>*>*{
+        display:table-cell;
+        padding:18px 0;
+        font-size:22px;
+    }
+    #main>.a>.o>*>*+*>*{
+        border-top:1px solid #797979;
+    }
 }

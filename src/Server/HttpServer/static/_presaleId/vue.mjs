@@ -31,7 +31,7 @@ let aMain={
         hlMenu:                 homepageLike.menu,
         hlHeader:               homepageLike.header,
         floatBall:              homepageLike.floatBall,
-        presaleLikeTop: presaleLike.top,
+        presaleLikeTop:         presaleLike.top,
         presaleIdLikeTop:       presaleIdLike.top,
         presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeFooter:    presaleIdLike.footer,
@@ -46,6 +46,7 @@ let aMain={
     data:()=>({
         menu:0,
         presaleIdLikeTop:{
+            focus:'top',
             title:'ウエリス新宿早稲田の森',
         },
         presaleIdLikeMain:{

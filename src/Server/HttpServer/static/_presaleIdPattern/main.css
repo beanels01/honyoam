@@ -3,13 +3,7 @@
     padding:25px 0;
 }
 #main>.a>.n{
-    width:1170px;
-    margin:0 auto;
-    font-size:14px;
     color:#06182c;
-}
-#main>.a>.n>.a{
-    font-size:24px;
 }
 #main>.a>.o{
     width:1170px;
@@ -32,7 +26,6 @@
 }
 #main>.a>.o>*>.o>.a{
     padding:15px 30px;
-    font-size:24px;
     color:#06182c;
 }
 #main>.a>.o>*>.o>.b{
@@ -41,11 +34,51 @@
     font-size:16px;
     color:#06182c;
 }
+@media(max-width:1279px){
+    #main>.a>.n{
+        margin:0 10px;
+        font-size:13px;
+    }
+    #main>.a>.n>.a{
+        font-size:18px;
+    }
+    #main>.a>.o>*>.o>.a{
+        font-size:18px;
+    }
+    #main>.a>.o>*>.o>.b{
+        font-size:13px;
+    }
+}
+@media(min-width:1280px){
+    #main>.a>.n{
+        width:1170px;
+        margin:0 auto;
+        font-size:14px;
+    }
+    #main>.a>.n>.a{
+        font-size:24px;
+    }
+    #main>.a>.o>*>.o>.a{
+        font-size:24px;
+    }
+    #main>.a>.o>*>.o>.b{
+        font-size:16px;
+    }
+}
 #main>.b{
-    width:1170px;
-    margin:0 auto;
     padding:60px 0 55px;
 }
 #main>.b>*{
     width:100%;
+}
+@media(max-width:1279px){
+    #main>.b{
+        margin:0 10px;
+    }
+}
+@media(min-width:1280px){
+    #main>.b{
+        width:1170px;
+        margin:0 auto;
+    }
 }

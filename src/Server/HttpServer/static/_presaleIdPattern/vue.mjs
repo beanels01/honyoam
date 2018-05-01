@@ -45,6 +45,7 @@ let aMain={
     data:()=>({
         menu:0,
         presaleIdLikeTop:{
+            focus:'pattern',
             title:'ウエリス新宿早稲田の森',
             part:'空間格局',
         },

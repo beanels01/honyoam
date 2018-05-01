@@ -22,6 +22,7 @@ let aMain={
     data:()=>({
         menu:0,
         presaleIdLikeTop:{
+            focus:'environment',
             title:'ウエリス新宿早稲田の森',
             part:'周邊環境',
         },

@@ -20,6 +20,7 @@ let aMain={
     data:()=>({
         menu:0,
         presaleIdLikeTop:{
+            focus:'summary',
             title:'ウエリス新宿早稲田の森',
             part:'物件概要',
         },
@@ -73,8 +74,7 @@ let aMain={
                     <div class=n>
                         <span class=a>物件概要</span> / BRAND
                     </div>
-                    <div class=o></div>
-                    <div class=p>
+                    <div class=o>
                         <div>
                             <div v-for="a in data">
                                 <div class=a>{{a[0]}}</div>
