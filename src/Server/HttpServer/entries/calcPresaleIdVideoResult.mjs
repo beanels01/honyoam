@@ -5,6 +5,7 @@ async function main(rq,rs,lang,patch){
         currentLanguage:    lang,
         title:              '新成屋 - ID - 影音介紹',
         css:                [
+                                '_presaleLike/main.css',
                                 '_presaleIdLike/main.css',
                                 '_presaleIdVideo/main.css',
                             ],

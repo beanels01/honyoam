@@ -1,4 +1,5 @@
 import homepageLike from    '../_homepageLike.mjs'
+import presaleLike from     '../_presaleLike.mjs'
 let presale={
     methods:{
         click(){
@@ -44,10 +45,11 @@ let presale={
 }
 let aMain={
     components:{
-        hlFooter:   homepageLike.footer,
-        hlMenu:     homepageLike.menu,
-        hlHeader:   homepageLike.header,
-        floatBall:  homepageLike.floatBall,
+        hlFooter:       homepageLike.footer,
+        hlMenu:         homepageLike.menu,
+        hlHeader:       homepageLike.header,
+        floatBall:      homepageLike.floatBall,
+        presaleLikeTop: presaleLike.top,
         presale,
     },
     computed:{
@@ -122,17 +124,9 @@ let aMain={
     template:`
         <div id=main>
             <template v-if=!menu>
-                <div class=static>
-                    <div>
-                        <div class=a>新成屋</div>
-                        <div class=b>PRESOLD HOUSE</div>
-                    </div>
-                </div>
-                <div class=a>
-                    <div>
-                        首頁 > <span class=current>新成屋</span>
-                    </div>
-                </div>
+                <presaleLikeTop
+                    :data="{mobile:1,desktop:1}"
+                ></presaleLikeTop>
                 <div class=b>
                     <div>
                         <span class=blueBar></span>

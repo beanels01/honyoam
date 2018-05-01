@@ -1,5 +1,6 @@
 import homepageLike from    '../_homepageLike.mjs'
 import presaleIdLike from   '../_presaleIdLike.mjs'
+import presaleLike from     '../_presaleLike.mjs'
 let block={
     computed:{
         style(){
@@ -30,6 +31,7 @@ let aMain={
         hlMenu:                 homepageLike.menu,
         hlHeader:               homepageLike.header,
         floatBall:              homepageLike.floatBall,
+        presaleLikeTop: presaleLike.top,
         presaleIdLikeTop:       presaleIdLike.top,
         presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeFooter:    presaleIdLike.footer,
@@ -56,6 +58,9 @@ let aMain={
     template:`
         <div id=main>
             <template v-if=!menu>
+                <presaleLikeTop
+                    :data="{mobile:1}"
+                ></presaleLikeTop>
                 <presaleIdLikeTop
                     :data=presaleIdLikeTop
                 ></presaleIdLikeTop>

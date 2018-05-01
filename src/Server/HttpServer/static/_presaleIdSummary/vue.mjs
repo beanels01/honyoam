@@ -1,11 +1,13 @@
 import homepageLike from    '../_homepageLike.mjs'
 import presaleIdLike from   '../_presaleIdLike.mjs'
+import presaleLike from     '../_presaleLike.mjs'
 let aMain={
     components:{
         hlFooter:               homepageLike.footer,
         hlMenu:                 homepageLike.menu,
         hlHeader:               homepageLike.header,
         floatBall:              homepageLike.floatBall,
+        presaleLikeTop: presaleLike.top,
         presaleIdLikeTop:       presaleIdLike.top,
         presaleIdLikeFooter:    presaleIdLike.footer,
         presaleIdLikeHeader:    presaleIdLike.header,
@@ -61,6 +63,9 @@ let aMain={
     template:`
         <div id=main>
             <template v-if=!menu>
+                <presaleLikeTop
+                    :data="{mobile:1}"
+                ></presaleLikeTop>
                 <presaleIdLikeTop
                     :data=presaleIdLikeTop
                 ></presaleIdLikeTop>

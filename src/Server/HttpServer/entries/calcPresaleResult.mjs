@@ -4,7 +4,10 @@ async function main(rq,rs,lang,patch){
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
         title:              '新成屋',
-        css:                '_presale/main.css',
+        css:                [
+                                '_presaleLike/main.css',
+                                '_presale/main.css',
+                            ],
         clientScript:       '_presale/main.mjs',
         vue,
         vueData:{

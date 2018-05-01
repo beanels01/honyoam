@@ -2,24 +2,30 @@
     --headerHeight:59px;
 }
 #main>.presaleIdLikeHeader{
-    position:fixed;
-    top:90px;
-    text-align:center;
-    background-color:#cfcfcf;
-    font-size:16px;
-    width:100%;
-    line-height:1em;
-    border-top:3px solid #1d98df;
+    display:none;
 }
-#main>.presaleIdLikeHeader>*{
-    display:inline-block;
-    padding:20px 18px;
-    color:#444444;
-    text-decoration:unset;
-}
-#main>.presaleIdLikeHeader>.active{
-    color:white;
-    background-color:#1d98df;
+@media(min-width:1280px){
+    #main>.presaleIdLikeHeader{
+        display:unset;
+        position:fixed;
+        top:90px;
+        text-align:center;
+        background-color:#cfcfcf;
+        font-size:16px;
+        width:100%;
+        line-height:1em;
+        border-top:3px solid #1d98df;
+    }
+    #main>.presaleIdLikeHeader>*{
+        display:inline-block;
+        padding:20px 18px;
+        color:#444444;
+        text-decoration:unset;
+    }
+    #main>.presaleIdLikeHeader>.active{
+        color:white;
+        background-color:#1d98df;
+    }
 }
 #main>.presaleIdLikeTop{
     height:633px;
