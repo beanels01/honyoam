@@ -42,6 +42,12 @@
     #main>.a>.n>.a{
         font-size:18px;
     }
+    #main>.a>.o{
+        margin:15px 10px 0;
+        width:calc(100% - 20px);
+        overflow-y:scroll;
+        white-space:nowrap;
+    }
     #main>.a>.o>*>.o>.a{
         font-size:18px;
     }
