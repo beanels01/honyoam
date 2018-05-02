@@ -35,7 +35,7 @@ let apply={
                     0,this.basicData.numberOfPeople
                 ),
                 interested:     this.interested.map((a,i)=>a&&this.topics[i]).filter(a=>a).join('\n'),
-                title:          this.content.title,
+                title:          this.content.seminarName,
                 currentLanguage:this.currentLanguage,
             })
             this.success=1

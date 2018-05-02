@@ -46,22 +46,24 @@ let contactApply={
                 <tr v-for="a in array">
                     <td>
                         <p>
-                            報名時間：{{
+                            時間：{{
                                 (new Date(a.datetime)).toLocaleString()
                             }}
                         </p>
                         <p>
-                            報名時語言：{{a.currentLanguage}}
+                            場次：{{a.title}}
                         </p>
                         <p>
-                            報名時標題：{{a.title}}
+                            人數：{{a.people.length}}
                         </p>
                         <ul>
                             <li
                                 v-for="b in a.people"
                             >
                                 姓名：{{b.name}}<br>
-                                性別：{{b.gender}}<br>
+                                稱謂：{{
+                                    b.gender=='female'?'小姐':'先生'
+                                }}<br>
                                 Email：{{b.email}}<br>
                                 電話：{{b.phone}}
                             </li>
