@@ -48,6 +48,20 @@ ${
 <link rel=icon href=_favicon.png>
 <body>
 ${await render(Object.setPrototypeOf({data:vueData},doc.vue))}
+<script>
+if(!(
+    61<=        getVersion('chrome')    ||
+    60<=        getVersion('firefox')   ||
+    48<=        getVersion('opr')
+))
+    alert('您正在使用的瀏覽器可能過於老舊，無法正常瀏覽本網站。如果您要解決這個問題，可以使用 Google Chrome 或 Mozilla Firefox。')
+function getVersion(s){
+    var m=navigator.userAgent.toLowerCase().match(
+        new RegExp(s+'/([0-9]*)')
+    )
+    return m&&+m[1]
+}
+</script>
 <script id=arg type=a>${encodeURIComponent(JSON.stringify({
     dev:this.config.dev,
     vueData,
