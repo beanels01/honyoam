@@ -51,7 +51,7 @@ ${await render(Object.setPrototypeOf({data:vueData},doc.vue))}
 <script>
 if(!(
     61<=        getVersion('chrome')    ||
-    60<=        getVersion('firefox')   ||
+    55<=        getVersion('firefox')   ||
     48<=        getVersion('opr')
 ))
     alert('您正在使用的瀏覽器可能過於老舊，無法正常瀏覽本網站。如果您要解決這個問題，可以使用 Google Chrome 或 Mozilla Firefox。')
