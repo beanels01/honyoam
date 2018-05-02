@@ -54,7 +54,7 @@ if(!(
     55<=        getVersion('firefox')   ||
     48<=        getVersion('opr')
 ))
-    alert('您正在使用的瀏覽器可能過於老舊，無法正常瀏覽本網站。如果您要解決這個問題，可以使用 Google Chrome 或 Mozilla Firefox。')
+    alert('您正在使用的瀏覽器可能因為版本因素，無法正常瀏覽本網站內容；建議可使用新版之 Google Chrome 或 Mozilla Firefox 開啟。')
 function getVersion(s){
     var m=navigator.userAgent.toLowerCase().match(
         new RegExp(s+'/([0-9]*)')
