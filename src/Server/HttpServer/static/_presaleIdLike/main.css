@@ -36,6 +36,7 @@
     background-image:url('/_presaleId/pre_top_banner.jpg');
 }
 #main>.presaleIdLikeTop>.b>*>*{
+    border: 1px solid white;
     display:inline-block;
     color:white;
     background-color:#1d98df;
