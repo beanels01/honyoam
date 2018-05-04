@@ -23,31 +23,23 @@ let aMain={
         menu:0,
         presaleIdLikeTop:{
             focus:'concept',
-            title:'ウエリス新宿早稲田の森',
+            title:'ザ・パークハウス 恵比寿南',
             part:'建築概念',
         },
         presaleIdLikeMain:{
             part:['建案介紹','INFORMATION'],
-            title:'副都心線&大江戶線組合成的都心便利交通',
-            content:'徒步3分鐘可抵達東京METRO副都心線「西早稻田」站\n徒步6分鐘可抵達都營大江戶線「東新宿」站\n快速抵達池袋、心宿、澀谷、橫濱等大型轉運、商業街\n以及原宿、代官山、中目黑、自由之丘等時尚、先端街區\n無需換成抵達海邊港町，無論工作或是出遊都能自在享受',
+            title:'摩登與沉穩的美麗結合',
+            content:'由JR山手線「惠比壽」站徒步7分鐘的台地恵比寿南アドレス，以此地為舞台\n由56戶私人住宅共同演出獨出心裁的建築美學，所誕生的「ザ・パークハウス 恵比寿南」\n享受台地獨有的開闊空間與視野，不斷追求更加上質、高貴的生活\n優雅生活的每一天由此地開始',
         },
         presaleIdLikeHypertext:`
+            住宅美與摩登的完美結合<br>
+            由經手許多都市住宅的アーキサイトメビウス設計監修<br>
+            「ザ・パークハウス 恵比寿南」的外觀設計、共用空間、專有空間的設計，皆由アーキサイトメビウス嚴厲把關<br>
+            建築家受別出心裁的每一棟都市住宅所散發的摩登魅力所吸引<br>
+            透過在居住空間中的嶄新設計<br>
+            賦予「ザ・パークハウス 恵比寿南」惠比壽新的住宅理想<br>
             <img src=/_presaleIdConcept/test-hypertext-0>
-            新宿2KM商業圈內，位於山手線內側的都心<br>
-            這個物件的特點在，位於「JR山手線」內側的位置<br>
-            伊勢丹與高島屋的左近，感受最佳的生活便利性<br>
-            受鄰近文教地區的薰陶，周圍也是綠地滿溢<br>
-            感受都市躍動的同時，也有住宅區安穩的氛圍
             <img src=/_presaleIdConcept/test-hypertext-1>
-            運動、文化設施健全，充實每一天的生活<br>
-            徒步1分鐘「新宿區立新宿交流活動中心」<br>
-            設有標準制/兒童用泳池、籃球場、桌球桌等運動場地<br>
-            天花板上的天象儀更是一大特色，且距離圖書館只要徒步3分鐘<br>
-            無論大人小孩都能在這裡享受自己的假日<br>
-            (愛子公主上的學校就在對面
-            <img src=/_presaleIdConcept/test-hypertext-2>
-            <img src=/_presaleIdConcept/test-hypertext-3>
-            <img src=/_presaleIdConcept/test-hypertext-4>
         `,
     }),
     props:['language','currentLanguage'],

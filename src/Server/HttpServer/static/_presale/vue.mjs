@@ -64,10 +64,10 @@ let aMain={
         data:{
             array:[
                 {
-                    title:'ウエリス新宿早稲田の森',
-                    subtitle:'副都心線&大江戶線組合成的都心便利交通',
-                    pattern:'1LDK - 3LDK',
-                    area:'44.77m² - 81.20m²',
+                    title:'ザ・パークハウス 恵比寿南',
+                    subtitle:'摩登與沉穩的美麗結合',
+                    pattern:'2LDK - 3LDK',
+                    area:'76.38m² - 108.83m²',
                     price:'4,998万円 - 9,238万円',
                     soldout:false,
                 },

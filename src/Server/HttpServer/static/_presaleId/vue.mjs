@@ -47,12 +47,12 @@ let aMain={
         menu:0,
         presaleIdLikeTop:{
             focus:'top',
-            title:'ウエリス新宿早稲田の森',
+            title:'ザ・パークハウス 恵比寿南',
         },
         presaleIdLikeMain:{
             part:['建案介紹','INFORMATION'],
-            title:'副都心線&大江戶線組合成的都心便利交通',
-            content:'徒步3分鐘可抵達東京METRO副都心線「西早稻田」站\n徒步6分鐘可抵達都營大江戶線「東新宿」站\n快速抵達池袋、心宿、澀谷、橫濱等大型轉運、商業街\n以及原宿、代官山、中目黑、自由之丘等時尚、先端街區\n無需換成抵達海邊港町，無論工作或是出遊都能自在享受',
+            title:'摩登與沉穩的美麗結合',
+            content:'由JR山手線「惠比壽」站徒步7分鐘的台地恵比寿南アドレス，以此地為舞台\n由56戶私人住宅共同演出獨出心裁的建築美學，所誕生的「ザ・パークハウス 恵比寿南」\n享受台地獨有的開闊空間與視野，不斷追求更加上質、高貴的生活\n優雅生活的每一天由此地開始',
         },
     }),
     props:['language','currentLanguage'],
@@ -71,13 +71,13 @@ let aMain={
                 <block
                     background='/_presaleId/pre01.jpg'
                     title='建築概念'
-                    content='新宿2KM商業圈內，位於山手線內側的都心'
+                    content='由經手許多都市住宅的アーキサイトメビウス設計監修'
                     more='/zh-Hant/presaleIdConcept'
                 ></block>
                 <block
                     background='/_presaleId/pre02.jpg'
                     title='周邊環境'
-                    content='「Wellith新宿早稻田之森」就建在文教地區的旁邊'
+                    content='生活於恵比寿ガーデンプレイス旁'
                     more='/zh-Hant/presaleIdEnvironment'
                 ></block>
                 <block

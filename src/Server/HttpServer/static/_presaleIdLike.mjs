@@ -154,7 +154,7 @@ let hypertextPhotoSwiper={
 let hypertext={
     components:{hypertextPhoto,hypertextPhotoSwiper},
     data:(()=>({
-        photos:[...Array(5)].map((e,i)=>({
+        photos:[...Array(2)].map((e,i)=>({
             src:'/_presaleIdConcept/test-hypertext-'+i
         }))
     })),

@@ -6,6 +6,7 @@
 }
 #main>.a>.o>*>*>.a{
     font-weight:bold;
+    width:20%;
 }
 #main>.a>.o>*>*>.b{
     white-space:pre-line;
