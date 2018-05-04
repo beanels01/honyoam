@@ -21,7 +21,7 @@ let aMain={
         menu:0,
         presaleIdLikeTop:{
             focus:'summary',
-            title:'ウエリス新宿早稲田の森',
+            title:'ザ・パークハウス 恵比寿南',
             part:'物件概要',
         },
         data:[
