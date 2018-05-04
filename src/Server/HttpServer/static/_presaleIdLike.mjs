@@ -173,7 +173,7 @@ let hypertext={
                 </div>
                 <hypertextPhotoSwiper
                     :data=photos
-                ><hypertextPhotoSwiper>
+                ></hypertextPhotoSwiper>
             </div>
             <div class=b>
                 <div v-html=data></div>
