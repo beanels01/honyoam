@@ -83,7 +83,7 @@ let aMain={
                 <block
                     background='/_presaleId/pre03.jpg'
                     title='交通方式'
-                    content='有些人把希望寄託在人類的智慧上——那是一種悲慘的智慧——但是發現我們的智慧更加悲慘。'
+                    content=''
                     more='/zh-Hant/presaleIdTraffic'
                 ></block>
                 <presaleIdLikeFooter></presaleIdLikeFooter>
