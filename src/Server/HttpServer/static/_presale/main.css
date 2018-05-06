@@ -64,7 +64,10 @@
     width:140px;
     padding:8px;
 }
-#main>.c>*>.c>*{
+#main>.c>*>.c>*>.n{
+    color:red;
+}
+#main>.c>*>.c>*>.o{
     width:145px;
     height:45px;
     color:white;
@@ -73,10 +76,10 @@
     border:unset;
     border-radius:2px;
 }
-#main>.c>*>.c>:active{
+#main>.c>*>.c>*>.o:active{
     background-color:#1d98df;
 }
-#main>.c>*>.c>*+*{
+#main>.c>*>.c>*>.o+.o{
     margin-left:10px;
 }
 @media(max-width:1279px){

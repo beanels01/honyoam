@@ -67,56 +67,56 @@ let aMain={
                     title:'ザ・パークハウス 恵比寿南',
                     subtitle:'摩登與沉穩的美麗結合',
                     pattern:'2LDK - 3LDK',
-                    area:'76.38m² - 108.83m²',
-                    price:'4,998万円 - 9,238万円',
+                    area:'76.38坪 - 108.83坪²',
+                    price:'4,998萬新臺幣 - 9,238萬新臺幣',
                     soldout:false,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK~4LDK',
-                    area:'64.69M2~87.58M2',
-                    price:'3758萬円~5408萬円',
+                    area:'64.69坪~87.58坪',
+                    price:'3758萬新臺幣~5408萬新臺幣',
                     soldout:false,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK~4LDK',
-                    area:'64.69M2~87.58M2',
-                    price:'3758萬円~5408萬円',
+                    area:'64.69坪~87.58坪',
+                    price:'3758萬新臺幣~5408萬新臺幣',
                     soldout:false,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK~4LDK',
-                    area:'64.69M2~87.58M2',
-                    price:'3758萬円~5408萬円',
+                    area:'64.69坪~87.58坪',
+                    price:'3758萬新臺幣~5408萬新臺幣',
                     soldout:true,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK~4LDK',
-                    area:'64.69M2~87.58M2',
-                    price:'3758萬円~5408萬円',
+                    area:'64.69坪~87.58坪',
+                    price:'3758萬新臺幣~5408萬新臺幣',
                     soldout:true,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK~4LDK',
-                    area:'64.69M2~87.58M2',
-                    price:'3758萬円~5408萬円',
+                    area:'64.69坪~87.58坪',
+                    price:'3758萬新臺幣~5408萬新臺幣',
                     soldout:false,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK~4LDK',
-                    area:'64.69M2~87.58M2',
-                    price:'3758萬円~5408萬円',
+                    area:'64.69坪~87.58坪',
+                    price:'3758萬新臺幣~5408萬新臺幣',
                     soldout:false,
                 },
             ]
@@ -164,7 +164,7 @@ let aMain={
                             ~
                             <input placeholder=最高>
                             <select>
-                                <option>平方公尺</option>
+                                <option>坪</option>
                             </select>
                         </div>
                         <div class=margin></div>
@@ -173,20 +173,7 @@ let aMain={
                             <input placeholder=最低>
                             ~
                             <input placeholder=最高>
-                            萬日幣
-                        </div>
-                    </div>
-                    <div class=b>
-                        <div class=block>
-                            <div class=a>房屋年齡</div>
-                            <input placeholder=自由輸入值>
-                            年以內
-                        </div>
-                        <div class=margin></div>
-                        <div class=block>
-                            <div class=a>距離車站</div>
-                            <input placeholder=自由輸入值>
-                            分鐘以內
+                            萬台幣
                         </div>
                     </div>
                     <div class=a>
@@ -198,10 +185,6 @@ let aMain={
                             <label>
                                 <input type=checkbox>
                                 1K
-                            </label>
-                            <label>
-                                <input type=checkbox>
-                                1R
                             </label>
                             <label>
                                 <input type=checkbox>
@@ -226,7 +209,14 @@ let aMain={
                         </div>
                     </div>
                     <div class=c>
-                        <button>清除</button><button>搜尋</button>
+                        <div>
+                            <span class=n>（在此註明匯率）</span>
+                            <button class=o>
+                                清除
+                            </button><button class=o>
+                                搜尋
+                            </button>
+                        </div>
                     </div>
                 </div></div>
                 <div class=d>
