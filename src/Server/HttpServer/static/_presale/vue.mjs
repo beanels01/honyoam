@@ -196,15 +196,15 @@ let aMain={
                             </label>
                             <label>
                                 <input type=checkbox>
-                                2DK
-                            </label>
-                            <label>
-                                <input type=checkbox>
                                 2LDK
                             </label>
                             <label>
                                 <input type=checkbox>
                                 3LDK
+                            </label>
+                            <label>
+                                <input type=checkbox>
+                                3LDK 以上
                             </label>
                         </div>
                     </div>
