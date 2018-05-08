@@ -208,7 +208,6 @@ let aMain={
                     </div>
                     <div class=c>
                         <div>
-                            <span class=n>（在此註明匯率）</span>
                             <button class=o>
                                 清除
                             </button><button class=o>
