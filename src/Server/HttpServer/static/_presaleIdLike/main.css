@@ -33,7 +33,7 @@
 #main>.presaleIdLikeTop>.b{
     background-size:cover;
     background-position:center;
-    background-image:url('/_presaleId/pre_top_banner.jpg');
+    background-image:url('/_presaleIdLike/banner');
 }
 #main>.presaleIdLikeTop>.b>*>*{
     border: 1px solid white;
