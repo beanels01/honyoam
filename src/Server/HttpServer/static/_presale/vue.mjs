@@ -67,56 +67,56 @@ let aMain={
                     title:'ザ・パークハウス 恵比寿南',
                     subtitle:'摩登與沉穩的美麗結合',
                     pattern:'2LDK - 3LDK',
-                    area:'76.38 - 108.83 坪',
-                    price:'4,998 - 9,238 萬新臺幣',
+                    area:'76.38 - 108.83 平方公尺',
+                    price:'4,998 - 9,238 萬日幣',
                     soldout:false,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 坪',
-                    price:'4,998 - 9,238 萬新臺幣',
+                    area:'76.38 - 108.83 平方公尺',
+                    price:'4,998 - 9,238 萬日幣',
                     soldout:false,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 坪',
-                    price:'4,998 - 9,238 萬新臺幣',
+                    area:'76.38 - 108.83 平方公尺',
+                    price:'4,998 - 9,238 萬日幣',
                     soldout:false,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 坪',
-                    price:'4,998 - 9,238 萬新臺幣',
+                    area:'76.38 - 108.83 平方公尺',
+                    price:'4,998 - 9,238 萬日幣',
                     soldout:true,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 坪',
-                    price:'4,998 - 9,238 萬新臺幣',
+                    area:'76.38 - 108.83 平方公尺',
+                    price:'4,998 - 9,238 萬日幣',
                     soldout:true,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 坪',
-                    price:'4,998 - 9,238 萬新臺幣',
+                    area:'76.38 - 108.83 平方公尺',
+                    price:'4,998 - 9,238 萬日幣',
                     soldout:false,
                 },
                 {
                     title:'ザ・パークワンズ 渋谷本町',
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 坪',
-                    price:'4,998 - 9,238 萬新臺幣',
+                    area:'76.38 - 108.83 平方公尺',
+                    price:'4,998 - 9,238 萬日幣',
                     soldout:false,
                 },
             ]
@@ -163,9 +163,7 @@ let aMain={
                             <input placeholder=最低>
                             ~
                             <input placeholder=最高>
-                            <select>
-                                <option>坪</option>
-                            </select>
+                            平方公尺
                         </div>
                         <div class=margin></div>
                         <div class=block>
@@ -173,7 +171,7 @@ let aMain={
                             <input placeholder=最低>
                             ~
                             <input placeholder=最高>
-                            萬新臺幣
+                            萬日幣
                         </div>
                     </div>
                     <div class=a>
