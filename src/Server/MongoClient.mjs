@@ -43,6 +43,10 @@ function MongoClient(config){
                     })
             })(),
             (async()=>{
+                if(!await this._siteCol.findOne({key:'presale'}))
+                    await this.updateSite('presale',{})
+            })(),
+            (async()=>{
                 if(!await this._siteCol.findOne({key:'faq'}))
                     await this.updateSite('faq',{})
             })(),

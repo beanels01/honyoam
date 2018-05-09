@@ -6,6 +6,17 @@ let
         Binary,
     }=mongodb,
     o={}
+o.updateSite=async function(key,value){
+    await this._siteCol.updateOne({
+        key,
+    },{
+        $set:{
+            value,
+        },
+    },{
+        upsert:true,
+    })
+}
 o.updateApplyStatus=async function(id,status){
     await this._applyCol.updateOne({
         _id:new ObjectID(id),

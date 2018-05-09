@@ -1,4 +1,11 @@
 let update={
+    async inPresale(doc,cu){
+        if(!(
+            typeof doc.value=='object'
+        ))
+            return['status',400]
+        return['responseJson',await this._inPresale(cu,doc.value)]
+    },
     async updateContact(doc,cu){
         if(!(
             typeof doc.doc=='object'

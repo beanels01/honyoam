@@ -63,6 +63,19 @@ export default o=>{
             targetUser:tu,
         })
     }
+    o._inPresale=function(cu,value){
+        return this._request({
+            method:'inPresale',
+            currentUser:cu,
+            value,
+        })
+    }
+    o._outPresale=function(cu){
+        return this._request({
+            method:'outPresale',
+            currentUser:cu,
+        })
+    }
     o._refreshInvitationCode=function(currentUser){
         return this._request({
             method:'refreshInvitationCode',

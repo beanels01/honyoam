@@ -1,5 +1,15 @@
 import user from './user'
 export default{
+    async inPresale(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.updateSite(
+            'presale',doc.value
+        )}
+    },
     async updateApplyStatus(doc){
         if(!(
             doc.currentUser&&

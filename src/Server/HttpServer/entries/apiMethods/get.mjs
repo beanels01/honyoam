@@ -57,5 +57,8 @@ let get={
     async getUserlist(doc,cu){
         return['responseJson',await this._getUserlist(cu)]
     },
+    async outPresale(doc,cu){
+        return['responseJson',await this._outPresale(cu)]
+    },
 }
 export default get
