@@ -70,10 +70,9 @@ export default o=>{
             value,
         })
     }
-    o._outPresale=function(cu){
+    o._outPresale=function(){
         return this._request({
             method:'outPresale',
-            currentUser:cu,
         })
     }
     o._refreshInvitationCode=function(currentUser){

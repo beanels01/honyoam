@@ -41,18 +41,24 @@ export default{
         this.in()
     },
     data:()=>({
+        version:0,
         selectedLanguage:0,
         value:0,
     }),
     props:['language'],
     methods:{
         async in(){
-            this.value=(await api.post({
+            let value=(await api.post({
                 method:'outPresale',
             })).res
+            if(value.version!=this.version)
+                value={
+                    version:this.version,
+                    language:{},
+                }
+            this.value=value
         },
         async out(){
-            console.log(this.value)
             await api.post({
                 method:'inPresale',
                 value:this.value,
@@ -69,7 +75,7 @@ export default{
             <inputForSpecificLanguage
                 v-if=selectedLanguage
                 class=indent
-                v-model=value[selectedLanguage]
+                v-model=value.language[selectedLanguage]
             ></inputForSpecificLanguage>
             <div>
                 <button @click=out>儲存變更</button>

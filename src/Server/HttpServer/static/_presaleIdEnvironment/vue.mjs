@@ -41,7 +41,10 @@ let aMain={
             <img src=/_presaleIdEnvironment/test-hypertext-1>
         `,
     }),
-    props:['language','currentLanguage'],
+    props:[
+        'language','currentLanguage',
+        'presale',
+    ],
     template:`
         <div id=main>
             <template v-if=!menu>
@@ -57,7 +60,9 @@ let aMain={
                 <presaleIdLikeHypertext
                     :data=presaleIdLikeHypertext
                 ></presaleIdLikeHypertext>
-                <presaleIdLikeFooter></presaleIdLikeFooter>
+                <presaleIdLikeFooter
+                    :data=presale.language[currentLanguage].precautions
+                ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>
@@ -88,6 +93,7 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
+            :presale=presale
         ></aMain>
     `,
 }

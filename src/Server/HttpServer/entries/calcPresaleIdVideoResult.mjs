@@ -12,6 +12,7 @@ async function main(rq,rs,lang,patch){
         clientScript:       '_presaleIdVideo/main.mjs',
         vue,
         vueData:{
+            presale:(await this._outPresale()).res,
         },
     })
 }

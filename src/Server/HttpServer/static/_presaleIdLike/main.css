@@ -261,6 +261,7 @@
 }
 #main>.presaleIdLikeFooter>*{
     color:#797979;
+    white-space:pre-line;
 }
 @media(max-width:1279px){
     #main>.presaleIdLikeFooter>*{

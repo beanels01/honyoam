@@ -55,7 +55,7 @@ let aMain={
             content:'由JR山手線「惠比壽」站徒步7分鐘的台地恵比寿南アドレス，以此地為舞台\n由56戶私人住宅共同演出獨出心裁的建築美學，所誕生的「ザ・パークハウス 恵比寿南」\n享受台地獨有的開闊空間與視野，不斷追求更加上質、高貴的生活\n優雅生活的每一天由此地開始',
         },
     }),
-    props:['language','currentLanguage'],
+    props:['language','currentLanguage','presale',],
     template:`
         <div id=main>
             <template v-if=!menu>
@@ -86,7 +86,9 @@ let aMain={
                     content=''
                     more='/zh-Hant/presaleIdTraffic'
                 ></block>
-                <presaleIdLikeFooter></presaleIdLikeFooter>
+                <presaleIdLikeFooter
+                    :data=presale.language[currentLanguage].precautions
+                ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>
@@ -117,6 +119,7 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
+            :presale=presale
         ></aMain>
     `,
 }

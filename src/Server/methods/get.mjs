@@ -83,11 +83,6 @@ export default{
         }))}
     },
     async outPresale(doc){
-        if(!(
-            doc.currentUser&&
-            ['root'].includes(doc.currentUser.type)
-        ))
-            return{err:'permission denied'}
         return{res:await this.honyoamMongoClient.getSite('presale')}
     },
 }

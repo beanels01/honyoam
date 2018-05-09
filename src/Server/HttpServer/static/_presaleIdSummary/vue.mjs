@@ -53,7 +53,11 @@ let aMain={
 ['建築確認番号','開発許可番号／第Ｄ-82-01号（平成29年2月22日）開発面積1,835.74m2　　建築確認済証番号／第UHEC建確28737変1号（平成29年9月6日）'],
         ],
     }),
-    props:['language','currentLanguage'],
+    props:[
+        'language',
+        'currentLanguage',
+        'presale',
+    ],
     template:`
         <div id=main>
             <template v-if=!menu>
@@ -76,7 +80,9 @@ let aMain={
                         </div>
                     </div>
                 </div>
-                <presaleIdLikeFooter></presaleIdLikeFooter>
+                <presaleIdLikeFooter
+                    :data=presale.language[currentLanguage].precautions
+                ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>
@@ -107,6 +113,7 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
+            :presale=presale
         ></aMain>
     `,
 }
