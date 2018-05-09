@@ -233,12 +233,6 @@
 #main>.e>*>*>*>.presale>.b>*>.b>*>.a+.a{
     border-top:1px dotted #cfcfcf;
 }
-#main>.e>*>*>*>.presale>.b>*>.b>*>.a>*{
-    vertical-align:top;
-}
-#main>.e>*>*>*>.presale>.b>*>.b>*>.a>.n{
-    display:inline-block;
-}
 #main>.e>*>*>*>.presale>.c{
     display:table;
     position:absolute;

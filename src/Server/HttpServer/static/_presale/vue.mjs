@@ -6,6 +6,9 @@ let presale={
         click(){
             location='/zh-Hant/presaleId'
         },
+        selectClick(e){
+            e.stopPropagation()
+        },
     },
     props:['data'],
     template:`
@@ -31,10 +34,12 @@ let presale={
                     <div>
                         <div class=a>格局：{{data.pattern}}</div>
                         <div class=a>面積：{{data.area}}</div>
-                        <div class=a>價格：<div class=n>
-                            　 {{data.price}}<br>
-                            約 {{data.priceNtd}}
-                        </div></div>
+                        <div class=a>價格：{{data.price}} 萬
+                            <select @click=selectClick>
+                                <option>日幣</option>
+                                <option>臺幣</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div></div>
@@ -71,8 +76,8 @@ let aMain={
                     subtitle:'摩登與沉穩的美麗結合',
                     pattern:'2LDK - 3LDK',
                     area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238 萬日幣',
-                    priceNtd:'1,370 - 2,531 萬新臺幣',
+                    price:'4,998 - 9,238',
+                    priceNtd:'1,370 - 2,531',
                     soldout:false,
                 },
                 {
@@ -80,8 +85,8 @@ let aMain={
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238 萬日幣',
-                    priceNtd:'1,370 - 2,531 萬新臺幣',
+                    price:'4,998 - 9,238',
+                    priceNtd:'1,370 - 2,531',
                     soldout:false,
                 },
                 {
@@ -89,8 +94,8 @@ let aMain={
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238 萬日幣',
-                    priceNtd:'1,370 - 2,531 萬新臺幣',
+                    price:'4,998 - 9,238',
+                    priceNtd:'1,370 - 2,531',
                     soldout:false,
                 },
                 {
@@ -98,8 +103,8 @@ let aMain={
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238 萬日幣',
-                    priceNtd:'1,370 - 2,531 萬新臺幣',
+                    price:'4,998 - 9,238',
+                    priceNtd:'1,370 - 2,531',
                     soldout:true,
                 },
                 {
@@ -107,8 +112,8 @@ let aMain={
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238 萬日幣',
-                    priceNtd:'1,370 - 2,531 萬新臺幣',
+                    price:'4,998 - 9,238',
+                    priceNtd:'1,370 - 2,531',
                     soldout:true,
                 },
                 {
@@ -116,8 +121,8 @@ let aMain={
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238 萬日幣',
-                    priceNtd:'1,370 - 2,531 萬新臺幣',
+                    price:'4,998 - 9,238',
+                    priceNtd:'1,370 - 2,531',
                     soldout:false,
                 },
                 {
@@ -125,8 +130,8 @@ let aMain={
                     subtitle:'構成東京中核之一的副都心「新宿」',
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238 萬日幣',
-                    priceNtd:'1,370 - 2,531 萬新臺幣',
+                    price:'4,998 - 9,238',
+                    priceNtd:'1,370 - 2,531',
                     soldout:false,
                 },
             ]
@@ -173,7 +178,10 @@ let aMain={
                             <input placeholder=最低>
                             ~
                             <input placeholder=最高>
-                            平方公尺
+                            <select>
+                                <option>平方公尺</option>
+                                <option>坪</option>
+                            </select>
                         </div>
                         <div class=margin></div>
                         <div class=block>
@@ -181,7 +189,11 @@ let aMain={
                             <input placeholder=最低>
                             ~
                             <input placeholder=最高>
-                            萬日幣
+                            萬
+                            <select>
+                                <option>日幣</option>
+                                <option>臺幣</option>
+                            </select>
                             <div class=hint><div>
                                 在此標註匯率與相關換算
                             </div></div>

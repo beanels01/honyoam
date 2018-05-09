@@ -1,4 +1,4 @@
-import fsPromises from      'fs/promises'
+import fs from              'fs'
 import MongoClient from     './Server/MongoClient'
 import HttpServer from      './Server/HttpServer'
 import methods from         './Server/methods'
@@ -36,7 +36,7 @@ Server.prototype.handleRequest=async function(doc){
 }
 async function ensureDirectory(path){
     try{
-        await fsPromises.mkdir(path)
+        await fs.promises.mkdir(path)
     }catch(e){
         if(!(e.code=='EEXIST'))
             throw e

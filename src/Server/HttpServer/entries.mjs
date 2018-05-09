@@ -1,6 +1,6 @@
 import Vue from                 'vue'
 import formidable from          'formidable'
-import fsPromises from          'fs/promises'
+import fs from                  'fs'
 import rfc6265 from             'rfc6265'
 import json from                './entries/json'
 import calcFaqResult from       './entries/calcFaqResult'
@@ -86,7 +86,7 @@ async function formData(rq,rs,currentUser){
     if(formData.fields.method=='addImage'){
         res=await this._addImage(currentUser)
         let f=formData.files.file
-        await fsPromises.rename(f.path,`static/image/${res.res}`)
+        await fs.promises.rename(f.path,`static/image/${res.res}`)
     }
     rs.writeHead(200,{
         'content-type':'text/plain;charset=utf-8'
