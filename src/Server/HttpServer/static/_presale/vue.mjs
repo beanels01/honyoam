@@ -31,7 +31,10 @@ let presale={
                     <div>
                         <div class=a>格局：{{data.pattern}}</div>
                         <div class=a>面積：{{data.area}}</div>
-                        <div class=a>價格：{{data.price}}</div>
+                        <div class=a>價格：<div class=n>
+                            　 {{data.price}}<br>
+                            約 {{data.priceNtd}}
+                        </div></div>
                     </div>
                 </div>
             </div></div>
@@ -69,6 +72,7 @@ let aMain={
                     pattern:'2LDK - 3LDK',
                     area:'76.38 - 108.83 平方公尺',
                     price:'4,998 - 9,238 萬日幣',
+                    priceNtd:'1,370 - 2,531 萬新臺幣',
                     soldout:false,
                 },
                 {
@@ -77,6 +81,7 @@ let aMain={
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
                     price:'4,998 - 9,238 萬日幣',
+                    priceNtd:'1,370 - 2,531 萬新臺幣',
                     soldout:false,
                 },
                 {
@@ -85,6 +90,7 @@ let aMain={
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
                     price:'4,998 - 9,238 萬日幣',
+                    priceNtd:'1,370 - 2,531 萬新臺幣',
                     soldout:false,
                 },
                 {
@@ -93,6 +99,7 @@ let aMain={
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
                     price:'4,998 - 9,238 萬日幣',
+                    priceNtd:'1,370 - 2,531 萬新臺幣',
                     soldout:true,
                 },
                 {
@@ -101,6 +108,7 @@ let aMain={
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
                     price:'4,998 - 9,238 萬日幣',
+                    priceNtd:'1,370 - 2,531 萬新臺幣',
                     soldout:true,
                 },
                 {
@@ -109,6 +117,7 @@ let aMain={
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
                     price:'4,998 - 9,238 萬日幣',
+                    priceNtd:'1,370 - 2,531 萬新臺幣',
                     soldout:false,
                 },
                 {
@@ -117,6 +126,7 @@ let aMain={
                     pattern:'2LDK - 4LDK',
                     area:'76.38 - 108.83 平方公尺',
                     price:'4,998 - 9,238 萬日幣',
+                    priceNtd:'1,370 - 2,531 萬新臺幣',
                     soldout:false,
                 },
             ]
@@ -172,6 +182,9 @@ let aMain={
                             ~
                             <input placeholder=最高>
                             萬日幣
+                            <div class=hint><div>
+                                在此標註匯率與相關換算
+                            </div></div>
                         </div>
                     </div>
                     <div class=a>
