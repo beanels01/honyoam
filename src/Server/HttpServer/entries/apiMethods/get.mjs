@@ -26,6 +26,13 @@ let get={
     async getLanguage(doc,cu){
         return['responseJson',await this._getLanguage(cu)]
     },
+    async getPresaleObject(doc,cu){
+        if(!(
+            typeof doc.id=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._getPresaleObject(cu,doc.id)]
+    },
     async getSeminar(doc){
         if(!(
             typeof doc.id=='string'

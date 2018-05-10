@@ -2,7 +2,11 @@ let optionList={
     created(){
         this.checkValue()
     },
-    props:['value','editOption'],
+    props:[
+        'value',
+        'editOption',
+        'editOptionData',
+    ],
     methods:{
         add(){
             this.value.push(null)
@@ -31,6 +35,7 @@ let optionList={
                     <td>
                         <component
                             :is=editOption
+                            :data=editOptionData
                             v-model=value[i]
                         ></component>
                     </td>

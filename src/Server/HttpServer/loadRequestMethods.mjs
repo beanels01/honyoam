@@ -103,6 +103,14 @@ export default o=>{
             invitationCode: doc.invitationCode,
         })
     }
+    o._setPresaleObject=function(currentUser,doc){
+        return this._request({
+            method:'setPresaleObject',
+            currentUser,
+            id:doc.id,
+            value:doc.value,
+        })
+    }
     o._updateContact=function(currentUser,value){
         return this._request({
             method:         'updateContact',

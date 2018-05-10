@@ -1,43 +1,61 @@
-import api from             '../../_api.mjs'
-//import languageSelect from  './languageSelect.mjs'
-/*let inputForSpecificObject={
+import api from                 '../../_api.mjs'
+import optionList from          './optionList.mjs'
+import patternEditOption from   './presaleObjects/patternEditOption.mjs'
+let inputForSpecificObject={
+    components:{optionList},
     created(){
-        this.checkValue()
+        this.in()
     },
+    data:()=>({
+        value:0,
+        patternEditOption,
+    }),
     methods:{
-        checkValue(){
-            if(this.value)
-                return
-            this.$emit('input',{})
+        async in(){
+            this.value=(await api.post({
+                method:'getPresaleObject',
+                id:this.id,
+            })).res
         },
+        async out(){
+            return console.log(this.value)
+            await api.post({
+                method:'setPresaleObject',
+                id:this.id,
+                value:this.value,
+            })
+            alert('儲存完成。')
+        }
     },
-    props:['value'],
+    props:['id','language',],
     template:`
-        <div>
-            <h3>注意事項</h3>
-            <template v-if=value>
-                <textarea
-                    v-model=value.precautions
-                ></textarea>
-            </template>
+        <div v-if=value>
+            <h3>格局</h3>
+            <optionList
+                class=indent
+                :editOption=patternEditOption
+                :editOptionData=language
+                v-model=value.pattern
+            ></optionList>
+            <button @click=out>儲存變更</button>
         </div>
     `,
     watch:{
-        value(){
-            this.checkValue()
+        id(){
+            this.in()
         },
     },
-}*/
+}
 export default{
     components:{
-        /*languageSelect,
-        inputForSpecificObject,*/
+        inputForSpecificObject,
     },
     created(){
         this.in()
     },
     data:()=>({
         value:0,
+        selectedObject:0,
     }),
     props:['language'],
     methods:{
@@ -59,16 +77,19 @@ export default{
             <button
                 @click=out
             >新增</button>
-            <select>
+            <select
+                v-model=selectedObject
+            >
                 <option
                     v-for="a in value"
                     :value=a.id
                 >{{a.name}}</option>
             </select>
-            <!--
-                <inputForSpecificObject
-                ></inputForSpecificObject>
-            -->
+            <inputForSpecificObject
+                v-if=selectedObject
+                :id=selectedObject
+                :language=language
+            ></inputForSpecificObject>
         </div>
     `,
 }

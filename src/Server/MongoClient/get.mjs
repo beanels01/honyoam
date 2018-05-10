@@ -16,6 +16,13 @@ o.getApplies=async function(){
 o.getFeedbacks=async function(){
     return this._feedbackCol.find({}).toArray()
 }
+o.getPresaleObject=async function(id){
+    let res=await this._presaleCol.findOne({
+        _id:        new ObjectID(id),
+    })
+    delete res._id
+    return res
+}
 o.getSeminar=async function(id){
     let res=await this._seminarCol.findOne({
         _id:        new ObjectID(id),

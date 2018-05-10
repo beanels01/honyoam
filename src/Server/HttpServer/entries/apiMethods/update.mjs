@@ -6,6 +6,14 @@ let update={
             return['status',400]
         return['responseJson',await this._inPresale(cu,doc.value)]
     },
+    async setPresaleObject(doc,cu){
+        if(!(
+            typeof doc.id=='string'&&
+            typeof doc.value=='object'
+        ))
+            return['status',400]
+        return['responseJson',await this._setPresaleObject(cu,doc)]
+    },
     async updateContact(doc,cu){
         if(!(
             typeof doc.doc=='object'

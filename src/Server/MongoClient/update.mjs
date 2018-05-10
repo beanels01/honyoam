@@ -6,6 +6,12 @@ let
         Binary,
     }=mongodb,
     o={}
+o.setPresaleObject=async function(id,doc){
+    await this._presaleCol.updateOne(
+        {_id:new ObjectID(id)},
+        {$set:doc}
+    )
+}
 o.updateSite=async function(key,value){
     await this._siteCol.updateOne({
         key,
