@@ -1,24 +1,197 @@
 import api from                 '../../_api.mjs'
 import optionList from          './optionList.mjs'
 import patternEditOption from   './presaleObjects/patternEditOption.mjs'
+import languageSelect from      './languageSelect.mjs'
+let
+    formats=[
+        'link',
+        'image',
+    ],
+    optionsForConcept={
+        placeholder:'概念內文',
+        modules:{
+            toolbar:formats,
+        },
+        formats,
+    },
+    optionsForEnvironment={
+        placeholder:'環境內文',
+        modules:{
+            toolbar:formats,
+        },
+        formats,
+    },
+    optionsForTraffic={
+        placeholder:'交通內文',
+        modules:{
+            toolbar:formats,
+        },
+        formats,
+    }
+let inputForSpecificLanguage={
+    components:{
+        quillEditor:VueQuillEditor.quillEditor,
+    },
+    created(){
+        this.checkValue()
+    },
+    data:()=>({
+        optionsForConcept,
+        optionsForEnvironment,
+        optionsForTraffic,
+    }),
+    methods:{
+        checkValue(){
+            if(this.value)
+                return
+            this.$emit('input',{
+                name:'',
+                informationTitle:'',
+                informationContent:'',
+                conceptSummary:'',
+                conceptContent:'',
+                environmentSummary:'',
+                environmentContent:'',
+                trafficSummary:'',
+                trafficContent:'',
+            })
+        },
+    },
+    props:['value'],
+    template:`
+        <div v-if=value>
+            <p>
+                <input
+                    placeholder=名稱
+                    v-model=value.name
+                >
+            </p>
+            <p>
+                <input
+                    placeholder=介紹標題
+                    v-model=value.informationTitle
+                >
+            </p>
+            <p>
+                <textarea
+                    placeholder=介紹內容
+                    v-model=value.informationContent
+                ></textarea>
+            </p>
+            <p>
+                <textarea
+                    placeholder=概念概要
+                    v-model=value.conceptSummary
+                ></textarea>
+            </p>
+            <p>
+                <quillEditor
+                    style=width:480px
+                    :options=optionsForConcept
+                    v-model=value.conceptContent
+                ></quillEditor>
+            </p>
+            <p>
+                <textarea
+                    placeholder=環境概要
+                    v-model=value.environmentSummary
+                ></textarea>
+            </p>
+            <p>
+                <quillEditor
+                    style=width:480px
+                    :options=optionsForEnvironment
+                    v-model=value.environmentContent
+                ></quillEditor>
+            </p>
+            <p>
+                <textarea
+                    placeholder=交通概要
+                    v-model=value.trafficSummary
+                ></textarea>
+            </p>
+            <p>
+                <quillEditor
+                    style=width:480px
+                    :options=optionsForTraffic
+                    v-model=value.trafficContent
+                ></quillEditor>
+            </p>
+        </div>
+    `,
+    watch:{
+        value(){
+            this.checkValue()
+        },
+    },
+}
+let keyValueEditOption={
+    created(){
+        this.checkValue()
+    },
+    methods:{
+        checkValue(){
+            if(this.value)
+                return
+            this.$emit('input',{
+                key:'',
+                value:'',
+            })
+        },
+    },
+    props:['value'],
+    template:`
+        <div v-if=value>
+            <p>
+                <input
+                    placeholder=欄位
+                    v-model=value.key
+                >
+            </p>
+            <p>
+                <input
+                    placeholder=內容
+                    v-model=value.value
+                >
+            </p>
+        </div>
+    `,
+    watch:{
+        value(){
+            this.checkValue()
+        },
+    },
+}
 let inputForSpecificObject={
-    components:{optionList},
+    components:{
+        optionList,
+        languageSelect,
+        inputForSpecificLanguage,
+    },
     created(){
         this.in()
     },
     data:()=>({
-        value:0,
+        version:0,
         patternEditOption,
+        keyValueEditOption,
+        value:0,
+        selectedLanguage:0,
     }),
     methods:{
         async in(){
-            this.value=(await api.post({
+            let value=(await api.post({
                 method:'getPresaleObject',
                 id:this.id,
             })).res
+            if(value.version!=this.version)
+                value={
+                    version:this.version,
+                    language:{},
+                }
+            this.value=value
         },
         async out(){
-            return console.log(this.value)
             await api.post({
                 method:'setPresaleObject',
                 id:this.id,
@@ -37,6 +210,22 @@ let inputForSpecificObject={
                 :editOptionData=language
                 v-model=value.pattern
             ></optionList>
+            <h3>概要</h3>
+            <optionList
+                class=indent
+                :editOption=keyValueEditOption
+                v-model=value.summary
+            ></optionList>
+            <div>
+                <languageSelect
+                    :language=language
+                    v-model=selectedLanguage
+                ></languageSelect>
+            </div>
+            <inputForSpecificLanguage
+                v-if=selectedLanguage
+                v-model=value.language[selectedLanguage]
+            ></inputForSpecificLanguage>
             <button @click=out>儲存變更</button>
         </div>
     `,
