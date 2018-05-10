@@ -70,18 +70,25 @@ o.outPresaleList=async function(){
 }
 o.outPresaleList0=async function(language){
     return(await this._presaleCol.find({publish:true}).toArray()).map(a=>{
+        let
+            patternClass=['1K','1DK','1LDK','2LDK','3LDK','>3LDK'],
+            pattern=a.pattern.map(a=>a.name).sort((a,b)=>
+                patternClass.indexOf(a)-patternClass.indexOf(b)
+            ),
+            area=a.pattern.map(a=>a.area),
+            price=a.pattern.map(a=>a.price)
         return{
             id:a._id,
             image:a.image,
             name:a.language[language].name,
             title:a.language[language].informationTitle,
             soldout:a.soldout,
-            patternMin:'2LDK',
-            patternMax:'3LDK',
-            areaMin:76.38,
-            areaMax:108.83,
-            priceMin:4998,
-            priceMax:9238,
+            patternMin:pattern[0],
+            patternMax:pattern[pattern.length-1],
+            areaMin:Math.min(...area),
+            areaMax:Math.max(...area),
+            priceMin:Math.min(...price),
+            priceMax:Math.max(...price)
         }
     })
 }
