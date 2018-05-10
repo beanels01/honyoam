@@ -68,7 +68,7 @@ let cropImageUploader={
             >
                 <vueCropper
                     ref=cropper
-                    outputType=jpeg
+                    outputType=png
                     :img=status.img
                     :canScale=true
                     :outputSize=1

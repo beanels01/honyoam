@@ -69,18 +69,19 @@ o.outPresaleList=async function(){
     }))
 }
 o.outPresaleList0=async function(language){
-    return(await this._presaleCol.find({}).toArray()).map(a=>{
+    return(await this._presaleCol.find({publish:true}).toArray()).map(a=>{
         return{
             id:a._id,
+            image:a.image,
             name:a.language[language].name,
             title:a.language[language].informationTitle,
+            soldout:a.soldout,
             patternMin:'2LDK',
             patternMax:'3LDK',
             areaMin:76.38,
             areaMax:108.83,
             priceMin:4998,
             priceMax:9238,
-            soldout:0,
         }
     })
 }

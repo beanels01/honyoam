@@ -1,131 +1,10 @@
 import api from                 '../../_api.mjs'
 import optionList from          './optionList.mjs'
 import patternEditOption from   './presaleObjects/patternEditOption.mjs'
+import inputForSpecificLanguage from
+    './presaleObjects/inputForSpecificLanguage.mjs'
 import languageSelect from      './languageSelect.mjs'
 import cropImageUploader from   './cropImageUploader.mjs'
-let
-    formats=[
-        'link',
-        'image',
-    ],
-    optionsForConcept={
-        placeholder:'概念內文',
-        modules:{
-            toolbar:formats,
-        },
-        formats,
-    },
-    optionsForEnvironment={
-        placeholder:'環境內文',
-        modules:{
-            toolbar:formats,
-        },
-        formats,
-    },
-    optionsForTraffic={
-        placeholder:'交通內文',
-        modules:{
-            toolbar:formats,
-        },
-        formats,
-    }
-let inputForSpecificLanguage={
-    components:{
-        quillEditor:VueQuillEditor.quillEditor,
-    },
-    created(){
-        this.checkValue()
-    },
-    data:()=>({
-        optionsForConcept,
-        optionsForEnvironment,
-        optionsForTraffic,
-    }),
-    methods:{
-        checkValue(){
-            if(this.value)
-                return
-            this.$emit('input',{
-                name:'',
-                informationTitle:'',
-                informationContent:'',
-                conceptSummary:'',
-                conceptContent:'',
-                environmentSummary:'',
-                environmentContent:'',
-                trafficSummary:'',
-                trafficContent:'',
-            })
-        },
-    },
-    props:['value'],
-    template:`
-        <div v-if=value>
-            <p>
-                <input
-                    placeholder=名稱
-                    v-model=value.name
-                >
-            </p>
-            <p>
-                <input
-                    placeholder=介紹標題
-                    v-model=value.informationTitle
-                >
-            </p>
-            <p>
-                <textarea
-                    placeholder=介紹內容
-                    v-model=value.informationContent
-                ></textarea>
-            </p>
-            <p>
-                <textarea
-                    placeholder=概念概要
-                    v-model=value.conceptSummary
-                ></textarea>
-            </p>
-            <p>
-                <quillEditor
-                    style=width:480px
-                    :options=optionsForConcept
-                    v-model=value.conceptContent
-                ></quillEditor>
-            </p>
-            <p>
-                <textarea
-                    placeholder=環境概要
-                    v-model=value.environmentSummary
-                ></textarea>
-            </p>
-            <p>
-                <quillEditor
-                    style=width:480px
-                    :options=optionsForEnvironment
-                    v-model=value.environmentContent
-                ></quillEditor>
-            </p>
-            <p>
-                <textarea
-                    placeholder=交通概要
-                    v-model=value.trafficSummary
-                ></textarea>
-            </p>
-            <p>
-                <quillEditor
-                    style=width:480px
-                    :options=optionsForTraffic
-                    v-model=value.trafficContent
-                ></quillEditor>
-            </p>
-        </div>
-    `,
-    watch:{
-        value(){
-            this.checkValue()
-        },
-    },
-}
 let keyValueEditOption={
     created(){
         this.checkValue()
@@ -168,6 +47,7 @@ let inputForSpecificObject={
         optionList,
         languageSelect,
         inputForSpecificLanguage,
+        cropImageUploader,
     },
     created(){
         this.in()
@@ -205,6 +85,21 @@ let inputForSpecificObject={
     props:['id','language',],
     template:`
         <div v-if=value>
+            <cropImageUploader
+                v-model=value.image
+            ></cropImageUploader>
+            <p>
+                <label>
+                    <input type=checkbox v-model=value.publish>
+                    發布
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type=checkbox v-model=value.soldout>
+                    已完售
+                </label>
+            </p>
             <h3>格局</h3>
             <optionList
                 class=indent

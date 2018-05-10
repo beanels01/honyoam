@@ -17,7 +17,7 @@ let presale={
             @click=click
         >
             <div class=a>
-                <img src=/_presale/test>
+                <img :src="'/image/'+data.image">
             </div>
             <div class=b><div>
                 <div class=a>
