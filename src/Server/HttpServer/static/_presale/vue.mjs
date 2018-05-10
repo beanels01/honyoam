@@ -4,7 +4,7 @@ import mightLike from       './vue/mightLike.mjs'
 let presale={
     methods:{
         click(){
-            location='/zh-Hant/presaleId'
+            location=`/zh-Hant/presale/${this.data.id}`
         },
         selectClick(e){
             e.stopPropagation()
@@ -23,18 +23,18 @@ let presale={
                 <div class=a>
                     <div>
                         <div class=title>
-                            {{data.title}}
+                            {{data.name}}
                         </div>
                         <div class=subtitle>
-                            {{data.subtitle}}
+                            {{data.title}}
                         </div>
                     </div>
                 </div>
                 <div class=b>
                     <div>
-                        <div class=a>格局：{{data.pattern}}</div>
-                        <div class=a>面積：{{data.area}}</div>
-                        <div class=a>價格：{{data.price}} 萬
+                        <div class=a>格局：{{data.patternMin}} - {{data.patternMax}}</div>
+                        <div class=a>面積：{{data.areaMin}} - {{data.areaMax}} 平方公尺</div>
+                        <div class=a>價格：{{data.priceMin}} - {{data.priceMax}} 萬
                             <select @click=selectClick>
                                 <option>日幣</option>
                                 <option>臺幣</option>
@@ -69,75 +69,8 @@ let aMain={
     },
     data:()=>({
         menu:0,
-        data:{
-            array:[
-                {
-                    title:'ザ・パークハウス 恵比寿南',
-                    subtitle:'摩登與沉穩的美麗結合',
-                    pattern:'2LDK - 3LDK',
-                    area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238',
-                    priceNtd:'1,370 - 2,531',
-                    soldout:false,
-                },
-                {
-                    title:'ザ・パークワンズ 渋谷本町',
-                    subtitle:'構成東京中核之一的副都心「新宿」',
-                    pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238',
-                    priceNtd:'1,370 - 2,531',
-                    soldout:false,
-                },
-                {
-                    title:'ザ・パークワンズ 渋谷本町',
-                    subtitle:'構成東京中核之一的副都心「新宿」',
-                    pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238',
-                    priceNtd:'1,370 - 2,531',
-                    soldout:false,
-                },
-                {
-                    title:'ザ・パークワンズ 渋谷本町',
-                    subtitle:'構成東京中核之一的副都心「新宿」',
-                    pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238',
-                    priceNtd:'1,370 - 2,531',
-                    soldout:true,
-                },
-                {
-                    title:'ザ・パークワンズ 渋谷本町',
-                    subtitle:'構成東京中核之一的副都心「新宿」',
-                    pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238',
-                    priceNtd:'1,370 - 2,531',
-                    soldout:true,
-                },
-                {
-                    title:'ザ・パークワンズ 渋谷本町',
-                    subtitle:'構成東京中核之一的副都心「新宿」',
-                    pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238',
-                    priceNtd:'1,370 - 2,531',
-                    soldout:false,
-                },
-                {
-                    title:'ザ・パークワンズ 渋谷本町',
-                    subtitle:'構成東京中核之一的副都心「新宿」',
-                    pattern:'2LDK - 4LDK',
-                    area:'76.38 - 108.83 平方公尺',
-                    price:'4,998 - 9,238',
-                    priceNtd:'1,370 - 2,531',
-                    soldout:false,
-                },
-            ]
-        },
     }),
-    props:['language','currentLanguage'],
+    props:['language','currentLanguage','data'],
     template:`
         <div id=main>
             <template v-if=!menu>
@@ -249,8 +182,8 @@ let aMain={
                 </div>
                 <div class=e>
                     <div>
-                        <div v-for="(_,i) in Math.ceil(data.array.length/2)">
-                            <div v-for="a in data.array.slice(2*i,2*i+2)">
+                        <div v-for="(_,i) in Math.ceil(data.length/2)">
+                            <div v-for="a in data.slice(2*i,2*i+2)">
                                 <presale
                                     :data=a
                                 ></presale>
@@ -287,6 +220,7 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
+            :data=data
         ></aMain>
     `,
 }

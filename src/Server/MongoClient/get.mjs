@@ -68,4 +68,20 @@ o.outPresaleList=async function(){
             '未命名',
     }))
 }
+o.outPresaleList0=async function(language){
+    return(await this._presaleCol.find({}).toArray()).map(a=>{
+        return{
+            id:a._id,
+            name:a.language[language].name,
+            title:a.language[language].informationTitle,
+            patternMin:'2LDK',
+            patternMax:'3LDK',
+            areaMin:76.38,
+            areaMax:108.83,
+            priceMin:4998,
+            priceMax:9238,
+            soldout:0,
+        }
+    })
+}
 export default o

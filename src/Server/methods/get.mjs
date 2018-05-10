@@ -96,4 +96,9 @@ export default{
             return{err:'permission denied'}
         return{res:await this.honyoamMongoClient.outPresaleList()}
     },
+    async outPresaleList0(doc){
+        return{res:await this.honyoamMongoClient.outPresaleList0(
+            doc.language
+        )}
+    },
 }

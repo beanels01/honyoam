@@ -87,6 +87,12 @@ export default o=>{
             currentUser:cu,
         })
     }
+    o._outPresaleList0=function(language){
+        return this._request({
+            method:'outPresaleList0',
+            language,
+        })
+    }
     o._refreshInvitationCode=function(currentUser){
         return this._request({
             method:'refreshInvitationCode',
