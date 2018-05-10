@@ -1,6 +1,6 @@
 import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_presaleIdVideo/vue'
-async function main(rq,rs,lang,patch){
+async function main(rq,rs,lang,patch,id){
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
         title:              '新成屋 - ID - 影音介紹',
@@ -12,7 +12,9 @@ async function main(rq,rs,lang,patch){
         clientScript:       '_presaleIdVideo/main.mjs',
         vue,
         vueData:{
+            id,
             presale:(await this._outPresale()).res,
+            presaleId:(await this._getPresaleObject(id)).res,
         },
     })
 }

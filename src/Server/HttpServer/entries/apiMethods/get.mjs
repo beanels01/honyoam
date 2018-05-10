@@ -31,7 +31,7 @@ let get={
             typeof doc.id=='string'
         ))
             return['status',400]
-        return['responseJson',await this._getPresaleObject(cu,doc.id)]
+        return['responseJson',await this._getPresaleObject(doc.id)]
     },
     async getSeminar(doc){
         if(!(

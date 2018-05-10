@@ -42,20 +42,23 @@ let aMain={
         href(){
             return homepageLike.langToPath(this.currentLanguage)
         },
+        presaleIdHref(){
+            return presaleIdLike.href(
+                this.currentLanguage,
+                this.id,
+            )
+        },
     },
     data:()=>({
         menu:0,
-        presaleIdLikeTop:{
-            focus:'top',
-            title:'ザ・パークハウス 恵比寿南',
-        },
-        presaleIdLikeMain:{
-            part:['建案介紹','INFORMATION'],
-            title:'摩登與沉穩的美麗結合',
-            content:'由JR山手線「惠比壽」站徒步7分鐘的台地恵比寿南アドレス，以此地為舞台\n由56戶私人住宅共同演出獨出心裁的建築美學，所誕生的「ザ・パークハウス 恵比寿南」\n享受台地獨有的開闊空間與視野，不斷追求更加上質、高貴的生活\n優雅生活的每一天由此地開始',
-        },
     }),
-    props:['language','currentLanguage','presale',],
+    props:[
+        'language',
+        'currentLanguage',
+        'id',
+        'presale',
+        'presaleId',
+    ],
     template:`
         <div id=main>
             <template v-if=!menu>
@@ -63,28 +66,35 @@ let aMain={
                     :data="{mobile:1}"
                 ></presaleLikeTop>
                 <presaleIdLikeTop
-                    :data=presaleIdLikeTop
+                    :data="{
+                        focus:'top',
+                        title:presaleId.language[currentLanguage].name,
+                    }"
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
-                    :data=presaleIdLikeMain
+                    :data="{
+                        part:['建案介紹','INFORMATION'],
+                        title:presaleId.language[currentLanguage].informationTitle,
+                        content:presaleId.language[currentLanguage].informationContent,
+                    }"
                 ></presaleIdLikeMain>
                 <block
                     background='/_presaleId/pre01.jpg'
                     title='建築概念'
-                    content='由經手許多都市住宅的アーキサイトメビウス設計監修'
-                    more='/zh-Hant/presaleIdConcept'
+                    :content=presaleId.language[currentLanguage].conceptSummary
+                    :more=presaleIdHref.concept
                 ></block>
                 <block
                     background='/_presaleId/pre02.jpg'
                     title='周邊環境'
-                    content='生活於恵比寿ガーデンプレイス旁'
-                    more='/zh-Hant/presaleIdEnvironment'
+                    :content=presaleId.language[currentLanguage].environmentSummary
+                    :more=presaleIdHref.environment
                 ></block>
                 <block
                     background='/_presaleId/pre03.jpg'
                     title='交通方式'
-                    content=''
-                    more='/zh-Hant/presaleIdTraffic'
+                    :content=presaleId.language[currentLanguage].trafficSummary
+                    :more=presaleIdHref.traffic
                 ></block>
                 <presaleIdLikeFooter
                     :data=presale.language[currentLanguage].precautions
@@ -98,6 +108,7 @@ let aMain={
                 ></floatBall>
                 <presaleIdLikeHeader
                     :data="{focus:'top'}"
+                    :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>
             <hlMenu
@@ -119,7 +130,9 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
+            :id=id
             :presale=presale
+            :presaleId=presaleId
         ></aMain>
     `,
 }

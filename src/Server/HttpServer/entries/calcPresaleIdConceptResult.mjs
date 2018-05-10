@@ -1,6 +1,6 @@
 import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_presaleIdConcept/vue'
-async function main(rq,rs,lang,patch){
+async function main(rq,rs,lang,patch,id){
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
         title:              '新成屋 - ID - 建築概念',
@@ -12,7 +12,9 @@ async function main(rq,rs,lang,patch){
         clientScript:       '_presaleIdConcept/main.mjs',
         vue,
         vueData:{
+            id,
             presale:(await this._outPresale()).res,
+            presaleId:(await this._getPresaleObject(id)).res,
         },
     })
 }

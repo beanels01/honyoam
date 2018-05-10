@@ -18,19 +18,15 @@ let aMain={
         href(){
             return homepageLike.langToPath(this.currentLanguage)
         },
+        presaleIdHref(){
+            return presaleIdLike.href(
+                this.currentLanguage,
+                this.id,
+            )
+        },
     },
     data:()=>({
         menu:0,
-        presaleIdLikeTop:{
-            focus:'traffic',
-            title:'ザ・パークハウス 恵比寿南',
-            part:'交通方式',
-        },
-        presaleIdLikeMain:{
-            part:['建案介紹','INFORMATION'],
-            title:'摩登與沉穩的美麗結合',
-            content:'由JR山手線「惠比壽」站徒步7分鐘的台地恵比寿南アドレス，以此地為舞台\n由56戶私人住宅共同演出獨出心裁的建築美學，所誕生的「ザ・パークハウス 恵比寿南」\n享受台地獨有的開闊空間與視野，不斷追求更加上質、高貴的生活\n優雅生活的每一天由此地開始',
-        },
         presaleIdLikeHypertext:`
             <img src=/_presaleIdTraffic/test-hypertext-0>
             <img src=/_presaleIdTraffic/test-hypertext-1>
@@ -40,7 +36,9 @@ let aMain={
     props:[
         'language',
         'currentLanguage',
+        'id',
         'presale',
+        'presaleId',
     ],
     template:`
         <div id=main>
@@ -49,10 +47,18 @@ let aMain={
                     :data="{mobile:1}"
                 ></presaleLikeTop>
                 <presaleIdLikeTop
-                    :data=presaleIdLikeTop
+                    :data="{
+                        focus:'traffic',
+                        title:presaleId.language[currentLanguage].name,
+                        part:'交通方式',
+                    }"
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
-                    :data=presaleIdLikeMain
+                    :data="{
+                        part:['建案介紹','INFORMATION'],
+                        title:presaleId.language[currentLanguage].informationTitle,
+                        content:presaleId.language[currentLanguage].informationContent,
+                    }"
                 ></presaleIdLikeMain>
                 <presaleIdLikeHypertext
                     :data=presaleIdLikeHypertext
@@ -69,6 +75,7 @@ let aMain={
                 ></floatBall>
                 <presaleIdLikeHeader
                     :data="{focus:'traffic'}"
+                    :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>
             <hlMenu
@@ -90,7 +97,9 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
+            :id=id
             :presale=presale
+            :presaleId=presaleId
         ></aMain>
     `,
 }

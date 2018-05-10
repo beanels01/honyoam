@@ -119,7 +119,7 @@ export default async function(pathname){
                 f=calcMedievalResult
             else if(a[2]=='presale')
                 f=calcPresaleResult
-            else if(a[2]=='presaleId')
+            /*else if(a[2]=='presaleId')
                 f=calcPresaleIdResult
             else if(a[2]=='presaleIdConcept')
                 f=calcPresaleIdConceptResult
@@ -132,7 +132,7 @@ export default async function(pathname){
             else if(a[2]=='presaleIdSummary')
                 f=calcPresaleIdSummaryResult
             else if(a[2]=='presaleIdAv')
-                f=calcPresaleIdVideoResult
+                f=calcPresaleIdVideoResult*/
             if(f)
                 return function(rq,rs){
                     if(!(
@@ -157,6 +157,45 @@ export default async function(pathname){
                     return rs.end()
                 }
                 return calcSeminarResult.call(this,rq,rs,a[1],0,a[3])
+            }
+        if(
+            a.length==4&&
+            a[1] in language&&
+            a[2]=='presale'
+        )
+            return function(rq,rs){
+                if(!(
+                    rq.method=='GET'
+                )){
+                    rs.writeHead(400)
+                    return rs.end()
+                }
+                return calcPresaleIdResult.call(this,rq,rs,a[1],0,a[3])
+            }
+        if(
+            a.length==5&&
+            a[1] in language&&
+            a[2]=='presale'&&
+            [
+                'concept','environment','traffic',
+                'pattern','summary','video',
+            ].includes(a[4])
+        )
+            return function(rq,rs){
+                if(!(
+                    rq.method=='GET'
+                )){
+                    rs.writeHead(400)
+                    return rs.end()
+                }
+                return{
+                    concept:calcPresaleIdConceptResult,
+                    environment:calcPresaleIdEnvironmentResult,
+                    traffic:calcPresaleIdTrafficResult,
+                    pattern:calcPresaleIdPatternResult,
+                    summary:calcPresaleIdSummaryResult,
+                    video:calcPresaleIdVideoResult,
+                }[a[4]].call(this,rq,rs,a[1],0,a[3])
             }
     }
 }

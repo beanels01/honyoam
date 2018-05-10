@@ -7,7 +7,7 @@ let aMain={
         hlMenu:                 homepageLike.menu,
         hlHeader:               homepageLike.header,
         floatBall:              homepageLike.floatBall,
-        presaleLikeTop: presaleLike.top,
+        presaleLikeTop:         presaleLike.top,
         presaleIdLikeTop:       presaleIdLike.top,
         presaleIdLikeFooter:    presaleIdLike.footer,
         presaleIdLikeHeader:    presaleIdLike.header,
@@ -16,14 +16,15 @@ let aMain={
         href(){
             return homepageLike.langToPath(this.currentLanguage)
         },
+        presaleIdHref(){
+            return presaleIdLike.href(
+                this.currentLanguage,
+                this.id,
+            )
+        },
     },
     data:()=>({
         menu:0,
-        presaleIdLikeTop:{
-            focus:'summary',
-            title:'ザ・パークハウス 恵比寿南',
-            part:'物件概要',
-        },
         data:[
 ['所在地','東京都渋谷区恵比寿南２丁目29番2、45（地番）'],
 ['交通','JR山手線・埼京線・湘南新宿ライン「恵比寿」駅（東口）より徒歩7分、同駅（東口）よりサブエントランスまで徒歩7分（恵比寿スカイウォーク経由：利用可能時間4:30～25:15）、同駅（西口）より徒歩7分。東京メトロ日比谷線「恵比寿」駅（5番出口：利用可能時間6:00～終電）より徒歩7分、同駅（3番出口）より徒歩8分。'],
@@ -56,7 +57,9 @@ let aMain={
     props:[
         'language',
         'currentLanguage',
+        'id',
         'presale',
+        'presaleId',
     ],
     template:`
         <div id=main>
@@ -65,7 +68,11 @@ let aMain={
                     :data="{mobile:1}"
                 ></presaleLikeTop>
                 <presaleIdLikeTop
-                    :data=presaleIdLikeTop
+                    :data="{
+                        focus:'summary',
+                        title:presaleId.language[currentLanguage].name,
+                        part:'物件概要',
+                    }"
                 ></presaleIdLikeTop>
                 <div class=a>
                     <div class=n>
@@ -92,6 +99,7 @@ let aMain={
                 ></floatBall>
                 <presaleIdLikeHeader
                     :data="{focus:'summary'}"
+                    :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>
             <hlMenu
@@ -113,7 +121,9 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
+            :id=id
             :presale=presale
+            :presaleId=presaleId
         ></aMain>
     `,
 }

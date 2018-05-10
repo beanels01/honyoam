@@ -2,6 +2,7 @@ import api from                 '../../_api.mjs'
 import optionList from          './optionList.mjs'
 import patternEditOption from   './presaleObjects/patternEditOption.mjs'
 import languageSelect from      './languageSelect.mjs'
+import cropImageUploader from   './cropImageUploader.mjs'
 let
     formats=[
         'link',
@@ -175,6 +176,7 @@ let inputForSpecificObject={
         version:0,
         patternEditOption,
         keyValueEditOption,
+        cropImageUploader,
         value:0,
         selectedLanguage:0,
     }),
@@ -215,6 +217,12 @@ let inputForSpecificObject={
                 class=indent
                 :editOption=keyValueEditOption
                 v-model=value.summary
+            ></optionList>
+            <h3>畫廊</h3>
+            <optionList
+                class=indent
+                :editOption=cropImageUploader
+                v-model=value.gallery
             ></optionList>
             <div>
                 <languageSelect

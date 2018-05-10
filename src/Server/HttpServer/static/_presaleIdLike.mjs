@@ -1,34 +1,43 @@
 import{dom}from'./_simple.mjs'
+let href=(currentLanguage,id)=>({
+    top:`/${currentLanguage}/presale/${id}`,
+    concept:`/${currentLanguage}/presale/${id}/concept`,
+    environment:`/${currentLanguage}/presale/${id}/environment`,
+    traffic:`/${currentLanguage}/presale/${id}/traffic`,
+    pattern:`/${currentLanguage}/presale/${id}/pattern`,
+    summary:`/${currentLanguage}/presale/${id}/summary`,
+    video:`/${currentLanguage}/presale/${id}/video`,
+})
 let header={
-    props:['data'],
+    props:['data','href'],
     template:`
         <div class=presaleIdLikeHeader>
             <a
-                href=/zh-Hant/presaleId
+                :href=href.top
                 :class="{active:data.focus=='top'}"
             >TOP</a>
             <a
-                href=/zh-Hant/presaleIdConcept
+                :href=href.concept
                 :class="{active:data.focus=='concept'}"
             >建築概念</a>
             <a
-                href=/zh-Hant/presaleIdEnvironment
+                :href=href.environment
                 :class="{active:data.focus=='environment'}"
             >周邊環境</a>
             <a
-                href=/zh-Hant/presaleIdTraffic
+                :href=href.traffic
                 :class="{active:data.focus=='traffic'}"
             >交通方式</a>
             <a
-                href=/zh-Hant/presaleIdPattern
+                :href=href.pattern
                 :class="{active:data.focus=='pattern'}"
             >空間格局</a>
             <a
-                href=/zh-Hant/presaleIdSummary
+                :href=href.summary
                 :class="{active:data.focus=='summary'}"
             >物件概要</a>
             <a
-                href=/zh-Hant/presaleIdAv
+                :href=href.video
                 :class="{active:data.focus=='video'}"
             >影音介紹</a>
         </div>
@@ -196,4 +205,5 @@ export default{
     main,
     hypertext,
     footer,
+    href,
 }
