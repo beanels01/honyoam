@@ -8,6 +8,7 @@ import contactApply from    './contactApply.mjs'
 import faq from             './faq.mjs'
 import faqFeedback from     './faqFeedback.mjs'
 import presale from         './presale.mjs'
+import presaleObjects from  './presaleObjects.mjs'
 export default{
     components:{
         invitationCode,
@@ -19,8 +20,7 @@ export default{
         contactApply,
         seminar,
         presale,
-    },
-    created(){
+        presaleObjects,
     },
     data:()=>({
         error:'',
@@ -79,6 +79,11 @@ export default{
                 class=indent
                 :language=language
             ></presale>
+            <h2>新成屋物件</h2>
+            <presaleObjects
+                class=indent
+                :language=language
+            ></presaleObjects>
             <h2>常見問題</h2>
             <faq class=indent :language=language></faq>
             <h2>常見問題 - 回饋</h2>

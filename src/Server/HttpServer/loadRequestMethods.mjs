@@ -20,6 +20,12 @@ export default o=>{
             currentLanguage:    doc.currentLanguage,
         })
     }
+    o._addPresaleObject=function(currentUser){
+        return this._request({
+            method:             'addPresaleObject',
+            currentUser,
+        })
+    }
     o._addFeedback=function(doc){
         return this._request({
             method:             'addFeedback',
@@ -73,6 +79,12 @@ export default o=>{
     o._outPresale=function(){
         return this._request({
             method:'outPresale',
+        })
+    }
+    o._outPresaleList=function(cu){
+        return this._request({
+            method:'outPresaleList',
+            currentUser:cu,
         })
     }
     o._refreshInvitationCode=function(currentUser){

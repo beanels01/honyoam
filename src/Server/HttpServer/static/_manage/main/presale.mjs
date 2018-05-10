@@ -1,7 +1,3 @@
-/*
-import editOption from      './faq/editOption.mjs'
-import optionList from      './optionList.mjs'
-*/
 import api from             '../../_api.mjs'
 import languageSelect from  './languageSelect.mjs'
 let inputForSpecificLanguage={

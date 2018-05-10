@@ -25,6 +25,14 @@ export default{
             doc.currentUser._id
         )}
     },
+    async addPresaleObject(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.addPresaleObject()}
+    },
     async addSeminar(doc){
         if(!(
             doc.currentUser&&

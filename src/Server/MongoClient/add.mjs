@@ -34,6 +34,9 @@ o.addImage=async function(doc){
     })
     return res.insertedId
 }
+o.addPresaleObject=async function(){
+    return(await this._presaleCol.insertOne({})).insertedId
+}
 o.addSeminar=async function(language){
     return(await this._seminarCol.insertOne({language})).insertedId
 }

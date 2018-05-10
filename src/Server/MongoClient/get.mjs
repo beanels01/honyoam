@@ -51,4 +51,14 @@ o.getUserByUsername=function(username){
 o.getUserlist=function(){
     return this._userCol.find({}).toArray()
 }
+o.outPresaleList=async function(){
+    return(await this._presaleCol.find({}).toArray()).map(a=>({
+        id:a._id,
+        name:
+            a.language&&
+            a.language['zh-Hant']&&
+            a.language['zh-Hant'].name||
+            '未命名',
+    }))
+}
 export default o
