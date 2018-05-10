@@ -2,9 +2,21 @@ import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_presaleId/vue'
 async function main(rq,rs,lang,patch,id){
     let presaleId=(await this._getPresaleObject(id)).res
+    // i for input
+    presaleId=(i=>{
+        i=i.language[lang]
+        return{
+            name:                   i.name,
+            informationTitle:       i.informationTitle,
+            informationContent:     i.informationContent,
+            conceptSummary:         i.conceptSummary,
+            environmentSummary:     i.environmentSummary,
+            trafficSummary:         i.trafficSummary,
+        }
+    })(presaleId)
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
-        title:              `${presaleId.language[lang].name}`,
+        title:              `${presaleId.name}`,
         css:                [
                                 '_presaleLike/main.css',
                                 '_presaleIdLike/main.css',
@@ -13,9 +25,11 @@ async function main(rq,rs,lang,patch,id){
         clientScript:       '_presaleId/main.mjs',
         vue,
         vueData:{
-            id,
-            presale:(await this._outPresale()).res,
-            presaleId,
+            presale:{
+                id,
+                presale:(await this._outPresale()).res,
+                presaleId,
+            },
         },
     })
 }

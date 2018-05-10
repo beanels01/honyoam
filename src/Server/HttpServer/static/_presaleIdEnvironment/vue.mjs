@@ -21,7 +21,7 @@ let aMain={
         presaleIdHref(){
             return presaleIdLike.href(
                 this.currentLanguage,
-                this.id,
+                this.presale.id,
             )
         },
     },
@@ -31,9 +31,7 @@ let aMain={
     props:[
         'language',
         'currentLanguage',
-        'id',
         'presale',
-        'presaleId',
     ],
     template:`
         <div id=main>
@@ -44,7 +42,7 @@ let aMain={
                 <presaleIdLikeTop
                     :data="{
                         focus:'environment',
-                        title:presaleId.language[currentLanguage].name,
+                        title:presale.presaleId.name,
                         part:'周邊環境',
                     }"
                     :href=presaleIdHref
@@ -52,18 +50,18 @@ let aMain={
                 <presaleIdLikeMain
                     :data="{
                         part:['建案介紹','INFORMATION'],
-                        title:presaleId.language[currentLanguage].informationTitle,
-                        content:presaleId.language[currentLanguage].informationContent,
+                        title:presale.presaleId.informationTitle,
+                        content:presale.presaleId.informationContent,
                     }"
                 ></presaleIdLikeMain>
                 <presaleIdLikeHypertext
                     :data="{
-                        gallery:presaleId.gallery,
-                        hypertext:presaleId.language[currentLanguage].environmentContent,
+                        gallery:presale.presaleId.gallery,
+                        hypertext:presale.presaleId.environmentContent,
                     }"
                 ></presaleIdLikeHypertext>
                 <presaleIdLikeFooter
-                    :data=presale.language[currentLanguage].precautions
+                    :data=presale.presale.language[currentLanguage].precautions
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -96,9 +94,7 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
-            :id=id
             :presale=presale
-            :presaleId=presaleId
         ></aMain>
     `,
 }

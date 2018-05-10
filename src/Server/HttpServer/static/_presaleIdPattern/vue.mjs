@@ -44,7 +44,7 @@ let aMain={
         presaleIdHref(){
             return presaleIdLike.href(
                 this.currentLanguage,
-                this.id,
+                this.presale.id,
             )
         },
     },
@@ -55,9 +55,7 @@ let aMain={
     props:[
         'language',
         'currentLanguage',
-        'id',
         'presale',
-        'presaleId',
     ],
     template:`
         <div id=main>
@@ -68,7 +66,7 @@ let aMain={
                 <presaleIdLikeTop
                     :data="{
                         focus:'pattern',
-                        title:presaleId.language[currentLanguage].name,
+                        title:presale.presaleId.name,
                         part:'空間格局',
                     }"
                     :href=presaleIdHref
@@ -76,24 +74,24 @@ let aMain={
                 <presaleIdLikeMain
                     :data="{
                         part:['空間格局','PLAN'],
-                        title:presaleId.language[currentLanguage].informationTitle,
-                        content:presaleId.language[currentLanguage].informationContent,
+                        title:presale.presaleId.informationTitle,
+                        content:presale.presaleId.informationContent,
                     }"
                 <div class=a>
                     <div class=n>
                         <span class=a>空間格局</span> / PLAN
                     </div>
                     <patternInput
-                        :data=presaleId.pattern
+                        :data=presale.presaleId.pattern
                         :currentLanguage=currentLanguage
                         v-model=selectPattern
                     ></patternInput>
                 </div>
                 <div class=b>
-                    <img :src="'/image/'+presaleId.pattern[selectPattern].language[currentLanguage].image">
+                    <img :src="'/image/'+presale.presaleId.pattern[selectPattern].language[currentLanguage].image">
                 </div>
                 <presaleIdLikeFooter
-                    :data=presale.language[currentLanguage].precautions
+                    :data=presale.presale.language[currentLanguage].precautions
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -126,9 +124,7 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
-            :id=id
             :presale=presale
-            :presaleId=presaleId
         ></aMain>
     `,
 }

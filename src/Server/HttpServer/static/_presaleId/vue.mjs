@@ -45,7 +45,7 @@ let aMain={
         presaleIdHref(){
             return presaleIdLike.href(
                 this.currentLanguage,
-                this.id,
+                this.presale.id,
             )
         },
     },
@@ -55,9 +55,7 @@ let aMain={
     props:[
         'language',
         'currentLanguage',
-        'id',
         'presale',
-        'presaleId',
     ],
     template:`
         <div id=main>
@@ -68,37 +66,37 @@ let aMain={
                 <presaleIdLikeTop
                     :data="{
                         focus:'top',
-                        title:presaleId.language[currentLanguage].name,
+                        title:presale.presaleId.name,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{
                         part:['建案介紹','INFORMATION'],
-                        title:presaleId.language[currentLanguage].informationTitle,
-                        content:presaleId.language[currentLanguage].informationContent,
+                        title:presale.presaleId.informationTitle,
+                        content:presale.presaleId.informationContent,
                     }"
                 ></presaleIdLikeMain>
                 <block
                     background='/_presaleId/pre01.jpg'
                     title='建築概念'
-                    :content=presaleId.language[currentLanguage].conceptSummary
+                    :content=presale.presaleId.conceptSummary
                     :more=presaleIdHref.concept
                 ></block>
                 <block
                     background='/_presaleId/pre02.jpg'
                     title='周邊環境'
-                    :content=presaleId.language[currentLanguage].environmentSummary
+                    :content=presale.presaleId.environmentSummary
                     :more=presaleIdHref.environment
                 ></block>
                 <block
                     background='/_presaleId/pre03.jpg'
                     title='交通方式'
-                    :content=presaleId.language[currentLanguage].trafficSummary
+                    :content=presale.presaleId.trafficSummary
                     :more=presaleIdHref.traffic
                 ></block>
                 <presaleIdLikeFooter
-                    :data=presale.language[currentLanguage].precautions
+                    :data=presale.presale.language[currentLanguage].precautions
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -131,9 +129,7 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
-            :id=id
             :presale=presale
-            :presaleId=presaleId
         ></aMain>
     `,
 }
