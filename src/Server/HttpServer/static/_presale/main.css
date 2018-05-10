@@ -198,10 +198,10 @@
 }
 #main>.e>*>*>*>.presale>.a{
     line-height:0;
+    vertical-align:middle;
 }
 #main>.e>*>*>*>.presale>.a>*{
     width:100%;
-    height:var(--height);
 }
 #main>.e>*>*>*>.presale>.b{
     box-sizing:border-box;
