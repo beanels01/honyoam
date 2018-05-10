@@ -7,7 +7,7 @@ let aMain={
         hlMenu:                 homepageLike.menu,
         hlHeader:               homepageLike.header,
         floatBall:              homepageLike.floatBall,
-        presaleLikeTop: presaleLike.top,
+        presaleLikeTop:         presaleLike.top,
         presaleIdLikeTop:       presaleIdLike.top,
         presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeHypertext: presaleIdLike.hypertext,
@@ -27,16 +27,6 @@ let aMain={
     },
     data:()=>({
         menu:0,
-        presaleIdLikeHypertext:`
-            住宅美與摩登的完美結合<br>
-            由經手許多都市住宅的アーキサイトメビウス設計監修<br>
-            「ザ・パークハウス 恵比寿南」的外觀設計、共用空間、專有空間的設計，皆由アーキサイトメビウス嚴厲把關<br>
-            建築家受別出心裁的每一棟都市住宅所散發的摩登魅力所吸引<br>
-            透過在居住空間中的嶄新設計<br>
-            賦予「ザ・パークハウス 恵比寿南」惠比壽新的住宅理想<br>
-            <img src=/_presaleIdConcept/test-hypertext-0>
-            <img src=/_presaleIdConcept/test-hypertext-1>
-        `,
     }),
     props:[
         'language',
@@ -67,7 +57,10 @@ let aMain={
                     }"
                 ></presaleIdLikeMain>
                 <presaleIdLikeHypertext
-                    :data=presaleIdLikeHypertext
+                    :data="{
+                        gallery:presaleId.gallery,
+                        hypertext:presaleId.language[currentLanguage].conceptContent,
+                    }"
                 ></presaleIdLikeHypertext>
                 <presaleIdLikeFooter
                     :data=presale.language[currentLanguage].precautions

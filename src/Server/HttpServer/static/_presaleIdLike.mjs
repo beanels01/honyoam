@@ -112,7 +112,7 @@ let hypertextPhoto={
     props:['data'],
     template:`
         <span class=presaleIdLikeHypertextPhoto>
-            <img :src=data.src>
+            <img :src=data>
         </span>
     `,
 }
@@ -157,11 +157,11 @@ let hypertextPhotoSwiper={
 }
 let hypertext={
     components:{hypertextPhoto,hypertextPhotoSwiper},
-    data:(()=>({
-        photos:[...Array(2)].map((e,i)=>({
-            src:'/_presaleIdConcept/test-hypertext-'+i
-        }))
-    })),
+    computed:{
+        gallery(){
+            return this.data.gallery.map(a=>`/image/${a}`)
+        },
+    },
     props:['data'],
     template:`
         <div class=presaleIdLikeHypertext>
@@ -171,16 +171,16 @@ let hypertext={
                 </div>
                 <div class=o>
                     <hypertextPhoto
-                        v-for="e in photos"
+                        v-for="e in gallery"
                         :data=e
                     ></hypertextPhoto>
                 </div>
                 <hypertextPhotoSwiper
-                    :data=photos
+                    :data=gallery
                 ></hypertextPhotoSwiper>
             </div>
             <div class=b>
-                <div v-html=data></div>
+                <div v-html=data.hypertext></div>
             </div>
         </div>
     `,

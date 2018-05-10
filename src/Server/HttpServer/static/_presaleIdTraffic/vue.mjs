@@ -27,11 +27,6 @@ let aMain={
     },
     data:()=>({
         menu:0,
-        presaleIdLikeHypertext:`
-            <img src=/_presaleIdTraffic/test-hypertext-0>
-            <img src=/_presaleIdTraffic/test-hypertext-1>
-            <img src=/_presaleIdTraffic/test-hypertext-2>
-        `,
     }),
     props:[
         'language',
@@ -62,7 +57,10 @@ let aMain={
                     }"
                 ></presaleIdLikeMain>
                 <presaleIdLikeHypertext
-                    :data=presaleIdLikeHypertext
+                    :data="{
+                        gallery:presaleId.gallery,
+                        hypertext:presaleId.language[currentLanguage].trafficContent,
+                    }"
                 ></presaleIdLikeHypertext>
                 <presaleIdLikeFooter
                     :data=presale.language[currentLanguage].precautions

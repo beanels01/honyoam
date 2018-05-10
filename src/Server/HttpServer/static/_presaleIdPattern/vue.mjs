@@ -2,22 +2,22 @@ import homepageLike from    '../_homepageLike.mjs'
 import presaleIdLike from   '../_presaleIdLike.mjs'
 import presaleLike from     '../_presaleLike.mjs'
 let patternInput={
-    props:['data','value'],
+    props:['data','value','currentLanguage'],
     template:`
         <div class=o>
-            <div v-for="(e,i) in data.array">
+            <div v-for="(e,i) in data">
                 <div class=n>
                     <img
-                        :src=e.image
+                        :src="'/image/'+e.language[currentLanguage].image"
                         @click="$emit('input',i)"
                         :class="{active:value==i}"
                     >
                 </div>
                 <div class=o>
-                    <div class=a>{{e.type}}</div>
+                    <div class=a>{{e.language[currentLanguage].name}}</div>
                     <div class=b>
-                        <div>格局：{{e.pattern}}</div>
-                        <div>面積：{{e.area}}</div>
+                        <div>格局：{{e.name}}</div>
+                        <div>面積：{{e.area}} 平方公尺</div>
                     </div>
                 </div>
             </div>
@@ -50,19 +50,6 @@ let aMain={
     },
     data:()=>({
         menu:0,
-        data:{
-            array:[{
-                image:      '/_presaleIdPattern/test-0',
-                type:       '85-A Type',
-                pattern:    '3LDK / 2LDK',
-                area:       '86.15m²',
-            },{
-                image:      '/_presaleIdPattern/test-1',
-                type:       '95-Br Type',
-                pattern:    '3LDK',
-                area:       '98.71m²',
-            }],
-        },
         selectPattern:0,
     }),
     props:[
@@ -97,12 +84,13 @@ let aMain={
                         <span class=a>空間格局</span> / PLAN
                     </div>
                     <patternInput
-                        :data=data
+                        :data=presaleId.pattern
+                        :currentLanguage=currentLanguage
                         v-model=selectPattern
                     ></patternInput>
                 </div>
                 <div class=b>
-                    <img :src=data.array[selectPattern].image>
+                    <img :src="'/image/'+presaleId.pattern[selectPattern].language[currentLanguage].image">
                 </div>
                 <presaleIdLikeFooter
                     :data=presale.language[currentLanguage].precautions

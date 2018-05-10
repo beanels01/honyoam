@@ -22,7 +22,7 @@ async function calcManageResult(){
 <script src=_vueQuillEditor/vue-quill-editor.min.js></script>
 ${
     this.config.dev
-    ?'<script type=module src=_manage/main.js></script>'
+    ?'<script type=module src=_manage/main.mjs></script>'
     :`<script>${manageJs}</script>`
 }
 `

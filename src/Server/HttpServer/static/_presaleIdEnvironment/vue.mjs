@@ -27,15 +27,6 @@ let aMain={
     },
     data:()=>({
         menu:0,
-        presaleIdLikeHypertext:`
-            <img src=/_presaleIdEnvironment/test-hypertext-0>
-            生活於恵比寿ガーデンプレイス旁<br>
-            優雅高尚的每一日<br>
-            位於JR山手線「惠比壽」站出口徒步兩分鐘的「ザ・パークハウス 恵比寿南」，<br>
-            從側門走兩分鐘能到達坐落著「恵比寿ガーデンプレイス」、「クイーンズ伊勢丹」、「恵比寿三越」的惠比壽商圈，<br>
-            日常逛街、採買就在左近的便利生活圈，在丘陵上眺望市區美景的絕佳地點。<br>
-            <img src=/_presaleIdEnvironment/test-hypertext-1>
-        `,
     }),
     props:[
         'language',
@@ -66,7 +57,10 @@ let aMain={
                     }"
                 ></presaleIdLikeMain>
                 <presaleIdLikeHypertext
-                    :data=presaleIdLikeHypertext
+                    :data="{
+                        gallery:presaleId.gallery,
+                        hypertext:presaleId.language[currentLanguage].environmentContent,
+                    }"
                 ></presaleIdLikeHypertext>
                 <presaleIdLikeFooter
                     :data=presale.language[currentLanguage].precautions
