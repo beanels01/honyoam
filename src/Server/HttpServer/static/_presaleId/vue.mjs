@@ -70,6 +70,7 @@ let aMain={
                         focus:'top',
                         title:presaleId.language[currentLanguage].name,
                     }"
+                    :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{

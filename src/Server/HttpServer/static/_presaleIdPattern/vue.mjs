@@ -84,6 +84,7 @@ let aMain={
                         title:presaleId.language[currentLanguage].name,
                         part:'空間格局',
                     }"
+                    :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{

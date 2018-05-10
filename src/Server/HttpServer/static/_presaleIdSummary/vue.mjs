@@ -73,6 +73,7 @@ let aMain={
                         title:presaleId.language[currentLanguage].name,
                         part:'物件概要',
                     }"
+                    :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <div class=a>
                     <div class=n>

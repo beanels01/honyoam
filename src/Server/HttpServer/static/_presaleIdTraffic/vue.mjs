@@ -52,6 +52,7 @@ let aMain={
                         title:presaleId.language[currentLanguage].name,
                         part:'交通方式',
                     }"
+                    :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{

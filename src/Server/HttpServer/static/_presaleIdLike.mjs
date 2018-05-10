@@ -50,18 +50,13 @@ let top={
                 (this.data.part?` > ${this.data.part}`:'')
         },
     },
-    props:['data'],
+    props:[
+        'data',
+        'href',
+    ],
     methods:{
         change(e){
-            location={
-                top:'/zh-Hant/presaleId',
-                concept:'/zh-Hant/presaleIdConcept',
-                environment:'/zh-Hant/presaleIdEnvironment',
-                traffic:'/zh-Hant/presaleIdTraffic',
-                pattern:'/zh-Hant/presaleIdPattern',
-                summary:'/zh-Hant/presaleIdSummary',
-                video:'/zh-Hant/presaleIdAv',
-            }[e.target.value]
+            location=this.href[e.target.value]
         },
     },
     template:`

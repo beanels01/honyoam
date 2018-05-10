@@ -57,6 +57,7 @@ let aMain={
                         title:presaleId.language[currentLanguage].name,
                         part:'建築概念',
                     }"
+                    :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{

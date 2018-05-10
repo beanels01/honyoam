@@ -46,6 +46,7 @@ let aMain={
                         title:presaleId.language[currentLanguage].name,
                         part:'影音介紹',
                     }"
+                    :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{
