@@ -81,9 +81,9 @@ let aMain={
                     </div>
                     <div class=o>
                         <div>
-                            <div v-for="a in data">
-                                <div class=a>{{a[0]}}</div>
-                                <div class=b>{{a[1]}}</div>
+                            <div v-for="a in presaleId.summary">
+                                <div class=a>{{a.key}}</div>
+                                <div class=b>{{a.value}}</div>
                             </div>
                         </div>
                     </div>
