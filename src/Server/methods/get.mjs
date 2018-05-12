@@ -45,10 +45,10 @@ export default{
             ['root'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.outPresaleList()}
+        return{res:await this.honyoamMongoClient.getPresaleList()}
     },
     async getPresaleList0(doc){
-        return{res:await this.honyoamMongoClient.outPresaleList0(
+        return{res:await this.honyoamMongoClient.getPresaleList0(
             doc.language
         )}
     },

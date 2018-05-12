@@ -1,8 +1,8 @@
 import mongodb from                         'mongodb'
-import add from                             './MongoClient/add'
+import put from                             './MongoClient/put'
 import get from                             './MongoClient/get'
-import update from                          './MongoClient/update'
-import sha256 from                          './MongoClient/sha256'
+import set from                             './MongoClient/set'
+import cut from                             './MongoClient/cut'
 let{
     MongoClient:RawMongoClient,
     ObjectID,
@@ -58,17 +58,7 @@ function MongoClient(config){
         ])
     })()
 }
-Object.assign(MongoClient.prototype,add,get,update)
-MongoClient.prototype.deleteApply=async function(id){
-    await this._applyCol.deleteOne({
-        _id:new ObjectID(id),
-    })
-}
-MongoClient.prototype.deleteFeedback=async function(id){
-    await this._feedbackCol.deleteOne({
-        _id:new ObjectID(id),
-    })
-}
+Object.assign(MongoClient.prototype,put,get,set,cut)
 MongoClient.prototype.freezeUser=function(user){
     return this._userCol.updateOne(
         {_id:new ObjectID(user._id)},

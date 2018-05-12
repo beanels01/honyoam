@@ -58,7 +58,7 @@ o.getUserByUsername=function(username){
 o.getUserlist=function(){
     return this._userCol.find({}).toArray()
 }
-o.outPresaleList=async function(){
+o.getPresaleList=async function(){
     return(await this._presaleCol.find({}).toArray()).map(a=>({
         id:a._id,
         name:
@@ -68,7 +68,7 @@ o.outPresaleList=async function(){
             '未命名',
     }))
 }
-o.outPresaleList0=async function(language){
+o.getPresaleList0=async function(language){
     return(await this._presaleCol.find({publish:true}).toArray()).map(a=>{
         let
             patternClass=['1K','1DK','1LDK','2LDK','3LDK','>3LDK'],

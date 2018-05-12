@@ -1,6 +1,6 @@
 import mongodb from 'mongodb'
 import sha256 from './sha256'
-async function addApply(
+async function putApply(
     people,
     interested,
     title,
@@ -14,7 +14,7 @@ async function addApply(
         currentLanguage,
     })).insertedId
 }
-async function addFeedback(
+async function putFeedback(
     name,
     email,
     phone,
@@ -29,31 +29,31 @@ async function addFeedback(
     })
     return res.insertedId
 }
-async function addImage(doc){
+async function putImage(doc){
     let res=await this._imageCol.insertOne({
         user:doc.user,
     })
     return res.insertedId
 }
-async function addPresaleObject(){
+async function putPresaleObject(){
     return(await this._presaleCol.insertOne({})).insertedId
 }
-async function addSeminar(language){
+async function putSeminar(language){
     return(await this._seminarCol.insertOne({language})).insertedId
 }
-async function addUser(doc){
+async function putUser(doc){
     return(await this._userCol.insertOne({
-        username:doc.username,
-        password:new mongodb.Binary(sha256(doc.password)),
-        type:doc.type,
-        realname:doc.realname,
+        username:       doc.username,
+        password:       new mongodb.Binary(sha256(doc.password)),
+        type:           doc.type,
+        realname:       doc.realname,
     })).insertedId
 }
 export default{
-    addApply,
-    addFeedback,
-    addImage,
-    addPresaleObject,
-    addSeminar,
-    addUser,
+    putApply,
+    putFeedback,
+    putImage,
+    putPresaleObject,
+    putSeminar,
+    putUser,
 }

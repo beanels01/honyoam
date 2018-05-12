@@ -6,7 +6,7 @@ export default{
             ['root'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.updateApplyStatus(
+        return{res:await this.honyoamMongoClient.setApplyStatus(
             doc.id,doc.value
         )}
     },
@@ -16,7 +16,7 @@ export default{
             ['root','sysadmin','editor'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.updateSite(
+        return{res:await this.honyoamMongoClient.setSite(
             'contact',doc.value
         )}
     },
@@ -26,7 +26,7 @@ export default{
             ['root'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.updateFeedbackStatus(
+        return{res:await this.honyoamMongoClient.setFeedbackStatus(
             doc.id,doc.value
         )}
     },
@@ -36,7 +36,7 @@ export default{
             ['root','sysadmin','editor'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.updateSite(
+        return{res:await this.honyoamMongoClient.setSite(
             'homepage',doc.value
         )}
     },
@@ -46,7 +46,7 @@ export default{
             ['root','editor'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.updateSite(
+        return{res:await this.honyoamMongoClient.setSite(
             'faq',doc.value
         )}
     },
@@ -61,7 +61,7 @@ export default{
             return{err:'permission denied'}
         if(!user.isValidPassword(doc.password))
             return{err:'密碼格式不符。'}
-        await this.honyoamMongoClient.updateUserPassword(
+        await this.honyoamMongoClient.setUserPassword(
             doc.targetUser,doc.password
         )
         return{res:null}
@@ -72,7 +72,7 @@ export default{
             ['root'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.updateSite(
+        return{res:await this.honyoamMongoClient.setSite(
             'presale',doc.value
         )}
     },
@@ -93,7 +93,7 @@ export default{
             ['root','sysadmin','editor'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.updateSeminar(
+        return{res:await this.honyoamMongoClient.setSeminar(
             doc.id,
             doc.doc
         )}

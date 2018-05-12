@@ -5,7 +5,7 @@ let cut={
             ['root'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.deleteApply(
+        return{res:await this.honyoamMongoClient.cutApply(
             doc.id
         )}
     },
@@ -15,7 +15,7 @@ let cut={
             ['root'].includes(doc.currentUser.type)
         ))
             return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.deleteFeedback(
+        return{res:await this.honyoamMongoClient.cutFeedback(
             doc.id
         )}
     },

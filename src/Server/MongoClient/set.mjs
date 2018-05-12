@@ -6,24 +6,7 @@ let
         Binary,
     }=mongodb,
     o={}
-o.setPresaleObject=async function(id,doc){
-    await this._presaleCol.updateOne(
-        {_id:new ObjectID(id)},
-        {$set:doc}
-    )
-}
-o.updateSite=async function(key,value){
-    await this._siteCol.updateOne({
-        key,
-    },{
-        $set:{
-            value,
-        },
-    },{
-        upsert:true,
-    })
-}
-o.updateApplyStatus=async function(id,status){
+async function setApplyStatus(id,status){
     await this._applyCol.updateOne({
         _id:new ObjectID(id),
     },{
@@ -32,7 +15,7 @@ o.updateApplyStatus=async function(id,status){
         },
     })
 }
-o.updateFeedbackStatus=async function(id,status){
+async function setFeedbackStatus(id,status){
     await this._feedbackCol.updateOne({
         _id:new ObjectID(id),
     },{
@@ -41,7 +24,13 @@ o.updateFeedbackStatus=async function(id,status){
         },
     })
 }
-o.updateSite=async function(key,value){
+async function setSeminar(id,doc){
+    await this._seminarCol.updateOne(
+        {_id:new ObjectID(id)},
+        {$set:doc}
+    )
+}
+async function setSite(key,value){
     await this._siteCol.updateOne({
         key,
     },{
@@ -52,16 +41,23 @@ o.updateSite=async function(key,value){
         upsert:true,
     })
 }
-o.updateSeminar=async function(id,doc){
-    await this._seminarCol.updateOne(
+async function setPresaleObject(id,doc){
+    await this._presaleCol.updateOne(
         {_id:new ObjectID(id)},
         {$set:doc}
     )
 }
-o.updateUserPassword=function(user,password){
+function setUserPassword(user,password){
     return this._userCol.updateOne(
         {_id:new ObjectID(user._id)},
         {$set:{password:new Binary(sha256(password))}}
     )
 }
-export default o
+export default{
+    setApplyStatus,
+    setFeedbackStatus,
+    setSeminar,
+    setSite,
+    setPresaleObject,
+    setUserPassword,
+}

@@ -48,7 +48,7 @@ export default Object.assign({
                 return{err:'未填職稱。'}
             if(this.invitationCode.register!=doc.invitationCode)
                 return{err:'邀請碼錯誤。'}
-            let res=await this.honyoamMongoClient.addUser(doc)
+            let res=await this.honyoamMongoClient.putUser(doc)
             this.invitationCode.register=
                 Math.random().toString(36).substr(2,8)
             return{res}
