@@ -8,7 +8,7 @@ export default o=>{
     }
     o._addApply=function(doc){
         return this._request({
-            method:             'addApply',
+            method:             'putApply',
             people:             doc.people.map(a=>({
                 name:   a.name,
                 gender: a.gender,
@@ -22,13 +22,13 @@ export default o=>{
     }
     o._addPresaleObject=function(currentUser){
         return this._request({
-            method:             'addPresaleObject',
+            method:             'putPresaleObject',
             currentUser,
         })
     }
     o._addFeedback=function(doc){
         return this._request({
-            method:             'addFeedback',
+            method:             'putFeedback',
             name:               doc.name,
             email:              doc.email,
             phone:              doc.phone,
@@ -37,27 +37,27 @@ export default o=>{
     }
     o._addImage=function(currentUser){
         return this._request({
-            method:'addImage',
+            method:'putImage',
             currentUser,
         })
     }
     o._addSeminar=function(currentUser,language){
         return this._request({
-            method:'addSeminar',
+            method:'putSeminar',
             currentUser,
             language,
         })
     }
     o._deleteApply=function(currentUser,id){
         return this._request({
-            method:             'deleteApply',
+            method:             'cutApply',
             id,
             currentUser,
         })
     }
     o._deleteFeedback=function(currentUser,id){
         return this._request({
-            method:             'deleteFeedback',
+            method:             'cutFeedback',
             id,
             currentUser,
         })
@@ -71,25 +71,25 @@ export default o=>{
     }
     o._inPresale=function(cu,value){
         return this._request({
-            method:'inPresale',
+            method:'setPresale',
             currentUser:cu,
             value,
         })
     }
     o._outPresale=function(){
         return this._request({
-            method:'outPresale',
+            method:'getPresale',
         })
     }
     o._outPresaleList=function(cu){
         return this._request({
-            method:'outPresaleList',
+            method:'getPresaleList',
             currentUser:cu,
         })
     }
     o._outPresaleList0=function(language){
         return this._request({
-            method:'outPresaleList0',
+            method:'getPresaleList0',
             language,
         })
     }
@@ -119,28 +119,28 @@ export default o=>{
     }
     o._updateContact=function(currentUser,value){
         return this._request({
-            method:         'updateContact',
+            method:         'setContact',
             currentUser,
             value,
         })
     }
     o._updateFaq=function(currentUser,value){
         return this._request({
-            method:         'updateFaq',
+            method:         'setFaq',
             currentUser,
             value,
         })
     }
     o._updateHomepage=function(currentUser,value){
         return this._request({
-            method:'updateHomepage',
+            method:'setHomepage',
             currentUser,
             value,
         })
     }
     o._updatePassword=function(currentUser,targetUser,password){
         return this._request({
-            method:'updatePassword',
+            method:'setPassword',
             currentUser,
             targetUser,
             password,
@@ -148,7 +148,7 @@ export default o=>{
     }
     o._updateSeminar=function(currentUser,id,doc){
         return this._request({
-            method:'updateSeminar',
+            method:'setSeminar',
             currentUser,
             id,
             doc,
@@ -157,8 +157,8 @@ export default o=>{
     o._updateStatus=function(currentUser,type,id,value){
         return this._request({
             method:{
-                apply:'updateApplyStatus',
-                feedback:'updateFeedbackStatus',
+                apply:'setApplyStatus',
+                feedback:'setFeedbackStatus',
             }[type],
             currentUser,
             id,

@@ -36,6 +36,22 @@ export default{
             return{err:'permission denied'}
         return{res:this.invitationCode}
     },
+    async getPresale(){
+        return{res:await this.honyoamMongoClient.getSite('presale')}
+    },
+    async getPresaleList(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.outPresaleList()}
+    },
+    async getPresaleList0(doc){
+        return{res:await this.honyoamMongoClient.outPresaleList0(
+            doc.language
+        )}
+    },
     async getPresaleObject(doc){
         return{res:await this.honyoamMongoClient.getPresaleObject(doc.id)}
     },
@@ -84,21 +100,5 @@ export default{
             realname:   u.realname,
             freezed:    u.freezed,
         }))}
-    },
-    async outPresale(){
-        return{res:await this.honyoamMongoClient.getSite('presale')}
-    },
-    async outPresaleList(doc){
-        if(!(
-            doc.currentUser&&
-            ['root'].includes(doc.currentUser.type)
-        ))
-            return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.outPresaleList()}
-    },
-    async outPresaleList0(doc){
-        return{res:await this.honyoamMongoClient.outPresaleList0(
-            doc.language
-        )}
     },
 }

@@ -6,31 +6,12 @@
         回傳：
             {err:...} 或 {res:...}
 */
-import user from            './methods/user'
-import add from             './methods/add'
+import put from             './methods/put'
 import get from             './methods/get'
-import update from          './methods/update'
+import set from             './methods/set'
+import cut from             './methods/cut'
+import user from            './methods/user'
 export default Object.assign({
-    async deleteApply(doc){
-        if(!(
-            doc.currentUser&&
-            ['root'].includes(doc.currentUser.type)
-        ))
-            return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.deleteApply(
-            doc.id
-        )}
-    },
-    async deleteFeedback(doc){
-        if(!(
-            doc.currentUser&&
-            ['root'].includes(doc.currentUser.type)
-        ))
-            return{err:'permission denied'}
-        return{res:await this.honyoamMongoClient.deleteFeedback(
-            doc.id
-        )}
-    },
     async freezeUser(doc){
         if(!(
             doc.currentUser&&
@@ -73,4 +54,4 @@ export default Object.assign({
             return{res}
         })()
     },
-},add,get,update)
+},put,get,set,cut)

@@ -1,5 +1,5 @@
 export default{
-    async addApply(doc){
+    async putApply(doc){
         return{res:await this.honyoamMongoClient.addApply(
             doc.people,
             doc.interested,
@@ -7,7 +7,7 @@ export default{
             doc.currentLanguage,
         )}
     },
-    async addFeedback(doc){
+    async putFeedback(doc){
         return{res:await this.honyoamMongoClient.addFeedback(
             doc.name,
             doc.email,
@@ -15,7 +15,7 @@ export default{
             doc.question,
         )}
     },
-    async addImage(doc){
+    async putImage(doc){
         if(!(
             doc.currentUser&&
             ['root','sysadmin','editor'].includes(doc.currentUser.type)
@@ -25,7 +25,7 @@ export default{
             doc.currentUser._id
         )}
     },
-    async addPresaleObject(doc){
+    async putPresaleObject(doc){
         if(!(
             doc.currentUser&&
             ['root'].includes(doc.currentUser.type)
@@ -33,7 +33,7 @@ export default{
             return{err:'permission denied'}
         return{res:await this.honyoamMongoClient.addPresaleObject()}
     },
-    async addSeminar(doc){
+    async putSeminar(doc){
         if(!(
             doc.currentUser&&
             ['root','sysadmin','editor'].includes(doc.currentUser.type)
