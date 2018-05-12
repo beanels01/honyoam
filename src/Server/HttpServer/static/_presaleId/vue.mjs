@@ -67,6 +67,7 @@ let aMain={
                     :data="{
                         focus:'top',
                         title:presale.presaleId.name,
+                        background:presale.presaleId.banner,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
@@ -79,7 +80,7 @@ let aMain={
                 ></presaleIdLikeMain>
                 <block
                     background='/_presaleId/pre01.jpg'
-                    title='建築概念'
+                    title='建築設計'
                     :content=presale.presaleId.conceptSummary
                     :more=presaleIdHref.concept
                 ></block>

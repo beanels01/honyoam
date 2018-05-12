@@ -5,6 +5,7 @@ async function main(rq,rs,lang,patch,id){
     // i for input
     presaleId=(i=>{
         let o={
+            banner:                 i.banner.concept,
             gallery:                i.gallery,
         }
         i=i.language[lang]
@@ -17,7 +18,7 @@ async function main(rq,rs,lang,patch,id){
     })(presaleId)
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
-        title:              `建築概念 - ${presaleId.name}`,
+        title:              `建築設計 - ${presaleId.name}`,
         css:                [
                                 '_presaleLike/main.css',
                                 '_presaleIdLike/main.css',

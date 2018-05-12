@@ -42,6 +42,7 @@ let aMain={
                         focus:'summary',
                         title:presale.presaleId.name,
                         part:'物件概要',
+                        background:presale.presaleId.banner,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>

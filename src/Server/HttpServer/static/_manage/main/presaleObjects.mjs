@@ -5,6 +5,7 @@ import inputForSpecificLanguage from
     './presaleObjects/inputForSpecificLanguage.mjs'
 import languageSelect from      './languageSelect.mjs'
 import cropImageUploader from   './cropImageUploader.mjs'
+import imageUploader from       './imageUploader.mjs'
 let keyValueEditOption={
     created(){
         this.checkValue()
@@ -48,6 +49,7 @@ let inputForSpecificObject={
         languageSelect,
         inputForSpecificLanguage,
         cropImageUploader,
+        imageUploader,
     },
     created(){
         this.in()
@@ -71,6 +73,8 @@ let inputForSpecificObject={
                     version:this.version,
                     language:{},
                 }
+            if(!value.banner)
+                value.banner={}
             this.value=value
         },
         async out(){
@@ -85,9 +89,6 @@ let inputForSpecificObject={
     props:['id','language',],
     template:`
         <div v-if=value>
-            <cropImageUploader
-                v-model=value.image
-            ></cropImageUploader>
             <p>
                 <label>
                     <input type=checkbox v-model=value.publish>
@@ -100,6 +101,39 @@ let inputForSpecificObject={
                     已完售
                 </label>
             </p>
+            <h3>物件小圖片</h3>
+            <cropImageUploader
+                v-model=value.image
+            ></cropImageUploader>
+            <h3>橫幅圖片</h3>
+            <h4>TOP</h4>
+            <imageUploader
+                v-model=value.banner.top
+            ></imageUploader>
+            <h4>建築設計</h4>
+            <imageUploader
+                v-model=value.banner.concept
+            ></imageUploader>
+            <h4>周邊環境</h4>
+            <imageUploader
+                v-model=value.banner.environment
+            ></imageUploader>
+            <h4>交通方式</h4>
+            <imageUploader
+                v-model=value.banner.traffic
+            ></imageUploader>
+            <h4>空間格局</h4>
+            <imageUploader
+                v-model=value.banner.pattern
+            ></imageUploader>
+            <h4>物件概要</h4>
+            <imageUploader
+                v-model=value.banner.summary
+            ></imageUploader>
+            <h4>影音介紹</h4>
+            <imageUploader
+                v-model=value.banner.video
+            ></imageUploader>
             <h3>格局</h3>
             <optionList
                 class=indent

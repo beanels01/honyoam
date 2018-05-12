@@ -4,15 +4,18 @@ async function main(rq,rs,lang,patch,id){
     let presaleId=(await this._getPresaleObject(id)).res
     // i for input
     presaleId=(i=>{
+        let o={
+            banner:i.banner.top,
+        }
         i=i.language[lang]
-        return{
+        return Object.assign(o,{
             name:                   i.name,
             informationTitle:       i.informationTitle,
             informationContent:     i.informationContent,
             conceptSummary:         i.conceptSummary,
             environmentSummary:     i.environmentSummary,
             trafficSummary:         i.trafficSummary,
-        }
+        })
     })(presaleId)
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,

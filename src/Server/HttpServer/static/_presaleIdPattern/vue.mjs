@@ -68,6 +68,7 @@ let aMain={
                         focus:'pattern',
                         title:presale.presaleId.name,
                         part:'空間格局',
+                        background:presale.presaleId.banner,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>

@@ -44,6 +44,7 @@ let aMain={
                         focus:'traffic',
                         title:presale.presaleId.name,
                         part:'交通方式',
+                        background:presale.presaleId.banner,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>

@@ -19,7 +19,7 @@ let header={
             <a
                 :href=href.concept
                 :class="{active:data.focus=='concept'}"
-            >建築概念</a>
+            >建築設計</a>
             <a
                 :href=href.environment
                 :class="{active:data.focus=='environment'}"
@@ -49,6 +49,11 @@ let top={
             return this.data.title+
                 (this.data.part?` > ${this.data.part}`:'')
         },
+        styleB(){
+            return{
+                backgroundImage:`url(/image/${this.data.background})`
+            }
+        },
     },
     props:[
         'data',
@@ -67,7 +72,7 @@ let top={
                     @change=change
                 >
                     <option value=top>TOP</option>
-                    <option value=concept>建築概念</option>
+                    <option value=concept>建築設計</option>
                     <option value=environment>周邊環境</option>
                     <option value=traffic>交通方式</option>
                     <option value=pattern>空間格局</option>
@@ -75,7 +80,7 @@ let top={
                     <option value=video>影音介紹</option>
                 </select>
             </div>
-            <div class=b>
+            <div class=b :style=styleB>
                 <div>
                     <div>{{title}}</div>
                 </div>

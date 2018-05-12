@@ -43,6 +43,7 @@ let aMain={
                         focus:'video',
                         title:presale.presaleId.name,
                         part:'影音介紹',
+                        background:presale.presaleId.banner,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>

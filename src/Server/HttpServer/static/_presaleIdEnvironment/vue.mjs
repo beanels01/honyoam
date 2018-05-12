@@ -44,6 +44,7 @@ let aMain={
                         focus:'environment',
                         title:presale.presaleId.name,
                         part:'周邊環境',
+                        background:presale.presaleId.banner,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>

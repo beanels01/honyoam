@@ -43,7 +43,8 @@ let aMain={
                     :data="{
                         focus:'concept',
                         title:presale.presaleId.name,
-                        part:'建築概念',
+                        part:'建築設計',
+                        background:presale.presaleId.banner,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>

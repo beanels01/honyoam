@@ -5,6 +5,7 @@ async function main(rq,rs,lang,patch,id){
     // i for input
     presaleId=(i=>{
         let o={
+            banner:                 i.banner.video,
         }
         i=i.language[lang]
         return Object.assign(o,{
