@@ -6,15 +6,21 @@ import investJapan from './inputForSpecificLanguage/investJapan.mjs'
 import inputOption from './inputForSpecificLanguage/inputOption.mjs'
 import speakersInput from './inputForSpecificLanguage/speakersInput.mjs'
 import flowInput from './inputForSpecificLanguage/flowInput.mjs'
+import quillImageHandler from '../quillImageHandler.mjs'
 let
     options={
         placeholder:'內文',
         modules:{
-            toolbar:[
-                'link',
-                'image',
-                {header:1},
-            ],
+            toolbar:{
+                container:[
+                    'link',
+                    'image',
+                    {header:1},
+                ],
+                handlers:{
+                    image:quillImageHandler
+                },
+            }
         },
         formats:[
             'link',

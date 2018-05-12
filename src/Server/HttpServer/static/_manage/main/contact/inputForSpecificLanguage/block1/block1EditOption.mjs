@@ -1,15 +1,19 @@
 import optionList from          '../../../optionList.mjs'
 import imageUploader from       '../../../imageUploader.mjs'
+import quillImageHandler from   '../../../quillImageHandler.mjs'
 let
     options={
         placeholder:'內文',
         modules:{
-            toolbar:[
-                'link',
-                'image',
-                {'list':'bullet'},
-                {'list':'ordered'},
-            ],
+            toolbar:{
+                container:[
+                    'link',
+                    'image',
+                    {'list':'bullet'},
+                    {'list':'ordered'},
+                ],
+                handlers:{image:quillImageHandler},
+            },
         },
         formats:[
             'link',

@@ -1,3 +1,4 @@
+import quillImageHandler from   '../quillImageHandler.mjs'
 let
     formats=[
         'link',
@@ -6,21 +7,30 @@ let
     optionsForConcept={
         placeholder:'概念內文',
         modules:{
-            toolbar:formats,
+            toolbar:{
+                container:formats,
+                handlers:{image:quillImageHandler},
+            },
         },
         formats,
     },
     optionsForEnvironment={
         placeholder:'環境內文',
         modules:{
-            toolbar:formats,
+            toolbar:{
+                container:formats,
+                handlers:{image:quillImageHandler},
+            },
         },
         formats,
     },
     optionsForTraffic={
         placeholder:'交通內文',
         modules:{
-            toolbar:formats,
+            toolbar:{
+                container:formats,
+                handlers:{image:quillImageHandler},
+            },
         },
         formats,
     }

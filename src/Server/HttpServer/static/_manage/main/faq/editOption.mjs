@@ -1,14 +1,20 @@
+import quillImageHandler from '../quillImageHandler.mjs'
 let
-    formats=[
-        'link',
-        'image',
-    ],
     optionsForAnswer={
         placeholder:'答案（文章）',
         modules:{
-            toolbar:formats,
+            toolbar:{
+                container:[
+                    'link',
+                    'image',
+                ],
+                handlers:{image:quillImageHandler},
+            }
         },
-        formats,
+        formats:[
+            'link',
+            'image',
+        ],
     }
 let editOption={
     components:{

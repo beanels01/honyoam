@@ -1,7 +1,6 @@
 import imageUploader from       '../../imageUploader.mjs'
 let block0={
     components:{
-        quillEditor:VueQuillEditor.quillEditor,
         imageUploader,
     },
     computed:{
