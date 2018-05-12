@@ -1,5 +1,6 @@
-let o={}
-o.addApply=async function(
+import mongodb from 'mongodb'
+import sha256 from './sha256'
+async function addApply(
     people,
     interested,
     title,
@@ -13,7 +14,7 @@ o.addApply=async function(
         currentLanguage,
     })).insertedId
 }
-o.addFeedback=async function(
+async function addFeedback(
     name,
     email,
     phone,
@@ -28,16 +29,31 @@ o.addFeedback=async function(
     })
     return res.insertedId
 }
-o.addImage=async function(doc){
+async function addImage(doc){
     let res=await this._imageCol.insertOne({
         user:doc.user,
     })
     return res.insertedId
 }
-o.addPresaleObject=async function(){
+async function addPresaleObject(){
     return(await this._presaleCol.insertOne({})).insertedId
 }
-o.addSeminar=async function(language){
+async function addSeminar(language){
     return(await this._seminarCol.insertOne({language})).insertedId
 }
-export default o
+async function addUser(doc){
+    return(await this._userCol.insertOne({
+        username:doc.username,
+        password:new mongodb.Binary(sha256(doc.password)),
+        type:doc.type,
+        realname:doc.realname,
+    })).insertedId
+}
+export default{
+    addApply,
+    addFeedback,
+    addImage,
+    addPresaleObject,
+    addSeminar,
+    addUser,
+}
