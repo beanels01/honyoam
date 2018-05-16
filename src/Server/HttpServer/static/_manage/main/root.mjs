@@ -1,16 +1,17 @@
-import api from             '../../_api.mjs'
-import invitationCode from  './invitationCode.mjs'
-import userlist from        './userlist.mjs'
-import homepage from        './homepage.mjs'
-import contact from         './contact.mjs'
-import seminar from         './seminar.mjs'
-import contactApply from    './contactApply.mjs'
-import faq from             './faq.mjs'
-import faqFeedback from     './faqFeedback.mjs'
-import presale from         './presale.mjs'
-import presaleObjects from  './presaleObjects.mjs'
+import resetSysadminPassword from   './resetSysadminPassword.mjs'
+import invitationCode from          './invitationCode.mjs'
+import userlist from                './userlist.mjs'
+import homepage from                './homepage.mjs'
+import presale from                 './presale.mjs'
+import presaleObjects from          './presaleObjects.mjs'
+import contact from                 './contact.mjs'
+import seminar from                 './seminar.mjs'
+import contactApply from            './contactApply.mjs'
+import faq from                     './faq.mjs'
+import faqFeedback from             './faqFeedback.mjs'
 export default{
     components:{
+        resetSysadminPassword,
         invitationCode,
         userlist,
         homepage,
@@ -22,49 +23,11 @@ export default{
         presale,
         presaleObjects,
     },
-    data:()=>({
-        error:'',
-        maskPassword:false,
-        password:'',
-    }),
-    methods:{
-        async submit(e){
-            e.preventDefault()
-            let res=await api.post({
-                method:'updatePassword',
-                user:(await api.post({
-                    method:'getUserByType',
-                    type:'sysadmin',
-                })).res,
-                password:this.password,
-            })
-            if(res.err)
-                this.error=res.err
-            else
-                this.password=''
-        }
-    },
     props:['language'],
     template:`
         <div>
             <h2>重置 sysadmin 密碼</h2>
-            <form class=indent @submit=submit>
-                <input
-                    placeholder=密碼
-                    :type="maskPassword?'password':'text'"
-                    v-model:value=password
-                >
-                <label>
-                    <input
-                        type=checkbox
-                        v-model:value=maskPassword
-                    >
-                    遮蔽密碼
-                </label>
-                <input type=submit value=送出>
-                <br>
-                <span v-if=error>錯誤：{{error}}</span>
-            </form>
+            <resetSysadminPassword class=indent></resetSysadminPassword>
             <h2>邀請碼</h2>
             <invitationCode class=indent></invitationCode>
             <h2>用戶清單</h2>
