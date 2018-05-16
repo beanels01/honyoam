@@ -23,23 +23,27 @@ let resetSysadminPassword={
         }
     },
     template:`
-        <form @submit=submit>
-            <input
-                placeholder=密碼
-                :type="maskPassword?'password':'text'"
-                v-model:value=password
-            >
-            <label>
+        <div style="padding-top:8px;">
+            <form @submit=submit>
                 <input
-                    type=checkbox
-                    v-model:value=maskPassword
+                    placeholder=密碼
+                    :type="maskPassword?'password':'text'"
+                    v-model:value=password
                 >
-                遮蔽密碼
-            </label>
-            <input type=submit value=送出>
-            <br>
-            <span v-if=error>錯誤：{{error}}</span>
-        </form>
+                <br>
+                <label>
+                    <input
+                        type=checkbox
+                        v-model:value=maskPassword
+                    >
+                    遮蔽密碼
+                </label>
+                <br>
+                <input type=submit value=送出>
+                <br>
+                <span v-if=error>錯誤：{{error}}</span>
+            </form>
+        </div>
     `,
 }
 export default resetSysadminPassword

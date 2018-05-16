@@ -185,7 +185,6 @@ let aMenu={
                     <aMenu :user=user v-model=focus></aMenu>
                     <div class=o><div>
                         <div v-if="focus=='user'">
-                            <h1>用戶：{{user.username}}</h1>
                             <button @click='updatePassword=true'>
                                 更改密碼
                             </button>
@@ -200,52 +199,47 @@ let aMenu={
                             </div>
                         </div>
                         <div v-if="focus=='resetSysadminPassword'">
-                            <resetSysadminPassword class=indent></resetSysadminPassword>
+                            <resetSysadminPassword></resetSysadminPassword>
                         </div>
                         <div v-if="focus=='invitationCode'">
-                            <invitationCode class=indent></invitationCode>
+                            <invitationCode></invitationCode>
                         </div>
                         <div v-if="focus=='userlist'">
-                            <userlist class=indent></userlist>
+                            <userlist></userlist>
                         </div>
                         <div v-if="focus=='homepage'">
                             <homepage
-                                class=indent
                                 :language=language
                             ></homepage>
                         </div>
                         <div v-if="focus=='presale'">
                             <presale
-                                class=indent
                                 :language=language
                             ></presale>
                         </div>
                         <div v-if="focus=='presaleObjects'">
                             <presaleObjects
-                                class=indent
                                 :language=language
                             ></presaleObjects>
                         </div>
                         <div v-if="focus=='faq'">
-                            <faq class=indent :language=language></faq>
+                            <faq :language=language></faq>
                         </div>
                         <div v-if="focus=='faqFeedback'">
-                            <faqFeedback class=indent></faqFeedback>
+                            <faqFeedback></faqFeedback>
                         </div>
                         <div v-if="focus=='seminar'">
                             <seminar
-                                class=indent
                                 :language=language
                             ></seminar>
                         </div>
                         <div v-if="focus=='contact'">
                             <contact
-                                class=indent
                                 :language=language
                             ></contact>
                         </div>
                         <div v-if="focus=='contactApply'">
-                            <contactApply class=indent></contactApply>
+                            <contactApply></contactApply>
                         </div>
                         <div v-if="focus=='legacy'">
                             <div v-if="user.type=='root'">

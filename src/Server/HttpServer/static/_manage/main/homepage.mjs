@@ -25,7 +25,7 @@ export default{
     props:['language'],
     template:`
         <div class=homepage v-if=homepage&&language>
-            <h3>搜尋塊背景</h3>
+            <h1>搜尋塊背景</h1>
             <div class=indent style=display:table;text-align:center>
                 <div style=display:table-cell>
                     行動版<br>
@@ -40,7 +40,7 @@ export default{
                     ></imageUploader>
                 </div>
             </div>
-            <h3>最新物件</h3>
+            <h1>最新物件</h1>
             <div class=indent>
                 <p>
                     <languageSelect
@@ -56,7 +56,7 @@ export default{
                     <button @click=preview>預覽</button>
                 </template>
             </div>
-            <h3>說明會</h3>
+            <h1>說明會</h1>
             <div class=indent>
                 <p>
                     <languageSelect

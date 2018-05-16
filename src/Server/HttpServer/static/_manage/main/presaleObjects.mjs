@@ -101,53 +101,55 @@ let inputForSpecificObject={
                     已完售
                 </label>
             </p>
-            <h3>物件小圖片</h3>
+            <h1>物件小圖片</h1>
             <cropImageUploader
                 v-model=value.image
             ></cropImageUploader>
-            <h3>橫幅圖片</h3>
-            <h4>TOP</h4>
-            <imageUploader
-                v-model=value.banner.top
-            ></imageUploader>
-            <h4>建築設計</h4>
-            <imageUploader
-                v-model=value.banner.concept
-            ></imageUploader>
-            <h4>周邊環境</h4>
-            <imageUploader
-                v-model=value.banner.environment
-            ></imageUploader>
-            <h4>交通方式</h4>
-            <imageUploader
-                v-model=value.banner.traffic
-            ></imageUploader>
-            <h4>空間格局</h4>
-            <imageUploader
-                v-model=value.banner.pattern
-            ></imageUploader>
-            <h4>物件概要</h4>
-            <imageUploader
-                v-model=value.banner.summary
-            ></imageUploader>
-            <h4>影音介紹</h4>
-            <imageUploader
-                v-model=value.banner.video
-            ></imageUploader>
-            <h3>格局</h3>
+            <h1>橫幅圖片</h1>
+            <div class=indent>
+                <h2>TOP</h2>
+                <imageUploader
+                    v-model=value.banner.top
+                ></imageUploader>
+                <h2>建築設計</h2>
+                <imageUploader
+                    v-model=value.banner.concept
+                ></imageUploader>
+                <h2>周邊環境</h2>
+                <imageUploader
+                    v-model=value.banner.environment
+                ></imageUploader>
+                <h2>交通方式</h2>
+                <imageUploader
+                    v-model=value.banner.traffic
+                ></imageUploader>
+                <h2>空間格局</h2>
+                <imageUploader
+                    v-model=value.banner.pattern
+                ></imageUploader>
+                <h2>物件概要</h2>
+                <imageUploader
+                    v-model=value.banner.summary
+                ></imageUploader>
+                <h2>影音介紹</h2>
+                <imageUploader
+                    v-model=value.banner.video
+                ></imageUploader>
+            </div>
+            <h1>格局</h1>
             <optionList
                 class=indent
                 :editOption=patternEditOption
                 :editOptionData=language
                 v-model=value.pattern
             ></optionList>
-            <h3>概要</h3>
+            <h1>概要</h1>
             <optionList
                 class=indent
                 :editOption=keyValueEditOption
                 v-model=value.summary
             ></optionList>
-            <h3>畫廊</h3>
+            <h1>畫廊</h1>
             <optionList
                 class=indent
                 :editOption=cropImageUploader

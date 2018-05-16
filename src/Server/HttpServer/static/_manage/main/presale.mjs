@@ -14,7 +14,7 @@ let inputForSpecificLanguage={
     props:['value'],
     template:`
         <div>
-            <h3>注意事項</h3>
+            <h1>注意事項</h1>
             <template v-if=value>
                 <textarea
                     v-model=value.precautions

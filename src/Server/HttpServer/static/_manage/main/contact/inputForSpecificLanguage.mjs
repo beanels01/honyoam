@@ -116,38 +116,38 @@ let inputForSpecificLanguage={
     },
     template:`
         <div v-if=upToDate>
-            <h3>人物</h3>
+            <h1>人物</h1>
             <speakersInput
                 class=indent
                 v-model=value.speakers
             ></speakersInput>
-            <h3>第一塊</h3>
+            <h1>第一塊</h1>
             <block0
                 class=indent
                 v-model=value.block0
             ></block0>
-            <h3>第二塊</h3>
+            <h1>第二塊</h1>
             <block1
                 class=indent
                 v-model=value.block1
             ></block1>
-            <h3>主講者簡介</h3>
+            <h1>主講者簡介</h1>
             <div class=indent>
                 <textarea
                     v-model=value.presidentsProfile
                 ></textarea>
             </div>
-            <h3>精選預售房</h3>
+            <h1>精選預售房</h1>
             <presale
                 class=indent
                 v-model=value.presale
             ></presale>
-            <h3>活動流程</h3>
+            <h1>活動流程</h1>
             <flowInput
                 class=indent
                 v-model=value.flow
             ></flowInput>
-            <h3>活動花絮</h3>
+            <h1>活動花絮</h1>
             <div class=indent>
                 <input v-model=value.highlights.date>
                 <optionList
@@ -155,12 +155,12 @@ let inputForSpecificLanguage={
                     v-model=value.highlights.images
                 ></optionList>
             </div>
-            <h3>投資日本</h3>
+            <h1>投資日本</h1>
             <investJapan
                 class=indent
                 v-model=value.investJapan
             ></investJapan>
-            <h3>立即報名 - 議題（最多六個）</h3>
+            <h1>立即報名 - 議題（最多六個）</h1>
             <div class=indent>
                 <optionList
                     :editOption=inputOption
