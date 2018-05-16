@@ -19,7 +19,100 @@ import contactApply from            './main/contactApply.mjs'
 import faq from                     './main/faq.mjs'
 import faqFeedback from             './main/faqFeedback.mjs'
 // this line fix this bug: https://github.com/rollup/rollup/issues/2110
-eval('')
+//eval('')
+let aMenu={
+    props:['value','user'],
+    template:`
+        <div class=n>
+            <div
+                @click="$emit('input','user')"
+                :class="{focus:value=='user'}"
+            ><div>
+                用戶：{{user.username}}
+            </div></div>
+            <template v-if="user.type=='root'">
+                <div
+                    @click="$emit('input','resetSysadminPassword')"
+                    :class="{focus:value=='resetSysadminPassword'}"
+                ><div>
+                    重置 sysadmin 密碼
+                </div></div>
+                <div
+                    @click="$emit('input','invitationCode')"
+                    :class="{focus:value=='invitationCode'}"
+                ><div>
+                    邀請碼
+                </div></div>
+                <div
+                    @click="$emit('input','userlist')"
+                    :class="{focus:value=='userlist'}"
+                ><div>
+                    用戶清單
+                </div></div>
+                <div
+                    @click="$emit('input','homepage')"
+                    :class="{focus:value=='homepage'}"
+                ><div>
+                    首頁
+                </div></div>
+                <div
+                    @click="$emit('input','presale')"
+                    :class="{focus:value=='presale'}"
+                ><div>
+                    新成屋
+                </div></div>
+                <div
+                    @click="$emit('input','presaleObjects')"
+                    :class="{focus:value=='presaleObjects'}"
+                ><div>
+                    新成屋物件
+                </div></div>
+                <div
+                    @click="$emit('input','faq')"
+                    :class="{focus:value=='faq'}"
+                ><div>
+                    常見問題
+                </div></div>
+                <div
+                    @click="$emit('input','faqFeedback')"
+                    :class="{focus:value=='faqFeedback'}"
+                ><div>
+                    常見問題 - 回饋
+                </div></div>
+                <div
+                    @click="$emit('input','seminar')"
+                    :class="{focus:value=='seminar'}"
+                ><div>
+                    參加說明會 2.0
+                </div></div>
+                <div
+                    @click="$emit('input','contact')"
+                    :class="{focus:value=='contact'}"
+                ><div>
+                    參加說明會 1.0
+                </div></div>
+                <div
+                    @click="$emit('input','contactApply')"
+                    :class="{focus:value=='contactApply'}"
+                ><div>
+                    參加說明會 - 報名
+                </div></div>
+            </template>
+            <div
+                @click="$emit('input','legacy')"
+                :class="{focus:value=='legacy'}"
+            ><div>
+                舊版
+            </div></div>
+            <div
+                @click="$emit('input','about')"
+                :class="{focus:value=='about'}"
+            ><div>
+                關於
+            </div></div>
+        </div>
+    `,
+}
 ;(async()=>{
     new Vue({
         el:document.createElement('div'),
@@ -69,6 +162,7 @@ eval('')
             seminar,
             presale,
             presaleObjects,
+            aMenu,
         },
         template:`
             <div
@@ -88,94 +182,7 @@ eval('')
                     v-if=user
                     class=a
                 >
-                    <div class=n>
-                        <div
-                            @click="focus='user'"
-                            :class="{focus:focus=='user'}"
-                        ><div>
-                            用戶：{{user.username}}
-                        </div></div>
-                        <template v-if="user.type=='root'">
-                            <div
-                                @click="focus='resetSysadminPassword'"
-                                :class="{focus:focus=='resetSysadminPassword'}"
-                            ><div>
-                                重置 sysadmin 密碼
-                            </div></div>
-                            <div
-                                @click="focus='invitationCode'"
-                                :class="{focus:focus=='invitationCode'}"
-                            ><div>
-                                邀請碼
-                            </div></div>
-                            <div
-                                @click="focus='userlist'"
-                                :class="{focus:focus=='userlist'}"
-                            ><div>
-                                用戶清單
-                            </div></div>
-                            <div
-                                @click="focus='homepage'"
-                                :class="{focus:focus=='homepage'}"
-                            ><div>
-                                首頁
-                            </div></div>
-                            <div
-                                @click="focus='presale'"
-                                :class="{focus:focus=='presale'}"
-                            ><div>
-                                新成屋
-                            </div></div>
-                            <div
-                                @click="focus='presaleObjects'"
-                                :class="{focus:focus=='presaleObjects'}"
-                            ><div>
-                                新成屋物件
-                            </div></div>
-                            <div
-                                @click="focus='faq'"
-                                :class="{focus:focus=='faq'}"
-                            ><div>
-                                常見問題
-                            </div></div>
-                            <div
-                                @click="focus='faqFeedback'"
-                                :class="{focus:focus=='faqFeedback'}"
-                            ><div>
-                                常見問題 - 回饋
-                            </div></div>
-                            <div
-                                @click="focus='seminar'"
-                                :class="{focus:focus=='seminar'}"
-                            ><div>
-                                參加說明會 2.0
-                            </div></div>
-                            <div
-                                @click="focus='contact'"
-                                :class="{focus:focus=='contact'}"
-                            ><div>
-                                參加說明會 1.0
-                            </div></div>
-                            <div
-                                @click="focus='contactApply'"
-                                :class="{focus:focus=='contactApply'}"
-                            ><div>
-                                參加說明會 - 報名
-                            </div></div>
-                        </template>
-                        <div
-                            @click="focus='legacy'"
-                            :class="{focus:focus=='legacy'}"
-                        ><div>
-                            舊版
-                        </div></div>
-                        <div
-                            @click="focus='about'"
-                            :class="{focus:focus=='about'}"
-                        ><div>
-                            關於
-                        </div></div>
-                    </div>
+                    <aMenu :user=user v-model=focus></aMenu>
                     <div class=o><div>
                         <div v-if="focus=='user'">
                             <h1>用戶：{{user.username}}</h1>
