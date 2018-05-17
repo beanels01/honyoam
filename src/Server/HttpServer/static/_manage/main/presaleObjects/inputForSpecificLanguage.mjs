@@ -4,28 +4,7 @@ let
         'link',
         'image',
     ],
-    optionsForConcept={
-        placeholder:'概念內文',
-        modules:{
-            toolbar:{
-                container:formats,
-                handlers:{image:quillImageHandler},
-            },
-        },
-        formats,
-    },
-    optionsForEnvironment={
-        placeholder:'環境內文',
-        modules:{
-            toolbar:{
-                container:formats,
-                handlers:{image:quillImageHandler},
-            },
-        },
-        formats,
-    },
-    optionsForTraffic={
-        placeholder:'交通內文',
+    options={
         modules:{
             toolbar:{
                 container:formats,
@@ -42,9 +21,7 @@ let inputForSpecificLanguage={
         this.checkValue()
     },
     data:()=>({
-        optionsForConcept,
-        optionsForEnvironment,
-        optionsForTraffic,
+        options,
     }),
     methods:{
         checkValue(){
@@ -73,74 +50,91 @@ let inputForSpecificLanguage={
     template:`
         <div v-if=value>
             <p>
+                名稱：
                 <input
-                    placeholder=名稱
                     v-model=value.name
                 >
             </p>
             <p>
+                介紹標題：
                 <input
-                    placeholder=介紹標題
                     v-model=value.informationTitle
                 >
             </p>
             <p>
-                <textarea
-                    placeholder=介紹內容
-                    v-model=value.informationContent
-                ></textarea>
+                介紹內容：
+                <div class=indent>
+                    <textarea
+                        v-model=value.informationContent
+                    ></textarea>
+                </div>
             </p>
             <p>
-                <textarea
-                    placeholder=概念概要
-                    v-model=value.conceptSummary
-                ></textarea>
+                概念概要：
+                <div class=indent>
+                    <textarea
+                        v-model=value.conceptSummary
+                    ></textarea>
+                </div>
             </p>
             <p>
-                <quillEditor
-                    style=width:480px
-                    :options=optionsForConcept
-                    v-model=value.conceptContent
-                ></quillEditor>
+                概念內文：
+                <div class=indent>
+                    <quillEditor
+                        style=width:480px
+                        :options=options
+                        v-model=value.conceptContent
+                    ></quillEditor>
+                </div>
             </p>
             <p>
-                <textarea
-                    placeholder=環境概要
-                    v-model=value.environmentSummary
-                ></textarea>
+                環境概要：
+                <div class=indent>
+                    <textarea
+                        v-model=value.environmentSummary
+                    ></textarea>
+                </div>
             </p>
             <p>
-                <quillEditor
-                    style=width:480px
-                    :options=optionsForEnvironment
-                    v-model=value.environmentContent
-                ></quillEditor>
+                環境內文：
+                <div class=indent>
+                    <quillEditor
+                        style=width:480px
+                        :options=options
+                        v-model=value.environmentContent
+                    ></quillEditor>
+                </div>
             </p>
             <p>
-                <textarea
-                    placeholder=交通概要
-                    v-model=value.trafficSummary
-                ></textarea>
+                交通概要：
+                <div class=indent>
+                    <textarea
+                        v-model=value.trafficSummary
+                    ></textarea>
+                </div>
             </p>
             <p>
-                <quillEditor
-                    style=width:480px
-                    :options=optionsForTraffic
-                    v-model=value.trafficContent
-                ></quillEditor>
+                交通內文：
+                <div class=indent>
+                    <quillEditor
+                        style=width:480px
+                        :options=options
+                        v-model=value.trafficContent
+                    ></quillEditor>
+                </div>
             </p>
             <p>
                 這裡要設定的是 YouTube 的影片 ID。以下兩個欄位，擇一填寫即可：
             </p>
             <p>
+                影片 ID：
                 <input
-                    placeholder="影片 ID"
                     v-model=value.videoId
                 ></textarea>
             </p>
             <p>
+                影片 URL（網址）：
                 <input
-                    placeholder="影片 URL（網址）"
                     :value="'https://www.youtube.com/watch?v='+value.videoId"
                     @input=videoIdInput
                 ></textarea>

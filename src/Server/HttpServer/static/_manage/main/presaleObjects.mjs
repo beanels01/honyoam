@@ -24,14 +24,14 @@ let keyValueEditOption={
     template:`
         <div v-if=value>
             <p>
+                欄位：
                 <input
-                    placeholder=欄位
                     v-model=value.key
                 >
             </p>
             <p>
+                內容：
                 <input
-                    placeholder=內容
                     v-model=value.value
                 >
             </p>
@@ -159,11 +159,12 @@ let inputForSpecificObject={
                 <languageSelect
                     :language=language
                     v-model=selectedLanguage
-                ></languageSelect>
+                ></languageSelect>：
             </div>
             <inputForSpecificLanguage
                 v-if=selectedLanguage
                 v-model=value.language[selectedLanguage]
+                class="indent"
             ></inputForSpecificLanguage>
             <button @click=out>儲存變更</button>
         </div>
