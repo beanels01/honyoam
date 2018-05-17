@@ -182,11 +182,19 @@ export default{
         this.in()
     },
     data:()=>({
-        value:0,
-        selectedObject:0,
+        value:null,
+        selectedObject:null,
     }),
     props:['language'],
     methods:{
+        async cut(i){
+            await api.post({
+                method:'cutPresaleObject',
+                id:this.value[i].id,
+            })
+            alert('刪除完成。')
+            await this.in()
+        },
         async in(){
             this.value=(await api.post({
                 method:'outPresaleList',
@@ -202,22 +210,49 @@ export default{
     },
     template:`
         <div>
-            <button
-                @click=out
-            >新增</button>
-            <select
-                v-model=selectedObject
+            <template
+                v-if="selectedObject==null"
             >
-                <option
-                    v-for="a in value"
-                    :value=a.id
-                >{{a.name}}</option>
-            </select>
-            <inputForSpecificObject
-                v-if=selectedObject
-                :id=selectedObject
-                :language=language
-            ></inputForSpecificObject>
+                <button
+                    @click=out
+                >新增</button>
+                <div style="display:table;">
+                    <div
+                        v-for="(a,i) in value"
+                        style="display:table-row;"
+                    >
+                        <div
+                            style="display:table-cell;"
+                        >{{a.name}}</div>
+                        <div
+                            style="display:table-cell;padding-left:8px;"
+                        >
+                            <button
+                                @click="selectedObject=i"
+                            >編輯</button>
+                            <button
+                                @dblclick="cut(i)"
+                            >雙擊刪除</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <template
+                v-if="selectedObject!=null"
+            >
+                <div>
+                    <button
+                        @click="selectedObject=null"
+                    >←</button>
+                </div>
+                <div>
+                    新成屋物件 > {{value[selectedObject].name}}
+                </div>
+                <inputForSpecificObject
+                    :id=value[selectedObject].id
+                    :language=language
+                ></inputForSpecificObject>
+            </template>
         </div>
     `,
 }

@@ -48,6 +48,13 @@ export default o=>{
             language,
         })
     }
+    o._cutPresaleObject=function(currentUser,id){
+        return this._request({
+            method:             'cutPresaleObject',
+            id,
+            currentUser,
+        })
+    }
     o._deleteApply=function(currentUser,id){
         return this._request({
             method:             'cutApply',

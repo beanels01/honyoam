@@ -11,6 +11,13 @@ export default Object.assign({
             return['status',400]
         return['responseJson',await this._freezeUser(cu,targetUser)]
     },
+    async cutPresaleObject(doc,cu){
+        if(!(
+            typeof doc.id=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._cutPresaleObject(cu,doc.id)]
+    },
     async deleteApply(doc,cu){
         if(!(
             typeof doc.id=='string'

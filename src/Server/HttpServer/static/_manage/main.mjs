@@ -23,7 +23,7 @@ import faqFeedback from             './main/faqFeedback.mjs'
 let aMenu={
     props:['value','user'],
     template:`
-        <div class=n>
+        <div class=n><div>
             <div
                 @click="$emit('input','user')"
                 :class="{focus:value=='user'}"
@@ -110,7 +110,7 @@ let aMenu={
             ><div>
                 關於
             </div></div>
-        </div>
+        </div></div>
     `,
 }
 ;(async()=>{
