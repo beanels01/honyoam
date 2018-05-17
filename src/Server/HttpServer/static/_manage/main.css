@@ -15,7 +15,7 @@ body{
     border-collapse:collapse;
 }
 .manage td{
-    padding:4px;
+    padding:20px;
 }
 .manage tr+tr>td{
     border-top:1px solid lightgray;
@@ -52,7 +52,7 @@ body{
 .manage>.a>.n{
     background-color:#fff;
     border-right:1px solid #ddd;
-    width:200px;
+    min-width:200px;
 }
 .manage>.a>.n>*{
     height:100%;
@@ -82,6 +82,7 @@ body{
     overflow:auto;
 }
 .manage>.a>.o>*>*{
-    width:600px;
-    margin:0 auto;
+    margin:20px auto;
+    padding:0 20px;
+    width:800px;
 }

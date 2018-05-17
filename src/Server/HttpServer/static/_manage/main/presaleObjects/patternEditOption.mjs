@@ -18,13 +18,17 @@ let inputForSpecificLanguage={
     props:['value'],
     template:`
         <div v-if=value>
-            <input
-                placeholder=名稱
-                v-model=value.name
-            >
-            <imageUploader
-                v-model=value.image
-            ><imageUploader>
+            <div>
+                <input
+                    placeholder=名稱
+                    v-model=value.name
+                >
+            </div>
+            <div>
+                <imageUploader
+                    v-model=value.image
+                ><imageUploader>
+            </div>
         </div>
     `,
     watch:{
@@ -60,21 +64,21 @@ let patternEditOption={
     template:`
         <div v-if=value>
             <p>
+                名稱：
                 <input
-                    placeholder=名稱
                     v-model=value.name
                 >
             </p>
             <p>
+                面積：
                 <input
-                    placeholder=面積
                     :value=value.area
                     @input="value.area=+event.target.value"
                 >
             </p>
             <p>
+                價格：
                 <input
-                    placeholder=價格
                     :value=value.price
                     @input="value.price=+event.target.value"
                 >
