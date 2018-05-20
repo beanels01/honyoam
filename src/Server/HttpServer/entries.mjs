@@ -4,7 +4,6 @@ import fs from                  'fs'
 import rfc6265 from             'rfc6265'
 import json from                './entries/json'
 import calcFaqResult from       './entries/calcFaqResult'
-import calcContactResult from   './entries/calcContactResult'
 import calcHomepageResult from  './entries/calcHomepageResult'
 import calcNewsResult from      './entries/calcNewsResult'
 import calcMedievalResult from  './entries/calcMedievalResult'
@@ -109,8 +108,6 @@ export default async function(pathname){
             let f
             if(a.length<3)
                 f=calcHomepageResult
-            else if(a[2]=='contact')
-                f=calcContactResult
             else if(a[2]=='qa')
                 f=calcFaqResult
             else if(a[2]=='news')

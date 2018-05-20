@@ -3,17 +3,12 @@ import register from                './main/register.mjs'
 import login from                   './main/login.mjs'
 import logout from                  './main/logout.mjs'
 import updatePassword from          './main/updatePassword.mjs'
-import root from                    './main/root.mjs'
-import sysadmin from                './main/sysadmin.mjs'
-import salesman from                './main/salesman.mjs'
-import editor from                  './main/editor.mjs'
 import resetSysadminPassword from   './main/resetSysadminPassword.mjs'
 import invitationCode from          './main/invitationCode.mjs'
 import userlist from                './main/userlist.mjs'
 import homepage from                './main/homepage.mjs'
 import presale from                 './main/presale.mjs'
 import presaleObjects from          './main/presaleObjects.mjs'
-import contact from                 './main/contact.mjs'
 import seminar from                 './main/seminar.mjs'
 import contactApply from            './main/contactApply.mjs'
 import faq from                     './main/faq.mjs'
@@ -86,24 +81,12 @@ let aMenu={
                     參加說明會 2.0
                 </div></div>
                 <div
-                    @click="$emit('input','contact')"
-                    :class="{focus:value=='contact'}"
-                ><div>
-                    參加說明會 1.0
-                </div></div>
-                <div
                     @click="$emit('input','contactApply')"
                     :class="{focus:value=='contactApply'}"
                 ><div>
                     參加說明會 - 報名
                 </div></div>
             </template>
-            <div
-                @click="$emit('input','legacy')"
-                :class="{focus:value=='legacy'}"
-            ><div>
-                舊版
-            </div></div>
             <div
                 @click="$emit('input','about')"
                 :class="{focus:value=='about'}"
@@ -147,17 +130,12 @@ let aMenu={
             register,
             updatePassword,
             logout,
-            root,
-            sysadmin,
-            salesman,
-            editor,
             resetSysadminPassword,
             invitationCode,
             userlist,
             homepage,
             faq,
             faqFeedback,
-            contact,
             contactApply,
             seminar,
             presale,
@@ -233,36 +211,8 @@ let aMenu={
                                 :language=language
                             ></seminar>
                         </div>
-                        <div v-if="focus=='contact'">
-                            <contact
-                                :language=language
-                            ></contact>
-                        </div>
                         <div v-if="focus=='contactApply'">
                             <contactApply></contactApply>
-                        </div>
-                        <div v-if="focus=='legacy'">
-                            <div v-if="user.type=='root'">
-                                <h1>根職權</h1>
-                                <root :language=language></root>
-                            </div>
-                            <div v-if="user.type=='sysadmin'">
-                                <h1>系統管理員職權</h1>
-                                <sysadmin
-                                    :language=language
-                                ></sysadmin>
-                            </div>
-                            <div v-if="user.type=='salesman'">
-                                <h1>業務職權</h1>
-                                <salesman></salesman>
-                            </div>
-                            <div v-if="user.type=='editor'">
-                                <h1>編輯職權</h1>
-                                <editor
-                                    :language=language
-                                ></editor>
-                            </div>
-                            <hr>
                         </div>
                         <div v-if="focus=='about'">
                             <div>
