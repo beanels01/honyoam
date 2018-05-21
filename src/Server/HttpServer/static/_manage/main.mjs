@@ -10,7 +10,7 @@ import homepage from                './main/homepage.mjs'
 import presale from                 './main/presale.mjs'
 import presaleObjects from          './main/presaleObjects.mjs'
 import seminar from                 './main/seminar.mjs'
-import contactApply from            './main/contactApply.mjs'
+import seminarApply from            './main/seminarApply.mjs'
 import faq from                     './main/faq.mjs'
 import faqFeedback from             './main/faqFeedback.mjs'
 // this line fix this bug: https://github.com/rollup/rollup/issues/2110
@@ -81,8 +81,8 @@ let aMenu={
                     說明會
                 </div></div>
                 <div
-                    @click="$emit('input','contactApply')"
-                    :class="{focus:value=='contactApply'}"
+                    @click="$emit('input','seminarApply')"
+                    :class="{focus:value=='seminarApply'}"
                 ><div>
                     說明會 - 報名
                 </div></div>
@@ -136,7 +136,7 @@ let aMenu={
             homepage,
             faq,
             faqFeedback,
-            contactApply,
+            seminarApply,
             seminar,
             presale,
             presaleObjects,
@@ -211,8 +211,8 @@ let aMenu={
                                 :language=language
                             ></seminar>
                         </div>
-                        <div v-if="focus=='contactApply'">
-                            <contactApply></contactApply>
+                        <div v-if="focus=='seminarApply'">
+                            <seminarApply></seminarApply>
                         </div>
                         <div v-if="focus=='about'">
                             <div>

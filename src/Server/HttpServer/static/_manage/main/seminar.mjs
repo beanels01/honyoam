@@ -1,7 +1,7 @@
 import api from                         '../../_api.mjs'
 import languageSelect from              './languageSelect.mjs'
 import inputForSpecificLanguage from
-    './contact/inputForSpecificLanguage.mjs'
+    './seminar/inputForSpecificLanguage.mjs'
 let inputForSeminar={
     components:{
         inputForSpecificLanguage,
