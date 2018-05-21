@@ -36,6 +36,9 @@ export default{
             return{err:'permission denied'}
         return{res:this.invitationCode}
     },
+    async getMainSeminar(){
+        return{res:await this.honyoamMongoClient.getMainSeminar()}
+    },
     async getPresale(){
         return{res:await this.honyoamMongoClient.getSite('presale')}
     },

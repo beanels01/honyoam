@@ -1,12 +1,12 @@
 import optionList from          '../optionList.mjs'
 import cropImageUploader from   '../cropImageUploader.mjs'
-import block0 from './inputForSpecificLanguage/block0.mjs'
-import block1 from './inputForSpecificLanguage/block1.mjs'
-import investJapan from './inputForSpecificLanguage/investJapan.mjs'
-import inputOption from './inputForSpecificLanguage/inputOption.mjs'
-import speakersInput from './inputForSpecificLanguage/speakersInput.mjs'
-import flowInput from './inputForSpecificLanguage/flowInput.mjs'
-import quillImageHandler from '../quillImageHandler.mjs'
+import block0 from              './inputForSpecificLanguage/block0.mjs'
+import block1 from              './inputForSpecificLanguage/block1.mjs'
+import investJapan from         './inputForSpecificLanguage/investJapan.mjs'
+import inputOption from         './inputForSpecificLanguage/inputOption.mjs'
+import speakersInput from       './inputForSpecificLanguage/speakersInput.mjs'
+import flowInput from           './inputForSpecificLanguage/flowInput.mjs'
+import quillImageHandler from   '../quillImageHandler.mjs'
 let
     options={
         placeholder:'內文',
@@ -116,6 +116,18 @@ let inputForSpecificLanguage={
     },
     template:`
         <div v-if=upToDate>
+            <p>
+                <label>
+                    <input type=checkbox v-model=value.publish>
+                    發布
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type=checkbox v-model=value.main>
+                    主要
+                </label>
+            </p>
             <h1>人物</h1>
             <speakersInput
                 class=indent

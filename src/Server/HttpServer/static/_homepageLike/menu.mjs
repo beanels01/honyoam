@@ -1,6 +1,10 @@
 import languageComputed from './languageComputed.mjs'
 let menu={
-    computed:languageComputed,
+    computed:Object.assign({
+        mainSeminarHref(){
+            return`/${this.currentLanguage}/seminar/${this.mainSeminar}`
+        },
+    },languageComputed),
     data:()=>({
         focus:'root',
     }),
@@ -9,7 +13,7 @@ let menu={
             return`/${l}`
         },
     },
-    props:['language','currentLanguage'],
+    props:['language','currentLanguage','mainSeminar',],
     template:`
         <div class=menu>
             <template v-if="focus=='root'">
@@ -25,7 +29,7 @@ let menu={
                 <a class=b :href=href.qa><span>{{
                     language.homepageLike.qa
                 }}</span></a>
-                <a class="b c" :href=href.contact><span>
+                <a class="b c" :href=mainSeminarHref><span>
                     <div class=a></div>
                     <span class=b>{{
                         language.homepageLike.contact

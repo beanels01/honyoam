@@ -20,6 +20,7 @@ async function calcResult(doc){
         vueData=Object.assign({
             language,
             currentLanguage:doc.currentLanguage,
+            mainSeminar:(await this._getMainSeminar()).res,
         },doc.vueData)
     let content=`<!doctype html>
 <title>${doc.title}</title>

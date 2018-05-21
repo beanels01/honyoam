@@ -56,6 +56,7 @@ let aMain={
         'language',
         'currentLanguage',
         'presale',
+        'mainSeminar',
     ],
     template:`
         <div id=main>
@@ -110,11 +111,13 @@ let aMain={
                 v-if=menu
                 :language=language
                 :currentLanguage=currentLanguage
+                :mainSeminar=mainSeminar
             ></hlMenu>
             <hlHeader
                 :language=language
                 :currentLanguage=currentLanguage
                 v-model=menu
+                :mainSeminar=mainSeminar
             ></hlHeader>
         </div>
     `,
@@ -126,6 +129,7 @@ export default{
             :language=language
             :currentLanguage=currentLanguage
             :presale=presale
+            :mainSeminar=mainSeminar
         ></aMain>
     `,
 }

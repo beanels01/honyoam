@@ -58,6 +58,10 @@ o.getUserByUsername=function(username){
 o.getUserlist=function(){
     return this._userCol.find({}).toArray()
 }
+o.getMainSeminar=async function(){
+    let seminar=await this._seminarCol.findOne({main:true})
+    return seminar&&seminar._id
+}
 o.getPresaleList=async function(){
     return(await this._presaleCol.find({}).toArray()).map(a=>({
         id:a._id,

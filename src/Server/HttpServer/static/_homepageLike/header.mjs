@@ -1,7 +1,13 @@
 import languageComputed from './languageComputed.mjs'
 let header={
-    computed:languageComputed,
-    props:['language','currentLanguage','value','shadow'],
+    computed:Object.assign({
+        mainSeminarHref(){
+            return`/${this.currentLanguage}/seminar/${this.mainSeminar}`
+        },
+    },languageComputed),
+    props:[
+        'language','currentLanguage','value','shadow','mainSeminar',
+    ],
     template:`
         <div
             class=header
@@ -39,7 +45,10 @@ let header={
                     <a class=wordLink :href=href.qa>{{
                         language.homepageLike.qa
                     }}</a>
-                    <a class="wordLink contact" :href=href.contact>
+                    <a
+                        v-if=mainSeminar
+                        class="wordLink contact" :href=mainSeminarHref
+                    >
                         <img src=img/join.png> {{
                             language.homepageLike.contact
                         }}

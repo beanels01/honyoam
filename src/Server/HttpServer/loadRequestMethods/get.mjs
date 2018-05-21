@@ -39,6 +39,11 @@ o._getHomepage=function(cu){
 o._getLanguage=function(){
     return{res:language}
 }
+o._getMainSeminar=function(id){
+    return this._request({
+        method:'getMainSeminar',
+    })
+}
 o._getPresaleObject=function(id){
     return this._request({
         method:'getPresaleObject',

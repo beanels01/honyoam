@@ -13,7 +13,7 @@ let languageComputed={
             ...this.language.showedLang.map(k=>
                 k=='_'?0:{
                     language:this.language.language[k],
-                    href:`/${k}/contact`,
+                    href:`/${k}`
                 }
             ).filter(a=>a),
             {

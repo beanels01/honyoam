@@ -116,20 +116,6 @@ export default async function(pathname){
                 f=calcMedievalResult
             else if(a[2]=='presale')
                 f=calcPresaleResult
-            /*else if(a[2]=='presaleId')
-                f=calcPresaleIdResult
-            else if(a[2]=='presaleIdConcept')
-                f=calcPresaleIdConceptResult
-            else if(a[2]=='presaleIdEnvironment')
-                f=calcPresaleIdEnvironmentResult
-            else if(a[2]=='presaleIdTraffic')
-                f=calcPresaleIdTrafficResult
-            else if(a[2]=='presaleIdPattern')
-                f=calcPresaleIdPatternResult
-            else if(a[2]=='presaleIdSummary')
-                f=calcPresaleIdSummaryResult
-            else if(a[2]=='presaleIdAv')
-                f=calcPresaleIdVideoResult*/
             if(f)
                 return function(rq,rs){
                     if(!(
