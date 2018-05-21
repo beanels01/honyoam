@@ -81,7 +81,7 @@ export default{
     data:()=>({
         seminars:           0,
         selectedLanguage:   0,
-        selectedSeminar:    null,
+        selectedSeminar:    0,
     }),
     methods:{
         async addSeminar(){
@@ -115,7 +115,7 @@ export default{
                 :language=language
                 v-model=selectedLanguage
             ></languageSelect>
-            <template v-if="selectedLanguage&&selectedSeminar==null">
+            <template v-if="selectedLanguage&&!selectedSeminar">
                 <div style="margin:15px 0;">
                     <button @click="selectedLanguage=0">←</button>
                     {{
@@ -132,26 +132,26 @@ export default{
                             {{s.name}}
                         </div>
                         <div style="display:table-cell;padding-top:15px;padding-left:10px">
-                            <button @click="selectedSeminar=i">編輯</button>
+                            <button @click="selectedSeminar=s">編輯</button>
                             <button @dblclick="cutSeminar(s.id)">雙擊刪除</button>
                         </div>
                     </div>
                 </div>
             </template>
             <template
-                v-if="selectedSeminar!=null"
+                v-if="selectedSeminar"
             >
                 <div style="margin:15px 0;">
                     <button @click="selectedSeminar=null">←</button>
                     {{
                         language['zh-Hant'].language[selectedLanguage]
                     }} → {{
-                        seminars[selectedSeminar].name
+                        selectedSeminar.name
                     }}
                 </div>
                 <inputForSeminar
                     :language=selectedLanguage
-                    :id=seminars[selectedSeminar].id
+                    :id=selectedSeminar.id
                 ></inputForSeminar>
             </template>
         </div>
