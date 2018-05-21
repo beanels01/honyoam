@@ -55,6 +55,13 @@ export default o=>{
             currentUser,
         })
     }
+    o._cutSeminar=function(currentUser,id){
+        return this._request({
+            method:             'cutSeminar',
+            id,
+            currentUser,
+        })
+    }
     o._deleteApply=function(currentUser,id){
         return this._request({
             method:             'cutApply',

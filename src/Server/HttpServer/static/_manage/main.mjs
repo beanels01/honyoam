@@ -78,13 +78,13 @@ let aMenu={
                     @click="$emit('input','seminar')"
                     :class="{focus:value=='seminar'}"
                 ><div>
-                    參加說明會 2.0
+                    說明會
                 </div></div>
                 <div
                     @click="$emit('input','contactApply')"
                     :class="{focus:value=='contactApply'}"
                 ><div>
-                    參加說明會 - 報名
+                    說明會 - 報名
                 </div></div>
             </template>
             <div

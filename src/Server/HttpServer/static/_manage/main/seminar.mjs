@@ -81,8 +81,7 @@ export default{
     data:()=>({
         seminars:           0,
         selectedLanguage:   0,
-        selectedSeminar:    0,
-        img:0,
+        selectedSeminar:    null,
     }),
     methods:{
         async addSeminar(){
@@ -91,7 +90,13 @@ export default{
                 language:this.selectedLanguage,
             })).res
             await this.updateSeminars()
-            this.selectedSeminar=id
+        },
+        async cutSeminar(id){
+            await api.post({
+                method:'cutSeminar',
+                id,
+            })
+            await this.updateSeminars()
         },
         async updateSeminars(){
             this.seminars=(await api.post({
@@ -105,28 +110,48 @@ export default{
     props:['language'],
     template:`
         <div v-if=seminars>
-            <cropImageUploader
-                v-model=img
-            ></cropImageUploader>
             <languageSelect
+                v-if=!selectedLanguage
                 :language=language
-                @input="selectedSeminar=0"
                 v-model=selectedLanguage
             ></languageSelect>
-            <template v-if=selectedLanguage>
+            <template v-if="selectedLanguage&&selectedSeminar==null">
+                <div style="margin:15px 0;">
+                    <button @click="selectedLanguage=0">←</button>
+                    {{
+                        language['zh-Hant'].language[selectedLanguage]
+                    }}
+                </div>
                 <button @click=addSeminar>新增</button>
-                <select
-                    v-model=selectedSeminar
-                >
-                    <option
-                        v-for="s of seminarsByLanguage(selectedLanguage)"
-                        :value=s.id
-                    >{{s.name}}</option>
-                </select>
+                <div style="display:table">
+                    <div
+                        v-for="(s,i) of seminarsByLanguage(selectedLanguage)"
+                        style="display:table-row"
+                    >
+                        <div style="display:table-cell">
+                            {{s.name}}
+                        </div>
+                        <div style="display:table-cell;padding-top:15px;padding-left:10px">
+                            <button @click="selectedSeminar=i">編輯</button>
+                            <button @dblclick="cutSeminar(s.id)">雙擊刪除</button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <template
+                v-if="selectedSeminar!=null"
+            >
+                <div style="margin:15px 0;">
+                    <button @click="selectedSeminar=null">←</button>
+                    {{
+                        language['zh-Hant'].language[selectedLanguage]
+                    }} → {{
+                        seminars[selectedSeminar].name
+                    }}
+                </div>
                 <inputForSeminar
-                    v-if=selectedSeminar
                     :language=selectedLanguage
-                    :id=selectedSeminar
+                    :id=seminars[selectedSeminar].id
                 ></inputForSeminar>
             </template>
         </div>

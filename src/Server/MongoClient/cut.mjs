@@ -18,8 +18,14 @@ async function cutPresaleObject(id){
         _id:new ObjectID(id),
     })
 }
+async function cutSeminar(id){
+    await this._seminarCol.deleteOne({
+        _id:new ObjectID(id),
+    })
+}
 export default{
     cutApply,
     cutFeedback,
     cutPresaleObject,
+    cutSeminar,
 }
