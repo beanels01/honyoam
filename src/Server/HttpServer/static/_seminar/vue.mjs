@@ -74,6 +74,13 @@ let aMain={
     ],
     template:`
         <div id=main>
+            <hlHeader
+                shadow=1
+                :language=language
+                :currentLanguage=currentLanguage
+                v-model=menu
+                :mainSeminar=mainSeminar
+            ></hlHeader>
             <template v-if=!menu>
                 <div class=a></div>
                 <block0
@@ -139,13 +146,6 @@ let aMain={
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
             ></hlMenu>
-            <hlHeader
-                shadow=1
-                :language=language
-                :currentLanguage=currentLanguage
-                v-model=menu
-                :mainSeminar=mainSeminar
-            ></hlHeader>
         </div>
     `,
 }

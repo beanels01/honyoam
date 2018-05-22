@@ -73,6 +73,13 @@ let aMain={
     props:['language','currentLanguage','data','mainSeminar'],
     template:`
         <div id=main>
+            <hlHeader
+                shadow=1
+                :language=language
+                :currentLanguage=currentLanguage
+                v-model=menu
+                :mainSeminar=mainSeminar
+            ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
                     :data="{mobile:1,desktop:1}"
@@ -206,13 +213,6 @@ let aMain={
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
             ></hlMenu>
-            <hlHeader
-                shadow=1
-                :language=language
-                :currentLanguage=currentLanguage
-                v-model=menu
-                :mainSeminar=mainSeminar
-            ></hlHeader>
         </div>
     `,
 }

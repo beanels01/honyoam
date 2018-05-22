@@ -34,6 +34,12 @@ let aMain={
     ],
     template:`
         <div id=main>
+            <hlHeader
+                :language=language
+                :currentLanguage=currentLanguage
+                v-model=menu
+                :mainSeminar=mainSeminar
+            ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
                     :data="{mobile:1}"
@@ -81,12 +87,6 @@ let aMain={
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
             ></hlMenu>
-            <hlHeader
-                :language=language
-                :currentLanguage=currentLanguage
-                v-model=menu
-                :mainSeminar=mainSeminar
-            ></hlHeader>
         </div>
     `,
 }

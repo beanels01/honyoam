@@ -27,6 +27,13 @@ let aMain={
     props:['language','currentLanguage','homepage','mainSeminar'],
     template:`
         <div id=main>
+            <hlHeader
+                shadow=1
+                :language=language
+                :currentLanguage=currentLanguage
+                :mainSeminar=mainSeminar
+                v-model=menu
+            ></hlHeader>
             <template v-if=!menu>
                 <search :mission=homepage.mission></search>
                 <newProducts :rotation=homepage.rotation></newProducts>
@@ -75,13 +82,6 @@ let aMain={
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
             ></hlMenu>
-            <hlHeader
-                shadow=1
-                :language=language
-                :currentLanguage=currentLanguage
-                :mainSeminar=mainSeminar
-                v-model=menu
-            ></hlHeader>
         </div>
     `,
 }

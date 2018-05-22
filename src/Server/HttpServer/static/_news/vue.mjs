@@ -17,6 +17,12 @@ let aMain={
     props:['language','currentLanguage','mainSeminar',],
     template:`
         <div id=main>
+            <hlHeader
+                :language=language
+                :currentLanguage=currentLanguage
+                :mainSeminar=mainSeminar
+                v-model=menu
+            ></hlHeader>
             <template v-if=!menu>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -32,12 +38,6 @@ let aMain={
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
             ></hlMenu>
-            <hlHeader
-                :language=language
-                :currentLanguage=currentLanguage
-                :mainSeminar=mainSeminar
-                v-model=menu
-            ></hlHeader>
         </div>
     `,
 }

@@ -9,17 +9,15 @@
 #main>.a{
     background-size:cover;
     background-position:center;
-    background-image:url('/_contact/block0-background.jpg');
+    background-image:url('/_seminar/block0-background.jpg');
 }
 @media(max-width:1279px){
     #main>.a{
-        margin-top:50px;
         height:225px;
     }
 }
 @media(min-width:1280px){
     #main>.a{
-        margin-top:90px;
         height:450px;
     }
 }
@@ -291,8 +289,8 @@
         font-size:20px;
     }
     #main>.c>.n>.b{
-        margin: 0 auto;
-        width: 90%;
+        margin:0 auto;
+        width:90%;
         line-height: 32px;
         text-align: justify;
         letter-spacing: 2px;
