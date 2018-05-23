@@ -58,6 +58,7 @@ let aMain={
         hlMenu:         homepageLike.menu,
         hlHeader:       homepageLike.header,
         floatBall:      homepageLike.floatBall,
+        houseSearch:    homepageLike.houseSearch,
         presaleLikeTop: presaleLike.top,
         presale,
         mightLike,
@@ -84,103 +85,7 @@ let aMain={
                 <presaleLikeTop
                     :data="{mobile:1,desktop:1}"
                 ></presaleLikeTop>
-                <div class=b>
-                    <div>
-                        <span class=blueBar></span>
-                        <span class=title>
-                            尋找您想要的新成屋<i
-                                class="material-icons"
-                                style="font-size:1.5em;"
-                            >
-                                keyboard_arrow_down
-                            </i>
-                        </span>
-                    </div>
-                </div>
-                <div class=c><div>
-                    <div class=a>
-                        <div class=block>
-                            <div class=a>搜尋區域</div>
-                            <select>
-                                <option>地區</option>
-                            </select>
-                            <select>
-                                <option>區域</option>
-                            </select>
-                            <select>
-                                <option>車站區域</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class=b>
-                        <div class=block>
-                            <div class=a>房屋面積</div>
-                            <input placeholder=最低>
-                            ~
-                            <input placeholder=最高>
-                            <select>
-                                <option>平方公尺</option>
-                                <option>坪</option>
-                            </select>
-                        </div>
-                        <div class=margin></div>
-                        <div class=block>
-                            <div class=a>預算價格</div>
-                            <input placeholder=最低>
-                            ~
-                            <input placeholder=最高>
-                            萬
-                            <select>
-                                <option>日幣</option>
-                                <option>臺幣</option>
-                            </select>
-                            <div class=hint><div>
-                                在此標註匯率與相關換算
-                            </div></div>
-                        </div>
-                    </div>
-                    <div class=a>
-                        <div class=block>
-                            <div class=a>
-                                房屋格局<br>
-                                ＊可複選
-                            </div>
-                            <label>
-                                <input type=checkbox>
-                                1K
-                            </label>
-                            <label>
-                                <input type=checkbox>
-                                1DK
-                            </label>
-                            <label>
-                                <input type=checkbox>
-                                1LDK
-                            </label>
-                            <label>
-                                <input type=checkbox>
-                                2LDK
-                            </label>
-                            <label>
-                                <input type=checkbox>
-                                3LDK
-                            </label>
-                            <label>
-                                <input type=checkbox>
-                                3LDK 以上
-                            </label>
-                        </div>
-                    </div>
-                    <div class=c>
-                        <div>
-                            <button class=o>
-                                清除
-                            </button><button class=o>
-                                搜尋
-                            </button>
-                        </div>
-                    </div>
-                </div></div>
+                <houseSearch></houseSearch>
                 <div class=d>
                     <div>
                         <span class=blueBar></span>

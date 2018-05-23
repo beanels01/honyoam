@@ -493,3 +493,135 @@ body{
         margin:35px auto;
     }
 }
+#main>.homepageLikeHouseSearch>.b>*>*{
+    vertical-align:middle;
+}
+#main>.homepageLikeHouseSearch>.b>*>*>*{
+    vertical-align:middle;
+}
+@media(max-width:1279px){
+    #main>.homepageLikeHouseSearch>.b>*{
+        margin:13px 10px 16px;
+    }
+}
+@media(min-width:1280px){
+    #main>.homepageLikeHouseSearch>.b>*{
+        width:1170px;
+        margin:0 auto 15px;
+    }
+}
+#main>.homepageLikeHouseSearch>.c>* .block{
+    position:relative;
+    box-sizing:border-box;
+    color:#797979;
+    background-color:#edeced;
+    border:1px solid #cfcfcf;
+    vertical-align:middle;
+}
+#main>.homepageLikeHouseSearch>.c>* .block>*{
+    vertical-align:middle;
+}
+#main>.homepageLikeHouseSearch>.c>*>*>.block>select{
+    background-color:white;
+    padding:8px;
+}
+#main>.homepageLikeHouseSearch>.c>*>*>.block>input:not([type]){
+    width:140px;
+    padding:8px;
+}
+#main>.homepageLikeHouseSearch>.c>*>.b>.block>.hint{
+    z-index:1;
+    opacity:0;
+    position:relative;
+    transition:opacity 1s;
+}
+#main>.homepageLikeHouseSearch>.c>*>.b>.block:focus-within>.hint{
+    opacity:1;
+}
+#main>.homepageLikeHouseSearch>.c>*>.b>.block>.hint>*{
+    position:absolute;
+    background-color:white;
+    padding:10px;
+    box-shadow:0 1px 2px rgba(0,0,0,.4);
+}
+#main>.homepageLikeHouseSearch>.c>*>.c>*>.o{
+    width:145px;
+    height:45px;
+    color:white;
+    font-size:18px;
+    background-color:#3f7897;
+    border:unset;
+    border-radius:2px;
+}
+#main>.homepageLikeHouseSearch>.c>*>.c>*>.o:active{
+    background-color:#1d98df;
+}
+#main>.homepageLikeHouseSearch>.c>*>.c>*>.o+.o{
+    margin-left:10px;
+}
+@media(max-width:1279px){
+    #main>.homepageLikeHouseSearch>.c>*{
+        margin:0 10px;
+    }
+    #main>.homepageLikeHouseSearch>.c>* .block{
+        padding:10px 8px;
+        font-size:15px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>*+*{
+        margin-top:8px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>*>.block>.a{
+        margin-bottom:10px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>.b>.margin{
+        height:8px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>.b>.block>.hint>*{
+        top:5px;
+    }
+}
+@media(min-width:1280px){
+    #main>.homepageLikeHouseSearch>.c>*{
+        width:1170px;
+        margin:0 auto;
+        box-sizing:border-box;
+        padding-left:25px;
+    }
+    #main>.homepageLikeHouseSearch>.c>* .block{
+        padding:15px;
+        font-size:16px;
+        height:70px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>*{
+        display:table;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>*>*{
+        display:table-cell;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>*>.block>.a{
+        display:inline-block;
+        margin-right:15px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>*+*{
+        margin-top:15px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>.a>.block{
+        width:1145px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>.a>.block>select{
+        width:320px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>.b>.block{
+        width:565px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>.b>.margin{
+        width:15px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>.b>.block>.hint>*{
+        top:10px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>.c{
+        width:1145px;
+        text-align:right;
+    }
+}
