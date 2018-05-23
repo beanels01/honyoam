@@ -1,10 +1,12 @@
 import homepageLike from    '../_homepageLike.mjs'
+import medievalLike from    '../_medievalLike.mjs'
 let aMain={
     components:{
         hlFooter:   homepageLike.footer,
         hlMenu:     homepageLike.menu,
         hlHeader:   homepageLike.header,
         floatBall:  homepageLike.floatBall,
+        medievalLikeTop:    medievalLike.top,
     },
     computed:{
         href(){
@@ -24,6 +26,12 @@ let aMain={
                 v-model=menu
             ></hlHeader>
             <template v-if=!menu>
+                <medievalLikeTop
+                    :data="{
+                        desktop:1,
+                        mobile:1,
+                    }"
+                ></medievalLikeTop>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>

@@ -5,12 +5,12 @@ export default{
         props:['data'],
         template:`
             <homepageLikeTop
-                class=presaleLikeTop
+                class=medievalLikeTop
                 :data="{
                     mobile:             data.mobile,
                     desktop:            data.desktop,
-                    title0:             '新成屋',
-                    title1:             'PRESOLD HOUSE',
+                    title0:             '中古屋',
+                    title1:             'PRE-OWNED HOUSE',
                 }"
             ></homepageLikeTop>
         `

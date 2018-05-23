@@ -431,3 +431,65 @@ body{
 #main>.floatBall>*>*>.o:active>*>.o{
     display:unset;
 }
+#main>.homepageLikeTop{
+    display:none;
+}
+#main>.homepageLikeTop>.static{
+    display:table;
+    width:100%;
+}
+#main>.homepageLikeTop>.static>*{
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+    color:rgb(255,255,255);
+}
+#main>.homepageLikeTop>.a>*{
+    color:#797979;
+}
+#main>.homepageLikeTop>.a>*>.current{
+    color:#133466;
+}
+@media(max-width:1279px){
+    #main>.homepageLikeTop.mobile{
+        display:unset;
+    }
+    #main>.homepageLikeTop>.static{
+        height:113px;
+    }
+    #main>.homepageLikeTop>.static>*>.a{
+        font-size:20px;
+        text-shadow:0 1px 1px rgba(0,0,0,.8);
+    }
+    #main>.homepageLikeTop>.static>*>.b{
+        font-size:13px;
+        text-shadow:0 1px 1px rgba(0,0,0,.8);
+    }
+    #main>.homepageLikeTop>.a>*{
+        font-size:13px;
+        margin:13px 10px;
+    }
+}
+@media(min-width:1280px){
+    #main>.homepageLikeTop.desktop{
+        display:unset;
+    }
+    #main>.homepageLikeTop>.static{
+        height:155px;
+    }
+    #main>.homepageLikeTop>.static>*>.a{
+        font-size:40px;
+        text-shadow:0 1px 2px rgba(0,0,0,.8);
+    }
+    #main>.homepageLikeTop>.static>*>.b{
+        font-size:16px;
+        text-shadow:0 1px 1px rgba(0,0,0,.8);
+    }
+    #main>.homepageLikeTop>.a>*{
+        font-size:16px;
+        width:1170px;
+        margin:35px auto;
+    }
+}

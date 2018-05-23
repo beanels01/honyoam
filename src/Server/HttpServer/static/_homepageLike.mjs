@@ -29,6 +29,27 @@ let floatBall={
         </div>
     `
 }
+let homepageLikeTop={
+    props:['data'],
+    template:`
+        <div class=homepageLikeTop :class="{
+            mobile:     data.mobile,
+            desktop:    data.desktop,
+        }">
+            <div class=static>
+                <div>
+                    <div class=a>{{data.title0}}</div>
+                    <div class=b>{{data.title1}}</div>
+                </div>
+            </div>
+            <div class=a>
+                <div>
+                    首頁 > <span class=current>{{data.title0}}</span>
+                </div>
+            </div>
+        </div>
+    `
+}
 export default{
     boot,
     menu,
@@ -36,4 +57,5 @@ export default{
     header,
     floatBall,
     langToPath,
+    top:homepageLikeTop,
 }
