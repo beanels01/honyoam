@@ -31,7 +31,7 @@ let floatBall={
         </div>
     `
 }
-let homepageLikeTop={
+let top={
     props:['data'],
     template:`
         <div class=homepageLikeTop :class="{
@@ -210,7 +210,7 @@ export default{
     header,
     floatBall,
     langToPath,
-    top:homepageLikeTop,
+    top,
     houseSearch,
     houseList,
     mightLike,
