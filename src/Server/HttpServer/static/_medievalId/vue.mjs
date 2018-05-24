@@ -43,11 +43,13 @@ let aMain={
                             <div class=o><div class="button left"></div><img class="option" src=/_medievalId/demo0.jpg><img class="option" src=/_medievalId/demo1.jpg><img class="option" src=/_medievalId/demo2.jpg><img class="option" src=/_medievalId/demo3.jpg><img class="option" src=/_medievalId/demo4.jpg><img class="option" src=/_medievalId/demo5.jpg><img class="option" src=/_medievalId/demo6.jpg><div class="button right"></div></div>
                         </div><div class=b>
                             <div class=n>
-                                2,680 萬日幣 每坪單價：請洽各店服務員
+                                <span class=a>2,680</span>
+                                <span class=b>萬日幣</span>
+                                <span class=c>每坪單價：請洽各店服務員</span>
                             </div>
                             <div class=hl></div>
                             <div class="o p">
-                                <div>
+                                <div class=a>
                                     <div>格局</div>
                                     <div>竣工年份</div>
                                     <div>權狀坪數</div>
@@ -61,11 +63,11 @@ let aMain={
                             <div class=hl></div>
                             <div class="o q">
                                 <div>
-                                    <div>所在地</div>
+                                    <div class=n>所在地</div>
                                     <div>愛知県岡崎市中町５丁目</div>
                                 </div>
                                 <div>
-                                    <div>交通</div>
+                                    <div class=n>交通</div>
                                     <div>名鉄名古屋本線 東岡崎駅，徒步1分鐘</div>
                                 </div>
                             </div>
@@ -75,7 +77,8 @@ let aMain={
                             </div>
                             <div class=hl></div>
                             <div class=s>
-                                台北直營辦事處：02:2785-5865
+                                <span class=a>台北直營辦事處：</span>
+                                <span class=b>02-2785-5865</span>
                             </div>
                         </div>
                     </div>

@@ -67,7 +67,17 @@
     height:1px;
     background-color:#cfcfcf;
 }
-#main>.a>.o>.b>.n{
+#main>.a>.o>.b>.n>.a{
+    font-size:45px;
+    color:#ff0000;
+}
+#main>.a>.o>.b>.n>.b{
+    font-size:22px;
+    color:#797979;
+}
+#main>.a>.o>.b>.n>.c{
+    font-size:15px;
+    color:#797979;
 }
 #main>.a>.o>.b>.o{
     display:table;
@@ -77,4 +87,27 @@
 }
 #main>.a>.o>.b>.o>*>*{
     display:table-cell;
+}
+#main>.a>.o>.b>.p>*>*+*{
+    padding-left:60px;
+}
+#main>.a>.o>.b>.p>.a>*{
+    font-size:15px;
+    color:#797979;
+}
+#main>.a>.o>.b>.q>*>.n{
+    font-size:15px;
+    color:#797979;
+}
+#main>.a>.o>.b>.q>*>*+*{
+    padding-left:30px;
+}
+#main>.a>.o>.b>.s>.a{
+    font-size:18px;
+    color:#444444;
+}
+#main>.a>.o>.b>.s>.b{
+    font-size:22px;
+    font-weight:bold;
+    color:#ff7400;
 }
