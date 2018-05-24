@@ -105,89 +105,76 @@ let aMain={
                             <div class=o>
                                 <div>
                                     <div class=n>
-                                        <ul><li>總價</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 總價
+                                    </div><div class=o>
                                         2680 萬日幣
                                     </div>
                                     <div class=n>
-                                        <ul><li>所在地</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 所在地
+                                    </div><div class=o>
                                         愛知県岡崎市中町５丁目
                                     </div>
                                     <div class=n>
-                                        <ul><li>交通</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 交通
+                                    </div><div class=o>
                                         名鉄名古屋本線 東岡崎駅，徒步1分鐘
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        <ul><li>格局</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 格局
+                                    </div><div class=o>
                                         4LDK
                                     </div>
                                     <div class=n>
-                                        <ul><li>坪數</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 坪數
+                                    </div><div class=o>
                                         139.8 平方公尺
                                     </div>
                                     <div class=n>
-                                        <ul><li>陽台面積</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 陽台面積
+                                    </div><div class=o>
                                         20.37 平方公尺
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        <ul><li>竣工年份</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 竣工年份
+                                    </div><div class=o>
                                         2001 年
                                     </div>
                                     <div class=n>
-                                        <ul><li>總戶數</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 總戶數
+                                    </div><div class=o>
                                         23戶
                                     </div>
                                     <div class=n>
-                                        <ul><li>現況</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 現況
+                                    </div><div class=o>
                                         空家
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        <ul><li>管理費</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 管理費
+                                    </div><div class=o>
                                         15,250 日幣
                                     </div>
                                     <div class=n>
-                                        <ul><li>修繕基金</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 修繕基金
+                                    </div><div class=o>
                                         10,380 日幣
                                     </div>
                                     <div class=n>
-                                        <ul><li>方位</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 方位
+                                    </div><div class=o>
                                         南
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        <ul><li>其他費用</li></ul>
-                                    </div>
-                                    <div class=o>
+                                        · 其他費用
+                                    </div><div class=o>
                                         540 日幣
                                     </div>
                                     <div class=n>
