@@ -52,7 +52,7 @@ let presale={
 let medieval={
     methods:{
         click(){
-            location=`/zh-Hant/medievalId`
+            location=`/zh-Hant/medieval/-id-`
         },
         selectClick(e){
             e.stopPropagation()

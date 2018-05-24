@@ -1,14 +1,15 @@
-import Vue from                 'vue'
-import formidable from          'formidable'
-import fs from                  'fs'
-import rfc6265 from             'rfc6265'
-import json from                './entries/json'
-import calcFaqResult from       './entries/calcFaqResult'
-import calcHomepageResult from  './entries/calcHomepageResult'
-import calcNewsResult from      './entries/calcNewsResult'
-import calcMedievalResult from  './entries/calcMedievalResult'
-import calcPresaleResult from   './entries/calcPresaleResult'
-import calcPresaleIdResult from './entries/calcPresaleIdResult'
+import Vue from                     'vue'
+import formidable from              'formidable'
+import fs from                      'fs'
+import rfc6265 from                 'rfc6265'
+import json from                    './entries/json'
+import calcFaqResult from           './entries/calcFaqResult'
+import calcHomepageResult from      './entries/calcHomepageResult'
+import calcNewsResult from          './entries/calcNewsResult'
+import calcMedievalResult from      './entries/calcMedievalResult'
+import calcMedievalIdResult from    './entries/calcMedievalIdResult'
+import calcPresaleResult from       './entries/calcPresaleResult'
+import calcPresaleIdResult from     './entries/calcPresaleIdResult'
 import calcPresaleIdConceptResult from './entries/calcPresaleIdConceptResult'
 import calcPresaleIdEnvironmentResult from './entries/calcPresaleIdEnvironmentResult'
 import calcPresaleIdTrafficResult from './entries/calcPresaleIdTrafficResult'
@@ -154,6 +155,20 @@ export default async function(pathname){
                     return rs.end()
                 }
                 return calcPresaleIdResult.call(this,rq,rs,a[1],0,a[3])
+            }
+        if(
+            a.length==4&&
+            a[1] in language&&
+            a[2]=='medieval'
+        )
+            return function(rq,rs){
+                if(!(
+                    rq.method=='GET'
+                )){
+                    rs.writeHead(400)
+                    return rs.end()
+                }
+                return calcMedievalIdResult.call(this,rq,rs,a[1],0,a[3])
             }
         if(
             a.length==5&&
