@@ -1,4 +1,5 @@
 import{dom}from'./_simple.mjs'
+import homepageLike from'./_homepageLike.mjs'
 let href=(currentLanguage,id)=>({
     top:`/${currentLanguage}/presale/${id}`,
     concept:`/${currentLanguage}/presale/${id}/concept`,
@@ -89,6 +90,10 @@ let top={
     `,
 }
 let main={
+    components:{
+        reserveButton:homepageLike.reserveButton,
+        moreButton:homepageLike.moreButton,
+    },
     props:['data'],
     template:`
         <div class=presaleIdLikeMain>
@@ -103,10 +108,10 @@ let main={
                 </div>
                 <div class=b>
                     <div class=n>
-                        <a><span>> 預約看房</span></a>
+                        <reserveButton></reserveButton>
                     </div>
                     <div class=o>
-                        <a><span>> 更多訊息</span></a>
+                        <moreButton></moreButton>
                     </div>
                 </div>
             </div>

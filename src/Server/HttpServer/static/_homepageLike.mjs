@@ -218,6 +218,16 @@ let contactInfo={
         </div>
     `,
 }
+let reserveButton={
+    template:`
+        <a class=homepageLikeReserveButton><span>> 預約看房</span></a>
+    `,
+}
+let moreButton={
+    template:`
+        <a class=homepageLikeMoreButton><span>> 更多訊息</span></a>
+    `,
+}
 export default{
     boot,
     menu,
@@ -231,4 +241,6 @@ export default{
     mightLike,
     contactInfo,
     current,
+    reserveButton,
+    moreButton,
 }

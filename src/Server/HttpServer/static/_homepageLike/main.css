@@ -950,3 +950,15 @@ body{
         width:calc(100% / 2);
     }
 }
+#main .homepageLikeReserveButton,#main .homepageLikeMoreButton{
+    display:inline-block;
+    color:white;
+    text-align:center;
+    border-radius:2px;
+}
+#main .homepageLikeReserveButton{
+    background:linear-gradient(#78a976,#093930);
+}
+#main .homepageLikeMoreButton{
+    background:linear-gradient(#5d94d6,#1956ad);
+}
