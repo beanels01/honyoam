@@ -39,7 +39,7 @@ let faq={
                     <div>
                         <div>
                             <div class=n>
-                                <img src=img/qa/qa01.png>
+                                <img src=/_homepageLike/qa01.png>
                             </div>
                             <div class=o>
                                 <div class=a>電話直撥</div>
@@ -51,7 +51,7 @@ let faq={
                     <div>
                         <div>
                             <div class=n>
-                                <img src=img/qa/qa02.png>
+                                <img src=/_homepageLike/qa02.png>
                             </div>
                             <div class=o>
                                 <div class=a>Skype</div>
