@@ -50,14 +50,52 @@ let homepageLikeTop={
         </div>
     `
 }
+let housePattern={
+    template:`
+        <div class=block>
+            <div class=a>
+                房屋格局<br>
+                ＊可複選
+            </div>
+            <label>
+                <input type=checkbox>
+                1K
+            </label>
+            <label>
+                <input type=checkbox>
+                1DK
+            </label>
+            <label>
+                <input type=checkbox>
+                1LDK
+            </label>
+            <label>
+                <input type=checkbox>
+                2LDK
+            </label>
+            <label>
+                <input type=checkbox>
+                3LDK
+            </label>
+            <label>
+                <input type=checkbox>
+                3LDK 以上
+            </label>
+        </div>
+    `
+}
 let houseSearch={
+    components:{housePattern},
+    props:['data'],
     template:`
         <div class=homepageLikeHouseSearch>
             <div class=b>
                 <div>
-                    <span class=blueBar></span>
-                    <span class=title>
-                        尋找您想要的新成屋<i
+                    <span class=homepageLikeBlueBar></span>
+                    <span class=homepageLikeTitle>
+                        尋找您想要的{{
+                            data.type=='presale'?'新成屋':'中古屋'
+                        }}<i
                             class="material-icons"
                             style="font-size:1.5em;"
                         >
@@ -108,36 +146,16 @@ let houseSearch={
                         </div></div>
                     </div>
                 </div>
-                <div class=a>
+                <div v-if="data.type=='presale'" class=a>
+                    <housePattern></housePattern>
+                </div>
+                <div v-if="data.type=='medieval'" class=b>
+                    <housePattern></housePattern>
+                    <div class=margin></div>
                     <div class=block>
-                        <div class=a>
-                            房屋格局<br>
-                            ＊可複選
-                        </div>
-                        <label>
-                            <input type=checkbox>
-                            1K
-                        </label>
-                        <label>
-                            <input type=checkbox>
-                            1DK
-                        </label>
-                        <label>
-                            <input type=checkbox>
-                            1LDK
-                        </label>
-                        <label>
-                            <input type=checkbox>
-                            2LDK
-                        </label>
-                        <label>
-                            <input type=checkbox>
-                            3LDK
-                        </label>
-                        <label>
-                            <input type=checkbox>
-                            3LDK 以上
-                        </label>
+                        <div class=a>房屋年齡</div>
+                        <input placeholder=自由輸入值>
+                        年以內
                     </div>
                 </div>
                 <div class=c>

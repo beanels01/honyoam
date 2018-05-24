@@ -2,10 +2,11 @@ import homepageLike from    '../_homepageLike.mjs'
 import medievalLike from    '../_medievalLike.mjs'
 let aMain={
     components:{
-        hlFooter:   homepageLike.footer,
-        hlMenu:     homepageLike.menu,
-        hlHeader:   homepageLike.header,
-        floatBall:  homepageLike.floatBall,
+        hlFooter:           homepageLike.footer,
+        hlMenu:             homepageLike.menu,
+        hlHeader:           homepageLike.header,
+        floatBall:          homepageLike.floatBall,
+        houseSearch:        homepageLike.houseSearch,
         medievalLikeTop:    medievalLike.top,
     },
     computed:{
@@ -32,6 +33,9 @@ let aMain={
                         mobile:1,
                     }"
                 ></medievalLikeTop>
+                <houseSearch
+                    :data="{type:'medieval'}"
+                ></houseSearch>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>

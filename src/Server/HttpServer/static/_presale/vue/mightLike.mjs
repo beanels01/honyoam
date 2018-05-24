@@ -75,8 +75,8 @@ let mightLike={
         <div class=mightLike>
             <div class=f>
                 <div>
-                    <span class=blueBar></span>
-                    <span class=title>您可能會喜歡</span>
+                    <span class=homepageLikeBlueBar></span>
+                    <span class=homepageLikeTitle>您可能會喜歡</span>
                 </div>
             </div>
             <mightLikeList

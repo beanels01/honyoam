@@ -85,11 +85,13 @@ let aMain={
                 <presaleLikeTop
                     :data="{mobile:1,desktop:1}"
                 ></presaleLikeTop>
-                <houseSearch></houseSearch>
+                <houseSearch
+                    :data="{type:'presale'}"
+                ></houseSearch>
                 <div class=d>
                     <div>
-                        <span class=blueBar></span>
-                        <span class=title>新成屋物件</span>
+                        <span class=homepageLikeBlueBar></span>
+                        <span class=homepageLikeTitle>新成屋物件</span>
                     </div>
                 </div>
                 <div class=e>

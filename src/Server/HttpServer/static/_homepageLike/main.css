@@ -625,3 +625,34 @@ body{
         text-align:right;
     }
 }
+#main .homepageLikeBlueBar{
+    display:inline-block;
+    background-color:#1d98df;
+}
+@media(max-width:1279px){
+    #main .homepageLikeBlueBar{
+        height:26px;
+        width:4px;
+        margin-right:8px;
+    }
+}
+@media(min-width:1280px){
+    #main .homepageLikeBlueBar{
+        height:35px;
+        width:5px;
+        margin-right:20px;
+    }
+}
+#main .homepageLikeTitle{
+    color:#133466;
+}
+@media(max-width:1279px){
+    #main .homepageLikeTitle{
+        font-size:18px;
+    }
+}
+@media(min-width:1280px){
+    #main .homepageLikeTitle{
+        font-size:24px;
+    }
+}
