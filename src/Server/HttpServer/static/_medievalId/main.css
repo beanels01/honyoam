@@ -43,6 +43,9 @@
 #main>.a>.o>.b>.s>.b{
     color:#ff7400;
 }
+#main>.a>.o>.c{
+    display:none;
+}
 @media(max-width:1279px){
     #main>.a{
         width:100%;
@@ -69,6 +72,33 @@
     }
     #main>.a>.o>.b>.s{
         font-size:13px;
+    }
+    #main>.a>.o>.c{
+        position:relative;
+        display:block;
+        margin-top:15px;
+        height:320px;
+    }
+    #main>.a>.o>.c>.n{
+        height:100%;
+        text-align:center;
+    }
+    #main>.a>.o>.c>.n>*{
+        height:100%;
+    }
+    #main>.a>.o>.c>.o{
+        position:absolute;
+        display:inline-block;
+        vertical-align:middle;
+        top:140px;
+        left:0;
+    }
+    #main>.a>.o>.c>.p{
+        position:absolute;
+        display:inline-block;
+        vertical-align:middle;
+        top:140px;
+        right:0;
     }
 }
 @media(min-width:1280px){

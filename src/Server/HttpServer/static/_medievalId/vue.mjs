@@ -109,8 +109,10 @@ let aMain={
                                 <img src=/_medievalId/demo0.jpg>
                             </div>
                             <div class=o>
+                                <img src=/_medievalId/swiper-ml.png>
                             </div>
                             <div class=p>
+                                <img src=/_medievalId/swiper-mr.png>
                             </div>
                         </div>
                     </div>
