@@ -9,6 +9,8 @@ let aMain={
         mightLike:          homepageLike.mightLike,
         contactInfo:        homepageLike.contactInfo,
         aCurrent:           homepageLike.current,
+        reserveButton:      homepageLike.reserveButton,
+        moreButton:         homepageLike.moreButton,
         medievalLikeTop:    medievalLike.top,
     },
     computed:{
@@ -82,7 +84,8 @@ let aMain={
                             </div>
                             <div class=hl></div>
                             <div class=r>
-                                預約看房 更多訊息
+                                <reserveButton></reserveButton>
+                                <moreButton></moreButton>
                             </div>
                             <div class=hl></div>
                             <div class=s>

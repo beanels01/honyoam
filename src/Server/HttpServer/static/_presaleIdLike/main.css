@@ -116,12 +116,6 @@
     #main>.presaleIdLikeMain>.c>.b>*{
         display:inline-block;
     }
-    #main>.presaleIdLikeMain>.c>.b>*>*{
-        font-size:16px;
-        width:140px;
-        height:35px;
-        line-height:35px;
-    }
 }
 @media(min-width:1280px){
     #main>.presaleIdLikeMain>.b{
@@ -153,12 +147,6 @@
     #main>.presaleIdLikeMain>.c>.b{
         width:40%;
         text-align:right;
-    }
-    #main>.presaleIdLikeMain>.c>.b>*>*{
-        font-size:22px;
-        width:215px;
-        height:50px;
-        line-height:50px;
     }
     #main>.presaleIdLikeMain>.c>.b>.o>*{
         margin-top:10px;
