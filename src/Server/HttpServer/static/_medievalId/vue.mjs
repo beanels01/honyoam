@@ -59,7 +59,7 @@ let aMain={
                                 <span class=c>每坪單價：請洽各店服務員</span>
                             </div>
                             <div class=hl></div>
-                            <div class="o p">
+                            <div class="desktop o p">
                                 <div class=a>
                                     <div>格局</div>
                                     <div>竣工年份</div>
@@ -71,8 +71,8 @@ let aMain={
                                     <div>42.14 平方公尺</div>
                                 </div>
                             </div>
-                            <div class=hl></div>
-                            <div class="o q">
+                            <div class="desktop hl"></div>
+                            <div class="desktop o q">
                                 <div>
                                     <div class=n>所在地</div>
                                     <div>愛知県岡崎市中町５丁目</div>
@@ -81,6 +81,17 @@ let aMain={
                                     <div class=n>交通</div>
                                     <div>名鉄名古屋本線 東岡崎駅，徒步1分鐘</div>
                                 </div>
+                            </div>
+                            <div class=mobile>
+                                <span class=a>格局：</span>1K
+                                <div class="hl"></div>
+                                <span class=a>竣工年份：</span>1994年
+                                <div class="hl"></div>
+                                <span class=a>權狀坪數：</span>42.14 平方公尺
+                                <div class="hl"></div>
+                                <span class=a>所在地：</span>愛知県岡崎市中町５丁目
+                                <div class="hl"></div>
+                                <span class=a>交通：</span>名鉄名古屋本線 東岡崎駅，徒步1分鐘
                             </div>
                             <div class=hl></div>
                             <div class=r>
