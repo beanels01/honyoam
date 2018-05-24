@@ -7,6 +7,8 @@ let aMain={
         hlHeader:           homepageLike.header,
         floatBall:          homepageLike.floatBall,
         houseSearch:        homepageLike.houseSearch,
+        houseList:          homepageLike.houseList,
+        mightLike:          homepageLike.mightLike,
         medievalLikeTop:    medievalLike.top,
     },
     computed:{
@@ -17,7 +19,7 @@ let aMain={
     data:()=>({
         menu:0,
     }),
-    props:['language','currentLanguage','mainSeminar',],
+    props:['language','currentLanguage','mainSeminar','data',],
     template:`
         <div id=main>
             <hlHeader
@@ -36,6 +38,20 @@ let aMain={
                 <houseSearch
                     :data="{type:'medieval'}"
                 ></houseSearch>
+                <houseList
+                    :data="{
+                        type:'medieval',
+                        array:[{
+                            image:'',
+                            name:'ザ・パークハウス 恵比寿南',
+                            title:'摩登與沉穩的美麗結合',
+                            pattern:'2LDK',
+                            area:'86.15',
+                            price:'4998',
+                        }],
+                    }"
+                ></houseList>
+                <mightLike></mightLike>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>

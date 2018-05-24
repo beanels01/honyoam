@@ -1,6 +1,5 @@
 import homepageLike from    '../_homepageLike.mjs'
 import presaleLike from     '../_presaleLike.mjs'
-import mightLike from       './vue/mightLike.mjs'
 let aMain={
     components:{
         hlFooter:               homepageLike.footer,
@@ -9,8 +8,8 @@ let aMain={
         floatBall:              homepageLike.floatBall,
         houseSearch:            homepageLike.houseSearch,
         homepageLikeHouseList:  homepageLike.houseList,
+        mightLike:              homepageLike.mightLike,
         presaleLikeTop:         presaleLike.top,
-        mightLike,
     },
     computed:{
         href(){

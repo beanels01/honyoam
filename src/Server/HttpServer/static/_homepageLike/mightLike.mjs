@@ -1,4 +1,4 @@
-import{dom}from'../../_simple.mjs'
+import{dom}from'../_simple.mjs'
 function createSwiperContainer(a){
     return dom.div({className:'swiper-container'},
         dom.div({className:'swiper-wrapper'},
@@ -66,7 +66,7 @@ let mightLike={
     components:{mightLikeList,mightLikeSwiper},
     data:()=>({
         data:[...Array(4)].map((_,i)=>({
-            image:'/_presale/test',
+            image:'/_medieval/demo0.png',
             title:`標題可能很長 長到會換行 不夠 再長一點 ${i}`,
             subtitle:'副標',
         }))

@@ -1,7 +1,9 @@
-import header from './_homepageLike/header.mjs'
-import menu from './_homepageLike/menu.mjs'
-import footer from './_homepageLike/footer.mjs'
-import langToPath from './_homepageLike/langToPath.mjs'
+import header from          './_homepageLike/header.mjs'
+import menu from            './_homepageLike/menu.mjs'
+import footer from          './_homepageLike/footer.mjs'
+import langToPath from      './_homepageLike/langToPath.mjs'
+import houseList from       './_homepageLike/houseList.mjs'
+import mightLike from       './_homepageLike/mightLike.mjs'
 async function boot(main){
     await vueLoad
     new Vue(Object.setPrototypeOf({
@@ -171,84 +173,6 @@ let houseSearch={
         </div>
     `,
 }
-let presale={
-    methods:{
-        click(){
-            location=`/zh-Hant/presale/${this.data.id}`
-        },
-        selectClick(e){
-            e.stopPropagation()
-        },
-    },
-    props:['data'],
-    template:`
-        <div
-            class=presale
-            @click=click
-        >
-            <div class=a>
-                <img :src="'/image/'+data.image">
-            </div>
-            <div class=b><div>
-                <div class=a>
-                    <div>
-                        <div class=title>
-                            {{data.name}}
-                        </div>
-                        <div class=subtitle>
-                            {{data.title}}
-                        </div>
-                    </div>
-                </div>
-                <div class=b>
-                    <div>
-                        <div class=a>格局：{{data.patternMin}} - {{data.patternMax}}</div>
-                        <div class=a>面積：{{data.areaMin}} - {{data.areaMax}} 平方公尺</div>
-                        <div class=a>價格：{{data.priceMin}} - {{data.priceMax}} 萬
-                            <select @click=selectClick>
-                                <option>日幣</option>
-                                <option>臺幣</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div></div>
-            <div
-                v-if=data.soldout
-                class=c
-            ><div>
-                <img src=/_presale/saleout.png>
-            </div></div>
-        </div>
-    `
-}
-let houseList={
-    components:{presale},
-    props:['data'],
-    template:`
-        <div class=homepageLikeHouseList>
-            <div class=d>
-                <div>
-                    <span class=homepageLikeBlueBar></span>
-                    <span class=homepageLikeTitle>{{
-                        data.type=='presale'?'新成屋':'中古屋'
-                    }}物件</span>
-                </div>
-            </div>
-            <div class=e>
-                <div>
-                    <div v-for="(_,i) in Math.ceil(data.array.length/2)">
-                        <div v-for="a in data.array.slice(2*i,2*i+2)">
-                            <presale
-                                :data=a
-                            ></presale>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `,
-}
 export default{
     boot,
     menu,
@@ -259,4 +183,5 @@ export default{
     top:homepageLikeTop,
     houseSearch,
     houseList,
+    mightLike,
 }

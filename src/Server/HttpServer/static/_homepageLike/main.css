@@ -673,62 +673,62 @@ body{
 #main>.homepageLikeHouseList>.e{
     background-color:#f6f5f6;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale{
+#main>.homepageLikeHouseList>.e>*>*>*>.house{
     display:table;
     position:relative;
     background-color:white;
     box-shadow:0 1px 2px rgba(0,0,0,.2),0 1px 2px rgba(0,0,0,.2);
     transition:all .4s cubic-bezier(.2,.8,.2,1);
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale:hover{
+#main>.homepageLikeHouseList>.e>*>*>*>.house:hover{
     box-shadow:0 1px 2px rgba(0,0,0,.2),0 8px 16px rgba(0,0,0,.2);
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale:active{
+#main>.homepageLikeHouseList>.e>*>*>*>.house:active{
     box-shadow:0 1px 2px rgba(0,0,0,.2),0 16px 32px rgba(0,0,0,.2);
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>*{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>*{
     display:table-cell;
     vertical-align:top;
     height:var(--height);
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.a{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.a{
     line-height:0;
     vertical-align:middle;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.a>*{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.a>*{
     width:100%;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b{
     box-sizing:border-box;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*{
     display:table;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>*{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*{
     display:table-row;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>*>*{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*{
     display:table-cell;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>.a>*{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>.a>*{
     vertical-align:top;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>.a>*>.title{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>.a>*>.title{
     color:#1d98df;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>.a>*>.subtitle{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>.a>*>.subtitle{
     color:#797979;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>.b>*{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>.b>*{
     vertical-align:bottom;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>.b>*>.a{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>.b>*>.a{
     color:#133466;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>.b>*>.a+.a{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>.b>*>.a+.a{
     border-top:1px dotted #cfcfcf;
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.c{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.c{
     display:table;
     position:absolute;
     top:0;
@@ -736,7 +736,7 @@ body{
     background-color:rgba(0,0,0,.5);
     height:var(--height);
 }
-#main>.homepageLikeHouseList>.e>*>*>*>.presale>.c>*{
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.c>*{
     display:table-cell;
     text-align:center;
     vertical-align:middle;
@@ -752,33 +752,33 @@ body{
     #main>.homepageLikeHouseList>.e>*>*>*+*{
         margin-top:10px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house{
         --height:210px;
         width:100%;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.a{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.a{
         width:40%;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.a>*{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.a>*{
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b{
         padding:8px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*{
         width:100%;
         height:calc(var(--height) - 16px);
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>*>*>.title{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.title{
         font-size:15px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>*>*>.subtitle{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.subtitle{
         font-size:15px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>*>*>.a{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.a{
         font-size:13px;
         padding:4px 0;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.c{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.c{
         width:100%;
     }
 }
@@ -798,35 +798,108 @@ body{
     #main>.homepageLikeHouseList>.e>*>*>*+*{
         margin-left:26px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house{
         width:572px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.a{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.a{
         width:235px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.a>*{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.a>*{
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b{
         padding:15px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*{
         width:307px;
         height:calc(var(--height) - 30px);
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>*>*>.title{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.title{
         font-size:22px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>*>*>.subtitle{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.subtitle{
         font-size:16px;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.b>*>*>*>.a{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.a{
         font-size:16px;
         padding:10px 0;
     }
-    #main>.homepageLikeHouseList>.e>*>*>*>.presale>.c{
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.c{
         width:572px;
     }
 }
 #main>.homepageLikeHouseList>.mightLike>.f>*>*{
     vertical-align:middle;
+}
+@media(max-width:1279px){
+    #main>.mightLike>.f>*{
+        margin:25px 10px;
+    }
+}
+@media(min-width:1280px){
+    #main>.mightLike>.f>*{
+        width:1170px;
+        margin:45px auto;
+    }
+}
+#main .mightLikeBlock>.b{
+    color:#133466;
+}
+#main .mightLikeBlock>.c{
+    font-size:16px;
+    color:#797979;
+    padding:8px 0;
+    border-top:1px solid #797979;
+    border-bottom:1px solid #797979;
+}
+#main>.mightLike>.g{
+    display:none;
+}
+@media(min-width:1280px){
+    #main>.mightLike>.g{
+        display:block;
+        padding-bottom:50px;
+        width:1170px;
+        margin:0 auto;
+    }
+    #main>.mightLike>.g>*{
+        display:inline-block;
+        width:227px;
+    }
+    #main>.mightLike>.g>*+*{
+        margin-left:20px;
+    }
+    #main>.mightLike>.g>.mightLikeBlock>.a>*{
+        width:227px;
+        height:227px;
+    }
+    #main>.mightLike>.g>.mightLikeBlock>.b{
+        height:70px;
+        font-size:20px;
+    }
+}
+#main>.mightLike>.h{
+    display:none;
+}
+@media(max-width:1279px){
+    #main>.mightLike>.h{
+        display:block;
+        position:relative;
+        height:400px;
+        margin-bottom:20px;
+    }
+    #main>.mightLike>.h>*{
+        --width:1440px; /* 5*280+4*10 */
+        position:absolute;
+        left:calc(50% - var(--width) / 2);
+        width:var(--width);
+        height:400px;
+    }
+    #main>.mightLike>.h>*>*>*>.mightLikeBlock>.a>*{
+        width:280px;
+        height:280px;
+    }
+    #main>.mightLike>.h>*>*>*>.mightLikeBlock>.b{
+        font-size:18px;
+        padding:13px 0;
+    }
 }
