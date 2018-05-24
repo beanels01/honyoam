@@ -1,3 +1,12 @@
+#main>.homepageLikeCurrent{
+    display:none;
+}
+@media(min-width:1280px){
+    #main>.homepageLikeCurrent{
+        margin-top:30px;
+        display:block;
+    }
+}
 #main>.a{
     width:1170px;
     margin:0 auto;

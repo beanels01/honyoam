@@ -31,7 +31,24 @@ let floatBall={
         </div>
     `
 }
+let current={
+    props:['data'],
+    template:`
+        <div class=homepageLikeCurrent>
+            <div>
+                <template
+                    v-for="a of data.slice(0,data.length-1)"
+                >
+                    {{a}}
+                    >
+                </template>
+                <span class=current>{{data[data.length-1]}}</span>
+            </div>
+        </div>
+    `
+}
 let top={
+    components:{aCurrent:current},
     props:['data'],
     template:`
         <div class=homepageLikeTop :class="{
@@ -44,11 +61,9 @@ let top={
                     <div class=b>{{data.title1}}</div>
                 </div>
             </div>
-            <div class=a>
-                <div>
-                    首頁 > <span class=current>{{data.title0}}</span>
-                </div>
-            </div>
+            <aCurrent
+                :data="['首頁',data.title0]"
+            ></aCurrent>
         </div>
     `
 }
@@ -215,4 +230,5 @@ export default{
     houseList,
     mightLike,
     contactInfo,
+    current,
 }

@@ -8,6 +8,7 @@ let aMain={
         floatBall:          homepageLike.floatBall,
         mightLike:          homepageLike.mightLike,
         contactInfo:        homepageLike.contactInfo,
+        aCurrent:           homepageLike.current,
         medievalLikeTop:    medievalLike.top,
     },
     computed:{
@@ -29,6 +30,13 @@ let aMain={
                 v-model=menu
             ></hlHeader>
             <template v-if=!menu>
+                <aCurrent
+                    :data="[
+                        '首頁',
+                        '中古屋',
+                        'サンアメニティ中町フィエルテ'
+                    ]"
+                ></aCurrent>
                 <medievalLikeTop
                     :data="{
                         mobile:1,
