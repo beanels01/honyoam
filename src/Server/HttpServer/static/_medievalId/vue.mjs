@@ -222,6 +222,10 @@ let aMain={
                     <div class=q>
                         <div class=a>影音介紹</div><div class=hl></div>
                         <div class=b>
+                            <div class=n>
+                                在道德的水準上，情形也是一樣。藝術和道德在這一點上是共同的，就是兩者都涉及創造和發明。我們無法預先決定應當做些什麼。
+                            </div>
+                            <iframe class=o src="https://www.youtube.com/embed/TwDMMcTp1cw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class=r>
