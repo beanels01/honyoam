@@ -7,6 +7,7 @@ let aMain={
         hlHeader:           homepageLike.header,
         floatBall:          homepageLike.floatBall,
         mightLike:          homepageLike.mightLike,
+        contactInfo:        homepageLike.contactInfo,
         medievalLikeTop:    medievalLike.top,
     },
     computed:{
@@ -231,6 +232,7 @@ let aMain={
                     <div class=r>
                         <div class=a>聯絡我們</div><div class=hl></div>
                         <div class=b>
+                            <contactInfo></contactInfo>
                         </div>
                     </div>
                 </div>

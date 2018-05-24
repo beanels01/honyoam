@@ -903,3 +903,41 @@ body{
         padding:13px 0;
     }
 }
+#main .homepageLikeContactInfo>*>*{
+    display:table;
+}
+#main .homepageLikeContactInfo>*>*>*{
+    display:table-cell;
+    vertical-align:middle;
+    font-size:20px;
+    color:rgba(10, 23, 39, 1.00);
+}
+#main .homepageLikeContactInfo>*>*>.o{
+    padding-left:17px;
+}
+#main .homepageLikeContactInfo>*>*>.o>.a{
+    font-weight:bold;
+}
+#main .homepageLikeContactInfo>*>*>.o>.line{
+    width:100%;
+    height:2px;
+    background-color:rgba(74, 102, 137, 1.00);
+}
+@media(max-width:1279px){
+    #main .homepageLikeContactInfo{
+        margin-top:35px;
+    }
+    #main .homepageLikeContactInfo>*+*{
+        margin-top:25px;
+    }
+}
+@media(min-width:1280px){
+    #main .homepageLikeContactInfo{
+        display:table;
+        width:100%;
+    }
+    #main .homepageLikeContactInfo>*{
+        display:table-cell;
+        width:calc(100% / 2);
+    }
+}

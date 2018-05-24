@@ -153,35 +153,9 @@
     font-size:24px;
     color:rgba(10, 23, 39, 1.00)
 }
-#main>.a>.faq>.keFu>.a>*>*{
-    display:table;
-}
-#main>.a>.faq>.keFu>.a>*>*>*{
-    display:table-cell;
-    vertical-align:middle;
-    font-size:20px;
-    color:rgba(10, 23, 39, 1.00);
-}
-#main>.a>.faq>.keFu>.a>*>*>.o{
-    padding-left:17px;
-}
-#main>.a>.faq>.keFu>.a>*>*>.o>.a{
-    font-weight:bold;
-}
-#main>.a>.faq>.keFu>.a>*>*>.o>.line{
-    width:100%;
-    height:2px;
-    background-color:rgba(74, 102, 137, 1.00);
-}
 @media(max-width:1279px){
     #main>.a>.faq>.keFu{
         padding:35px 10px;
-    }
-    #main>.a>.faq>.keFu>.a{
-        margin-top:35px;
-    }
-    #main>.a>.faq>.keFu>.a>*+*{
-        margin-top:25px;
     }
 }
 @media(min-width:1280px){
@@ -191,14 +165,6 @@
     }
     #main>.a>.faq>.keFu>.title{
         margin-bottom:50px;
-    }
-    #main>.a>.faq>.keFu>.a{
-        display:table;
-        width:100%;
-    }
-    #main>.a>.faq>.keFu>.a>*{
-        display:table-cell;
-        width:calc(100% / 2);
     }
 }
 #main>.a>.huiKui{

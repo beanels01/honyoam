@@ -1,4 +1,6 @@
+import homepageLike from '../../_homepageLike.mjs'
 let faq={
+    components:{contactInfo:homepageLike.contactInfo},
     data(){
         return{
             selectedClass:this.classes[0],
@@ -35,32 +37,7 @@ let faq={
             </div>
             <div class=keFu>
                 <div class=title>客服中心</div>
-                <div class=a>
-                    <div>
-                        <div>
-                            <div class=n>
-                                <img src=/_homepageLike/qa01.png>
-                            </div>
-                            <div class=o>
-                                <div class=a>電話直撥</div>
-                                <div class=line></div>
-                                <div class=b>+886 2 2785-5865</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class=n>
-                                <img src=/_homepageLike/qa02.png>
-                            </div>
-                            <div class=o>
-                                <div class=a>Skype</div>
-                                <div class=line></div>
-                                <div class=b>honyo-skype</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <contactInfo></contactInfo>
             </div>
             <div class=hb></div>
             <div class=a>
