@@ -52,6 +52,11 @@ let aMain={
     data:()=>({
         menu:0,
     }),
+    methods:{
+        imagePath(id){
+            return`/image/${id}`
+        },
+    },
     props:[
         'language',
         'currentLanguage',
@@ -86,20 +91,20 @@ let aMain={
                     }"
                 ></presaleIdLikeMain>
                 <block
-                    background='/_presaleId/pre01.jpg'
                     title='建築設計'
+                    :background=imagePath(presale.presaleId.top.concept)
                     :content=presale.presaleId.conceptSummary
                     :more=presaleIdHref.concept
                 ></block>
                 <block
-                    background='/_presaleId/pre02.jpg'
                     title='周邊環境'
+                    :background=imagePath(presale.presaleId.top.environment)
                     :content=presale.presaleId.environmentSummary
                     :more=presaleIdHref.environment
                 ></block>
                 <block
-                    background='/_presaleId/pre03.jpg'
                     title='交通方式'
+                    :background=imagePath(presale.presaleId.top.traffic)
                     :content=presale.presaleId.trafficSummary
                     :more=presaleIdHref.traffic
                 ></block>

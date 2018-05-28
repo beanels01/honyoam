@@ -75,6 +75,8 @@ let inputForSpecificObject={
                 }
             if(!value.banner)
                 value.banner={}
+            if(!value.top)
+                value.top={}
             this.value=value
         },
         async out(){
@@ -134,6 +136,21 @@ let inputForSpecificObject={
                 <h2>影音介紹</h2>
                 <imageUploader
                     v-model=value.banner.video
+                ></imageUploader>
+            </div>
+            <h1>TOP</h1>
+            <div class=indent>
+                <h2>建築設計</h2>
+                <imageUploader
+                    v-model=value.top.concept
+                ></imageUploader>
+                <h2>周邊環境</h2>
+                <imageUploader
+                    v-model=value.top.environment
+                ></imageUploader>
+                <h2>交通方式</h2>
+                <imageUploader
+                    v-model=value.top.traffic
                 ></imageUploader>
             </div>
             <h1>格局</h1>
