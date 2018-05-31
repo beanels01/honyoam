@@ -77,6 +77,13 @@ let patternEditOption={
                 >
             </p>
             <p>
+                陽台面積：
+                <input
+                    :value=value.balconyArea
+                    @input="value.balconyArea=+event.target.value"
+                >
+            </p>
+            <p>
                 價格：
                 <input
                     :value=value.price

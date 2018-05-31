@@ -20,6 +20,8 @@ let patternInput={
                     <div class=b>
                         <div>格局：{{e.name}}</div>
                         <div>面積：{{e.area}} 平方公尺</div>
+                        <div>陽台面積：{{e.balconyArea}} 平方公尺</div>
+                        <div>價格：{{e.price}} 萬日幣</div>
                     </div>
                 </div>
             </div>
