@@ -135,7 +135,7 @@
         display:table-cell;
     }
     #main>.presaleIdLikeMain>.c>.a{
-        width:60%;
+        width:80%;
     }
     #main>.presaleIdLikeMain>.c>.a>.title{
         font-size:40px;
@@ -145,7 +145,7 @@
         font-size:18px;
     }
     #main>.presaleIdLikeMain>.c>.b{
-        width:40%;
+        width:20%;
         text-align:right;
     }
     #main>.presaleIdLikeMain>.c>.b>.o>*{
