@@ -30,10 +30,10 @@ let keyValueEditOption={
                 >
             </p>
             <p>
-                內容：
-                <input
+                內容：<br>
+                <textarea
                     v-model=value.value
-                >
+                ></textarea>
             </p>
         </div>
     `,

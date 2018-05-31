@@ -29,7 +29,6 @@ let optionList={
     },
     template:`
         <div>
-            <button @click=add>新增項目</button>
             <table>
                 <tr v-for="(o,i) in value">
                     <td>
@@ -58,6 +57,7 @@ let optionList={
                     </td>
                 </tr>
             </table>
+            <button @click=add>新增項目</button>
         </div>
     `,
     watch:{
