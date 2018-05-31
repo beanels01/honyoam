@@ -166,7 +166,7 @@ let inputForSpecificObject={
                 :editOption=keyValueEditOption
                 v-model=value.summary
             ></optionList>
-            <h1>畫廊</h1>
+            <h1>建案相片集</h1>
             <optionList
                 class=indent
                 :editOption=cropImageUploader

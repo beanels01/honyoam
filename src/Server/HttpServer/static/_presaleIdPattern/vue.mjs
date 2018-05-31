@@ -6,11 +6,13 @@ let patternInput={
     template:`
         <div class=o>
             <div v-for="(e,i) in data">
-                <div class=n>
+                <div
+                    class=n
+                    :class="{active:value==i}"
+                >
                     <img
                         :src="'/image/'+e.language[currentLanguage].image"
                         @click="$emit('input',i)"
-                        :class="{active:value==i}"
                     >
                 </div>
                 <div class=o>

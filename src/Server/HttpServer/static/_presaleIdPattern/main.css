@@ -15,14 +15,19 @@
 #main>.a>.o>*+*{
     margin-left:15px;
 }
-#main>.a>.o>*>.n>*{
+#main>.a>.o>*>.n{
     box-sizing:border-box;
     width:185px;
     height:185px;
     border:3px solid white;
+    text-align:center;
 }
-#main>.a>.o>*>.n>.active{
+#main>.a>.o>*>.n.active{
     border:3px solid #133466;
+}
+#main>.a>.o>*>.n>*{
+    max-width:100%;
+    max-height:100%;
 }
 #main>.a>.o>*>.o>.a{
     padding:15px 30px;
@@ -45,7 +50,7 @@
     #main>.a>.o{
         margin:15px 10px 0;
         width:calc(100% - 20px);
-        overflow-y:scroll;
+        overflow-x:auto;
         white-space:nowrap;
     }
     #main>.a>.o>*>.o>.a{
