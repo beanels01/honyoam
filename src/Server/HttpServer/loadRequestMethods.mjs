@@ -136,6 +136,14 @@ export default o=>{
             invitationCode: doc.invitationCode,
         })
     }
+    o._setMedievalObject=function(currentUser,doc){
+        return this._request({
+            method:'setMedievalObject',
+            currentUser,
+            id:doc.id,
+            value:doc.value,
+        })
+    }
     o._setPresaleObject=function(currentUser,doc){
         return this._request({
             method:'setPresaleObject',

@@ -41,6 +41,12 @@ async function setSite(key,value){
         upsert:true,
     })
 }
+async function setMedievalObject(id,doc){
+    await this._medievalCol.updateOne(
+        {_id:new ObjectID(id)},
+        {$set:doc}
+    )
+}
 async function setPresaleObject(id,doc){
     await this._presaleCol.updateOne(
         {_id:new ObjectID(id)},
@@ -58,6 +64,7 @@ export default{
     setFeedbackStatus,
     setSeminar,
     setSite,
+    setMedievalObject,
     setPresaleObject,
     setUserPassword,
 }

@@ -50,6 +50,12 @@ o._getMedievalList=async function(currentUser){
         currentUser,
     })
 }
+o._getMedievalObject=function(id){
+    return this._request({
+        method:'getMedievalObject',
+        id,
+    })
+}
 o._getPresaleObject=function(id){
     return this._request({
         method:'getPresaleObject',

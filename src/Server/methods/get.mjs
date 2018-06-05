@@ -47,6 +47,9 @@ export default{
             return{err:'permission denied'}
         return{res:await this.honyoamMongoClient.getMedievalList()}
     },
+    async getMedievalObject(doc){
+        return{res:await this.honyoamMongoClient.getMedievalObject(doc.id)}
+    },
     async getPresale(){
         return{res:await this.honyoamMongoClient.getSite('presale')}
     },
