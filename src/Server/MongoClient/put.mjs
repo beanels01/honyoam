@@ -35,6 +35,9 @@ async function putImage(doc){
     })
     return res.insertedId
 }
+async function putMedievalObject(){
+    return(await this._medievalCol.insertOne({})).insertedId
+}
 async function putPresaleObject(){
     return(await this._presaleCol.insertOne({})).insertedId
 }
@@ -53,6 +56,7 @@ export default{
     putApply,
     putFeedback,
     putImage,
+    putMedievalObject,
     putPresaleObject,
     putSeminar,
     putUser,

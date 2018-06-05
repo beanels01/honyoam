@@ -39,6 +39,14 @@ export default{
     async getMainSeminar(){
         return{res:await this.honyoamMongoClient.getMainSeminar()}
     },
+    async getMedievalList(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.getMedievalList()}
+    },
     async getPresale(){
         return{res:await this.honyoamMongoClient.getSite('presale')}
     },

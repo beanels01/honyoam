@@ -62,6 +62,16 @@ o.getMainSeminar=async function(){
     let seminar=await this._seminarCol.findOne({main:true})
     return seminar&&seminar._id
 }
+o.getMedievalList=async function(){
+    return(await this._medievalCol.find({}).toArray()).map(a=>({
+        id:a._id,
+        name:
+            a.language&&
+            a.language['zh-Hant']&&
+            a.language['zh-Hant'].name||
+            '未命名',
+    }))
+}
 o.getPresaleList=async function(){
     return(await this._presaleCol.find({}).toArray()).map(a=>({
         id:a._id,

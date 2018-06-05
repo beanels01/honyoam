@@ -26,6 +26,9 @@ let get={
     async getLanguage(doc,cu){
         return['responseJson',await this._getLanguage(cu)]
     },
+    async getMedievalList(doc,cu){
+        return['responseJson',await this._getMedievalList(cu)]
+    },
     async getPresaleObject(doc,cu){
         if(!(
             typeof doc.id=='string'

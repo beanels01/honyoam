@@ -25,6 +25,14 @@ export default{
             doc.currentUser._id
         )}
     },
+    async putMedievalObject(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.putMedievalObject()}
+    },
     async putPresaleObject(doc){
         if(!(
             doc.currentUser&&

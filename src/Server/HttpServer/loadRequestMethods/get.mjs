@@ -44,6 +44,12 @@ o._getMainSeminar=function(id){
         method:'getMainSeminar',
     })
 }
+o._getMedievalList=async function(currentUser){
+    return this._request({
+        method:'getMedievalList',
+        currentUser,
+    })
+}
 o._getPresaleObject=function(id){
     return this._request({
         method:'getPresaleObject',

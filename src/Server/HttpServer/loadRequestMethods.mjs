@@ -20,6 +20,12 @@ export default o=>{
             currentLanguage:    doc.currentLanguage,
         })
     }
+    o._addMedievalObject=function(currentUser){
+        return this._request({
+            method:             'putMedievalObject',
+            currentUser,
+        })
+    }
     o._addPresaleObject=function(currentUser){
         return this._request({
             method:             'putPresaleObject',
@@ -46,6 +52,13 @@ export default o=>{
             method:'putSeminar',
             currentUser,
             language,
+        })
+    }
+    o._cutMedievalObject=function(currentUser,id){
+        return this._request({
+            method:             'cutMedievalObject',
+            id,
+            currentUser,
         })
     }
     o._cutPresaleObject=function(currentUser,id){

@@ -42,6 +42,11 @@ let add={
             return['status',400]
         return['responseJson',await this._addSeminar(cu,doc.language)]
     },
+    async addMedievalObject(doc,cu){
+        return['responseJson',
+            await this._addMedievalObject(cu)
+        ]
+    },
     async addPresaleObject(doc,cu){
         return['responseJson',
             await this._addPresaleObject(cu)

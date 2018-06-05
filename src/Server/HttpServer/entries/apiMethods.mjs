@@ -11,6 +11,13 @@ export default Object.assign({
             return['status',400]
         return['responseJson',await this._freezeUser(cu,targetUser)]
     },
+    async cutMedievalObject(doc,cu){
+        if(!(
+            typeof doc.id=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._cutMedievalObject(cu,doc.id)]
+    },
     async cutPresaleObject(doc,cu){
         if(!(
             typeof doc.id=='string'
