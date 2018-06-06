@@ -1,4 +1,5 @@
 import quillImageHandler from   '../quillImageHandler.mjs'
+import imageUploader from       '../imageUploader.mjs'
 let
     formats=[
         'link',
@@ -16,6 +17,7 @@ let
 let inputForSpecificLanguage={
     components:{
         quillEditor:VueQuillEditor.quillEditor,
+        imageUploader,
     },
     created(){
         this.checkValue()
@@ -56,13 +58,13 @@ let inputForSpecificLanguage={
                 >
             </p>
             <p>
-                介紹標題：
+                所在地：
                 <input
                     v-model=value.informationTitle
                 >
             </p>
             <p>
-                介紹內容：
+                交通：
                 <div class=indent>
                     <textarea
                         v-model=value.informationContent
@@ -70,61 +72,37 @@ let inputForSpecificLanguage={
                 </div>
             </p>
             <p>
-                概念概要：
+                現況：
+                <input
+                    v-model=value.informationTitle
+                >
+            </p>
+            <p>
+                格局圖：
                 <div class=indent>
-                    <textarea
-                        v-model=value.conceptSummary
-                    ></textarea>
+                    <imageUploader
+                        v-model=value.pattern
+                    ></imageUploader>
                 </div>
             </p>
             <p>
-                概念內文：
-                <div class=indent>
-                    <quillEditor
-                        style=width:480px
-                        :options=options
-                        v-model=value.conceptContent
-                    ></quillEditor>
-                </div>
+                格局圖標題：
+                <input
+                    v-model=value.patternTitle
+                >
             </p>
             <p>
-                環境概要：
-                <div class=indent>
-                    <textarea
-                        v-model=value.environmentSummary
-                    ></textarea>
-                </div>
-            </p>
-            <p>
-                環境內文：
+                格局圖內文：
                 <div class=indent>
                     <quillEditor
                         style=width:480px
                         :options=options
-                        v-model=value.environmentContent
+                        v-model=value.patternContent
                     ></quillEditor>
                 </div>
             </p>
             <p>
-                交通概要：
-                <div class=indent>
-                    <textarea
-                        v-model=value.trafficSummary
-                    ></textarea>
-                </div>
-            </p>
-            <p>
-                交通內文：
-                <div class=indent>
-                    <quillEditor
-                        style=width:480px
-                        :options=options
-                        v-model=value.trafficContent
-                    ></quillEditor>
-                </div>
-            </p>
-            <p>
-                這裡要設定的是 YouTube 的影片 ID。以下兩個欄位，擇一填寫即可：
+                影音介紹：這裡要設定的是 YouTube 的影片 ID。以下兩個欄位，擇一填寫即可：
             </p>
             <p>
                 影片 ID：

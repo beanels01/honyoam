@@ -4,14 +4,12 @@ import inputForSpecificLanguage from
     './medievalObjects/inputForSpecificLanguage.mjs'
 import languageSelect from      './languageSelect.mjs'
 import cropImageUploader from   './cropImageUploader.mjs'
-import imageUploader from       './imageUploader.mjs'
 let inputForSpecificObject={
     components:{
         optionList,
         languageSelect,
         inputForSpecificLanguage,
         cropImageUploader,
-        imageUploader,
     },
     created(){
         this.in()
@@ -52,6 +50,39 @@ let inputForSpecificObject={
                     <input type=checkbox v-model=value.publish>
                     發布
                 </label>
+            </p>
+            <p>
+                價格：<input v-model=value.price> 萬日幣
+            </p>
+            <p>
+                格局：<input v-model=value.pattern>
+            </p>
+            <p>
+                竣工年份：<input v-model=value.date> 年
+            </p>
+            <p>
+                坪數：<input v-model=value.area> 平方公尺
+            </p>
+            <p>
+                陽台面積：<input v-model=value.balconyArea> 平方公尺
+            </p>
+            <p>
+                總戶數：<input v-model=value.householdCount> 戶
+            </p>
+            <p>
+                管理費：<input v-model=value.managementFee> 日幣
+            </p>
+            <p>
+                修繕基金：<input v-model=value.repairFund> 日幣
+            </p>
+            <p>
+                方位：<input v-model=value.direction>
+            </p>
+            <p>
+                其他費用：<input v-model=value.otherFee> 日幣
+            </p>
+            <p>
+                周圍地圖 Google Map：<input v-model=value.price>
             </p>
             <h1>物件小圖片</h1>
             <cropImageUploader
