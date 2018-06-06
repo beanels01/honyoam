@@ -41,14 +41,7 @@ let aMain={
                 <houseList
                     :data="{
                         type:'medieval',
-                        array:[{
-                            image:'',
-                            name:'ザ・パークハウス 恵比寿南',
-                            title:'摩登與沉穩的美麗結合',
-                            pattern:'2LDK',
-                            area:'86.15',
-                            price:'4998',
-                        }],
+                        array:data,
                     }"
                 ></houseList>
                 <mightLike></mightLike>
@@ -76,6 +69,7 @@ export default{
             :language=language
             :currentLanguage=currentLanguage
             :mainSeminar=mainSeminar
+            :data=data
         ></aMain>
     `,
 }

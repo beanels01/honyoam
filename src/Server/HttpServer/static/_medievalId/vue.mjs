@@ -36,7 +36,7 @@ let aMain={
                     :data="[
                         '首頁',
                         '中古屋',
-                        'サンアメニティ中町フィエルテ'
+                        data.name,
                     ]"
                 ></aCurrent>
                 <medievalLikeTop
@@ -45,7 +45,7 @@ let aMain={
                     }"
                 ></medievalLikeTop>
                 <div class=a>
-                    <div class=n>サンアメニティ中町フィエルテ</div>
+                    <div class=n>{{data.name}}</div>
                     <div class=o>
                         <div class=a>
                             <div class=n>
@@ -54,7 +54,7 @@ let aMain={
                             <div class=o><div class="button left"></div><img class="option" src=/_medievalId/demo0.jpg><img class="option" src=/_medievalId/demo1.jpg><img class="option" src=/_medievalId/demo2.jpg><img class="option" src=/_medievalId/demo3.jpg><img class="option" src=/_medievalId/demo4.jpg><img class="option" src=/_medievalId/demo5.jpg><img class="option" src=/_medievalId/demo6.jpg><div class="button right"></div></div>
                         </div><div class=b>
                             <div class=n>
-                                <span class=a>2,680</span>
+                                <span class=a>{{data.price}}</span>
                                 <span class=b>萬日幣</span>
                                 <span class=c>每坪單價：請洽各店服務員</span>
                             </div>
@@ -66,32 +66,32 @@ let aMain={
                                     <div>權狀坪數</div>
                                 </div>
                                 <div>
-                                    <div>1K</div>
-                                    <div>1994年</div>
-                                    <div>42.14 平方公尺</div>
+                                    <div>{{data.pattern}}</div>
+                                    <div>{{data.date}} 年</div>
+                                    <div>{{data.area}} 平方公尺</div>
                                 </div>
                             </div>
                             <div class="desktop hl"></div>
                             <div class="desktop o q">
                                 <div>
                                     <div class=n>所在地</div>
-                                    <div>愛知県岡崎市中町５丁目</div>
+                                    <div>{{data.place}}</div>
                                 </div>
                                 <div>
                                     <div class=n>交通</div>
-                                    <div>名鉄名古屋本線 東岡崎駅，徒步1分鐘</div>
+                                    <div>{{data.traffic}}</div>
                                 </div>
                             </div>
                             <div class=mobile>
-                                <span class=a>格局：</span>1K
+                                <span class=a>格局：</span>{{data.pattern}}
                                 <div class="hl"></div>
-                                <span class=a>竣工年份：</span>1994年
+                                <span class=a>竣工年份：</span>{{data.date}} 年
                                 <div class="hl"></div>
-                                <span class=a>權狀坪數：</span>42.14 平方公尺
+                                <span class=a>權狀坪數：</span>{{data.area}} 平方公尺
                                 <div class="hl"></div>
-                                <span class=a>所在地：</span>愛知県岡崎市中町５丁目
+                                <span class=a>所在地：</span>{{data.place}}
                                 <div class="hl"></div>
-                                <span class=a>交通：</span>名鉄名古屋本線 東岡崎駅，徒步1分鐘
+                                <span class=a>交通：</span>{{data.traffic}}
                             </div>
                             <div class=hl></div>
                             <div class=r>
@@ -122,82 +122,82 @@ let aMain={
                         <div class=a>詳細資料</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
-                                サンアメニティ中町フィエルテ
+                                {{data.name}}
                             </div>
                             <div class=o>
                                 <div>
                                     <div class=n>
                                         · 總價
                                     </div><div class=o>
-                                        2680 萬日幣
+                                        {{data.price}} 萬日幣
                                     </div>
                                     <div class=n>
                                         · 所在地
                                     </div><div class=o>
-                                        愛知県岡崎市中町５丁目
+                                        {{data.place}}
                                     </div>
                                     <div class=n>
                                         · 交通
                                     </div><div class=o>
-                                        名鉄名古屋本線 東岡崎駅，徒步1分鐘
+                                        {{data.traffic}}
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 格局
                                     </div><div class=o>
-                                        4LDK
+                                        {{data.pattern}}
                                     </div>
                                     <div class=n>
                                         · 坪數
                                     </div><div class=o>
-                                        139.8 平方公尺
+                                        {{data.area}} 平方公尺
                                     </div>
                                     <div class=n>
                                         · 陽台面積
                                     </div><div class=o>
-                                        20.37 平方公尺
+                                        {{data.balconyArea}} 平方公尺
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 竣工年份
                                     </div><div class=o>
-                                        2001 年
+                                        {{data.date}} 年
                                     </div>
                                     <div class=n>
                                         · 總戶數
                                     </div><div class=o>
-                                        23戶
+                                        {{data.householdCount}} 戶
                                     </div>
                                     <div class=n>
                                         · 現況
                                     </div><div class=o>
-                                        空家
+                                        {{data.situation}}
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 管理費
                                     </div><div class=o>
-                                        15,250 日幣
+                                        {{data.managementFee}} 日幣
                                     </div>
                                     <div class=n>
                                         · 修繕基金
                                     </div><div class=o>
-                                        10,380 日幣
+                                        {{data.repairFund}} 日幣
                                     </div>
                                     <div class=n>
                                         · 方位
                                     </div><div class=o>
-                                        南
+                                        {{data.direction}}
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 其他費用
                                     </div><div class=o>
-                                        540 日幣
+                                        {{data.otherFee}} 日幣
                                     </div>
                                     <div class=n>
                                     </div>
@@ -218,7 +218,7 @@ let aMain={
                         <div class=a>周圍地圖</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3270.070086729494!2d137.179745!3d34.954852!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6004bcdea051426d%3A0x33608eb4bbf5d700!2zNSBDaG9tZSBOYWthbWFjaGksIOWyoeW0juW4guaEm-efpSA0NDQtMDAxNeaXpeacrA!5e0!3m2!1szh-TW!2sus!4v1527181343438" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                <iframe :src=data.map width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                             <div class=o>
                                 ※ 僅供物件周邊景象參考，可能與實際物件有所出入。
@@ -229,14 +229,14 @@ let aMain={
                         <div class=a>格局圖</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
-                                <div class=a>標題</div>
-                                <div class=b>內文</div>
+                                <div class=a>{{data.patternTitle}}</div>
+                                <div class=b v-html=data.patternContent></div>
                                 <div class=c>
                                     ※ 本格局圖係未依一定比例縮小繪製之概繪圖。與實況仍有差距，其方位、格局形狀等，仍需以房屋現場為準。
                                 </div>
                             </div>
                             <div class=o>
-                                <img src="/_medievalId/demo9.jpg">
+                                <img :src="'/image/'+data.patternImage">
                             </div>
                         </div>
                     </div>
@@ -244,9 +244,9 @@ let aMain={
                         <div class=a>影音介紹</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
-                                在道德的水準上，情形也是一樣。藝術和道德在這一點上是共同的，就是兩者都涉及創造和發明。我們無法預先決定應當做些什麼。
+                                {{data.videoContent}}
                             </div>
-                            <iframe class=o src="https://www.youtube.com/embed/TwDMMcTp1cw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <iframe class=o :src="'https://www.youtube.com/embed/'+data.videoId" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class=r>
@@ -281,6 +281,7 @@ export default{
             :language=language
             :currentLanguage=currentLanguage
             :mainSeminar=mainSeminar
+            :data=data
         ></aMain>
     `,
 }

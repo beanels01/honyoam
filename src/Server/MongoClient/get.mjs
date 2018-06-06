@@ -79,6 +79,18 @@ o.getMedievalList=async function(){
             '未命名',
     }))
 }
+o.getMedievalList0=async function(language){
+    return(await this._medievalCol.find({publish:true}).toArray()).map(a=>{
+        return{
+            id:a._id,
+            image:a.image,
+            name:a.language[language].name,
+            pattern:a.pattern,
+            area:a.area,
+            price:a.price,
+        }
+    })
+}
 o.getPresaleList=async function(){
     return(await this._presaleCol.find({}).toArray()).map(a=>({
         id:a._id,

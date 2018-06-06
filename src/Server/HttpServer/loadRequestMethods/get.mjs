@@ -50,6 +50,12 @@ o._getMedievalList=async function(currentUser){
         currentUser,
     })
 }
+o._getMedievalList0=function(language){
+    return this._request({
+        method:'getMedievalList0',
+        language,
+    })
+}
 o._getMedievalObject=function(id){
     return this._request({
         method:'getMedievalObject',

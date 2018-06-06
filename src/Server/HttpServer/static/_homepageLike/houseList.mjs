@@ -52,7 +52,7 @@ let presale={
 let medieval={
     methods:{
         click(){
-            location=`/zh-Hant/medieval/-id-`
+            location=`/zh-Hant/medieval/${this.data.id}`
         },
         selectClick(e){
             e.stopPropagation()
@@ -65,7 +65,7 @@ let medieval={
             @click=click
         >
             <div class=a>
-                <img src="/_medieval/demo0.png">
+                <img :src="'/image/'+data.image">
             </div>
             <div class=b><div>
                 <div class=a>

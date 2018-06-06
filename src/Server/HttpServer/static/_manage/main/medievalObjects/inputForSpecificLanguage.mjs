@@ -69,6 +69,9 @@ let inputForSpecificLanguage={
                 >
             </p>
             <p>
+                方位：<input v-model=value.direction>
+            </p>
+            <p>
                 格局圖：
                 <div class=indent>
                     <imageUploader

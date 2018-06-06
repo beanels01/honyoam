@@ -11,6 +11,7 @@ async function main(rq,rs,lang,patch){
         clientScript:       '_medieval/main.mjs',
         vue,
         vueData:{
+            data:(await this._getMedievalList0(lang)).res,
         },
     })
 }
