@@ -82,7 +82,7 @@ let inputForSpecificObject={
                 其他費用：<input v-model=value.otherFee> 日幣
             </p>
             <p>
-                周圍地圖 Google Map：<input v-model=value.price>
+                周圍地圖 Google Map：<input v-model=value.map>
             </p>
             <h1>物件小圖片</h1>
             <cropImageUploader
