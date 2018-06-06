@@ -30,15 +30,6 @@ let inputForSpecificLanguage={
             if(this.value)
                 return
             this.$emit('input',{
-                name:'',
-                informationTitle:'',
-                informationContent:'',
-                conceptSummary:'',
-                conceptContent:'',
-                environmentSummary:'',
-                environmentContent:'',
-                trafficSummary:'',
-                trafficContent:'',
                 videoId:'rNsgHMklBW0',
             })
         },
@@ -60,21 +51,21 @@ let inputForSpecificLanguage={
             <p>
                 所在地：
                 <input
-                    v-model=value.informationTitle
+                    v-model=value.place
                 >
             </p>
             <p>
                 交通：
                 <div class=indent>
                     <textarea
-                        v-model=value.informationContent
+                        v-model=value.traffic
                     ></textarea>
                 </div>
             </p>
             <p>
                 現況：
                 <input
-                    v-model=value.informationTitle
+                    v-model=value.situation
                 >
             </p>
             <p>
