@@ -23,7 +23,7 @@ function MongoClient(config){
         await Promise.all([
             (async()=>{
                 if(!await this.getUserByType('root'))
-                    await this.addUser({
+                    await this.putUser({
                         username:'root',
                         password:'',
                         type:'root',
@@ -31,7 +31,7 @@ function MongoClient(config){
             })(),
             (async()=>{
                 if(!await this.getUserByType('sysadmin'))
-                    await this.addUser({
+                    await this.putUser({
                         username:'sysadmin',
                         password:'',
                         type:'sysadmin',
@@ -39,22 +39,22 @@ function MongoClient(config){
             })(),
             (async()=>{
                 if(!await this._siteCol.findOne({key:'homepage'}))
-                    await this.updateSite('homepage',{
+                    await this.setSite('homepage',{
                         mission:{},
                         rotation:{},
                     })
             })(),
             (async()=>{
                 if(!await this._siteCol.findOne({key:'presale'}))
-                    await this.updateSite('presale',{})
+                    await this.setSite('presale',{})
             })(),
             (async()=>{
                 if(!await this._siteCol.findOne({key:'faq'}))
-                    await this.updateSite('faq',{})
+                    await this.setSite('faq',{})
             })(),
             (async()=>{
                 if(!await this._siteCol.findOne({key:'contact'}))
-                    await this.updateSite('contact',{})
+                    await this.setSite('contact',{})
             })(),
         ])
     })()
