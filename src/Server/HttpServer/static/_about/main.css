@@ -1,56 +1,134 @@
+#main>.mobileTop{
+    display:none;
+}
+@media(max-width:1279px){
+    #main>.mobileTop{
+        display:block;
+    }
+    #main>.mobileTop>.a{
+        background-image:url('/_about/img/top.jpg');
+        background-position:center;
+        background-size:cover;
+        display:table;
+        height:113px;
+        width:100%;
+    }
+    #main>.mobileTop>.a>*{
+        display:table-cell;
+        vertical-align:middle;
+        text-align:center;
+        color:white;
+        text-shadow:0 1px 1px rgba(0,0,0,.8);
+    }
+    #main>.mobileTop>.a>*>.n{
+        font-size:20px;
+    }
+    #main>.mobileTop>.a>*>.o{
+        font-size:13px;
+    }
+    #main>.mobileTop>.b{
+        margin:10px 13px 0;
+        font-size:13px;
+        color:#797979;
+    }
+    #main>.mobileTop>.b>.n{
+        color:#06182c;
+    }
+    #main>.mobileTop>.c{
+        margin-top:15px;
+        border-top:1px solid #edeced;
+    }
+    #main>.mobileTop>.c>.n{
+        display:table;
+        width:100%;
+        box-sizing:border-box;
+        background-color:rgba(255,255,255,1);
+        color:rgba(29,152,223,1);
+        padding:15px 10px;
+        border-bottom:1px solid #edeced;
+    }
+    #main>.mobileTop>.c>.n>*{
+        display:table-cell;
+    }
+    #main>.mobileTop>.c>.n>.b{
+        text-align:right;
+        color:#06182c;
+    }
+    #main>.mobileTop>.c>.o{
+        position:relative;
+        height:0;
+        z-index:1;
+    }
+    #main>.mobileTop>.c>.o>*{
+        padding:18px 10px;
+        border-bottom:1px solid #edeced;
+        background-color:rgba(29,152,223,.95);
+        color:rgba(255,255,255,.95);
+    }
+    #main>.mobileTop>.c>.o>.focus{
+        background-color:rgba(255,255,255,.95);
+        color:rgba(29,152,223,.95);
+    }
+}
 #main>.top{
-    background-image:url('/_about/img/top.jpg');
-    background-position:center;
-    background-size:cover;
-    height:410px;
+    display:none;
 }
-#main>.top>*{
-    width:1170px;
-    margin:0 auto;
-}
-#main>.top>*>.a{
-    display:table;
-    height:310px;
-    width:100%;
-}
-#main>.top>*>.a>*{
-    display:table-cell;
-    vertical-align:middle;
-    text-align:center;
-    color:white;
-}
-#main>.top>*>.a>*>.n{
-    font-size:40px;
-    text-shadow:0 1px 2px rgba(0,0,0,.8);
-}
-#main>.top>*>.a>*>.o{
-    font-size:16px;
-    text-shadow:0 1px 1px rgba(0,0,0,.8);
-}
-#main>.top>*>.b{
-    height:40px;
-    font-size:13px;
-    color:white;
-}
-#main>.top>*>.c{
-    height:60px;
-    display:table;
-    width:100%;
-}
-#main>.top>*>.c>*{
-    height:60px;
-    display:table-cell;
-    width:calc(100% / 3);
-    font-size:20;
-    vertical-align:middle;
-    text-align:center;
-    background-color:#1d98df;
-    color:white;
-    cursor:pointer;
-}
-#main>.top>*>.c>.focus{
-    background-color:white;
-    color:#1d98df;
+@media(min-width:1280px){
+    #main>.top{
+        display:block;
+        background-image:url('/_about/img/top.jpg');
+        background-position:center;
+        background-size:cover;
+        height:410px;
+    }
+    #main>.top>*{
+        width:1170px;
+        margin:0 auto;
+    }
+    #main>.top>*>.a{
+        display:table;
+        height:310px;
+        width:100%;
+    }
+    #main>.top>*>.a>*{
+        display:table-cell;
+        vertical-align:middle;
+        text-align:center;
+        color:white;
+    }
+    #main>.top>*>.a>*>.n{
+        font-size:40px;
+        text-shadow:0 1px 2px rgba(0,0,0,.8);
+    }
+    #main>.top>*>.a>*>.o{
+        font-size:16px;
+        text-shadow:0 1px 1px rgba(0,0,0,.8);
+    }
+    #main>.top>*>.b{
+        height:40px;
+        font-size:13px;
+        color:white;
+    }
+    #main>.top>*>.c{
+        height:60px;
+        display:table;
+        width:100%;
+    }
+    #main>.top>*>.c>*{
+        height:60px;
+        display:table-cell;
+        width:calc(100% / 3);
+        font-size:20;
+        vertical-align:middle;
+        text-align:center;
+        background-color:#1d98df;
+        color:white;
+        cursor:pointer;
+    }
+    #main>.top>*>.c>.focus{
+        background-color:white;
+        color:#1d98df;
+    }
 }
 #main>.summary{
     margin-top:40px;

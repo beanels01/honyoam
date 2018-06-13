@@ -3,6 +3,7 @@ import top from             './vue/top.mjs'
 import partner from         './vue/partner.mjs'
 import summary from         './vue/summary.mjs'
 import service from         './vue/service.mjs'
+import mobileTop from       './vue/mobileTop.mjs'
 let aMain={
     components:{
         hlFooter:           homepageLike.footer,
@@ -13,6 +14,7 @@ let aMain={
         aPartner:           partner,
         aService:           service,
         companySummary:     summary,
+        mobileTop,
     },
     computed:{
         href(){
@@ -33,6 +35,9 @@ let aMain={
                 :mainSeminar=mainSeminar
                 v-model=menu
             ></hlHeader>
+            <mobileTop
+                v-model=focus
+            ></mobileTop>
             <aTop
                 v-model=focus
             ></aTop>
