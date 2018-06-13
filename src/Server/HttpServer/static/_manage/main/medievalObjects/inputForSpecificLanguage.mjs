@@ -95,33 +95,35 @@ let inputForSpecificLanguage={
                     ></quillEditor>
                 </div>
             </p>
-            <p>
-                影音介紹影片：<br>
-                這裡要設定的是 YouTube 的影片 ID。以下兩個欄位，擇一填寫即可：
-            </p>
-            <div class=indent>
+            <!--
                 <p>
-                    影片 ID：
-                    <input
-                        v-model=value.videoId
-                    ></textarea>
+                    影音介紹影片：<br>
+                    這裡要設定的是 YouTube 的影片 ID。以下兩個欄位，擇一填寫即可：
                 </p>
-                <p>
-                    影片 URL（網址）：
-                    <input
-                        :value="'https://www.youtube.com/watch?v='+value.videoId"
-                        @input=videoIdInput
-                    ></textarea>
-                </p>
-            </div>
-            <p>
-                影音介紹文字：
                 <div class=indent>
-                    <textarea
-                        v-model=value.videoContent
-                    ></textarea>
+                    <p>
+                        影片 ID：
+                        <input
+                            v-model=value.videoId
+                        ></textarea>
+                    </p>
+                    <p>
+                        影片 URL（網址）：
+                        <input
+                            :value="'https://www.youtube.com/watch?v='+value.videoId"
+                            @input=videoIdInput
+                        ></textarea>
+                    </p>
                 </div>
-            </p>
+                <p>
+                    影音介紹文字：
+                    <div class=indent>
+                        <textarea
+                            v-model=value.videoContent
+                        ></textarea>
+                    </div>
+                </p>
+            -->
         </div>
     `,
     watch:{

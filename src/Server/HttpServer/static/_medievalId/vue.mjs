@@ -240,15 +240,17 @@ let aMain={
                             </div>
                         </div>
                     </div>
-                    <div class=q>
-                        <div class=a>影音介紹</div><div class=hl></div>
-                        <div class=b>
-                            <div class=n>
-                                {{data.videoContent}}
+                    <!--
+                        <div class=q>
+                            <div class=a>影音介紹</div><div class=hl></div>
+                            <div class=b>
+                                <div class=n>
+                                    {{data.videoContent}}
+                                </div>
+                                <iframe class=o :src="'https://www.youtube.com/embed/'+data.videoId" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </div>
-                            <iframe class=o :src="'https://www.youtube.com/embed/'+data.videoId" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
-                    </div>
+                    -->
                     <div class=r>
                         <div class=a>聯絡我們</div><div class=hl></div>
                         <div class=b>
