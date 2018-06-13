@@ -2,6 +2,7 @@ import homepageLike from    '../_homepageLike.mjs'
 import top from             './vue/top.mjs'
 import partner from         './vue/partner.mjs'
 import summary from         './vue/summary.mjs'
+import service from         './vue/service.mjs'
 let aMain={
     components:{
         hlFooter:           homepageLike.footer,
@@ -10,6 +11,7 @@ let aMain={
         floatBall:          homepageLike.floatBall,
         aTop:               top,
         aPartner:           partner,
+        aService:           service,
         companySummary:     summary,
     },
     computed:{
@@ -37,6 +39,9 @@ let aMain={
             <companySummary
                 v-if="focus=='summary'"
             ></companySummary>
+            <aService
+                v-if="focus=='service'"
+            ></aService>
             <aPartner
                 v-if="focus=='partner'"
             ></aPartner>
