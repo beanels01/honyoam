@@ -84,26 +84,31 @@ let summary={
                     </div>
                 </div>
             </div>
-            <div class=p>
+            <div class=p><div>
                 <div class=a>
                     <img src=/_about/img/icon0.png><br>
+                    <br>
                     預售案免服務費<br>
                     與日本當地同步優先選購
                 </div>
+                <div class=b></div>
                 <div class=a>
                     <img src=/_about/img/icon1.png><br>
+                    <br>
                     大中華圈30年<br>
                     +<br>
                     日本在地28年<br>
                     不動產經驗
                 </div>
+                <div class=b></div>
                 <div class=a>
                     <img src=/_about/img/icon2.png><br>
+                    <br>
                     一站式服務<br>
                     租賃及居家管理<br>
                     提供中、英、日語服務
                 </div>
-            </div>
+            </div></div>
             <div class=n>本葉概要</div>
             <div class=q>
                 <p>
