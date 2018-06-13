@@ -1,0 +1,39 @@
+@media(min-width:1280px){
+    #main>.a{
+        width:1170px;
+        margin:0 auto;
+    }
+}
+#main>.a>.o>.b>*{
+    display:table;
+}
+#main>.a>.o>.b>*>*{
+    display:table-row;
+}
+#main>.a>.o>.b>*>*>*{
+    display:table-cell;
+}
+#main>.a>.o>.b>* .n{
+    color:white;
+    background-color:#4f81bd;
+}
+#main>.a>.o>.b>* .o{
+    background-color:#d0d8e7;
+}
+#main>.a>.o>.b>* .p{
+    background-color:#e9ecf3;
+}
+@media(min-width:1280px){
+    #main>.a>.o{
+        display:table;
+    }
+    #main>.a>.o>*{
+        display:table-cell;
+    }
+    #main>.a>.o>.a{
+        width:40%;
+    }
+    #main>.a>.o>.b{
+        width:60%;
+    }
+}
