@@ -14,7 +14,7 @@ let aMain={
     data:()=>({
         menu:0,
     }),
-    props:['language','currentLanguage','homepage','mainSeminar'],
+    props:['language','currentLanguage','mainSeminar'],
     template:`
         <div id=main>
             <hlHeader
@@ -25,6 +25,35 @@ let aMain={
                 v-model=menu
             ></hlHeader>
             <template v-if=!menu>
+                <div class=a>
+                    <div class=n>
+                        <img src=/_about/img/logo.png>
+                    </div>
+                    <div class=o>
+                    </div>
+                    <div class=p>
+                        <div class=a>
+                        </div>
+                        <div class=a>
+                        </div>
+                        <div class=a>
+                        </div>
+                    </div>
+                    <div class=q>
+                    </div>
+                    <div class=r>
+                    </div>
+                    <div class=s>
+                    </div>
+                    <div class=t>
+                    </div>
+                    <div class=u>
+                    </div>
+                    <div class=v>
+                    </div>
+                    <div class=w>
+                    </div>
+                </div>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>
@@ -48,7 +77,6 @@ export default{
         <aMain
             :language=language
             :currentLanguage=currentLanguage
-            :homepage=homepage
             :mainSeminar=mainSeminar
         ></aMain>
     `

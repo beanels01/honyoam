@@ -16,6 +16,7 @@ import calcPresaleIdTrafficResult from './entries/calcPresaleIdTrafficResult'
 import calcPresaleIdPatternResult from './entries/calcPresaleIdPatternResult'
 import calcPresaleIdSummaryResult from './entries/calcPresaleIdSummaryResult'
 import calcPresaleIdVideoResult from './entries/calcPresaleIdVideoResult'
+import calcAboutResult from     './entries/calcAboutResult'
 import calcSeminarResult from   './entries/calcSeminarResult'
 import manage from              './entries/manage'
 import form from                './entries/form'
@@ -117,6 +118,8 @@ export default async function(pathname){
                 f=calcMedievalResult
             else if(a[2]=='presale')
                 f=calcPresaleResult
+            else if(a[2]=='about')
+                f=calcAboutResult
             if(f)
                 return function(rq,rs){
                     if(!(
