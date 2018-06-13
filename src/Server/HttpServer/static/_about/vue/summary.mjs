@@ -1,35 +1,32 @@
 let summary={
     template:`
         <div class=summary>
-            <div class=n>
-                <img src=/_about/img/logo.png>
-            </div>
-            <div class=o>
-                <div class=a>
+            <div class=u>
+                <ul>
+                <li>成立於 2013 年</li>
+                <li>總公司本葉国際資産管理株式会社</li>
+                <li>位於東京港區、台北松江路設有辦公室</li>
+                <li>業務內容:
                     <ul>
-                    <li>成立於 2013 年</li>
-                    <li>總公司本葉国際資産管理株式会社</li>
-                    <li>位於東京港區、台北松江路設有辦公室</li>
-                    <li>業務內容:
-                        <ul>
-                        <li>不動產預售代銷</li>
-                        <li>中古屋仲介買賣、投資諮詢</li>
-                        <li>不動產租賃管理一站式服務</li>
-                        </ul>
-                    </li>
+                    <li>不動產預售代銷</li>
+                    <li>中古屋仲介買賣、投資諮詢</li>
+                    <li>不動產租賃管理一站式服務</li>
                     </ul>
-                    <img src=/_about/img/a0.png style=width:20%>
-                    <img src=/_about/img/a1.png style=width:70%>
-                </div>
-                <div class=b>
+                </li>
+                </ul>
+                <img src=/_about/img/a0.png style=width:20%>
+                <img src=/_about/img/a1.png style=width:70%>
+            </div>
+            <div class=summary>
+                <div class=v>
                     <div class=n>
                         <div class=a>
                             <div class=n>
                                 東京辦公室
                             </div>
-                            <div class=n>
-                                本葉国際資產管理株式会社
-                                〒105-0012　東京都港区芝大門2‐4‐1　IZUMIビル4階
+                            <div class=o>
+                                本葉国際資產管理株式会社<br>
+                                〒105-0012　東京都港区芝大門2‐4‐1　IZUMIビル4階<br>
                                 TEL 03－6809－1836
                             </div>
                         </div>
@@ -47,7 +44,7 @@ let summary={
                             <div class=n>
                                 代表取締役社長
                             </div>
-                            <div class=p>
+                            <div class=o>
                                 林彦宏
                             </div>
                         </div>
@@ -63,7 +60,7 @@ let summary={
                             <div class=n>
                                 營業執照
                             </div>
-                            <div class=p>
+                            <div class=o>
                                 東京都知事（1）第96199號
                             </div>
                         </div>
@@ -71,13 +68,9 @@ let summary={
                             <div class=n>
                                 所屬團體
                             </div>
-                            <div>
-                                <div class=o>
-                                    公益社団法人東京都宅地建物取引業協会
-                                </div>
-                                <div class=p>
-                                    公益社団法人全国宅地建物取引業保証協会
-                                </div>
+                            <div class=o>
+                                公益社団法人東京都宅地建物取引業協会<br>
+                                公益社団法人全国宅地建物取引業保証協会
                             </div>
                         </div>
                         <div class=a>
@@ -93,27 +86,28 @@ let summary={
             </div>
             <div class=p>
                 <div class=a>
-                    <img src=/_about/img/b0.png><br>
+                    <img src=/_about/img/icon0.png><br>
                     預售案免服務費<br>
                     與日本當地同步優先選購
                 </div>
                 <div class=a>
-                    <img src=/_about/img/b1.png><br>
+                    <img src=/_about/img/icon1.png><br>
                     大中華圈30年<br>
                     +<br>
                     日本在地28年<br>
                     不動產經驗
                 </div>
                 <div class=a>
-                    <img src=/_about/img/b2.png><br>
+                    <img src=/_about/img/icon2.png><br>
                     一站式服務<br>
                     租賃及居家管理<br>
                     提供中、英、日語服務
                 </div>
             </div>
+            <div class=n>本葉概要</div>
             <div class=q>
                 <p>
-                    <span style=font-weight:bold>本葉概要</span>: 本葉国際資産管理株式会社在2013年12月成立於日本東京港區,專營日本不動產投資及資產管理顧問,有別於其他仲介公司, 除了中古屋買賣外並與三菱地所RESIDENCE 合作, 提供 The Parkhouse 系列預售屋,我們的預售屋價格與日本同步,且預售屋服務完全不需負擔服務費, 讓您在第一時間取得販售資料與挑選最好物件的機會。
+                    本葉国際資産管理株式会社在2013年12月成立於日本東京港區,專營日本不動產投資及資產管理顧問,有別於其他仲介公司, 除了中古屋買賣外並與三菱地所RESIDENCE 合作, 提供 The Parkhouse 系列預售屋,我們的預售屋價格與日本同步,且預售屋服務完全不需負擔服務費, 讓您在第一時間取得販售資料與挑選最好物件的機會。
                 </p>
                 <p>
                     我們的團隊中有日本人也有長住日本的台灣人,除了擁有中日兩地不動產證照及經驗豐富的專業人員, 不但可以日文、中文應對, 台語、英語也沒問題, 為了滿足在台客戶的需求及提供即時的服務, 同時成立了本葉國際資產管理股份有限公司作為台北的據點。
@@ -127,12 +121,17 @@ let summary={
             </div>
             <div class=r>
             </div>
-            <div class=s>
-                <span style=font-weight:bold>社長介紹</span>：代表取締役社長 林彦宏
-                半百跳脫舒適圈, 人生有4分之1待在信義房屋的林彥宏，並沒有選擇在「信義」這棟大樹底下退休，而是在50歲前離開信義，創業成立屬於自己的公司。從日本信義到自行創業 「本葉國際資產管理株式會社」，林彥宏銷售日本不動產給華人<span style=color:red;>已近10年</span>，融合中日不動產經驗近30年, 非常了解兩地文化的異同, 可以說是建立中日兩地房地產投資平台的先鋒。 擁有國際不動產(CCIM) 分析師證照及不動產經紀人執照, 是一個真正想走出台灣,立足亞洲,放眼全世界的房地產專業經理人!
+            <div class=n>社長介紹</div>
+            <div class=q>
+                <p>
+                    代表取締役社長 林彦宏
+                </p>
+                <p>
+                    半百跳脫舒適圈, 人生有4分之1待在信義房屋的林彥宏，並沒有選擇在「信義」這棟大樹底下退休，而是在50歲前離開信義，創業成立屬於自己的公司。從日本信義到自行創業 「本葉國際資產管理株式會社」，林彥宏銷售日本不動產給華人<span style=color:red;>已近10年</span>，融合中日不動產經驗近30年, 非常了解兩地文化的異同, 可以說是建立中日兩地房地產投資平台的先鋒。 擁有國際不動產(CCIM) 分析師證照及不動產經紀人執照, 是一個真正想走出台灣,立足亞洲,放眼全世界的房地產專業經理人!
+                </p>
             </div>
+            <div class=n>我們的服務流程與內容</div>
             <div class=t>
-                <div style="color:red;font-size:40px;">我們的服務流程與內容</div>
                 <div class=a>
                     <div>
                         <div class=a>
