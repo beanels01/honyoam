@@ -98,11 +98,6 @@ let aMain={
                                 <reserveButton></reserveButton>
                                 <moreButton></moreButton>
                             </div>
-                            <div class=hl></div>
-                            <div class=s>
-                                <span class=a>台北直營辦事處：</span>
-                                <span class=b>02-2785-5865</span>
-                            </div>
                         </div>
                         <div class=c>
                             <div class=n>

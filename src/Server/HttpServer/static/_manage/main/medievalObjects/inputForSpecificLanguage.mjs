@@ -48,6 +48,32 @@ let inputForSpecificLanguage={
                     v-model=value.name
                 >
             </p>
+            <!--
+                <p>
+                    樓層：
+                    <input
+                        v-model=value.level
+                    >
+                </p>
+                <p>
+                    構造：
+                    <input
+                        v-model=value.structure
+                    >
+                </p>
+                <p>
+                    建物總樓層數：
+                    <input
+                        v-model=value.levelCount
+                    >
+                </p>
+                <p>
+                    管理方式：
+                    <input
+                        v-model=value.manageMethod
+                    >
+                </p>
+            -->
             <p>
                 所在地：
                 <input
