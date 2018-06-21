@@ -1,6 +1,9 @@
 import homepageLike from    '../_homepageLike.mjs'
 import medievalLike from    '../_medievalLike.mjs'
 let aMain={
+    created(){
+        console.log(this.data.data)
+    },
     components:{
         hlFooter:           homepageLike.footer,
         hlMenu:             homepageLike.menu,
@@ -20,6 +23,7 @@ let aMain={
     },
     data:()=>({
         menu:0,
+        focus:0,
     }),
     props:['language','currentLanguage','mainSeminar','data',],
     template:`
@@ -50,9 +54,16 @@ let aMain={
                     <div class=o>
                         <div class=a>
                             <div class=n>
-                                <img src=/_medievalId/demo0.jpg>
+                                <img
+                                    :src="'/image/'+data.data.gallery[focus]"
+                                >
                             </div>
-                            <div class=o><div class="button left"></div><img class="option" src=/_medievalId/demo0.jpg><img class="option" src=/_medievalId/demo1.jpg><img class="option" src=/_medievalId/demo2.jpg><img class="option" src=/_medievalId/demo3.jpg><img class="option" src=/_medievalId/demo4.jpg><img class="option" src=/_medievalId/demo5.jpg><img class="option" src=/_medievalId/demo6.jpg><div class="button right"></div></div>
+                            <div class=o><div class="button left"></div><img
+                                v-for="(a,i) of data.data.gallery"
+                                class="option"
+                                :src="'/image/'+a"
+                                @click="focus=i"
+                            ><div class="button right"></div></div>
                         </div><div class=b>
                             <div class=n>
                                 <span class=a>{{data.data.price}}</span>
