@@ -1,5 +1,8 @@
 let summary={
-    props:['language'],
+    props:[
+        'currentLanguage',
+        'language',
+    ],
     template:`
         <div class=summary>
             <div class=u>
@@ -51,8 +54,10 @@ let summary={
             </div>
             <div class=n>{{language.chairman.title}}</div>
             <div class=q v-html=language.chairman.content></div>
-            <div class=n>{{language.chairmanSay.title}}</div>
-            <div class=q v-html=language.chairmanSay.content></div>
+            <template v-if="currentLanguage=='jp'">
+                <div class=n>{{language.chairmanSay.title}}</div>
+                <div class=q v-html=language.chairmanSay.content></div>
+            </template>
             <div class=n>{{language.service.title}}</div>
             <div class=t>
                 <div class=a>

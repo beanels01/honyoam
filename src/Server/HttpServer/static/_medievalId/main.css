@@ -230,6 +230,7 @@
 }
 #main>.b>.n>.b>.o>*>.o{
     color:#444444;
+    white-space:pre-line;
 }
 #main>.b>.n>.b>.p{
     font-size:13px;

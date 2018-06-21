@@ -1,9 +1,6 @@
 import homepageLike from    '../_homepageLike.mjs'
 import medievalLike from    '../_medievalLike.mjs'
 let aMain={
-    created(){
-        console.log(this.data.data)
-    },
     components:{
         hlFooter:           homepageLike.footer,
         hlMenu:             homepageLike.menu,
@@ -25,6 +22,21 @@ let aMain={
         menu:0,
         focus:0,
     }),
+    methods:{
+        commaNumber(n){
+            let x=[]
+            n=''+n
+            let
+                a=n.length,
+                b=Math.ceil(a/3)
+            for(let i=0;i<b;i++)
+                x.push(n.substring(
+                    a-3*b+3*i,
+                    a-3*b+3*(i+1)
+                ))
+            return x.join(',')
+        },
+    },
     props:['language','currentLanguage','mainSeminar','data',],
     template:`
         <div id=main>
@@ -66,7 +78,9 @@ let aMain={
                             ><div class="button right"></div></div>
                         </div><div class=b>
                             <div class=n>
-                                <span class=a>{{data.data.price}}</span>
+                                <span class=a>{{
+                                    commaNumber(data.data.price)
+                                }}</span>
                                 <span class=b>萬日幣</span>
                                 <span class=c>每坪單價：請洽各店服務員</span>
                             </div>
@@ -135,77 +149,51 @@ let aMain={
                                 <div>
                                     <div class=n>
                                         · 總價
-                                    </div><div class=o>
-                                        {{data.data.price}} 萬日幣
-                                    </div>
+                                    </div><div class=o>{{commaNumber(data.data.price)}} 萬日幣</div>
                                     <div class=n>
                                         · 所在地
-                                    </div><div class=o>
-                                        {{data.data.place}}
-                                    </div>
+                                    </div><div class=o>{{data.data.place}}</div>
                                     <div class=n>
                                         · 交通
-                                    </div><div class=o>
-                                        {{data.data.traffic}}
-                                    </div>
+                                    </div><div class=o>{{data.data.traffic}}</div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 格局
-                                    </div><div class=o>
-                                        {{data.data.pattern}}
-                                    </div>
+                                    </div><div class=o>{{data.data.pattern}}</div>
                                     <div class=n>
                                         · 坪數
-                                    </div><div class=o>
-                                        {{data.data.area}} 平方公尺
-                                    </div>
+                                    </div><div class=o>{{data.data.area}} 平方公尺</div>
                                     <div class=n>
                                         · 陽台面積
-                                    </div><div class=o>
-                                        {{data.data.balconyArea}} 平方公尺
-                                    </div>
+                                    </div><div class=o>{{data.data.balconyArea}} 平方公尺</div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 竣工年份
-                                    </div><div class=o>
-                                        {{data.data.date}} 年
-                                    </div>
+                                    </div><div class=o>{{data.data.date}} 年</div>
                                     <div class=n>
                                         · 總戶數
-                                    </div><div class=o>
-                                        {{data.data.householdCount}} 戶
-                                    </div>
+                                    </div><div class=o>{{data.data.householdCount}} 戶</div>
                                     <div class=n>
                                         · 現況
-                                    </div><div class=o>
-                                        {{data.data.situation}}
-                                    </div>
+                                    </div><div class=o>{{data.data.situation}}</div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 管理費
-                                    </div><div class=o>
-                                        {{data.data.managementFee}} 日幣
-                                    </div>
+                                    </div><div class=o>{{commaNumber(data.data.managementFee)}} 日幣</div>
                                     <div class=n>
                                         · 修繕基金
-                                    </div><div class=o>
-                                        {{data.data.repairFund}} 日幣
-                                    </div>
+                                    </div><div class=o>{{commaNumber(data.data.repairFund)}} 日幣</div>
                                     <div class=n>
                                         · 方位
-                                    </div><div class=o>
-                                        {{data.data.direction}}
-                                    </div>
+                                    </div><div class=o>{{data.data.direction}}</div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 其他費用
-                                    </div><div class=o>
-                                        {{data.data.otherFee}} 日幣
-                                    </div>
+                                    </div><div class=o>{{commaNumber(data.data.otherFee)}} 日幣</div>
                                     <div class=n>
                                     </div>
                                     <div class=o>
