@@ -36,19 +36,24 @@ let aMain={
                 v-model=menu
             ></hlHeader>
             <mobileTop
+                :language=language
                 v-model=focus
             ></mobileTop>
             <aTop
+                :language=language
                 v-model=focus
             ></aTop>
             <companySummary
                 v-if="focus=='summary'"
+                :language=language.about.summary
             ></companySummary>
             <aService
                 v-if="focus=='service'"
+                :language=language.about.service
             ></aService>
             <aPartner
                 v-if="focus=='partner'"
+                :language=language.about.partner
             ></aPartner>
             <template v-if=!menu>
                 <hlFooter

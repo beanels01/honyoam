@@ -1,31 +1,31 @@
 let top={
-    props:['value'],
+    props:['value','language'],
     template:`
         <div class=top><div>
             <div class=a><div>
                 <div class=n>
-                    關於我們
+                    {{language.about.top.aboutUs}}
                 </div>
                 <div class=o>
                     ABOUT US
                 </div>
             </div></div>
             <div class=b>
-                首頁 > 關於我們
+                {{language.about.top.homepage}} > {{language.about.top.aboutUs}}
             </div>
             <div class=c>
                 <div
                     :class="{focus:value=='summary'}"
                     @click="$emit('input','summary')"
-                >公司簡介</div>
+                >{{language.about.top.summary}}</div>
                 <div
                     :class="{focus:value=='service'}"
                     @click="$emit('input','service')"
-                >服務項目</div>
+                >{{language.about.top.service}}</div>
                 <div
                     :class="{focus:value=='partner'}"
                     @click="$emit('input','partner')"
-                >合作夥伴</div>
+                >{{language.about.top.partner}}</div>
             </div>
         </div></div>
     `

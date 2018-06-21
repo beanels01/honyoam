@@ -8,19 +8,22 @@ let top={
             this.$emit('input',a)
         }
     },
-    props:['value'],
+    props:[
+        'value',
+        'language',
+    ],
     template:`
         <div class=mobileTop>
             <div class=a><div>
                 <div class=n>
-                    關於我們
+                    {{language.about.top.aboutUs}}
                 </div>
                 <div class=o>
                     ABOUT US
                 </div>
             </div></div>
             <div class=b>
-                首頁 > <span class=n>關於我們</span>
+                {{language.about.top.aboutUs}} > <span class=n>{{language.about.top.aboutUs}}</span>
             </div>
             <div class=c>
                 <div
@@ -29,9 +32,9 @@ let top={
                 >
                     <div class=a>
                         {{{
-                            summary:'公司簡介',
-                            service:'服務項目',
-                            partner:'合作夥伴',
+                            summary:language.about.top.summary,
+                            service:language.about.top.service,
+                            partner:language.about.top.partner,
                         }[value]}}
                     </div>
                     <div class=b>
@@ -47,15 +50,15 @@ let top={
                     <div
                         :class="{focus:value=='summary'}"
                         @click="click('summary')"
-                    >公司簡介</div>
+                    >{{language.about.top.summary}}</div>
                     <div
                         :class="{focus:value=='service'}"
                         @click="click('service')"
-                    >服務項目</div>
+                    >{{language.about.top.service}}</div>
                     <div
                         :class="{focus:value=='partner'}"
                         @click="click('partner')"
-                    >合作夥伴</div>
+                    >{{language.about.top.partner}}</div>
                 </div>
             </div>
         </div>
