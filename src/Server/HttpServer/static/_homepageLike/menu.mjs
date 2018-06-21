@@ -13,7 +13,7 @@ let menu={
             return`/${l}`
         },
     },
-    props:['language','currentLanguage','mainSeminar',],
+    props:['current','language','currentLanguage','mainSeminar',],
     template:`
         <div class=menu>
             <template v-if="focus=='root'">

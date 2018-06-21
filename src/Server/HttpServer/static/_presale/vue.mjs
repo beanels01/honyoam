@@ -24,6 +24,7 @@ let aMain={
         <div id=main>
             <hlHeader
                 shadow=1
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 v-model=menu
@@ -39,7 +40,7 @@ let aMain={
                 <homepageLikeHouseList
                     :data="{
                         type:'presale',
-                        array:data,
+                        array:data.data,
                     }"
                 ></homepageLikeHouseList>
                 <mightLike></mightLike>
@@ -53,6 +54,7 @@ let aMain={
             </template>
             <hlMenu
                 v-if=menu
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar

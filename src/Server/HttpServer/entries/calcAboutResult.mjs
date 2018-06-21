@@ -8,6 +8,9 @@ async function main(rq,rs,lang){
         css:                '_about/main.css',
         vue,
         vueData:{
+            data:{
+                current:rq.url,
+            },
         },
     })
 }

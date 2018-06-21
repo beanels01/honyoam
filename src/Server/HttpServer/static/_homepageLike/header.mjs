@@ -6,7 +6,12 @@ let header={
         },
     },languageComputed),
     props:[
-        'language','currentLanguage','value','shadow','mainSeminar',
+        'language',
+        'current',
+        'currentLanguage',
+        'value',
+        'shadow',
+        'mainSeminar',
     ],
     template:`
         <div

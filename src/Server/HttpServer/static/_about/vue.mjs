@@ -25,37 +25,38 @@ let aMain={
         menu:0,
         focus:'service',
     }),
-    props:['language','currentLanguage','mainSeminar'],
+    props:['data','language','currentLanguage','mainSeminar'],
     template:`
         <div id=main>
             <hlHeader
                 shadow=1
                 :language=language
+                :current=data.current
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
                 v-model=menu
             ></hlHeader>
-            <mobileTop
-                :language=language
-                v-model=focus
-            ></mobileTop>
-            <aTop
-                :language=language
-                v-model=focus
-            ></aTop>
-            <companySummary
-                v-if="focus=='summary'"
-                :language=language.about.summary
-            ></companySummary>
-            <aService
-                v-if="focus=='service'"
-                :language=language.about.service
-            ></aService>
-            <aPartner
-                v-if="focus=='partner'"
-                :language=language.about.partner
-            ></aPartner>
             <template v-if=!menu>
+                <mobileTop
+                    :language=language
+                    v-model=focus
+                ></mobileTop>
+                <aTop
+                    :language=language
+                    v-model=focus
+                ></aTop>
+                <companySummary
+                    v-if="focus=='summary'"
+                    :language=language.about.summary
+                ></companySummary>
+                <aService
+                    v-if="focus=='service'"
+                    :language=language.about.service
+                ></aService>
+                <aPartner
+                    v-if="focus=='partner'"
+                    :language=language.about.partner
+                ></aPartner>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>
@@ -66,6 +67,7 @@ let aMain={
             </template>
             <hlMenu
                 v-if=menu
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
@@ -77,6 +79,7 @@ export default{
     components:{aMain},
     template:`
         <aMain
+            :data=data
             :language=language
             :currentLanguage=currentLanguage
             :mainSeminar=mainSeminar

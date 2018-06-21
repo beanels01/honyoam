@@ -31,7 +31,10 @@ async function main(rq,rs,lang,patch,id){
                 id,
                 presale:(await this._outPresale()).res,
                 presaleId,
-            }
+            },
+            data:{
+                current:rq.url,
+            },
         },
     })
 }

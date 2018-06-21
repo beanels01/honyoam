@@ -8,6 +8,9 @@ async function main(rq,rs,lang,patch){
         clientScript:       '_news/main.mjs',
         vue,
         vueData:{
+            data:{
+                current:rq.url,
+            },
         },
     })
 }

@@ -67,6 +67,7 @@ let aMain={
         menu:0,
     }),
     props:[
+        'data',
         'language',
         'currentLanguage',
         'value',
@@ -76,6 +77,7 @@ let aMain={
         <div id=main>
             <hlHeader
                 shadow=1
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 v-model=menu
@@ -142,6 +144,7 @@ let aMain={
             </template>
             <hlMenu
                 v-if=menu
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
@@ -153,6 +156,7 @@ export default{
     components:{aMain},
     template:`
         <aMain
+            :data=data
             :language=language
             :currentLanguage=currentLanguage
             :value=value

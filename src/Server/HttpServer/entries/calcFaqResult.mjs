@@ -10,6 +10,9 @@ async function main(rq,rs,lang){
         vueData:{
             classes:            (await this._getFaqClasses()).res,
             faq:                (await this._getFaq()).res[lang],
+            data:{
+                current:rq.url,
+            },
         }
     })
 }

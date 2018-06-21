@@ -23,6 +23,7 @@ let aMain={
     template:`
         <div id=main>
             <hlHeader
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
@@ -41,7 +42,7 @@ let aMain={
                 <houseList
                     :data="{
                         type:'medieval',
-                        array:data,
+                        array:data.data,
                     }"
                 ></houseList>
                 <mightLike></mightLike>
@@ -55,6 +56,7 @@ let aMain={
             </template>
             <hlMenu
                 v-if=menu
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar

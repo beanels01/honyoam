@@ -14,10 +14,11 @@ let aMain={
     data:()=>({
         menu:0,
     }),
-    props:['language','currentLanguage','mainSeminar',],
+    props:['data','language','currentLanguage','mainSeminar',],
     template:`
         <div id=main>
             <hlHeader
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
@@ -34,6 +35,7 @@ let aMain={
             </template>
             <hlMenu
                 v-if=menu
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
@@ -45,6 +47,7 @@ export default{
     components:{aMain},
     template:`
         <aMain
+            :data=data
             :language=language
             :currentLanguage=currentLanguage
             :mainSeminar=mainSeminar

@@ -14,6 +14,9 @@ async function main(rq,rs,lang,patch){
                 rotation:data.rotation[lang],
                 event:data.event[lang],
             },
+            data:{
+                current:rq.url,
+            },
         },
     })
 }

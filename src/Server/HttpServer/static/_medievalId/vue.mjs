@@ -26,6 +26,7 @@ let aMain={
         <div id=main>
             <hlHeader
                 :shadow=1
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar
@@ -36,7 +37,7 @@ let aMain={
                     :data="[
                         '首頁',
                         '中古屋',
-                        data.name,
+                        data.data.name,
                     ]"
                 ></aCurrent>
                 <medievalLikeTop
@@ -45,7 +46,7 @@ let aMain={
                     }"
                 ></medievalLikeTop>
                 <div class=a>
-                    <div class=n>{{data.name}}</div>
+                    <div class=n>{{data.data.name}}</div>
                     <div class=o>
                         <div class=a>
                             <div class=n>
@@ -54,7 +55,7 @@ let aMain={
                             <div class=o><div class="button left"></div><img class="option" src=/_medievalId/demo0.jpg><img class="option" src=/_medievalId/demo1.jpg><img class="option" src=/_medievalId/demo2.jpg><img class="option" src=/_medievalId/demo3.jpg><img class="option" src=/_medievalId/demo4.jpg><img class="option" src=/_medievalId/demo5.jpg><img class="option" src=/_medievalId/demo6.jpg><div class="button right"></div></div>
                         </div><div class=b>
                             <div class=n>
-                                <span class=a>{{data.price}}</span>
+                                <span class=a>{{data.data.price}}</span>
                                 <span class=b>萬日幣</span>
                                 <span class=c>每坪單價：請洽各店服務員</span>
                             </div>
@@ -66,32 +67,32 @@ let aMain={
                                     <div>權狀坪數</div>
                                 </div>
                                 <div>
-                                    <div>{{data.pattern}}</div>
-                                    <div>{{data.date}} 年</div>
-                                    <div>{{data.area}} 平方公尺</div>
+                                    <div>{{data.data.pattern}}</div>
+                                    <div>{{data.data.date}} 年</div>
+                                    <div>{{data.data.area}} 平方公尺</div>
                                 </div>
                             </div>
                             <div class="desktop hl"></div>
                             <div class="desktop o q">
                                 <div>
                                     <div class=n>所在地</div>
-                                    <div>{{data.place}}</div>
+                                    <div>{{data.data.place}}</div>
                                 </div>
                                 <div>
                                     <div class=n>交通</div>
-                                    <div>{{data.traffic}}</div>
+                                    <div>{{data.data.traffic}}</div>
                                 </div>
                             </div>
                             <div class=mobile>
-                                <span class=a>格局：</span>{{data.pattern}}
+                                <span class=a>格局：</span>{{data.data.pattern}}
                                 <div class="hl"></div>
-                                <span class=a>竣工年份：</span>{{data.date}} 年
+                                <span class=a>竣工年份：</span>{{data.data.date}} 年
                                 <div class="hl"></div>
-                                <span class=a>權狀坪數：</span>{{data.area}} 平方公尺
+                                <span class=a>權狀坪數：</span>{{data.data.area}} 平方公尺
                                 <div class="hl"></div>
-                                <span class=a>所在地：</span>{{data.place}}
+                                <span class=a>所在地：</span>{{data.data.place}}
                                 <div class="hl"></div>
-                                <span class=a>交通：</span>{{data.traffic}}
+                                <span class=a>交通：</span>{{data.data.traffic}}
                             </div>
                             <div class=hl></div>
                             <div class=r>
@@ -117,82 +118,82 @@ let aMain={
                         <div class=a>詳細資料</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
-                                {{data.name}}
+                                {{data.data.name}}
                             </div>
                             <div class=o>
                                 <div>
                                     <div class=n>
                                         · 總價
                                     </div><div class=o>
-                                        {{data.price}} 萬日幣
+                                        {{data.data.price}} 萬日幣
                                     </div>
                                     <div class=n>
                                         · 所在地
                                     </div><div class=o>
-                                        {{data.place}}
+                                        {{data.data.place}}
                                     </div>
                                     <div class=n>
                                         · 交通
                                     </div><div class=o>
-                                        {{data.traffic}}
+                                        {{data.data.traffic}}
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 格局
                                     </div><div class=o>
-                                        {{data.pattern}}
+                                        {{data.data.pattern}}
                                     </div>
                                     <div class=n>
                                         · 坪數
                                     </div><div class=o>
-                                        {{data.area}} 平方公尺
+                                        {{data.data.area}} 平方公尺
                                     </div>
                                     <div class=n>
                                         · 陽台面積
                                     </div><div class=o>
-                                        {{data.balconyArea}} 平方公尺
+                                        {{data.data.balconyArea}} 平方公尺
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 竣工年份
                                     </div><div class=o>
-                                        {{data.date}} 年
+                                        {{data.data.date}} 年
                                     </div>
                                     <div class=n>
                                         · 總戶數
                                     </div><div class=o>
-                                        {{data.householdCount}} 戶
+                                        {{data.data.householdCount}} 戶
                                     </div>
                                     <div class=n>
                                         · 現況
                                     </div><div class=o>
-                                        {{data.situation}}
+                                        {{data.data.situation}}
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 管理費
                                     </div><div class=o>
-                                        {{data.managementFee}} 日幣
+                                        {{data.data.managementFee}} 日幣
                                     </div>
                                     <div class=n>
                                         · 修繕基金
                                     </div><div class=o>
-                                        {{data.repairFund}} 日幣
+                                        {{data.data.repairFund}} 日幣
                                     </div>
                                     <div class=n>
                                         · 方位
                                     </div><div class=o>
-                                        {{data.direction}}
+                                        {{data.data.direction}}
                                     </div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 其他費用
                                     </div><div class=o>
-                                        {{data.otherFee}} 日幣
+                                        {{data.data.otherFee}} 日幣
                                     </div>
                                     <div class=n>
                                     </div>
@@ -213,7 +214,7 @@ let aMain={
                         <div class=a>周圍地圖</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
-                                <iframe :src=data.map width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                <iframe :src=data.data.map width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                             <div class=o>
                                 ※ 僅供物件周邊景象參考，可能與實際物件有所出入。
@@ -224,14 +225,14 @@ let aMain={
                         <div class=a>格局圖</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
-                                <div class=a>{{data.patternTitle}}</div>
-                                <div class=b v-html=data.patternContent></div>
+                                <div class=a>{{data.data.patternTitle}}</div>
+                                <div class=b v-html=data.data.patternContent></div>
                                 <div class=c>
                                     ※ 本格局圖係未依一定比例縮小繪製之概繪圖。與實況仍有差距，其方位、格局形狀等，仍需以房屋現場為準。
                                 </div>
                             </div>
                             <div class=o>
-                                <img :src="'/image/'+data.patternImage">
+                                <img :src="'/image/'+data.data.patternImage">
                             </div>
                         </div>
                     </div>
@@ -240,7 +241,7 @@ let aMain={
                             <div class=a>影音介紹</div><div class=hl></div>
                             <div class=b>
                                 <div class=n>
-                                    {{data.videoContent}}
+                                    {{data.data.videoContent}}
                                 </div>
                                 <iframe class=o :src="'https://www.youtube.com/embed/'+data.videoId" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                             </div>
@@ -264,6 +265,7 @@ let aMain={
             </template>
             <hlMenu
                 v-if=menu
+                :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
                 :mainSeminar=mainSeminar

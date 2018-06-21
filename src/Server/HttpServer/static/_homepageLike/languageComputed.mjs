@@ -13,13 +13,9 @@ let languageComputed={
             ...this.language.showedLang.map(k=>
                 k=='_'?0:{
                     language:this.language.language[k],
-                    href:`/${k}`
+                    href:this.current.replace(/^\/[^\/]*\//,`/${k}/`)
                 }
             ).filter(a=>a),
-            {
-                language:'日文',
-                href:'http://www.honyoam.co.jp/about_us_jp/',
-            },
         ]
     },
 }

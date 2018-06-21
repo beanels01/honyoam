@@ -12,6 +12,9 @@ async function main(rq,rs,lang,patch,id){
         vue,
         vueData:{
             value:data,
+            data:{
+                current:rq.url,
+            },
         },
         og:{
             title:data.block0.title,

@@ -41,7 +41,10 @@ async function main(rq,rs,lang,patch,id){
         clientScript:       '_medievalId/main.mjs',
         vue,
         vueData:{
-            data:medieval,
+            data:{
+                current:rq.url,
+                data:medieval,
+            },
         },
     })
 }

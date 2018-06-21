@@ -11,7 +11,10 @@ async function main(rq,rs,lang,patch){
         clientScript:       '_presale/main.mjs',
         vue,
         vueData:{
-            data:(await this._outPresaleList0(lang)).res,
+            data:{
+                current:rq.url,
+                data:(await this._outPresaleList0(lang)).res,
+            },
         },
     })
 }
