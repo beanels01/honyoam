@@ -3,18 +3,8 @@ let summary={
     template:`
         <div class=summary>
             <div class=u>
-                <ul>
-                <li>{{language.u[0]}}</li>
-                <li>{{language.u[1]}}</li>
-                <li>{{language.u[2]}}</li>
-                <li>{{language.u[3][0]}}
-                    <ul>
-                    <li>{{language.u[3][1]}}</li>
-                    <li>{{language.u[3][2]}}</li>
-                    <li>{{language.u[3][3]}}</li>
-                    </ul>
-                </li>
-                </ul>
+                <div v-html=language.u>
+                </div>
                 <img src=/_about/img/a0.png style=width:20%>
                 <img src=/_about/img/a1.png style=width:70%>
             </div>
