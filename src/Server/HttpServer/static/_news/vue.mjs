@@ -47,7 +47,7 @@ let aMain={
                         </div>
                     </div></div></div>
                 </div>
-                <select class=yearSelect>
+                <select class=yearSelect v-model=year>
                     <option value=2018>2018 年</option>
                     <option value=2019>2019 年</option>
                     <option value=2020>2020 年</option>
@@ -58,7 +58,7 @@ let aMain={
                     <option value=2025>2025 年</option>
                 </select>
                 <div class=typeSelect>
-                    <select class=mobile>
+                    <select class=mobile v-model=type>
                         <option>一般公告</option>
                         <option>E-News</option>
                         <option>社長專欄</option>
