@@ -1,0 +1,131 @@
+#main>.top>*{
+    display:none;
+}
+@media(max-width:1279px){
+    #main>.top>.mobile{
+        display:block;
+    }
+    #main>.top>.mobile>.a{
+        display:table;
+        width:100%;
+        height:113px;
+    }
+    #main>.top>.mobile>.a>*{
+        display:table-cell;
+        vertical-align:middle;
+        text-align:center;
+        color:white;
+        background-image:url('/_news/img/top-bg.png');
+        background-size:cover;
+        background-position:center;
+        text-shadow:0 1px 1px rgba(0,0,0,.8);
+    }
+    #main>.top>.mobile>.a>*>.a{
+        font-size:20px;
+    }
+    #main>.top>.mobile>.a>*>.b{
+        font-size:13px;
+    }
+    #main>.top>.mobile>.b{
+        font-size:13px;
+        margin:13px 10px 0;
+        color:#797979;
+    }
+    #main>.top>.mobile>.b>.n{
+        color:#133466;
+    }
+}
+@media(min-width:1280px){
+    #main>.top>.desktop{
+        display:table;
+        width:100%;
+        height:230px;
+    }
+    #main>.top>.desktop>*{
+        display:table-cell;
+        background-image:url('/_news/img/top-bg.png');
+        background-size:cover;
+        background-position:center;
+        vertical-align:middle;
+    }
+    #main>.top>.desktop>*>*{
+        display:table;
+        width:1170px;
+        margin:0 auto;
+    }
+    #main>.top>.desktop>*>*>*{
+        display:table-cell;
+        vertical-align:bottom;
+        color:white;
+        text-shadow:0 1px 1px rgba(0,0,0,.8);
+    }
+    #main>.top>.desktop>*>*>.n>.a{
+        font-size:40px;
+    }
+    #main>.top>.desktop>*>*>.n>.b{
+        font-size:16px;
+    }
+    #main>.top>.desktop>*>*>.o{
+        text-align:right;
+    }
+}
+#main>.yearSelect{
+        height:50px;
+        border-radius:2px;
+        background-color:#f9f9f9;
+        border:1px solid #006aba;
+        font-size:16px;
+        color:#006aba;
+}
+@media(max-width:1279px){
+    #main>.yearSelect{
+        margin:13px 10px 0;
+        width:calc(100% - 20px);
+        font-size:15px;
+    }
+}
+@media(min-width:1280px){
+    #main>.yearSelect{
+        display:block;
+        margin:60px auto 0;
+        width:225px;
+    }
+}
+#main>.typeSelect>*{
+    display:none;
+}
+@media(max-width:1279px){
+    #main>.typeSelect>.mobile{
+        display:block;
+        width:100%;
+        padding:0 10px;
+        height:50px;
+        margin-top:13px;
+        border:none;
+        border-top:1px solid #edeced;
+        border-bottom:1px solid #edeced;
+        background-color:white;
+        color:#1d98df;
+        font-size:20px;
+    }
+}
+@media(min-width:1280px){
+    #main>.typeSelect>.desktop{
+        display:block;
+        margin-top:60px;
+        text-align:center;
+    }
+    #main>.typeSelect>.desktop>*{
+        display:inline-block;
+        width:135px;
+        height:40px;
+        text-align:center;
+        font-size:20px;
+        color:color#06182c;
+        cursor:pointer;
+    }
+    #main>.typeSelect>.desktop>.focus{
+        color:#006aba;
+        border-bottom:2px solid #006aba;
+    }
+}
