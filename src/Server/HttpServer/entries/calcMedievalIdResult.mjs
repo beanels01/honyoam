@@ -16,6 +16,7 @@ async function main(rq,rs,lang,patch,id){
             repairFund:     i.repairFund,
             map:            i.map,
             gallery:        i.gallery,
+            level:          i.level,
         }
         i=i.language[lang]
         return Object.assign(o,{
@@ -27,8 +28,13 @@ async function main(rq,rs,lang,patch,id){
             patternImage:           i.pattern,
             patternTitle:           i.patternTitle,
             patternContent:         i.patternContent,
-            videoId:                i.videoId,
-            videoContent:           i.videoContent,
+            structure:              i.structure,
+            levelCount:             i.levelCount,
+            manageMethod:           i.manageMethod,
+            parkingLot:             i.parkingLot,
+            usage:                  i.usage,
+            right:                  i.right,
+            handInDate:             i.right,
         })
     })(medieval)
     return calcHomepageLikeResult.call(this,{

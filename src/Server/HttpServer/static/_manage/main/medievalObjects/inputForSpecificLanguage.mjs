@@ -48,32 +48,24 @@ let inputForSpecificLanguage={
                     v-model=value.name
                 >
             </p>
-            <!--
-                <p>
-                    樓層：
-                    <input
-                        v-model=value.level
-                    >
-                </p>
-                <p>
-                    構造：
-                    <input
-                        v-model=value.structure
-                    >
-                </p>
-                <p>
-                    建物總樓層數：
-                    <input
-                        v-model=value.levelCount
-                    >
-                </p>
-                <p>
-                    管理方式：
-                    <input
-                        v-model=value.manageMethod
-                    >
-                </p>
-            -->
+            <p>
+                構造：
+                <input
+                    v-model=value.structure
+                >
+            </p>
+            <p>
+                建物總樓層數：
+                <input
+                    v-model=value.levelCount
+                >
+            </p>
+            <p>
+                管理方式：
+                <input
+                    v-model=value.manageMethod
+                >
+            </p>
             <p>
                 所在地：
                 <input
@@ -95,7 +87,19 @@ let inputForSpecificLanguage={
                 >
             </p>
             <p>
-                方位：<input v-model=value.direction>
+                朝向：<input v-model=value.direction>
+            </p>
+            <p>
+                停車場：<input v-model=value.parkingLot>
+            </p>
+            <p>
+                土地用途：<input v-model=value.usage>
+            </p>
+            <p>
+                土地權利：<input v-model=value.right>
+            </p>
+            <p>
+                交屋日：<input v-model=value.handInDate>
             </p>
             <p>
                 格局圖：

@@ -162,7 +162,7 @@ let aMain={
                                         · 格局
                                     </div><div class=o>{{data.data.pattern}}</div>
                                     <div class=n>
-                                        · 坪數
+                                        · 專有面積
                                     </div><div class=o>{{data.data.area}} 平方公尺</div>
                                     <div class=n>
                                         · 陽台面積
@@ -187,7 +187,7 @@ let aMain={
                                         · 修繕基金
                                     </div><div class=o>{{commaNumber(data.data.repairFund)}} 日幣</div>
                                     <div class=n>
-                                        · 方位
+                                        · 朝向
                                     </div><div class=o>{{data.data.direction}}</div>
                                 </div>
                                 <div>
@@ -195,13 +195,41 @@ let aMain={
                                         · 其他費用
                                     </div><div class=o>{{commaNumber(data.data.otherFee)}} 日幣</div>
                                     <div class=n>
+                                        · 構造
+                                    </div><div class=o>{{data.data.structure}}</div>
+                                    <div class=n>
+                                        · 建物總樓層數
+                                    </div><div class=o>{{data.data.levelCount}}</div>
+                                </div>
+                                <div>
+                                    <div class=n>
+                                        · 管理方式
+                                    </div><div class=o>{{data.data.managementMethod}}</div>
+                                    <div class=n>
+                                        · 現況
+                                    </div><div class=o>{{data.data.situation}}</div>
+                                    <div class=n>
+                                        · 停車場
+                                    </div><div class=o>{{data.data.parkingLot}}</div>
+                                </div>
+                                <div>
+                                    <div class=n>
+                                        · 土地用途
                                     </div>
-                                    <div class=o>
+                                    <div class=o>{{data.data.usage}}</div>
+                                    <div class=n>
+                                        · 土地權利
+                                    </div><div class=o>{{data.data.right}}
                                     </div>
                                     <div class=n>
+                                        · 交屋日
                                     </div>
-                                    <div class=o>
-                                    </div>
+                                    <div class=o>{{data.data.handInDate}}</div>
+                                </div>
+                                <div>
+                                    <div class=n>
+                                        · 樓層
+                                    </div><div class=o>{{data.data.level}}</div>
                                 </div>
                             </div>
                             <div class=p>

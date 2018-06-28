@@ -58,10 +58,10 @@ let inputForSpecificObject={
                 格局：<input v-model=value.pattern>
             </p>
             <p>
-                竣工年份：<input v-model=value.date> 年
+                竣工年月：<input v-model=value.date>
             </p>
             <p>
-                坪數：<input v-model=value.area> 平方公尺
+                專有面積：<input v-model=value.area> 平方公尺
             </p>
             <p>
                 陽台面積：<input v-model=value.balconyArea> 平方公尺
@@ -77,6 +77,9 @@ let inputForSpecificObject={
             </p>
             <p>
                 其他費用：<input v-model=value.otherFee> 日幣
+            </p>
+            <p>
+                樓層：<input v-model=value.level> 樓
             </p>
             <p>
                 周圍地圖 Google Map：<input v-model=value.map>
