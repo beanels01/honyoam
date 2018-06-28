@@ -75,6 +75,25 @@ let enewsLikeContent={
             <div class=c>
                 儘管如此，如我曾經說過的，我們是能判斷的，因為人是參照別人進行選擇的；而在參照別人時，人就選擇了自己。首先，人能夠判斷——也許這不是一種價值判斷，但是一種邏輯判斷——在有些事情上，人的選擇是根據一種錯誤，而在另外一些事情上，選擇則是根據真實情況。我們可以判斷一個人，說他欺騙自己。因為我們曾經解釋人類的處境是一種自由選擇的處境，沒有藉口也沒有援助，所以任何人以自己的熱情或者發明什麼決定論學術作為藉口，為自己開脫，就是自我欺騙。人們可以提出反對說：「可是為什麼他不可以選擇自我欺騙呢？」我的回答是，我沒有資格在道德上對他進行判斷，但是我斷定他的自我欺騙是一種錯誤。談到這裡，人們沒法不作一項真偽的判斷。自我欺騙顯然是虛偽的，因為它掩蓋了人有承擔責任的完全自由。根據同樣的標準，如果我宣稱某些價值是我非接受不可的，這也是自我欺騙；我自願挑上這些價值，同時說這些價值是逼著我接受的，這不是自相矛盾嗎？如果有人對我說：「如果我要欺騙自己，那又怎麼樣呢？」我回答說：「我沒有理由說你為什麼不應當這樣做，但是我要宣稱你在自我欺騙，而且只有始終如一的態度才是誠實可靠的態度。」
             </div>
+            <div class=d>
+                <div class=a>
+                    <div>
+                        <img src="/_news/img/num_l.png">
+                        上一則<span class=a>：而如果有人認為……</span>
+                    </div>
+                </div>
+                <div class=b>
+                    <div>
+                        回列表
+                    </div>
+                </div>
+                <div class=c>
+                    <div>
+                        下一則<span class=a>：而如果有人認為……</span>
+                        <img src="/_news/img/num_r.png">
+                    </div>
+                </div>
+            </div>
         </div>
     `,
 }
@@ -198,8 +217,7 @@ let aMain={
                     <enewsLikeContent
                         v-if="enewsLikeFocus!=null"
                         class=b
-                    >
-                    </enewsLikeContent>
+                    ></enewsLikeContent>
                 </div>
                 <hlFooter
                     :language=language.homepageLike.footer
