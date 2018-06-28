@@ -92,7 +92,7 @@ let aMain={
                             <div class="desktop o p">
                                 <div class=a>
                                     <div>格局</div>
-                                    <div>竣工年份</div>
+                                    <div>竣工年月</div>
                                     <div>權狀坪數</div>
                                 </div>
                                 <div>
@@ -115,7 +115,7 @@ let aMain={
                             <div class=mobile>
                                 <span class=a>格局：</span>{{data.data.pattern}}
                                 <div class="hl"></div>
-                                <span class=a>竣工年份：</span>{{data.data.date}} 年
+                                <span class=a>竣工年月：</span>{{data.data.date}} 年
                                 <div class="hl"></div>
                                 <span class=a>權狀坪數：</span>{{data.data.area}} 平方公尺
                                 <div class="hl"></div>
@@ -174,7 +174,7 @@ let aMain={
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 竣工年份
+                                        · 竣工年月
                                     </div><div class=o>{{data.data.date}} 年</div>
                                     <div class=n>
                                         · 總戶數
@@ -208,7 +208,7 @@ let aMain={
                                 <div>
                                     <div class=n>
                                         · 管理方式
-                                    </div><div class=o>{{data.data.managementMethod}}</div>
+                                    </div><div class=o>{{data.data.manageMethod}}</div>
                                     <div class=n>
                                         · 現況
                                     </div><div class=o>{{data.data.situation}}</div>
