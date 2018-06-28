@@ -82,7 +82,11 @@ let aMain={
                                     commaNumber(data.data.price)
                                 }}</span>
                                 <span class=b>萬日幣</span>
-                                <span class=c>每坪單價：請洽各店服務員</span>
+                                <span class=c>
+                                    每坪單價：請洽各店服務員
+                                    <br>
+                                    買賣以日幣為主，日幣以外的幣別僅供參考
+                                </span>
                             </div>
                             <div class=hl></div>
                             <div class="desktop o p">

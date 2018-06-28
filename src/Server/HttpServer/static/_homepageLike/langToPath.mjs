@@ -13,7 +13,7 @@ function langToPath(lang){
         medieval:   `http://www.honyoam.com/estate/`,
         presale:    `http://www.honyoam.com/preconstruction/`,
         qa:         `http://www.honyoam.com/faq/`,
-        qaForm:     `#`,
+        qaForm:     `${lang}/qa#form`,
         contact:    `${lang}/contact`,
         user:       `#`,
     }

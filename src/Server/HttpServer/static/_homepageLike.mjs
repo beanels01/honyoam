@@ -225,7 +225,7 @@ let reserveButton={
 }
 let moreButton={
     template:`
-        <a class=homepageLikeMoreButton><span>> 更多訊息</span></a>
+        <a class=homepageLikeMoreButton><span>> 貸款試算</span></a>
     `,
 }
 export default{
