@@ -255,3 +255,112 @@
         padding:20px 0;
     }
 }
+#main>.enewsLike>.a>*>.a>*>.b>*{
+    background-color:#7fbfcb;
+    color:white;
+}
+#main>.enewsLike>.a>*>.b>.b>.b{
+    color:#ee9a15;
+}
+@media(max-width:1279px){
+    #main>.enewsLike>.a>*{
+        border-bottom:1px solid #cfcfcf;
+        margin:0 10px;
+        width:calc(100% - 20px);
+    }
+    #main>.enewsLike>.a>*>.a{
+        margin-top:15px;
+    }
+    #main>.enewsLike>.a>*>.a>*{
+        display:table;
+        width:100%;
+    }
+    #main>.enewsLike>.a>*>.a>*>*{
+        display:table-cell;
+        font-size:13px;
+    }
+    #main>.enewsLike>.a>*>.a>*>.b{
+        text-align:right;
+    }
+    #main>.enewsLike>.a>*>.b{
+        margin-top:15px;
+    }
+    #main>.enewsLike>.a>*>.b>*>.b{
+        text-align:right;
+        padding:10px 0;
+    }
+}
+@media(min-width:1280px){
+    #main>.enewsLike>.a{
+        border-top:1px solid #cfcfcf;
+        margin:0 auto;
+        width:1170px;
+    }
+    #main>.enewsLike>.a>*{
+        display:table;
+        width:100%;
+        border-bottom:1px solid #cfcfcf;
+        cursor:pointer;
+    }
+    #main>.enewsLike>.a>*>*{
+        display:table-cell;
+        padding:20px 0;
+    }
+    #main>.enewsLike>.a>*>*>*{
+        display:table;
+        width:100%;
+    }
+    #main>.enewsLike>.a>*>*>*>*{
+        display:table-cell;
+    }
+    #main>.enewsLike>.a>*>.a>*>.b>*{
+        display:inline-block;
+        padding:4px 20px;
+        border-radius:2px;
+    }
+    #main>.enewsLike>.a>*>.b>.b>.b{
+        font-size:13px;
+        text-align:right;
+    }
+}
+#main>.enewsLike>.b>.a{
+    display:table;
+    width:100%;
+}
+#main>.enewsLike>.b>.a>*{
+    display:table-cell;
+}
+#main>.enewsLike>.b>.a>.b{
+    text-align:right;
+}
+#main>.enewsLike>.b>.a>.a>*{
+    background-color:#7fbfcb;
+    color:white;
+}
+#main>.enewsLike>.b>.b{
+    color:#006aba;
+}
+#main>.enewsLike>.b>.c{
+    border-top:1px solid #cfcfcf;
+    color:#797979;
+}
+@media(max-width:1279px){
+}
+@media(min-width:1280px){
+    #main>.enewsLike>.b{
+        width:1170px;
+        margin:0 auto;
+        border-top:1px solid #cfcfcf;
+    }
+    #main>.enewsLike>.b>.a{
+        margin-top:35px;
+    }
+    #main>.enewsLike>.b>.b{
+        padding:15px 0;
+        font-size:20px;
+    }
+    #main>.enewsLike>.b>.c{
+        font-size:16px;
+        padding:15px 0 0;
+    }
+}
