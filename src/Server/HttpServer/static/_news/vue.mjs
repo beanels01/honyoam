@@ -221,23 +221,19 @@ let aMain={
                     <div class=desktop>
                         <div
                             :class="{focus:type=='normal'}"
-                            @click="type='normal'"
-                            @click="enewsLikeFocus=null"
+                            @click="type='normal';enewsLikeFocus=null"
                         >一般公告</div>
                         <div
                             :class="{focus:type=='enews'}"
-                            @click="type='enews'"
-                            @click="enewsLikeFocus=null"
+                            @click="type='enews';enewsLikeFocus=null"
                         >E-News</div>
                         <div
                             :class="{focus:type=='president'}"
-                            @click="type='president'"
-                            @click="enewsLikeFocus=null"
+                            @click="type='president';enewsLikeFocus=null"
                         >社長專欄</div>
                         <div
                             :class="{focus:type=='success'}"
-                            @click="type='success'"
-                            @click="enewsLikeFocus=null"
+                            @click="type='success';enewsLikeFocus=null"
                         >成功案例</div>
                     </div>
                 </div>
