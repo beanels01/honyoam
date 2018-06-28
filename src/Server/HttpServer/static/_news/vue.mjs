@@ -78,7 +78,7 @@ let enewsLikeContent={
             <div class=d>
                 <div class=a>
                     <div>
-                        <img src="/_news/img/num_l.png">
+                        <img src="/_news/img/num-l.png">
                         上一則<span class=a>：而如果有人認為……</span>
                     </div>
                 </div>
@@ -90,12 +90,60 @@ let enewsLikeContent={
                 <div class=c>
                     <div>
                         下一則<span class=a>：而如果有人認為……</span>
-                        <img src="/_news/img/num_r.png">
+                        <img src="/_news/img/num-r.png">
                     </div>
                 </div>
             </div>
         </div>
     `,
+}
+let pageSelect={
+    template:`
+        <div class=pageSelect>
+            <div class=mobile>
+                <div>
+                    <img src="/_news/img/num-l.png">
+                </div>
+                …
+                <div>
+                    2
+                </div>
+                <div>
+                    3
+                </div>
+                <div>
+                    4
+                </div>
+                …
+                <div>
+                    <img src="/_news/img/num-r.png">
+                </div>
+            </div>
+            <div class=desktop>
+                <div>
+                    <img src="/_news/img/num-l.png">
+                </div>
+                <div>
+                    1
+                </div>
+                <div>
+                    2
+                </div>
+                <div>
+                    3
+                </div>
+                <div>
+                    4
+                </div>
+                <div>
+                    5
+                </div>
+                <div>
+                    <img src="/_news/img/num-r.png">
+                </div>
+            </div>
+        </div>
+    `
 }
 let aMain={
     components:{
@@ -106,6 +154,7 @@ let aMain={
         normalBlock,
         enewsLikeBlock,
         enewsLikeContent,
+        pageSelect,
     },
     computed:{
         href(){
@@ -200,6 +249,7 @@ let aMain={
                         v-for="(a,i) of [,,,,,,,,]"
                         v-model=normalFocus[i]
                     ></normalBlock>
+                    <pageSelect></pageSelect>
                 </div>
                 <div
                     v-if="type!='normal'"
@@ -214,6 +264,9 @@ let aMain={
                             @click="enewsLikeFocus=i"
                         ></enewsLikeBlock>
                     </div>
+                    <pageSelect
+                        v-if="enewsLikeFocus==null"
+                    ></pageSelect>
                     <enewsLikeContent
                         v-if="enewsLikeFocus!=null"
                         class=b
