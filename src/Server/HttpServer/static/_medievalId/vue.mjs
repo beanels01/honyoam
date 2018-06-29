@@ -1,5 +1,52 @@
 import homepageLike from    '../_homepageLike.mjs'
 import medievalLike from    '../_medievalLike.mjs'
+import{dom}from'../_simple.mjs'
+let swiper={
+    data:()=>({
+        reference:{},
+        swiper:null,
+    }),
+    mounted(){
+        function createSwiperContainer(a){
+            return dom.div({className:'swiper-container'},
+                dom.div({className:'swiper-wrapper'},
+                    a.map(n=>dom.div({className:'swiper-slide'},n))
+                ),
+            )
+        }
+        if(typeof window=='undefined')
+            return
+        let n=createSwiperContainer(
+            this.data.gallery.map((data,i)=>
+                this.reference[i]=dom.img({
+                    src:'/image/'+data,
+                    className:'option'+(this.value==i?' focus':''),
+                    onclick:()=>{
+                        this.$emit('input',i)
+                    },
+                },n=>{
+                    dom(n.style)
+                })
+            )
+        )
+        dom(this.$el,n)
+        this.swiper=new Swiper(n,{
+            slidesPerView:7,
+            spaceBetween:13,
+        })
+    },
+    props:['data','value'],
+    template:`
+        <div class=h></div>
+    `,
+    watch:{
+        value(n,p){
+            this.reference[p].classList.remove('focus')
+            this.reference[n].classList.add('focus')
+            this.swiper.slideTo(this.value)
+        }
+    },
+}
 let aMain={
     components:{
         hlFooter:           homepageLike.footer,
@@ -12,6 +59,7 @@ let aMain={
         reserveButton:      homepageLike.reserveButton,
         moreButton:         homepageLike.moreButton,
         medievalLikeTop:    medievalLike.top,
+        swiper,
     },
     computed:{
         href(){
@@ -70,12 +118,19 @@ let aMain={
                                     :src="'/image/'+data.data.gallery[focus]"
                                 >
                             </div>
-                            <div class=o><div class="button left"></div><img
-                                v-for="(a,i) of data.data.gallery"
-                                class="option"
-                                :src="'/image/'+a"
-                                @click="focus=i"
-                            ><div class="button right"></div></div>
+                            <div class=o>
+                                <div class="button left"
+                                    @click="focus=Math.max(0,focus-1)"
+                                ></div><swiper
+
+                                    :data="{gallery:data.data.gallery}"
+                                    class=swiper
+                                    v-model=focus
+                                ></swiper><div
+                                    class="button right"
+                                    @click="focus=Math.min(data.data.gallery.length-1,focus+1)"
+                                ></div>
+                            </div>
                         </div><div class=b>
                             <div class=n>
                                 <span class=a>{{
@@ -130,13 +185,21 @@ let aMain={
                             </div>
                         </div>
                         <div class=c>
-                            <div class=n>
-                                <img src=/_medievalId/demo0.jpg>
+                            <div
+                                class=n
+                            >
+                                <img :src="'/image/'+data.data.gallery[focus]">
                             </div>
-                            <div class=o>
+                            <div
+                                class=o
+                                @click="focus=Math.max(0,focus-1)"
+                            >
                                 <img src=/_medievalId/swiper-ml.png>
                             </div>
-                            <div class=p>
+                            <div
+                                class=p
+                                @click="focus=Math.min(data.data.gallery.length-1,focus+1)"
+                            >
                                 <img src=/_medievalId/swiper-mr.png>
                             </div>
                         </div>

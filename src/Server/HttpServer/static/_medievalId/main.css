@@ -138,6 +138,7 @@
     }
     #main>.a>.o>.a>.o>*{
         height:80px;
+        vertical-align:top;
     }
     #main>.a>.o>.a>.o>*+*{
         margin-left:13px;
@@ -145,11 +146,6 @@
     #main>.a>.o>.a>.o>.button{
         display:inline-block;
         width:29px;
-    }
-    #main>.a>.o>.a>.o>.option{
-        border:3px solid #cfcfcf;
-        box-sizing:border-box;
-        width:80px;
     }
     #main>.a>.o>.a>.o>.button.left{
         background-image:url('/_medievalId/swiper-dl.png');
@@ -162,6 +158,20 @@
     }
     #main>.a>.o>.a>.o>.button.right:hover{
         background-image:url('/_medievalId/swiper-drh.png');
+    }
+    #main>.a>.o>.a>.o>.swiper{
+        display:inline-block;
+        /*width:(80*7+13*6)px*/
+        width:638px;
+    }
+    #main>.a>.o>.a>.o>.swiper .option{
+        border:3px solid #cfcfcf;
+        box-sizing:border-box;
+        width:80px;
+        height:80px;
+    }
+    #main>.a>.o>.a>.o>.swiper .option.focus{
+        border-color:#133466;
     }
     #main>.a>.o>.b{
         margin-left:20px;

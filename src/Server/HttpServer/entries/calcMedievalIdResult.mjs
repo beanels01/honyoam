@@ -34,12 +34,12 @@ async function main(rq,rs,lang,patch,id){
             parkingLot:             i.parkingLot,
             usage:                  i.usage,
             right:                  i.right,
-            handInDate:             i.right,
+            handInDate:             i.handInDate,
         })
     })(medieval)
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
-        title:              `中古屋 - ID`,
+        title:              `${medieval.name} - 中古屋`,
         css:                [
                                 '_medievalLike/main.css',
                                 '_medievalId/main.css',
