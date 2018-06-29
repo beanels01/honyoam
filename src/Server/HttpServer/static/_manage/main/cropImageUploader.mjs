@@ -56,7 +56,10 @@ let cropImageUploader={
                 this.$emit('input',await this.value)
         },
     },
-    props:['value'],
+    props:[
+        'data',
+        'value',
+    ],
     template:`
         <div>
             <button
@@ -73,11 +76,14 @@ let cropImageUploader={
                     :canScale=true
                     :outputSize=1
                     :autoCrop=true
-                    :autoCropWidth=240
-                    :autoCropHeight=240
+                    :autoCropWidth="data.autoCropWidth||240"
+                    :autoCropHeight="data.autoCropHeight||240"
                     :fixed=true
-                    :fixedNumber=[1,1]
-                    style="width:480px;height:360px;"
+                    :fixedNumber="data.fixedNumber||[1,1]"
+                    :style="{
+                        width:(data.width||480)+'px',
+                        height:(data.height||360)+'px'
+                    }"
                 ></vueCropper>
                 <button @click=crop>裁切</button>
             </template>

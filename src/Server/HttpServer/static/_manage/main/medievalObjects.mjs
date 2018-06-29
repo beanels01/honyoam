@@ -4,12 +4,30 @@ import inputForSpecificLanguage from
     './medievalObjects/inputForSpecificLanguage.mjs'
 import languageSelect from      './languageSelect.mjs'
 import cropImageUploader from   './cropImageUploader.mjs'
+let galleryCropImageUploader={
+    components:{cropImageUploader},
+    props:['data','value'],
+    template:`
+        <cropImageUploader
+            :data="{
+                autoCropWidth:1920,
+                autoCropHeight:1080,
+                fixedNumber:[16,9],
+                width:1920,
+                height:1080,
+            }"
+            :value=value
+            @input="a=>$emit('input',a)"
+        ></cropImageUploader>
+    `,
+}
 let inputForSpecificObject={
     components:{
         optionList,
         languageSelect,
         inputForSpecificLanguage,
         cropImageUploader,
+        galleryCropImageUploader,
     },
     created(){
         this.in()
@@ -17,6 +35,7 @@ let inputForSpecificObject={
     data:()=>({
         version:0,
         cropImageUploader,
+        galleryCropImageUploader,
         value:0,
         selectedLanguage:0,
     }),
@@ -91,7 +110,7 @@ let inputForSpecificObject={
             <h1>相片集</h1>
             <optionList
                 class=indent
-                :editOption=cropImageUploader
+                :editOption=galleryCropImageUploader
                 v-model=value.gallery
             ></optionList>
             <div>
