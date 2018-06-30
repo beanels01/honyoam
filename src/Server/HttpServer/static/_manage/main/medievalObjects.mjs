@@ -59,7 +59,12 @@ let inputForSpecificObject={
                 value:this.value,
             })
             alert('儲存完成。')
-        }
+        },
+        googleMapInput(e){
+            let m=e.target.value.match(/src="([^"]*)"/)
+            if(m)
+                this.value.map=m[1]
+        },
     },
     props:['id','language',],
     template:`
@@ -101,8 +106,12 @@ let inputForSpecificObject={
                 樓層：<input v-model=value.level> 樓
             </p>
             <p>
-                周圍地圖 Google Map：<input v-model=value.map>
+                以下兩項擇一輸入即可：
             </p>
+            <ul>
+            <li>周圍地圖 Google Map embed URL：<input v-model=value.map>
+            <li>周圍地圖 Google Map embed iframe：<input @input="googleMapInput">
+            </ul>
             <h1>物件小圖片</h1>
             <cropImageUploader
                 v-model=value.image
