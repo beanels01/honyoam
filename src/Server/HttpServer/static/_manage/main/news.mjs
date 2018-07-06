@@ -1,16 +1,5 @@
 import api from  '../../_api.mjs'
 import languageSelect from  './languageSelect.mjs'
-/*
-let startYear=110
-        thisYear(){
-            return(new Date).getYear()
-        },
-        yearList(){
-            return[...Array(this.thisYear-startYear+1)].map((a,i)=>
-                startYear+i
-                )
-        },
-*/
 export default{
     components:{
         languageSelect,
@@ -18,18 +7,28 @@ export default{
     computed:{
     },
     data:()=>({
-        selectedLanguage:0,
         list:0,
+        selectedLanguage:0,
+        selectedNews:0,
     }),
     props:['language'],
     methods:{
+        async cutNews(id){
+            await api.post({
+                method:'cutNews',
+                id,
+            })
+            await this.inList()
+        },
         async inList(){
             this.list=0
             this.list=(await api.post({
                 method:'getNewsList',
                 language:this.selectedLanguage,
             })).res
-            console.log(this.list)
+            this.list.sort((a,b)=>
+                new Date(b.timestamp)-new Date(a.timestamp)
+            )
         },
         async putNews(){
             await api.post({
@@ -50,10 +49,16 @@ export default{
                 <button @click=putNews>新增</button>
                 <table>
                     <tr v-for="a of list">
-                        <td>{{a.timestamp}}</td>
+                        <td>{{
+                            (new Date(a.timestamp)).toLocaleString()
+                        }}</td>
                         <td>
-                            <button>編輯</button>
-                            <button>雙擊刪除</button>
+                            <button @click="selectedNews=a._id">
+                                編輯
+                            </button>
+                            <button @dblclick="cutNews(a._id)">
+                                雙擊刪除
+                            </button>
                         </td>
                     </tr>
                 </table>
