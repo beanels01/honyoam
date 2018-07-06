@@ -91,6 +91,13 @@ o.getMedievalList0=async function(language){
         }
     })
 }
+o.getNewsList=async function(language){
+    let a=await this._newsCol.find({language}).toArray()
+    a.forEach(o=>{
+        o.timestamp=(new ObjectID(o._id)).getTimestamp()
+    })
+    return a
+}
 o.getPresaleList=async function(){
     return(await this._presaleCol.find({}).toArray()).map(a=>({
         id:a._id,

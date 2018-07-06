@@ -14,6 +14,7 @@ import seminar from                 './main/seminar.mjs'
 import seminarApply from            './main/seminarApply.mjs'
 import faq from                     './main/faq.mjs'
 import faqFeedback from             './main/faqFeedback.mjs'
+import news from                    './main/news.mjs'
 // this line fix this bug: https://github.com/rollup/rollup/issues/2110
 //eval('')
 let aMenu={
@@ -50,6 +51,12 @@ let aMenu={
                     :class="{focus:value=='homepage'}"
                 ><div>
                     首頁
+                </div></div>
+                <div
+                    @click="$emit('input','news')"
+                    :class="{focus:value=='news'}"
+                ><div>
+                    最新消息
                 </div></div>
                 <div
                     @click="$emit('input','presale')"
@@ -149,6 +156,7 @@ let aMenu={
             presaleObjects,
             medievalObjects,
             aMenu,
+            news,
         },
         template:`
             <div
@@ -197,6 +205,11 @@ let aMenu={
                             <homepage
                                 :language=language
                             ></homepage>
+                        </div>
+                        <div v-if="focus=='news'">
+                            <news
+                                :language=language
+                            ></news>
                         </div>
                         <div v-if="focus=='presale'">
                             <presale

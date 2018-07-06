@@ -38,6 +38,9 @@ async function putImage(doc){
 async function putMedievalObject(){
     return(await this._medievalCol.insertOne({})).insertedId
 }
+async function putNews(language){
+    return(await this._newsCol.insertOne({language})).insertedId
+}
 async function putPresaleObject(){
     return(await this._presaleCol.insertOne({})).insertedId
 }
@@ -57,6 +60,7 @@ export default{
     putFeedback,
     putImage,
     putMedievalObject,
+    putNews,
     putPresaleObject,
     putSeminar,
     putUser,

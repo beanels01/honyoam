@@ -46,6 +46,20 @@ export default Object.assign({
             return['status',400]
         return['responseJson',await this._deleteFeedback(cu,doc.id)]
     },
+    async getNewsList(doc,cu){
+        if(!(
+            typeof doc.language=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._getNewsList(cu,doc.language)]
+    },
+    async putNews(doc,cu){
+        if(!(
+            typeof doc.language=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._putNews(cu,doc.language)]
+    },
     async refreshInvitationCode(doc,cu){
         return['responseJson',await this._refreshInvitationCode(cu)]
     },

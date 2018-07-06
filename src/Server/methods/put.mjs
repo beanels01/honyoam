@@ -33,6 +33,14 @@ export default{
             return{err:'permission denied'}
         return{res:await this.honyoamMongoClient.putMedievalObject()}
     },
+    async putNews(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.putNews(doc.language)}
+    },
     async putPresaleObject(doc){
         if(!(
             doc.currentUser&&

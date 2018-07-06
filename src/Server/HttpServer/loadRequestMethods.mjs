@@ -120,6 +120,13 @@ export default o=>{
             language,
         })
     }
+    o._putNews=function(currentUser,language){
+        return this._request({
+            method:             'putNews',
+            currentUser,
+            language,
+        })
+    }
     o._refreshInvitationCode=function(currentUser){
         return this._request({
             method:'refreshInvitationCode',

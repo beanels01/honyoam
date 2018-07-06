@@ -62,6 +62,13 @@ o._getMedievalObject=function(id){
         id,
     })
 }
+o._getNewsList=function(cu,language){
+    return this._request({
+        method:'getNewsList',
+        currentUser:cu,
+        language,
+    })
+}
 o._getPresaleObject=function(id){
     return this._request({
         method:'getPresaleObject',
