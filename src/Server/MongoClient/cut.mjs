@@ -18,6 +18,11 @@ async function cutMedievalObject(id){
         _id:new ObjectID(id),
     })
 }
+async function cutNews(id){
+    await this._newsCol.deleteOne({
+        _id:new ObjectID(id),
+    })
+}
 async function cutPresaleObject(id){
     await this._presaleCol.deleteOne({
         _id:new ObjectID(id),
@@ -32,6 +37,7 @@ export default{
     cutApply,
     cutFeedback,
     cutMedievalObject,
+    cutNews,
     cutPresaleObject,
     cutSeminar,
 }

@@ -61,6 +61,13 @@ export default o=>{
             currentUser,
         })
     }
+    o._cutNews=function(currentUser,id){
+        return this._request({
+            method:             'cutNews',
+            currentUser,
+            id,
+        })
+    }
     o._cutPresaleObject=function(currentUser,id){
         return this._request({
             method:             'cutPresaleObject',
