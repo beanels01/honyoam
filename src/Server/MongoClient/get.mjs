@@ -23,6 +23,15 @@ o.getMedievalObject=async function(id){
     delete res._id
     return res
 }
+o.getNews=async function(id){
+    let objectId=new ObjectID(id)
+    let res=await this._newsCol.findOne({
+        _id:objectId,
+    })
+    delete res._id
+    res.timestamp=objectId.getTimestamp()
+    return res
+}
 o.getPresaleObject=async function(id){
     let res=await this._presaleCol.findOne({
         _id:        new ObjectID(id),

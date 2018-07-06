@@ -158,6 +158,14 @@ export default o=>{
             value:doc.value,
         })
     }
+    o._setNews=function(currentUser,doc){
+        return this._request({
+            method:'setNews',
+            currentUser,
+            id:doc.id,
+            data:doc.data,
+        })
+    }
     o._setPresaleObject=function(currentUser,doc){
         return this._request({
             method:'setPresaleObject',

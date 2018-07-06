@@ -47,6 +47,12 @@ async function setMedievalObject(id,doc){
         {$set:doc}
     )
 }
+async function setNews(id,doc){
+    await this._newsCol.updateOne(
+        {_id:new ObjectID(id)},
+        {$set:doc}
+    )
+}
 async function setPresaleObject(id,doc){
     await this._presaleCol.updateOne(
         {_id:new ObjectID(id)},
@@ -65,6 +71,7 @@ export default{
     setSeminar,
     setSite,
     setMedievalObject,
+    setNews,
     setPresaleObject,
     setUserPassword,
 }

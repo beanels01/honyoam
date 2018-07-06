@@ -32,6 +32,9 @@ let get={
     async getMedievalObject(doc,cu){
         return['responseJson',await this._getMedievalObject(doc.id)]
     },
+    async getNews(doc,cu){
+        return['responseJson',await this._getNews(cu,doc.id)]
+    },
     async getPresaleObject(doc,cu){
         if(!(
             typeof doc.id=='string'

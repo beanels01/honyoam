@@ -3,6 +3,7 @@ let languageSelect={
     template:`
         <select
             required
+            :value="value||''"
             @input="$emit('input',$event.target.value)"
         >
             <option hidden value="">語言</option>

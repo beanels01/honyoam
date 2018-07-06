@@ -14,6 +14,14 @@ let update={
             return['status',400]
         return['responseJson',await this._setMedievalObject(cu,doc)]
     },
+    async setNews(doc,cu){
+        if(!(
+            typeof doc.id=='string'&&
+            typeof doc.data=='object'
+        ))
+            return['status',400]
+        return['responseJson',await this._setNews(cu,doc)]
+    },
     async setPresaleObject(doc,cu){
         if(!(
             typeof doc.id=='string'&&
