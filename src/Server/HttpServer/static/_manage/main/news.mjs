@@ -144,6 +144,17 @@ export default{
                             <td>{{
                                 (new Date(a.timestamp)).toLocaleString()
                             }}</td>
+                            <td>{{
+                                {
+                                    normal:'一般公告',
+                                    enews:'E-News',
+                                    president:'社長專欄',
+                                    success:'成功案例',
+                                }[a.type]
+                            }}</td>
+                            <td>{{
+                                a.title
+                            }}</td>
                             <td>
                                 <button @click="selectedNews=a._id">
                                     編輯
