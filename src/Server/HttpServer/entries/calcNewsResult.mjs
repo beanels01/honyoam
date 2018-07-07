@@ -10,6 +10,7 @@ async function main(rq,rs,lang,patch){
         vueData:{
             data:{
                 current:rq.url,
+                news:(await this._getAllNews(lang)).res,
             },
         },
     })

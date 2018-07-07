@@ -6,6 +6,12 @@ o._getApplies=function(currentUser){
         currentUser,
     })
 }
+o._getAllNews=function(language){
+    return this._request({
+        method:             'getAllNews',
+        language,
+    })
+}
 o._getContact=function(currentUser){
     return this._request({
         method:'getContact',

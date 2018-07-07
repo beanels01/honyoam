@@ -6,6 +6,13 @@ let
         Binary,
     }=mongodb,
     o={}
+o.getAllNews=async function(language){
+    let a=await this._newsCol.find({publish:true,language}).toArray()
+    a.forEach(o=>{
+        o.timestamp=(new ObjectID(o._id)).getTimestamp()
+    })
+    return a
+}
 o.getApplies=async function(){
     let a=await this._applyCol.find({}).toArray()
     a.forEach(o=>{

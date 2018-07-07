@@ -1,12 +1,19 @@
 import homepageLike from    '../_homepageLike.mjs'
 let normalBlock={
-    props:['value'],
+    computed:{
+        date(){
+            return new Date(this.data.timestamp)
+        }
+    },
+    props:['data','value',],
     template:`
         <div
             :class="{focus:value}"
         >
             <div class=a>
-                <div class=a>2018年02月26日</div>
+                <div class=a>
+                    {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
+                </div>
                 <div class=b><span>一般公告</span></div>
             </div>
             <div class=b>
@@ -17,7 +24,7 @@ let normalBlock={
                     <div
                         class=a
                     >
-                        而如果有人認為這只是紀德的自由行動老調重彈，他就是沒有看出這個理論與紀德的理論之間的巨大差別。
+                        {{data.title}}
                     </div>
                     <div class=b>
                         <img class=a src=/_news/img/arrow.png>
@@ -26,60 +33,77 @@ let normalBlock={
                 </div>
                 <div
                     class=c
-                >
-                    儘管如此，如我曾經說過的，我們是能判斷的，因為人是參照別人進行選擇的；而在參照別人時，人就選擇了自己。首先，人能夠判斷——也許這不是一種價值判斷，但是一種邏輯判斷——在有些事情上，人的選擇是根據一種錯誤，而在另外一些事情上，選擇則是根據真實情況。我們可以判斷一個人，說他欺騙自己。因為我們曾經解釋人類的處境是一種自由選擇的處境，沒有藉口也沒有援助，所以任何人以自己的熱情或者發明什麼決定論學術作為藉口，為自己開脫，就是自我欺騙。人們可以提出反對說：「可是為什麼他不可以選擇自我欺騙呢？」我的回答是，我沒有資格在道德上對他進行判斷，但是我斷定他的自我欺騙是一種錯誤。談到這裡，人們沒法不作一項真偽的判斷。自我欺騙顯然是虛偽的，因為它掩蓋了人有承擔責任的完全自由。根據同樣的標準，如果我宣稱某些價值是我非接受不可的，這也是自我欺騙；我自願挑上這些價值，同時說這些價值是逼著我接受的，這不是自相矛盾嗎？如果有人對我說：「如果我要欺騙自己，那又怎麼樣呢？」我回答說：「我沒有理由說你為什麼不應當這樣做，但是我要宣稱你在自我欺騙，而且只有始終如一的態度才是誠實可靠的態度。」
-                </div>
+                    v-html=data.content
+                ></div>
             </div>
         </div>
     `
 }
 let enewsLikeBlock={
+    computed:{
+        date(){
+            return new Date(this.data.timestamp)
+        }
+    },
+    props:['data'],
     template:`
-        <div>
+        <div
+            @click="$emit('click')"
+        >
             <div class=a><div>
-                <div class=a>2018年02月26日</div>
-                <div class=b><span>ENEWS ‧ 第 161 期</span></div>
+                <div class=a>
+                    {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
+                </div>
+                <!-- <div class=b><span>ENEWS ‧ 第 161 期</span></div> -->
+                <div class=b><span>{{
+                    {
+                        enews:'ENEWS',
+                        president:'社長專欄',
+                        success:'成功案例',
+                    }[data.type]
+                }}</span></div>
             </div></div>
             <div class=b>
-                <div
-                    class=b
-                    @click="$emit('click')"
-                >
-                    <div
-                        class=a
-                    >
-                        而如果有人認為這只是紀德的自由行動老調重彈，他就是沒有看出這個理論與紀德的理論之間的巨大差別。
-                    </div>
-                    <div class=b>
-                        More +
-                    </div>
+                <div class=b>
+                    <div class=a>{{data.title}}</div>
+                    <div class=b>More +</div>
                 </div>
             </div>
         </div>
     `
 }
 let enewsLikeContent={
+    computed:{
+        date(){
+            return new Date(this.data.timestamp)
+        }
+    },
+    props:['data',],
     template:`
         <div>
             <div class=a>
                 <div class=a>
-                    <span>ENEWS ‧ 第 161 期</span>
+                    <span>{{
+                        {
+                            enews:'ENEWS',
+                            president:'社長專欄',
+                            success:'成功案例',
+                        }[data.type]
+                    }}</span>
                 </div>
                 <div class=b>
-                    2018年02月26日
+                    {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
                 </div>
             </div>
             <div class=b>
-                而如果有人認為這只是紀德的自由行動老調重彈，他就是沒有看出這個理論與紀德的理論之間的巨大差別。
+                {{data.title}}
             </div>
-            <div class=c>
-                儘管如此，如我曾經說過的，我們是能判斷的，因為人是參照別人進行選擇的；而在參照別人時，人就選擇了自己。首先，人能夠判斷——也許這不是一種價值判斷，但是一種邏輯判斷——在有些事情上，人的選擇是根據一種錯誤，而在另外一些事情上，選擇則是根據真實情況。我們可以判斷一個人，說他欺騙自己。因為我們曾經解釋人類的處境是一種自由選擇的處境，沒有藉口也沒有援助，所以任何人以自己的熱情或者發明什麼決定論學術作為藉口，為自己開脫，就是自我欺騙。人們可以提出反對說：「可是為什麼他不可以選擇自我欺騙呢？」我的回答是，我沒有資格在道德上對他進行判斷，但是我斷定他的自我欺騙是一種錯誤。談到這裡，人們沒法不作一項真偽的判斷。自我欺騙顯然是虛偽的，因為它掩蓋了人有承擔責任的完全自由。根據同樣的標準，如果我宣稱某些價值是我非接受不可的，這也是自我欺騙；我自願挑上這些價值，同時說這些價值是逼著我接受的，這不是自相矛盾嗎？如果有人對我說：「如果我要欺騙自己，那又怎麼樣呢？」我回答說：「我沒有理由說你為什麼不應當這樣做，但是我要宣稱你在自我欺騙，而且只有始終如一的態度才是誠實可靠的態度。」
-            </div>
+            <div class=c v-html=data.content></div>
             <div class=d>
                 <div class=a>
                     <div>
                         <img src="/_news/img/num-l.png">
-                        上一則<span class=a>：而如果有人認為……</span>
+                        上一則<!-- <span class=a>：而如果有人認為……</span> -->
                     </div>
                 </div>
                 <div class=b>
@@ -89,7 +113,7 @@ let enewsLikeContent={
                 </div>
                 <div class=c>
                     <div>
-                        下一則<span class=a>：而如果有人認為……</span>
+                        下一則<!-- <span class=a>：而如果有人認為……</span> -->
                         <img src="/_news/img/num-r.png">
                     </div>
                 </div>
@@ -98,52 +122,67 @@ let enewsLikeContent={
     `,
 }
 let pageSelect={
+    props:['length','value'],
     template:`
         <div class=pageSelect>
             <div class=mobile>
-                <div>
+                <div
+                    @click="$emit('input',value-1)"
+                    :style="{visibility:0<=value-1?'visible':'hidden'}"
+                >
                     <img src="/_news/img/num-l.png">
                 </div>
-                …
-                <div>
-                    2
+                <template v-if="0<=value-2">…</template>
+                <div
+                    v-if="0<=value-1"
+                    @click="$emit('input',value-1)"
+                >
+                    {{value-1+1}}
                 </div>
-                <div>
-                    3
+                <div class=focus>
+                    {{value+1}}
                 </div>
-                <div>
-                    4
+                <div
+                    v-if="value+1<length"
+                    @click="$emit('input',value+1)"
+                >
+                    {{value+1+1}}
                 </div>
-                …
-                <div>
+                <template v-if="value+2<length">…</template>
+                <div
+                    @click="$emit('input',length-1)"
+                    :style="{visibility:value+1<length?'visible':'hidden'}"
+                >
                     <img src="/_news/img/num-r.png">
                 </div>
             </div>
             <div class=desktop>
-                <div>
+                <div
+                    @click="$emit('input',value-1)"
+                    :style="{visibility:0<=value-1?'visible':'hidden'}"
+                >
                     <img src="/_news/img/num-l.png">
                 </div>
-                <div>
-                    1
+                <div
+                    v-for="(a,i) of [...Array(length)]"
+                    :class="{focus:value==i}"
+                    @click="$emit('input',i)"
+                >
+                    {{i+1}}
                 </div>
-                <div>
-                    2
-                </div>
-                <div>
-                    3
-                </div>
-                <div>
-                    4
-                </div>
-                <div>
-                    5
-                </div>
-                <div>
+                <div
+                    @click="$emit('input',length-1)"
+                    :style="{visibility:value+1<length?'visible':'hidden'}"
+                >
                     <img src="/_news/img/num-r.png">
                 </div>
             </div>
         </div>
-    `
+    `,
+    watch:{
+        value(){
+        },
+    },
 }
 let aMain={
     components:{
@@ -163,11 +202,22 @@ let aMain={
     },
     data:()=>({
         menu:0,
-        year:2018,
+        year:118,
         type:'normal',
         normalFocus:{},
         enewsLikeFocus:null,
+        page:0,
     }),
+    methods:{
+        getNewsByYearAndType(y,t){
+            let a=this.data.news.filter(a=>
+                (new Date(a.timestamp)).getYear()==y&&
+                a.type==t
+            )
+            a.sort((a,b)=>(new Date(b.timestamp))-(new Date(a.timestamp)))
+            return a
+        },
+    },
     props:['data','language','currentLanguage','mainSeminar',],
     template:`
         <div id=main>
@@ -200,14 +250,14 @@ let aMain={
                     </div></div></div>
                 </div>
                 <select class=yearSelect v-model=year>
-                    <option value=2018>2018 年</option>
-                    <option value=2019>2019 年</option>
-                    <option value=2020>2020 年</option>
-                    <option value=2021>2021 年</option>
-                    <option value=2022>2022 年</option>
-                    <option value=2023>2023 年</option>
-                    <option value=2024>2024 年</option>
-                    <option value=2025>2025 年</option>
+                    <option value=118>2018 年</option>
+                    <option value=119>2019 年</option>
+                    <option value=120>2020 年</option>
+                    <option value=121>2021 年</option>
+                    <option value=122>2022 年</option>
+                    <option value=123>2023 年</option>
+                    <option value=124>2024 年</option>
+                    <option value=125>2025 年</option>
                 </select>
                 <div class=typeSelect>
                     <select class=mobile v-model=type
@@ -242,10 +292,16 @@ let aMain={
                     class=normal
                 >
                     <normalBlock
-                        v-for="(a,i) of [,,,,,,,,]"
+                        v-for="(a,i) of getNewsByYearAndType(year,type).slice(8*page,8*(page+1))"
                         v-model=normalFocus[i]
+                        :data=a
                     ></normalBlock>
-                    <pageSelect></pageSelect>
+                    <pageSelect
+                        v-model=page
+                        :length="
+                            Math.max(1,Math.ceil(getNewsByYearAndType(year,type).length/8))
+                        "
+                    ></pageSelect>
                 </div>
                 <div
                     v-if="type!='normal'"
@@ -256,16 +312,22 @@ let aMain={
                         class=a
                     >
                         <enewsLikeBlock
-                            v-for="(a,i) of [,,,,,,,,]"
+                            v-for="(a,i) of getNewsByYearAndType(year,type).slice(8*page,8*(page+1))"
                             @click="enewsLikeFocus=i"
+                            :data=a
                         ></enewsLikeBlock>
                     </div>
                     <pageSelect
+                        v-model=page
                         v-if="enewsLikeFocus==null"
+                        :length="
+                            Math.max(1,Math.ceil(getNewsByYearAndType(year,type).length/8))
+                        "
                     ></pageSelect>
                     <enewsLikeContent
                         v-if="enewsLikeFocus!=null"
                         class=b
+                        :data=getNewsByYearAndType(year,type)[enewsLikeFocus]
                     ></enewsLikeContent>
                 </div>
                 <hlFooter

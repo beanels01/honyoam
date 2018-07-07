@@ -1,5 +1,8 @@
 import faqClasses from     './get/faqClasses'
 export default{
+    async getAllNews(doc){
+        return{res:await this.honyoamMongoClient.getAllNews(doc.language)}
+    },
     async getApplies(doc){
         if(!(
             doc.currentUser&&
