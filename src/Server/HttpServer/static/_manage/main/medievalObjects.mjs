@@ -170,7 +170,7 @@ export default{
         },
         async out(){
             await api.post({
-                method:'addMedievalObject',
+                method:'putMedievalObject',
             })
             alert('新增完成。')
             await this.in()

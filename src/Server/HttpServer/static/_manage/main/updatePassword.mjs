@@ -16,7 +16,7 @@ export default{
             if(this.password==this.confirmPassword){
                 this.error=''
                 let res=await api.post({
-                    method:'updatePassword',
+                    method:'setPassword',
                     user:this.user._id,
                     password:this.password,
                 })

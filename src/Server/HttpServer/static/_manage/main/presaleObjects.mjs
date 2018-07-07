@@ -215,12 +215,12 @@ export default{
         },
         async in(){
             this.value=(await api.post({
-                method:'outPresaleList',
+                method:'getPresaleList',
             })).res
         },
         async out(){
             await api.post({
-                method:'addPresaleObject',
+                method:'putPresaleObject',
             })
             alert('新增完成。')
             await this.in()

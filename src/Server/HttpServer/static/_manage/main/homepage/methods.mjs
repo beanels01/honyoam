@@ -66,7 +66,7 @@ export default{
         this.submit(async backendData=>{
             alert('關閉此訊息後，若要關閉網頁，請先等待「儲存成功。」訊息跳出。')
             await api.post({
-                method:'updateHomepage',
+                method:'setHomepage',
                 doc:await backendData,
             })
             alert('儲存成功。')

@@ -9,7 +9,7 @@ let resetSysadminPassword={
         async submit(e){
             e.preventDefault()
             let res=await api.post({
-                method:'updatePassword',
+                method:'setPassword',
                 user:(await api.post({
                     method:'getUserByType',
                     type:'sysadmin',

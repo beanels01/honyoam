@@ -1,10 +1,10 @@
-let update={
-    async inPresale(doc,cu){
+let set={
+    async setPresale(doc,cu){
         if(!(
             typeof doc.value=='object'
         ))
             return['status',400]
-        return['responseJson',await this._inPresale(cu,doc.value)]
+        return['responseJson',await this._setPresale(cu,doc.value)]
     },
     async setMedievalObject(doc,cu){
         if(!(
@@ -30,28 +30,21 @@ let update={
             return['status',400]
         return['responseJson',await this._setPresaleObject(cu,doc)]
     },
-    async updateContact(doc,cu){
+    async setFaq(doc,cu){
         if(!(
             typeof doc.doc=='object'
         ))
             return['status',400]
-        return['responseJson',await this._updateContact(cu,doc.doc)]
+        return['responseJson',await this._setFaq(cu,doc.doc)]
     },
-    async updateFaq(doc,cu){
+    async setHomepage(doc,cu){
         if(!(
             typeof doc.doc=='object'
         ))
             return['status',400]
-        return['responseJson',await this._updateFaq(cu,doc.doc)]
+        return['responseJson',await this._setHomepage(cu,doc.doc)]
     },
-    async updateHomepage(doc,cu){
-        if(!(
-            typeof doc.doc=='object'
-        ))
-            return['status',400]
-        return['responseJson',await this._updateHomepage(cu,doc.doc)]
-    },
-    async updatePassword(doc,cu){
+    async setPassword(doc,cu){
         let tu
         if(!(
             typeof doc.user=='string'&&
@@ -61,20 +54,20 @@ let update={
         ))
             return['status',400]
         return['responseJson',
-            await this._updatePassword(cu,tu,doc.password)
+            await this._setPassword(cu,tu,doc.password)
         ]
     },
-    async updateSeminar(doc,cu){
+    async setSeminar(doc,cu){
         if(!(
             typeof doc.id=='string'&&
             typeof doc.doc=='object'
         ))
             return['status',400]
         return['responseJson',
-            await this._updateSeminar(cu,doc.id,doc.doc)
+            await this._setSeminar(cu,doc.id,doc.doc)
         ]
     },
-    async updateStatus(doc,cu){
+    async setStatus(doc,cu){
         if(!(
             typeof doc.type=='string'&&
             typeof doc.id=='string'&&
@@ -83,8 +76,8 @@ let update={
         ))
             return['status',400]
         return['responseJson',
-            await this._updateStatus(cu,doc.type,doc.id,doc.value)
+            await this._setStatus(cu,doc.type,doc.id,doc.value)
         ]
     },
 }
-export default update
+export default set

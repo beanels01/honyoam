@@ -42,7 +42,7 @@ let cropImageUploader={
         async uploadImage(file){
             this.$emit('input',(async()=>
                 (await api.postForm({
-                    method:'addImage',
+                    method:'putImage',
                     file,
                 })).res
             )())

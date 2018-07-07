@@ -31,7 +31,7 @@ let inputForSeminar={
             ))
                 return alert('操作失敗，原因：有項目沒有圖片。')
             await api.post({
-                method:'updateSeminar',
+                method:'setSeminar',
                 id:this.id,
                 doc:await toServer(this.seminar),
             })
@@ -86,7 +86,7 @@ export default{
     methods:{
         async addSeminar(){
             let id=(await api.post({
-                method:'addSeminar',
+                method:'putSeminar',
                 language:this.selectedLanguage,
             })).res
             await this.updateSeminars()

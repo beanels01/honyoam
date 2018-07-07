@@ -17,7 +17,7 @@ ImageUploader.prototype.selectImage=async function(){
 }
 ImageUploader.prototype.uploadImage=async function(file){
     return(await api.postForm({
-        method:'addImage',
+        method:'putImage',
         file,
     })).res
 }

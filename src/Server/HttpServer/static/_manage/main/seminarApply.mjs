@@ -9,7 +9,7 @@ let contactApply={
     methods:{
         async deleteApply(id){
             await api.post({
-                method:'deleteApply',
+                method:'cutApply',
                 id,
             })
             await this.update()
@@ -25,7 +25,7 @@ let contactApply={
         async updateStatus(apply,value){
             apply.updating=1
             console.log(await api.post({
-                method:     'updateStatus',
+                method:     'setStatus',
                 type:       'apply',
                 id:         apply._id,
                 value,

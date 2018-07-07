@@ -45,7 +45,7 @@ export default{
     methods:{
         async in(){
             let value=(await api.post({
-                method:'outPresale',
+                method:'getPresale',
             })).res
             if(value.version!=this.version)
                 value={
@@ -56,7 +56,7 @@ export default{
         },
         async out(){
             await api.post({
-                method:'inPresale',
+                method:'setPresale',
                 value:this.value,
             })
             alert('儲存成功。')

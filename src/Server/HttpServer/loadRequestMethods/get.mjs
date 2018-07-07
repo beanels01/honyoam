@@ -149,4 +149,21 @@ o._getInvitationCode=function(currentUser){
         currentUser,
     })
 }
+o._getPresale=function(){
+    return this._request({
+        method:'getPresale',
+    })
+}
+o._getPresaleList=function(cu){
+    return this._request({
+        method:'getPresaleList',
+        currentUser:cu,
+    })
+}
+o._getPresaleList0=function(language){
+    return this._request({
+        method:'getPresaleList0',
+        language,
+    })
+}
 export default o

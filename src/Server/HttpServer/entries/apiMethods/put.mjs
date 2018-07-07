@@ -1,6 +1,13 @@
 import verifyRecaptchaUsersResponse from '../verifyRecaptchaUsersResponse'
-let add={
-    async addApply(doc,cu){
+let put={
+    async putNews(doc,cu){
+        if(!(
+            typeof doc.language=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._putNews(cu,doc.language)]
+    },
+    async putApply(doc,cu){
         if(!(
             typeof doc.recaptcha=='string'&&
             doc.people instanceof Array&&doc.people.every(doc=>
@@ -18,9 +25,9 @@ let add={
             )
         ))
             return['status',400]
-        return['responseJson',await this._addApply(doc)]
+        return['responseJson',await this._putApply(doc)]
     },
-    async addFeedback(doc,cu){
+    async putFeedback(doc,cu){
         if(!(
             typeof doc.recaptcha=='string'&&
             typeof doc.name=='string'&&
@@ -33,24 +40,24 @@ let add={
             )
         ))
             return['status',400]
-        return['responseJson',await this._addFeedback(doc)]
+        return['responseJson',await this._putFeedback(doc)]
     },
-    async addSeminar(doc,cu){
+    async putSeminar(doc,cu){
         if(!(
             typeof doc.language=='string'
         ))
             return['status',400]
-        return['responseJson',await this._addSeminar(cu,doc.language)]
+        return['responseJson',await this._putSeminar(cu,doc.language)]
     },
-    async addMedievalObject(doc,cu){
+    async putMedievalObject(doc,cu){
         return['responseJson',
-            await this._addMedievalObject(cu)
+            await this._putMedievalObject(cu)
         ]
     },
-    async addPresaleObject(doc,cu){
+    async putPresaleObject(doc,cu){
         return['responseJson',
-            await this._addPresaleObject(cu)
+            await this._putPresaleObject(cu)
         ]
     },
 }
-export default add
+export default put

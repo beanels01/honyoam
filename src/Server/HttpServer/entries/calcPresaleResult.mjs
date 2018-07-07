@@ -13,7 +13,7 @@ async function main(rq,rs,lang,patch){
         vueData:{
             data:{
                 current:rq.url,
-                data:(await this._outPresaleList0(lang)).res,
+                data:(await this._getPresaleList0(lang)).res,
             },
         },
     })

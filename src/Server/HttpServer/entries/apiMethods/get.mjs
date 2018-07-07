@@ -2,9 +2,6 @@ let get={
     async getApplies(doc,cu){
         return['responseJson',await this._getApplies(cu)]
     },
-    async getContact(doc,cu){
-        return['responseJson',await this._getContact(cu)]
-    },
     async getCurrentUser(doc,cu){
         return['responseJson',cu]
     },
@@ -73,11 +70,18 @@ let get={
     async getUserlist(doc,cu){
         return['responseJson',await this._getUserlist(cu)]
     },
-    async outPresale(doc){
-        return['responseJson',await this._outPresale()]
+    async getPresale(doc){
+        return['responseJson',await this._getPresale()]
     },
-    async outPresaleList(doc,cu){
-        return['responseJson',await this._outPresaleList(cu)]
+    async getPresaleList(doc,cu){
+        return['responseJson',await this._getPresaleList(cu)]
+    },
+    async getNewsList(doc,cu){
+        if(!(
+            typeof doc.language=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._getNewsList(cu,doc.language)]
     },
 }
 export default get

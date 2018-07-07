@@ -9,7 +9,7 @@ let faqFeedback={
     methods:{
         async deleteFeedback(id){
             await api.post({
-                method:'deleteFeedback',
+                method:'cutFeedback',
                 id,
             })
             await this.update()
@@ -25,7 +25,7 @@ let faqFeedback={
         async updateStatus(f,value){
             f.updating=1
             await api.post({
-                method:     'updateStatus',
+                method:     'setStatus',
                 type:       'feedback',
                 id:         f._id,
                 value,

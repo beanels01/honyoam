@@ -39,7 +39,7 @@ export default{
         },
         async update(){
             await api.post({
-                method:     'updateFaq',
+                method:     'setFaq',
                 doc:        this.list,
             })
             alert('送出成功。')
