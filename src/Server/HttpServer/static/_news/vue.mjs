@@ -185,6 +185,9 @@ let pageSelect={
     },
 }
 let aMain={
+    created(){
+        this.year=Math.max(...this.yearList)
+    },
     components:{
         hlFooter:   homepageLike.footer,
         hlMenu:     homepageLike.menu,
@@ -199,10 +202,15 @@ let aMain={
         href(){
             return homepageLike.langToPath(this.currentLanguage)
         },
+        yearList(){
+            let a=[...new Set(this.data.news.map(a=>(new Date(a.timestamp)).getYear()))]
+            a.sort()
+            return a
+        },
     },
     data:()=>({
         menu:0,
-        year:118,
+        year:0,
         type:'normal',
         normalFocus:{},
         enewsLikeFocus:null,
@@ -249,15 +257,14 @@ let aMain={
                         </div>
                     </div></div></div>
                 </div>
-                <select class=yearSelect v-model=year>
-                    <option value=118>2018 年</option>
-                    <option value=119>2019 年</option>
-                    <option value=120>2020 年</option>
-                    <option value=121>2021 年</option>
-                    <option value=122>2022 年</option>
-                    <option value=123>2023 年</option>
-                    <option value=124>2024 年</option>
-                    <option value=125>2025 年</option>
+                <select
+                    class=yearSelect
+                    v-model=year
+                >
+                    <option
+                        v-for="y of yearList"
+                        :value=y
+                    >{{1900+y}} 年</option>
                 </select>
                 <div class=typeSelect>
                     <select class=mobile v-model=type

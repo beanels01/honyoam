@@ -172,7 +172,7 @@ export default{
                 :language=language
                 :selectedLanguage=selectedLanguage
                 :id=selectedNews
-                v-on:back="selectedNews=0"
+                v-on:back="selectedNews=0;inList()"
             ></newsInput>
         </div>
     `,
