@@ -84,8 +84,8 @@ async function formData(rq,rs,currentUser){
             )
         }),
         res
-    if(formData.fields.method=='addImage'){
-        res=await this._addImage(currentUser)
+    if(formData.fields.method=='putImage'){
+        res=await this._putImage(currentUser)
         let f=formData.files.file
         await fs.promises.rename(f.path,`static/image/${res.res}`)
     }
