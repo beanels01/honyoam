@@ -29,7 +29,7 @@ async function main(rq,rs,lang,patch,id){
         vueData:{
             presale:{
                 id,
-                presale:(await this._outPresale()).res,
+                presale:(await this._getPresale()).res,
                 presaleId,
             },
             data:{
