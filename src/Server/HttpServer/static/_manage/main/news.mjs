@@ -48,6 +48,15 @@ let newsInput={
             })
             alert('儲存完畢。')
         },
+        preview(){
+            api.formPost({
+                method:'preview',
+                target:'news',
+                language:this.selectedLanguage,
+                id:this.id,
+                patch:JSON.stringify(this.data),
+            })
+        },
     },
     template:`
         <div v-if=data>
@@ -80,6 +89,7 @@ let newsInput={
                 ></quillEditor>
             </div>
             <div>
+                <button @click=preview>預覽</button>
                 <button @click=setNews>儲存變更</button>
             </div>
         </div>

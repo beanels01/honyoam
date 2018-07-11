@@ -1,7 +1,8 @@
-import calcHomepageResult from './calcHomepageResult'
-import calcSeminarResult from  './calcSeminarResult'
-import concat from             './concat'
-import url from                'url'
+import calcHomepageResult from  './calcHomepageResult'
+import calcSeminarResult from   './calcSeminarResult'
+import calcNewsResult from      './calcNewsResult'
+import concat from              './concat'
+import url from                 'url'
 async function form(rq,rs,currentUser){
     let
         txt=(await concat(rq)).toString(),
@@ -29,6 +30,10 @@ async function form(rq,rs,currentUser){
             )
         else if(doc.target=='seminar')
             return calcSeminarResult.call(
+                this,rq,rs,doc.language,JSON.parse(doc.patch),doc.id
+            )
+        else if(doc.target=='news')
+            return calcNewsResult.call(
                 this,rq,rs,doc.language,JSON.parse(doc.patch),doc.id
             )
     rs.writeHead(400)
