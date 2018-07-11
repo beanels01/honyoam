@@ -75,7 +75,7 @@ let enewsLikeBlock={
 let enewsLikeContent={
     computed:{
         date(){
-            return new Date(this.data.timestamp)
+            return new Date(this.data.current.timestamp)
         }
     },
     props:['data',],
@@ -88,7 +88,7 @@ let enewsLikeContent={
                             enews:'ENEWS',
                             president:'社長專欄',
                             success:'成功案例',
-                        }[data.type]
+                        }[data.current.type]
                     }}</span>
                 </div>
                 <div class=b>
@@ -96,14 +96,14 @@ let enewsLikeContent={
                 </div>
             </div>
             <div class=b>
-                {{data.title}}
+                {{data.current.title}}
             </div>
-            <div class=c v-html=data.content></div>
+            <div class=c v-html=data.current.content></div>
             <div class=d>
                 <div class=a>
-                    <div>
+                    <div v-if=data.previous>
                         <img src="/_news/img/num-l.png">
-                        上一則<!-- <span class=a>：而如果有人認為……</span> -->
+                        上一則<span class=a>：{{data.previous.title.slice(6)}}……</span>
                     </div>
                 </div>
                 <div class=b>
@@ -112,8 +112,8 @@ let enewsLikeContent={
                     </div>
                 </div>
                 <div class=c>
-                    <div>
-                        下一則<!-- <span class=a>：而如果有人認為……</span> -->
+                    <div v-if=data.next>
+                        下一則<span class=a>：{{data.next.title.slice(6)}}……</span>
                         <img src="/_news/img/num-r.png">
                     </div>
                 </div>
@@ -207,6 +207,14 @@ let aMain={
             a.sort()
             return a
         },
+        newsByYearAndType(){
+            let a=this.data.news.filter(a=>
+                (new Date(a.timestamp)).getYear()==this.year&&
+                a.type==this.type
+            )
+            a.sort((a,b)=>(new Date(b.timestamp))-(new Date(a.timestamp)))
+            return a
+        },
     },
     data:()=>({
         menu:0,
@@ -217,14 +225,6 @@ let aMain={
         page:0,
     }),
     methods:{
-        getNewsByYearAndType(y,t){
-            let a=this.data.news.filter(a=>
-                (new Date(a.timestamp)).getYear()==y&&
-                a.type==t
-            )
-            a.sort((a,b)=>(new Date(b.timestamp))-(new Date(a.timestamp)))
-            return a
-        },
     },
     props:['data','language','currentLanguage','mainSeminar',],
     template:`
@@ -299,14 +299,14 @@ let aMain={
                     class=normal
                 >
                     <normalBlock
-                        v-for="(a,i) of getNewsByYearAndType(year,type).slice(8*page,8*(page+1))"
+                        v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
                         v-model=normalFocus[i]
                         :data=a
                     ></normalBlock>
                     <pageSelect
                         v-model=page
                         :length="
-                            Math.max(1,Math.ceil(getNewsByYearAndType(year,type).length/8))
+                            Math.max(1,Math.ceil(newsByYearAndType.length/8))
                         "
                     ></pageSelect>
                 </div>
@@ -319,7 +319,7 @@ let aMain={
                         class=a
                     >
                         <enewsLikeBlock
-                            v-for="(a,i) of getNewsByYearAndType(year,type).slice(8*page,8*(page+1))"
+                            v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
                             @click="enewsLikeFocus=i"
                             :data=a
                         ></enewsLikeBlock>
@@ -328,13 +328,19 @@ let aMain={
                         v-model=page
                         v-if="enewsLikeFocus==null"
                         :length="
-                            Math.max(1,Math.ceil(getNewsByYearAndType(year,type).length/8))
+                            Math.max(1,Math.ceil(newsByYearAndType.length/8))
                         "
                     ></pageSelect>
                     <enewsLikeContent
                         v-if="enewsLikeFocus!=null"
                         class=b
-                        :data=getNewsByYearAndType(year,type)[enewsLikeFocus]
+                        :data="{
+                            previous:
+                                newsByYearAndType[enewsLikeFocus-1],
+                            current:newsByYearAndType[enewsLikeFocus],
+                            next:
+                                newsByYearAndType[enewsLikeFocus+1],
+                        }"
                     ></enewsLikeContent>
                 </div>
                 <hlFooter

@@ -358,6 +358,7 @@
 }
 #main>.enewsLike>.b>.d>*{
     display:table-cell;
+    width:33%;
 }
 #main>.enewsLike>.b>.d>*>*{
     display:inline-block;
