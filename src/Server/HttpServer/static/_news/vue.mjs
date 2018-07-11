@@ -103,7 +103,7 @@ let enewsLikeContent={
                 <div class=a>
                     <div v-if=data.previous @click="$emit('previous')">
                         <img src="/_news/img/num-l.png">
-                        上一則<span class=a>：{{data.previous.title.slice(6)}}……</span>
+                        上一則<span class=a>：{{data.previous.title.slice(0,6)}}……</span>
                     </div>
                 </div>
                 <div class=b>
@@ -113,7 +113,7 @@ let enewsLikeContent={
                 </div>
                 <div class=c>
                     <div v-if=data.next @click="$emit('next')">
-                        下一則<span class=a>：{{data.next.title.slice(6)}}……</span>
+                        下一則<span class=a>：{{data.next.title.slice(0,6)}}……</span>
                         <img src="/_news/img/num-r.png">
                     </div>
                 </div>

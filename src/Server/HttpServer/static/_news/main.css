@@ -344,6 +344,7 @@
     #main>.enewsLike>.a>*>.b>.b>.b{
         font-size:13px;
         text-align:right;
+        width:50px;
     }
 }
 #main>.enewsLike>.b>.a{
