@@ -101,18 +101,18 @@ let enewsLikeContent={
             <div class=c v-html=data.current.content></div>
             <div class=d>
                 <div class=a>
-                    <div v-if=data.previous>
+                    <div v-if=data.previous @click="$emit('previous')">
                         <img src="/_news/img/num-l.png">
                         上一則<span class=a>：{{data.previous.title.slice(6)}}……</span>
                     </div>
                 </div>
                 <div class=b>
-                    <div>
+                    <div @click="$emit('back')">
                         回列表
                     </div>
                 </div>
                 <div class=c>
-                    <div v-if=data.next>
+                    <div v-if=data.next @click="$emit('next')">
                         下一則<span class=a>：{{data.next.title.slice(6)}}……</span>
                         <img src="/_news/img/num-r.png">
                     </div>
@@ -187,6 +187,7 @@ let pageSelect={
 let aMain={
     created(){
         this.year=Math.max(...this.yearList)
+        this.month=Math.max(...this.monthList)
     },
     components:{
         hlFooter:   homepageLike.footer,
@@ -207,11 +208,22 @@ let aMain={
             a.sort()
             return a
         },
+        monthList(){
+            let a=[...new Set(this.data.news.filter(a=>
+                (new Date(a.timestamp)).getYear()==this.year
+            ).map(a=>
+                (new Date(a.timestamp)).getMonth()
+            ))]
+            a.sort()
+            return a
+        },
         newsByYearAndType(){
-            let a=this.data.news.filter(a=>
-                (new Date(a.timestamp)).getYear()==this.year&&
-                a.type==this.type
-            )
+            let a=this.data.news.filter(a=>{
+                let date=new Date(a.timestamp)
+                return date.getYear()==this.year&&
+                    date.getMonth()==this.month&&
+                    a.type==this.type
+            })
             a.sort((a,b)=>(new Date(b.timestamp))-(new Date(a.timestamp)))
             return a
         },
@@ -219,6 +231,7 @@ let aMain={
     data:()=>({
         menu:0,
         year:0,
+        month:0,
         type:'normal',
         normalFocus:{},
         enewsLikeFocus:null,
@@ -257,15 +270,26 @@ let aMain={
                         </div>
                     </div></div></div>
                 </div>
-                <select
-                    class=yearSelect
-                    v-model=year
-                >
-                    <option
-                        v-for="y of yearList"
-                        :value=y
-                    >{{1900+y}} 年</option>
-                </select>
+                <div class=dateSelect>
+                    <select
+                        class=yearSelect
+                        v-model=year
+                    >
+                        <option
+                            v-for="y of yearList"
+                            :value=y
+                        >{{1900+y}} 年</option>
+                    </select>
+                    <select
+                        class=yearSelect
+                        v-model=month
+                    >
+                        <option
+                            v-for="m of monthList"
+                            :value=m
+                        >{{m}} 月</option>
+                    </select>
+                </div>
                 <div class=typeSelect>
                     <select class=mobile v-model=type
                         @input="enewsLikeFocus=null"
@@ -341,6 +365,9 @@ let aMain={
                             next:
                                 newsByYearAndType[enewsLikeFocus+1],
                         }"
+                        @previous="enewsLikeFocus--"
+                        @next="enewsLikeFocus++"
+                        @back="enewsLikeFocus=null"
                     ></enewsLikeContent>
                 </div>
                 <hlFooter
