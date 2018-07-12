@@ -6,7 +6,6 @@ async function main(rq,rs,lang,patch,id){
     presaleId=(i=>{
         let o={
             banner:                 i.banner.concept,
-            gallery:                i.gallery,
         }
         i=i.language[lang]
         return Object.assign(o,{

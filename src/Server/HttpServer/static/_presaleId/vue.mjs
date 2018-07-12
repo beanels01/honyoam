@@ -1,6 +1,54 @@
+import{dom}from'../_simple.mjs'
 import homepageLike from    '../_homepageLike.mjs'
 import presaleIdLike from   '../_presaleIdLike.mjs'
 import presaleLike from     '../_presaleLike.mjs'
+let hypertextPhoto={
+    props:['data'],
+    template:`
+        <span class=presaleIdLikeHypertextPhoto>
+            <img :src=data>
+        </span>
+    `,
+}
+let hypertextPhotoSwiper={
+    mounted(){
+        function createSwiperContainer(a){
+            return dom.div({className:'swiper-container'},
+                dom.div({className:'swiper-wrapper'},
+                    a.map(n=>dom.div({className:'swiper-slide'},n))
+                ),
+            )
+        }
+        if(typeof window=='undefined')
+            return
+        let n=createSwiperContainer(
+            this.data.map(data=>
+                (new Vue({
+                    el:dom.div(),
+                    components:{hypertextPhoto},
+                    data:{
+                        data,
+                    },
+                    template:`
+                        <hypertextPhoto
+                            :data=data
+                        ></hypertextPhoto>
+                    `,
+                })).$el
+            )
+        )
+        dom(this.$el,n)
+        new Swiper(n,{
+            centeredSlides:true,
+            slidesPerView:5,
+            spaceBetween:10,
+        })
+    },
+    props:['data'],
+    template:`
+        <div class=p></div>
+    `,
+}
 let block={
     computed:{
         style(){
@@ -36,6 +84,8 @@ let aMain={
         presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeFooter:    presaleIdLike.footer,
         presaleIdLikeHeader:    presaleIdLike.header,
+        hypertextPhoto,
+        hypertextPhotoSwiper,
         block,
     },
     computed:{
@@ -47,6 +97,9 @@ let aMain={
                 this.currentLanguage,
                 this.presale.id,
             )
+        },
+        gallery(){
+            return this.presale.presaleId.gallery.map(a=>`/image/${a}`)
         },
     },
     data:()=>({
@@ -110,6 +163,20 @@ let aMain={
                     :content=presale.presaleId.trafficSummary
                     :more=presaleIdHref.traffic
                 ></block>
+                <div class=album>
+                    <div class=n>
+                        <span class=a>建案相片集</span> / ALBUM
+                    </div>
+                    <div class=o>
+                        <hypertextPhoto
+                            v-for="e in gallery"
+                            :data=e
+                        ></hypertextPhoto>
+                    </div>
+                    <hypertextPhotoSwiper
+                        :data=gallery
+                    ></hypertextPhotoSwiper>
+                </div>
                 <presaleIdLikeFooter
                     :data=presale.presale.language[currentLanguage].precautions
                 ></presaleIdLikeFooter>

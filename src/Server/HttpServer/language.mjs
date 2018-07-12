@@ -379,7 +379,7 @@ export default{
                 sitemap:            '網站地圖',
                 copyrightContent:   '© 2018 本葉國際資產管理股份有限公司. All Rights Reserved.',
                 footer0:{
-                    presale:        '最新成屋',
+                    presale:        '新成屋',
                     news:           '最新消息',
                     service:        '尊榮服務',
                     qa:             '購屋Q&A',
@@ -739,7 +739,7 @@ export default{
                 sitemap:            '网站地图',
                 copyrightContent:   '© 2018 本叶国际资产管理股份有限公司. All Rights Reserved.',
                 footer0:{
-                    presale:        '最新成屋',
+                    presale:        '新成屋',
                     news:           '最新消息',
                     service:        '尊荣服务',
                     qa:             '购屋Q&A',
@@ -1099,7 +1099,7 @@ export default{
                 sitemap:            '網站地圖',
                 copyrightContent:   '© 2018 本葉國際資產管理股份有限公司. All Rights Reserved.',
                 footer0:{
-                    presale:        '最新成屋',
+                    presale:        '新成屋',
                     news:           '最新消息',
                     service:        '尊榮服務',
                     qa:             '購屋Q&A',

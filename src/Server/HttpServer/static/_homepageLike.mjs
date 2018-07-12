@@ -132,7 +132,7 @@ let houseSearch={
                             <option>區域</option>
                         </select>
                         <select>
-                            <option>車站區域</option>
+                            <option>最近車站</option>
                         </select>
                     </div>
                 </div>

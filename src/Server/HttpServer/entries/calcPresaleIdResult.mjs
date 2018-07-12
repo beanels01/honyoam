@@ -7,6 +7,7 @@ async function main(rq,rs,lang,patch,id){
         let o={
             banner:i.banner.top,
             top:i.top,
+            gallery:                i.gallery,
         }
         i=i.language[lang]
         return Object.assign(o,{

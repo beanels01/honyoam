@@ -1,6 +1,11 @@
 import api from                         '../../_api.mjs'
 let cropImageUploader={
     components:{vueCropper:window['vue-cropper']},
+    computed:{
+        innerData(){
+            return this.data||{}
+        }
+    },
     created(){
         this.checkValue()
     },
@@ -76,13 +81,13 @@ let cropImageUploader={
                     :canScale=true
                     :outputSize=1
                     :autoCrop=true
-                    :autoCropWidth="data.autoCropWidth||240"
-                    :autoCropHeight="data.autoCropHeight||240"
+                    :autoCropWidth="innerData.autoCropWidth||240"
+                    :autoCropHeight="innerData.autoCropHeight||240"
                     :fixed=true
-                    :fixedNumber="data.fixedNumber||[1,1]"
+                    :fixedNumber="innerData.fixedNumber||[1,1]"
                     :style="{
-                        width:(data.width||480)+'px',
-                        height:(data.height||360)+'px'
+                        width:(innerData.width||480)+'px',
+                        height:(innerData.height||360)+'px'
                     }"
                 ></vueCropper>
                 <button @click=crop>裁切</button>

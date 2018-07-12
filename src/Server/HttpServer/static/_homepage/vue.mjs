@@ -45,7 +45,7 @@ let aMain={
                 ></events>
                 <success></success>
                 <div class=about0>
-                    <div class=a>關於本葉</div>
+                    <div class=a>關於我們</div>
                     <div class=b>ABOUT US</div>
                     <div class=c>秉持專業、熱忱，透過團隊的力量，跨越不同文化與國界，為客戶提供貼心、安全、優質的不動產投資顧問、仲介及資產管理服務。</div>
                 </div>

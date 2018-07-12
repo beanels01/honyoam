@@ -1,4 +1,3 @@
-import{dom}from'./_simple.mjs'
 import homepageLike from'./_homepageLike.mjs'
 let href=(currentLanguage,id)=>({
     top:`/${currentLanguage}/presale/${id}`,
@@ -118,77 +117,10 @@ let main={
         </div>
     `
 }
-let hypertextPhoto={
-    props:['data'],
-    template:`
-        <span class=presaleIdLikeHypertextPhoto>
-            <img :src=data>
-        </span>
-    `,
-}
-let hypertextPhotoSwiper={
-    mounted(){
-        function createSwiperContainer(a){
-            return dom.div({className:'swiper-container'},
-                dom.div({className:'swiper-wrapper'},
-                    a.map(n=>dom.div({className:'swiper-slide'},n))
-                ),
-            )
-        }
-        if(typeof window=='undefined')
-            return
-        let n=createSwiperContainer(
-            this.data.map(data=>
-                (new Vue({
-                    el:dom.div(),
-                    components:{hypertextPhoto},
-                    data:{
-                        data,
-                    },
-                    template:`
-                        <hypertextPhoto
-                            :data=data
-                        ></hypertextPhoto>
-                    `,
-                })).$el
-            )
-        )
-        dom(this.$el,n)
-        new Swiper(n,{
-            centeredSlides:true,
-            slidesPerView:5,
-            spaceBetween:10,
-        })
-    },
-    props:['data'],
-    template:`
-        <div class=p></div>
-    `,
-}
 let hypertext={
-    components:{hypertextPhoto,hypertextPhotoSwiper},
-    computed:{
-        gallery(){
-            return this.data.gallery.map(a=>`/image/${a}`)
-        },
-    },
     props:['data'],
     template:`
         <div class=presaleIdLikeHypertext>
-            <div class=a>
-                <div class=n>
-                    <span class=a>建案相片集</span> / ALBUM
-                </div>
-                <div class=o>
-                    <hypertextPhoto
-                        v-for="e in gallery"
-                        :data=e
-                    ></hypertextPhoto>
-                </div>
-                <hypertextPhotoSwiper
-                    :data=gallery
-                ></hypertextPhotoSwiper>
-            </div>
             <div class=b>
                 <div v-html=data.hypertext></div>
             </div>
