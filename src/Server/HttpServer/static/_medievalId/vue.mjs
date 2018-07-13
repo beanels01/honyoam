@@ -295,23 +295,12 @@ let aMain={
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 樓層
+                                        · 所在樓層
                                     </div><div class=o>{{data.data.level}}</div>
                                 </div>
                             </div>
                             <div class=p>
                                 ※ 本區提供資料僅供參考，房屋資料需以謄本標示資料為主。
-                            </div>
-                        </div>
-                    </div>
-                    <div class=o>
-                        <div class=a>周圍地圖</div><div class=hl></div>
-                        <div class=b>
-                            <div class=n>
-                                <iframe :src=data.data.map width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            </div>
-                            <div class=o>
-                                ※ 僅供物件周邊景象參考，可能與實際物件有所出入。
                             </div>
                         </div>
                     </div>
@@ -327,6 +316,17 @@ let aMain={
                             </div>
                             <div class=o>
                                 <img :src="'/image/'+data.data.patternImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class=o>
+                        <div class=a>周圍地圖</div><div class=hl></div>
+                        <div class=b>
+                            <div class=n>
+                                <iframe :src=data.data.map width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                            <div class=o>
+                                ※ 僅供物件周邊景象參考，可能與實際物件有所出入。
                             </div>
                         </div>
                     </div>
