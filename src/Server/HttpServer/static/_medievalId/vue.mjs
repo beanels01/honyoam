@@ -148,12 +148,36 @@ let aMain={
                                 <div class=a>
                                     <div>格局</div>
                                     <div>竣工年月</div>
-                                    <div>權狀坪數</div>
+                                    <div>專有面積</div>
                                 </div>
                                 <div>
                                     <div>{{data.data.pattern}}</div>
-                                    <div>{{data.data.date}} 年</div>
+                                    <div>{{data.data.date}}</div>
                                     <div>{{data.data.area}} 平方公尺</div>
+                                </div>
+                            </div>
+                            <div class="desktop hl"></div>
+                            <div class="desktop o p">
+                                <div class=a>
+                                    <div>陽台面積</div>
+                                    <div>所在樓層</div>
+                                    <div>朝向</div>
+                                </div>
+                                <div>
+                                    <div>{{data.data.balconyArea}} 平方公尺</div>
+                                    <div>{{data.data.level}}</div>
+                                    <div>{{data.data.direction}}</div>
+                                </div>
+                            </div>
+                            <div class="desktop hl"></div>
+                            <div class="desktop o p">
+                                <div class=a>
+                                    <div>構造</div>
+                                    <div>總戶數</div>
+                                </div>
+                                <div>
+                                    <div>{{data.data.structure}}</div>
+                                    <div>{{data.data.householdCount}}</div>
                                 </div>
                             </div>
                             <div class="desktop hl"></div>
@@ -170,9 +194,11 @@ let aMain={
                             <div class=mobile>
                                 <span class=a>格局：</span>{{data.data.pattern}}
                                 <div class="hl"></div>
-                                <span class=a>竣工年月：</span>{{data.data.date}} 年
+                                <span class=a>竣工年月：</span>{{data.data.date}}
                                 <div class="hl"></div>
-                                <span class=a>權狀坪數：</span>{{data.data.area}} 平方公尺
+                                <span class=a>專有面積：</span>{{data.data.area}} 平方公尺
+                                <div class="hl"></div>
+                                <span class=a>陽台面積：</span>{{data.data.balconyArea}}
                                 <div class="hl"></div>
                                 <span class=a>所在地：</span>{{data.data.place}}
                                 <div class="hl"></div>
