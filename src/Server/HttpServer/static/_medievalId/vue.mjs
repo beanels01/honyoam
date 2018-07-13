@@ -200,7 +200,15 @@ let aMain={
                                 <div class="hl"></div>
                                 <span class=a>陽台面積：</span>{{data.data.balconyArea}}
                                 <div class="hl"></div>
+                                <span class=a>所在樓層：</span>{{data.data.level}}
+                                <div class="hl"></div>
+                                <span class=a>朝向：</span>{{data.data.direction}}
+                                <div class="hl"></div>
                                 <span class=a>所在地：</span>{{data.data.place}}
+                                <div class="hl"></div>
+                                <span class=a>構造：</span>{{data.data.structure}}
+                                <div class="hl"></div>
+                                <span class=a>總戶數：</span>{{data.data.householdCount}}
                                 <div class="hl"></div>
                                 <span class=a>交通：</span>{{data.data.traffic}}
                             </div>
