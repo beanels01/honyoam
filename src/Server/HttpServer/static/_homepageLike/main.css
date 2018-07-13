@@ -793,7 +793,7 @@ body{
 }
 @media(min-width:1280px){
     #main>.homepageLikeHouseList>.e>*{
-        --height:245px;
+        --height:235px;
         width:1170px;
         margin:0 auto;
         padding:40px 0 60px;
