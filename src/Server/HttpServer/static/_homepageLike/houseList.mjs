@@ -77,13 +77,12 @@ let medieval={
                         <div class=title>
                             {{data.name}}
                         </div>
-                        <div class=subtitle>
-                            {{data.title}}
-                        </div>
                     </div>
                 </div>
                 <div class=b>
                     <div>
+                        <div class=a>所在地：{{data.place}}</div>
+                        <div class=a>最近車站：{{data.nearestStation}}</div>
                         <div class=a>格局：{{data.pattern}}</div>
                         <div class=a>面積：{{data.area}} 平方公尺</div>
                         <div class=a>價格：{{data.price}} 萬

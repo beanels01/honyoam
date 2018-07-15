@@ -73,6 +73,12 @@ let inputForSpecificLanguage={
                 >
             </p>
             <p>
+                最近車站：
+                <input
+                    v-model=value.nearestStation
+                >
+            </p>
+            <p>
                 交通：
                 <div class=indent>
                     <textarea
