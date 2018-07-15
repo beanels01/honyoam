@@ -101,6 +101,8 @@ o.getMedievalList0=async function(language){
             id:a._id,
             image:a.image,
             name:a.language[language].name,
+            place:a.language[language].place,
+            nearestStation:a.language[language].nearestStation,
             pattern:a.pattern,
             area:a.area,
             price:a.price,
