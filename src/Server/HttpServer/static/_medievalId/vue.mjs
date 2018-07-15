@@ -299,7 +299,7 @@ let aMain={
                                         · 構造
                                     </div><div class=o>{{data.data.structure}}</div>
                                     <div class=n>
-                                        · 建物總樓層數
+                                        · 建物總樓層
                                     </div><div class=o>{{data.data.levelCount}}</div>
                                 </div>
                                 <div>

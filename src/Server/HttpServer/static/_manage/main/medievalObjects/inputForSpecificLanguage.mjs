@@ -55,7 +55,7 @@ let inputForSpecificLanguage={
                 >
             </p>
             <p>
-                建物總樓層數：
+                建物總樓層：
                 <input
                     v-model=value.levelCount
                 >

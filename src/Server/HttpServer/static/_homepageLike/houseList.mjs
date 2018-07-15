@@ -23,7 +23,11 @@ let presale={
                             {{data.name}}
                         </div>
                         <div class=subtitle>
-                            {{data.title}}
+                            {{data.subName}}
+                        </div>
+                        <div class=brief>
+                            {{data.brief0}}<br>
+                            {{data.brief1}}
                         </div>
                     </div>
                 </div>

@@ -726,6 +726,9 @@ body{
     color:#1d98df;
 }
 #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>.a>*>.subtitle{
+    color:#1d98df;
+}
+#main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>.a>*>.brief{
     color:#797979;
 }
 #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>.b>*{
@@ -762,7 +765,7 @@ body{
         margin-top:10px;
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house{
-        --height:210px;
+        --height:180px;
         width:100%;
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.a{
@@ -778,14 +781,17 @@ body{
         height:calc(var(--height) - 16px);
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.title{
-        font-size:15px;
+        font-size:13px;
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.subtitle{
-        font-size:15px;
+        font-size:13px;
+    }
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.brief{
+        font-size:13px;
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.a{
         font-size:13px;
-        padding:4px 0;
+        padding:2px 0;
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.c{
         width:100%;
@@ -828,9 +834,12 @@ body{
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.subtitle{
         font-size:16px;
     }
+    #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.brief{
+        font-size:16px;
+    }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.a{
         font-size:16px;
-        padding:10px 0;
+        padding:2px 0;
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.c{
         width:572px;

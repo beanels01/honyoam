@@ -134,17 +134,19 @@ o.getPresaleList0=async function(language){
             area=a.pattern.map(a=>a.area),
             price=a.pattern.map(a=>a.price)
         return{
-            id:a._id,
-            image:a.image,
-            name:a.language[language].name,
-            title:a.language[language].informationTitle,
-            soldout:a.soldout,
-            patternMin:pattern[0],
-            patternMax:pattern[pattern.length-1],
-            areaMin:Math.min(...area),
-            areaMax:Math.max(...area),
-            priceMin:Math.min(...price),
-            priceMax:Math.max(...price)
+            id:         a._id,
+            image:      a.image,
+            name:       a.language[language].name,
+            subName:    a.language[language].subName,
+            brief0:     a.language[language].brief0,
+            brief1:     a.language[language].brief1,
+            soldout:    a.soldout,
+            patternMin: pattern[0],
+            patternMax: pattern[pattern.length-1],
+            areaMin:    Math.min(...area),
+            areaMax:    Math.max(...area),
+            priceMin:   Math.min(...price),
+            priceMax:   Math.max(...price)
         }
     })
 }

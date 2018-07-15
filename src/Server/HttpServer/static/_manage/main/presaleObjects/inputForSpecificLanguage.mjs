@@ -56,6 +56,24 @@ let inputForSpecificLanguage={
                 >
             </p>
             <p>
+                副名稱：
+                <input
+                    v-model=value.subName
+                >
+            </p>
+            <p>
+                簡介一：
+                <input
+                    v-model=value.brief0
+                >
+            </p>
+            <p>
+                簡介二：
+                <input
+                    v-model=value.brief1
+                >
+            </p>
+            <p>
                 介紹標題：
                 <input
                     v-model=value.informationTitle
