@@ -9,6 +9,7 @@ import userlist from                './main/userlist.mjs'
 import homepage from                './main/homepage.mjs'
 import presale from                 './main/presale.mjs'
 import presaleObjects from          './main/presaleObjects.mjs'
+import medieval from                './main/medieval.mjs'
 import medievalObjects from         './main/medievalObjects.mjs'
 import seminar from                 './main/seminar.mjs'
 import seminarApply from            './main/seminarApply.mjs'
@@ -69,6 +70,12 @@ let aMenu={
                     :class="{focus:value=='presaleObjects'}"
                 ><div>
                     新成屋物件
+                </div></div>
+                <div
+                    @click="$emit('input','medieval')"
+                    :class="{focus:value=='medieval'}"
+                ><div>
+                    中古屋
                 </div></div>
                 <div
                     @click="$emit('input','medievalObjects')"
@@ -157,6 +164,7 @@ let aMenu={
             medievalObjects,
             aMenu,
             news,
+            medieval,
         },
         template:`
             <div
@@ -220,6 +228,9 @@ let aMenu={
                             <presaleObjects
                                 :language=language
                             ></presaleObjects>
+                        </div>
+                        <div v-if="focus=='medieval'">
+                            <medieval></medieval>
                         </div>
                         <div v-if="focus=='medievalObjects'">
                             <medievalObjects

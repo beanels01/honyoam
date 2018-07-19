@@ -42,6 +42,9 @@ export default{
     async getMainSeminar(){
         return{res:await this.honyoamMongoClient.getMainSeminar()}
     },
+    async getMedieval(){
+        return{res:await this.honyoamMongoClient.getSite('medieval')}
+    },
     async getMedievalList(doc){
         if(!(
             doc.currentUser&&

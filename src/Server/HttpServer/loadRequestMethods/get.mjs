@@ -50,6 +50,11 @@ o._getMainSeminar=function(id){
         method:'getMainSeminar',
     })
 }
+o._getMedieval=function(){
+    return this._request({
+        method:'getMedieval',
+    })
+}
 o._getMedievalList=async function(currentUser){
     return this._request({
         method:'getMedievalList',

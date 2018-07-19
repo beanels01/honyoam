@@ -76,6 +76,16 @@ export default{
             'presale',doc.value
         )}
     },
+    async setMedieval(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.setSite(
+            'medieval',doc.value
+        )}
+    },
     async setMedievalObject(doc){
         if(!(
             doc.currentUser&&

@@ -1,4 +1,11 @@
 let o={}
+o._setMedieval=function(cu,value){
+    return this._request({
+        method:'setMedieval',
+        currentUser:cu,
+        value,
+    })
+}
 o._setMedievalObject=function(currentUser,doc){
     return this._request({
         method:'setMedievalObject',
@@ -13,6 +20,13 @@ o._setNews=function(currentUser,doc){
         currentUser,
         id:doc.id,
         data:doc.data,
+    })
+}
+o._setPresale=function(cu,value){
+    return this._request({
+        method:'setPresale',
+        currentUser:cu,
+        value,
     })
 }
 o._setPresaleObject=function(currentUser,doc){
@@ -68,13 +82,6 @@ o._setStatus=function(currentUser,type,id,value){
         }[type],
         currentUser,
         id,
-        value,
-    })
-}
-o._setPresale=function(cu,value){
-    return this._request({
-        method:'setPresale',
-        currentUser:cu,
         value,
     })
 }

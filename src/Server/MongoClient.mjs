@@ -46,6 +46,10 @@ function MongoClient(config){
                     })
             })(),
             (async()=>{
+                if(!await this._siteCol.findOne({key:'medieval'}))
+                    await this.setSite('medieval',{})
+            })(),
+            (async()=>{
                 if(!await this._siteCol.findOne({key:'presale'}))
                     await this.setSite('presale',{})
             })(),

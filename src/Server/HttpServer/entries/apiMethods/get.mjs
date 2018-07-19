@@ -23,6 +23,9 @@ let get={
     async getLanguage(doc,cu){
         return['responseJson',await this._getLanguage(cu)]
     },
+    async getMedieval(doc,cu){
+        return['responseJson',await this._getMedieval(cu)]
+    },
     async getMedievalList(doc,cu){
         return['responseJson',await this._getMedievalList(cu)]
     },
