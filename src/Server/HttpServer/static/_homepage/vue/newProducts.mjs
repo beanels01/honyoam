@@ -3,9 +3,6 @@ let newProducts={
     components:{
         rotation,
     },
-    created(){
-        console.log(this.href)
-    },
     data:()=>({
         focus:0,
     }),
