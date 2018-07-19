@@ -6,6 +6,7 @@ import inputForSpecificLanguage from
 import languageSelect from      './languageSelect.mjs'
 import cropImageUploader from   './cropImageUploader.mjs'
 import imageUploader from       './imageUploader.mjs'
+import galleryCropImageUploader from    './galleryCropImageUploader.mjs'
 let keyValueEditOption={
     created(){
         this.checkValue()
@@ -58,7 +59,7 @@ let inputForSpecificObject={
         version:0,
         patternEditOption,
         keyValueEditOption,
-        cropImageUploader,
+        galleryCropImageUploader,
         value:0,
         selectedLanguage:0,
     }),
@@ -169,7 +170,7 @@ let inputForSpecificObject={
             <h1>建案相片集</h1>
             <optionList
                 class=indent
-                :editOption=cropImageUploader
+                :editOption=galleryCropImageUploader
                 v-model=value.gallery
             ></optionList>
             <div>
