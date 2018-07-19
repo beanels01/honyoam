@@ -30,6 +30,10 @@ export default{
         this.homepage=(await api.post({
             method:'getHomepage',
         })).res
+        if(!this.homepage.event)
+            this.homepage.event={}
+        if(!this.homepage.rotation)
+            this.homepage.rotation={}
     },
     async submit(upload){
         if(

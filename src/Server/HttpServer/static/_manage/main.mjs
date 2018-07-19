@@ -105,7 +105,7 @@ let aMenu={
                     @click="$emit('input','seminarApply')"
                     :class="{focus:value=='seminarApply'}"
                 ><div>
-                    說明會 - 報名
+                    客戶資料管理
                 </div></div>
             </template>
             <div

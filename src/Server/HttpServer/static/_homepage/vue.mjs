@@ -37,7 +37,10 @@ let aMain={
             ></hlHeader>
             <template v-if=!menu>
                 <search :mission=homepage.mission></search>
-                <newProducts :rotation=homepage.rotation></newProducts>
+                <newProducts
+                    :rotation=homepage.rotation
+                    :href=href
+                ></newProducts>
                 <news1 :href=href.news></news1>
                 <events
                     :content=homepage.event

@@ -3,10 +3,13 @@ let newProducts={
     components:{
         rotation,
     },
+    created(){
+        console.log(this.href)
+    },
     data:()=>({
         focus:0,
     }),
-    props:['rotation'],
+    props:['href','rotation'],
     template:`
         <div class=newProducts>
             <div class=a>
@@ -25,12 +28,12 @@ let newProducts={
                     ></div>
                 </div>
                 <div class=o>
-                    <a href="">
+                    <a :href=href.presale>
                         瀏覽所有最新物件
                         <img class=a src=img/na01.png>
                         <img class=b src=img/na02.png>
                     </a>
-                    <a href="">
+                    <a :href=href.medieval>
                         瀏覽所有中古屋物件
                         <img class=a src=img/na01.png>
                         <img class=b src=img/na02.png>
