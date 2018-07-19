@@ -17,7 +17,6 @@ let aMain={
         },
         mightLikeData(){
             let a={}
-            console.log(this.data.data)
             for(let b of this.data.data)
                 a[b.id]=b
             return this.data.medieval.youMightLike.map(b=>{
