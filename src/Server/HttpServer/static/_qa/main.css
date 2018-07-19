@@ -82,6 +82,7 @@
     height:0;
     transform:scaleY(0);
     transform-origin:top;
+    padding:0 25px;
     transition:transform .4s ease;
 }
 #main>.a>.faq>.a>.question>.answer img{
@@ -89,7 +90,8 @@
 }
 #main>.a>.faq>.a>.question>.answer.active{
     height:unset;
-    padding:30px 25px;
+    padding-top:30px;
+    padding-bottom:30px;
     transform:scaleY(1);
 }
 @media(max-width:1279px){
