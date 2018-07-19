@@ -15,6 +15,19 @@ let aMain={
         href(){
             return homepageLike.langToPath(this.currentLanguage)
         },
+        mightLikeData(){
+            let a={}
+            for(let b of this.data.data)
+                a[b.id]=b
+            return this.data.presale.youMightLike.map(b=>{
+                let c=a[b]
+                return{
+                    image:'/image/'+c.image,
+                    title:c.name,
+                    subtitle:c.subName,
+                }
+            })
+        },
     },
     data:()=>({
         menu:0,
@@ -43,7 +56,9 @@ let aMain={
                         array:data.data,
                     }"
                 ></homepageLikeHouseList>
-                <mightLike></mightLike>
+                <mightLike
+                    :data=mightLikeData
+                ></mightLike>
                 <hlFooter
                     :language=language.homepageLike.footer
                 ></hlFooter>

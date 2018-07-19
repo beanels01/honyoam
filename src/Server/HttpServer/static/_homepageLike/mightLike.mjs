@@ -64,13 +64,7 @@ let mightLikeSwiper={
 }
 let mightLike={
     components:{mightLikeList,mightLikeSwiper},
-    data:()=>({
-        data:[...Array(4)].map((_,i)=>({
-            image:'/_medieval/demo0.png',
-            title:`標題可能很長 長到會換行 不夠 再長一點 ${i}`,
-            subtitle:'副標',
-        }))
-    }),
+    props:['data'],
     template:`
         <div class=mightLike>
             <div class=f>
