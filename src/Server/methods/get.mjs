@@ -96,6 +96,9 @@ export default{
     async getPresaleObject(doc){
         return{res:await this.honyoamMongoClient.getPresaleObject(doc.id)}
     },
+    getRate(){
+        return{res:this.data.rate}
+    },
     async getSeminar(doc){
         return{res:await this.honyoamMongoClient.getSeminar(doc.id)}
     },

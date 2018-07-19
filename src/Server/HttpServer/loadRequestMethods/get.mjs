@@ -93,6 +93,11 @@ o._getPresaleObject=function(id){
         id,
     })
 }
+o._getRate=function(){
+    return this._request({
+        method:             'getRate',
+    })
+}
 o._getSeminar=function(id){
     return this._request({
         method:'getSeminar',

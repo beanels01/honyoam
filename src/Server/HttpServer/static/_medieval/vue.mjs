@@ -56,6 +56,7 @@ let aMain={
                     :data="{
                         type:'medieval',
                         array:data.data,
+                        rate:data.rate,
                     }"
                 ></houseList>
                 <mightLike

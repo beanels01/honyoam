@@ -1,5 +1,6 @@
 import homepageLike from    '../_homepageLike.mjs'
 import medievalLike from    '../_medievalLike.mjs'
+import commaNumber from     '../_commaNumber.mjs'
 import{dom}from'../_simple.mjs'
 let swiper={
     data:()=>({
@@ -71,19 +72,7 @@ let aMain={
         focus:0,
     }),
     methods:{
-        commaNumber(n){
-            let x=[]
-            n=''+n
-            let
-                a=n.length,
-                b=Math.ceil(a/3)
-            for(let i=0;i<b;i++)
-                x.push(n.substring(
-                    a-3*b+3*i,
-                    a-3*b+3*(i+1)
-                ))
-            return x.join(',')
-        },
+        commaNumber,
     },
     props:['language','currentLanguage','mainSeminar','data',],
     template:`

@@ -54,6 +54,7 @@ let aMain={
                     :data="{
                         type:'presale',
                         array:data.data,
+                        rate:data.rate,
                     }"
                 ></homepageLikeHouseList>
                 <mightLike

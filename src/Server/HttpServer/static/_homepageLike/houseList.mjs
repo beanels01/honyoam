@@ -1,13 +1,41 @@
+import commaNumber from '../_commaNumber.mjs'
+let price={
+    data:()=>({
+        currency:0,
+    }),
+    computed:{
+        rateByCurrency(){
+            return this.currency==0?1:this.data.rate
+        },
+    },
+    methods:{commaNumber},
+    props:['data'],
+    template:`
+        <span><template v-if="currency==1">約 </template>{{
+                commaNumber(~~(data.min*rateByCurrency))
+            }}
+            <template v-if="data.min!=data.max"> - {{
+                commaNumber(~~(data.max*rateByCurrency))
+            }}</template>
+            萬
+            <select
+                @click="e=>e.stopPropagation()"
+                v-model=currency
+            >
+                <option value=0>日幣</option>
+                <option value=1>臺幣</option>
+            </select>
+        </span>
+    `
+}
 let presale={
+    components:{price},
     methods:{
         click(){
             location=`/zh-Hant/presale/${this.data.id}`
         },
-        selectClick(e){
-            e.stopPropagation()
-        },
     },
-    props:['data'],
+    props:['data','rate'],
     template:`
         <div
             class="house presale"
@@ -35,11 +63,13 @@ let presale={
                     <div>
                         <div class=a>格局：{{data.patternMin}} - {{data.patternMax}}</div>
                         <div class=a>面積：{{data.areaMin}} - {{data.areaMax}} 平方公尺</div>
-                        <div class=a>價格：{{data.priceMin}} - {{data.priceMax}} 萬
-                            <select @click=selectClick>
-                                <option>日幣</option>
-                                <option>臺幣</option>
-                            </select>
+                        <div class=a>價格：<price
+                                :data="{
+                                    min:data.priceMin,
+                                    max:data.priceMax,
+                                    rate,
+                                }"
+                            ></price>
                         </div>
                     </div>
                 </div>
@@ -54,6 +84,7 @@ let presale={
     `
 }
 let medieval={
+    components:{price},
     methods:{
         click(){
             location=`/zh-Hant/medieval/${this.data.id}`
@@ -62,7 +93,7 @@ let medieval={
             e.stopPropagation()
         },
     },
-    props:['data'],
+    props:['data','rate'],
     template:`
         <div
             class="house medieval"
@@ -85,11 +116,13 @@ let medieval={
                         <div class=a>最近車站：{{data.nearestStation}}</div>
                         <div class=a>格局：{{data.pattern}}</div>
                         <div class=a>面積：{{data.area}} 平方公尺</div>
-                        <div class=a>價格：{{data.price}} 萬
-                            <select @click=selectClick>
-                                <option>日幣</option>
-                                <option>臺幣</option>
-                            </select>
+                        <div class=a>價格：<price
+                                :data="{
+                                    min:data.price,
+                                    max:data.price,
+                                    rate,
+                                }"
+                            ></price>
                         </div>
                     </div>
                 </div>
@@ -123,10 +156,12 @@ let houseList={
                             <presale
                                 v-if="data.type=='presale'"
                                 :data=a
+                                :rate=data.rate
                             ></presale>
                             <medieval
                                 v-if="data.type=='medieval'"
                                 :data=a
+                                :rate=data.rate
                             ></medieval>
                         </div>
                     </div>

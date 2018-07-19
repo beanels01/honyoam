@@ -14,6 +14,7 @@ async function main(rq,rs,lang,patch){
             data:{
                 current:rq.url,
                 medieval:(await this._getMedieval()).res,
+                rate:(await this._getRate()).res,
                 data:(await this._getMedievalList0(lang)).res,
             },
         },
