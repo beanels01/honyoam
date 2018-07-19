@@ -87,13 +87,13 @@ let aMenu={
                     @click="$emit('input','faq')"
                     :class="{focus:value=='faq'}"
                 ><div>
-                    常見問題
+                    客服Q&A
                 </div></div>
                 <div
                     @click="$emit('input','faqFeedback')"
                     :class="{focus:value=='faqFeedback'}"
                 ><div>
-                    常見問題 - 回饋
+                    客服Q&A - 回饋
                 </div></div>
                 <div
                     @click="$emit('input','seminar')"
