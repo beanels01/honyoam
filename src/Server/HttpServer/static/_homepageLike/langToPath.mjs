@@ -1,5 +1,6 @@
 function langToPath(lang){
     return{
+        about:      `${lang}/about`,
         homepage:   `${lang}`,
         news:       `${lang}/news`,
         medieval:   `${lang}/medieval`,

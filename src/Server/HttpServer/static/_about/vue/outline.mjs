@@ -48,7 +48,7 @@ Tel：02-2785-5865`,
     template:`
         <div class=outline>
             <div class=n>
-                <span class=a>物件概要</span> / BRAND
+                <span class=a>公司概要</span> / OUTLINE
             </div>
             <div class=o>
                 <div>
