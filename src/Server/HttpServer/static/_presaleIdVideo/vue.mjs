@@ -71,6 +71,7 @@ let aMain={
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
+                    :currentLanguage=currentLanguage
                 ></hlFooter>
                 <floatBall
                     value=立即聯絡

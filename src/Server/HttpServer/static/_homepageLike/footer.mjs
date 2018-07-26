@@ -1,12 +1,15 @@
 import footer0 from'./footer/footer0.mjs'
+import languageComputed from './languageComputed.mjs'
 let footer={
-    props:['language'],
+    props:['language','currentLanguage'],
     components:{footer0},
+    computed:languageComputed,
     template:`
         <div class=footer>
             <div class=a>
                 <footer0
                     :language=language.footer0
+                    :href=href
                 ></footer0>
             </div>
             <div class=b>

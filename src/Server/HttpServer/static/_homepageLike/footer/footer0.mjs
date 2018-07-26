@@ -2,17 +2,17 @@ import footer0a from './footer0/footer0a.mjs'
 import footer0b from './footer0/footer0b.mjs'
 import footer0c from './footer0/footer0c.mjs'
 let footer0={
-    props:['language'],
+    props:['language','href'],
     components:{footer0a,footer0b,footer0c},
     template:`
         <div>
             <div class=a>
                 <a href=http://www.honyoam.com/preconstruction/>{{language.presale}}</a> |
-                <a href=http://www.honyoam.com/news/>{{language.news}}</a> |
+                <a :href=href.news>{{language.news}}</a> |
                 <a href=http://www.honyoam.com/service/>{{language.service}}</a> |
-                <a href=http://www.honyoam.com/faq/>{{language.qa}}</a> |
+                <a :href=href.qa>{{language.qa}}</a> |
                 <a href=http://www.honyoam.com/loan/>{{language.loan}}</a> |
-                <a href=http://www.honyoam.com/about_us/>{{language.about}}</a> |
+                <a :href=href.about>{{language.about}}</a> |
                 <a href=http://www.honyoam.com/contact_us/>{{language.point}}</a> |
                 <a href=http://www.honyoam.com/reservation/>{{language.reservation}}</a> |
                 <a href=http://www.honyoam.com/newsletters/>E-NEWS</a>
