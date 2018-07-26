@@ -885,6 +885,7 @@ body{
     #main>.mightLike>.g>*{
         display:inline-block;
         width:227px;
+        vertical-align:top;
     }
     #main>.mightLike>.g>*+*{
         margin-left:20px;
