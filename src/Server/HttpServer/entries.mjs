@@ -174,6 +174,20 @@ export default async function(pathname){
                 return calcMedievalIdResult.call(this,rq,rs,a[1],0,a[3])
             }
         if(
+            a.length==4&&
+            a[1] in language&&
+            a[2]=='news'
+        )
+            return function(rq,rs){
+                if(!(
+                    rq.method=='GET'
+                )){
+                    rs.writeHead(400)
+                    return rs.end()
+                }
+                return calcNewsResult.call(this,rq,rs,a[1],0,a[3])
+            }
+        if(
             a.length==5&&
             a[1] in language&&
             a[2]=='presale'&&

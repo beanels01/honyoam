@@ -2,9 +2,10 @@ import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_news/vue'
 async function main(rq,rs,lang,patch,id){
     let news=(await this._getAllNews(lang)).res
-    for(let a of news)
-        if(a._id==id)
-            Object.assign(a,patch)
+    if(patch)
+        for(let a of news)
+            if(a._id==id)
+                Object.assign(a,patch)
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
         title:              '最新消息',
@@ -15,6 +16,7 @@ async function main(rq,rs,lang,patch,id){
             data:{
                 current:rq.url,
                 news,
+                id,
             },
         },
     })

@@ -9,6 +9,7 @@ let normalBlock={
     template:`
         <div
             :class="{focus:value}"
+            @click="$emit('click')"
         >
             <div class=a>
                 <div class=a>
@@ -186,8 +187,24 @@ let pageSelect={
 }
 let aMain={
     created(){
-        this.year=Math.max(...this.yearList)
-        this.month=Math.max(...this.monthList)
+        if(this.data.id){
+            let newsById=this.data.news.filter(a=>this.data.id==a._id)[0]
+            this.year=(new Date(newsById.timestamp)).getYear()
+            this.month=(new Date(newsById.timestamp)).getMonth()
+            this.type=newsById.type
+            if(this.type=='normal'){
+                this.normalFocus[this.newsByYearAndType.findIndex(a=>
+                    a._id==this.data.id
+                )]=1
+            }else{
+                this.enewsLikeFocus=this.newsByYearAndType.findIndex(a=>
+                    a._id==this.data.id
+                )
+            }
+        }else{
+            this.year=Math.max(...this.yearList)
+            this.month=Math.max(...this.monthList)
+        }
     },
     components:{
         hlFooter:   homepageLike.footer,
@@ -324,7 +341,8 @@ let aMain={
                 >
                     <normalBlock
                         v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
-                        v-model=normalFocus[i]
+                        :value=normalFocus[i]
+                        @click="location=normalFocus[i]?href.news:href.news+'/'+a._id"
                         :data=a
                     ></normalBlock>
                     <pageSelect
@@ -344,7 +362,7 @@ let aMain={
                     >
                         <enewsLikeBlock
                             v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
-                            @click="enewsLikeFocus=i"
+                            @click="location=href.news+'/'+a._id"
                             :data=a
                         ></enewsLikeBlock>
                     </div>
@@ -400,3 +418,6 @@ export default{
         ></aMain>
     `,
 }
+/*
+                        v-model=normalFocus[i]
+*/
