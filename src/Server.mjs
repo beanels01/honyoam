@@ -13,7 +13,12 @@ function getStringContentByResponse(res){
 function Server(config){
     this.config=config
     this.data={
-        rate:0.2619, // at 2018-07-20
+        rate:{
+            cny:0,
+            ntd:0,
+            usd:0,
+            jpy:0,
+        },
     }
     if(!('dev' in this.config.mongo))
         this.config.mongo.dev=this.config.dev
@@ -39,13 +44,22 @@ function Server(config){
             r.res=this.handleRequest(r.doc)
         )
     })()
-    setInterval(()=>{
+    let getRate=()=>{
         https.get('https://rate.bot.com.tw/xrt/flcsv/0/day',async res=>{
-            this.rate=+(await getStringContentByResponse(res)).split(
+            let rate=(await getStringContentByResponse(res)).split(
                 '\n'
-            ).map(s=>s.split(',')).filter(a=>a[0]=='JPY')[0][2]
+            ).map(s=>s.split(','))
+            let ntd=+rate.filter(a=>a[0]=='JPY')[0][2]
+            this.data.rate={
+                cny:ntd/rate.filter(a=>a[0]=='CNY')[0][3],
+                jpy:1,
+                ntd,
+                usd:ntd/rate.filter(a=>a[0]=='USD')[0][3],
+            }
         })
-    },60*60*1000)
+    }
+    getRate()
+    setInterval(getRate,60*60*1000)
 }
 Server.prototype.handleRequest=async function(doc){
     if(doc.method in methods)

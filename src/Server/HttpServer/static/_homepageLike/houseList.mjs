@@ -1,17 +1,17 @@
 import commaNumber from '../_commaNumber.mjs'
 let price={
     data:()=>({
-        currency:0,
+        currency:'jpy',
     }),
     computed:{
         rateByCurrency(){
-            return this.currency==0?1:this.data.rate
+            return this.data.rate[this.currency]
         },
     },
     methods:{commaNumber},
     props:['data'],
     template:`
-        <span><template v-if="currency==1">約 </template>{{
+        <span><template v-if="currency!='jpy'">約 </template>{{
                 commaNumber(~~(data.min*rateByCurrency))
             }}
             <template v-if="data.min!=data.max"> - {{
@@ -22,8 +22,10 @@ let price={
                 @click="e=>e.stopPropagation()"
                 v-model=currency
             >
-                <option value=0>日幣</option>
-                <option value=1>臺幣</option>
+                <option value=jpy>日幣</option>
+                <option value=ntd>臺幣</option>
+                <option value=usd>美金</option>
+                <option value=cny>人民幣</option>
             </select>
         </span>
     `
