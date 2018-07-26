@@ -26,6 +26,10 @@ let top={
                     :class="{focus:value=='partner'}"
                     @click="$emit('input','partner')"
                 >{{language.about.top.partner}}</div>
+                <div
+                    :class="{focus:value=='outline'}"
+                    @click="$emit('input','outline')"
+                >{{language.about.top.outline}}</div>
             </div>
         </div></div>
     `

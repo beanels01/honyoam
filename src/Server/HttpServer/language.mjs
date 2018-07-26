@@ -49,7 +49,8 @@ export default{
                 homepage:'首頁',
                 summary:'公司簡介',
                 service:'服務項目',
-                partner:'公司簡介',
+                partner:'合作夥伴',
+                outline:'公司概要',
             },
             summary:{
                 u:`
@@ -410,7 +411,8 @@ export default{
                 homepage:'首页',
                 summary:'公司简介',
                 service:'服务项目',
-                partner:'公司简介',
+                partner:'合作伙伴',
+                outline:'公司概要',
             },
             summary:{
                 u:`
@@ -770,7 +772,8 @@ export default{
                 homepage:'首頁',
                 summary:'公司簡介',
                 service:'服務項目',
-                partner:'公司簡介',
+                partner:'合作夥伴',
+                outline:'公司概要',
             },
             summary:{
                 u:`
