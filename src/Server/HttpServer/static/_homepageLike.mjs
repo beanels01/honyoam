@@ -103,6 +103,11 @@ let housePattern={
 }
 let houseSearch={
     components:{housePattern},
+    data:()=>({
+        currency:'jpy',
+        min:'',
+        max:'',
+    }),
     props:['data'],
     template:`
         <div class=homepageLikeHouseSearch>
@@ -150,16 +155,25 @@ let houseSearch={
                     <div class=margin></div>
                     <div class=block>
                         <div class=a>預算價格</div>
-                        <input placeholder=最低>
+                        <input placeholder=最低 v-model=min>
                         ~
-                        <input placeholder=最高>
+                        <input placeholder=最高 v-model=max>
                         萬
-                        <select>
-                            <option>日幣</option>
-                            <option>臺幣</option>
+                        <select v-model=currency>
+                            <option value=jpy>日幣</option>
+                            <option value=ntd>臺幣</option>
+                            <option value=usd>美金</option>
+                            <option value=cny>人民幣</option>
                         </select>
                         <div class=hint><div>
-                            在此標註匯率與相關換算
+                            <template v-if="currency!='jpy'&&Number.isFinite(+min)&&Number.isFinite(+max)">
+                                約等於 {{
+                                    ~~(min*data.rate[currency])
+                                }} - {{
+                                    ~~(max*data.rate[currency])
+                                }} 萬日幣。
+                            </template>
+                            買賣交易均以日幣為主，其它幣別僅供參考，實際匯率請自行向銀行確認換算。
                         </div></div>
                     </div>
                 </div>

@@ -51,7 +51,7 @@ let aMain={
                     }"
                 ></medievalLikeTop>
                 <houseSearch
-                    :data="{type:'medieval'}"
+                    :data="{type:'medieval',rate:data.rate}"
                 ></houseSearch>
                 <houseList
                     :data="{

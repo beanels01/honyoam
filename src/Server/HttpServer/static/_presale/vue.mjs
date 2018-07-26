@@ -49,7 +49,7 @@ let aMain={
                     :data="{mobile:1,desktop:1}"
                 ></presaleLikeTop>
                 <houseSearch
-                    :data="{type:'presale'}"
+                    :data="{type:'presale',rate:data.rate}"
                 ></houseSearch>
                 <homepageLikeHouseList
                     :data="{
