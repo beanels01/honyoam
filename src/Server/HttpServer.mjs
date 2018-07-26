@@ -76,9 +76,14 @@ HttpServer.prototype.handleRequest=async function(rq,rs){
             rs.writeHead(304)
             rs.end()
         }else{
+            let type=mime.getType(p)
+            if(['application/javascript','text/css'].includes(type))
+                type=`${type};charset=utf-8`
+            else
+                type='application/octet-stream'
             rs.writeHead(200,{
                 etag:et,
-                'content-type':mime.getType(p)||'application/octet-stream',
+                'content-type':type
             })
             fs.createReadStream(p).pipe(rs)
         }
