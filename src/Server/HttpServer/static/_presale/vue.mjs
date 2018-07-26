@@ -25,6 +25,7 @@ let aMain={
                     image:'/image/'+c.image,
                     title:c.name,
                     subtitle:c.subName,
+                    href:`${this.currentLanguage}/presale/${c.id}`
                 }
             })
         },

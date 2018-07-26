@@ -859,6 +859,9 @@ body{
         margin:45px auto;
     }
 }
+#main .mightLikeBlock{
+    text-decoration:unset;
+}
 #main .mightLikeBlock>.b{
     color:#133466;
 }

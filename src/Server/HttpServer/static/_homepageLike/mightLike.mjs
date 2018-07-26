@@ -9,13 +9,13 @@ function createSwiperContainer(a){
 let mightLikeBlock={
     props:['data'],
     template:`
-        <div class=mightLikeBlock>
+        <a class=mightLikeBlock :href=data.href>
             <div class=a>
                 <img :src=data.image>
             </div>
             <div class=b>{{data.title}}</div>
             <div class=c>{{data.subtitle}}</div>
-        </div>
+        </a>
     `,
 }
 let mightLikeList={
