@@ -21,13 +21,13 @@ let aMain={
                 a[b.id]=b
             return this.data.presale.youMightLike.map(b=>{
                 let c=a[b]
-                return{
+                return c&&{
                     image:'/image/'+c.image,
                     title:c.name,
                     subtitle:c.subName,
                     href:`${this.currentLanguage}/presale/${c.id}`
                 }
-            })
+            }).filter(a=>a)
         },
     },
     data:()=>({
