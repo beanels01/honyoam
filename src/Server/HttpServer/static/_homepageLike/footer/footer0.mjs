@@ -7,15 +7,13 @@ let footer0={
     template:`
         <div>
             <div class=a>
-                <a href=http://www.honyoam.com/preconstruction/>{{language.presale}}</a> |
+                <a :href=href.presale>{{language.presale}}</a> |
+                <a :href=href.medieval>{{language.medieval}}</a> |
                 <a :href=href.news>{{language.news}}</a> |
-                <a href=http://www.honyoam.com/service/>{{language.service}}</a> |
-                <a :href=href.qa>{{language.qa}}</a> |
                 <a href=http://www.honyoam.com/loan/>{{language.loan}}</a> |
+                <a :href=href.qa>{{language.qa}}</a> |
                 <a :href=href.about>{{language.about}}</a> |
-                <a href=http://www.honyoam.com/contact_us/>{{language.point}}</a> |
-                <a href=http://www.honyoam.com/reservation/>{{language.reservation}}</a> |
-                <a href=http://www.honyoam.com/newsletters/>E-NEWS</a>
+                <a :href=href.qaForm>{{language.qaForm}}</a>
             </div>
             <hr>
             <div class=b>
