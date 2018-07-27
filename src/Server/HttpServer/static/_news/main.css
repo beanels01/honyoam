@@ -261,6 +261,14 @@
         border-top:1px solid #cfcfcf;
         padding:20px 0;
     }
+    #main>.normal>.focus>.b>.c h1{
+        font-size:40px;
+        font-weight:bold;
+        color:rgba(37, 155, 215, 1.00);
+    }
+    #main>.normal>.focus>.b>.c h2{
+        font-size:28px;
+    }
     #main>.normal>.focus>.b>.c img{
         width:100%;
     }

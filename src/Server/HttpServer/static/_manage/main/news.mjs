@@ -9,6 +9,9 @@ let
                 container:[
                     'link',
                     'image',
+                    {color:[]},
+                    {header:1},
+                    {header:2},
                 ],
                 handlers:{
                     image:quillImageHandler
@@ -18,6 +21,8 @@ let
         formats:[
             'link',
             'image',
+            'color',
+            'header',
         ],
     }
 let newsInput={
