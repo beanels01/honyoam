@@ -383,9 +383,10 @@ let aMain={
                             next:
                                 newsByYearAndType[enewsLikeFocus+1],
                         }"
-                        @previous="enewsLikeFocus--"
-                        @next="enewsLikeFocus++"
-                        @back="enewsLikeFocus=null"
+                        @previous="location=href.news+'/'+newsByYearAndType[enewsLikeFocus-1]._id"
+
+                        @next="location=href.news+'/'+newsByYearAndType[enewsLikeFocus+1]._id"
+                        @back="location=href.news"
                     ></enewsLikeContent>
                 </div>
                 <hlFooter
