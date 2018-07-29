@@ -33,13 +33,15 @@ let service={
     props:['language'],
     template:`
         <div class=service>
-            <div class=a>{{language.title}}</div>
-            <div class=b></div>
-            <div class=c>{{language.subtitle}}</div>
-            <aBlock
-                v-for="a of language.content"
-                :data=a
-            ></aBlock>
+            <!--
+                <div class=a>{{language.title}}</div>
+                <div class=b></div>
+                <div class=c>{{language.subtitle}}</div>
+                <aBlock
+                    v-for="a of language.content"
+                    :data=a
+                ></aBlock>
+            -->
         </div>
     `,
 }

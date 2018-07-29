@@ -3,7 +3,7 @@ import top from             './vue/top.mjs'
 import partner from         './vue/partner.mjs'
 import summary from         './vue/summary.mjs'
 import service from         './vue/service.mjs'
-import outline from         './vue/outline.mjs'
+import idea from            './vue/outline.mjs'
 import mobileTop from       './vue/mobileTop.mjs'
 let aMain={
     components:{
@@ -15,7 +15,7 @@ let aMain={
         aPartner:           partner,
         aService:           service,
         companySummary:     summary,
-        aOutline:           outline,
+        aIdea:              idea,
         mobileTop,
     },
     computed:{
@@ -60,10 +60,10 @@ let aMain={
                     v-if="focus=='partner'"
                     :language=language.about.partner
                 ></aPartner>
-                <aOutline
+                <aIdea
                     v-if="focus=='outline'"
                     :language=language.about.outline
-                ></aOutline>
+                ></aIdea>
                 <hlFooter
                     :language=language.homepageLike.footer
                     :currentLanguage=currentLanguage

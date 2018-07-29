@@ -1,30 +1,61 @@
 let summary={
+    data:()=>({
+        data:[
+            {
+                key:'東京辦公室',
+                value:`本葉国際資產管理株式会社
+〒105-0012　東京都港区芝大門2‐4‐1　IZUMIビル4階
+TEL 03－6809－1836
+`,
+
+            },
+            {
+                key:'台北辦公室',
+                value:`本葉國際資產管理股份有限公司
+104台北市中山區松江路122號11樓
+Tel：02-2785-5865`,
+
+            },
+            {
+                key:'代表取締役社長',
+                value:`林彦宏`,
+            },
+            {
+                key:'設立年月日',
+                value:`2013年12月19日`,
+            },
+            {
+                key:'營業執照',
+                value:`東京都知事（1）第96199號`,
+            },
+            {
+                key:'所屬團體',
+                value:`公益社団法人東京都宅地建物取引業協会
+公益社団法人全国宅地建物取引業保証協会
+`,
+            },
+            {
+                key:'公司網頁',
+                value:`www.honyoam.com
+`,
+            },
+        ],
+    }),
     props:[
         'currentLanguage',
         'language',
     ],
     template:`
         <div class=summary>
-            <div class=u>
-                <div v-html=language.u>
+            <div class=a>
+                <div class=a>
+                    <span class=a>公司概要</span> / SUMMARY
                 </div>
-                <img src=/_about/img/a0.png style=width:20%>
-                <img src=/_about/img/a1.png style=width:70%>
-            </div>
-            <div class=summary>
-                <div class=v>
-                    <div class=n>
-                        <div
-                            v-for="a of language.table"
-                            class=a
-                        >
-                            <div class=n>
-                                {{a[0]}}
-                            </div>
-                            <div
-                                class=o
-                                v-html=a[1]
-                            ></div>
+                <div class=b>
+                    <div>
+                        <div v-for="a in data">
+                            <div class=a>{{a.key}}</div>
+                            <div class=b>{{a.value}}</div>
                         </div>
                     </div>
                 </div>
@@ -48,115 +79,15 @@ let summary={
                     <div v-html=language.p[2]></div>
                 </div>
             </div></div>
-            <div class=n>{{language.summary.title}}</div>
-            <div class=q v-html=language.summary.content></div>
-            <div class=r>
-            </div>
-            <div class=n>{{language.chairman.title}}</div>
-            <div class=q v-html=language.chairman.content></div>
-            <template v-if="currentLanguage=='jp'">
-                <div class=n>{{language.chairmanSay.title}}</div>
-                <div class=q v-html=language.chairmanSay.content></div>
-            </template>
-            <div class=n>{{language.service.title}}</div>
-            <div class=t>
-                <div class=a>
-                    <div>
-                        <div class=a>
-                            <div class=n
-                                v-html=language.service.content[0].title
-                            >
-                            </div>
-                            <div class=o>
-                                <img src=/_about/img/c0.png>
-                            </div>
-                            <div class=p
-                                v-html=language.service.content[0].content
-                            >
-                            </div>
-                        </div>
-                        <div class=b>
-                            <img src=/_about/img/arrow.png>
-                        </div>
-                        <div class=a>
-                            <div class=n
-                                v-html=language.service.content[1].title
-                            >
-                            </div>
-                            <div class=o>
-                                <img src=/_about/img/c1.png>
-                            </div>
-                            <div class=p
-                                v-html=language.service.content[1].content
-                            >
-                            </div>
-                        </div>
-                        <div class=b>
-                            <img src=/_about/img/arrow.png>
-                        </div>
-                        <div class=a>
-                            <div class=n
-                                v-html=language.service.content[2].title
-                            >
-                            </div>
-                            <div class=o>
-                                <img src=/_about/img/c2.png>
-                            </div>
-                            <div class=p
-                                v-html=language.service.content[2].content
-                            >
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class=a>
-                            <div class=n
-                                v-html=language.service.content[3].title
-                            >
-                            </div>
-                            <div class=o>
-                                <img src=/_about/img/c3.png>
-                            </div>
-                            <div class=p
-                                v-html=language.service.content[3].content
-                            >
-                            </div>
-                        </div>
-                        <div class=b>
-                            <img src=/_about/img/arrow.png>
-                        </div>
-                        <div class=a>
-                            <div class=n
-                                v-html=language.service.content[4].title
-                            >
-                            </div>
-                            <div class=o>
-                                <img src=/_about/img/c4.png>
-                            </div>
-                            <div class=p
-                                v-html=language.service.content[4].content
-                            >
-                            </div>
-                        </div>
-                        <div class=b>
-                            <img src=/_about/img/arrow.png>
-                        </div>
-                        <div class=a>
-                            <div class=n
-                                v-html=language.service.content[5].title
-                            >
-                            </div>
-                            <div class=o>
-                                <img src=/_about/img/c5.png>
-                            </div>
-                            <div class=p
-                                v-html=language.service.content[5].content
-                            >
-                            </div>
-                        </div>
-                    </div>
+            <div class=u>
+                <div v-html=language.u>
                 </div>
+                <img src=/_about/img/a0.png style=width:20%>
+                <img src=/_about/img/a1.png style=width:70%>
             </div>
+            <div class=n>團隊介紹</div>
+            <div class=n>社長的話</div>
+            <div class=n>沿革</div>
         </div>
     `
 }

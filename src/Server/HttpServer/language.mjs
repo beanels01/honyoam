@@ -768,10 +768,10 @@ export default{
             top:{
                 aboutUs:'關於我們',
                 homepage:'首頁',
-                summary:'公司簡介',
-                service:'服務項目',
+                summary:'公司概要',
+                service:'服務內容',
                 partner:'合作夥伴',
-                outline:'公司概要',
+                idea:'經營理念及願景',
             },
             summary:{
                 u:`
