@@ -1,6 +1,7 @@
 let singleEventInput={
     created(){
         this.checkValue()
+    console.log(this.data)
     },
     methods:{
         checkValue(){
@@ -39,7 +40,7 @@ let singleEventInput={
                     <option
                         v-for="a of data"
                         :value=a.id
-                    >{{a.title}}</option>
+                    >{{a.name}}</option>
                 </select>
             </p>
         </div>
