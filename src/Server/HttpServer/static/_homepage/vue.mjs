@@ -20,12 +20,12 @@ let aMain={
         newsData(){
             return this.data.news.filter(a=>
                 ['normal','enews','president'].includes(a.type)
-            )
+            ).slice(6)
         },
         successData(){
             return this.data.news.filter(a=>
                 a.type=='success'
-            )
+            ).slice(5)
         },
         href(){
             return homepageLike.langToPath(this.currentLanguage)
@@ -61,6 +61,7 @@ let aMain={
                 ></events>
                 <success
                     :data=successData
+                    :href=href.news
                 ></success>
                 <div class=about0>
                     <div class=a>關於我們</div>

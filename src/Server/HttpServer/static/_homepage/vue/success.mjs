@@ -25,7 +25,7 @@ let success={
             }
         },
     },
-    props:['data'],
+    props:['data','href'],
     template:`
         <div class=success>
             <div class=a>
@@ -59,7 +59,7 @@ let success={
                 </div>
             </div>
             <div class=c>
-                <button>觀看更多成功案例</button>
+                <button @click="location=href">觀看更多成功案例</button>
             </div>
         </div>
     `
