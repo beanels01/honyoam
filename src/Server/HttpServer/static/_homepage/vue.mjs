@@ -20,12 +20,12 @@ let aMain={
         newsData(){
             return this.data.news.filter(a=>
                 ['normal','enews','president'].includes(a.type)
-            ).slice(6)
+            ).slice(0,6)
         },
         successData(){
             return this.data.news.filter(a=>
                 a.type=='success'
-            ).slice(5)
+            ).slice(0,5)
         },
         href(){
             return homepageLike.langToPath(this.currentLanguage)
