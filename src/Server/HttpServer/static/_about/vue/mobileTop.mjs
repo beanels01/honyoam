@@ -34,7 +34,7 @@ let top={
                         {{{
                             summary:language.about.top.summary,
                             service:language.about.top.service,
-                            partner:language.about.top.partner,
+                            idea:language.about.top.idea,
                         }[value]}}
                     </div>
                     <div class=b>
@@ -56,9 +56,9 @@ let top={
                         @click="click('service')"
                     >{{language.about.top.service}}</div>
                     <div
-                        :class="{focus:value=='partner'}"
-                        @click="click('partner')"
-                    >{{language.about.top.partner}}</div>
+                        :class="{focus:value=='idea'}"
+                        @click="click('idea')"
+                    >{{language.about.top.idea}}</div>
                 </div>
             </div>
         </div>

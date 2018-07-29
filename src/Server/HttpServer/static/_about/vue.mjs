@@ -1,6 +1,5 @@
 import homepageLike from    '../_homepageLike.mjs'
 import top from             './vue/top.mjs'
-import partner from         './vue/partner.mjs'
 import summary from         './vue/summary.mjs'
 import service from         './vue/service.mjs'
 import idea from            './vue/outline.mjs'
@@ -12,7 +11,6 @@ let aMain={
         hlHeader:           homepageLike.header,
         floatBall:          homepageLike.floatBall,
         aTop:               top,
-        aPartner:           partner,
         aService:           service,
         companySummary:     summary,
         aIdea:              idea,
@@ -56,10 +54,6 @@ let aMain={
                     v-if="focus=='service'"
                     :language=language.about.service
                 ></aService>
-                <aPartner
-                    v-if="focus=='partner'"
-                    :language=language.about.partner
-                ></aPartner>
                 <aIdea
                     v-if="focus=='outline'"
                     :language=language.about.outline
