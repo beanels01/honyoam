@@ -1,33 +1,9 @@
 let success={
+    created(){
+        this.focus=~~((this.data.length-1)/2)
+    },
     data:()=>({
-        focus:2,
-        content:[
-            {
-                image:'_homepage/success/0.jpg',
-                title:'ライオンズマンション東松山',
-                salesman:'黃大明',
-            },
-            {
-                image:'_homepage/success/1.jpg',
-                title:'ライオンズマンション五反野第３',
-                salesman:'黃大明',
-            },
-            {
-                image:'_homepage/success/2.jpg',
-                title:'中央林間南パ－ク・ホ－ムズ',
-                salesman:'黃大明',
-            },
-            {
-                image:'_homepage/success/3.jpg',
-                title:'レガスタ東向島',
-                salesman:'黃大明',
-            },
-            {
-                image:'_homepage/success/4.jpg',
-                title:'ダイホーステージ池上',
-                salesman:'黃大明',
-            },
-        ]
+        focus:0,
     }),
     methods:{
         goLeft(){
@@ -35,7 +11,7 @@ let success={
                 this.focus--
         },
         goRight(){
-            if(this.focus+1<this.content.length)
+            if(this.focus+1<this.data.length)
                 this.focus++
         },
         bnnStyle(){
@@ -49,6 +25,7 @@ let success={
             }
         },
     },
+    props:['data'],
     template:`
         <div class=success>
             <div class=a>
@@ -62,14 +39,14 @@ let success={
                         :style=bnnStyle()
                     >
                         <div
-                            v-for="(c,i) in content"
+                            v-for="(c,i) in data"
                             class=a
                             :style=optionStyle(c,i)
                         >
-                            <img class=n :src=c.image>
+                            <img class=n :src="'image/'+c.image">
                             <div class=o></div>
                             <div class=p><div>
-                                {{c.title}} / {{c.salesman}}
+                                {{c.title}}
                             </div></div>
                         </div>
                     </div>

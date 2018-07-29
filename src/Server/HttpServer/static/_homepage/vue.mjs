@@ -5,9 +5,6 @@ import events from          './vue/events.mjs'
 import search from          './vue/search.mjs'
 import news1 from           './vue/news1.mjs'
 let aMain={
-    created(){
-        console.log(this.data.news)
-    },
     components:{
         hlFooter:   homepageLike.footer,
         hlMenu:     homepageLike.menu,
@@ -63,7 +60,7 @@ let aMain={
                     :href=href.contact
                 ></events>
                 <success
-                    :success=successData
+                    :data=successData
                 ></success>
                 <div class=about0>
                     <div class=a>關於我們</div>
