@@ -686,6 +686,10 @@
     #main>.news1>.b>.n>.a>.o>.title{
         display:block;
     }
+    #main>.news1>.b>.n>.a>.o>.title>*{
+        color:unset;
+        text-decoration:unset;
+    }
     #main>.news1>.b>.o{
         text-align:center;
     }
@@ -721,6 +725,10 @@
     }
     #main>.news1>.b>.n>.a>.title{
         display:table-cell;
+    }
+    #main>.news1>.b>.n>.a>.title>*{
+        color:unset;
+        text-decoration:unset;
     }
     #main>.news1>.b>.o{
         text-align:right;
