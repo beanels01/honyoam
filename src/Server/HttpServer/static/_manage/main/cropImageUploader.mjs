@@ -81,13 +81,13 @@ let cropImageUploader={
                     :canScale=true
                     :outputSize=1
                     :autoCrop=true
-                    :autoCropWidth="innerData.autoCropWidth||240"
-                    :autoCropHeight="innerData.autoCropHeight||240"
-                    :fixed=true
-                    :fixedNumber="innerData.fixedNumber||[1,1]"
+                    :autoCropWidth="'autoCropWidth'in innerData?innerData.autoCropWidth:240"
+                    :autoCropHeight="'autoCropHeight'in innerData?innerData.autoCropHeight:240"
+                    :fixed="'fixed'in innerData?innerData.fixed:true"
+                    :fixedNumber="'fixedNumber'in innerData?innerData.fixedNumber:[1,1]"
                     :style="{
-                        width:(innerData.width||480)+'px',
-                        height:(innerData.height||360)+'px'
+                        width:('width'in innerData?innerData.width:480)+'px',
+                        height:('height'in innerData?innerData.height:360)+'px'
                     }"
                 ></vueCropper>
                 <button @click=crop>裁切</button>

@@ -1,6 +1,7 @@
 import api from                 '../../_api.mjs'
 import languageSelect from      './languageSelect.mjs'
-import quillImageHandler from  './quillImageHandler.mjs'
+import quillImageHandler from       './quillImageHandler.mjs'
+import plainCropImageUploader from  './plainCropImageUploader.mjs'
 let
     options={
         placeholder:'內文',
@@ -28,6 +29,7 @@ let
 let newsInput={
     components:{
         quillEditor:VueQuillEditor.quillEditor,
+        plainCropImageUploader,
     },
     created(){
         this.getNews()
@@ -92,6 +94,12 @@ let newsInput={
                     :options=options
                     v-model=data.content
                 ></quillEditor>
+            </div>
+            <div v-if="data.type=='success'">
+                首頁圖：<br>
+                <plainCropImageUploader
+                    v-model=data.image
+                ></plainCropImageUploader>
             </div>
             <div>
                 <button @click=preview>預覽</button>

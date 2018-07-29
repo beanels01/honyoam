@@ -7,6 +7,7 @@ import languageSelect from      './languageSelect.mjs'
 import cropImageUploader from   './cropImageUploader.mjs'
 import imageUploader from       './imageUploader.mjs'
 import galleryCropImageUploader from    './galleryCropImageUploader.mjs'
+import plainCropImageUploader from      './plainCropImageUploader.mjs'
 let keyValueEditOption={
     created(){
         this.checkValue()
@@ -51,6 +52,7 @@ let inputForSpecificObject={
         inputForSpecificLanguage,
         cropImageUploader,
         imageUploader,
+        plainCropImageUploader,
     },
     created(){
         this.in()
@@ -111,33 +113,33 @@ let inputForSpecificObject={
             <h1>橫幅圖片</h1>
             <div class=indent>
                 <h2>TOP</h2>
-                <imageUploader
+                <plainCropImageUploader
                     v-model=value.banner.top
-                ></imageUploader>
+                ></plainCropImageUploader>
                 <h2>建築設計</h2>
-                <imageUploader
+                <plainCropImageUploader
                     v-model=value.banner.concept
-                ></imageUploader>
+                ></plainCropImageUploader>
                 <h2>周邊環境</h2>
-                <imageUploader
+                <plainCropImageUploader
                     v-model=value.banner.environment
-                ></imageUploader>
+                ></plainCropImageUploader>
                 <h2>交通方式</h2>
-                <imageUploader
+                <plainCropImageUploader
                     v-model=value.banner.traffic
-                ></imageUploader>
+                ></plainCropImageUploader>
                 <h2>空間格局</h2>
-                <imageUploader
+                <plainCropImageUploader
                     v-model=value.banner.pattern
-                ></imageUploader>
+                ></plainCropImageUploader>
                 <h2>物件概要</h2>
-                <imageUploader
+                <plainCropImageUploader
                     v-model=value.banner.summary
-                ></imageUploader>
+                ></plainCropImageUploader>
                 <h2>影音介紹</h2>
-                <imageUploader
+                <plainCropImageUploader
                     v-model=value.banner.video
-                ></imageUploader>
+                ></plainCropImageUploader>
             </div>
             <h1>TOP</h1>
             <div class=indent>
