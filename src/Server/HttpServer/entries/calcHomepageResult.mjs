@@ -1,6 +1,7 @@
 import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_homepage/vue'
 async function main(rq,rs,lang,patch){
+    let news=(await this._getAllNews(lang)).res
     let data=patch||(await this._getHomepage()).res
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
@@ -16,6 +17,7 @@ async function main(rq,rs,lang,patch){
             },
             data:{
                 current:rq.url,
+                news,
             },
         },
     })

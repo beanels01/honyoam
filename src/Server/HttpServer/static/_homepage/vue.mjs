@@ -5,6 +5,9 @@ import events from          './vue/events.mjs'
 import search from          './vue/search.mjs'
 import news1 from           './vue/news1.mjs'
 let aMain={
+    created(){
+        console.log(this.data.news)
+    },
     components:{
         hlFooter:   homepageLike.footer,
         hlMenu:     homepageLike.menu,
@@ -17,6 +20,16 @@ let aMain={
         news1,
     },
     computed:{
+        newsData(){
+            return this.data.news.filter(a=>
+                ['normal','enews','president'].includes(a.type)
+            )
+        },
+        successData(){
+            return this.data.news.filter(a=>
+                a.type=='success'
+            )
+        },
         href(){
             return homepageLike.langToPath(this.currentLanguage)
         },
@@ -41,12 +54,17 @@ let aMain={
                     :rotation=homepage.rotation
                     :href=href
                 ></newProducts>
-                <news1 :href=href.news></news1>
+                <news1
+                    :href=href.news
+                    :data=newsData
+                ></news1>
                 <events
                     :content=homepage.event
                     :href=href.contact
                 ></events>
-                <success></success>
+                <success
+                    :success=successData
+                ></success>
                 <div class=about0>
                     <div class=a>關於我們</div>
                     <div class=b>ABOUT US</div>

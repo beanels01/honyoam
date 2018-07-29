@@ -1,15 +1,20 @@
 let xRow={
-    props:['value'],
+    props:['data'],
+    computed:{
+        date(){
+            return new Date(this.data.timestamp)
+        }
+    },
     template:`
         <div class=a>
-            <div class=n>{{value.time}}</div>
+            <div class=n>{{1900+date.getYear()}}年{{date.getMonth()}}月{{date.getDate()}}日</div>
             <div class=o>
-                <div v-if="value.tag=='gg'" class="tag gg">公告訊息</div>
-                <div v-if="value.tag=='xg'" class="tag xg">相關報導</div>
-                <div v-if="value.tag=='shm'" class="tag shm">說明會</div>
-                <div class=title>{{value.title}}</div>
+                <div v-if="data.type=='normal'" class="tag gg">一般公告</div>
+                <div v-if="data.type=='enews'" class="tag xg">E-News</div>
+                <div v-if="data.type=='president'" class="tag shm">社長專欄</div>
+                <div class=title>{{data.title}}</div>
             </div>
-            <div class=title>{{value.title}}</div>
+            <div class=title>{{data.title}}</div>
         </div>
     `
 }
@@ -52,7 +57,7 @@ let data={
 let news1={
     components:{xRow},
     data:()=>data,
-    props:['href'],
+    props:['href','data'],
     template:`
         <div class=news1>
             <div class=a>
@@ -61,12 +66,12 @@ let news1={
             </div>
             <div class=b>
                 <div class=n>
-                    <xRow class=b :value=value.top></xRow>
+                    <xRow class=b :data=data[0]></xRow>
                     <div class=d><div></div></div>
                     <xRow
-                        v-for="a in value.array"
+                        v-for="a in data.slice(1)"
                         class=c
-                        :value=a
+                        :data=a
                     ></xRow>
                 </div>
                 <div class=o>
