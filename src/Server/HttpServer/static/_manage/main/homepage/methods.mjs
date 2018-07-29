@@ -35,6 +35,11 @@ export default{
         if(!this.homepage.rotation)
             this.homepage.rotation={}
     },
+    async getSeminars(){
+        this.seminars=(await api.post({
+            method:'getSeminars'
+        })).res
+    },
     async submit(upload){
         if(
             !this.homepage.mission.mobileImage||

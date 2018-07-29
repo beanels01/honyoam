@@ -13,9 +13,11 @@ export default{
     },
     created(){
         this.getHomepage()
+        this.getSeminars()
     },
     data:()=>({
         homepage:                   null,
+        seminars:                   null,
         lock:                       false,
         selectedLanguage:           '',
         selectedLanguageForEvent:   '',
@@ -64,8 +66,9 @@ export default{
                         v-model=selectedLanguageForEvent
                     ></languageSelect>
                 </p>
-                <template v-if=selectedLanguageForEvent>
+                <template v-if="selectedLanguageForEvent&&seminars">
                     <eventInput
+                        :data="seminars.filter(a=>a.language==selectedLanguageForEvent)"
                         v-model=homepage.event[selectedLanguageForEvent]
                     ></eventInput>
                     <button @click=preview>預覽</button>

@@ -31,7 +31,12 @@ let events={
     data:()=>({
         focus:0,
     }),
-    props:['href','content'],
+    methods:{
+        href(id){
+            return`${this.data.href}/${id}`
+        },
+    },
+    props:['data','content'],
     template:`
         <div class=events>
             <div class=n>
@@ -59,7 +64,7 @@ let events={
                                 <div class=b>{{content[focus].content}}</div>
                             </div>
                             <div class=more>
-                                <a :href=href>
+                                <a :href="href(content[focus].seminar)">
                                     了解更多
                                     <img src=img/ie_icon03.png>
                                 </a>

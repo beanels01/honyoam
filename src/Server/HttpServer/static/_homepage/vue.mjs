@@ -57,7 +57,9 @@ let aMain={
                 ></news1>
                 <events
                     :content=homepage.event
-                    :href=href.contact
+                    :data="{
+                        href:href.seminar
+                    }"
                 ></events>
                 <success
                     :data=successData

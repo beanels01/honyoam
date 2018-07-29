@@ -7,7 +7,7 @@ function langToPath(lang){
         presale:    `${lang}/presale`,
         qa:         `${lang}/qa`,
         qaForm:     `${lang}/qa#form`,
-        contact:    `${lang}/contact`,
+        seminar:    `${lang}/seminar`,
         user:       `#`,
     }
 }

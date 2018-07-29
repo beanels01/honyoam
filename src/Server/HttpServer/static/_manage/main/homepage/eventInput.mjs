@@ -14,7 +14,7 @@ let singleEventInput={
                 })
         },
     },
-    props:['value'],
+    props:['data','value'],
     template:`
         <div>
             <p>
@@ -32,6 +32,15 @@ let singleEventInput={
             <p>
                 內容：<br>
                 <textarea v-model=value.content></textarea>
+            </p>
+            <p>
+                說明會：<br>
+                <select v-model="value.seminar">
+                    <option
+                        v-for="a of data"
+                        :value=a.id
+                    >{{a.title}}</option>
+                </select>
             </p>
         </div>
     `,
@@ -52,15 +61,24 @@ let eventInput={
                 this.$emit('input',[0,0,0])
         },
     },
-    props:['value'],
+    props:['value','data'],
     template:`
         <div v-if=value>
             <h4>第一個說明會</h4>
-            <singleEventInput v-model=value[0]></singleEventInput>
+            <singleEventInput
+                :data=data
+                v-model=value[0]
+            ></singleEventInput>
             <h4>第二個說明會</h4>
-            <singleEventInput v-model=value[1]></singleEventInput>
+            <singleEventInput
+                :data=data
+                v-model=value[1]
+            ></singleEventInput>
             <h4>第三個說明會</h4>
-            <singleEventInput v-model=value[2]></singleEventInput>
+            <singleEventInput
+                :data=data
+                v-model=value[2]
+            ></singleEventInput>
         </div>
     `,
     watch:{
