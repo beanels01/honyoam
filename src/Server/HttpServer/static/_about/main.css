@@ -255,21 +255,18 @@
         width:100%;
     }
 }
-#main>.service>.partner>*>div{
-    color:rgba(37, 155, 214, 1.00);
-}
 @media(max-width:1279px){
     #main>.service>.partner{
         margin:30px 10px;
     }
-    #main>.service>.partner>*>div{
+    #main>.service>.partner>*>.a{
         font-size:20px;
         margin-bottom:10px;
     }
     #main>.service>.partner>*+*{
         margin-top:30px;
     }
-    #main>.service>.partner>*>img{
+    #main>.service>.partner>*>.b>img{
         height:30px;
     }
 }
@@ -278,15 +275,58 @@
         width:1170px;
         margin:60px auto;
     }
-    #main>.service>.partner>*>div{
-        font-size:30px;
-        margin-bottom:20px;
-    }
     #main>.service>.partner>*+*{
         margin-top:40px;
     }
-    #main>.service>.partner>*>img{
-        height:50px;
+    #main>.service>.partner>.b{
+        display:table;
+        width:100%;
+    }
+    #main>.service>.partner>.b>*{
+        display:table-row;
+    }
+    #main>.service>.partner>.b>*>*{
+        display:table-cell;
+    }
+    #main>.service>.partner>.b>*>.a{
+        border:1px solid lightgray;
+        padding:15px 30px;
+    }
+    #main>.service>.partner>.b>*>.b{
+        width:50px;
+    }
+    #main>.service>.partner>.b>*>*>img{
+        width:100%;
+    }
+    #main>.service>.partner>.d{
+        display:table;
+        width:100%;
+    }
+    #main>.service>.partner>.d>*{
+        display:table-row;
+    }
+    #main>.service>.partner>.d>*>*{
+        display:table-cell;
+    }
+    #main>.service>.partner>.d>.a>*{
+        height:125px;
+    }
+    #main>.service>.partner>.d>.a>.a{
+        width:calc(calc(1170px - 60px) / 4);
+        box-sizing:border-box;
+        border:1px solid lightgray;
+        padding:15px;
+        vertical-align:middle;
+        text-align:center;
+    }
+    #main>.service>.partner>.d>.a>.a>img{
+        width:100%;
+    }
+    #main>.service>.partner>.d>.a>.b{
+        width:20px;
+    }
+    #main>.service>.partner>.d>.b>*{
+        height:20px;
     }
 }
 #main>.summary>.a>.a{

@@ -34,30 +34,69 @@ let service={
     template:`
         <div class=service>
             <div class=partner>
-                <div>
-                    <div>{{language.partner[0]}}</div>
-                    <img src=/_about/img/d0.png>
-                    <img src=/_about/img/d1.gif>
+                <div class=a>{{language.partner[0]}}</div>
+                <div class=b>
+                    <div>
+                        <div class=a><img src=/_about/img/d0.png></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/d1.gif></div>
+                    </div>
                 </div>
-                <div>
-                    <div>{{language.partner[1]}}</div>
-                    <img src=/_about/img/e0.png>
-                    <img src=/_about/img/e1.png>
-                    <img src=/_about/img/e2.png>
-                    <img src=/_about/img/e3.png>
-                    <img src=/_about/img/e4.png>
-                    <img src=/_about/img/e5.png>
-                    <img src=/_about/img/e6.png>
+                <div class=c>{{language.partner[1]}}</div>
+                <div class=d>
+                    <div class=a>
+                        <div class=a><img src=/_about/img/e0.png></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/e1.png></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/e2.png></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/e3.png></div>
+                    </div>
+                    <div class=b>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class=a>
+                        <div class=a><img src=/_about/img/e4.png></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/e5.png></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/e6.png></div>
+                    </div>
                 </div>
-                <div>
-                    <div>{{language.partner[2]}}</div>
-                    <img src=/_about/img/f0.jpg>
-                    <img src=/_about/img/f1.png>
-                    <img src=/_about/img/f2.png>
-                    <img src=/_about/img/f3.png>
-                    <img src=/_about/img/f4.png style="background-color:#948a54">
-                    <img src=/_about/img/f5.png>
-                    <img src=/_about/img/f6.gif>
+                <div class=c>{{language.partner[2]}}</div>
+                <div class=d>
+                    <div class=a>
+                        <div class=a><img src=/_about/img/f0.jpg></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/f1.png></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/f2.png></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/f3.png></div>
+                    </div>
+                    <div class=b>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class=a>
+                        <div class=a><img src=/_about/img/f4.png style="background-color:#948a54"></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/f5.png></div>
+                        <div class=b></div>
+                        <div class=a><img src=/_about/img/f6.gif></div>
+                    </div>
                 </div>
             </div>
         </div>
