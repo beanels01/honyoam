@@ -946,12 +946,10 @@ export default{
             signUp:             '立即報名',
         },
         faqClasses:{
-            class00:'新手上路-買賣',
-            class01:'新手上路-租賃管理',
-            class02:'購買前',
-            class03:'購買時',
-            class04:'購買後',
-            class05:'租賃管理',
+            class00:'新手上路 ~ 買賣 Q&A',
+            class01:'新手上路 ~ 租賃管理 Q&A',
+            class02:'交易流程與費用',
+            class03:'日本不動產知識',
         },
         homepage:{
             missionTitle:'經營使命',
