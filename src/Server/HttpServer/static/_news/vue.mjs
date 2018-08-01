@@ -1,78 +1,6 @@
 import homepageLike from    '../_homepageLike.mjs'
-let normalBlock={
-    computed:{
-        date(){
-            return new Date(this.data.timestamp)
-        }
-    },
-    props:['data','value',],
-    template:`
-        <div
-            :class="{focus:value}"
-            @click="$emit('click')"
-        >
-            <div class=a>
-                <div class=a>
-                    {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
-                </div>
-                <div class=b><span>一般公告</span></div>
-            </div>
-            <div class=b>
-                <div
-                    class=b
-                    @click="$emit('input',!value)"
-                >
-                    <div
-                        class=a
-                    >
-                        {{data.title}}
-                    </div>
-                    <div class=b>
-                        <img class=a src=/_news/img/arrow.png>
-                        <img class=b src=/_news/img/arrow-focus.png>
-                    </div>
-                </div>
-                <div
-                    class=c
-                    v-html=data.content
-                ></div>
-            </div>
-        </div>
-    `
-}
-let enewsLikeBlock={
-    computed:{
-        date(){
-            return new Date(this.data.timestamp)
-        }
-    },
-    props:['data'],
-    template:`
-        <div
-            @click="$emit('click')"
-        >
-            <div class=a><div>
-                <div class=a>
-                    {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
-                </div>
-                <!-- <div class=b><span>ENEWS ‧ 第 161 期</span></div> -->
-                <div class=b><span>{{
-                    {
-                        enews:'ENEWS',
-                        president:'社長專欄',
-                        success:'成功案例',
-                    }[data.type]
-                }}</span></div>
-            </div></div>
-            <div class=b>
-                <div class=b>
-                    <div class=a>{{data.title}}</div>
-                    <div class=b>More +</div>
-                </div>
-            </div>
-        </div>
-    `
-}
+import normalBlock from     './vue/normalBlock.mjs'
+import enewsLikeBlock from  './vue/enewsLikeBlock.mjs'
 let enewsLikeContent={
     computed:{
         date(){
@@ -187,23 +115,12 @@ let pageSelect={
 }
 let aMain={
     created(){
-        if(this.data.id){
-            let newsById=this.data.news.filter(a=>this.data.id==a._id)[0]
-            this.year=(new Date(newsById.timestamp)).getYear()
-            this.month=(new Date(newsById.timestamp)).getMonth()
-            this.type=newsById.type
-            if(this.type=='normal'){
-                this.normalFocus[this.newsByYearAndType.findIndex(a=>
-                    a._id==this.data.id
-                )]=1
-            }else{
-                this.enewsLikeFocus=this.newsByYearAndType.findIndex(a=>
-                    a._id==this.data.id
-                )
+        this.setId(this.data.id)
+        if(typeof window!='undefined'){
+            history.replaceState({id:this.id},'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
+            onpopstate=e=>{
+                this.setId(e.state.id)
             }
-        }else{
-            this.year=Math.max(...this.yearList)
-            this.month=Math.max(...this.monthList)
         }
     },
     components:{
@@ -255,6 +172,33 @@ let aMain={
         page:0,
     }),
     methods:{
+        setId(v){
+            this.id=v
+            if(this.data.id){
+                let newsById=this.data.news.filter(a=>this.data.id==a._id)[0]
+                this.year=(new Date(newsById.timestamp)).getYear()
+                this.month=(new Date(newsById.timestamp)).getMonth()
+                this.type=newsById.type
+                if(this.type=='normal'){
+                    this.normalFocus[this.newsByYearAndType.findIndex(a=>
+                        a._id==this.data.id
+                    )]=1
+                }else{
+                    this.enewsLikeFocus=this.newsByYearAndType.findIndex(a=>
+                        a._id==this.data.id
+                    )
+                }
+            }else{
+                this.year=Math.max(...this.yearList)
+                this.month=Math.max(...this.monthList)
+            }
+        },
+        setIdHistory(v){
+            if(this.id==v)
+                return
+            this.setId(v)
+            history.pushState({id:this.id},'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
+        },
     },
     props:['data','language','currentLanguage','mainSeminar',],
     template:`
@@ -309,7 +253,7 @@ let aMain={
                 </div>
                 <div class=typeSelect>
                     <select class=mobile v-model=type
-                        @input="enewsLikeFocus=null"
+                        @input="enewsLikeFocus=null;setIdHistory()"
                     >
                         <option value="normal">一般公告</option>
                         <option value="enews">E-News</option>
