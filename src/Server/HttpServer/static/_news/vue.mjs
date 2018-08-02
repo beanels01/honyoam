@@ -65,19 +65,16 @@ let aMain={
         setId(v){
             this.id=v
             if(this.id){
+                let date=new Date(newsById.timestamp)
                 let newsById=this.data.news.filter(a=>this.id==a._id)[0]
-                this.year=(new Date(newsById.timestamp)).getYear()
-                this.month=(new Date(newsById.timestamp)).getMonth()
+                this.year=date.getYear()
+                this.month=date.getMonth()
                 this.type=newsById.type
-                if(this.type=='normal'){
-                    this.normalFocus=this.newsByYearAndType.findIndex(a=>
-                        a._id==this.id
-                    )
-                }else{
-                    this.enewsLikeFocus=this.newsByYearAndType.findIndex(a=>
-                        a._id==this.id
-                    )
-                }
+                let index=this.newsByYearAndType.findIndex(a=>
+                    a._id==this.id
+                )
+                this.page=~~(index/8)
+                this[this.type=='normal'?'normalFocus':'enewsLikeFocus']=index
             }else{
                 this.year=Math.max(...this.yearList)
                 this.month=Math.max(...this.monthList)
