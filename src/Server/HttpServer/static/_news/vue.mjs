@@ -12,6 +12,8 @@ let aMain={
                 this.setId(e.state.id)
                 if(e.state.page)
                     this.page=e.state.page
+                if(e.state.type)
+                    this.type=e.state.type
             }
         }
         if(!this.id){
@@ -90,6 +92,7 @@ let aMain={
                 return
             history.replaceState({
                 id:this.id,
+                type:this.type,
                 page:this.page,
             },'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
             this.setId(v)
