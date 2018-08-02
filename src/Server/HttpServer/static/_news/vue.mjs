@@ -237,7 +237,7 @@ let aMain={
                             next:
                                 newsByYearAndType[enewsLikeFocus+1],
                         }"
-                        @click="setIdHistory(newsByYearAndType[enewsLikeFocus-1]._id)"
+                        @previous="setIdHistory(newsByYearAndType[enewsLikeFocus-1]._id)"
 
                         @next="setIdHistory(newsByYearAndType[enewsLikeFocus+1]._id)"
                         @back="setIdHistory();enewsLikeFocus=null"
