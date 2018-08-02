@@ -199,6 +199,7 @@ let aMain={
                     ></normalBlock>
                     <pageSelect
                         v-model=page
+                        @input="setIdHistory()"
                         :length="
                             Math.max(1,Math.ceil(newsByYearAndType.length/8))
                         "
@@ -219,8 +220,9 @@ let aMain={
                         ></enewsLikeBlock>
                     </div>
                     <pageSelect
-                        v-model=page
                         v-if="enewsLikeFocus==null"
+                        v-model=page
+                        @input="setIdHistory()"
                         :length="
                             Math.max(1,Math.ceil(newsByYearAndType.length/8))
                         "
