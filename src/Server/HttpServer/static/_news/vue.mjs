@@ -1,118 +1,8 @@
-import homepageLike from    '../_homepageLike.mjs'
-import normalBlock from     './vue/normalBlock.mjs'
-import enewsLikeBlock from  './vue/enewsLikeBlock.mjs'
-let enewsLikeContent={
-    computed:{
-        date(){
-            return new Date(this.data.current.timestamp)
-        }
-    },
-    props:['data',],
-    template:`
-        <div>
-            <div class=a>
-                <div class=a>
-                    <span>{{
-                        {
-                            enews:'ENEWS',
-                            president:'社長專欄',
-                            success:'成功案例',
-                        }[data.current.type]
-                    }}</span>
-                </div>
-                <div class=b>
-                    {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
-                </div>
-            </div>
-            <div class=b>
-                {{data.current.title}}
-            </div>
-            <div class=c v-html=data.current.content></div>
-            <div class=d>
-                <div class=a>
-                    <div v-if=data.previous @click="$emit('previous')">
-                        <img src="/_news/img/num-l.png">
-                        上一則<span class=a>：{{data.previous.title.slice(0,6)}}……</span>
-                    </div>
-                </div>
-                <div class=b>
-                    <div @click="$emit('back')">
-                        回列表
-                    </div>
-                </div>
-                <div class=c>
-                    <div v-if=data.next @click="$emit('next')">
-                        下一則<span class=a>：{{data.next.title.slice(0,6)}}……</span>
-                        <img src="/_news/img/num-r.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-    `,
-}
-let pageSelect={
-    props:['length','value'],
-    template:`
-        <div class=pageSelect>
-            <div class=mobile>
-                <div
-                    @click="$emit('input',value-1)"
-                    :style="{visibility:0<=value-1?'visible':'hidden'}"
-                >
-                    <img src="/_news/img/num-l.png">
-                </div>
-                <template v-if="0<=value-2">…</template>
-                <div
-                    v-if="0<=value-1"
-                    @click="$emit('input',value-1)"
-                >
-                    {{value-1+1}}
-                </div>
-                <div class=focus>
-                    {{value+1}}
-                </div>
-                <div
-                    v-if="value+1<length"
-                    @click="$emit('input',value+1)"
-                >
-                    {{value+1+1}}
-                </div>
-                <template v-if="value+2<length">…</template>
-                <div
-                    @click="$emit('input',length-1)"
-                    :style="{visibility:value+1<length?'visible':'hidden'}"
-                >
-                    <img src="/_news/img/num-r.png">
-                </div>
-            </div>
-            <div class=desktop>
-                <div
-                    @click="$emit('input',value-1)"
-                    :style="{visibility:0<=value-1?'visible':'hidden'}"
-                >
-                    <img src="/_news/img/num-l.png">
-                </div>
-                <div
-                    v-for="(a,i) of [...Array(length)]"
-                    :class="{focus:value==i}"
-                    @click="$emit('input',i)"
-                >
-                    {{i+1}}
-                </div>
-                <div
-                    @click="$emit('input',length-1)"
-                    :style="{visibility:value+1<length?'visible':'hidden'}"
-                >
-                    <img src="/_news/img/num-r.png">
-                </div>
-            </div>
-        </div>
-    `,
-    watch:{
-        value(){
-        },
-    },
-}
+import homepageLike from        '../_homepageLike.mjs'
+import normalBlock from         './vue/normalBlock.mjs'
+import enewsLikeBlock from      './vue/enewsLikeBlock.mjs'
+import enewsLikeContent from    './vue/enewsLikeContent.mjs'
+import pageSelect from          './vue/pageSelect.mjs'
 let aMain={
     created(){
         this.setId(this.data.id)
@@ -167,25 +57,25 @@ let aMain={
         year:0,
         month:0,
         type:'normal',
-        normalFocus:{},
+        normalFocus:null,
         enewsLikeFocus:null,
         page:0,
     }),
     methods:{
         setId(v){
             this.id=v
-            if(this.data.id){
-                let newsById=this.data.news.filter(a=>this.data.id==a._id)[0]
+            if(this.id){
+                let newsById=this.data.news.filter(a=>this.id==a._id)[0]
                 this.year=(new Date(newsById.timestamp)).getYear()
                 this.month=(new Date(newsById.timestamp)).getMonth()
                 this.type=newsById.type
                 if(this.type=='normal'){
-                    this.normalFocus[this.newsByYearAndType.findIndex(a=>
-                        a._id==this.data.id
-                    )]=1
+                    this.normalFocus=this.newsByYearAndType.findIndex(a=>
+                        a._id==this.id
+                    )
                 }else{
                     this.enewsLikeFocus=this.newsByYearAndType.findIndex(a=>
-                        a._id==this.data.id
+                        a._id==this.id
                     )
                 }
             }else{
@@ -198,6 +88,22 @@ let aMain={
                 return
             this.setId(v)
             history.pushState({id:this.id},'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
+        },
+        onEnewsLikeBlockClick(a,i){
+            if(this.enewsLikeFocus==i){
+                this.enewsLikeFocus=null
+                this.setIdHistory()
+            }else{
+                this.setIdHistory(a._id)
+            }
+        },
+        onNormalBlockClick(a,i){
+            if(this.normalFocus==i){
+                this.normalFocus=null
+                this.setIdHistory()
+            }else{
+                this.setIdHistory(a._id)
+            }
         },
     },
     props:['data','language','currentLanguage','mainSeminar',],
@@ -235,6 +141,7 @@ let aMain={
                     <select
                         class=yearSelect
                         v-model=year
+                        @input="setIdHistory()"
                     >
                         <option
                             v-for="y of yearList"
@@ -244,6 +151,7 @@ let aMain={
                     <select
                         class=yearSelect
                         v-model=month
+                        @input="setIdHistory()"
                     >
                         <option
                             v-for="m of monthList"
@@ -253,7 +161,7 @@ let aMain={
                 </div>
                 <div class=typeSelect>
                     <select class=mobile v-model=type
-                        @input="enewsLikeFocus=null;setIdHistory()"
+                        @input="setIdHistory();normalFocus=enewsLikeFocus=null"
                     >
                         <option value="normal">一般公告</option>
                         <option value="enews">E-News</option>
@@ -263,19 +171,19 @@ let aMain={
                     <div class=desktop>
                         <div
                             :class="{focus:type=='normal'}"
-                            @click="type='normal';enewsLikeFocus=null"
+                            @click="setIdHistory();type='normal';normalFocus=enewsLikeFocus=null"
                         >一般公告</div>
                         <div
                             :class="{focus:type=='enews'}"
-                            @click="type='enews';enewsLikeFocus=null"
+                            @click="setIdHistory();type='enews';normalFocus=enewsLikeFocus=null"
                         >E-News</div>
                         <div
                             :class="{focus:type=='president'}"
-                            @click="type='president';enewsLikeFocus=null"
+                            @click="setIdHistory();type='president';normalFocus=enewsLikeFocus=null"
                         >社長專欄</div>
                         <div
                             :class="{focus:type=='success'}"
-                            @click="type='success';enewsLikeFocus=null"
+                            @click="setIdHistory();type='success';normalFocus=enewsLikeFocus=null"
                         >成功案例</div>
                     </div>
                 </div>
@@ -285,8 +193,8 @@ let aMain={
                 >
                     <normalBlock
                         v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
-                        :value=normalFocus[i]
-                        @click="location=normalFocus[i]?href.news:href.news+'/'+a._id"
+                        :value="normalFocus==i"
+                        @click="onNormalBlockClick(a,i)"
                         :data=a
                     ></normalBlock>
                     <pageSelect
@@ -306,7 +214,7 @@ let aMain={
                     >
                         <enewsLikeBlock
                             v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
-                            @click="location=href.news+'/'+a._id"
+                            @click="onEnewsLikeBlockClick(a,i)"
                             :data=a
                         ></enewsLikeBlock>
                     </div>
@@ -327,10 +235,10 @@ let aMain={
                             next:
                                 newsByYearAndType[enewsLikeFocus+1],
                         }"
-                        @previous="location=href.news+'/'+newsByYearAndType[enewsLikeFocus-1]._id"
+                        @click="setIdHistory(newsByYearAndType[enewsLikeFocus-1]._id)"
 
-                        @next="location=href.news+'/'+newsByYearAndType[enewsLikeFocus+1]._id"
-                        @back="location=href.news"
+                        @next="setIdHistory(newsByYearAndType[enewsLikeFocus+1]._id)"
+                        @back="setIdHistory();enewsLikeFocus=null"
                     ></enewsLikeContent>
                 </div>
                 <hlFooter
@@ -363,6 +271,3 @@ export default{
         ></aMain>
     `,
 }
-/*
-                        v-model=normalFocus[i]
-*/
