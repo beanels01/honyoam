@@ -193,7 +193,7 @@ let aMain={
                 >
                     <normalBlock
                         v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
-                        :value="normalFocus==i"
+                        :value="normalFocus==8*page+i"
                         @click="onNormalBlockClick(a,i)"
                         :data=a
                     ></normalBlock>
