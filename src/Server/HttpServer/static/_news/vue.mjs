@@ -65,8 +65,8 @@ let aMain={
         setId(v){
             this.id=v
             if(this.id){
-                let date=new Date(newsById.timestamp)
                 let newsById=this.data.news.filter(a=>this.id==a._id)[0]
+                let date=new Date(newsById.timestamp)
                 this.year=date.getYear()
                 this.month=date.getMonth()
                 this.type=newsById.type
