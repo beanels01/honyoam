@@ -10,7 +10,13 @@ let aMain={
             history.replaceState({id:this.id},'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
             onpopstate=e=>{
                 this.setId(e.state.id)
+                if(e.state.page)
+                    this.page=e.state.page
             }
+        }
+        if(!this.id){
+            this.year=Math.max(...this.yearList)
+            this.month=Math.max(...this.monthList)
         }
     },
     components:{
@@ -76,15 +82,20 @@ let aMain={
                 this.page=~~(index/8)
                 this[this.type=='normal'?'normalFocus':'enewsLikeFocus']=index
             }else{
-                this.year=Math.max(...this.yearList)
-                this.month=Math.max(...this.monthList)
+                this.normalFocus=this.enewsLikeFocus=null
             }
         },
         setIdHistory(v){
             if(this.id==v)
                 return
+            history.replaceState({
+                id:this.id,
+                page:this.page,
+            },'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
             this.setId(v)
-            history.pushState({id:this.id},'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
+            history.pushState({
+                id:this.id
+            },'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
         },
         onEnewsLikeBlockClick(a,i){
             if(this.enewsLikeFocus==i){
