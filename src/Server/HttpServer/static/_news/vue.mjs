@@ -7,13 +7,19 @@ let aMain={
     created(){
         this.setId(this.data.id)
         if(typeof window!='undefined'){
-            history.replaceState({id:this.id},'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
+            history.replaceState({
+                id:this.id,
+                year:this.year,
+                month:this.month,
+                type:this.type,
+                page:this.page,
+            },'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
             onpopstate=e=>{
+                this.year=e.state.year
+                this.month=e.state.month
+                this.type=e.state.type
+                this.page=e.state.page
                 this.setId(e.state.id)
-                if(e.state.page)
-                    this.page=e.state.page
-                if(e.state.type)
-                    this.type=e.state.type
             }
         }
         if(!this.id){
@@ -92,12 +98,18 @@ let aMain={
                 return
             history.replaceState({
                 id:this.id,
+                year:this.year,
+                month:this.month,
                 type:this.type,
                 page:this.page,
             },'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
             this.setId(v)
             history.pushState({
-                id:this.id
+                id:this.id,
+                year:this.year,
+                month:this.month,
+                type:this.type,
+                page:this.page,
             },'',`${this.currentLanguage}/news${this.id?`/${this.id}`:''}`)
         },
         onEnewsLikeBlockClick(a,i){
