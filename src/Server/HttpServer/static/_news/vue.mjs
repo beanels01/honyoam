@@ -161,7 +161,7 @@ let aMain={
                 </div>
                 <div class=typeSelect>
                     <select class=mobile v-model=type
-                        @input="setIdHistory();normalFocus=enewsLikeFocus=null"
+                        @input="setIdHistory();page=0;normalFocus=enewsLikeFocus=null"
                     >
                         <option value="normal">一般公告</option>
                         <option value="enews">E-News</option>
@@ -171,19 +171,19 @@ let aMain={
                     <div class=desktop>
                         <div
                             :class="{focus:type=='normal'}"
-                            @click="setIdHistory();type='normal';normalFocus=enewsLikeFocus=null"
+                            @click="setIdHistory();type='normal';page=0;normalFocus=enewsLikeFocus=null"
                         >一般公告</div>
                         <div
                             :class="{focus:type=='enews'}"
-                            @click="setIdHistory();type='enews';normalFocus=enewsLikeFocus=null"
+                            @click="setIdHistory();type='enews';page=0;normalFocus=enewsLikeFocus=null"
                         >E-News</div>
                         <div
                             :class="{focus:type=='president'}"
-                            @click="setIdHistory();type='president';normalFocus=enewsLikeFocus=null"
+                            @click="setIdHistory();type='president';page=0;normalFocus=enewsLikeFocus=null"
                         >社長專欄</div>
                         <div
                             :class="{focus:type=='success'}"
-                            @click="setIdHistory();type='success';normalFocus=enewsLikeFocus=null"
+                            @click="setIdHistory();type='success';page=0;normalFocus=enewsLikeFocus=null"
                         >成功案例</div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ let aMain={
                     <normalBlock
                         v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
                         :value="normalFocus==8*page+i"
-                        @click="onNormalBlockClick(a,i)"
+                        @click="onNormalBlockClick(a,8*page+i)"
                         :data=a
                     ></normalBlock>
                     <pageSelect
