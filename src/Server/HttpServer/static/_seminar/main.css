@@ -711,7 +711,6 @@
         display:table;
         margin:0 auto;
         max-width:1170px;
-        height:405px;
     }
     #main>.f>.n>*{
         display:table-cell;
@@ -830,6 +829,9 @@
     }
     #main>.g>.b{
         font-size:18px;
+        width:600px;
+        margin-left:auto;
+        margin-right:auto;
     }
     #main>.g>.c>*>.n{
         font-size:63px;
