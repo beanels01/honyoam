@@ -20,11 +20,15 @@ let aMain={
         newsData(){
             return this.data.news.filter(a=>
                 ['normal','enews','president'].includes(a.type)
+            ).sort((a,b)=>
+                new Date(b.timestamp)-new Date(a.timestamp)
             ).slice(0,6)
         },
         successData(){
             return this.data.news.filter(a=>
                 a.type=='success'
+            ).sort((a,b)=>
+                new Date(b.timestamp)-new Date(a.timestamp)
             ).slice(0,5)
         },
         href(){

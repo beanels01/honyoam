@@ -24,13 +24,6 @@ let xRow={
 let news1={
     components:{xRow},
     props:['href','data'],
-    computed:{
-        dataOrderByDate(){
-            return this.data.sort((a,b)=>
-                new Date(b.timestamp)-new Date(a.timestamp)
-            )
-        },
-    },
     template:`
         <div class=news1>
             <div class=a>
@@ -40,12 +33,12 @@ let news1={
             <div class=b>
                 <div class=n>
                     <xRow class=b :data="{
-                        news:dataOrderByDate[0],
+                        news:data[0],
                         href,
                     }"></xRow>
                     <div class=d><div></div></div>
                     <xRow
-                        v-for="a in dataOrderByDate.slice(1)"
+                        v-for="a in data.slice(1)"
                         class=c
                         :data="{
                             news:a,
