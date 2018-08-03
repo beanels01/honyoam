@@ -89,30 +89,7 @@
 #main>.album>.n{
     color:#06182c;
 }
-#main>.album>.o{
-    display:none;
-}
-#main>.album>.p{
-    display:none;
-}
 @media(max-width:1279px){
-    #main>.album>.p{
-        display:block;
-        position:relative;
-        height:157px;
-        margin-bottom:20px;
-    }
-    #main>.album>.p>*{
-        --width:1440px; /* 5*280+4*10 */
-        position:absolute;
-        left:calc(50% - var(--width) / 2);
-        width:var(--width);
-        height:157px;
-    }
-    #main>.album>.p>*>*>*>*>*{
-        width:280px;
-        height:157px;
-    }
     #main>.album>.n{
         margin:0 10px;
         font-size:13px;
@@ -122,14 +99,6 @@
     }
 }
 @media(min-width:1280px){
-    #main>.album>.o{
-        display:block;
-        width:1170px;
-        margin:25px auto 0;
-    }
-    #main>.album>.o>*+*{
-        margin-left:15px;
-    }
     #main>.album>.n{
         width:1170px;
         margin:0 auto;
@@ -138,4 +107,27 @@
     #main>.album>.n>.a{
         font-size:24px;
     }
+}
+#main>.album>.o{
+    display:none;
+}
+#main>.album>.p{
+    display:none;
+}
+#main>.album>.p{
+    display:block;
+    position:relative;
+    height:157px;
+    margin-bottom:20px;
+}
+#main>.album>.p>*{
+    --width:1440px; /* 5*280+4*10 */
+    position:absolute;
+    left:calc(50% - var(--width) / 2);
+    width:var(--width);
+    height:157px;
+}
+#main>.album>.p>*>*>*>*>*{
+    width:280px;
+    height:157px;
 }

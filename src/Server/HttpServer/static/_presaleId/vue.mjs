@@ -84,7 +84,6 @@ let aMain={
         presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeFooter:    presaleIdLike.footer,
         presaleIdLikeHeader:    presaleIdLike.header,
-        hypertextPhoto,
         hypertextPhotoSwiper,
         block,
     },
@@ -166,12 +165,6 @@ let aMain={
                 <div class=album>
                     <div class=n>
                         <span class=a>建案相片集</span> / ALBUM
-                    </div>
-                    <div class=o>
-                        <hypertextPhoto
-                            v-for="e in gallery"
-                            :data=e
-                        ></hypertextPhoto>
                     </div>
                     <hypertextPhotoSwiper
                         :data=gallery

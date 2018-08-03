@@ -10,7 +10,7 @@ let xRow={
     },
     template:`
         <div class=a>
-            <div class=n>{{1900+date.getYear()}}年{{date.getMonth()}}月{{date.getDate()}}日</div>
+            <div class=n>{{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日</div>
             <div class=o>
                 <div v-if="data.news.type=='normal'" class="tag gg">一般公告</div>
                 <div v-if="data.news.type=='enews'" class="tag xg">E-News</div>

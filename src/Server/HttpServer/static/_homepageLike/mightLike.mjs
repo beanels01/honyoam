@@ -18,18 +18,6 @@ let mightLikeBlock={
         </a>
     `,
 }
-let mightLikeList={
-    components:{mightLikeBlock},
-    props:['data'],
-    template:`
-        <div class=g>
-            <mightLikeBlock
-                v-for="e in data"
-                :data=e
-            ></mightLikeBlock>
-        </div>
-    `,
-}
 let mightLikeSwiper={
     mounted(){
         if(typeof window=='undefined')
@@ -63,7 +51,7 @@ let mightLikeSwiper={
     `,
 }
 let mightLike={
-    components:{mightLikeList,mightLikeSwiper},
+    components:{mightLikeSwiper},
     props:['data'],
     template:`
         <div class=mightLike>
@@ -73,9 +61,6 @@ let mightLike={
                     <span class=homepageLikeTitle>您可能會喜歡</span>
                 </div>
             </div>
-            <mightLikeList
-                :data=data
-            ></mightLikeList>
             <mightLikeSwiper
                 :data=data
             ></mightLikeSwiper>

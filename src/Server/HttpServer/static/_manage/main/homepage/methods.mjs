@@ -12,6 +12,7 @@ async function backendData(value){
                 title:          o.title,
                 content:        o.content,
                 time:           o.time,
+                link:           o.link,
                 color:          o.color,
                 opacity:        o.opacity,
             }))

@@ -872,58 +872,26 @@ body{
     border-top:1px solid #797979;
     border-bottom:1px solid #797979;
 }
-#main>.mightLike>.g{
-    display:none;
-}
-@media(min-width:1280px){
-    #main>.mightLike>.g{
-        display:block;
-        padding-bottom:50px;
-        width:1170px;
-        margin:0 auto;
-    }
-    #main>.mightLike>.g>*{
-        display:inline-block;
-        width:227px;
-        vertical-align:top;
-    }
-    #main>.mightLike>.g>*+*{
-        margin-left:20px;
-    }
-    #main>.mightLike>.g>.mightLikeBlock>.a>*{
-        width:227px;
-        height:227px;
-    }
-    #main>.mightLike>.g>.mightLikeBlock>.b{
-        height:70px;
-        font-size:20px;
-    }
-}
 #main>.mightLike>.h{
-    display:none;
+    display:block;
+    position:relative;
+    height:400px;
+    margin-bottom:20px;
 }
-@media(max-width:1279px){
-    #main>.mightLike>.h{
-        display:block;
-        position:relative;
-        height:400px;
-        margin-bottom:20px;
-    }
-    #main>.mightLike>.h>*{
-        --width:1440px; /* 5*280+4*10 */
-        position:absolute;
-        left:calc(50% - var(--width) / 2);
-        width:var(--width);
-        height:400px;
-    }
-    #main>.mightLike>.h>*>*>*>.mightLikeBlock>.a>*{
-        width:280px;
-        height:280px;
-    }
-    #main>.mightLike>.h>*>*>*>.mightLikeBlock>.b{
-        font-size:18px;
-        padding:13px 0;
-    }
+#main>.mightLike>.h>*{
+    --width:1440px; /* 5*280+4*10 */
+    position:absolute;
+    left:calc(50% - var(--width) / 2);
+    width:var(--width);
+    height:400px;
+}
+#main>.mightLike>.h>*>*>*>.mightLikeBlock>.a>*{
+    width:280px;
+    height:280px;
+}
+#main>.mightLike>.h>*>*>*>.mightLikeBlock>.b{
+    font-size:18px;
+    padding:13px 0;
 }
 #main .homepageLikeContactInfo>*>*{
     display:table;

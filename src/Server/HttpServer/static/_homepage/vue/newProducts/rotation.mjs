@@ -1,5 +1,6 @@
 let rotationOption={
     props:[
+        'data',
         'mobileImage',
         'desktopImage',
         'title',
@@ -27,7 +28,7 @@ let rotationOption={
         },
     },
     template:`
-        <div class=option>
+        <a class=option :href=data.link>
             <div
                 class="background mobile"
                 :style=optionMobileStyle()
@@ -45,7 +46,7 @@ let rotationOption={
                     <div class=n>{{time}}</div>
                 </div>
             </div>
-        </div>
+        </a>
     `,
 }
 let rotation={
@@ -92,6 +93,7 @@ let rotation={
             <rotationOption
                 v-for="(o,i) in this.homepage"
                 :class="{active:value==i}"
+                :data=o
                 :mobileImage=o.mobileImage
                 :desktopImage=o.desktopImage
                 :title=o.title

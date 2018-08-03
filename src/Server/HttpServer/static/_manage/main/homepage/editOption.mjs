@@ -40,6 +40,7 @@ let editOption={
                     time:           '',
                     color:          '',
                     opacity:        0,
+                    link:           0,
                 })
         },
         colorOptionStyle(c){
@@ -77,11 +78,15 @@ let editOption={
                     <textarea
                         placeholder=內容
                         v-model=value.content
-                    ></textarea>
+                    ></textarea><br>
                     <textarea
                         placeholder=時間
                         v-model=value.time
-                    ></textarea>
+                    ></textarea><br>
+                    <input
+                        placeholder=連結
+                        v-model=value.link
+                    ><br>
                     <select
                         required
                         :style="colorOptionStyle(value.color)"
