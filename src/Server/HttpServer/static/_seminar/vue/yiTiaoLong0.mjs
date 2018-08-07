@@ -25,6 +25,9 @@ let yiTiaoLong0={
                     </div>
                 </div>
             </div>
+            <div class=d>
+                本葉国際資產管理株式会社提供您安心、順心、開心的投資平台。
+            </div>
         </div>
     `
 }

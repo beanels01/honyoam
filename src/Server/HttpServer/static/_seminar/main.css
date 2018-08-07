@@ -796,6 +796,9 @@
 #main>.g>.c+.c{
     margin-top:10px;
 }
+#main>.g>.d{
+    color:rgba(0, 28, 42, 1.00);
+}
 @media(max-width:1279px){
     #main>.g{
         padding-left:10px;
@@ -821,6 +824,10 @@
     }
     #main>.g>.c>*>.q>*{
         display:none;
+    }
+    #main>.g>.d{
+        margin-top:30px;
+        font-size:20px;
     }
 }
 @media(min-width:1280px){
@@ -848,6 +855,11 @@
     #main>.g>.c>*>.q>*{
         width:665px;
         height:443px;
+    }
+    #main>.g>.d{
+        width:770px;
+        margin:30px auto 0;
+        font-size:30px;
     }
 }
 #main>.h{
