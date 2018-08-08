@@ -141,6 +141,11 @@ let medieval={
 let houseList={
     components:{presale,medieval},
     props:['data'],
+    computed:{
+        sortArray(){
+            return this.data.array.slice().sort()
+        },
+    },
     template:`
         <div class=homepageLikeHouseList>
             <div class=d>
@@ -153,8 +158,8 @@ let houseList={
             </div>
             <div class=e>
                 <div>
-                    <div v-for="(_,i) in Math.ceil(data.array.length/2)">
-                        <div v-for="a in data.array.slice(2*i,2*i+2)">
+                    <div v-for="(_,i) in Math.ceil(sortArray.length/2)">
+                        <div v-for="a in sortArray.slice(2*i,2*i+2)">
                             <presale
                                 v-if="data.type=='presale'"
                                 :data=a

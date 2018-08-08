@@ -43,6 +43,7 @@ let mightLikeSwiper={
             centeredSlides:true,
             slidesPerView:5,
             spaceBetween:10,
+            loop:true,
         })
     },
     props:['data'],
