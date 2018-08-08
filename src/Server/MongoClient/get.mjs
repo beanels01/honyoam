@@ -106,6 +106,7 @@ o.getMedievalList0=async function(language){
             pattern:a.pattern,
             area:a.area,
             price:a.price,
+            timestamp:(new ObjectID(a._id)).getTimestamp(),
         }
     })
 }
@@ -148,7 +149,8 @@ o.getPresaleList0=async function(language){
             areaMin:    Math.min(...area),
             areaMax:    Math.max(...area),
             priceMin:   Math.min(...price),
-            priceMax:   Math.max(...price)
+            priceMax:   Math.max(...price),
+            timestamp:  (new ObjectID(a._id)).getTimestamp(),
         }
     })
 }
