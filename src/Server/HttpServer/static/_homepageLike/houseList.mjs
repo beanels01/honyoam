@@ -144,7 +144,7 @@ let houseList={
     computed:{
         sortArray(){
             return this.data.array.slice().sort((a,b)=>
-                new Date(b)-new Date(a)
+                new Date(b.timestamp)-new Date(a.timestamp)
             )
         },
     },
