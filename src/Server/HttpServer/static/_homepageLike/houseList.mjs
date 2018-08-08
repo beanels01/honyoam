@@ -143,7 +143,9 @@ let houseList={
     props:['data'],
     computed:{
         sortArray(){
-            return this.data.array.slice()
+            return this.data.array.slice((a,b)=>
+                new Date(a)-new Date(b)
+            )
         },
     },
     template:`
