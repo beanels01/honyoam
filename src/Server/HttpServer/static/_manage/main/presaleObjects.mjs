@@ -8,10 +8,38 @@ import cropImageUploader from   './cropImageUploader.mjs'
 import imageUploader from       './imageUploader.mjs'
 import galleryCropImageUploader from    './galleryCropImageUploader.mjs'
 import plainCropImageUploader from      './plainCropImageUploader.mjs'
+import quillImageHandler from   './quillImageHandler.mjs'
+let
+    options={
+        placeholder:'內文',
+        modules:{
+            toolbar:{
+                container:[
+                    'link',
+                    'image',
+                    {header:1},
+                ],
+                handlers:{
+                    image:quillImageHandler
+                },
+            }
+        },
+        formats:[
+            'link',
+            'image',
+            'header',
+        ],
+    }
 let keyValueEditOption={
+    components:{
+        quillEditor:VueQuillEditor.quillEditor,
+    },
     created(){
         this.checkValue()
     },
+    data:()=>({
+        options,
+    }),
     methods:{
         checkValue(){
             if(this.value)
@@ -33,9 +61,10 @@ let keyValueEditOption={
             </p>
             <p>
                 內容：<br>
-                <textarea
+                <quillEditor
+                    :options=options
                     v-model=value.value
-                ></textarea>
+                ></quillEditor>
             </p>
         </div>
     `,

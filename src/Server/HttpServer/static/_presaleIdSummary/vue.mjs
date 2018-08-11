@@ -63,7 +63,7 @@ let aMain={
                         <div>
                             <div v-for="a in presale.presaleId.summary">
                                 <div class=a>{{a.key}}</div>
-                                <div class=b>{{a.value}}</div>
+                                <div class=b v-html=a.value></div>
                             </div>
                         </div>
                     </div>
