@@ -248,7 +248,9 @@ export default{
         async in(){
             this.value=(await api.post({
                 method:'getPresaleList',
-            })).res
+            })).res.sort((a,b)=>
+                new Date(b.timestamp)-new Date(a.timestamp)
+            )
         },
         async out(){
             await api.post({
