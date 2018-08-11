@@ -93,6 +93,7 @@ o.getMedievalList=async function(){
             a.language['zh-Hant']&&
             a.language['zh-Hant'].name||
             '未命名',
+        timestamp:(new ObjectID(a._id)).getTimestamp(),
     }))
 }
 o.getMedievalList0=async function(language){
@@ -125,6 +126,7 @@ o.getPresaleList=async function(){
             a.language['zh-Hant']&&
             a.language['zh-Hant'].name||
             '未命名',
+        timestamp:(new ObjectID(a._id)).getTimestamp(),
     }))
 }
 o.getPresaleList0=async function(language){
