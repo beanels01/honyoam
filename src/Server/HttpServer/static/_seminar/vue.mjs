@@ -60,7 +60,7 @@ let aMain={
             return homepageLike.langToPath(this.currentLanguage)
         },
         formHref(){
-            return`${this.currentLanguage}/contact#form`
+            return`${this.data.current}#form`
         },
     },
     data:()=>({
