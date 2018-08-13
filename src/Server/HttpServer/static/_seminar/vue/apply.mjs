@@ -29,7 +29,7 @@ let apply={
                 return this.errorAlert=this.language.error1
             this.errorAlert=''
             await api.post({
-                method:         'addApply',
+                method:         'putApply',
                 recaptcha:      this.recaptcha,
                 people:this.basicData.people.slice(
                     0,this.basicData.numberOfPeople

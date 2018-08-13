@@ -29,7 +29,7 @@ let feedback={
                 return this.errorAlert='請完成人機驗證（下方「我不是機器人」欄位）後再送出。'
             this.errorAlert=''
             await api.post({
-                method:         'addFeedback',
+                method:         'putFeedback',
                 recaptcha:      this.recaptcha,
                 name:           this.name,
                 email:          this.email,
