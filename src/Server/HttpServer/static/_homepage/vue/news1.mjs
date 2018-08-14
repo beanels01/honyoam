@@ -13,7 +13,7 @@ let xRow={
             <div class=n>{{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日</div>
             <div class=o>
                 <div v-if="data.news.type=='normal'" class="tag gg">一般公告</div>
-                <div v-if="data.news.type=='enews'" class="tag xg">E-News</div>
+                <div v-if="data.news.type=='enews'" class="tag xg">E-news</div>
                 <div v-if="data.news.type=='president'" class="tag shm">社長專欄</div>
                 <div class=title><a :href=href>{{data.news.title}}</a></div>
             </div>

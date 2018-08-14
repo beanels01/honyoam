@@ -129,7 +129,7 @@ let aMain={
                                 <span class=c>
                                     每坪單價：請洽各店服務員
                                     <br>
-                                    買賣以日幣為主，日幣以外的幣別僅供參考
+                                    買賣交易均以日幣為主，其他幣別僅供參考，實際匯率請自行向銀行確認換算。
                                 </span>
                             </div>
                             <div class=hl></div>
@@ -150,12 +150,12 @@ let aMain={
                                 <div class=a>
                                     <div>陽台面積</div>
                                     <div>所在樓層</div>
-                                    <div>朝向</div>
+                                    <div>建物總樓層</div>
                                 </div>
                                 <div>
                                     <div>{{data.data.balconyArea}} 平方公尺</div>
                                     <div>{{data.data.level}}</div>
-                                    <div>{{data.data.direction}}</div>
+                                    <div>{{data.data.levelCount}}</div>
                                 </div>
                             </div>
                             <div class="desktop hl"></div>
@@ -163,10 +163,12 @@ let aMain={
                                 <div class=a>
                                     <div>構造</div>
                                     <div>總戶數</div>
+                                    <div>朝向</div>
                                 </div>
                                 <div>
                                     <div>{{data.data.structure}}</div>
                                     <div>{{data.data.householdCount}}</div>
+                                    <div>{{data.data.direction}}</div>
                                 </div>
                             </div>
                             <div class="desktop hl"></div>
@@ -190,6 +192,8 @@ let aMain={
                                 <span class=a>陽台面積：</span>{{data.data.balconyArea}}
                                 <div class="hl"></div>
                                 <span class=a>所在樓層：</span>{{data.data.level}}
+                                <div class="hl"></div>
+                                <span class=a>建物總樓層：</span>{{data.data.levelCount}}
                                 <div class="hl"></div>
                                 <span class=a>朝向：</span>{{data.data.direction}}
                                 <div class="hl"></div>

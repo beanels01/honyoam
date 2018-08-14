@@ -11,7 +11,7 @@ let enewsLikeContent={
                 <div class=a>
                     <span>{{
                         {
-                            enews:'ENEWS',
+                            enews:'E-news',
                             president:'社長專欄',
                             success:'成功案例',
                         }[data.current.type]

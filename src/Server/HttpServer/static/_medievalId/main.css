@@ -180,6 +180,7 @@
     }
     #main>.a>.o>.b>.o{
         display:table;
+        width:100%;
     }
     #main>.a>.o>.b>.o>*{
         display:table-row;
@@ -187,12 +188,10 @@
     #main>.a>.o>.b>.o>*>*{
         display:table-cell;
     }
-    #main>.a>.o>.b>.p>*>*+*{
-        padding-left:60px;
-    }
     #main>.a>.o>.b>.p>.a>*{
         font-size:15px;
         color:#797979;
+        width:33%;
     }
     #main>.a>.o>.b>.q>*>.n{
         width:60px;

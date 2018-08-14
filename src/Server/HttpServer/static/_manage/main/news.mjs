@@ -80,7 +80,7 @@ let newsInput={
             <div>
                 類型：<select v-model=data.type>
                     <option value=normal>一般公告</option>
-                    <option value=enews>E-News</option>
+                    <option value=enews>E-news</option>
                     <option value=president>社長專欄</option>
                     <option value=success>成功案例</option>
                 </select>
@@ -170,7 +170,7 @@ export default{
                             <td>{{
                                 {
                                     normal:'一般公告',
-                                    enews:'E-News',
+                                    enews:'E-news',
                                     president:'社長專欄',
                                     success:'成功案例',
                                 }[a.type]

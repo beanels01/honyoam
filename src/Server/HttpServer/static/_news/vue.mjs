@@ -187,7 +187,7 @@ let aMain={
                         @input="setIdHistory();page=0;normalFocus=enewsLikeFocus=null"
                     >
                         <option value="normal">一般公告</option>
-                        <option value="enews">E-News</option>
+                        <option value="enews">E-news</option>
                         <option value="president">社長專欄</option>
                         <option value="success">成功案例</option>
                     </select>
@@ -199,7 +199,7 @@ let aMain={
                         <div
                             :class="{focus:type=='enews'}"
                             @click="setIdHistory();type='enews';page=0;normalFocus=enewsLikeFocus=null"
-                        >E-News</div>
+                        >E-news</div>
                         <div
                             :class="{focus:type=='president'}"
                             @click="setIdHistory();type='president';page=0;normalFocus=enewsLikeFocus=null"

@@ -13,10 +13,9 @@ let enewsLikeBlock={
                 <div class=a>
                     {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
                 </div>
-                <!-- <div class=b><span>ENEWS ‧ 第 161 期</span></div> -->
                 <div class=b><span>{{
                     {
-                        enews:'ENEWS',
+                        enews:'E-news',
                         president:'社長專欄',
                         success:'成功案例',
                     }[data.type]
