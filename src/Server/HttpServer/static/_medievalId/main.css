@@ -174,9 +174,11 @@
         border-color:#133466;
     }
     #main>.a>.o>.b{
+        position:relative;
         margin-left:20px;
         vertical-align:top;
         width:420px;
+        height:555px;
     }
     #main>.a>.o>.b>.o{
         display:table;
@@ -200,6 +202,10 @@
     }
     #main>.a>.o>.b>.q>*>*+*{
         padding-left:30px;
+    }
+    #main>.a>.o>.b>.r{
+        position:absolute;
+        bottom:0;
     }
     #main>.a>.o>.b>.s>.a{
         font-size:18px;
