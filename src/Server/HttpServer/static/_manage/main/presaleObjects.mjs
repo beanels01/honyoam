@@ -193,17 +193,29 @@ let inputForSpecificObject={
                 v-model=value.pattern
             ></optionList>
             <h1>概要</h1>
-            <optionList
-                class=indent
-                :editOption=keyValueEditOption
-                v-model=value.summary
-            ></optionList>
+            <div class=indent>
+                <label>
+                    <input type=checkbox v-model=value.showSummary>
+                    顯示以下項目
+                </label>
+                <optionList
+                    v-if=value.showSummary
+                    :editOption=keyValueEditOption
+                    v-model=value.summary
+                ></optionList>
+            </div>
             <h1>建案相片集</h1>
-            <optionList
-                class=indent
-                :editOption=galleryCropImageUploader
-                v-model=value.gallery
-            ></optionList>
+            <div class=indent>
+                <label>
+                    <input type=checkbox v-model=value.showAlbum>
+                    顯示以下項目
+                </label>
+                <optionList
+                    v-if=value.showAlbum
+                    :editOption=galleryCropImageUploader
+                    v-model=value.gallery
+                ></optionList>
+            </div>
             <div>
                 <languageSelect
                     :language=language

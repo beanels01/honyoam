@@ -87,76 +87,112 @@ let inputForSpecificLanguage={
                     ></textarea>
                 </div>
             </p>
-            <p>
-                概念概要：
-                <div class=indent>
-                    <textarea
-                        v-model=value.conceptSummary
-                    ></textarea>
+            <h2>建築設計</h2>
+            <div class=indent>
+                <label>
+                    <input type=checkbox v-model=value.showConcept>
+                    顯示以下項目
+                </label>
+                <div v-if=value.showConcept>
+                    <p>
+                        概念概要：
+                        <div class=indent>
+                            <textarea
+                                v-model=value.conceptSummary
+                            ></textarea>
+                        </div>
+                    </p>
+                    <p>
+                        概念內文：
+                        <div class=indent>
+                            <quillEditor
+                                style=width:480px
+                                :options=options
+                                v-model=value.conceptContent
+                            ></quillEditor>
+                        </div>
+                    </p>
                 </div>
-            </p>
-            <p>
-                概念內文：
-                <div class=indent>
-                    <quillEditor
-                        style=width:480px
-                        :options=options
-                        v-model=value.conceptContent
-                    ></quillEditor>
+            </div>
+            <h2>周邊環境</h2>
+            <div class=indent>
+                <label>
+                    <input type=checkbox v-model=value.showEnvironment>
+                    顯示以下項目
+                </label>
+                <div v-if=value.showEnvironment>
+                    <p>
+                        環境概要：
+                        <div class=indent>
+                            <textarea
+                                v-model=value.environmentSummary
+                            ></textarea>
+                        </div>
+                    </p>
+                    <p>
+                        環境內文：
+                        <div class=indent>
+                            <quillEditor
+                                style=width:480px
+                                :options=options
+                                v-model=value.environmentContent
+                            ></quillEditor>
+                        </div>
+                    </p>
                 </div>
-            </p>
-            <p>
-                環境概要：
-                <div class=indent>
-                    <textarea
-                        v-model=value.environmentSummary
-                    ></textarea>
+            </div>
+            <h2>交通方式</h2>
+            <div class=indent>
+                <label>
+                    <input type=checkbox v-model=value.showTraffic>
+                    顯示以下項目
+                </label>
+                <div v-if=value.showTraffic>
+                    <p>
+                        交通概要：
+                        <div class=indent>
+                            <textarea
+                                v-model=value.trafficSummary
+                            ></textarea>
+                        </div>
+                    </p>
+                    <p>
+                        交通內文：
+                        <div class=indent>
+                            <quillEditor
+                                style=width:480px
+                                :options=options
+                                v-model=value.trafficContent
+                            ></quillEditor>
+                        </div>
+                    </p>
                 </div>
-            </p>
-            <p>
-                環境內文：
-                <div class=indent>
-                    <quillEditor
-                        style=width:480px
-                        :options=options
-                        v-model=value.environmentContent
-                    ></quillEditor>
+            </div>
+            <h2>影音介紹</h2>
+            <div class=indent>
+                <label>
+                    <input type=checkbox v-model=value.showVideo>
+                    顯示以下項目
+                </label>
+                <div v-if=value.showVideo>
+                    <p>
+                        這裡要設定的是 YouTube 的影片 ID。以下兩個欄位，擇一填寫即可：
+                    </p>
+                    <p>
+                        影片 ID：
+                        <input
+                            v-model=value.videoId
+                        ></textarea>
+                    </p>
+                    <p>
+                        影片 URL（網址）：
+                        <input
+                            :value="'https://www.youtube.com/watch?v='+value.videoId"
+                            @input=videoIdInput
+                        ></textarea>
+                    </p>
                 </div>
-            </p>
-            <p>
-                交通概要：
-                <div class=indent>
-                    <textarea
-                        v-model=value.trafficSummary
-                    ></textarea>
-                </div>
-            </p>
-            <p>
-                交通內文：
-                <div class=indent>
-                    <quillEditor
-                        style=width:480px
-                        :options=options
-                        v-model=value.trafficContent
-                    ></quillEditor>
-                </div>
-            </p>
-            <p>
-                這裡要設定的是 YouTube 的影片 ID。以下兩個欄位，擇一填寫即可：
-            </p>
-            <p>
-                影片 ID：
-                <input
-                    v-model=value.videoId
-                ></textarea>
-            </p>
-            <p>
-                影片 URL（網址）：
-                <input
-                    :value="'https://www.youtube.com/watch?v='+value.videoId"
-                    @input=videoIdInput
-                ></textarea>
-            </p>
+            </div>
         </div>
     `,
     watch:{
