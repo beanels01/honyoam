@@ -67,7 +67,7 @@ let aMain={
                 ></events>
                 <success
                     :data=successData
-                    :href=href.news
+                    :href=href.news+'/success'
                 ></success>
                 <div class=about0>
                     <div class=a>關於我們</div>
