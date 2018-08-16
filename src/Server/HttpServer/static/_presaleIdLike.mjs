@@ -22,7 +22,7 @@ let header={
                 :class="{active:data.focus=='concept'}"
             >建築設計</a>
             <a
-                v-if=data.show.showEvironment
+                v-if=data.show.showEnvironment
                 :href=href.environment
                 :class="{active:data.focus=='environment'}"
             >周邊環境</a>
@@ -82,7 +82,7 @@ let top={
                         value=concept
                     >建築設計</option>
                     <option
-                        v-if=data.show.showEvironment
+                        v-if=data.show.showEnvironment
                         value=environment
                     >周邊環境</option>
                     <option
