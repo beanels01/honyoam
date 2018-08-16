@@ -54,6 +54,7 @@ let aMain={
                         title:presale.presaleId.name,
                         part:'交通方式',
                         background:presale.presaleId.banner,
+                        show:presale.presaleId,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
@@ -82,7 +83,7 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'traffic'}"
+                    :data="{focus:'traffic',show:presale.presaleId,}"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

@@ -54,6 +54,7 @@ let aMain={
                         title:presale.presaleId.name,
                         part:'建築設計',
                         background:presale.presaleId.banner,
+                        show:presale.presaleId,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
@@ -82,7 +83,7 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'concept'}"
+                    :data="{focus:'concept',show:presale.presaleId,}"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

@@ -82,6 +82,7 @@ let aMain={
                         title:presale.presaleId.name,
                         part:'空間格局',
                         background:presale.presaleId.banner,
+                        show:presale.presaleId,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
@@ -116,7 +117,7 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'pattern'}"
+                    :data="{focus:'pattern',show:presale.presaleId,}"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

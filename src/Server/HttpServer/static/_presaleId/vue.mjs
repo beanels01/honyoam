@@ -134,6 +134,7 @@ let aMain={
                         focus:'top',
                         title:presale.presaleId.name,
                         background:presale.presaleId.banner,
+                        show:presale.presaleId,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
@@ -145,24 +146,30 @@ let aMain={
                     }"
                 ></presaleIdLikeMain>
                 <block
+                    v-if=presale.presaleId.showConcept
                     title='建築設計'
                     :background=imagePath(presale.presaleId.top.concept)
                     :content=presale.presaleId.conceptSummary
                     :more=presaleIdHref.concept
                 ></block>
                 <block
+                    v-if=presale.presaleId.showEnvironment
                     title='周邊環境'
                     :background=imagePath(presale.presaleId.top.environment)
                     :content=presale.presaleId.environmentSummary
                     :more=presaleIdHref.environment
                 ></block>
                 <block
+                    v-if=presale.presaleId.showTraffic
                     title='交通方式'
                     :background=imagePath(presale.presaleId.top.traffic)
                     :content=presale.presaleId.trafficSummary
                     :more=presaleIdHref.traffic
                 ></block>
-                <div class=album>
+                <div
+                    v-if=presale.presaleId.showAlbum
+                    class=album
+                >
                     <div class=n>
                         <span class=a>建案相片集</span> / ALBUM
                     </div>
@@ -182,7 +189,7 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'top'}"
+                    :data="{focus:'top',show:presale.presaleId,}"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

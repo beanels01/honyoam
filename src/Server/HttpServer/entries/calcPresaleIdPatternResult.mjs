@@ -7,12 +7,18 @@ async function main(rq,rs,lang,patch,id){
         let o={
             banner:                 i.banner.pattern,
             pattern:                i.pattern,
+            showSummary:            i.showSummary,
+            showAlbum:              i.showAlbum,
         }
         i=i.language[lang]
         return Object.assign(o,{
             name:                   i.name,
             informationTitle:       i.informationTitle,
             informationContent:     i.informationContent,
+            showVideo:              i.showVideo,
+            showTraffic:            i.showTraffic,
+            showEnvironment:        i.showEnvironment,
+            showConcept:            i.showConcept,
         })
     })(presaleId)
     return calcHomepageLikeResult.call(this,{

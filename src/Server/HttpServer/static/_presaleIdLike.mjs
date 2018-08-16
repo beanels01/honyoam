@@ -17,14 +17,17 @@ let header={
                 :class="{active:data.focus=='top'}"
             >TOP</a>
             <a
+                v-if=data.show.showConcept
                 :href=href.concept
                 :class="{active:data.focus=='concept'}"
             >建築設計</a>
             <a
+                v-if=data.show.showEvironment
                 :href=href.environment
                 :class="{active:data.focus=='environment'}"
             >周邊環境</a>
             <a
+                v-if=data.show.showTraffic
                 :href=href.traffic
                 :class="{active:data.focus=='traffic'}"
             >交通方式</a>
@@ -33,10 +36,12 @@ let header={
                 :class="{active:data.focus=='pattern'}"
             >空間格局</a>
             <a
+                v-if=data.show.showSummary
                 :href=href.summary
                 :class="{active:data.focus=='summary'}"
             >物件概要</a>
             <a
+                v-if=data.show.showVideo
                 :href=href.video
                 :class="{active:data.focus=='video'}"
             >影音介紹</a>
@@ -72,12 +77,29 @@ let top={
                     @change=change
                 >
                     <option value=top>TOP</option>
-                    <option value=concept>建築設計</option>
-                    <option value=environment>周邊環境</option>
-                    <option value=traffic>交通方式</option>
-                    <option value=pattern>空間格局</option>
-                    <option value=summary>物件概要</option>
-                    <option value=video>影音介紹</option>
+                    <option
+                        v-if=data.show.showConcept
+                        value=concept
+                    >建築設計</option>
+                    <option
+                        v-if=data.show.showEvironment
+                        value=environment
+                    >周邊環境</option>
+                    <option
+                        v-if=data.show.showTraffic
+                        value=traffic
+                    >交通方式</option>
+                    <option
+                        value=pattern
+                    >空間格局</option>
+                    <option
+                        v-if=data.show.showSummary
+                        value=summary
+                    >物件概要</option>
+                    <option
+                        v-if=data.show.showVideo
+                        value=video
+                    >影音介紹</option>
                 </select>
             </div>
             <div class=b :style=styleB>

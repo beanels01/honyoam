@@ -8,6 +8,8 @@ async function main(rq,rs,lang,patch,id){
             banner:i.banner.top,
             top:i.top,
             gallery:                i.gallery,
+            showSummary:            i.showSummary,
+            showAlbum:              i.showAlbum,
         }
         i=i.language[lang]
         return Object.assign(o,{
@@ -17,6 +19,10 @@ async function main(rq,rs,lang,patch,id){
             conceptSummary:         i.conceptSummary,
             environmentSummary:     i.environmentSummary,
             trafficSummary:         i.trafficSummary,
+            showVideo:              i.showVideo,
+            showTraffic:            i.showTraffic,
+            showEnvironment:        i.showEnvironment,
+            showConcept:            i.showConcept,
         })
     })(presaleId)
     return calcHomepageLikeResult.call(this,{

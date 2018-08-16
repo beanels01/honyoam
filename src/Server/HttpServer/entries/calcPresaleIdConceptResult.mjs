@@ -6,6 +6,8 @@ async function main(rq,rs,lang,patch,id){
     presaleId=(i=>{
         let o={
             banner:                 i.banner.concept,
+            showSummary:            i.showSummary,
+            showAlbum:              i.showAlbum,
         }
         i=i.language[lang]
         return Object.assign(o,{
@@ -13,6 +15,10 @@ async function main(rq,rs,lang,patch,id){
             informationTitle:       i.informationTitle,
             informationContent:     i.informationContent,
             conceptContent:         i.conceptContent,
+            showVideo:              i.showVideo,
+            showTraffic:            i.showTraffic,
+            showEnvironment:        i.showEnvironment,
+            showConcept:            i.showConcept,
         })
     })(presaleId)
     return calcHomepageLikeResult.call(this,{

@@ -53,6 +53,7 @@ let aMain={
                         title:presale.presaleId.name,
                         part:'影音介紹',
                         background:presale.presaleId.banner,
+                        show:presale.presaleId,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
@@ -78,7 +79,7 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'video'}"
+                    :data="{focus:'video',show:presale.presaleId,}"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>
