@@ -297,6 +297,7 @@
     #main>.service>.partner>.b>*>.a{
         border:1px solid lightgray;
         padding:15px 30px;
+        width:calc(calc(1170px - 50px) / 2);
     }
     #main>.service>.partner>.b>*>.b{
         width:50px;

@@ -60,7 +60,7 @@ let service={
                     <div>
                         <div class=a><img src=/_about/img/d0.png></div>
                         <div class=b></div>
-                        <div class=a><img src=/_about/img/d1.gif></div>
+                        <div class=a><img src=/_about/img/d1.jpg></div>
                     </div>
                 </div>
                 <div class=c>{{language.partner[1]}}</div>
@@ -112,7 +112,7 @@ let service={
                         <div></div>
                     </div>
                     <div class=a>
-                        <div class=a><img src=/_about/img/f4.png style="background-color:#948a54"></div>
+                        <div class=a><img src=/_about/img/f4.jpg></div>
                         <div class=b></div>
                         <div class=a><img src=/_about/img/f5.png></div>
                         <div class=b></div>
