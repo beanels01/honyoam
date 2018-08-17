@@ -42,6 +42,7 @@ let success={
                             v-for="(c,i) in data"
                             class=a
                             :style=optionStyle(c,i)
+                            @click="location=href+'/'+c._id"
                         >
                             <img class=n :src="'image/'+c.image">
                             <div class=o></div>
@@ -59,7 +60,7 @@ let success={
                 </div>
             </div>
             <div class=c>
-                <button @click="location=href">觀看更多成功案例</button>
+                <button @click="location=href+'/success'">觀看更多成功案例</button>
             </div>
         </div>
     `

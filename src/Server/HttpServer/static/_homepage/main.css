@@ -1086,6 +1086,9 @@
         --bnnaWidth:420px;
         --bnnaHeight:285px;
     }
+    #main>.success>.b>.n>.n>.a{
+        cursor:pointer;
+    }
     #main>.success>.c{
         margin:85px 0;
     }
