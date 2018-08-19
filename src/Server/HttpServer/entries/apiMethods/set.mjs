@@ -78,7 +78,6 @@ let set={
         if(!(
             typeof doc.type=='string'&&
             typeof doc.id=='string'&&
-            typeof doc.value=='string'&&
             ['apply','feedback'].includes(doc.type)
         ))
             return['status',400]

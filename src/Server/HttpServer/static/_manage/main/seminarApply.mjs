@@ -1,5 +1,53 @@
 import api from             '../../_api.mjs'
+let statusInput={
+    created(){
+        this.checkValue()
+    },
+    computed:{
+        valueUpToDate(){
+            return typeof this.value=='object'&&
+                this.value.version==this.version
+        },
+    },
+    data:()=>({
+        version:0,
+    }),
+    props:['value'],
+    methods:{
+        checkValue(){
+            if(this.value==undefined)
+                this.$emit('input',{version:0,main:0,})
+            else if(typeof this.value=='string')
+                this.$emit('input',{version:0,main:+this.value,})
+        },
+    },
+    template:`
+        <div v-if=valueUpToDate>
+            <p>
+                <select v-model="value.main">
+                    <option value=0>未聯絡</option>
+                    <option value=1>已聯絡</option>
+                    <option value=2>已結案</option>
+                </select>
+            <p>
+                負責業務：<input v-model="value.saleman">
+            <p>
+                追蹤狀況：<br>
+                <textarea v-model="value.trackStatus"></textarea>
+            <p>
+                <button @click="$emit('input',value)">儲存變更</button>
+        </div>
+    `,
+    watch:{
+        value(){
+            this.checkValue()
+        },
+    },
+}
 let contactApply={
+    components:{
+        statusInput,
+    },
     created(){
         this.update()
     },
@@ -24,12 +72,12 @@ let contactApply={
         },
         async updateStatus(apply,value){
             apply.updating=1
-            console.log(await api.post({
+            await api.post({
                 method:     'setStatus',
                 type:       'apply',
                 id:         apply._id,
                 value,
-            }))
+            })
             apply.updating=0
         },
     },
@@ -78,15 +126,11 @@ let contactApply={
                         </ul>
                     </td>
                     <td>
-                        <select
+                        <statusInput
                             v-model=a.status
-                            @input="e=>updateStatus(a,e.target.value)"
+                            @input="v=>updateStatus(a,v)"
                             :disabled="a.updating==1"
-                        >
-                            <option value=0>未聯絡</option>
-                            <option value=1>已聯絡</option>
-                            <option value=2>已結案</option>
-                        </select>
+                        ></statusInput>
                     </td>
                     <td>
                         <button
@@ -96,6 +140,6 @@ let contactApply={
                 </tr>
             </tbody>
         </table>
-    `
+    `,
 }
 export default contactApply
