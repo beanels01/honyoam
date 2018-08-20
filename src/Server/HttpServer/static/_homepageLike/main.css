@@ -534,6 +534,9 @@ body{
     background-color:white;
     padding:8px;
 }
+#main>.homepageLikeHouseSearch>.c>*>*>.block>select>option[disabled]{
+    display:none;
+}
 #main>.homepageLikeHouseSearch>.c>*>*>.block>input:not([type]){
     width:140px;
     padding:8px;
