@@ -150,7 +150,7 @@ let houseSearch={
                                     <option>東京都區部</option>
                                 </template>
                                 <template v-if="place0!=0">
-                                    <option>全部</option>
+                                    <option>全域</option>
                                 </template>
                             </template>
                             <template v-if="data.type=='medieval'">
@@ -182,7 +182,7 @@ let houseSearch={
                                     <option>江戶川區</option>
                                 </template>
                                 <template v-if="place0!=0">
-                                    <option>全部</option>
+                                    <option>全域</option>
                                 </template>
                             </template>
                         </select>
