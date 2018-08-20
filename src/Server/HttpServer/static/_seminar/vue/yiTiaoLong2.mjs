@@ -13,7 +13,7 @@ let yiTiaoLong2={
             <div class=c>
                 <div>
                     <div class=n><div><div>
-                        <div><img src=/img/event/bicon01.png></div>
+                        <div><img src=img/event/bicon01.png></div>
                     </div></div></div>
                     <div class=o>
                         <div class=a>{{value[0].title}}</div>

@@ -1,7 +1,7 @@
 let block1={
     methods:{
         imagePath(id){
-            return`/image/${id}`
+            return`image/${id}`
         },
     },
     props:[
@@ -35,7 +35,7 @@ let block1={
                     </div>
                     <div class=q>
                         <div class=a>
-                            <img src=/img/event/name.png> {{language.content}}
+                            <img src=img/event/name.png> {{language.content}}
                         </div>
                         <div class=b>
                             {{a.contentTitle}}
@@ -55,7 +55,7 @@ let block1={
                 <div class=b>
                     <img
                         class=n
-                        :src="'/image/'+a.speakerPicture"
+                        :src="'image/'+a.speakerPicture"
                     >
                     <div class=o>{{language.speaker}}</div>
                 </div>

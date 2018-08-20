@@ -9,7 +9,7 @@
 #main>.a{
     background-size:cover;
     background-position:center;
-    background-image:url('/_seminar/block0-background.jpg');
+    background-image:url('../_seminar/block0-background.jpg');
 }
 @media(max-width:1279px){
     #main>.a{
@@ -431,7 +431,7 @@
 #main>.d{
     background-size:cover;
     background-position:center;
-    background-image:url('/img/event/ebg02.jpg');
+    background-image:url('../img/event/ebg02.jpg');
     padding-bottom:60px;
 }
 #main>.d>*>.n{
@@ -1030,7 +1030,7 @@
 #main>.j{
     background-size:cover;
     background-position:center;
-    background-image:url('/img/event/apply.jpg');
+    background-image:url('../img/event/apply.jpg');
     padding-top:75px;
     padding-bottom:25px;
 }

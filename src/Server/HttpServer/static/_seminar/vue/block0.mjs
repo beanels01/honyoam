@@ -62,7 +62,7 @@ let block0={
                         <div class=o>
                             {{language.place}}：{{block0.placeName}}
                             <a :href=block0.placeGMap>
-                                <img src=/img/map.png>
+                                <img src=img/map.png>
                             </a><br>
                             {{block0.placeAddress}}
                         </div>
