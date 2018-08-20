@@ -134,46 +134,56 @@ let houseSearch={
                         <div class=a>搜尋區域</div>
                         <select v-model=place0>
                             <option value disabled>地區</option>
-                            <option>東京都</option>
-                            <option>神奈川縣</option>
-                            <option>千葉縣</option>
-                            <option>埼玉縣</option>
-                            <option>大阪府</option>
-                            <option>京都府</option>
-                            <option>其他</option>
+                            <option value=0>東京都</option>
+                            <option value=1>神奈川縣</option>
+                            <option value=2>千葉縣</option>
+                            <option value=3>埼玉縣</option>
+                            <option value=4>大阪府</option>
+                            <option value=5>京都府</option>
+                            <option value=6>其他</option>
                         </select>
                         <select v-model=place1>
                             <option value disabled>區域</option>
                             <template v-if="data.type=='presale'">
-                                <option>東京都心6區</option>
-                                <option>東京都區部</option>
+                                <template v-if="place0==0">
+                                    <option>東京都心6區</option>
+                                    <option>東京都區部</option>
+                                </template>
+                                <template v-if="place0!=0">
+                                    <option>全部</option>
+                                </template>
                             </template>
                             <template v-if="data.type=='medieval'">
-                                <option>都心3區</option>
-                                <option>東京都心6</option>區
-                                <option>千代田區</option>
-                                <option>中央區</option>
-                                <option>港區</option>
-                                <option>新宿區</option>
-                                <option>文京區</option>
-                                <option>品川區</option>
-                                <option>目黑區</option>
-                                <option>大田區</option>
-                                <option>世田谷區</option>
-                                <option>澀谷區</option>
-                                <option>中野區</option>
-                                <option>杉並區</option>
-                                <option>豐島區</option>
-                                <option>北區</option>
-                                <option>板橋區</option>
-                                <option>練馬區</option>
-                                <option>台東區</option>
-                                <option>墨田區</option>
-                                <option>江東區</option>
-                                <option>荒川區</option>
-                                <option>足立區</option>
-                                <option>葛飾區</option>
-                                <option>江戶川區</option>
+                                <template v-if="place0==0">
+                                    <option>都心3區</option>
+                                    <option>東京都心6區</option>
+                                    <option>千代田區</option>
+                                    <option>中央區</option>
+                                    <option>港區</option>
+                                    <option>新宿區</option>
+                                    <option>文京區</option>
+                                    <option>品川區</option>
+                                    <option>目黑區</option>
+                                    <option>大田區</option>
+                                    <option>世田谷區</option>
+                                    <option>澀谷區</option>
+                                    <option>中野區</option>
+                                    <option>杉並區</option>
+                                    <option>豐島區</option>
+                                    <option>北區</option>
+                                    <option>板橋區</option>
+                                    <option>練馬區</option>
+                                    <option>台東區</option>
+                                    <option>墨田區</option>
+                                    <option>江東區</option>
+                                    <option>荒川區</option>
+                                    <option>足立區</option>
+                                    <option>葛飾區</option>
+                                    <option>江戶川區</option>
+                                </template>
+                                <template v-if="place0!=0">
+                                    <option>全部</option>
+                                </template>
                             </template>
                         </select>
                         <select>
