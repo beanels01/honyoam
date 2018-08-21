@@ -53,8 +53,8 @@ ${await render(Object.setPrototypeOf({data:vueData},doc.vue))}
 if(!(
     61<=        getVersion('chrome')    ||
     55<=        getVersion('firefox')   ||
-    48<=        getVersion('opr')       ||
-    603<=       getVersion('safari')
+    48<=        getVersion('opr')/*       ||
+    603<=       getVersion('safari')*/
 ))
     alert('您正在使用的瀏覽器可能因為版本因素，無法正常瀏覽本網站內容；建議可使用新版之 Google Chrome 或 Mozilla Firefox 開啟。')
 function getVersion(s){
