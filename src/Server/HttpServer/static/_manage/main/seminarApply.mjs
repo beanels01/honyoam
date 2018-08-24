@@ -66,6 +66,9 @@ let contactApply={
             let res=(await api.post({
                 method:'getApplies',
             })).res
+            res.sort((a,b)=>
+                new Date(b.datetime)-new Date(a.datetime)
+            )
             for(let a of res)
                 a.updating=0
             this.array=res
