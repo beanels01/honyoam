@@ -49,6 +49,10 @@ async function main(rq,rs,lang,patch,id){
         vueData:{
             data:{
                 current:rq.url,
+                medieval:{
+                    medieval:(await this._getMedieval()).res,
+                    list:(await this._getMedievalList0(lang)).res,
+                },
                 data:medieval,
             },
         },

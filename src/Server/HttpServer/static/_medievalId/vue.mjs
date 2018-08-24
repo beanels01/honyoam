@@ -66,6 +66,20 @@ let aMain={
         href(){
             return homepageLike.langToPath(this.currentLanguage)
         },
+        mightLikeData(){
+            let a={}
+            for(let b of this.data.medieval.list)
+                a[b.id]=b
+            return this.data.medieval.medieval.youMightLike.map(b=>{
+                let c=a[b]
+                return{
+                    image:'/image/'+c.image,
+                    title:c.name,
+                    subtitle:`${c.price} 萬日幣`,
+                    href:`${this.currentLanguage}/medieval/${c.id}`
+                }
+            })
+        },
     },
     data:()=>({
         menu:0,
@@ -375,7 +389,9 @@ let aMain={
                         </div>
                     </div>
                 </div>
-                <mightLike></mightLike>
+                <mightLike
+                    :data=mightLikeData
+                ></mightLike>
                 <hlFooter
                     :language=language.homepageLike.footer
                     :currentLanguage=currentLanguage
