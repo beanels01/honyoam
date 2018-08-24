@@ -22,10 +22,6 @@ let aMain={
                 this.setId(e.state.id)
             }
         }
-        if(!this.id){
-            this.year=Math.max(...this.yearList)
-            this.month=Math.max(...this.monthList)
-        }
     },
     components:{
         hlFooter:   homepageLike.footer,
@@ -58,8 +54,8 @@ let aMain={
         newsByYearAndType(){
             let a=this.data.news.filter(a=>{
                 let date=new Date(a.timestamp)
-                return date.getYear()==this.year&&
-                    date.getMonth()==this.month&&
+                return(this.year=='any'||date.getYear()==this.year)&&
+                    (this.month=='any'||date.getMonth()==this.month)&&
                     a.type==this.type
             })
             a.sort((a,b)=>(new Date(b.timestamp))-(new Date(a.timestamp)))
@@ -68,8 +64,8 @@ let aMain={
     },
     data:()=>({
         menu:0,
-        year:0,
-        month:0,
+        year:'any',
+        month:'any',
         type:'normal',
         normalFocus:null,
         enewsLikeFocus:null,
@@ -171,6 +167,9 @@ let aMain={
                         @input="setIdHistory()"
                     >
                         <option
+                            value='any'
+                        >任何一年</option>
+                        <option
                             v-for="y of yearList"
                             :value=y
                         >{{1900+y}} 年</option>
@@ -179,11 +178,16 @@ let aMain={
                         class=yearSelect
                         v-model=month
                         @input="setIdHistory()"
+                        :disabled="year=='any'"
                     >
                         <option
+                            value='any'
+                        >任何一月</option>
+                        <option
+                            v-if="year!='any'"
                             v-for="m of monthList"
                             :value=m
-                        >{{m}} 月</option>
+                        >{{m+1}} 月</option>
                     </select>
                 </div>
                 <div class=typeSelect>
