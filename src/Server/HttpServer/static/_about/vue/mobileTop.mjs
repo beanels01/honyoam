@@ -55,10 +55,12 @@ let top={
                         :class="{focus:value=='service'}"
                         @click="click('service')"
                     >{{language.about.top.service}}</div>
+<!--
                     <div
                         :class="{focus:value=='idea'}"
                         @click="click('idea')"
                     >{{language.about.top.idea}}</div>
+-->
                 </div>
             </div>
         </div>

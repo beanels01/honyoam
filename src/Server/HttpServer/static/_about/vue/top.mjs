@@ -22,10 +22,12 @@ let top={
                     :class="{focus:value=='service'}"
                     @click="$emit('input','service')"
                 >{{language.about.top.service}}</div>
+<!--
                 <div
                     :class="{focus:value=='idea'}"
                     @click="$emit('input','idea')"
                 >{{language.about.top.idea}}</div>
+-->
             </div>
         </div></div>
     `
