@@ -135,6 +135,9 @@
     background-color:#7fbfcb;
     color:white;
 }
+#main>.normal>.focus>.b>.c img{
+    max-width:100%;
+}
 @media(max-width:1279px){
     #main>.normal{
         margin:0 10px;
@@ -268,9 +271,6 @@
     }
     #main>.normal>.focus>.b>.c h2{
         font-size:28px;
-    }
-    #main>.normal>.focus>.b>.c img{
-        width:100%;
     }
 }
 #main>.enewsLike>.a>*>.a>*>.b>*{
