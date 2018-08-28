@@ -49,12 +49,12 @@ function Server(config){
             let rate=(await getStringContentByResponse(res)).split(
                 '\n'
             ).map(s=>s.split(','))
-            let ntd=+rate.filter(a=>a[0]=='JPY')[0][2]
+            let ntd=+rate.filter(a=>a[0]=='JPY')[0][3]
             this.data.rate={
-                cny:ntd/rate.filter(a=>a[0]=='CNY')[0][3],
+                cny:ntd/rate.filter(a=>a[0]=='CNY')[0][2],
                 jpy:1,
                 ntd,
-                usd:ntd/rate.filter(a=>a[0]=='USD')[0][3],
+                usd:ntd/rate.filter(a=>a[0]=='USD')[0][2],
             }
         })
     }
