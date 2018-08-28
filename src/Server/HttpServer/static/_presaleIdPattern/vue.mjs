@@ -34,7 +34,7 @@ let aMain={
         hlMenu:                 homepageLike.menu,
         hlHeader:               homepageLike.header,
         floatBall:              homepageLike.floatBall,
-        presaleLikeTop: presaleLike.top,
+        presaleLikeTop:         presaleLike.top,
         presaleIdLikeTop:       presaleIdLike.top,
         presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeFooter:    presaleIdLike.footer,
@@ -86,15 +86,9 @@ let aMain={
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
-                <presaleIdLikeMain
-                    :data="{
-                        part:['空間格局','PLAN'],
-                        title:presale.presaleId.informationTitle,
-                        content:presale.presaleId.informationContent,
-                    }"
                 <div class=a>
                     <div class=n>
-                        <span class=a>空間格局</span> / PLAN
+                        <span class=a>空間格局</span> / SPACE PATTERN
                     </div>
                     <patternInput
                         :data=presale.presaleId.pattern

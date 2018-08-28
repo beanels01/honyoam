@@ -60,7 +60,7 @@ let aMain={
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{
-                        part:['建案介紹','INFORMATION'],
+                        part:['建築設計','DESIGN CONCEPT'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
                     }"

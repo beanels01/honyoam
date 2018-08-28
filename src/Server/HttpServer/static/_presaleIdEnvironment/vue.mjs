@@ -7,7 +7,7 @@ let aMain={
         hlMenu:                 homepageLike.menu,
         hlHeader:               homepageLike.header,
         floatBall:              homepageLike.floatBall,
-        presaleLikeTop: presaleLike.top,
+        presaleLikeTop:         presaleLike.top,
         presaleIdLikeTop:       presaleIdLike.top,
         presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeHypertext: presaleIdLike.hypertext,
@@ -60,7 +60,7 @@ let aMain={
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{
-                        part:['建案介紹','INFORMATION'],
+                        part:['周邊環境','ENVIRONMENT'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
                     }"

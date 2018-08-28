@@ -58,7 +58,7 @@ let aMain={
                 ></presaleIdLikeTop>
                 <div class=a>
                     <div class=n>
-                        <span class=a>物件概要</span> / BRAND
+                        <span class=a>物件概要</span> / SUMMARY
                     </div>
                     <div class=o>
                         <div>

@@ -4,8 +4,8 @@
         "url":"mongodb://localhost:27017"
     },
     "http":{
-        "host":             "http://localhost:8080",
-        "allowedOrigin":    "http://localhost:8080",
+        "host":             "http://localhost:8000",
+        "allowedOrigin":    "http://localhost:8000",
         "recaptchaSecret":  ""
     }
 }

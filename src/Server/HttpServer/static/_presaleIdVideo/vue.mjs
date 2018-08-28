@@ -59,7 +59,7 @@ let aMain={
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{
-                        part:['影音介紹','VIDEO'],
+                        part:['影音介紹','VIDEOS'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
                     }"

@@ -186,6 +186,8 @@ let inputForSpecificObject={
                 ></imageUploader>
             </div>
             <h1>格局</h1>
+            <p>
+                至少一個格局。格局必須有格局圖。
             <optionList
                 class=indent
                 :editOption=patternEditOption
