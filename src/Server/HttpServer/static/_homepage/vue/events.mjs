@@ -43,7 +43,7 @@ let events={
                 <div class=a>
                     <div class=n>
                         <div class=a>說明會</div>
-                        <div class=b>EVENTS</div>
+                        <div class=b>SEMINAR</div>
                     </div>
                     <div class=o></div>
                     <div class=p>

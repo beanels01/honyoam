@@ -58,7 +58,7 @@ Tel：02-2785-5865`,
         <div class=summary>
             <div class=a>
                 <div class=a>
-                    <span class=a>公司概要</span> / SUMMARY
+                    <span class=a>公司概要</span> / OUTLINE
                 </div>
                 <div class=b>
                     <div>

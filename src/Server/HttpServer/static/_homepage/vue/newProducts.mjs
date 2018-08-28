@@ -11,7 +11,7 @@ let newProducts={
         <div class=newProducts>
             <div class=a>
                 <div class=n>最新物件</div>
-                <div class=o>NEW PRODUCTS</div>
+                <div class=o>HOTTEST</div>
             </div>
             <rotation
                 v-model=focus

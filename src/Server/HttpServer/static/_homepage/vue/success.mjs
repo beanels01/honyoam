@@ -30,7 +30,7 @@ let success={
         <div class=success>
             <div class=a>
                 <div class=n>成功案例</div>
-                <div class=o>SUCCESS CASE</div>
+                <div class=o>CASE STUDY</div>
             </div>
             <div class=b>
                 <div class=n>

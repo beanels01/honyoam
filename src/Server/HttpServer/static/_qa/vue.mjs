@@ -36,7 +36,7 @@ let aMain={
                 <div class=static>
                     <div>
                         <div class=a>客服Q&A</div>
-                        <div class=b>CUSTOMER Q&A</div>
+                        <div class=b>CUSTOMER SERVICE</div>
                     </div>
                 </div>
                 <div class=a>
