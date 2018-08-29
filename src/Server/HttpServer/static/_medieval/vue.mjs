@@ -52,7 +52,11 @@ let aMain={
                     }"
                 ></medievalLikeTop>
                 <houseSearch
-                    :data="{type:'medieval',rate:data.rate}"
+                    :data="{
+                        place:data.place,
+                        rate:data.rate,
+                        type:'medieval',
+                    }"
                     v-model="search"
                 ></houseSearch>
                 <houseList

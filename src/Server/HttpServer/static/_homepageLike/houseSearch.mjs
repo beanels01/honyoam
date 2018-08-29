@@ -1,4 +1,8 @@
 import housePattern from './houseSearch/housePattern.mjs'
+let areaRate=[
+    1,
+    0.3025,
+]
 let houseSearch={
     created(){
         this.checkValue()
@@ -8,6 +12,7 @@ let houseSearch={
         currency:'jpy',
         areaMin:'',
         areaMax:'',
+        areaUnit:0,
         priceMin:'',
         priceMax:'',
     }),
@@ -21,19 +26,22 @@ let houseSearch={
                 })
         },
         clear(){
-            value={
+            this.value={
                 place0:'',
                 place1:'',
                 age:'',
             }
-            areaMin=''
-            areaMax=''
-            priceMin=''
-            priceMax=''
+            this.areaMin=''
+            this.areaMax=''
+            this.priceMin=''
+            this.priceMax=''
         },
         search(){
-            this.value.priceMin=priceMin/data.rate[currency]
-            this.value.priceMax=priceMax/data.rate[currency]
+            this.value.priceMin=this.areaMin/areaRate[this.areaUnit]
+            this.value.priceMax=this.areaMax/areaRate[this.areaUnit]
+            this.value.priceMin=this.priceMin/this.data.rate[this.currency]
+            this.value.priceMax=this.priceMax/this.data.rate[this.currency]
+            this.$emit('search')
         },
     },
     props:['data','value',],
@@ -60,57 +68,17 @@ let houseSearch={
                         <div class=a>搜尋區域</div>
                         <select v-model=value.place0>
                             <option value disabled>地區</option>
-                            <option value=0>東京都</option>
-                            <option value=1>神奈川縣</option>
-                            <option value=2>千葉縣</option>
-                            <option value=3>埼玉縣</option>
-                            <option value=4>大阪府</option>
-                            <option value=5>京都府</option>
-                            <option value=6>其他</option>
+                            <option
+                                v-for="a of data.place.place0"
+                                :value=a
+                            >{{a}}</option>
                         </select>
                         <select v-model=value.place1>
                             <option value disabled>區域</option>
-                            <template v-if="data.type=='presale'">
-                                <template v-if="value.place0==0">
-                                    <option>東京都心6區</option>
-                                    <option>東京都區部</option>
-                                </template>
-                                <template v-if="value.place0!=0">
-                                    <option>全域</option>
-                                </template>
-                            </template>
-                            <template v-if="data.type=='medieval'">
-                                <template v-if="value.place0==0">
-                                    <option>都心3區</option>
-                                    <option>東京都心6區</option>
-                                    <option>千代田區</option>
-                                    <option>中央區</option>
-                                    <option>港區</option>
-                                    <option>新宿區</option>
-                                    <option>文京區</option>
-                                    <option>品川區</option>
-                                    <option>目黑區</option>
-                                    <option>大田區</option>
-                                    <option>世田谷區</option>
-                                    <option>澀谷區</option>
-                                    <option>中野區</option>
-                                    <option>杉並區</option>
-                                    <option>豐島區</option>
-                                    <option>北區</option>
-                                    <option>板橋區</option>
-                                    <option>練馬區</option>
-                                    <option>台東區</option>
-                                    <option>墨田區</option>
-                                    <option>江東區</option>
-                                    <option>荒川區</option>
-                                    <option>足立區</option>
-                                    <option>葛飾區</option>
-                                    <option>江戶川區</option>
-                                </template>
-                                <template v-if="value.place0!=0">
-                                    <option>全域</option>
-                                </template>
-                            </template>
+                            <option
+                                v-for="a of data.place.place1[data.type][value.place0=='東京都'?0:1]"
+                                :value=a
+                            >{{a}}</option>
                         </select>
 <!--
                         <select>
@@ -125,9 +93,9 @@ let houseSearch={
                         <input placeholder=最低 v-model=areaMin>
                         ~
                         <input placeholder=最高 v-model=areaMax>
-                        <select>
-                            <option>平方公尺</option>
-                            <option>坪</option>
+                        <select v-model=areaUnit>
+                            <option value=0>平方公尺</option>
+                            <option value=1>坪</option>
                         </select>
                     </div>
                     <div class=margin></div>

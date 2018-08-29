@@ -13,6 +13,7 @@ async function main(rq,rs,lang,patch){
         vueData:{
             data:{
                 current:rq.url,
+                place:(await this._getPlace()).res,
                 medieval:(await this._getMedieval()).res,
                 rate:(await this._getRate()).res,
                 data:(await this._getMedievalList0(lang)).res,

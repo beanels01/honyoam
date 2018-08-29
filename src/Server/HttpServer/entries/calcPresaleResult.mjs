@@ -14,6 +14,7 @@ async function main(rq,rs,lang,patch){
             data:{
                 current:rq.url,
                 presale:(await this._getPresale()).res,
+                place:(await this._getPlace()).res,
                 rate:(await this._getRate()).res,
                 data:(await this._getPresaleList0(lang)).res,
             },
