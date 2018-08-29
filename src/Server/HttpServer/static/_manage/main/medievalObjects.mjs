@@ -17,6 +17,7 @@ let inputForSpecificObject={
         this.in()
     },
     data:()=>({
+        place:0,
         version:0,
         cropImageUploader,
         galleryCropImageUploader,
@@ -25,6 +26,9 @@ let inputForSpecificObject={
     }),
     methods:{
         async in(){
+            this.place=(await api.post({
+                method:'getPlace',
+            })).res
             let value=(await api.post({
                 method:'getMedievalObject',
                 id:this.id,
@@ -52,12 +56,28 @@ let inputForSpecificObject={
     },
     props:['id','language',],
     template:`
-        <div v-if=value>
+        <div v-if=place&&value>
             <p>
                 <label>
                     <input type=checkbox v-model=value.publish>
                     發布
                 </label>
+            </p>
+            <p>
+                地區：<select v-model=value.place0>
+                    <option
+                        v-for="a of place.place0"
+                        :value=a
+                    >{{a}}</option>
+                </select>
+            </p>
+            <p>
+                區域：<select v-model=value.place1>
+                    <option
+                        v-for="a of place.place1.presale[value.place0=='東京都'?0:1]"
+                        :value=a
+                    >{{a}}</option>
+                </select>
             </p>
             <p>
                 價格：<input v-model=value.price> 萬日幣
