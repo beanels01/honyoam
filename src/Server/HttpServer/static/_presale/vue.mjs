@@ -32,6 +32,7 @@ let aMain={
     },
     data:()=>({
         menu:0,
+        search:0,
     }),
     props:['language','currentLanguage','data','mainSeminar'],
     template:`
@@ -50,6 +51,7 @@ let aMain={
                 ></presaleLikeTop>
                 <houseSearch
                     :data="{type:'presale',rate:data.rate}"
+                    v-model=search
                 ></houseSearch>
                 <homepageLikeHouseList
                     :data="{

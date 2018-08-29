@@ -32,6 +32,7 @@ let aMain={
     },
     data:()=>({
         menu:0,
+        search:0,
     }),
     props:['language','currentLanguage','mainSeminar','data',],
     template:`
@@ -52,6 +53,7 @@ let aMain={
                 ></medievalLikeTop>
                 <houseSearch
                     :data="{type:'medieval',rate:data.rate}"
+                    v-model="search"
                 ></houseSearch>
                 <houseList
                     :data="{
