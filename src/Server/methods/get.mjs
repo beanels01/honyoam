@@ -1,4 +1,5 @@
-import faqClasses from     './get/faqClasses'
+import faqClasses from      './get/faqClasses'
+import place from           './get/place'
 export default{
     async getAllNews(doc){
         return{res:await this.honyoamMongoClient.getAllNews(doc.language)}
@@ -76,6 +77,9 @@ export default{
         ))
             return{err:'permission denied'}
         return{res:await this.honyoamMongoClient.getNews(doc.id)}
+    },
+    async getPlace(doc){
+        return{res:place}
     },
     async getPresale(){
         return{res:await this.honyoamMongoClient.getSite('presale')}

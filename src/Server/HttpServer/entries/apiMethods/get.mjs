@@ -35,6 +35,9 @@ let get={
     async getNews(doc,cu){
         return['responseJson',await this._getNews(cu,doc.id)]
     },
+    async getPlace(doc,cu){
+        return['responseJson',await this._getPlace()]
+    },
     async getPresaleObject(doc,cu){
         if(!(
             typeof doc.id=='string'

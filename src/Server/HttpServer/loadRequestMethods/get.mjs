@@ -87,6 +87,11 @@ o._getNewsList=function(cu,language){
         language,
     })
 }
+o._getPlace=function(id){
+    return this._request({
+        method:'getPlace',
+    })
+}
 o._getPresaleObject=function(id){
     return this._request({
         method:'getPresaleObject',
