@@ -39,6 +39,7 @@ let aMain={
     template:`
         <div id=main>
             <hlHeader
+                shadow=1
                 :current=data.current
                 :language=language
                 :currentLanguage=currentLanguage
