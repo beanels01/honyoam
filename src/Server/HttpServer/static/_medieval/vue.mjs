@@ -33,6 +33,7 @@ let aMain={
     data:()=>({
         menu:0,
         search:0,
+        searchIn:0,
     }),
     props:['language','currentLanguage','mainSeminar','data',],
     template:`
@@ -57,13 +58,15 @@ let aMain={
                         rate:data.rate,
                         type:'medieval',
                     }"
-                    v-model="search"
+                    v-model="searchIn"
+                    @search="search=JSON.parse(JSON.stringify(searchIn))"
                 ></houseSearch>
                 <houseList
                     :data="{
                         type:'medieval',
                         array:data.data,
                         rate:data.rate,
+                        search,
                     }"
                 ></houseList>
                 <mightLike

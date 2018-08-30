@@ -143,7 +143,60 @@ let houseList={
     props:['data'],
     computed:{
         sortArray(){
-            return this.data.array.slice().sort((a,b)=>
+            return this.data.array.filter(o=>
+                !this.data.search||(
+                    this.data.search.place0==''||
+                    o.place0==this.data.search.place0
+                )&&(
+                    this.data.search.place1==''||
+                    o.place1==this.data.search.place1
+                )&&(
+                    this.data.type=='presale'?
+                        (
+                            this.data.search.areaMin==''||
+                            this.data.search.areaMin<=o.areaMax
+                        )&&(
+                            this.data.search.areaMax==''||
+                            o.areaMin<=this.data.search.areaMax
+                        )&&(
+                            this.data.search.priceMin==''||
+                            this.data.search.priceMin<=o.priceMax
+                        )&&(
+                            this.data.search.priceMax==''||
+                            o.priceMin<=this.data.search.priceMax
+                        )&&(
+                            o.pattern.some(a=>
+                                this.data.search.pattern['1K']&&a=='1K'||
+                                this.data.search.pattern['1DK']&&a=='1DK'||
+                                this.data.search.pattern['1LDK']&&a=='1LDK'||
+                                this.data.search.pattern['2LDK']&&a=='2LDK'||
+                                this.data.search.pattern['3LDK']&&a=='3LDK'||
+                                this.data.search.pattern['>3LDK']&&4<=+a.substring(0,1)
+                            )
+                        )
+                    :
+                        (
+                            this.data.search.areaMin==''||
+                            this.data.search.areaMin<=o.area
+                        )&&(
+                            this.data.search.areaMax==''||
+                            o.area<=this.data.search.areaMax
+                        )&&(
+                            this.data.search.priceMin==''||
+                            this.data.search.priceMin<=o.price
+                        )&&(
+                            this.data.search.priceMax==''||
+                            o.price<=this.data.search.priceMax
+                        )&&(
+                            this.data.search.pattern['1K']&&o.pattern=='1K'||
+                            this.data.search.pattern['1DK']&&o.pattern=='1DK'||
+                            this.data.search.pattern['1LDK']&&o.pattern=='1LDK'||
+                            this.data.search.pattern['2LDK']&&o.pattern=='2LDK'||
+                            this.data.search.pattern['3LDK']&&o.pattern=='3LDK'||
+                            this.data.search.pattern['>3LDK']&&o.pattern<=+a.substring(0,1)
+                        )
+                )
+            ).sort((a,b)=>
                 new Date(b.timestamp)-new Date(a.timestamp)
             )
         },

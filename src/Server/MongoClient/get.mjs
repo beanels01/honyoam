@@ -100,6 +100,8 @@ o.getMedievalList0=async function(language){
     return(await this._medievalCol.find({publish:true}).toArray()).map(a=>{
         return{
             id:a._id,
+            place0:     a.place0,
+            place1:     a.place1,
             image:a.image,
             name:a.language[language].name,
             place:a.language[language].place,
@@ -140,6 +142,8 @@ o.getPresaleList0=async function(language){
             price=a.pattern.map(a=>a.price)
         return{
             id:         a._id,
+            place0:     a.place0,
+            place1:     a.place1,
             image:      a.image,
             name:       a.language[language].name,
             subName:    a.language[language].subName,
@@ -148,6 +152,7 @@ o.getPresaleList0=async function(language){
             soldout:    a.soldout,
             patternMin: pattern[0],
             patternMax: pattern[pattern.length-1],
+            pattern,
             areaMin:    Math.min(...area),
             areaMax:    Math.max(...area),
             priceMin:   Math.min(...price),

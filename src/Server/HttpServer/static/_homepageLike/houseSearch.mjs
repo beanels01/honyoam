@@ -22,14 +22,38 @@ let houseSearch={
                 this.$emit('input',{
                     place0:'',
                     place1:'',
+                    areaMin:'',
+                    areaMax:'',
+                    priceMin:'',
+                    priceMax:'',
                     age:'',
+                    pattern:{
+                        '1K':0,
+                        '1DK':0,
+                        '1LDK':0,
+                        '2LDK':0,
+                        '3LDK':0,
+                        '>3LDK':0,
+                    }
                 })
         },
         clear(){
             this.value={
                 place0:'',
                 place1:'',
+                areaMin:'',
+                areaMax:'',
+                priceMin:'',
+                priceMax:'',
                 age:'',
+                pattern:{
+                    '1K':0,
+                    '1DK':0,
+                    '1LDK':0,
+                    '2LDK':0,
+                    '3LDK':0,
+                    '>3LDK':0,
+                }
             }
             this.areaMin=''
             this.areaMax=''
@@ -37,8 +61,8 @@ let houseSearch={
             this.priceMax=''
         },
         search(){
-            this.value.priceMin=this.areaMin/areaRate[this.areaUnit]
-            this.value.priceMax=this.areaMax/areaRate[this.areaUnit]
+            this.value.areaMin=this.areaMin/areaRate[this.areaUnit]
+            this.value.areaMax=this.areaMax/areaRate[this.areaUnit]
             this.value.priceMin=this.priceMin/this.data.rate[this.currency]
             this.value.priceMax=this.priceMax/this.data.rate[this.currency]
             this.$emit('search')
