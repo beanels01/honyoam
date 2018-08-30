@@ -1,17 +1,5 @@
-let array=[
-    '1K',
-    '1R',
-    '1DK',
-    '1LDK',
-    '2DK',
-    '2LDK',
-    '3LDK',
-]
 let pattern={
     props:['value'],
-    data:()=>({
-        array,
-    }),
     template:`
         <div>
             <div class=a>
@@ -26,7 +14,7 @@ let pattern={
                             <label>
                                 <input
                                     type=checkbox
-                                    v-model=value[0]
+                                    v-model="value['1K']"
                                 >
                                 1K
                             </label>
@@ -35,16 +23,7 @@ let pattern={
                             <label>
                                 <input
                                     type=checkbox
-                                    v-model=value[1]
-                                >
-                                1R
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input
-                                    type=checkbox
-                                    v-model=value[2]
+                                    v-model="value['1DK']"
                                 >
                                 1DK
                             </label>
@@ -53,10 +32,12 @@ let pattern={
                             <label>
                                 <input
                                     type=checkbox
-                                    v-model=value[3]
+                                    v-model="value['1LDK']"
                                 >
                                 1LDK
                             </label>
+                        </div>
+                        <div>
                         </div>
                     </div>
                     <div>
@@ -64,16 +45,7 @@ let pattern={
                             <label>
                                 <input
                                     type=checkbox
-                                    v-model=value[4]
-                                >
-                                2DK
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input
-                                    type=checkbox
-                                    v-model=value[5]
+                                    v-model="value['2LDK']"
                                 >
                                 2LDK
                             </label>
@@ -82,12 +54,19 @@ let pattern={
                             <label>
                                 <input
                                     type=checkbox
-                                    v-model=value[6]
+                                    v-model="value['3LDK']"
                                 >
                                 3LDK
                             </label>
                         </div>
                         <div>
+                            <label>
+                                <input
+                                    type=checkbox
+                                    v-model="value['>3LDK']"
+                                >
+                                3LDK 以上
+                            </label>
                         </div>
                         <div>
                         </div>

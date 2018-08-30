@@ -38,6 +38,13 @@ let aMain={
     data:()=>({
         menu:0,
     }),
+    methods:{
+        search(v){
+            if(!v.type)
+                return
+            location=`${this.href[v.type]}?a=${encodeURIComponent(JSON.stringify(v))}`
+        },
+    },
     props:['data','language','currentLanguage','homepage','mainSeminar'],
     template:`
         <div id=main>
@@ -50,7 +57,10 @@ let aMain={
                 v-model=menu
             ></hlHeader>
             <template v-if=!menu>
-                <search :mission=homepage.mission></search>
+                <search
+                    :mission=homepage.mission
+                    @search=search
+                ></search>
                 <newProducts
                     :rotation=homepage.rotation
                     :href=href

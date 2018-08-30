@@ -1,17 +1,20 @@
 import search0 from          './search/search.mjs'
 let initialValue=JSON.stringify({
-    usage:          '',
-    county:         '',
-    area:           '',
-    areaLower:      '',
-    areaUpper:      '',
-    valueLower:     '',
-    valueUpper:     '',
-    more:{
-        age:'',
-        pattern:[...Array(8)].map(_=>0),
-        distanceToStation:'',
-        publicUtilities:[...Array(8)].map(_=>0),
+    type:           '',
+    place0:         '',
+    place1:         '',
+    areaMin:        '',
+    areaMax:        '',
+    priceMin:       '',
+    priceMax:       '',
+    age:            '',
+    pattern:        {
+        '1K':       1,
+        '1DK':      1,
+        '1LDK':     1,
+        '2LDK':     1,
+        '3LDK':     1,
+        '>3LDK':    1,
     },
 })
 let search={
@@ -39,6 +42,9 @@ let search={
                 }')`
             }
         },
+        search(){
+            this.$emit('search',this.value)
+        },
     },
     props:['mission'],
     template:`
@@ -55,6 +61,7 @@ let search={
             <search0
                 v-model=value
                 @clear=clear
+                @search=search
             ></search0>
         </div>
     `

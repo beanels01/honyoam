@@ -1,6 +1,12 @@
 import homepageLike from    '../_homepageLike.mjs'
 import medievalLike from    '../_medievalLike.mjs'
 let aMain={
+    mounted(){
+        if(typeof window!='undefined'){
+            if(location.search)
+                this.search=this.searchIn=JSON.parse(decodeURIComponent(location.search.substring(3)))
+        }
+    },
     components:{
         hlFooter:           homepageLike.footer,
         hlMenu:             homepageLike.menu,

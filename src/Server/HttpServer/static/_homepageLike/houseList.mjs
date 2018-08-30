@@ -144,10 +144,8 @@ let houseList={
     computed:{
         sortArray(){
             let now=new Date
-            console.log(this.data.search)
-            return this.data.array.filter(o=>{
-                console.log(o)
-                return !this.data.search||(
+            return this.data.array.filter(o=>
+                !this.data.search||(
                     this.data.search.place0==''||
                     o.place0==this.data.search.place0
                 )&&(
@@ -205,7 +203,7 @@ let houseList={
                                 +this.data.search.age
                         )
                 )
-            }).sort((a,b)=>
+            ).sort((a,b)=>
                 new Date(b.timestamp)-new Date(a.timestamp)
             )
         },

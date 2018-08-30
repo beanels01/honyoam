@@ -13,6 +13,7 @@ let search={
         <div class=search><div><div>
             <lessSearch
                 :value=value
+                @search="$emit('search')"
             ></lessSearch>
             <div
                 class=b
@@ -36,8 +37,9 @@ let search={
                 <div class=hl></div>
                 <moreSearch
                     class=n
-                    v-model=value.more
+                    v-model=value
                     @clear="$emit('clear')"
+                    @search="$emit('search')"
                 ></moreSearch>
             </div>
         </div></div></div>

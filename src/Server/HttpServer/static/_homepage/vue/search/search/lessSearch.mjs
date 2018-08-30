@@ -65,17 +65,17 @@ let lessSearch={
                 </div>
                 <div class=b>
                     <label>
-                        <input type=radio value=0 v-model=value.usage>
+                        <input type=radio value=presale v-model=value.type>
                         新成屋
                     </label>
                     <label>
-                        <input type=radio value=1 v-model=value.usage>
+                        <input type=radio value=medieval v-model=value.type>
                         中古屋
                     </label>
                     <br class=t>
                     <select
                         class="n q"
-                        v-model=value.county
+                        v-model=value.place0
                     >
                         <option value hidden>地區</option>
                         <option
@@ -85,12 +85,12 @@ let lessSearch={
                     </select>
                     <select
                         class="n q"
-                        v-model=value.area
+                        v-model=value.place1
                     >
                         <option value hidden>區域</option>
                         <option
-                            v-if="typeof value.county=='number'"
-                            v-for="(a,i) in area[value.usage==0?'presale':'medieval'][value.county]"
+                            v-if="typeof value.place0=='number'"
+                            v-for="(a,i) in area[value.usage==0?'presale':'medieval'][value.place0]"
                             :value=i
                         >{{a}}</option>
                     </select>
@@ -99,13 +99,13 @@ let lessSearch={
                     <input
                         class=p
                         placeholder=最低
-                        v-model=value.areaLower
+                        v-model=value.areaMin
                     >
                     ～
                     <input
                         class=p
                         placeholder=最高
-                        v-model=value.areaUpper
+                        v-model=value.areaMax
                     >
                     <select class="n r">
                         <option>平方公尺</option>
@@ -117,18 +117,18 @@ let lessSearch={
                     <input
                         class=p
                         placeholder=最低
-                        v-model=value.valueLower
+                        v-model=value.priceMin
                     >
                     ～
                     <input
                         class=p
                         placeholder=最高
-                        v-model=value.valueUpper
+                        v-model=value.priceMax
                     >
                     萬日幣
                 </div>
                 <div class=c>
-                    <button class=searchButton>
+                    <button class=searchButton @click="$emit('search')">
                         <img src=img/search.png> 搜尋
                     </button>
                 </div>
