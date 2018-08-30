@@ -7,7 +7,8 @@ async function main(rq,rs,lang,patch,id){
         let o={
             price:          i.price,
             pattern:        i.pattern,
-            date:           i.date,
+            dateYear:       i.dateYear,
+            dateMonth:      i.dateMonth,
             area:           i.area,
             balconyArea:    i.balconyArea,
             householdCount: i.householdCount,

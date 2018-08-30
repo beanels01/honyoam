@@ -143,8 +143,11 @@ let houseList={
     props:['data'],
     computed:{
         sortArray(){
-            return this.data.array.filter(o=>
-                !this.data.search||(
+            let now=new Date
+            console.log(this.data.search)
+            return this.data.array.filter(o=>{
+                console.log(o)
+                return !this.data.search||(
                     this.data.search.place0==''||
                     o.place0==this.data.search.place0
                 )&&(
@@ -194,9 +197,15 @@ let houseList={
                             this.data.search.pattern['2LDK']&&o.pattern=='2LDK'||
                             this.data.search.pattern['3LDK']&&o.pattern=='3LDK'||
                             this.data.search.pattern['>3LDK']&&o.pattern<=+a.substring(0,1)
+                        )&&(
+                            this.data.search.age==''||
+                                (now-new Date(o.dateYear+(o.dateMonth?`-${o.dateMonth}`:'')))/
+                                (365*24*60*60*1000)
+                            <=
+                                +this.data.search.age
                         )
                 )
-            ).sort((a,b)=>
+            }).sort((a,b)=>
                 new Date(b.timestamp)-new Date(a.timestamp)
             )
         },

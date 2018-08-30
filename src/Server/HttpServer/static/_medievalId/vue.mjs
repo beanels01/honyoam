@@ -155,7 +155,7 @@ let aMain={
                                 </div>
                                 <div>
                                     <div>{{data.data.pattern}}</div>
-                                    <div>{{data.data.date}}</div>
+                                    <div>{{data.data.dateYear}} 年<template v-if=data.data.dateMonth> {{data.data.dateMonth}} 月</template></div>
                                     <div>{{data.data.area}} 平方公尺</div>
                                 </div>
                             </div>
@@ -199,7 +199,7 @@ let aMain={
                             <div class=mobile>
                                 <span class=a>格局：</span>{{data.data.pattern}}
                                 <div class="hl"></div>
-                                <span class=a>竣工年月：</span>{{data.data.date}}
+                                <span class=a>竣工年月：</span>{{data.data.dateYear}} 年<template v-if=data.data.dateMonth> {{data.data.dateMonth}} 月</template>
                                 <div class="hl"></div>
                                 <span class=a>專有面積：</span>{{data.data.area}} 平方公尺
                                 <div class="hl"></div>
@@ -279,7 +279,8 @@ let aMain={
                                 <div>
                                     <div class=n>
                                         · 竣工年月
-                                    </div><div class=o>{{data.data.date}} 年</div>
+                                    </div><div class=o>{{data.data.dateYear}} 年<template v-if=data.data.dateMonth> {{data.data.dateMonth}} 月</template>
+                                    </div>
                                     <div class=n>
                                         · 總戶數
                                     </div><div class=o>{{data.data.householdCount}} 戶</div>

@@ -23,13 +23,6 @@ o.getApplies=async function(){
 o.getFeedbacks=async function(){
     return this._feedbackCol.find({}).toArray()
 }
-o.getMedievalObject=async function(id){
-    let res=await this._medievalCol.findOne({
-        _id:        new ObjectID(id),
-    })
-    delete res._id
-    return res
-}
 o.getNews=async function(id){
     let objectId=new ObjectID(id)
     let res=await this._newsCol.findOne({
@@ -85,6 +78,13 @@ o.getMainSeminar=async function(){
     let seminar=await this._seminarCol.findOne({main:true})
     return seminar&&seminar._id
 }
+o.getMedievalObject=async function(id){
+    let res=await this._medievalCol.findOne({
+        _id:        new ObjectID(id),
+    })
+    delete res._id
+    return res
+}
 o.getMedievalList=async function(){
     return(await this._medievalCol.find({}).toArray()).map(a=>({
         id:a._id,
@@ -99,17 +99,19 @@ o.getMedievalList=async function(){
 o.getMedievalList0=async function(language){
     return(await this._medievalCol.find({publish:true}).toArray()).map(a=>{
         return{
-            id:a._id,
-            place0:     a.place0,
-            place1:     a.place1,
-            image:a.image,
-            name:a.language[language].name,
-            place:a.language[language].place,
-            nearestStation:a.language[language].nearestStation,
-            pattern:a.pattern,
-            area:a.area,
-            price:a.price,
-            timestamp:(new ObjectID(a._id)).getTimestamp(),
+            id:             a._id,
+            place0:         a.place0,
+            place1:         a.place1,
+            image:          a.image,
+            name:           a.language[language].name,
+            place:          a.language[language].place,
+            nearestStation: a.language[language].nearestStation,
+            pattern:        a.pattern,
+            area:           a.area,
+            price:          a.price,
+            dateYear:       a.dateYear,
+            dateMonth:      a.dateMonth,
+            timestamp:      (new ObjectID(a._id)).getTimestamp(),
         }
     })
 }

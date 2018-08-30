@@ -86,7 +86,10 @@ let inputForSpecificObject={
                 格局：<input v-model=value.pattern>
             </p>
             <p>
-                竣工年月：<input v-model=value.date>
+                竣工年（純數字）：<input v-model=value.dateYear>
+            </p>
+            <p>
+                竣工月（非必填；純數字）：<input v-model=value.dateMonth>
             </p>
             <p>
                 專有面積：<input v-model=value.area> 平方公尺
