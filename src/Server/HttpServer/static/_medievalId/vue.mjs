@@ -313,32 +313,32 @@ let aMain={
                                 <div>
                                     <div class=n>
                                         · 管理方式
-                                    </div><div class=o>{{data.data.manageMethod}}</div>
-                                    <div class=n>
-                                        · 現況
-                                    </div><div class=o>{{data.data.situation}}</div>
-                                    <div class=n>
+                                    </div><div class=o>{{
+                                        data.data.manageMethod
+                                    }}</div><div class=n>
+                                        · 所在樓層
+                                    </div><div class=o>{{
+                                        data.data.level
+                                    }}</div><div class=n>
                                         · 停車場
-                                    </div><div class=o>{{data.data.parkingLot}}</div>
+                                    </div><div class=o>{{
+                                        data.data.parkingLot
+                                    }}</div>
                                 </div>
                                 <div>
                                     <div class=n>
                                         · 土地用途
-                                    </div>
-                                    <div class=o>{{data.data.usage}}</div>
-                                    <div class=n>
+                                    </div><div class=o>{{
+                                        data.data.usage
+                                    }}</div><div class=n>
                                         · 土地權利
-                                    </div><div class=o>{{data.data.right}}
-                                    </div>
-                                    <div class=n>
+                                    </div><div class=o>{{
+                                        data.data.right
+                                    }}</div><div class=n>
                                         · 交屋日
-                                    </div>
-                                    <div class=o>{{data.data.handInDate}}</div>
-                                </div>
-                                <div>
-                                    <div class=n>
-                                        · 所在樓層
-                                    </div><div class=o>{{data.data.level}}</div>
+                                    </div><div class=o>{{
+                                        data.data.handInDate
+                                    }}</div>
                                 </div>
                             </div>
                             <div class=p>
