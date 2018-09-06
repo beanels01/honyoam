@@ -261,6 +261,12 @@
         width:100%;
     }
 }
+#main>.service>.partner>.a{
+    color:rgba(37, 155, 214, 1.00);
+}
+#main>.service>.partner>.c{
+    color:rgba(37, 155, 214, 1.00);
+}
 @media(max-width:1279px){
     #main>.service>.partner{
         margin:30px 10px;
@@ -275,6 +281,37 @@
     #main>.service>.partner>*>.b>img{
         height:30px;
     }
+    #main>.service>.partner>.a{
+        font-size:25px;
+    }
+    #main>.service>.partner>.b>*>.a{
+        height:100px;
+        margin-top:10px;
+        padding:10px;
+        border:1px solid lightgray;
+        text-align:center;
+        line-height:100px;
+    }
+    #main>.service>.partner>.b>*>.a>*{
+        width:100%;
+        vertical-align:middle;
+    }
+    #main>.service>.partner>.c{
+        font-size:15px;
+    }
+    #main>.service>.partner>.d>.a>.a{
+        height:100px;
+        margin-top:10px;
+        padding:10px;
+        border:1px solid lightgray;
+        text-align:center;
+        line-height:100px;
+    }
+    #main>.service>.partner>.d>.a>.a>*{
+        width:100%;
+        max-height:100%;
+        vertical-align:middle;
+    }
 }
 @media(min-width:1280px){
     #main>.service>.partner{
@@ -283,6 +320,10 @@
     }
     #main>.service>.partner>*+*{
         margin-top:40px;
+    }
+    #main>.service>.partner>.a{
+        font-size:30px;
+        margin-top:50px;
     }
     #main>.service>.partner>.b{
         display:table;
@@ -304,6 +345,10 @@
     }
     #main>.service>.partner>.b>*>*>img{
         width:100%;
+    }
+    #main>.service>.partner>.c{
+        font-size:20px;
+        margin-top:50px;
     }
     #main>.service>.partner>.d{
         display:table;
