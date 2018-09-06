@@ -261,6 +261,29 @@
         width:100%;
     }
 }
+#main>.service>.a>.a{
+    color:rgba(37, 155, 214, 1.00);
+}
+@media(max-width:1279px){
+    #main>.service>.a{
+        margin:0 10px;
+        width:calc(100% - 20px);
+    }
+    #main>.service>.a>.a{
+        margin-top:25px;
+        font-size:25px;
+    }
+}
+@media(min-width:1280px){
+    #main>.service>.a{
+        margin:0 auto;
+        width:1170px;
+    }
+    #main>.service>.a>.a{
+        margin-top:30px;
+        font-size:30px;
+    }
+}
 #main>.service>.partner>.a{
     color:rgba(37, 155, 214, 1.00);
 }
