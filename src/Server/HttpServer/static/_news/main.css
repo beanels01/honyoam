@@ -99,16 +99,14 @@
 @media(max-width:1279px){
     #main>.typeSelect>.mobile{
         display:block;
-        width:100%;
-        padding:0 10px;
         height:50px;
-        margin-top:13px;
-        border:none;
-        border-top:1px solid #edeced;
-        border-bottom:1px solid #edeced;
-        background-color:white;
-        color:#1d98df;
-        font-size:20px;
+        border-radius:2px;
+        background-color:#f9f9f9;
+        border:1px solid #006aba;
+        color:#006aba;
+        margin:13px 10px 0;
+        width:calc(100% - 20px);
+        font-size:15px;
     }
 }
 @media(min-width:1280px){
@@ -375,6 +373,9 @@
 #main>.enewsLike>.b>.c{
     border-top:1px solid #cfcfcf;
     /*color:#797979;*/
+}
+#main>.enewsLike>.b>.c img{
+    max-width:100%;
 }
 #main>.enewsLike>.b>.d{
     border-top:1px solid #cfcfcf;
