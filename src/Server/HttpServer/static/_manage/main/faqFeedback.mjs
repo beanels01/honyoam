@@ -44,9 +44,7 @@ let faqFeedback={
             </thead>
             <thead>
                 <tr v-for="a in array">
-                    <td>
-                        {{a.content}}
-                    </td>
+                    <td style="white-space:pre-line;">{{a.content}}</td>
                     <td>
                         <select
                             v-model=a.status
