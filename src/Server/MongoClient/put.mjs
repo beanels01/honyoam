@@ -15,16 +15,10 @@ async function putApply(
     })).insertedId
 }
 async function putFeedback(
-    name,
-    email,
-    phone,
-    question,
+    content,
 ){
     let res=await this._feedbackCol.insertOne({
-        name,
-        email,
-        phone,
-        question,
+        content,
         status:0,
     })
     return res.insertedId

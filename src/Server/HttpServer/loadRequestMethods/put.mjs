@@ -28,10 +28,7 @@ o._putPresaleObject=function(currentUser){
 o._putFeedback=function(doc){
     return this._request({
         method:             'putFeedback',
-        name:               doc.name,
-        email:              doc.email,
-        phone:              doc.phone,
-        question:           doc.question,
+        content:            doc.content,
     })
 }
 o._putImage=function(currentUser){

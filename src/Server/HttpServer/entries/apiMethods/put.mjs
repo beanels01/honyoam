@@ -30,10 +30,7 @@ let put={
     async putFeedback(doc,cu){
         if(!(
             typeof doc.recaptcha=='string'&&
-            typeof doc.name=='string'&&
-            typeof doc.email=='string'&&
-            typeof doc.phone=='string'&&
-            typeof doc.question=='string'&&
+            typeof doc.content=='string'&&
             await verifyRecaptchaUsersResponse(
                 this.config.recaptchaSecret,
                 doc.recaptcha

@@ -45,10 +45,7 @@ let faqFeedback={
             <thead>
                 <tr v-for="a in array">
                     <td>
-                        姓名：{{a.name}}<br>
-                        Email：{{a.email}}<br>
-                        電話：{{a.phone}}<br>
-                        問題：{{a.question}}
+                        {{a.content}}
                     </td>
                     <td>
                         <select

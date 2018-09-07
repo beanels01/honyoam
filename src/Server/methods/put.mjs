@@ -9,10 +9,7 @@ export default{
     },
     async putFeedback(doc){
         return{res:await this.honyoamMongoClient.putFeedback(
-            doc.name,
-            doc.email,
-            doc.phone,
-            doc.question,
+            doc.content,
         )}
     },
     async putImage(doc){
