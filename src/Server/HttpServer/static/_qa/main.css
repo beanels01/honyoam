@@ -194,11 +194,22 @@
 #main>.a>.huiKui>.a{
     margin-top:35px;
 }
+#main>.a>.huiKui>.a>*>*>.a{
+    box-sizing:border-box;
+    border:1px solid rgba(149, 149, 149, 1.00);
+    border-radius:2px;
+    padding:1em;
+    font-size:14px;
+    color:rgba(28, 28, 35, 1.00);
+}
+#main>.a>.huiKui>.a>*>*>*:focus{
+    outline:2px solid rgb(37,155,214);
+}
 @media(max-width:1279px){
     #main>.a>.huiKui{
         padding:35px 10px;
     }
-    #main>.a>.huiKui>.a>*+*{
+    #main>.a>.huiKui>.a>*>*+*{
         margin-top:20px;
     }
 }
@@ -211,43 +222,19 @@
         width:100%;
     }
     #main>.a>.huiKui>.a>*{
+        display:table-row;
+    }
+    #main>.a>.huiKui>.a>*>*{
         display:table-cell;
+        height:60px;
     }
-    #main>.a>.huiKui>.a>*+*{
-        border-left:25px solid transparent;
+    #main>.a>.huiKui>.a>*>*>.a{
+        width:100%;
     }
-}
-#main>.a>.huiKui>.a>*>*{
-    box-sizing:border-box;
-    border:1px solid rgba(149, 149, 149, 1.00);
-    border-radius:2px;
-    width:100%;
-    padding:1em;
-    font-size:14px;
-    color:rgba(28, 28, 35, 1.00);
-}
-#main>.a>.huiKui>.a>*>*:focus{
-    outline:2px solid rgb(37,155,214);
-}
-#main>.a>.huiKui>.d{
-    margin-top:16px;
-}
-#main>.a>.huiKui>.c{
-    margin-top:16px;
-}
-#main>.a>.huiKui>textarea{
-    margin-top:20px;
-    box-sizing:border-box;
-    border:1px solid rgba(149, 149, 149, 1.00);
-    border-radius:2px;
-    resize:none;
-    width:100%;
-    padding:1em;
-    font-size:14px;
-    color:rgba(28, 28, 35, 1.00);
-}
-#main>.a>.huiKui>textarea:focus{
-    outline:2px solid rgb(37,155,214);
+    #main>.a>.huiKui>.a>*>*>.b{
+        width:100%;
+        height:100px;
+    }
 }
 #main>.a>.huiKui>.b{
     margin-top:35px;
@@ -270,16 +257,6 @@
     }
 }
 @media(min-width:1280px){
-    #main>.a>.huiKui>.c{
-        display:table;
-        width:100%;
-    }
-    #main>.a>.huiKui>.c>*{
-        display:table-row;
-    }
-    #main>.a>.huiKui>.c>*>*{
-        display:table-cell;
-    }
     #main>.a>.huiKui>.b{
         text-align:right;
     }

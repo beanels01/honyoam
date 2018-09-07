@@ -1,84 +1,179 @@
 import api from                 '../../_api.mjs'
 import recaptcha from           '../../_recaptcha.mjs'
-import classes from             './feedback/classes.mjs'
-import classesComponent from    './feedback/classesComponent.mjs'
 let feedback={
     components:{
         recaptcha,
-        classesComponent,
     },
     data:()=>({
-        recaptcha:          '',
-        name:               '',
-        email:              '',
-        phone:              '',
-        classesSelected:    [0,0,0,0,0,0],
-        question:           '',
         success:            0,
         errorAlert:         0,
+        recaptcha:          '',
+        姓名:               '',
+        性別:               '',
+        聯絡電話:           '',
+        email:              '',
+        居住地:             '',
+        需求選項:           '',
+        需求文字:           '',
     }),
     methods:{
         async submit(){
             if(!(
-                this.name&&
+                this.姓名&&
+                this.性別&&
+                this.聯絡電話&&
                 this.email&&
-                this.phone
+                this.需求選項
             ))
-                return this.errorAlert='請充分填寫「姓名」、「Email」、「電話」、「問題分類」後再送出。'
+                return this.errorAlert='請充分填寫「姓名」、「性別」、「聯絡電話」、「E-mail」、「需求」後再送出。'
             if(!this.recaptcha)
                 return this.errorAlert='請完成人機驗證（下方「我不是機器人」欄位）後再送出。'
             this.errorAlert=''
             await api.post({
                 method:         'putFeedback',
                 recaptcha:      this.recaptcha,
-                name:           this.name,
-                email:          this.email,
-                phone:          this.phone,
-                question:`
-                    （分類：${this.classesSelected.map(
-                        (a,i)=>a?classes[i]:0
-                    ).filter(a=>a).join('、')}）
-                    ${this.question}
-                `,
+                content:`姓名：${this.姓名}
+性別：${this.性別}
+聯絡電話：${this.聯絡電話}
+E-mail：${this.email}
+居住地：${this.居住地}
+需求選項：${this.需求選項}
+需求文字：${this.需求文字}
+`,
             })
             this.success=1
         },
     },
-    props:[],
     template:`
         <div class=huiKui>
             <a id=form></a>
             <div class=title>給我們些回饋</div>
             <p>
-                找不到想要的問題嗎？
-                上方的問答中，沒有解答到您心中的疑問嗎？<br>
-                沒關係！歡迎您直接來信詢問，我們將儘速回覆您。
+                如果上面的問題沒有回答到您心中的疑問，<br>
+                如果您想預約看房或是對本網站上刊登的物件資訊想更進一步了解,<br>
+                都歡迎您填寫下方表格，我們將盡快與您聯絡。
+            </p>
+            <p>
+                標示星號 (<span style="color:red;">*</span>) 為必填項目
             </p>
             <template v-if=!success>
                 <div class=a>
                     <div>
-                        <input
-                            placeholder=姓名
-                            v-model=name
-                        >
+                        <div>
+                            姓名 <span style="color:red;">*</span>
+                        </div>
+                        <div>
+                            <input class=a v-model=姓名>
+                        </div>
                     </div>
                     <div>
-                        <input
-                            placeholder=Email
-                            v-model=email
-                        >
+                        <div>
+                            性別 <span style="color:red;">*</span>
+                        </div>
+                        <div>
+                            <label>
+                                <input type=radio v-model=性別 value=先生>
+                                先生
+                            </label>
+                            <label>
+                                <input type=radio v-model=性別 value=女士>
+                                女士
+                            </label>
+                        </div>
                     </div>
                     <div>
-                        <input
-                            placeholder=電話
-                            v-model=phone
-                        >
+                        <div>
+                            聯絡電話 <span style="color:red;">*</span>
+                        </div>
+                        <div>
+                            <input class=a v-model=聯絡電話>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            E-mail <span style="color:red;">*</span>
+                        </div>
+                        <div>
+                            <input class=a v-model=email>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            居住地
+                        </div>
+                        <div>
+                            <label>
+                                <input
+                                    type=radio
+                                    v-model=居住地
+                                    value=台灣
+                                 >
+                                台灣
+                            </label>
+                            <label>
+                                <input
+                                    type=radio
+                                    v-model=居住地
+                                    value=海外
+                                >
+                                海外
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            需求 <span style="color:red;">*</span>
+                        </div>
+                        <div>
+                            <label>
+                                <input
+                                    type=radio
+                                    v-model=需求選項
+                                    value=買賣日本不動產
+                                >
+                                買賣日本不動產
+                            </label>
+                            <label>
+                                <input
+                                    type=radio
+                                    v-model=需求選項
+                                    value=租賃管理
+                                >
+                                租賃管理
+                            </label>
+                            <label>
+                                <input
+                                    type=radio
+                                    v-model=需求選項
+                                    value=預約看房
+                                >
+                                預約看房
+                            </label>
+                            <label>
+                                <input
+                                    type=radio
+                                    v-model=需求選項
+                                    value=其它問題
+                                >
+                                其它問題
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                        </div>
+                        <div>
+                            <textarea class=b>
+                            </textarea>
+                        </div>
                     </div>
                 </div>
-                <div class=d>問題分類：</div>
-                <classesComponent
-                    v-model=classesSelected
-                ></classesComponent>
+                <!--
+                    <div>
+                        【個人資料保護 】
+                        當您填寫線上諮詢表格時，我們需要您的聯絡資料作為回覆依據，並不會將您的個人資料另作他用 。送出以上資料前，須同意本公司的「隱私權保護政策」。請詳細閱讀隱私權保護政策，確定同意後，點選「我同意隱私權保護政策並前往確認頁面」。
+                    </div>
+                -->
                 <div
                     class="alert error"
                     v-if=errorAlert
