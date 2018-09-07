@@ -129,7 +129,11 @@ let main={
                 </div>
                 <div class=b>
                     <div class=n>
-                        <reserveButton></reserveButton>
+                        <reserveButton
+                            :data="{
+                                href:data.href
+                            }"
+                        ></reserveButton>
                     </div>
                     <div class=o>
                         <moreButton></moreButton>

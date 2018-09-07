@@ -63,6 +63,7 @@ let aMain={
                         part:['周邊環境','ENVIRONMENT'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
+                        href:href.qaForm,
                     }"
                 ></presaleIdLikeMain>
                 <presaleIdLikeHypertext

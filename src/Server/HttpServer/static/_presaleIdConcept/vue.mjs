@@ -63,6 +63,7 @@ let aMain={
                         part:['建築設計','DESIGN CONCEPT'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
+                        href:href.qaForm,
                     }"
                 ></presaleIdLikeMain>
                 <presaleIdLikeHypertext

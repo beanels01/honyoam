@@ -144,6 +144,7 @@ let aMain={
                         part:['建案介紹','INFORMATION'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
+                        href:href.qaForm,
                     }"
                 ></presaleIdLikeMain>
                 <block

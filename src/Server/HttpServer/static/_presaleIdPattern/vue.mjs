@@ -36,7 +36,6 @@ let aMain={
         floatBall:              homepageLike.floatBall,
         presaleLikeTop:         presaleLike.top,
         presaleIdLikeTop:       presaleIdLike.top,
-        presaleIdLikeMain:      presaleIdLike.main,
         presaleIdLikeFooter:    presaleIdLike.footer,
         presaleIdLikeHeader:    presaleIdLike.header,
         patternInput,

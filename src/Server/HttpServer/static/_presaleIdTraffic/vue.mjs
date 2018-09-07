@@ -63,6 +63,7 @@ let aMain={
                         part:['交通方式','TRANSPORTATION'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
+                        href:href.qaForm,
                     }"
                 ></presaleIdLikeMain>
                 <presaleIdLikeHypertext

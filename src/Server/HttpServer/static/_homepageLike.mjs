@@ -70,8 +70,12 @@ let top={
     `
 }
 let reserveButton={
+    props:['data'],
     template:`
-        <a class=homepageLikeReserveButton><span>> 預約看房</span></a>
+        <a
+            class=homepageLikeReserveButton
+            :href=data.href
+        ><span>> 預約看房</span></a>
     `,
 }
 let moreButton={

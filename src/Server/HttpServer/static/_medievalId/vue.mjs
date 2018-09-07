@@ -221,7 +221,9 @@ let aMain={
                             </div>
                             <div class=hl></div>
                             <div class=r>
-                                <reserveButton></reserveButton>
+                                <reserveButton
+                                    :data="{href:href.qaForm}"
+                                ></reserveButton>
                                 <moreButton></moreButton>
                             </div>
                         </div>

@@ -62,6 +62,7 @@ let aMain={
                         part:['影音介紹','VIDEOS'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
+                        href:href.qaForm,
                     }"
                 ></presaleIdLikeMain>
                 <div class=a>
