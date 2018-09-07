@@ -209,8 +209,15 @@
     #main>.a>.huiKui{
         padding:35px 10px;
     }
-    #main>.a>.huiKui>.a>*>*+*{
+    #main>.a>.huiKui>.a>*{
         margin-top:20px;
+    }
+    #main>.a>.huiKui>.a>*>*>.a{
+        width:100%;
+    }
+    #main>.a>.huiKui>.a>*>*>.b{
+        width:100%;
+        height:100px;
     }
 }
 @media(min-width:1280px){
