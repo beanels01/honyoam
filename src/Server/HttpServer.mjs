@@ -15,7 +15,7 @@ function HttpServer(config){
     }
     this.httpServer=http.createServer()
     this.httpServer.on('request',this.handleRequest.bind(this))
-    this.httpServer.listen(this.computed.host.port)
+    this.httpServer.listen(this.computed.host.port||80)
 }
 Object.setPrototypeOf(HttpServer.prototype,EventEmmiter.prototype)
 loadRequestMethods(HttpServer.prototype)
