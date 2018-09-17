@@ -7,11 +7,7 @@ let
     }=mongodb,
     o={}
 o.getAllNews=async function(language){
-    let a=await this._newsCol.find({publish:true,language}).toArray()
-    a.forEach(o=>{
-        o.timestamp=(new ObjectID(o._id)).getTimestamp()
-    })
-    return a
+    return this._newsCol.find({publish:true,language}).toArray()
 }
 o.getApplies=async function(){
     let a=await this._applyCol.find({}).toArray()
@@ -87,19 +83,20 @@ o.getMedievalObject=async function(id){
 }
 o.getMedievalList=async function(){
     return(await this._medievalCol.find({}).toArray()).map(a=>({
-        id:a._id,
+        id:     a._id,
+        date:   a.date,
         name:
             a.language&&
             a.language['zh-Hant']&&
             a.language['zh-Hant'].name||
             '未命名',
-        timestamp:(new ObjectID(a._id)).getTimestamp(),
     }))
 }
 o.getMedievalList0=async function(language){
     return(await this._medievalCol.find({publish:true}).toArray()).map(a=>{
         return{
             id:             a._id,
+            date:           a.date,
             place0:         a.place0,
             place1:         a.place1,
             image:          a.image,
@@ -111,26 +108,21 @@ o.getMedievalList0=async function(language){
             price:          a.price,
             dateYear:       a.dateYear,
             dateMonth:      a.dateMonth,
-            timestamp:      (new ObjectID(a._id)).getTimestamp(),
         }
     })
 }
 o.getNewsList=async function(language){
-    let a=await this._newsCol.find({language}).toArray()
-    a.forEach(o=>{
-        o.timestamp=(new ObjectID(o._id)).getTimestamp()
-    })
-    return a
+    return this._newsCol.find({language}).toArray()
 }
 o.getPresaleList=async function(){
     return(await this._presaleCol.find({}).toArray()).map(a=>({
         id:a._id,
+        date:   a.date,
         name:
             a.language&&
             a.language['zh-Hant']&&
             a.language['zh-Hant'].name||
             '未命名',
-        timestamp:(new ObjectID(a._id)).getTimestamp(),
     }))
 }
 o.getPresaleList0=async function(language){
@@ -144,6 +136,7 @@ o.getPresaleList0=async function(language){
             price=a.pattern.map(a=>a.price)
         return{
             id:         a._id,
+            date:       a.date,
             place0:     a.place0,
             place1:     a.place1,
             image:      a.image,
@@ -159,7 +152,6 @@ o.getPresaleList0=async function(language){
             areaMax:    Math.max(...area),
             priceMin:   Math.min(...price),
             priceMax:   Math.max(...price),
-            timestamp:  (new ObjectID(a._id)).getTimestamp(),
         }
     })
 }

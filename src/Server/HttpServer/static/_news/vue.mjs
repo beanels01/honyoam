@@ -38,27 +38,27 @@ let aMain={
             return homepageLike.langToPath(this.currentLanguage)
         },
         yearList(){
-            let a=[...new Set(this.data.news.map(a=>(new Date(a.timestamp)).getYear()))]
+            let a=[...new Set(this.data.news.map(a=>(new Date(a.date)).getYear()))]
             a.sort()
             return a
         },
         monthList(){
             let a=[...new Set(this.data.news.filter(a=>
-                (new Date(a.timestamp)).getYear()==this.year
+                (new Date(a.date)).getYear()==this.year
             ).map(a=>
-                (new Date(a.timestamp)).getMonth()
+                (new Date(a.date)).getMonth()
             ))]
             a.sort()
             return a
         },
         newsByYearAndType(){
             let a=this.data.news.filter(a=>{
-                let date=new Date(a.timestamp)
+                let date=new Date(a.date)
                 return(this.year=='any'||date.getYear()==this.year)&&
                     (this.month=='any'||date.getMonth()==this.month)&&
                     a.type==this.type
             })
-            a.sort((a,b)=>(new Date(b.timestamp))-(new Date(a.timestamp)))
+            a.sort((a,b)=>(new Date(b.date))-(new Date(a.date)))
             return a
         },
     },
@@ -77,7 +77,7 @@ let aMain={
             if(this.id){
                 if(this.id.length==24){
                     let newsById=this.data.news.filter(a=>this.id==a._id)[0]
-                    let date=new Date(newsById.timestamp)
+                    let date=new Date(newsById.date)
                     this.year=date.getYear()
                     this.month=date.getMonth()
                     this.type=newsById.type

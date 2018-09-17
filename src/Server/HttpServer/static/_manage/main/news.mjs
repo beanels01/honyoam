@@ -144,7 +144,7 @@ export default{
                 language:this.selectedLanguage,
             })).res
             this.list.sort((a,b)=>
-                new Date(b.timestamp)-new Date(a.timestamp)
+                new Date(b.date)-new Date(a.date)
             )
         },
         async putNews(){
@@ -168,7 +168,7 @@ export default{
                     <table>
                         <tr v-for="a of list">
                             <td>{{
-                                (new Date(a.timestamp)).toLocaleString()
+                                a.date
                             }}</td>
                             <td>{{
                                 {

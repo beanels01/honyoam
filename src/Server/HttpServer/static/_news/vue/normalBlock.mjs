@@ -1,7 +1,7 @@
 let normalBlock={
     computed:{
         date(){
-            return new Date(this.data.timestamp)
+            return new Date(this.data.date)
         }
     },
     props:['data','value',],

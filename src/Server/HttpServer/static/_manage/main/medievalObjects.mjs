@@ -177,7 +177,7 @@ export default{
             this.value=(await api.post({
                 method:'getMedievalList',
             })).res.sort((a,b)=>
-                new Date(b.timestamp)-new Date(a.timestamp)
+                new Date(b.date)-new Date(a.date)
             )
         },
         async out(){

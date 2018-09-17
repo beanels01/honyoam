@@ -1,7 +1,7 @@
 let enewsLikeContent={
     computed:{
         date(){
-            return new Date(this.data.current.timestamp)
+            return new Date(this.data.current.date)
         }
     },
     props:['data',],
