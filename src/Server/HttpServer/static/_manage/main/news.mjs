@@ -1,5 +1,5 @@
-import api from                 '../../_api.mjs'
-import languageSelect from      './languageSelect.mjs'
+import api from                     '../../_api.mjs'
+import languageSelect from          './languageSelect.mjs'
 import quillImageHandler from       './quillImageHandler.mjs'
 import plainCropImageUploader from  './plainCropImageUploader.mjs'
 let
@@ -76,6 +76,9 @@ let newsInput={
                 <label>
                     <input type=checkbox v-model=data.publish> 發布
                 </label>
+            </div>
+            <div>
+                日期：<input type=date v-model=data.date>
             </div>
             <div>
                 類型：<select v-model=data.type>

@@ -134,6 +134,9 @@ let inputForSpecificObject={
                 </label>
             </p>
             <p>
+                日期：<input type=date v-model=value.date>
+            </p>
+            <p>
                 <label>
                     <input type=checkbox v-model=value.soldout>
                     已完售

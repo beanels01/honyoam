@@ -64,6 +64,9 @@ let inputForSpecificObject={
                 </label>
             </p>
             <p>
+                日期：<input type=date v-model=value.date>
+            </p>
+            <p>
                 地區：<select v-model=value.place0>
                     <option
                         v-for="a of place.place0"
