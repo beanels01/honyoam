@@ -147,9 +147,11 @@ let houseList={
             return this.data.array.filter(o=>
                 !this.data.search||(
                     this.data.search.place0==''||
+                    this.data.search.place0=='all'||
                     o.place0==this.data.search.place0
                 )&&(
                     this.data.search.place1==''||
+                    this.data.search.place1=='all'||
                     o.place1==this.data.search.place1
                 )&&(
                     this.data.type=='presale'?
@@ -166,6 +168,7 @@ let houseList={
                             this.data.search.priceMax==''||
                             o.priceMin<=this.data.search.priceMax
                         )&&(
+                            Object.entries(this.data.search.pattern).every(([k,v])=>!v)||
                             o.pattern.some(a=>
                                 this.data.search.pattern['1K']&&a=='1K'||
                                 this.data.search.pattern['1DK']&&a=='1DK'||

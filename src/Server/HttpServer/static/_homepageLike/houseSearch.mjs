@@ -92,6 +92,7 @@ let houseSearch={
                         <div class=a>搜尋區域</div>
                         <select v-model=value.place0>
                             <option value disabled>地區</option>
+                            <option value='all'>全部</option>
                             <option
                                 v-for="a of data.place.place0"
                                 :value=a
@@ -99,6 +100,7 @@ let houseSearch={
                         </select>
                         <select v-model=value.place1>
                             <option value disabled>區域</option>
+                            <option value='all'>全部</option>
                             <option
                                 v-for="a of data.place.place1[data.type][value.place0=='東京都'?0:1]"
                                 :value=a
