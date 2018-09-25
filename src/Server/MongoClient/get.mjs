@@ -94,22 +94,26 @@ o.getMedievalList=async function(){
 }
 o.getMedievalList0=async function(language){
     return(await this._medievalCol.find({publish:true}).toArray()).map(a=>{
-        return{
-            id:             a._id,
-            date:           a.date,
-            place0:         a.place0,
-            place1:         a.place1,
-            image:          a.image,
-            name:           a.language[language].name,
-            place:          a.language[language].place,
-            nearestStation: a.language[language].nearestStation,
-            pattern:        a.pattern,
-            area:           a.area,
-            price:          a.price,
-            dateYear:       a.dateYear,
-            dateMonth:      a.dateMonth,
+        try{
+            return{
+                id:             a._id,
+                date:           a.date,
+                place0:         a.place0,
+                place1:         a.place1,
+                image:          a.image,
+                name:           a.language[language].name,
+                place:          a.language[language].place,
+                nearestStation: a.language[language].nearestStation,
+                pattern:        a.pattern,
+                area:           a.area,
+                price:          a.price,
+                dateYear:       a.dateYear,
+                dateMonth:      a.dateMonth,
+            }
+        }catch(e){
+            return 0
         }
-    })
+    }).filter(a=>a)
 }
 o.getNewsList=async function(language){
     return this._newsCol.find({language}).toArray()
