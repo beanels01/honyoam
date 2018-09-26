@@ -112,7 +112,7 @@ let service={
                         <div class=b></div>
                         <div class=a><img src=/_about/img/f1.png></div>
                         <div class=b></div>
-                        <div class=a><img src=/_about/img/f2.png></div>
+                        <div class=a><img src=/_about/img/f2.jpeg></div>
                         <div class=b></div>
                         <div class=a><img src=/_about/img/f3.png></div>
                     </div>
@@ -130,7 +130,7 @@ let service={
                         <div class=b></div>
                         <div class=a><img src=/_about/img/f5.png></div>
                         <div class=b></div>
-                        <div class=a><img src=/_about/img/f6.gif></div>
+                        <div class=a><img src=/_about/img/f6.png></div>
                     </div>
                 </div>
             </div>
