@@ -84,7 +84,7 @@ o.getMedievalObject=async function(id){
 o.getMedievalList=async function(){
     return(await this._medievalCol.find({}).toArray()).map(a=>({
         id:     a._id,
-        date:   a.date,
+        date:   a.date||(new ObjectID(a._id)).getTimestamp(),
         name:
             a.language&&
             a.language['zh-Hant']&&
@@ -97,7 +97,7 @@ o.getMedievalList0=async function(language){
         try{
             return{
                 id:             a._id,
-                date:           a.date,
+                date:           a.date||(new ObjectID(a._id)).getTimestamp(),
                 place0:         a.place0,
                 place1:         a.place1,
                 image:          a.image,
@@ -120,8 +120,8 @@ o.getNewsList=async function(language){
 }
 o.getPresaleList=async function(){
     return(await this._presaleCol.find({}).toArray()).map(a=>({
-        id:a._id,
-        date:   a.date,
+        id:     a._id,
+        date:   a.date||(new ObjectID(a._id)).getTimestamp(),
         name:
             a.language&&
             a.language['zh-Hant']&&
@@ -140,7 +140,7 @@ o.getPresaleList0=async function(language){
             price=a.pattern.map(a=>a.price)
         return{
             id:         a._id,
-            date:       a.date,
+            date:       a.date||(new ObjectID(a._id)).getTimestamp(),
             place0:     a.place0,
             place1:     a.place1,
             image:      a.image,
