@@ -90,7 +90,7 @@ let houseSearch={
                 <div class=a>
                     <div class=block>
                         <div class=a>搜尋區域</div>
-                        <select v-model=value.place0>
+                        <select v-model=value.place0 @input="value.place1=''">
                             <option value disabled>地區</option>
                             <option value='all'>全部</option>
                             <option
