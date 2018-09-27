@@ -11,12 +11,22 @@ let patternInput={
                     :class="{active:value==i}"
                 >
                     <img
-                        :src="'/image/'+e.language[currentLanguage].image"
+                        :src="
+                            currentLanguage in e.language&&e.language[currentLanguage].image?
+                                '/image/'+e.language[currentLanguage].image
+                            :
+                                'none100.png'
+                        "
                         @click="$emit('input',i)"
                     >
                 </div>
                 <div class=o>
-                    <div class=a>{{e.language[currentLanguage].name}}</div>
+                    <div class=a>{{
+                        currentLanguage in e.language?
+                            e.language[currentLanguage].name
+                        :
+                            ''
+                    }}</div>
                     <div class=b>
                         <div>格局：{{e.name}}</div>
                         <div>面積：{{e.area}} 平方公尺</div>
@@ -96,7 +106,12 @@ let aMain={
                     ></patternInput>
                 </div>
                 <div class=b>
-                    <img :src="'/image/'+presale.presaleId.pattern[selectPattern].language[currentLanguage].image">
+                    <img :src="
+                        currentLanguage in presale.presaleId.pattern[selectPattern].language&&presale.presaleId.pattern[selectPattern].language[currentLanguage].image?
+                            '/image/'+presale.presaleId.pattern[selectPattern].language[currentLanguage].image
+                        :
+                            'none100.png'
+                    ">
                 </div>
                 <presaleIdLikeFooter
                     :data=presale.presale.language[currentLanguage].precautions
