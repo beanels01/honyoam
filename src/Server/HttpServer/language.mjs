@@ -1,47 +1,4 @@
 export default{
-    '_':{
-        contact:{
-            activity:{
-                'title':        'title',
-                'time':         'time',
-                'content':      'content',
-                'speaker':      'speaker',
-            },
-            chooseHonyoam0:{
-                title:      'title',
-                subtitle:   'subtitle',
-                content:    'content',
-            },
-            presidentsProfile:  'presidentsProfile',
-            signUp:             'signUp',
-        },
-        faqClasses:{
-            class00:'class00',
-            class01:'class01',
-            class02:'class02',
-            class03:'class03',
-            class04:'class04',
-            class05:'class05',
-        },
-        homepage:{
-            missionTitle:'missionTitle',
-            missionContent:`missionContent`,
-        },
-        homepageLike:{
-            news:'news',
-            medieval:'medieval',
-            presale:'presale',
-            qa:'qu',
-            contact:'contact',
-            user:'user',
-        },
-        language:{
-            '_':        '_',
-            'zh-Hans':  'zh-Hans',
-            'zh-Hant':  'zh-Hant',
-        },
-        showedLang:['jp','zh-Hans','zh-Hant',],
-    },
     'jp':{
         about:{
             top:{
@@ -396,7 +353,6 @@ export default{
             },
         },
         language:{
-            '_':        '編程管道',
             'jp':       '日文',
             'zh-Hans':  '簡體中文',
             'zh-Hant':  '繁體中文',
@@ -756,7 +712,6 @@ export default{
             },
         },
         language:{
-            '_':        '编程管道',
             'jp':       '日文',
             'zh-Hans':  '简体中文',
             'zh-Hant':  '繁体中文',
@@ -986,7 +941,6 @@ export default{
             },
         },
         language:{
-            '_':        '編程管道',
             'jp':       '日文',
             'zh-Hans':  '簡體中文',
             'zh-Hant':  '繁體中文',
