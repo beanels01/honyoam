@@ -74,22 +74,33 @@ let cropImageUploader={
             <template
                 v-if="status.key==1"
             >
-                <vueCropper
-                    ref=cropper
-                    outputType=png
-                    :img=status.img
-                    :canScale=true
-                    :outputSize=1
-                    :autoCrop=true
-                    :autoCropWidth="'autoCropWidth'in innerData?innerData.autoCropWidth:240"
-                    :autoCropHeight="'autoCropHeight'in innerData?innerData.autoCropHeight:240"
-                    :fixed="'fixed'in innerData?innerData.fixed:true"
-                    :fixedNumber="'fixedNumber'in innerData?innerData.fixedNumber:[1,1]"
-                    :style="{
-                        width:('width'in innerData?innerData.width:480)+'px',
-                        height:('height'in innerData?innerData.height:360)+'px'
-                    }"
-                ></vueCropper>
+                <div :style="data.scale?{
+                    width:'960px',
+                    height:'540px',
+                    position:'relative',
+                }:{}">
+                    <vueCropper
+                        ref=cropper
+                        outputType=png
+                        :img=status.img
+                        :canScale=true
+                        :outputSize=1
+                        :autoCrop=true
+                        :autoCropWidth="'autoCropWidth'in innerData?innerData.autoCropWidth:240"
+                        :autoCropHeight="'autoCropHeight'in innerData?innerData.autoCropHeight:240"
+                        :fixed="'fixed'in innerData?innerData.fixed:true"
+                        :fixedNumber="'fixedNumber'in innerData?innerData.fixedNumber:[1,1]"
+                        :style="Object.assign({
+                            width:('width'in innerData?innerData.width:480)+'px',
+                            height:('height'in innerData?innerData.height:360)+'px'
+                        },data.scale?{
+                            left:'-50%',
+                            top:'-50%',
+                            position:'relative',
+                            transform:'scale(.5,.5)',
+                        }:{})"
+                    ></vueCropper>
+                </div>
                 <button @click=crop>裁切</button>
             </template>
             <div

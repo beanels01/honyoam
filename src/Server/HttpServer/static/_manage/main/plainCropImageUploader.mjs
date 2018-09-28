@@ -11,6 +11,7 @@ let plainCropImageUploader={
                 fixedNumber:undefined,
                 width:1920,
                 height:1080,
+                scale:1,
             }"
             :value=value
             @input="a=>$emit('input',a)"
