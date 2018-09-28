@@ -144,7 +144,10 @@ export default{
                 language:this.selectedLanguage,
             })).res
             this.list.sort((a,b)=>
-                new Date(b.date)-new Date(a.date)
+                !a.date||!b.date?
+                    (a.date?1:0)-(b.date?1:0)
+                :
+                    new Date(b.date)-new Date(a.date)
             )
         },
         async putNews(){

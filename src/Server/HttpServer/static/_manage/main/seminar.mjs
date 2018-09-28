@@ -101,7 +101,9 @@ export default{
         async updateSeminars(){
             this.seminars=(await api.post({
                 method:'getSeminars'
-            })).res
+            })).res.sort((a,b)=>
+                new Date(b.timestamp)-new Date(a.timestamp)
+            )
         },
         seminarsByLanguage(l){
             return this.seminars.filter(a=>a.language==l)

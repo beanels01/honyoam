@@ -47,6 +47,7 @@ o.getSeminars=async function(id){
         id:a._id,
         language:a.language,
         name:a.block0?a.block0.seminarName:'',
+        timestamp:(new ObjectID(a._id)).getTimestamp(),
     }))
 }
 o.getSite=async function(key){
