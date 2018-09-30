@@ -74,7 +74,7 @@ let cropImageUploader={
             <template
                 v-if="status.key==1"
             >
-                <div :style="data.scale?{
+                <div :style="innerData.scale?{
                     width:'960px',
                     height:'540px',
                     position:'relative',
@@ -93,7 +93,7 @@ let cropImageUploader={
                         :style="Object.assign({
                             width:('width'in innerData?innerData.width:480)+'px',
                             height:('height'in innerData?innerData.height:360)+'px'
-                        },data.scale?{
+                        },innerData.scale?{
                             left:'-50%',
                             top:'-50%',
                             position:'relative',
