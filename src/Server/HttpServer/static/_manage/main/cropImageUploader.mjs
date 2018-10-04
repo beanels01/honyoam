@@ -16,7 +16,10 @@ let cropImageUploader={
     }),
     methods:{
         imagePath(){
-            return`image/${this.value}`
+            return typeof this.value=='string'?
+                `image/${this.value}`
+            :
+                this.value.url
         },
         selectImage(){
             let vm=this
@@ -53,7 +56,10 @@ let cropImageUploader={
             )())
         },
         async checkValue(){
-            if(typeof this.value=='string')
+            if(
+                typeof this.value=='string'||
+                typeof this.value=='object'&&'url'in this.value
+            )
                 this.status={
                     key:3,
                 }
