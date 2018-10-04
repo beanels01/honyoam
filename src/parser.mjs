@@ -10,20 +10,6 @@ let a=fs.readFileSync(`${inputDir}/homenavi_all.csv`).toString().match(
 fs.writeFileSync(`${outputDir}/homenavi_all.json`,
     JSON.stringify(a,null,4)
 )
-function filterImage(){
-    fs.mkdirSync(`${outputDir}/madori`)
-    for(let i=0;i<10;i++)
-        fs.mkdirSync(`${outputDir}/photo${i?i+1:''}`)
-    a.map(a=>{
-        copyExist(`${inputDir}/madori/${a.source.id}.jpg`,`${outputDir}/madori/${a.source.id}.jpg`)
-        for(let i=0;i<10;i++){
-            let
-                inPath=`${inputDir}/photo${i?i+1:''}/${a.source.id}.jpg`,
-                outPath=`${outputDir}/photo${i?i+1:''}/${a.source.id}.jpg`
-            copyExist(inPath,outPath)
-        }
-    })
-}
 function rowToObject(s){
     let
         a=JSON.parse(`[${s.replace(/\t/g,'\\t').replace(/\n/g,'\\n')}]`),
@@ -56,7 +42,7 @@ function rowToObject(s){
         gallery:[],
         householdCount:a[63],
         image:{url:`daikyo/photo/${id}.jpg`},
-        level:a[61]+a[69]+a[73]+a[77]+a[81],
+        level:a[61],
         managementFee:a[34],
         map:"0",
         otherFee:+a[99],
@@ -64,24 +50,24 @@ function rowToObject(s){
         place0:'',
         place1:'',
         price:+a[6],
-        repairFund:+a[163],
+        repairFund:+a[98],
         language:{
             "zh-Hant":{
                 name:a[33],
                 patternContent:"<p>*格局圖內文*</p>",
                 patternTitle:"*格局圖標題*",
                 pattern:{url:`daikyo/madori/${id}.jpg`},
-                handInDate:a[90],
+                handInDate:a[48]+a[49],
                 right:a[51],
-                usage:a[136],
+                usage:a[50],
                 parkingLot:a[58],
                 direction:a[64],
                 situation:a[45],
                 traffic:a[36],
                 nearestStation:"*最近車站*",
-                place:a[35]+a[11]+a[12]+a[44],
+                place:a[35],
                 manageMethod:a[137],
-                levelCount:"*建物總樓層*",
+                levelCount:a[59]+a[60],
                 structure:a[85],
                 videoId:"rNsgHMklBW0",
             }
@@ -93,6 +79,20 @@ function rowToObject(s){
             x.gallery.push({url:`daikyo/${p}`})
     }
     return x
+}
+function filterImage(){
+    fs.mkdirSync(`${outputDir}/madori`)
+    for(let i=0;i<10;i++)
+        fs.mkdirSync(`${outputDir}/photo${i?i+1:''}`)
+    a.map(a=>{
+        copyExist(`${inputDir}/madori/${a.source.id}.jpg`,`${outputDir}/madori/${a.source.id}.jpg`)
+        for(let i=0;i<10;i++){
+            let
+                inPath=`${inputDir}/photo${i?i+1:''}/${a.source.id}.jpg`,
+                outPath=`${outputDir}/photo${i?i+1:''}/${a.source.id}.jpg`
+            copyExist(inPath,outPath)
+        }
+    })
 }
 function fileExistByPath(p){
     try{
