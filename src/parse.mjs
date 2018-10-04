@@ -1,5 +1,5 @@
 import fs from 'fs'
-import fields from './parser/fields'
+//import fields from './parse/fields'
 import mongodb from 'mongodb'
 let{
     MongoClient,
@@ -12,7 +12,22 @@ let
     outputDir=`${g500}/daikyo_2`
 let a=fs.readFileSync(`${inputDir}/homenavi_all.csv`).toString().match(
     /"[^"]*"(,"[^"]*")*/g
-).slice(0,-1).map(rowToObject)
+).slice(0,-1).map(rowToObject).filter(a=>{
+    let b=0
+    for(let i of[
+        '東京都',
+        '千葉県',
+        '神奈川県',
+        '埼玉県',
+        '名古屋市',
+        '大阪府',
+        '京都府',
+        '福岡市',
+    ])
+        b=b||~a.language['zh-Hant'].place.indexOf(i)
+    return b&&1500<=a.price
+})
+console.log(a.length)
 ;(async()=>{
     let client=await MongoClient.connect("mongodb://localhost:27017")
     let db=client.db('honyoam')
@@ -74,7 +89,7 @@ function rowToObject(s){
         price:+a[6],
         repairFund:+a[98],
         language:{
-            "zh-Hant":{
+            'zh-Hant':{
                 name:a[33],
                 patternContent:'',
                 patternTitle:'',
