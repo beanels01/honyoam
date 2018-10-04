@@ -1,5 +1,11 @@
 import fs from 'fs'
 import fields from './parser/fields'
+import mongodb from 'mongodb'
+let{
+    MongoClient,
+    ObjectID,
+    Binary,
+}=mongodb
 let
     g500='/run/media/anliting/9fe45acf-ad7f-498a-b374-03f69e45727f',
     inputDir=`${g500}/daikyo_1`,
@@ -7,9 +13,18 @@ let
 let a=fs.readFileSync(`${inputDir}/homenavi_all.csv`).toString().match(
     /"[^"]*"(,"[^"]*")*/g
 ).slice(0,-1).map(rowToObject)
-fs.writeFileSync(`${outputDir}/homenavi_all.json`,
-    JSON.stringify(a,null,4)
-)
+;(async()=>{
+    let client=await MongoClient.connect("mongodb://localhost:27017")
+    let db=client.db('honyoam')
+    let col=db.collection('medieval')
+    await col.deleteMany({
+        'source.type':'daikyo'
+    })
+    await Promise.all(a.map(a=>
+        col.insertOne(a)
+    ))
+    client.close()
+})()
 function rowToObject(s){
     let
         a=JSON.parse(`[${s.replace(/\t/g,'\\t').replace(/\n/g,'\\n')}]`),
@@ -46,7 +61,7 @@ function rowToObject(s){
         managementFee:a[34],
         map:"0",
         otherFee:+a[99],
-        pattern:"*格局*",
+        pattern:'',
         place0:'',
         place1:'',
         price:+a[6],
@@ -54,8 +69,8 @@ function rowToObject(s){
         language:{
             "zh-Hant":{
                 name:a[33],
-                patternContent:"<p>*格局圖內文*</p>",
-                patternTitle:"*格局圖標題*",
+                patternContent:'',
+                patternTitle:'',
                 pattern:{url:`daikyo/madori/${id}.jpg`},
                 handInDate:a[48]+a[49],
                 right:a[51],
@@ -64,7 +79,7 @@ function rowToObject(s){
                 direction:a[64],
                 situation:a[45],
                 traffic:a[36],
-                nearestStation:"*最近車站*",
+                nearestStation:'',
                 place:a[35],
                 manageMethod:a[137],
                 levelCount:a[59]+a[60],

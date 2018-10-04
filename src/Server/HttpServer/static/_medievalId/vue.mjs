@@ -20,7 +20,7 @@ let swiper={
         let n=createSwiperContainer(
             this.data.gallery.map((data,i)=>
                 this.reference[i]=dom.img({
-                    src:'/image/'+data,
+                    src:typeof data=='string'?'/image/'+data:data.url,
                     className:'option'+(this.value==i?' focus':''),
                     onclick:()=>{
                         this.$emit('input',i)
@@ -118,7 +118,12 @@ let aMain={
                         <div class=a>
                             <div class=n>
                                 <img
-                                    :src="'/image/'+data.data.gallery[focus]"
+                                    :src="
+                                        typeof data.data.gallery[focus]=='string'?
+                                            '/image/'+data.data.gallery[focus]
+                                        :
+                                            data.data.gallery[focus].url
+                                    "
                                 >
                             </div>
                             <div class=o>
@@ -231,7 +236,12 @@ let aMain={
                             <div
                                 class=n
                             >
-                                <img :src="'/image/'+data.data.gallery[focus]">
+                                <img :src="
+                                    typeof data.data.gallery[focus]=='string'?
+                                        '/image/'+data.data.gallery[focus]
+                                    :
+                                        data.data.gallery[focus].url
+                                ">
                             </div>
                             <div
                                 class=o
