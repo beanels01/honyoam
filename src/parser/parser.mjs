@@ -10,7 +10,6 @@ fs.writeFileSync('parser/output/homenavi_all.json',JSON.stringify(
     null,
     4
 ))
-console.log(`${inputDir}/{'a'}`)
 function rowToObject(a){
     let
         o=JSON.parse(
