@@ -18,10 +18,8 @@ function rowToObject(a){
         id=o[1]
 /*
 不知道要參照哪裡的或者根本不在資料裡的：
-    周圍地圖 Google Map embed URL
-    停車場
     建物總樓層
-    陽台面積
+    停車場
 不確定的：
     修繕基金 ← 修繕積立金なしフラグ
     管理費 ← 管理費なしフラグ
@@ -31,11 +29,12 @@ function rowToObject(a){
     朝向 ← バルコニー方向（主要採光面方向）
     土地用途 ← 物件用途
     土地權利 ← 土地権利／借地権種類
-    所在地 ← 所在地名、所在地１、所在地２、所在地３
     構造 ← 構造材質
     交屋日 ← 成約年月日
     名稱 ← マンション名／建物名
     專有面積 ← 建物／専有／使用部分面積
+確定的：
+    所在地 ← 所在地名、所在地１、所在地２、所在地３
 還在研究：
     最近車站
     格局
@@ -48,7 +47,7 @@ function rowToObject(a){
         publish:true,
         source:{type:'daikyo',id},
         area:o[9],
-        balconyArea:'',
+        balconyArea:o[10],
         date:new Date,
         dateMonth:~~((+o[2])/100%100),
         /*
@@ -86,7 +85,7 @@ function rowToObject(a){
                 "situation":o[45],
                 "traffic": o[36],
                 "nearestStation": "*最近車站*",
-                "place": "*所在地*",
+                "place":o[35]+o[11]+o[12]+o[44],
                 "manageMethod": o[137],
                 "levelCount": "*建物總樓層*",
                 "structure": "*構造*",
