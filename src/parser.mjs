@@ -10,8 +10,7 @@ let a=fs.readFileSync(`${inputDir}/homenavi_all.csv`).toString().match(
 fs.writeFileSync(`${outputDir}/homenavi_all.json`,
     JSON.stringify(a,null,4)
 )
-output()
-function output(){
+function filterImage(){
     fs.mkdirSync(`${outputDir}/madori`)
     for(let i=0;i<10;i++)
         fs.mkdirSync(`${outputDir}/photo${i?i+1:''}`)
@@ -24,10 +23,6 @@ function output(){
             copyExist(inPath,outPath)
         }
     })
-}
-function copyExist(a,b){
-    if(fileExistByPath(a))
-        fs.copyFileSync(a,b)
 }
 function rowToObject(s){
     let
@@ -106,4 +101,8 @@ function fileExistByPath(p){
         return 0
     }
     return 1
+}
+function copyExist(a,b){
+    if(fileExistByPath(a))
+        fs.copyFileSync(a,b)
 }
