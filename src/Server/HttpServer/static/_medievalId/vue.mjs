@@ -369,7 +369,12 @@ let aMain={
                                 </div>
                             </div>
                             <div class=o>
-                                <img :src="'/image/'+data.data.patternImage">
+                                <img :src="
+                                    typeof data.data.patternImage
+                                        '/image/'+data.data.patternImage
+                                    :
+                                        data.data.patternImage.url
+                                ">
                             </div>
                         </div>
                     </div>
