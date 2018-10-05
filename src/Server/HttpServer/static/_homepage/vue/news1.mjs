@@ -2,7 +2,7 @@ let xRow={
     props:['data'],
     computed:{
         date(){
-            return new Date(this.data.news.timestamp)
+            return new Date(this.data.news.date)
         },
         href(){
             return `${this.data.href}/${this.data.news._id}`
