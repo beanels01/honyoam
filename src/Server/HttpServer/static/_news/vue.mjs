@@ -131,6 +131,7 @@ let aMain={
         atYearInput(){
             setIdHistory()
             this.month='any'
+            console.log('test')
         },
     },
     props:['data','language','currentLanguage','mainSeminar',],
