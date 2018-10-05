@@ -39,7 +39,7 @@ let aMain={
         },
         yearList(){
             let a=[...new Set(this.data.news.map(a=>(new Date(a.date)).getYear()))]
-            a.sort()
+            a.sort((a,b)=>a-b)
             return a
         },
         monthList(){
@@ -48,7 +48,7 @@ let aMain={
             ).map(a=>
                 (new Date(a.date)).getMonth()
             ))]
-            a.sort()
+            a.sort((a,b)=>a-b)
             return a
         },
         newsByYearAndType(){
