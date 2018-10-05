@@ -370,7 +370,7 @@ let aMain={
                             </div>
                             <div class=o>
                                 <img :src="
-                                    typeof data.data.patternImage
+                                    typeof data.data.patternImage=='string'?
                                         '/image/'+data.data.patternImage
                                     :
                                         data.data.patternImage.url
