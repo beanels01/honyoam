@@ -13,12 +13,9 @@ let price={
     template:`
         <span><template v-if="currency!='jpy'">約 </template>{{
                 commaNumber(~~(data.min*rateByCurrency))
-            }}
-            <template v-if="data.min!=data.max"> - {{
+            }} <template v-if="data.min!=data.max"> - {{
                 commaNumber(~~(data.max*rateByCurrency))
-            }}</template>
-            萬
-            <select
+            }}</template> 萬 <select
                 @click="e=>e.stopPropagation()"
                 v-model=currency
             >
@@ -49,9 +46,7 @@ let presale={
             <div class=b><div>
                 <div class=a>
                     <div>
-                        <div class=title>
-                            {{data.name}}
-                        </div>
+                        <div class=title>{{data.name}}</div>
                         <div class=subtitle>
                             {{data.subName}}
                         </div>
@@ -112,9 +107,7 @@ let medieval={
             <div class=b><div>
                 <div class=a>
                     <div>
-                        <div class=title>
-                            {{data.name}}
-                        </div>
+                        <div class=title>{{data.name}}</div>
                     </div>
                 </div>
                 <div class=b>

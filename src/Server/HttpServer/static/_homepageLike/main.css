@@ -706,9 +706,11 @@ body{
 #main>.homepageLikeHouseList>.e>*>*>*>.house>.a{
     line-height:0;
     vertical-align:middle;
+    text-align: center;
 }
 #main>.homepageLikeHouseList>.e>*>*>*>.house>.a>*{
-    width:100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 #main>.homepageLikeHouseList>.e>*>*>*>.house>.b{
     box-sizing:border-box;
@@ -833,6 +835,10 @@ body{
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.title{
         font-size:22px;
+        width: 307px;
+        word-break: keep-all;
+        white-space: pre;
+        overflow-x: hidden;
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.subtitle{
         font-size:16px;
@@ -843,6 +849,11 @@ body{
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.a{
         font-size:16px;
         padding:2px 0;
+        width: 307px;
+        word-break: keep-all;
+        white-space: pre;
+        overflow-x: hidden;
+
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.c{
         width:572px;
