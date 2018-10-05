@@ -128,6 +128,10 @@ let aMain={
                 this.setIdHistory(a._id)
             }
         },
+        atYearInput(){
+            setIdHistory()
+            this.month='any'
+        },
     },
     props:['data','language','currentLanguage','mainSeminar',],
     template:`
@@ -165,7 +169,7 @@ let aMain={
                     <select
                         class=yearSelect
                         v-model=year
-                        @input="setIdHistory()"
+                        @input=atYearInput
                     >
                         <option
                             value='any'
