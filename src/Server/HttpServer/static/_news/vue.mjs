@@ -2,7 +2,7 @@ import homepageLike from        '../_homepageLike.mjs'
 import normalBlock from         './vue/normalBlock.mjs'
 import enewsLikeBlock from      './vue/enewsLikeBlock.mjs'
 import enewsLikeContent from    './vue/enewsLikeContent.mjs'
-import pageSelect from          './vue/pageSelect.mjs'
+import pageSelect from          '../_homepageLike/pageSelect.mjs'
 let aMain={
     created(){
         this.setId(this.data.id)

@@ -7,6 +7,7 @@ let normalBlock={
     props:['data','value',],
     template:`
         <div
+            class=a
             :class="{focus:value}"
             @click="$emit('click')"
         >

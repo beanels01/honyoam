@@ -1,7 +1,7 @@
 let pageSelect={
     props:['length','value'],
     template:`
-        <div class=pageSelect>
+        <div class=homepageLikePageSelect>
             <div class=mobile>
                 <div
                     @click="$emit('input',value-1)"
