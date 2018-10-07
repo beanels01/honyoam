@@ -27,7 +27,7 @@ let pageSelect={
                 </div>
                 <template v-if="value+2<length">…</template>
                 <div
-                    @click="$emit('input',length-1)"
+                    @click="$emit('input',value+1)"
                     :style="{visibility:value+1<length?'visible':'hidden'}"
                 >
                     <img src="/_news/img/num-r.png">
@@ -48,7 +48,7 @@ let pageSelect={
                     {{i+1}}
                 </div>
                 <div
-                    @click="$emit('input',length-1)"
+                    @click="$emit('input',value+1)"
                     :style="{visibility:value+1<length?'visible':'hidden'}"
                 >
                     <img src="/_news/img/num-r.png">

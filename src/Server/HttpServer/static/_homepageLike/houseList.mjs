@@ -1,4 +1,5 @@
 import commaNumber from '../_commaNumber.mjs'
+import pageSelect from  './pageSelect.mjs'
 let price={
     data:()=>({
         currency:'jpy',
@@ -137,8 +138,7 @@ let medieval={
     `
 }
 let houseList={
-    components:{presale,medieval},
-    props:['data'],
+    components:{presale,medieval,pageSelect},
     computed:{
         sortArray(){
             let now=new Date
@@ -208,7 +208,18 @@ let houseList={
                 new Date(b.date)-new Date(a.date)
             )
         },
+        sortArrayByPage(){
+            return this.sortArray.slice(
+                this.page*this.housePerPage,
+                (this.page+1)*this.housePerPage
+            )
+        },
     },
+    data:()=>({
+        page:0,
+        housePerPage:100,
+    }),
+    props:['data'],
     template:`
         <div class=homepageLikeHouseList>
             <div class=d>
@@ -221,8 +232,8 @@ let houseList={
             </div>
             <div class=e>
                 <div>
-                    <div v-for="(_,i) in Math.ceil(sortArray.length/2)">
-                        <div v-for="a in sortArray.slice(2*i,2*i+2)">
+                    <div v-for="(_,i) in Math.ceil(sortArrayByPage.length/2)">
+                        <div v-for="a in sortArrayByPage.slice(2*i,2*i+2)">
                             <presale
                                 v-if="data.type=='presale'"
                                 :data=a
@@ -237,6 +248,10 @@ let houseList={
                     </div>
                 </div>
             </div>
+            <pageSelect
+                v-model=page
+                :length="Math.ceil(sortArray.length/housePerPage)"
+            ></pageSelect>
         </div>
     `,
 }
