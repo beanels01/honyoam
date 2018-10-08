@@ -98,7 +98,7 @@ function rowToObject(s){
                     1:'即時',
                     2:'相談',
                     3:'期日指定',
-                }[a[48]]+' '+a[49],
+                }[a[46]]+' '+a[47],
                 right:{
                     1:'所有権',
                     2:'旧法地上',
@@ -148,7 +148,13 @@ function rowToObject(s){
                 traffic:a[36],
                 nearestStation:'',
                 place:a[35],
-                manageMethod:a[137],
+                manageMethod:{
+                    0:'不明',
+                    1:'常勤',
+                    2:'日勤',
+                    3:'巡回',
+                    4:'自主',
+                }[a[137]],
                 levelCount:(+a[59])+(+a[60]),
                 structure:{
                     1:'木造',
