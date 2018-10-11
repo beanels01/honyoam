@@ -481,3 +481,98 @@
         border-top:1px solid #797979;
     }
 }
+#main>.service>.serviceContent>.mobile{
+    display:none;
+}
+#main>.service>.serviceContent>.desktop{
+    display:none;
+}
+@media(max-width:1279px){
+    #main>.service>.serviceContent{
+        line-height:0;
+    }
+    #main>.service>.serviceContent>.mobile{
+        display:inline;
+        text-align:center;
+        width:100%;
+    }
+}
+@media(min-width:1280px){
+    #main>.service>.serviceContent{
+        text-align:center;
+        line-height:0;
+    }
+    #main>.service>.serviceContent>.desktop{
+        display:inline;
+    }
+}
+#main>.service>.aBlock>.mobile{
+    display:none;
+}
+#main>.service>.aBlock>.desktop{
+    display:none;
+}
+@media(max-width:1279px){
+    #main>.service>.aBlock>.mobile{
+        display:block;
+        width:320px;
+        margin:0 auto;
+    }
+    #main>.service>.aBlock>.mobile>.row{
+        display:table;
+        height:160px;
+    }
+    #main>.service>.aBlock>.mobile>.row>.cell{
+        display:table-cell;
+        width:50%;
+    }
+    #main>.service>.aBlock>.mobile>.row>.title{
+        padding-top:50px;
+        font-size:25px;
+        white-space:pre-line;
+        vertical-align:top;
+    }
+    #main>.service>.aBlock>.mobile>.row>.title>.vbar{
+        display:inline-block;
+        width:5px;
+        height:25px;
+        vertical-align:middle;
+    }
+    #main>.service>.aBlock>.mobile>.row>.image{
+        text-align:center;
+        vertical-align:middle;
+    }
+    #main>.service>.aBlock>.mobile>.row>.image>*{
+        width:calc(100% - 30px);
+    }
+}
+@media(min-width:1280px){
+    #main>.service>.aBlock>.desktop{
+        display:block;
+        width:1170px;
+        margin:0 auto;
+        padding-top:75px;
+        padding-bottom:75px;
+    }
+    #main>.service>.aBlock>.desktop>.title{
+    }
+    #main>.service>.aBlock>.desktop>.title>.vbar{
+        display:inline-block;
+        width:15px;
+        height:55px;
+        vertical-align:middle;
+    }
+    #main>.service>.aBlock>.desktop>.title>.text{
+        display:inline-block;
+        margin-left:20px;
+        font-size:60px;
+        color:#06182c;
+        vertical-align:middle;
+    }
+    #main>.service>.aBlock>.desktop>.content{
+        margin-top:55px;
+    }
+    #main>.service>.aBlock>.desktop>.content>*+*{
+        margin-left:55px;
+    }
+}
