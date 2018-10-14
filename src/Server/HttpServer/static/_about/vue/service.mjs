@@ -138,10 +138,11 @@ let aPartner={
     `
 }
 let serviceContent={
+    props:['data'],
     template:`
         <div class=serviceContent>
-            <img class=mobile src='/_about/img2/serviceContentMobile.png'>
-            <img class=desktop src='/_about/img2/serviceContentDesktop.png'>
+            <img class=mobile :src=data.mobile>
+            <img class=desktop :src=data.desktop>
         </div>
     `,
 }
@@ -193,10 +194,19 @@ let service={
         aA,
         aPartner,
     },
-    props:['language'],
+    props:['currentLanguage','language'],
     template:`
         <div class=service>
-            <serviceContent></serviceContent>
+            <serviceContent
+                :data="{
+                    mobile:'/_about/img2/serviceContentMobile.png',
+                    desktop:{
+                        'jp':'/_about/img2/serviceContentDesktopJp.jpg',
+                        'zh-Hans':'/_about/img2/serviceContentDesktopZhHans.jpg',
+                        'zh-Hant':'/_about/img2/serviceContentDesktopZhHant.jpg',
+                    }[currentLanguage]
+                }"
+            ></serviceContent>
             <aBlock
                 :data="{
                     color:'#a1c6d2',

@@ -504,6 +504,7 @@
     }
     #main>.service>.serviceContent>.desktop{
         display:inline;
+        max-width:100%;
     }
 }
 #main>.service>.aBlock>.mobile{

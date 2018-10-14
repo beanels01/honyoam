@@ -53,6 +53,7 @@ let aMain={
                 <aService
                     v-if="focus=='service'"
                     :language=language.about.service
+                    :currentLanguage=currentLanguage
                 ></aService>
                 <aIdea
                     v-if="focus=='outline'"
