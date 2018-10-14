@@ -57,85 +57,125 @@ Tel：02-2785-5865`,
     template:`
         <div class=summary>
             <div class=a>
+                <img class=bga src=/_about/img2/bu01.jpg>
+                <img class=bgb src=/_about/img2/bu02.jpg>
                 <div class=a>
                     <span class=a>公司概要</span> / OUTLINE
                 </div>
                 <div class=b>
-                    <div>
-                        <div v-for="a in data">
-                            <div class=a>{{a.key}}</div>
-                            <div class=b>{{a.value}}</div>
-                        </div>
+                    <div v-for="a in data">
+                        <div class=a>{{a.key}}</div>
+                        <div class=b>{{a.value}}</div>
                     </div>
                 </div>
             </div>
             <div class=p><div>
                 <div class=a>
-                    <img src=/_about/img/icon0.png><br>
+                    <img src=/_about/img2/001-01.png><br>
                     <br>
                     <div v-html=language.p[0]></div>
                 </div>
                 <div class=b></div>
                 <div class=a>
-                    <img src=/_about/img/icon2.png><br>
+                    <img src=/_about/img2/002-01.png><br>
                     <br>
                     <div v-html=language.p[1]></div>
                 </div>
                 <div class=b></div>
                 <div class=a>
-                    <img src=/_about/img/icon1.png><br>
+                    <img src=/_about/img2/003-01.png><br>
                     <br>
                     <div v-html=language.p[2]></div>
                 </div>
             </div></div>
+            <!--
             <div class=u>
                 <div v-html=language.u>
                 </div>
                 <img src=/_about/img/a0.png style=width:20%>
                 <img src=/_about/img/a1.png style=width:70%>
             </div>
+            -->
+            <div class=vla>
+                <div></div>
+            </div>
             <div class=n>團隊介紹</div>
             <div class=o>
-                <h2>代表取締役社長 林彦宏</h2>
-                <p>
-                    對土地有熱情,對建築有專業,本著近30年不動產經驗,有感於客戶對日本不動產投資的需求,為提供客戶量身訂做的服務,召集了相關專業及有經驗人士,建立了這個專門提供日本不動產投資服務的團隊。簡歷
-                <ul>
-                <li>1990 年進入信義房屋集團</li>
-                <li>1996 年信義房屋集團安信建築經理(股)經理</li>
-                <li>2003 年信義房屋集團義富資產管理服務公司副總經理</li>
-                <li>2009 年信義房屋集團日本信義房屋的第一任代表取締役社長</li>
-                <li>2014 年本葉國際資產管理株式会社代表取締役社長至今資格</li>
-                <li>台灣首屆取得國際認證不動產投資師 (CCIM,Certified Commercial Investment Member）資格</li>
-                <li>不動產經紀人執照字號:北市經字第01182號</li>
-                </ul>
-                <h3>最新採訪與報導</h3>
-                <ul>
-                <li><a href=https://money.udn.com/money/story/5930/3253098>【經濟日報 2018,07.15 】東京銀座房市 投資客搶進</a></li>
-                <li><a href=https://goo.gl/A2U4ez>【經濟日報 2018,07.12 】日消費稅明年調漲 擬赴日置產應即早規劃</a></li>
-                <li v-if=!more><button @click="more=1">點此看更多</button></li>
-                <template v-if=more>
-                    <li><a href=https://news.tvbs.com.tw/world/920738>【TVBS 2018,05.16 】東京澀谷都更連連 房仲：可觀察投資機會</a></li>
-                    <li><a href=https://money.udn.com/money/story/5641/3145054>【經濟日報 2018,05.16 】</a></li>
-                    <li><a href=https://tw.finance.appledaily.com/daily/20180402/37976171/>【蘋果日報 2018,04.02】半百跳脫舒適圈 赴日本創業</a></li>
-                    <li>各大媒體報導~本葉2018,03.03&04於台北及台中的說明會
-                        <ul>
-                        <li><a href=https://goo.gl/P4gtMJ>【理財周刊】</a></li>
-                        <li><a href=https://goo.gl/1erYmH>【蘋果日報】</a></li>
-                        <li><a href=http://estate.ltn.com.tw/article/4839>【自由時報】</a></li>
-                        </ul>
-                    <li><a href="https://tw.appledaily.com/new/realtime/20180228/1305701/">【蘋果日報2018,02.28】在日本買不動產地震險不強制</a></li>
-                    <li>書籍《錢進日本》達人帶路,東京房地產完全攻略於 2016,05 出版</li>
-                    <li>【財訊】雙週刊 2015,02.26 471 期的特別報導 ~ 《海外買房新顯學》日本不動產主題 林彥宏社長採訪</li>
-                    <li>【日本週刊住宅】2014,08.04 專訪林彥宏社長</li>
-                    <li>『商業周刊第 1016 期-2007/05/14 』 報導:台灣首批國際認證不動產投資師出爐</li>
-                        <ul>
-                        <li><a href=http://www.gallop.com.tw/news_doc/story366.htm>http://www.gallop.com.tw/news_doc/story366.htm</a></li>
-                        <li><a href="http://m.blog.sina.com.tw/uh_mark/article.php?pbgid=59208&entryid=577736">http://m.blog.sina.com.tw/uh_mark/article.php?pbgid=59208&entryid=577736</a></li>
-                        </ul>
-                    <li><a href="http://m.blog.sina.com.tw/uh_mark/article.php?pbgid=59208&entryid=577736">日本信義前社長自立門戶 出書談日本房市</a></li>
-                    <li><a href="https://www.trademag.org.tw/content02.asp?id=615211&type=50&url=/index.asp?">腳踏實地 信義房屋敲開東京不動產界大門</a></li>
-                </template>
-                </ul>
+                <div class=a>代表取締役社長 林彦宏</div>
+                <div class=b>
+                    <p>
+                        對土地有熱情,對建築有專業,本著近30年不動產經驗,有感於客戶對日本不動產投資的需求,為提供客戶量身訂做的服務,召集了相關專業及有經驗人士,建立了這個專門提供日本不動產投資服務的團隊。簡歷
+                    </p>
+                    <ul>
+                    <li>1990 年進入信義房屋集團</li>
+                    <li>1996 年信義房屋集團安信建築經理(股)經理</li>
+                    <li>2003 年信義房屋集團義富資產管理服務公司副總經理</li>
+                    <li>2009 年信義房屋集團日本信義房屋的第一任代表取締役社長</li>
+                    <li>2014 年本葉國際資產管理株式会社代表取締役社長至今</li>
+                    </ul>
+                    <div class=a>資格</div>
+                    <ul>
+                    <li>台灣首屆取得國際認證不動產投資師 (CCIM,Certified Commercial Investment Member）資格</li>
+                    <li>不動產經紀人執照字號:北市經字第01182號</li>
+                    </ul>
+                    <div class=a>最新採訪與報導</div>
+                    <ul>
+                    <li><a href=https://money.udn.com/money/story/5930/3253098>【經濟日報 2018,07.15 】東京銀座房市 投資客搶進</a></li>
+                    <li><a href=https://goo.gl/A2U4ez>【經濟日報 2018,07.12 】日消費稅明年調漲 擬赴日置產應即早規劃</a></li>
+                    <li v-if=!more><button @click="more=1">點此看更多</button></li>
+                    <template v-if=more>
+                        <li><a href=https://news.tvbs.com.tw/world/920738>【TVBS 2018,05.16 】東京澀谷都更連連 房仲：可觀察投資機會</a></li>
+                        <li><a href=https://money.udn.com/money/story/5641/3145054>【經濟日報 2018,05.16 】</a></li>
+                        <li><a href=https://tw.finance.appledaily.com/daily/20180402/37976171/>【蘋果日報 2018,04.02】半百跳脫舒適圈 赴日本創業</a></li>
+                        <li>各大媒體報導~本葉2018,03.03&04於台北及台中的說明會
+                            <ul>
+                            <li><a href=https://goo.gl/P4gtMJ>【理財周刊】</a></li>
+                            <li><a href=https://goo.gl/1erYmH>【蘋果日報】</a></li>
+                            <li><a href=http://estate.ltn.com.tw/article/4839>【自由時報】</a></li>
+                            </ul>
+                        <li><a href="https://tw.appledaily.com/new/realtime/20180228/1305701/">【蘋果日報2018,02.28】在日本買不動產地震險不強制</a></li>
+                        <li>書籍《錢進日本》達人帶路,東京房地產完全攻略於 2016,05 出版</li>
+                        <li>【財訊】雙週刊 2015,02.26 471 期的特別報導 ~ 《海外買房新顯學》日本不動產主題 林彥宏社長採訪</li>
+                        <li>【日本週刊住宅】2014,08.04 專訪林彥宏社長</li>
+                        <li>『商業周刊第 1016 期-2007/05/14 』 報導:台灣首批國際認證不動產投資師出爐</li>
+                            <ul>
+                            <li><a href=http://www.gallop.com.tw/news_doc/story366.htm>http://www.gallop.com.tw/news_doc/story366.htm</a></li>
+                            <li><a href="http://m.blog.sina.com.tw/uh_mark/article.php?pbgid=59208&entryid=577736">http://m.blog.sina.com.tw/uh_mark/article.php?pbgid=59208&entryid=577736</a></li>
+                            </ul>
+                        <li><a href="http://m.blog.sina.com.tw/uh_mark/article.php?pbgid=59208&entryid=577736">日本信義前社長自立門戶 出書談日本房市</a></li>
+                        <li><a href="https://www.trademag.org.tw/content02.asp?id=615211&type=50&url=/index.asp?">腳踏實地 信義房屋敲開東京不動產界大門</a></li>
+                    </template>
+                    </ul>
+                </div>
+                <div class=a>營業部部長 藤本 裕二</div>
+                <div class=b>
+                    <div>
+                    大京穴吹不動產公司28年經驗、很了解台灣客戶對不動產的需求。　　　
+                    </div>
+                    <ul>
+                    <li>1988年　進入株式會社大京住宅流通部
+                    <li>2001年　大京穴吹不動産 歷任店長、部長
+                    <li>2009年　信義不動産 就任
+                    <li>2013年　台灣大京穴吹 就任
+                    <li>2017年　本葉國際資產管理 營業部部長 就任
+                    </ul>
+                    <div class=a>資格</div>
+                    <div>
+                        宅地建物取引業士　東京第139567 號
+                    </div>
+                </div>
+                <div class=c>
+                    本葉團隊是由擁有相當專業與學經歷豐富的社長與部長帶領，成員們也都有專業的日本不動產知識與經驗，有來自台灣的社員、有日本在住的社員，也有在日本長大擁有台日血統的日籍社員,更有來自中國大陸因為對日本的喜愛在此落地生根的社員。雖然每個社員的本職學經歷與背景各有不同，卻因為對不動產投資與資產管理的熱愛而群聚在本葉，提供中華圈投資人對日本投資的最佳買賣及資產管理平台。
+                </div>
+                <div class=c>
+                    因為社員們來自不同的國籍與背景，反而讓我們得以因應不同國家的客人提供更多元化服務。讓您在日本購買不動產時，從投資規劃諮詢到來日本看屋、付款、簽約及貸款、交屋，我們全程陪同，更重要的是交屋後不管是出租或自用，本葉社員擁有多年累積的經驗，除一般租賃管理，您在日本生活的居家管理服務可透過社員在日生活經驗的交流，協助您以最短時間融入日本，打造您在日本的舒適生活。
+                </div>
+                <div class=c>
+                    如今在本葉社長、主管們的帶領之下，社員們因為彼此協助而持續創新也不斷學習成長。本葉國際資產管理提供社員快樂的學習環境，緊密交流的工作團隊，以最大的服務熱忱提供您更優質的服務。
+                </div>
+            </div>
+            <div class=vla>
+                <div></div>
             </div>
             <div class=n>社長的話</div>
             <div class=o>

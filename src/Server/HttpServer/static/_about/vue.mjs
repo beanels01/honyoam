@@ -2,7 +2,6 @@ import homepageLike from    '../_homepageLike.mjs'
 import top from             './vue/top.mjs'
 import summary from         './vue/summary.mjs'
 import service from         './vue/service.mjs'
-import idea from            './vue/outline.mjs'
 import mobileTop from       './vue/mobileTop.mjs'
 let aMain={
     components:{
@@ -13,7 +12,6 @@ let aMain={
         aTop:               top,
         aService:           service,
         companySummary:     summary,
-        aIdea:              idea,
         mobileTop,
     },
     computed:{
@@ -55,10 +53,6 @@ let aMain={
                     :language=language.about.service
                     :currentLanguage=currentLanguage
                 ></aService>
-                <aIdea
-                    v-if="focus=='outline'"
-                    :language=language.about.outline
-                ></aIdea>
                 <hlFooter
                     :language=language.homepageLike.footer
                     :currentLanguage=currentLanguage
