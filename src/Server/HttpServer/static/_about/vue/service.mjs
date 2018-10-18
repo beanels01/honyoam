@@ -178,11 +178,7 @@ let aBlock={
                     ></div>
                     <div class=text>{{data.title}}</div>
                 </div>
-                <div class=content>
-                    <img :src=data.image0>
-                    <img :src=data.image1>
-                    <img :src=data.image2>
-                </div>
+                <div class=content><img :src=data.image0><img :src=data.image1><img :src=data.image2></div>
             </div>
         </div>
     `,
