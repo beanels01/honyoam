@@ -382,7 +382,7 @@ let aMain={
                         <div class=a>周圍地圖</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
-                                <iframe :src=data.data.map width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                <iframe :src="'https://www.google.com/maps/embed/v1/place?key=AIzaSyBmpfcp2k1_PTevyeo7J-kWcD6k0xYMGPk&q='+encodeURIComponent(data.data.place)" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                             <div class=o>
                                 ※ 僅供物件周邊景象參考，可能與實際物件有所出入。

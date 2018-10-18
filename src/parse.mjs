@@ -9,7 +9,8 @@ let{
 let
     g500='/run/media/anliting/9fe45acf-ad7f-498a-b374-03f69e45727f',
     inputDir=process.argv[2],
-    outputDir=`${g500}/daikyo_2`
+    outputDir=`${g500}/daikyo_2`,
+    veki=parseVeki()
 let a=fs.readFileSync(`${inputDir}/homenavi_all.csv`).toString().match(
     /"[^"]*"(,"[^"]*")*/g
 ).slice(0,-1).map(rowToObject).filter(a=>{
@@ -40,6 +41,16 @@ console.log(a.length)
     ))
     client.close()
 })()
+function parseVeki(){
+    let x={}
+    let a=fs.readFileSync(`honyoam/src/parse/150130_veki.csv`).toString().split('\n')
+    a.pop()
+    a.map(a=>{
+        a=a.split(',')
+        x[a[0]+a[1]+a[2]]=`${a[3]} ${a[5]}`
+    })
+    return x
+}
 function rowToObject(s){
     let
         a=JSON.parse(`[${s.replace(/\t/g,'\\t').replace(/\n/g,'\\n')}]`),
@@ -168,7 +179,7 @@ function rowToObject(s){
                     3:'賃貸中',
                     4:'未完成',
                 }[a[45]],
-                traffic:a[13]?`${a[13]} ${a[14]} 徒步 ${a[16]} 分`:a[22],
+                traffic:a[13]?`${veki[a[13]+a[14]]}  徒步 ${a[16]} 分`:a[22],
                 nearestStation:'',
                 place:a[35],
                 manageMethod:{

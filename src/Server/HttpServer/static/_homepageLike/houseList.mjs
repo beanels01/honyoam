@@ -251,6 +251,7 @@ let houseList={
             <pageSelect
                 v-model=page
                 :length="Math.ceil(sortArray.length/housePerPage)"
+                @input="scrollTo(0,0)"
             ></pageSelect>
         </div>
     `,
