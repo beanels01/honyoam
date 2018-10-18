@@ -56,7 +56,6 @@ function rowToObject(s){
         a=JSON.parse(`[${s.replace(/\t/g,'\\t').replace(/\n/g,'\\n')}]`),
         id=a[1]
 /*
-    最近車站
     格局
     格局圖
     格局圖標題
@@ -180,7 +179,7 @@ function rowToObject(s){
                     4:'未完成',
                 }[a[45]],
                 traffic:a[13]?`${veki[a[13]+a[14]]}  徒步 ${a[16]} 分`:a[22],
-                nearestStation:'',
+                nearestStation:veki[a[13]+a[14]],
                 place:a[35],
                 manageMethod:{
                     0:'不明',
