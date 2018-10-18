@@ -195,7 +195,7 @@ let houseList={
                             this.data.search.pattern['1LDK']&&o.pattern=='1LDK'||
                             this.data.search.pattern['2LDK']&&o.pattern=='2LDK'||
                             this.data.search.pattern['3LDK']&&o.pattern=='3LDK'||
-                            this.data.search.pattern['>3LDK']&&4<=+o.pattern.substring(0,1)
+                            this.data.search.pattern['>3LDK']&&o.pattern&&4<=+o.pattern.substring(0,1)
                         )&&(
                             this.data.search.age==''||
                                 (now-new Date(o.dateYear+(o.dateMonth?`-${o.dateMonth}`:'')))/
@@ -249,9 +249,9 @@ let houseList={
                 </div>
             </div>
             <pageSelect
-                v-model=page
+                :value=page
+                @input="scrollTo(0,0);page=event.target.value"
                 :length="Math.ceil(sortArray.length/housePerPage)"
-                @input="scrollTo(0,0)"
             ></pageSelect>
         </div>
     `,
