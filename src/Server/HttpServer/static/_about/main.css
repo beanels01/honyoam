@@ -519,13 +519,14 @@
         display:table-row;
     }
     #main>.summary>.a>.b>*>.a{
-        width:30%;
+        width:25%;
     }
     #main>.summary>.a>.b>*>*{
         display:table-cell;
         font-size:36px;
         line-height:48px;
         color:#06182c;
+        white-space:pre-line;
     }
     #main>.summary>.a>.b>*+*>*{
         padding-top:60px;
