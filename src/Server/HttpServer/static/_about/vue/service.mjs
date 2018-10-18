@@ -26,46 +26,6 @@
         </div>
     `,
 }*/
-let aA={
-    props:['language'],
-    template:`
-        <div class=a>
-            <div class=a>營業項目</div>
-            <ol>
-            <li>不動產仲介買賣服務</li>
-                <ul>
-                <li>預售屋(新成屋)代理銷售</li>
-                <li>中古物件仲介買賣</li>
-                <li>商用不動產仲介買賣</li>
-                </ul>
-            </li>
-            <li>租賃管理服務
-                <ul>
-                <li>招租募集</li>
-                <li>契約更新</li>
-                <li>契約解除</li>
-                <li>製作租金收支報告書</li>
-                <li>與管委會及承租方日常應對</li>
-                </ul>
-            </li>
-            <li>居家服務:協助您融入當地的生活,解答日本生活上的疑難等等
-                <ul>
-                <li>自用及空屋的代管服務</li>
-                <li>交通、清潔、家事代行安排</li>
-                <li>家具選購陪同、廠商介紹</li>
-                </ul>
-            </li>
-            <li>其他服務
-                <ul>
-                <li>協助設立日本在地公司 ( 合作 律師 , 稅理士及 行政書 士介紹)</li>
-                <li>不動產投資顧問服務 ( 結合稅務及法務行政提供投資架構建議) </li>
-                <li>貸款銀行介紹及手續上的協助</li>
-                </ul>
-            </li>
-            </ol>
-        </div>
-    `,
-}
 let aPartner={
     props:['language'],
     template:`
@@ -199,7 +159,6 @@ let service={
     components:{
         serviceContent,
         aBlock,
-        aA,
         aPartner,
     },
     props:['currentLanguage','language','data'],
@@ -271,7 +230,6 @@ let service={
                     href2:{type:'none'},
                 }"
             ></aBlock>
-            <aA :language=language></aA>
             <aPartner :language=language></aPartner>
         </div>
     `,
