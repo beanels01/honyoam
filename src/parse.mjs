@@ -74,17 +74,23 @@ function rowToObject(s){
         managementFee:+a[34],
         map:"0",
         otherFee:+a[99],
-        pattern:{
-            1:'1R',
-            2:'1K',
-            3:'1DK',
-            4:'1LK',
-            5:'1LDK',
-            6:'1K',
-            7:'1DK',
-            8:'1LK',
-            9:'1LDK',
-        }[a[20]],
+        pattern:
+            a[20]<6?
+                {
+                    1:'1R',
+                    2:'1K',
+                    3:'1DK',
+                    4:'1LK',
+                    5:'1LDK',
+                }[a[20]]
+            :
+                a[21]+{
+                    6:'K',
+                    7:'DK',
+                    8:'LK',
+                    9:'LDK'
+                }[a[20]]
+        ,
         place0:'',
         place1:'',
         price:+a[6],
