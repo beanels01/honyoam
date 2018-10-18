@@ -8,7 +8,7 @@ let{
 }=mongodb
 let
     g500='/run/media/anliting/9fe45acf-ad7f-498a-b374-03f69e45727f',
-    inputDir=`${g500}/daikyo_1`,
+    inputDir=process.argv[2],
     outputDir=`${g500}/daikyo_2`
 let a=fs.readFileSync(`${inputDir}/homenavi_all.csv`).toString().match(
     /"[^"]*"(,"[^"]*")*/g
@@ -89,6 +89,8 @@ function rowToObject(s){
         place1:'',
         price:+a[6],
         repairFund:+a[98],
+        levelCountDown:+a[60],
+        levelCountUp:+a[59],
         language:{
             'zh-Hant':{
                 name:a[33],
@@ -123,7 +125,7 @@ function rowToObject(s){
                     12:'第一種住居地域',
                     13:'準住居地域',
                     99:'無指定',
-                }[a[50]]+' '+{
+                }[a[50]]+' '+(a[139]?{
                     1:'第一種低層住居専用地域',
                     2:'第二種中高層住居専用地域',
                     3:'第二種住居地域',
@@ -137,7 +139,7 @@ function rowToObject(s){
                     12:'第一種住居地域',
                     13:'準住居地域',
                     99:'無指定',
-                }[a[139]],
+                }[a[139]]:''),
                 parkingLot:{
                     1:'空有',
                     2:'空無',
@@ -170,7 +172,6 @@ function rowToObject(s){
                     3:'巡回',
                     4:'自主',
                 }[a[137]],
-                levelCount:(+a[59])+(+a[60]),
                 structure:{
                     1:'木造',
                     2:'ブロック',

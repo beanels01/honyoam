@@ -18,6 +18,8 @@ async function main(rq,rs,lang,patch,id){
             map:            i.map,
             gallery:        i.gallery,
             level:          i.level,
+            levelCountDown: i.levelCountDown,
+            levelCountUp:   i.levelCountUp,
         }
         i=i.language[lang]
         return Object.assign(o,{
@@ -30,7 +32,6 @@ async function main(rq,rs,lang,patch,id){
             patternTitle:           i.patternTitle,
             patternContent:         i.patternContent,
             structure:              i.structure,
-            levelCount:             i.levelCount,
             manageMethod:           i.manageMethod,
             parkingLot:             i.parkingLot,
             usage:                  i.usage,
