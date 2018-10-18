@@ -52,6 +52,9 @@ let aMain={
                     v-if="focus=='service'"
                     :language=language.about.service
                     :currentLanguage=currentLanguage
+                    :data="{
+                        href,
+                    }"
                 ></aService>
                 <hlFooter
                     :language=language.homepageLike.footer

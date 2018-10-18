@@ -178,7 +178,19 @@ let aBlock={
                     ></div>
                     <div class=text>{{data.title}}</div>
                 </div>
-                <div class=content><img :src=data.image0><img :src=data.image1><img :src=data.image2></div>
+                <div class=content><template
+                    v-if="data.href0.type=='none'"
+                ><img :src=data.image0></template><template
+                    v-if="data.href0.type=='url'"
+                ><a :href=data.href0.url><img :src=data.image0></a></template><template
+                    v-if="data.href1.type=='none'"
+                ><img :src=data.image1></template><template
+                    v-if="data.href1.type=='url'"
+                ><a :href=data.href1.url><img :src=data.image1></a></template><template
+                    v-if="data.href2.type=='none'"
+                ><img :src=data.image2></template><template
+                    v-if="data.href2.type=='url'"
+                ><a :href=data.href2.url><img :src=data.image2></a></template></div>
             </div>
         </div>
     `,
@@ -190,7 +202,7 @@ let service={
         aA,
         aPartner,
     },
-    props:['currentLanguage','language'],
+    props:['currentLanguage','language','data'],
     template:`
         <div class=service>
             <serviceContent
@@ -210,8 +222,11 @@ let service={
                     title:'不動產仲介買賣服務',
                     wrapTitle:'不動產仲介\\n買賣服務',
                     image0:'/_about/img2/350x350-1.png',
+                    href0:{type:'url',url:data.href.presale},
                     image1:'/_about/img2/350x350-2.png',
+                    href1:{type:'url',url:data.href.medieval},
                     image2:'/_about/img2/350x350-3.png',
+                    href2:{type:'url',url:data.href.qaForm},
                 }"
             ></aBlock>
             <aBlock
@@ -221,8 +236,11 @@ let service={
                     title:'租貸管理服務',
                     wrapTitle:'租貸管理\\n服務',
                     image0:'/_about/img2/350x350-4.png',
+                    href0:{type:'none'},
                     image1:'/_about/img2/350x350-5.png',
+                    href1:{type:'none'},
                     image2:'/_about/img2/350x350-6.png',
+                    href2:{type:'none'},
                 }"
             ></aBlock>
             <aBlock
@@ -232,8 +250,11 @@ let service={
                     title:'居家服務',
                     wrapTitle:'居家服務',
                     image0:'/_about/img2/350x350-7.png',
+                    href0:{type:'none'},
                     image1:'/_about/img2/350x350-8.png',
+                    href1:{type:'none'},
                     image2:'/_about/img2/350x350-9.png',
+                    href2:{type:'none'},
                 }"
             ></aBlock>
             <aBlock
@@ -243,8 +264,11 @@ let service={
                     title:'其他服務',
                     wrapTitle:'其他服務',
                     image0:'/_about/img2/350x350-10.png',
+                    href0:{type:'url',url:data.href.qaForm},
                     image1:'/_about/img2/350x350-11.png',
+                    href1:{type:'url',url:data.href.qaForm},
                     image2:'/_about/img2/350x350-12.png',
+                    href2:{type:'none'},
                 }"
             ></aBlock>
             <aA :language=language></aA>
