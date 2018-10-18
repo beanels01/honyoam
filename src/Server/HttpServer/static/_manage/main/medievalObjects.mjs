@@ -116,6 +116,18 @@ let inputForSpecificObject={
                 樓層：<input v-model=value.level> 樓
             </p>
             <p>
+                建物總樓層（地下）：
+                <input
+                    v-model=value.levelCountDown
+                > 樓
+            </p>
+            <p>
+                建物總樓層（地上）：
+                <input
+                    v-model=value.levelCountUp
+                > 樓
+            </p>
+            <p>
                 以下兩項擇一輸入即可：
             </p>
             <ul>

@@ -174,7 +174,7 @@ let aMain={
                                 <div>
                                     <div>{{data.data.balconyArea}} 平方公尺</div>
                                     <div>{{data.data.level}}</div>
-                                    <div>{{data.data.levelCount}}</div>
+                                    <div>{{data.data.levelCountDown}}（地下）；{{data.data.levelCountUp}}（地上）</div>
                                 </div>
                             </div>
                             <div class="desktop hl"></div>
@@ -212,7 +212,7 @@ let aMain={
                                 <div class="hl"></div>
                                 <span class=a>所在樓層：</span>{{data.data.level}}
                                 <div class="hl"></div>
-                                <span class=a>建物總樓層：</span>{{data.data.levelCount}}
+                                <span class=a>建物總樓層：</span>{{data.data.levelCountDown}}（地下）；{{data.data.levelCountUp}}（地上）
                                 <div class="hl"></div>
                                 <span class=a>朝向：</span>{{data.data.direction}}
                                 <div class="hl"></div>

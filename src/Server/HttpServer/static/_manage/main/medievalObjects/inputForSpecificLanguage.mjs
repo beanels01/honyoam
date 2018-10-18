@@ -55,12 +55,6 @@ let inputForSpecificLanguage={
                 >
             </p>
             <p>
-                建物總樓層：
-                <input
-                    v-model=value.levelCount
-                >
-            </p>
-            <p>
                 管理方式：
                 <input
                     v-model=value.manageMethod
