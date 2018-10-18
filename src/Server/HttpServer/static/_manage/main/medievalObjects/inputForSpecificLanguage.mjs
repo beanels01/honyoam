@@ -99,7 +99,7 @@ let inputForSpecificLanguage={
                 停車場：<input v-model=value.parkingLot>
             </p>
             <p>
-                土地用途：<input v-model=value.usage>
+                分區：<input v-model=value.usage>
             </p>
             <p>
                 土地權利：<input v-model=value.right>

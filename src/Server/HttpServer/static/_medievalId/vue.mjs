@@ -339,7 +339,7 @@ let aMain={
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 土地用途
+                                        · 分區
                                     </div><div class=o>{{
                                         data.data.usage
                                     }}</div><div class=n>

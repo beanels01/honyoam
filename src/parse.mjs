@@ -75,6 +75,7 @@ function rowToObject(s){
         map:"0",
         otherFee:+a[99],
         pattern:{
+            1:'1R',
             2:'1K',
             3:'1DK',
             4:'1LK',
@@ -145,7 +146,7 @@ function rowToObject(s){
                     3:'賃貸中',
                     4:'未完成',
                 }[a[45]],
-                traffic:a[36],
+                traffic:a[14]?`${a[14]} ${a[15]} 徒步 ${a[17]} 分`:a[23],
                 nearestStation:'',
                 place:a[35],
                 manageMethod:{
