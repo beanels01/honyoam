@@ -217,7 +217,7 @@ let houseList={
     },
     data:()=>({
         page:0,
-        housePerPage:100,
+        housePerPage:20,
     }),
     props:['data'],
     template:`
