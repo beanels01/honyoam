@@ -250,7 +250,7 @@ let houseList={
             </div>
             <pageSelect
                 :value=page
-                @input="scrollTo(0,0);page=event.target.value"
+                @input="v=>{scrollTo(0,0);page=v}"
                 :length="Math.ceil(sortArray.length/housePerPage)"
             ></pageSelect>
         </div>
