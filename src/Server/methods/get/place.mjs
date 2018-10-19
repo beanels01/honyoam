@@ -1,3 +1,7 @@
+/*
+    place1[][0] 是給東京都的
+    place1[][1] 是給非東京都的
+*/
 export default{
     place0:[
         '東京都',

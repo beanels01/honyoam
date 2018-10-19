@@ -203,6 +203,18 @@ function rowToObject(s){
             }
         },
     }
+    for(let i of[
+        '東京都',
+        '千葉県',
+        '神奈川県',
+        '埼玉県',
+        '名古屋市',
+        '大阪府',
+        '京都府',
+        '福岡市',
+    ])
+        if(~a.language['zh-Hant'].place.indexOf(i))
+            x.place0=i
     for(let i=0;i<10;i++){
         let p=`photo${i==0?'':i+1}/${id}.jpg`
         if(fileExistByPath(`${inputDir}/${p}`))
