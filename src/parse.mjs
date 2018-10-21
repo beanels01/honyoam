@@ -208,7 +208,7 @@ function rowToObject(s){
         '京都府',
         '福岡市',
     ])
-        if(~a.language['zh-Hant'].place.indexOf(i))
+        if(~x.language['zh-Hant'].place.indexOf(i))
             x.place0=i
     for(let i=0;i<10;i++){
         let p=`photo${i==0?'':i+1}/${id}.jpg`
