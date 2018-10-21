@@ -28,6 +28,7 @@ let houseSearch={
                     priceMax:'',
                     age:'',
                     pattern:{
+                        '1R':0,
                         '1K':0,
                         '1DK':0,
                         '1LDK':0,
@@ -47,6 +48,7 @@ let houseSearch={
                 priceMax:'',
                 age:'',
                 pattern:{
+                    '1R':0,
                     '1K':0,
                     '1DK':0,
                     '1LDK':0,
@@ -163,9 +165,10 @@ let houseSearch={
                 <div v-if="data.type=='medieval'" class=b>
                     <housePattern
                         v-model="value.pattern"
+                        class="block blockA"
                     ></housePattern>
                     <div class=margin></div>
-                    <div class=block>
+                    <div class="block blockB">
                         <div class=a>房屋年齡</div>
                         <input placeholder=自由輸入值 v-model=value.age>
                         年以內

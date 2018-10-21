@@ -6,6 +6,7 @@ let housePattern={
         checkValue(){
             if(!this.value)
                 this.$emit('input',{
+                    '1R':0,
                     '1K':0,
                     '1DK':0,
                     '1LDK':0,
@@ -22,6 +23,10 @@ let housePattern={
                 房屋格局<br>
                 ＊可複選
             </div>
+            <label>
+                <input type=checkbox v-model="value['1R']">
+                1R
+            </label>
             <label>
                 <input type=checkbox v-model="value['1K']">
                 1K

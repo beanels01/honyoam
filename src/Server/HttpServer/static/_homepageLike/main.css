@@ -626,6 +626,12 @@ body{
     #main>.homepageLikeHouseSearch>.c>*>.b>.block{
         width:565px;
     }
+    #main>.homepageLikeHouseSearch>.c>*>.b>.blockA{
+        width:600px;
+    }
+    #main>.homepageLikeHouseSearch>.c>*>.b>.blockB{
+        width:530px;
+    }
     #main>.homepageLikeHouseSearch>.c>*>.b>.margin{
         width:15px;
     }

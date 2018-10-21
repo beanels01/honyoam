@@ -174,7 +174,7 @@ let aMain={
                                 <div>
                                     <div>{{data.data.balconyArea}} 平方公尺</div>
                                     <div>{{data.data.level}}</div>
-                                    <div>{{data.data.levelCountDown}}（地下）；{{data.data.levelCountUp}}（地上）</div>
+                                    <div>地上{{data.data.levelCountUp}}層,地下{{data.data.levelCountDown}}層</div>
                                 </div>
                             </div>
                             <div class="desktop hl"></div>
@@ -212,7 +212,7 @@ let aMain={
                                 <div class="hl"></div>
                                 <span class=a>所在樓層：</span>{{data.data.level}}
                                 <div class="hl"></div>
-                                <span class=a>建物總樓層：</span>{{data.data.levelCountDown}}（地下）；{{data.data.levelCountUp}}（地上）
+                                <span class=a>建物總樓層：</span>地上{{data.data.levelCountUp}}層,地下{{data.data.levelCountDown}}層
                                 <div class="hl"></div>
                                 <span class=a>朝向：</span>{{data.data.direction}}
                                 <div class="hl"></div>
@@ -320,7 +320,7 @@ let aMain={
                                     </div><div class=o>{{data.data.structure}}</div>
                                     <div class=n>
                                         · 建物總樓層
-                                    </div><div class=o>{{data.data.levelCount}}</div>
+                                    </div><div class=o>地上{{data.data.levelCountUp}}層,地下{{data.data.levelCountDown}}層</div>
                                 </div>
                                 <div>
                                     <div class=n>
@@ -339,7 +339,7 @@ let aMain={
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 分區
+                                        · 使用分區
                                     </div><div class=o>{{
                                         data.data.usage
                                     }}</div><div class=n>
