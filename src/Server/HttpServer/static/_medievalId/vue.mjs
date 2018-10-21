@@ -334,7 +334,7 @@ let aMain={
                                     }}</div><div class=n>
                                         · 停車場
                                     </div><div class=o>{{
-                                        data.data.parkingLot
+                                        data.data.parkingLot||'-'
                                     }}</div>
                                 </div>
                                 <div>

@@ -202,6 +202,7 @@
     }
     #main>.a>.o>.b>.q>*>*+*{
         padding-left:30px;
+        white-space:pre-line;
     }
     #main>.a>.o>.b>.r{
         position:absolute;

@@ -108,11 +108,25 @@ function rowToObject(s){
                 patternContent:'',
                 patternTitle:'',
                 pattern:{url:`daikyo/madori/${id}.jpg`},
-                handInDate:{
-                    1:'即時',
-                    2:'相談',
-                    3:'期日指定',
-                }[a[46]]+' '+a[47],
+                handInDate:`${
+                    {
+                        1:'即時',
+                        2:'相談',
+                        3:'期日指定',
+                    }[a[46]]
+                }${a[46]==3?
+                    ` 平成${
+                        +a[47].substring(0,2)
+                    }年${
+                        +a[47].substring(2,4)
+                    }月${
+                        {
+                            1:'上旬',
+                            2:'中旬',
+                            3:'下旬',
+                        }[a[48]]
+                    }`
+                :''}`,
                 right:{
                     1:'所有権',
                     2:'旧法地上',
@@ -173,7 +187,12 @@ function rowToObject(s){
                     3:'賃貸中',
                     4:'未完成',
                 }[a[45]],
-                traffic:a[13]?`${veki[a[13]+a[14]]}  徒步 ${a[16]} 分`:a[22],
+                traffic:
+                    (a[13]?`${veki[a[13]+a[14]]}  徒步 ${a[16]} 分\n`:'')+
+                    (a[22]?`${a[22]}\n`:'')+
+                    (a[105]?`${veki[a[105]+a[106]]}  徒步 ${a[108]} 分\n`:'')+
+                    (a[110]?`${veki[a[110]+a[111]]}  徒步 ${a[113]} 分\n`:'')
+                ,
                 nearestStation:veki[a[13]+a[14]],
                 place:a[35],
                 manageMethod:{
