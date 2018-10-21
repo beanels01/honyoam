@@ -385,7 +385,7 @@ let aMain={
                                 <iframe :src="'https://www.google.com/maps/embed/v1/place?key=AIzaSyBmpfcp2k1_PTevyeo7J-kWcD6k0xYMGPk&q='+encodeURIComponent(data.data.place)" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                             <div class=o>
-                                ※ 僅供物件周邊景象參考，可能與實際物件有所出入。
+                                ※ 以上所提供物件周邊地圖及街景僅供參考,實際仍以物件現況為準,如需更詳細地址請與我們聯絡
                             </div>
                         </div>
                     </div>
