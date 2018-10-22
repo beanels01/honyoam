@@ -47,15 +47,23 @@ E-mail：${this.email}
     template:`
         <div class=huiKui>
             <a id=form></a>
-            <div class=title>給我們些回饋</div>
-            <p>
-                如果上面的問題沒有回答到您心中的疑問，<br>
-                如果您想預約看房或是對本網站上刊登的物件資訊想更進一步了解,<br>
-                都歡迎您填寫下方表格，我們將盡快與您聯絡。
-            </p>
-            <p>
-                標示星號 (<span style="color:red;">*</span>) 為必填項目
-            </p>
+            <div class=c>
+                <div class=a>
+                    <div class=title>給我們些回饋</div>
+                    <p>
+                        如果上面的問題沒有回答到您心中的疑問，<br>
+                        如果您想預約看房或是對本網站上刊登的物件資訊想更進一步了解,<br>
+                        都歡迎您填寫下方表格，我們將盡快與您聯絡。
+                    </p>
+                    <p>
+                        標示星號 (<span style="color:red;">*</span>) 為必填項目
+                    </p>
+                </div>
+                <div class=b>
+                    <img src="/_homepageLike/line.png">
+                    <img src="/_homepageLike/wechat.png">
+                </div>
+            </div>
             <template v-if=!success>
                 <div class=a>
                     <div>

@@ -9,12 +9,13 @@ let initialValue=JSON.stringify({
     priceMax:       '',
     age:            '',
     pattern:        {
-        '1K':       1,
-        '1DK':      1,
-        '1LDK':     1,
-        '2LDK':     1,
-        '3LDK':     1,
-        '>3LDK':    1,
+        '1R':       0,
+        '1K':       0,
+        '1DK':      0,
+        '1LDK':     0,
+        '2LDK':     0,
+        '3LDK':     0,
+        '>3LDK':    0,
     },
 })
 let search={

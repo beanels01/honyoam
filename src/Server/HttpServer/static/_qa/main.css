@@ -187,10 +187,6 @@
 #main>.a>.huiKui>#form{
     position:absolute;top:-90px;
 }
-#main>.a>.huiKui>.title{
-    font-size:24px;
-    color:rgba(10, 23, 39, 1.00)
-}
 #main>.a>.huiKui>.a{
     margin-top:35px;
 }
@@ -276,5 +272,31 @@
     }
     #main>.a>.huiKui>.b>*>.o{
         padding-left:16px;
+    }
+}
+#main>.a>.huiKui>.c>.a>.title{
+    font-size:24px;
+    color:rgba(10, 23, 39, 1.00)
+}
+#main>.a>.huiKui>.c>.b{
+    display:none;
+}
+@media(max-width:1279px){
+}
+@media(min-width:1280px){
+    #main>.a>.huiKui>.c{
+        display:table;
+        width:100%;
+    }
+    #main>.a>.huiKui>.c>.a{
+        display:table-cell;
+    }
+    #main>.a>.huiKui>.c>.b{
+        display:table-cell;
+        text-align:right;
+        vertical-align:top;
+    }
+    #main>.a>.huiKui>.c>.b>*{
+        width:160px;
     }
 }

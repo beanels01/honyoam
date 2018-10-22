@@ -14,6 +14,15 @@ let pattern={
                             <label>
                                 <input
                                     type=checkbox
+                                    v-model="value['1R']"
+                                >
+                                1R
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input
+                                    type=checkbox
                                     v-model="value['1K']"
                                 >
                                 1K
@@ -36,8 +45,6 @@ let pattern={
                                 >
                                 1LDK
                             </label>
-                        </div>
-                        <div>
                         </div>
                     </div>
                     <div>
