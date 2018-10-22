@@ -192,8 +192,8 @@ let service={
                 :data="{
                     color:'#a6c486',
                     bgColor:'#ffffff',
-                    title:'租貸管理服務',
-                    wrapTitle:'租貸管理\\n服務',
+                    title:'租賃管理服務',
+                    wrapTitle:'租賃管理\\n服務',
                     image0:'/_about/img2/350x350-4.png',
                     href0:{type:'none'},
                     image1:'/_about/img2/350x350-5.png',

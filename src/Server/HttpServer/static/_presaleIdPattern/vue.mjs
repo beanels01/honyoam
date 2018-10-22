@@ -5,7 +5,7 @@ let patternInput={
     props:['data','value','currentLanguage'],
     template:`
         <div class=o>
-            <div v-for="(e,i) in data">
+            <div v-for="(e,i) in data.filter(a=>a.show)">
                 <div
                     class=n
                     :class="{active:value==i}"
@@ -15,7 +15,7 @@ let patternInput={
                             currentLanguage in e.language&&e.language[currentLanguage].image?
                                 '/image/'+e.language[currentLanguage].image
                             :
-                                'none100.png'
+                                'none1000.png'
                         "
                         @click="$emit('input',i)"
                     >
@@ -110,7 +110,7 @@ let aMain={
                         currentLanguage in presale.presaleId.pattern[selectPattern].language&&presale.presaleId.pattern[selectPattern].language[currentLanguage].image?
                             '/image/'+presale.presaleId.pattern[selectPattern].language[currentLanguage].image
                         :
-                            'none100.png'
+                            'none1000.png'
                     ">
                 </div>
                 <presaleIdLikeFooter

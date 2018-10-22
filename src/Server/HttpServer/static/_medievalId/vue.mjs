@@ -87,6 +87,12 @@ let aMain={
     }),
     methods:{
         commaNumber,
+        money(n){
+            return n?
+                `${commaNumber(n)} 日幣`
+            :
+                '-'
+        }
     },
     props:['language','currentLanguage','mainSeminar','data',],
     template:`
@@ -210,7 +216,7 @@ let aMain={
                                 <div class="hl"></div>
                                 <span class=a>陽台面積：</span>{{data.data.balconyArea}}
                                 <div class="hl"></div>
-                                <span class=a>所在樓層：</span>{{data.data.level}}
+                                <span class=a>所在樓層：</span>{{data.data.level}} 樓
                                 <div class="hl"></div>
                                 <span class=a>建物總樓層：</span>地上{{data.data.levelCountUp}}層,地下{{data.data.levelCountDown}}層
                                 <div class="hl"></div>
@@ -303,10 +309,14 @@ let aMain={
                                 <div>
                                     <div class=n>
                                         · 管理費
-                                    </div><div class=o>{{commaNumber(data.data.managementFee)}} 日幣</div>
+                                    </div><div class=o>{{
+                                        money(data.data.managementFee)
+                                    }}</div>
                                     <div class=n>
                                         · 修繕基金
-                                    </div><div class=o>{{commaNumber(data.data.repairFund)}} 日幣</div>
+                                    </div><div class=o>{{
+                                        money(data.data.repairFund)
+                                    }}</div>
                                     <div class=n>
                                         · 朝向
                                     </div><div class=o>{{data.data.direction}}</div>
@@ -314,7 +324,9 @@ let aMain={
                                 <div>
                                     <div class=n>
                                         · 其他費用
-                                    </div><div class=o>{{commaNumber(data.data.otherFee)}} 日幣</div>
+                                    </div><div class=o>{{
+                                        money(data.data.otherFee)
+                                    }}</div>
                                     <div class=n>
                                         · 構造
                                     </div><div class=o>{{data.data.structure}}</div>
@@ -331,7 +343,7 @@ let aMain={
                                         · 所在樓層
                                     </div><div class=o>{{
                                         data.data.level
-                                    }}</div><div class=n>
+                                    }} 樓</div><div class=n>
                                         · 停車場
                                     </div><div class=o>{{
                                         data.data.parkingLot||'-'

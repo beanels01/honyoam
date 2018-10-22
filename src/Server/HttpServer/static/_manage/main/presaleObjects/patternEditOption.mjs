@@ -90,6 +90,15 @@ let patternEditOption={
                     @input="value.price=+event.target.value"
                 >
             </p>
+            <p>
+                <label>
+                    <input
+                        type=checkbox
+                        v-model=value.show
+                    >
+                    顯示於「空間格局」頁面
+                </label>
+            </p>
             <languageSelect
                 :language=data
                 v-model=selectedLanguage

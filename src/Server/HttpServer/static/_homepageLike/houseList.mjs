@@ -214,10 +214,13 @@ let houseList={
                 (this.page+1)*this.housePerPage
             )
         },
+        housePerPage(){
+            return this.housePerPageData[this.data.type]
+        },
     },
     data:()=>({
         page:0,
-        housePerPage:20,
+        housePerPageData:{presale:10,medieval:20},
     }),
     props:['data'],
     template:`

@@ -84,7 +84,7 @@ let aMain={
                     <div class=b>ABOUT US</div>
                     <div class=c>秉持專業、熱忱，透過團隊的力量，跨越不同文化與國界，為客戶提供貼心、安全、優質的不動產投資顧問、仲介及資產管理服務。</div>
                 </div>
-                <div class=about1>
+                <a class=about1 :href=href.about>
                     <div class=n>
                         <div class=a><div><div>
                             <img src=img/a01.png><br>
@@ -103,7 +103,7 @@ let aMain={
                         </div></div></div>
                     </div>
                     <div class=vl></div>
-                </div>
+                </a>
                 <hlFooter
                     :language=language.homepageLike.footer
                     :currentLanguage=currentLanguage
