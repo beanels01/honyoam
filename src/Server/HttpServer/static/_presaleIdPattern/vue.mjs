@@ -5,7 +5,7 @@ let patternInput={
     props:['data','value','currentLanguage'],
     template:`
         <div class=o>
-            <div v-for="(e,i) in data.filter(a=>a.show)">
+            <div v-for="(e,i) in data">
                 <div
                     class=n
                     :class="{active:value==i}"
@@ -60,6 +60,9 @@ let aMain={
                 this.presale.id,
             )
         },
+        pattern(){
+            return this.presale.presaleId.pattern.filter(a=>a.show)
+        }
     },
     data:()=>({
         menu:0,
@@ -100,18 +103,21 @@ let aMain={
                         <span class=a>空間格局</span> / SPACE PATTERN
                     </div>
                     <patternInput
-                        :data=presale.presaleId.pattern
+                        :data=pattern
                         :currentLanguage=currentLanguage
                         v-model=selectPattern
                     ></patternInput>
                 </div>
-                <div class=b>
+                <div class=b v-if=pattern.length>
                     <img :src="
                         currentLanguage in presale.presaleId.pattern[selectPattern].language&&presale.presaleId.pattern[selectPattern].language[currentLanguage].image?
                             '/image/'+presale.presaleId.pattern[selectPattern].language[currentLanguage].image
                         :
                             'none1000.png'
                     ">
+                </div>
+                <div class=c v-if=!pattern.length>
+                    暫無格局圖。
                 </div>
                 <presaleIdLikeFooter
                     :data=presale.presale.language[currentLanguage].precautions

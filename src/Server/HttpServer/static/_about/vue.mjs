@@ -47,6 +47,9 @@ let aMain={
                     v-if="focus=='summary'"
                     :language=language.about.summary
                     :currentLanguage=currentLanguage
+                    :data="{
+                        href,
+                    }"
                 ></companySummary>
                 <aService
                     v-if="focus=='service'"
