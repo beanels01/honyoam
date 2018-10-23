@@ -10,7 +10,7 @@ let hypertextPhoto={
         </span>
     `,
 }
-let hypertextPhotoSwiper={
+let photoSwiper={
     mounted(){
         function createSwiperContainer(a){
             return dom.div({className:'swiper-container'},
@@ -38,16 +38,56 @@ let hypertextPhotoSwiper={
             )
         )
         dom(this.$el,n)
-        new Swiper(n,{
+        this.swiper=new Swiper(n,{
             centeredSlides:true,
             slidesPerView:5,
             spaceBetween:10,
             loop:true,
         })
     },
-    props:['data'],
+    data:()=>({
+        swiper:0,
+    }),
+    props:['data','value'],
     template:`
         <div class=p></div>
+    `,
+    watch:{
+        value(n,p){
+            if(this.value){
+                this.swiper[this.value==-1?'slidePrev':'slideNext']()
+                this.$emit('input',0)
+            }
+        }
+    },
+}
+let hypertextPhotoSwiper={
+    components:{photoSwiper},
+    data:()=>({
+        focus:0,
+    }),
+    props:['data'],
+    methods:{
+        goLeft(){
+            this.focus=-1
+        },
+        goRight(){
+            this.focus=1
+        },
+    },
+    template:`
+        <div class=a>
+            <photoSwiper
+                :data=data
+                v-model=focus
+            ></photoSwiper>
+            <div class="arrow left" @click=goLeft>
+                <i class=material-icons>chevron_left</i>
+            </div>
+            <div class="arrow right" @click=goRight>
+                <i class=material-icons>chevron_right</i>
+            </div>
+        </div>
     `,
 }
 let block={

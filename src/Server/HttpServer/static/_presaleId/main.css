@@ -111,23 +111,56 @@
 #main>.album>.o{
     display:none;
 }
-#main>.album>.p{
+#main>.album>.a{
+    position:relative;
+}
+#main>.album>.a>.p{
     display:none;
 }
-#main>.album>.p{
+#main>.album>.a>.p{
     display:block;
     position:relative;
     height:157px;
     margin-bottom:20px;
 }
-#main>.album>.p>*{
+#main>.album>.a>.p>*{
     --width:1440px; /* 5*280+4*10 */
     position:absolute;
     left:calc(50% - var(--width) / 2);
     width:var(--width);
     height:157px;
 }
-#main>.album>.p>*>*>*>*>*{
+#main>.album>.a>.p>*>*>*>*>*{
     width:280px;
     height:157px;
+}
+#main>.album>.a>.arrow{
+    --arrow-size:96px;
+    position:absolute;
+    top:0;
+    display:none;
+    z-index:1;
+    width:var(--arrow-size);
+    height:100%;
+    cursor:pointer;
+    user-select:none;
+}
+#main>.album>.a:hover>.arrow{
+    display:unset;
+}
+#main>.album>.a>.arrow>i{
+    position:absolute;
+    font-size:var(--arrow-size);
+    color:rgba(29,152,223,.5);
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+}
+#main>.album>.a>.arrow:hover>i{
+}
+#main>.album>.a>.arrow.left{
+    left:0;
+}
+#main>.album>.a>.arrow.right{
+    right:0;
 }
