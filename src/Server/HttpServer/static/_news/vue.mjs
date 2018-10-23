@@ -78,8 +78,6 @@ let aMain={
                 if(this.id.length==24){
                     let newsById=this.data.news.filter(a=>this.id==a._id)[0]
                     let date=new Date(newsById.date)
-                    this.year=date.getYear()
-                    this.month=date.getMonth()
                     this.type=newsById.type
                     let index=this.newsByYearAndType.findIndex(a=>
                         a._id==this.id
