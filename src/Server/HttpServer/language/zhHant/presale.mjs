@@ -16,7 +16,6 @@ export default{
         area:               '面積',
         balconyArea:        '陽台面積',
         price:              '價格',
-        price:              '價格',
         squaredMeter:       '平方公尺',
         e4JapaneseCurrency: '萬日幣',
     }
