@@ -47,7 +47,7 @@ let search={
             this.$emit('search',this.value)
         },
     },
-    props:['mission'],
+    props:['data','mission'],
     template:`
         <div class=search>
             <div
@@ -63,6 +63,7 @@ let search={
                 v-model=value
                 @clear=clear
                 @search=search
+                :data=data
             ></search0>
         </div>
     `

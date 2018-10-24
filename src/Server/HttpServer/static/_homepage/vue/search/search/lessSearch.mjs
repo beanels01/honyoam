@@ -56,28 +56,28 @@ let lessSearch={
         county,
         area,
     }),
-    props:['value'],
+    props:['value','data'],
     template:`
         <div class=a>
             <div class=n>
                 <div class=a>
-                    尋找你想<br class=n>要的物件
+                    {{data.language.searchYouWant0}}<br class=n>{{data.language.searchYouWant1}}
                 </div>
                 <div class=b>
                     <label>
                         <input type=radio value=presale v-model=value.type>
-                        新成屋
+                        {{data.language.presale}}
                     </label>
                     <label>
                         <input type=radio value=medieval v-model=value.type>
-                        中古屋
+                        {{data.language.medieval}}
                     </label>
                     <br class=t>
                     <select
                         class="n q"
                         v-model=value.place0
                     >
-                        <option value hidden>地區</option>
+                        <option value hidden>{{data.language.place0}}</option>
                         <option
                             v-for="(a,i) in county"
                             :value=i
@@ -87,7 +87,7 @@ let lessSearch={
                         class="n q"
                         v-model=value.place1
                     >
-                        <option value hidden>區域</option>
+                        <option value hidden>{{data.language.place1}}</option>
                         <option
                             v-if="typeof value.place0=='number'"
                             v-for="(a,i) in area[value.usage==0?'presale':'medieval'][value.place0]"
@@ -95,41 +95,41 @@ let lessSearch={
                         >{{a}}</option>
                     </select>
                     <br>
-                    面積：
+                    {{data.language.area}}：
                     <input
                         class=p
-                        placeholder=最低
+                        :placeholder=data.language.min
                         v-model=value.areaMin
                     >
                     ～
                     <input
                         class=p
-                        placeholder=最高
+                        :placeholder=data.language.max
                         v-model=value.areaMax
                     >
                     <select class="n r">
-                        <option>平方公尺</option>
-                        <option>坪</option>
+                        <option>{{data.language.squaredMeter}}</option>
+                        <option>{{data.language.levelGround}}</option>
                     </select>
                     <span class=s></span>
                     <br class=t>
-                    價格：
+                    {{data.language.levelGround}}：
                     <input
                         class=p
-                        placeholder=最低
+                        :placeholder=data.language.min
                         v-model=value.priceMin
                     >
                     ～
                     <input
                         class=p
-                        placeholder=最高
+                        :placeholder=data.language.max
                         v-model=value.priceMax
                     >
-                    萬日幣
+                    {{data.language.e4JapaneseCurrency}}
                 </div>
                 <div class=c>
                     <button class=searchButton @click="$emit('search')">
-                        <img src=img/search.png> 搜尋
+                        <img src=img/search.png> {{data.language.search}}
                     </button>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import pattern0 from'./moreSearch/pattern.mjs'
 let moreSearch={
     components:{pattern0},
-    props:['value'],
+    props:['value','data'],
     template:`
         <div>
             <div class=a>

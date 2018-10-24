@@ -60,6 +60,9 @@ let aMain={
                 <search
                     :mission=homepage.mission
                     @search=search
+                    :data="{
+                        language:language.homepage.search,
+                    }"
                 ></search>
                 <newProducts
                     :rotation=homepage.rotation
@@ -80,26 +83,21 @@ let aMain={
                     :href=href.news
                 ></success>
                 <div class=about0>
-                    <div class=a>關於我們</div>
+                    <div class=a>{{language.homepage.aboutUs.aboutUs}}</div>
                     <div class=b>ABOUT US</div>
-                    <div class=c>秉持專業、熱忱，透過團隊的力量，跨越不同文化與國界，為客戶提供貼心、安全、優質的不動產投資顧問、仲介及資產管理服務。</div>
+                    <div class=c>{{language.homepage.aboutUs.text0}}</div>
                 </div>
                 <a class=about1 :href=href.about>
                     <div class=n>
                         <div class=a><div><div>
                             <img src=img/a01.png><br>
-                            本葉在日本及台灣皆有據點；
-                            除了基本物件買賣，更提供投資及租賃管理。
+                            {{language.homepage.aboutUs.text0}}
                         </div></div></div>
                         <div class=b><div><div>
                             <img src=img/a02.png><br>
-                            我們的服務不侷限於臺日兩地，中國，香港及遠至美國的華人圈，
-                            我們也同樣提供專業的日本物件投資服務。
                         </div></div></div>
                         <div class=c><div><div>
                             <img src=img/a03.png><br>
-                            本葉國際立足亞洲，放眼全世界，
-                            成為世界各地投資者的橋樑是本葉的宗旨及使命。
                         </div></div></div>
                     </div>
                     <div class=vl></div>

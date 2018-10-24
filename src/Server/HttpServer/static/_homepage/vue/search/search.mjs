@@ -8,12 +8,15 @@ let search={
     data:()=>({
         moreSearchOptions:0,
     }),
-    props:['value'],
+    props:['value','data'],
     template:`
         <div class=search><div><div>
             <lessSearch
                 :value=value
                 @search="$emit('search')"
+                :data="{
+                    language:data.language.lessSearch
+                }"
             ></lessSearch>
             <div
                 class=b
@@ -23,7 +26,7 @@ let search={
                     class=more
                     @click="moreSearchOptions=1"
                 ><div>
-                    <img src=/img/sa01.png> 更多搜尋條件
+                    <img src=/img/sa01.png> {{data.language.more}}
                 </div></div>
             </div>
             <div
@@ -33,13 +36,16 @@ let search={
                 <div
                     class=less
                     @click="moreSearchOptions=0"
-                ><div><img src=/img/sa02.png> 收起搜尋條件</div></div>
+                ><div><img src=/img/sa02.png> {{data.language.less}}</div></div>
                 <div class=hl></div>
                 <moreSearch
                     class=n
                     v-model=value
                     @clear="$emit('clear')"
                     @search="$emit('search')"
+                    :data="{
+                        language:data.language.moreSearch
+                    }"
                 ></moreSearch>
             </div>
         </div></div></div>
