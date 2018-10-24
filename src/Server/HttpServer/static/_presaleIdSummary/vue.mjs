@@ -44,21 +44,22 @@ let aMain={
             ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
-                    :data="{mobile:1}"
+                    :data="{mobile:1,language:language.presale}"
                 ></presaleLikeTop>
                 <presaleIdLikeTop
                     :data="{
                         focus:'summary',
                         title:presale.presaleId.name,
-                        part:'物件概要',
+                        part:language.presale.summary,
                         background:presale.presaleId.banner,
                         show:presale.presaleId,
+                        language:language.presale,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <div class=a>
                     <div class=n>
-                        <span class=a>物件概要</span> / INFORMATION
+                        <span class=a>{{language.presale.summary}}</span> / INFORMATION
                     </div>
                     <div class=o>
                         <div>
@@ -70,7 +71,10 @@ let aMain={
                     </div>
                 </div>
                 <presaleIdLikeFooter
-                    :data=presale.presale.language[currentLanguage].precautions
+                    :data="{
+                        language:language.presale,
+                        content:presale.presale.language[currentLanguage].precautions,
+                    }"
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -81,7 +85,11 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'summary',show:presale.presaleId,}"
+                    :data="{
+                        focus:'summary',
+                        show:presale.presaleId,
+                        language:language.presale,
+                    }"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

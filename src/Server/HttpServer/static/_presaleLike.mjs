@@ -9,7 +9,7 @@ export default{
                 :data="{
                     mobile:             data.mobile,
                     desktop:            data.desktop,
-                    title0:             '新成屋',
+                    title0:             data.language.title,
                     title1:             'PRESOLD HOUSE',
                 }"
             ></homepageLikeTop>

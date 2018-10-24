@@ -46,21 +46,22 @@ let aMain={
             ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
-                    :data="{mobile:1}"
+                    :data="{mobile:1,language:language.presale}"
                 ></presaleLikeTop>
                 <presaleIdLikeTop
                     :data="{
                         focus:'environment',
                         title:presale.presaleId.name,
-                        part:'周邊環境',
+                        part:language.presale.environment,
                         background:presale.presaleId.banner,
                         show:presale.presaleId,
+                        language:language.presale,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{
-                        part:['周邊環境','ENVIRONMENT'],
+                        part:[language.presale.environment,'ENVIRONMENT'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
                         href:href.qaForm,
@@ -73,7 +74,10 @@ let aMain={
                     }"
                 ></presaleIdLikeHypertext>
                 <presaleIdLikeFooter
-                    :data=presale.presale.language[currentLanguage].precautions
+                    :data="{
+                        language:language.presale,
+                        content:presale.presale.language[currentLanguage].precautions,
+                    }"
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -84,7 +88,10 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'environment',show:presale.presaleId,}"
+                    :data="{
+                        focus:'environment',show:presale.presaleId,
+                        language:language.presale,
+                    }"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

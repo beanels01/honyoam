@@ -5,7 +5,7 @@ let patternInput={
     props:['data','value','currentLanguage'],
     template:`
         <div class=o>
-            <div v-for="(e,i) in data">
+            <div v-for="(e,i) in data.pattern">
                 <div
                     class=n
                     :class="{active:value==i}"
@@ -28,10 +28,10 @@ let patternInput={
                             ''
                     }}</div>
                     <div class=b>
-                        <div>格局：{{e.name}}</div>
-                        <div>面積：{{e.area}} 平方公尺</div>
-                        <div>陽台面積：{{e.balconyArea}} 平方公尺</div>
-                        <div>價格：{{e.price}} 萬日幣</div>
+                        <div>{{data.language.pattern}}：{{e.name}}</div>
+                        <div>{{data.language.area}}：{{e.area}} {{data.language.squaredMeter}}</div>
+                        <div>{{data.language.balconyArea}}：{{e.balconyArea}} {{data.language.squaredMeter}}</div>
+                        <div>{{data.language.price}}：{{e.price}} {{data.language.e4JapaneseCurrency}}</div>
                     </div>
                 </div>
             </div>
@@ -86,24 +86,28 @@ let aMain={
             ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
-                    :data="{mobile:1}"
+                    :data="{mobile:1,language:language.presale}"
                 ></presaleLikeTop>
                 <presaleIdLikeTop
                     :data="{
                         focus:'pattern',
                         title:presale.presaleId.name,
-                        part:'空間格局',
+                        part:language.presale.pattern,
                         background:presale.presaleId.banner,
                         show:presale.presaleId,
+                        language:language.presale,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <div class=a>
                     <div class=n>
-                        <span class=a>空間格局</span> / SPACE PATTERN
+                        <span class=a>{{language.presale.pattern}}</span> / SPACE PATTERN
                     </div>
                     <patternInput
-                        :data=pattern
+                        :data="{
+                            pattern,
+                            language:language.presale.patternPage,
+                        }",
                         :currentLanguage=currentLanguage
                         v-model=selectPattern
                     ></patternInput>
@@ -117,10 +121,13 @@ let aMain={
                     ">
                 </div>
                 <div class=c v-if=!pattern.length>
-                    暫無格局圖。
+                    {{language.presale.patternPage.noData}}
                 </div>
                 <presaleIdLikeFooter
-                    :data=presale.presale.language[currentLanguage].precautions
+                    :data="{
+                        language:language.presale,
+                        content:presale.presale.language[currentLanguage].precautions,
+                    }"
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -131,7 +138,11 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'pattern',show:presale.presaleId,}"
+                    :data="{
+                        focus:'pattern',
+                        show:presale.presaleId,
+                        language:language.presale,
+                    }"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

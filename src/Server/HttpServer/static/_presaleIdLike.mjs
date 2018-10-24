@@ -20,31 +20,31 @@ let header={
                 v-if=data.show.showConcept
                 :href=href.concept
                 :class="{active:data.focus=='concept'}"
-            >建築設計</a>
+            >{{data.language.concept}}</a>
             <a
                 v-if=data.show.showEnvironment
                 :href=href.environment
                 :class="{active:data.focus=='environment'}"
-            >周邊環境</a>
+            >{{data.language.environment}}</a>
             <a
                 v-if=data.show.showTraffic
                 :href=href.traffic
                 :class="{active:data.focus=='traffic'}"
-            >交通方式</a>
+            >{{data.language.traffic}}</a>
             <a
                 :href=href.pattern
                 :class="{active:data.focus=='pattern'}"
-            >空間格局</a>
+            >{{data.language.pattern}}</a>
             <a
                 v-if=data.show.showSummary
                 :href=href.summary
                 :class="{active:data.focus=='summary'}"
-            >物件概要</a>
+            >{{data.language.summary}}</a>
             <a
                 v-if=data.show.showVideo
                 :href=href.video
                 :class="{active:data.focus=='video'}"
-            >影音介紹</a>
+            >{{data.language.video}}</a>
         </div>
     `,
 }
@@ -80,26 +80,26 @@ let top={
                     <option
                         v-if=data.show.showConcept
                         value=concept
-                    >建築設計</option>
+                    >{{data.language.content}}</option>
                     <option
                         v-if=data.show.showEnvironment
                         value=environment
-                    >周邊環境</option>
+                    >{{data.language.environment}}</option>
                     <option
                         v-if=data.show.showTraffic
                         value=traffic
-                    >交通方式</option>
+                    >{{data.language.traffic}}</option>
                     <option
                         value=pattern
-                    >空間格局</option>
+                    >{{data.language.pattern}}</option>
                     <option
                         v-if=data.show.showSummary
                         value=summary
-                    >物件概要</option>
+                    >{{data.language.summary}}</option>
                     <option
                         v-if=data.show.showVideo
                         value=video
-                    >影音介紹</option>
+                    >{{data.language.video}}</option>
                 </select>
             </div>
             <div class=b :style=styleB>
@@ -157,8 +157,8 @@ let footer={
     props:['data'],
     template:`
         <div class=presaleIdLikeFooter>
-            <div>注意事項：
-                {{data}}</div>
+            <div>{{data.language.notice}}：
+                {{data.content}}</div>
         </div>
     `
 }

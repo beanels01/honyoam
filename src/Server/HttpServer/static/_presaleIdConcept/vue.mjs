@@ -46,21 +46,22 @@ let aMain={
             ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
-                    :data="{mobile:1}"
+                    :data="{mobile:1,language:language.presale}"
                 ></presaleLikeTop>
                 <presaleIdLikeTop
                     :data="{
                         focus:'concept',
                         title:presale.presaleId.name,
-                        part:'建築設計',
+                        part:language.presale.concept,
                         background:presale.presaleId.banner,
                         show:presale.presaleId,
+                        language:language.presale,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{
-                        part:['建築設計','DESIGN CONCEPT'],
+                        part:[language.presale.concept,'DESIGN CONCEPT'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
                         href:href.qaForm,
@@ -73,7 +74,10 @@ let aMain={
                     }"
                 ></presaleIdLikeHypertext>
                 <presaleIdLikeFooter
-                    :data=presale.presale.language[currentLanguage].precautions
+                    :data="{
+                        language:language.presale,
+                        content:presale.presale.language[currentLanguage].precautions,
+                    }"
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -84,7 +88,7 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'concept',show:presale.presaleId,}"
+                    :data="{focus:'concept',show:presale.presaleId,language:language.presale,}"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

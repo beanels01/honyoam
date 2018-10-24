@@ -45,13 +45,14 @@ let aMain={
             ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
-                    :data="{mobile:1}"
+                    :data="{mobile:1,language:language.presale}"
                 ></presaleLikeTop>
                 <presaleIdLikeTop
                     :data="{
+                        language:language.presale,
                         focus:'video',
                         title:presale.presaleId.name,
-                        part:'影音介紹',
+                        part:language.presale.video,
                         background:presale.presaleId.banner,
                         show:presale.presaleId,
                     }"
@@ -59,7 +60,7 @@ let aMain={
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{
-                        part:['影音介紹','VIDEOS'],
+                        part:[language.presale.video,'VIDEOS'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
                         href:href.qaForm,
@@ -69,7 +70,10 @@ let aMain={
                     <iframe :src="'https://www.youtube.com/embed/'+presale.presaleId.videoId" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
                 <presaleIdLikeFooter
-                    :data=presale.presale.language[currentLanguage].precautions
+                    :data="{
+                        language:language.presale,
+                        content:presale.presale.language[currentLanguage].precautions,
+                    }"
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -80,7 +84,11 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'video',show:presale.presaleId,}"
+                    :data="{
+                        language:language.presale,
+                        focus:'video',
+                        show:presale.presaleId,
+                    }"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

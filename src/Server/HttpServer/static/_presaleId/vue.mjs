@@ -103,13 +103,13 @@ let block={
             location=this.more
         },
     },
-    props:['background','title','content','more'],
+    props:['background','title','content','more','data',],
     template:`
         <div class=a :style=style><div>
             <div>
                 <div class=a>{{title}}</div>
                 <div class=b>{{content}}</div>
-                <button class=c @click=click>+ 了解更多</button>
+                <button class=c @click=click>+ {{data.language.knowMore}}</button>
             </div>
         </div></div>
     `,
@@ -168,7 +168,10 @@ let aMain={
             ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
-                    :data="{mobile:1}"
+                    :data="{
+                        mobile:1,
+                        language:language.presale,
+                    }"
                 ></presaleLikeTop>
                 <presaleIdLikeTop
                     :data="{
@@ -176,12 +179,13 @@ let aMain={
                         title:presale.presaleId.name,
                         background:presale.presaleId.banner,
                         show:presale.presaleId,
+                        language:language.presale,
                     }"
                     :href=presaleIdHref
                 ></presaleIdLikeTop>
                 <presaleIdLikeMain
                     :data="{
-                        part:['建案介紹','INFORMATION'],
+                        part:[language.presale.information,'INFORMATION'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
                         href:href.qaForm,
@@ -189,38 +193,50 @@ let aMain={
                 ></presaleIdLikeMain>
                 <block
                     v-if=presale.presaleId.showConcept
-                    title='建築設計'
+                    :title=language.presale.concept
                     :background=imagePath(presale.presaleId.top.concept)
                     :content=presale.presaleId.conceptSummary
                     :more=presaleIdHref.concept
+                    :data="{
+                        language:language.presale,
+                    }"
                 ></block>
                 <block
                     v-if=presale.presaleId.showEnvironment
-                    title='周邊環境'
+                    :title=language.presale.environment
                     :background=imagePath(presale.presaleId.top.environment)
                     :content=presale.presaleId.environmentSummary
                     :more=presaleIdHref.environment
+                    :data="{
+                        language:language.presale,
+                    }"
                 ></block>
                 <block
                     v-if=presale.presaleId.showTraffic
-                    title='交通方式'
+                    :title=language.presale.traffic
                     :background=imagePath(presale.presaleId.top.traffic)
                     :content=presale.presaleId.trafficSummary
                     :more=presaleIdHref.traffic
+                    :data="{
+                        language:language.presale,
+                    }"
                 ></block>
                 <div
                     v-if=presale.presaleId.showAlbum
                     class=album
                 >
                     <div class=n>
-                        <span class=a>建案相片集</span> / ALBUM
+                        <span class=a>{{language.presale.album}}</span> / ALBUM
                     </div>
                     <hypertextPhotoSwiper
                         :data=gallery
                     ></hypertextPhotoSwiper>
                 </div>
                 <presaleIdLikeFooter
-                    :data=presale.presale.language[currentLanguage].precautions
+                    :data="{
+                        language:language.presale,
+                        content:presale.presale.language[currentLanguage].precautions,
+                    }"
                 ></presaleIdLikeFooter>
                 <hlFooter
                     :language=language.homepageLike.footer
@@ -231,7 +247,11 @@ let aMain={
                     :href=href.qaForm
                 ></floatBall>
                 <presaleIdLikeHeader
-                    :data="{focus:'top',show:presale.presaleId,}"
+                    :data="{
+                        focus:'top',
+                        show:presale.presaleId,
+                        language:language.presale,
+                    }"
                     :href=presaleIdHref
                 ></presaleIdLikeHeader>
             </template>

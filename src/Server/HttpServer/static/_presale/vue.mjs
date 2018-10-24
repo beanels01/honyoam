@@ -54,7 +54,7 @@ let aMain={
             ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
-                    :data="{mobile:1,desktop:1}"
+                    :data="{mobile:1,desktop:1,language:language.presale}"
                 ></presaleLikeTop>
                 <houseSearch
                     :data="{
