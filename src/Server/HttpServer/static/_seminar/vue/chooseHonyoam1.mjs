@@ -10,13 +10,6 @@ let chooseHonyoam1={
                     v-html=language.a[0].subtitle
                 >
                 </div>
-                <!--
-                    <div class=line></div>
-                    <div
-                        class=q
-                        v-html=language.a[0].content
-                    ></div>
-                -->
             </div>
             <div class=b></div>
             <div class=a>
@@ -42,13 +35,6 @@ let chooseHonyoam1={
                     class=p
                     v-html=language.a[2].subtitle
                 ></div>
-                <!--
-                    <div class=line></div>
-                    <div
-                        class=q
-                        v-html=language.a[2].content
-                    ></div>
-                -->
             </div>
         </div></div>
     `

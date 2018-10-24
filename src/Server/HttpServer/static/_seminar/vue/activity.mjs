@@ -49,15 +49,15 @@ let activity={
                     class=a
                 >
                     <div class=n>
-                        <div class=a>時間</div>
+                        <div class=a>{{language.time}}</div>
                         <div class=b>{{a.time}}</div>
                     </div>
                     <div class=o>
-                        <div class=a>內容</div>
+                        <div class=a>{{language.content}}</div>
                         <div class=b>{{a.content}}</div>
                     </div>
                     <div class=p>
-                        <div class=a v-if="a.speaker">主講者</div>
+                        <div class=a v-if="a.speaker">{{language.speaker}}</div>
                         <div class=b v-if="0<a.speaker&&a.speaker<10">
                             {{speakers[a.speaker-1].name}}
                         </div>
