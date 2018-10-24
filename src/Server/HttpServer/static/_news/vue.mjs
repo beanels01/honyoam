@@ -146,20 +146,20 @@ let aMain={
                 <div class=top>
                     <div class=mobile>
                         <div class=a><div>
-                            <div class=a>最新消息</div>
+                            <div class=a>{{language.news.title}}</div>
                             <div class=b>News</div>
                         </div></div>
                         <div class=b>
-                            首頁 > <span class=n>最新消息</span>
+                            {{language.news.homepage}} > <span class=n>{{language.news.title}}</span>
                         </div>
                     </div>
                     <div class=desktop><div><div>
                         <div class=n>
-                            <div class=a>最新消息</div>
+                            <div class=a>{{language.news.title}}</div>
                             <div class=b>NEWS</div>
                         </div>
                         <div class=o>
-                            首頁 > 最新消息
+                            {{language.news.homepage}} > {{language.news.title}}
                         </div>
                     </div></div></div>
                 </div>
@@ -171,7 +171,7 @@ let aMain={
                     >
                         <option
                             value='any'
-                        >任何一年</option>
+                        >{{language.news.anyYear}}</option>
                         <option
                             v-for="y of yearList"
                             :value=y
@@ -185,7 +185,7 @@ let aMain={
                     >
                         <option
                             value='any'
-                        >任何一月</option>
+                        >{{language.news.anyMonth}}</option>
                         <option
                             v-if="year!='any'"
                             v-for="m of monthList"
@@ -195,30 +195,50 @@ let aMain={
                 </div>
                 <div class=typeSelect>
                     <select class=mobile v-model=type
-                        @input="setIdHistory();page=0;normalFocus=enewsLikeFocus=null"
+                        @input="
+                            setIdHistory();
+                            page=0;
+                            normalFocus=enewsLikeFocus=null
+                        "
                     >
-                        <option value="normal">一般公告</option>
-                        <option value="enews">E-news</option>
-                        <option value="president">社長專欄</option>
-                        <option value="success">成功案例</option>
+                        <option value="normal">{{
+                            language.news.type.normal
+                        }}</option>
+                        <option value="enews">{{
+                            language.news.type.enews
+                        }}</option>
+                        <option value="president">{{
+                            language.news.type.president
+                        }}</option>
+                        <option value="success">{{
+                            language.news.type.success
+                        }}</option>
                     </select>
                     <div class=desktop>
                         <div
                             :class="{focus:type=='normal'}"
                             @click="setIdHistory();type='normal';page=0;normalFocus=enewsLikeFocus=null"
-                        >一般公告</div>
+                        >{{
+                            language.news.type.normal
+                        }}</div>
                         <div
                             :class="{focus:type=='enews'}"
                             @click="setIdHistory();type='enews';page=0;normalFocus=enewsLikeFocus=null"
-                        >E-news</div>
+                        >{{
+                            language.news.type.enews
+                        }}</div>
                         <div
                             :class="{focus:type=='president'}"
                             @click="setIdHistory();type='president';page=0;normalFocus=enewsLikeFocus=null"
-                        >社長專欄</div>
+                        >{{
+                            language.news.type.president
+                        }}</div>
                         <div
                             :class="{focus:type=='success'}"
                             @click="setIdHistory();type='success';page=0;normalFocus=enewsLikeFocus=null"
-                        >成功案例</div>
+                        >{{
+                            language.news.type.success
+                        }}</div>
                     </div>
                 </div>
                 <div
@@ -229,7 +249,10 @@ let aMain={
                         v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
                         :value="normalFocus==8*page+i"
                         @click="onNormalBlockClick(a,8*page+i)"
-                        :data=a
+                        :data="{
+                            data:a,
+                            language:language.news,
+                        }"
                     ></normalBlock>
                     <pageSelect
                         v-model=page
@@ -250,7 +273,10 @@ let aMain={
                         <enewsLikeBlock
                             v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
                             @click="onEnewsLikeBlockClick(a,i)"
-                            :data=a
+                            :data="{
+                                data:a,
+                                language:language.news.type,
+                            }"
                         ></enewsLikeBlock>
                     </div>
                     <pageSelect
@@ -265,11 +291,14 @@ let aMain={
                         v-if="enewsLikeFocus!=null"
                         class=b
                         :data="{
-                            previous:
-                                newsByYearAndType[enewsLikeFocus-1],
-                            current:newsByYearAndType[enewsLikeFocus],
-                            next:
-                                newsByYearAndType[enewsLikeFocus+1],
+                            data:{
+                                previous:
+                                    newsByYearAndType[enewsLikeFocus-1],
+                                current:newsByYearAndType[enewsLikeFocus],
+                                next:
+                                    newsByYearAndType[enewsLikeFocus+1],
+                            },
+                            language:language.news,
                         }"
                         @previous="setIdHistory(newsByYearAndType[enewsLikeFocus-1]._id)"
 

@@ -1,7 +1,7 @@
 let enewsLikeBlock={
     computed:{
         date(){
-            return new Date(this.data.date)
+            return new Date(this.data.data.date)
         }
     },
     props:['data'],
@@ -14,16 +14,12 @@ let enewsLikeBlock={
                     {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
                 </div>
                 <div class=b><span>{{
-                    {
-                        enews:'E-news',
-                        president:'社長專欄',
-                        success:'成功案例',
-                    }[data.type]
+                    data.language[data.data.type]
                 }}</span></div>
             </div></div>
             <div class=b>
                 <div class=b>
-                    <div class=a>{{data.title}}</div>
+                    <div class=a>{{data.data.title}}</div>
                     <div class=b>More +</div>
                 </div>
             </div>

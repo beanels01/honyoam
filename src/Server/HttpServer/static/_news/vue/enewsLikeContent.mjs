@@ -1,7 +1,7 @@
 let enewsLikeContent={
     computed:{
         date(){
-            return new Date(this.data.current.date)
+            return new Date(this.data.data.current.date)
         }
     },
     props:['data',],
@@ -10,11 +10,7 @@ let enewsLikeContent={
             <div class=a>
                 <div class=a>
                     <span>{{
-                        {
-                            enews:'E-news',
-                            president:'社長專欄',
-                            success:'成功案例',
-                        }[data.current.type]
+                        data.language.type[data.data.current.type]
                     }}</span>
                 </div>
                 <div class=b>
@@ -22,24 +18,24 @@ let enewsLikeContent={
                 </div>
             </div>
             <div class=b>
-                {{data.current.title}}
+                {{data.data.current.title}}
             </div>
-            <div class=c v-html=data.current.content></div>
+            <div class=c v-html=data.data.current.content></div>
             <div class=d>
                 <div class=a>
-                    <div v-if=data.previous @click="$emit('previous')">
+                    <div v-if=data.data.previous @click="$emit('previous')">
                         <img src="/_news/img/num-l.png">
-                        上一則<span class=a>：{{data.previous.title.slice(0,6)}}……</span>
+                        {{data.language.previous}}<span class=a>：{{data.data.previous.title.slice(0,6)}}……</span>
                     </div>
                 </div>
                 <div class=b>
                     <div @click="$emit('back')">
-                        回列表
+                        {{data.language.back}}
                     </div>
                 </div>
                 <div class=c>
-                    <div v-if=data.next @click="$emit('next')">
-                        下一則<span class=a>：{{data.next.title.slice(0,6)}}……</span>
+                    <div v-if=data.data.next @click="$emit('next')">
+                        {{data.language.next}}<span class=a>：{{data.data.next.title.slice(0,6)}}……</span>
                         <img src="/_news/img/num-r.png">
                     </div>
                 </div>

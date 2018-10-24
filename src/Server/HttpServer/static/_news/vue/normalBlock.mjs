@@ -1,7 +1,7 @@
 let normalBlock={
     computed:{
         date(){
-            return new Date(this.data.date)
+            return new Date(this.data.data.date)
         }
     },
     props:['data','value',],
@@ -15,7 +15,7 @@ let normalBlock={
                 <div class=a>
                     {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
                 </div>
-                <div class=b><span>一般公告</span></div>
+                <div class=b><span>{{data.language.type.normal}}</span></div>
             </div>
             <div class=b>
                 <div
@@ -25,7 +25,7 @@ let normalBlock={
                     <div
                         class=a
                     >
-                        {{data.title}}
+                        {{data.data.title}}
                     </div>
                     <div class=b>
                         <img class=a src=/_news/img/arrow.png>
@@ -34,7 +34,7 @@ let normalBlock={
                 </div>
                 <div
                     class=c
-                    v-html=data.content
+                    v-html=data.data.content
                 ></div>
             </div>
         </div>
