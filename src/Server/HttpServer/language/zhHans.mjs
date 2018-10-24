@@ -2,11 +2,13 @@ import about from       './zhHans/about'
 import contact from     './zhHans/contact'
 import news from        './zhHans/news'
 import presale from     './zhHans/presale'
+import medieval from    './zhHans/medieval'
 export default{
     about,
     contact,
     news,
     presale,
+    medieval,
     faqClasses:{
         class00:'新手上路-买卖',
         class01:'新手上路-租赁管理',

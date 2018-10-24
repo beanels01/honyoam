@@ -2,11 +2,13 @@ import about from       './jp/about'
 import contact from     './jp/contact'
 import news from        './jp/news'
 import presale from     './jp/presale'
+import medieval from    './jp/medieval'
 export default{
     about,
     contact,
     news,
     presale,
+    medieval,
     faqClasses:{
         class00:'新手上路-買賣',
         class01:'新手上路-租賃管理',

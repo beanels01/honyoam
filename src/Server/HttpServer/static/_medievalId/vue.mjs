@@ -75,7 +75,7 @@ let aMain={
                 return{
                     image:'/image/'+c.image,
                     title:c.name,
-                    subtitle:`${c.price} 萬日幣`,
+                    subtitle:`${c.price} ${this.language.medieval.e4JapaneseCurrency}`,
                     href:`${this.currentLanguage}/medieval/${c.id}`
                 }
             })
@@ -89,7 +89,7 @@ let aMain={
         commaNumber,
         money(n){
             return n?
-                `${commaNumber(n)} 日幣`
+                `${commaNumber(n)} ${this.language.medieval.japaneseCurrency}`
             :
                 '-'
         }
@@ -108,8 +108,8 @@ let aMain={
             <template v-if=!menu>
                 <aCurrent
                     :data="[
-                        '首頁',
-                        '中古屋',
+                        language.medieval.homepage,
+                        language.medieval.medieval,
                         data.data.name,
                     ]"
                 ></aCurrent>
@@ -150,35 +150,35 @@ let aMain={
                                 <span class=a>{{
                                     commaNumber(data.data.price)
                                 }}</span>
-                                <span class=b>萬日幣</span>
+                                <span class=b>{{language.medieval.e4JapaneseCurrency}}</span>
                                 <span class=c>
-                                    每坪單價：請洽各店服務員
+                                    {{language.medieval.notice0}}
                                     <br>
-                                    買賣交易均以日幣為主，其他幣別僅供參考，實際匯率請自行向銀行確認換算。
+                                    {{language.medieval.notice1}}
                                 </span>
                             </div>
                             <div class=hl></div>
                             <div class="desktop o p">
                                 <div class=a>
-                                    <div>格局</div>
-                                    <div>竣工年月</div>
-                                    <div>專有面積</div>
+                                    <div>{{language.medieval.pattern}}</div>
+                                    <div>{{language.medieval.date}}</div>
+                                    <div>{{language.medieval.area}}</div>
                                 </div>
                                 <div>
                                     <div>{{data.data.pattern}}</div>
                                     <div>{{data.data.dateYear}} 年<template v-if=data.data.dateMonth> {{data.data.dateMonth}} 月</template></div>
-                                    <div>{{data.data.area}} 平方公尺</div>
+                                    <div>{{data.data.area}} {{language.medieval.squaredMeter}}</div>
                                 </div>
                             </div>
                             <div class="desktop hl"></div>
                             <div class="desktop o p">
                                 <div class=a>
-                                    <div>陽台面積</div>
-                                    <div>所在樓層</div>
-                                    <div>建物總樓層</div>
+                                    <div>{{language.medieval.balconyArea}}</div>
+                                    <div>{{language.medieval.level}}</div>
+                                    <div>{{language.medieval.levelCount}}</div>
                                 </div>
                                 <div>
-                                    <div>{{data.data.balconyArea}} 平方公尺</div>
+                                    <div>{{data.data.balconyArea}} {{language.medieval.squaredMeter}}</div>
                                     <div>{{data.data.level}}</div>
                                     <div>地上{{data.data.levelCountUp}}層,地下{{data.data.levelCountDown}}層</div>
                                 </div>
@@ -186,9 +186,9 @@ let aMain={
                             <div class="desktop hl"></div>
                             <div class="desktop o p">
                                 <div class=a>
-                                    <div>構造</div>
-                                    <div>總戶數</div>
-                                    <div>朝向</div>
+                                    <div>{{language.medieval.structure}}</div>
+                                    <div>{{language.medieval.householdCount}}</div>
+                                    <div>{{language.medieval.direction}}</div>
                                 </div>
                                 <div>
                                     <div>{{data.data.structure}}</div>
@@ -199,36 +199,36 @@ let aMain={
                             <div class="desktop hl"></div>
                             <div class="desktop o q">
                                 <div>
-                                    <div class=n>所在地</div>
+                                    <div class=n>{{language.medieval.place}}</div>
                                     <div>{{data.data.place}}</div>
                                 </div>
                                 <div>
-                                    <div class=n>交通</div>
+                                    <div class=n>{{language.medieval.traffic}}</div>
                                     <div>{{data.data.traffic}}</div>
                                 </div>
                             </div>
                             <div class=mobile>
-                                <span class=a>格局：</span>{{data.data.pattern}}
+                                <span class=a>{{language.medieval.pattern}}：</span>{{data.data.pattern}}
                                 <div class="hl"></div>
-                                <span class=a>竣工年月：</span>{{data.data.dateYear}} 年<template v-if=data.data.dateMonth> {{data.data.dateMonth}} 月</template>
+                                <span class=a>{{language.medieval.date}}：</span>{{data.data.dateYear}} 年<template v-if=data.data.dateMonth> {{data.data.dateMonth}} 月</template>
                                 <div class="hl"></div>
-                                <span class=a>專有面積：</span>{{data.data.area}} 平方公尺
+                                <span class=a>{{language.medieval.area}}：</span>{{data.data.area}} 平方公尺
                                 <div class="hl"></div>
-                                <span class=a>陽台面積：</span>{{data.data.balconyArea}}
+                                <span class=a>{{language.medieval.balconyArea}}：</span>{{data.data.balconyArea}}
                                 <div class="hl"></div>
-                                <span class=a>所在樓層：</span>{{data.data.level}} 樓
+                                <span class=a>{{language.medieval.level}}：</span>{{data.data.level}} 樓
                                 <div class="hl"></div>
-                                <span class=a>建物總樓層：</span>地上{{data.data.levelCountUp}}層,地下{{data.data.levelCountDown}}層
+                                <span class=a>{{language.medieval.levelCount}}：</span>地上{{data.data.levelCountUp}}層,地下{{data.data.levelCountDown}}層
                                 <div class="hl"></div>
-                                <span class=a>朝向：</span>{{data.data.direction}}
+                                <span class=a>{{language.medieval.direction}}：</span>{{data.data.direction}}
                                 <div class="hl"></div>
-                                <span class=a>所在地：</span>{{data.data.place}}
+                                <span class=a>{{language.medieval.place}}：</span>{{data.data.place}}
                                 <div class="hl"></div>
-                                <span class=a>構造：</span>{{data.data.structure}}
+                                <span class=a>{{language.medieval.structure}}：</span>{{data.data.structure}}
                                 <div class="hl"></div>
-                                <span class=a>總戶數：</span>{{data.data.householdCount}}
+                                <span class=a>{{language.medieval.householdCount}}：</span>{{data.data.householdCount}}
                                 <div class="hl"></div>
-                                <span class=a>交通：</span>{{data.data.traffic}}
+                                <span class=a>{{language.medieval.traffic}}：</span>{{data.data.traffic}}
                             </div>
                             <div class=hl></div>
                             <div class=r>
@@ -266,7 +266,7 @@ let aMain={
                 </div>
                 <div class=b>
                     <div class=n>
-                        <div class=a>詳細資料</div><div class=hl></div>
+                        <div class=a>{{language.medieval.details}}</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
                                 {{data.data.name}}
@@ -274,110 +274,110 @@ let aMain={
                             <div class=o>
                                 <div>
                                     <div class=n>
-                                        · 總價
-                                    </div><div class=o>{{commaNumber(data.data.price)}} 萬日幣</div>
+                                        · {{language.medieval.price}}
+                                    </div><div class=o>{{commaNumber(data.data.price)}} {{language.medieval.e4JapaneseCurrency}}</div>
                                     <div class=n>
-                                        · 所在地
+                                        · {{language.medieval.place}}
                                     </div><div class=o>{{data.data.place}}</div>
                                     <div class=n>
-                                        · 交通
+                                        · {{language.medieval.traffic}}
                                     </div><div class=o>{{data.data.traffic}}</div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 格局
+                                        · {{language.medieval.pattern}}
                                     </div><div class=o>{{data.data.pattern}}</div>
                                     <div class=n>
-                                        · 專有面積
+                                        · {{language.medieval.area}}
                                     </div><div class=o>{{data.data.area}} 平方公尺</div>
                                     <div class=n>
-                                        · 陽台面積
+                                        · {{language.medieval.balconyArea}}
                                     </div><div class=o>{{data.data.balconyArea}} 平方公尺</div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 竣工年月
+                                        · {{language.medieval.date}}
                                     </div><div class=o>{{data.data.dateYear}} 年<template v-if=data.data.dateMonth> {{data.data.dateMonth}} 月</template>
                                     </div>
                                     <div class=n>
-                                        · 總戶數
+                                        · {{language.medieval.householdCount}}
                                     </div><div class=o>{{data.data.householdCount}} 戶</div>
                                     <div class=n>
-                                        · 現況
+                                        · {{language.medieval.situation}}
                                     </div><div class=o>{{data.data.situation}}</div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 管理費
+                                        · {{language.medieval.managementFee}}
                                     </div><div class=o>{{
                                         money(data.data.managementFee)
                                     }}</div>
                                     <div class=n>
-                                        · 修繕基金
+                                        · {{language.medieval.repairFund}}
                                     </div><div class=o>{{
                                         money(data.data.repairFund)
                                     }}</div>
                                     <div class=n>
-                                        · 朝向
+                                        · {{language.medieval.direction}}
                                     </div><div class=o>{{data.data.direction}}</div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 其他費用
+                                        · {{language.medieval.otherFee}}
                                     </div><div class=o>{{
                                         money(data.data.otherFee)
                                     }}</div>
                                     <div class=n>
-                                        · 構造
+                                        · {{language.medieval.structure}}
                                     </div><div class=o>{{data.data.structure}}</div>
                                     <div class=n>
-                                        · 建物總樓層
+                                        · {{language.medieval.levelCount}}
                                     </div><div class=o>地上{{data.data.levelCountUp}}層,地下{{data.data.levelCountDown}}層</div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 管理方式
+                                        · {{language.medieval.manageMethod}}
                                     </div><div class=o>{{
                                         data.data.manageMethod
                                     }}</div><div class=n>
-                                        · 所在樓層
+                                        · {{language.medieval.level}}
                                     </div><div class=o>{{
                                         data.data.level
                                     }} 樓</div><div class=n>
-                                        · 停車場
+                                        · {{language.medieval.parkingLot}}
                                     </div><div class=o>{{
                                         data.data.parkingLot||'-'
                                     }}</div>
                                 </div>
                                 <div>
                                     <div class=n>
-                                        · 使用分區
+                                        · {{language.medieval.usage}}
                                     </div><div class=o>{{
                                         data.data.usage
                                     }}</div><div class=n>
-                                        · 土地權利
+                                        · {{language.medieval.right}}
                                     </div><div class=o>{{
                                         data.data.right
                                     }}</div><div class=n>
-                                        · 交屋日
+                                        · {{language.medieval.handInDate}}
                                     </div><div class=o>{{
                                         data.data.handInDate
                                     }}</div>
                                 </div>
                             </div>
                             <div class=p>
-                                ※ 本區提供資料僅供參考，房屋資料需以謄本標示資料為主。
+                                {{language.medieval.notice2}}
                             </div>
                         </div>
                     </div>
                     <div class=p>
-                        <div class=a>格局圖</div><div class=hl></div>
+                        <div class=a>{{language.medieval.patternDrawing}}</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
                                 <div class=a>{{data.data.patternTitle}}</div>
                                 <div class=b v-html=data.data.patternContent></div>
                                 <div class=c>
-                                    ※ 本格局圖係未依一定比例縮小繪製之概繪圖。與實況仍有差距，其方位、格局形狀等，仍需以房屋現場為準。
+                                    {{language.medieval.notice3}}
                                 </div>
                             </div>
                             <div class=o>
@@ -391,13 +391,13 @@ let aMain={
                         </div>
                     </div>
                     <div class=o>
-                        <div class=a>周圍地圖</div><div class=hl></div>
+                        <div class=a>{{language.medieval.surroundingMap}}</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
                                 <iframe :src="'https://www.google.com/maps/embed/v1/place?key=AIzaSyBmpfcp2k1_PTevyeo7J-kWcD6k0xYMGPk&q='+encodeURIComponent(data.data.place)" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                             <div class=o>
-                                ※ 以上所提供物件周邊地圖及街景僅供參考,實際仍以物件現況為準,如需更詳細地址請與我們聯絡
+                                {{language.medieval.notice4}}
                             </div>
                         </div>
                     </div>
@@ -413,7 +413,7 @@ let aMain={
                         </div>
                     -->
                     <div class=r>
-                        <div class=a>聯絡我們</div><div class=hl></div>
+                        <div class=a>{{language.medieval.contactUs}}</div><div class=hl></div>
                         <div class=b>
                             <contactInfo></contactInfo>
                         </div>

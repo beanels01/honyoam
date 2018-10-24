@@ -33,7 +33,7 @@ let aMain={
                     :
                         c.image.url,
                     title:c.name,
-                    subtitle:`${c.price} 萬日幣`,
+                    subtitle:`${c.price} ${this.language.medieval.e4JapaneseCurrency}`,
                     href:`${this.currentLanguage}/medieval/${c.id}`
                 }
             })
