@@ -35,19 +35,21 @@ let aMain={
             <template v-if=!menu>
                 <div class=static>
                     <div>
-                        <div class=a>客服Q&A</div>
+                        <div class=a>{{language.qa.qa}}</div>
                         <div class=b>CUSTOMER SERVICE</div>
                     </div>
                 </div>
                 <div class=a>
-                    <div class=n>首頁 > <a class=a>客服Q&A</a></div>
+                    <div class=n>{{language.qa.homepage}} > <a class=a>{{language.qa.qa}}</a></div>
                     <faq
                         :language=language
                         :classes=classes
                         :faq=faq
                     ></faq>
                     <div class=hb></div>
-                    <feedback></feedback>
+                    <feedback
+                        :data="{language:language.qa.feedback}"
+                    ></feedback>
                 </div>
                 <hlFooter
                     :language=language.homepageLike.footer

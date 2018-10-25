@@ -25,9 +25,9 @@ let feedback={
                 this.email&&
                 this.需求選項
             ))
-                return this.errorAlert='請充分填寫「姓名」、「性別」、「聯絡電話」、「E-mail」、「需求」後再送出。'
+                return this.errorAlert=this.data.language.error0
             if(!this.recaptcha)
-                return this.errorAlert='請完成人機驗證（下方「我不是機器人」欄位）後再送出。'
+                return this.errorAlert=this.data.language.error1
             this.errorAlert=''
             await api.post({
                 method:         'putFeedback',
@@ -44,20 +44,19 @@ E-mail：${this.email}
             this.success=1
         },
     },
+    props:['data'],
     template:`
         <div class=huiKui>
             <a id=form></a>
             <div class=c>
                 <div class=a>
-                    <div class=title>給我們些回饋</div>
+                    <div class=title>{{data.language.giveUsSomeFeedback}}</div>
                     <p>
-                        如果上面的問題沒有回答到您心中的疑問，<br>
-                        如果您想預約看房或是對本網站上刊登的物件資訊想更進一步了解,<br>
-                        都歡迎您填寫下方表格，我們將盡快與您聯絡。
+                        {{data.language.text0}}<br>
+                        {{data.language.text1}}<br>
+                        {{data.language.text2}}
                     </p>
-                    <p>
-                        標示星號 (<span style="color:red;">*</span>) 為必填項目
-                    </p>
+                    <p v-html=data.language.mustNotice></p>
                 </div>
                 <div class=b>
                     <img src="/_homepageLike/line.png">
@@ -68,7 +67,7 @@ E-mail：${this.email}
                 <div class=a>
                     <div>
                         <div>
-                            姓名 <span style="color:red;">*</span>
+                            {{data.language.name}} <span style="color:red;">*</span>
                         </div>
                         <div>
                             <input class=a v-model=姓名>
@@ -76,22 +75,22 @@ E-mail：${this.email}
                     </div>
                     <div>
                         <div>
-                            性別 <span style="color:red;">*</span>
+                            {{data.language.gender}} <span style="color:red;">*</span>
                         </div>
                         <div>
                             <label>
                                 <input type=radio v-model=性別 value=先生>
-                                先生
+                                {{data.language.gentleman}}
                             </label>
                             <label>
                                 <input type=radio v-model=性別 value=女士>
-                                女士
+                                {{data.language.lady}}
                             </label>
                         </div>
                     </div>
                     <div>
                         <div>
-                            聯絡電話 <span style="color:red;">*</span>
+                            {{data.language.contactNumber}} <span style="color:red;">*</span>
                         </div>
                         <div>
                             <input class=a v-model=聯絡電話>
@@ -107,7 +106,7 @@ E-mail：${this.email}
                     </div>
                     <div>
                         <div>
-                            居住地
+                            {{data.language.place}}
                         </div>
                         <div>
                             <label>
@@ -116,7 +115,7 @@ E-mail：${this.email}
                                     v-model=居住地
                                     value=台灣
                                  >
-                                台灣
+                                {{data.language.taiwan}}
                             </label>
                             <label>
                                 <input
@@ -124,13 +123,13 @@ E-mail：${this.email}
                                     v-model=居住地
                                     value=海外
                                 >
-                                海外
+                                {{data.language.outSea}}
                             </label>
                         </div>
                     </div>
                     <div>
                         <div>
-                            需求 <span style="color:red;">*</span>
+                            {{data.language.demand}} <span style="color:red;">*</span>
                         </div>
                         <div>
                             <label>
@@ -139,7 +138,7 @@ E-mail：${this.email}
                                     v-model=需求選項
                                     value=買賣日本不動產
                                 >
-                                買賣日本不動產
+                                {{data.language.買賣日本不動產}}
                             </label>
                             <label>
                                 <input
@@ -147,7 +146,7 @@ E-mail：${this.email}
                                     v-model=需求選項
                                     value=租賃管理
                                 >
-                                租賃管理
+                                {{data.language.租賃管理}}
                             </label>
                             <label>
                                 <input
@@ -155,7 +154,7 @@ E-mail：${this.email}
                                     v-model=需求選項
                                     value=預約看房
                                 >
-                                預約看房
+                                {{data.language.預約看房}}
                             </label>
                             <label>
                                 <input
@@ -163,7 +162,8 @@ E-mail：${this.email}
                                     v-model=需求選項
                                     value=其它問題
                                 >
-                                其它問題
+                                
+                                {{data.language.其它問題}}
                             </label>
                         </div>
                     </div>
@@ -198,7 +198,7 @@ E-mail：${this.email}
                         <div class=o>
                             <button
                                 @click=submit
-                            >送出</button>
+                            >{{data.language.送出}}</button>
                         </div>
                     </div>
                 </div>
@@ -207,7 +207,7 @@ E-mail：${this.email}
                 class="alert success"
                 v-if=success
             >
-                送出成功。
+                {{data.language.送出成功}}
             </div>
         </div>
     `,

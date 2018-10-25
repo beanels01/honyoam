@@ -36,7 +36,7 @@ let faq={
                 </div>
             </div>
             <div class=keFu>
-                <div class=title>客服中心</div>
+                <div class=title>{{language.qa.customerService}}</div>
                 <contactInfo></contactInfo>
             </div>
             <div class=hb></div>

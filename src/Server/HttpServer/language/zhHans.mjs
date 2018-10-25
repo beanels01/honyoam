@@ -4,12 +4,14 @@ import news from        './zhHans/news'
 import presale from     './zhHans/presale'
 import medieval from    './zhHans/medieval'
 import homepage from    './zhHans/homepage'
+import qa from          './zhHans/qa'
 export default{
     about,
     contact,
     news,
     presale,
     medieval,
+    qa,
     faqClasses:{
         class00:'新手上路-买卖',
         class01:'新手上路-租赁管理',

@@ -4,12 +4,14 @@ import news from        './jp/news'
 import presale from     './jp/presale'
 import medieval from    './jp/medieval'
 import homepage from    './jp/homepage'
+import qa from          './jp/qa'
 export default{
     about,
     contact,
     news,
     presale,
     medieval,
+    qa,
     faqClasses:{
         class00:'新手上路-買賣',
         class01:'新手上路-租賃管理',
