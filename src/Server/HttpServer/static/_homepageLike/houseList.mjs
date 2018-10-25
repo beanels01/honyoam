@@ -32,10 +32,10 @@ let presale={
     components:{price},
     methods:{
         click(){
-            location=`/zh-Hant/presale/${this.data.id}`
+            location=`/${this.currentLanguage}/presale/${this.data.id}`
         },
     },
-    props:['data','rate'],
+    props:['data','rate','currentLanguage'],
     template:`
         <div
             class="house presale"
@@ -85,13 +85,13 @@ let medieval={
     components:{price},
     methods:{
         click(){
-            location=`/zh-Hant/medieval/${this.data.id}`
+            location=`/${this.currentLanguage}/medieval/${this.data.id}`
         },
         selectClick(e){
             e.stopPropagation()
         },
     },
-    props:['data','rate'],
+    props:['data','rate','currentLanguage'],
     template:`
         <div
             class="house medieval"
@@ -241,11 +241,13 @@ let houseList={
                                 v-if="data.type=='presale'"
                                 :data=a
                                 :rate=data.rate
+                                :currentLanguage=data.currentLanguage
                             ></presale>
                             <medieval
                                 v-if="data.type=='medieval'"
                                 :data=a
                                 :rate=data.rate
+                                :currentLanguage=data.currentLanguage
                             ></medieval>
                         </div>
                     </div>

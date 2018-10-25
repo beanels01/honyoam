@@ -71,6 +71,7 @@ let aMain={
                         array:data.data,
                         rate:data.rate,
                         search,
+                        currentLanguage,
                     }"
                 ></homepageLikeHouseList>
                 <mightLike
