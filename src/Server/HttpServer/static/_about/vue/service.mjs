@@ -1,31 +1,3 @@
-/*let block={
-    props:['data'],
-    template:`
-        <div class=d>
-            <div class=n>
-                <div class=a>
-                    <div class=n>
-                        {{data.number}}
-                    </div>
-                    <div class=o>
-                        {{data.title}}
-                    </div>
-                </div>
-                <div class=b>
-                    {{data.content0}}
-                </div>
-                <div class=c>
-                    {{data.content1}}
-                </div>
-            </div>
-            <div class=o>
-            </div>
-            <div class=p>
-                <img :src=data.image>
-            </div>
-        </div>
-    `,
-}*/
 let aPartner={
     props:['language'],
     template:`
@@ -178,8 +150,8 @@ let service={
                 :data="{
                     color:'#a1c6d2',
                     bgColor:'#f5f3f4',
-                    title:'不動產仲介買賣服務',
-                    wrapTitle:'不動產仲介\\n買賣服務',
+                    title:language.a[0].title,
+                    wrapTitle:language.a[0].wrapTitle,
                     image0:'/_about/img2/350x350-1.png',
                     href0:{type:'url',url:data.href.presale},
                     image1:'/_about/img2/350x350-2.png',
@@ -192,8 +164,8 @@ let service={
                 :data="{
                     color:'#a6c486',
                     bgColor:'#ffffff',
-                    title:'租賃管理服務',
-                    wrapTitle:'租賃管理\\n服務',
+                    title:language.a[1].title,
+                    wrapTitle:language.a[1].wrapTitle,
                     image0:'/_about/img2/350x350-4.png',
                     href0:{type:'none'},
                     image1:'/_about/img2/350x350-5.png',
@@ -206,8 +178,8 @@ let service={
                 :data="{
                     color:'#e1af44',
                     bgColor:'#f5f3f4',
-                    title:'居家服務',
-                    wrapTitle:'居家服務',
+                    title:language.a[2].title,
+                    wrapTitle:language.a[2].wrapTitle,
                     image0:'/_about/img2/350x350-7.png',
                     href0:{type:'none'},
                     image1:'/_about/img2/350x350-8.png',
@@ -220,8 +192,8 @@ let service={
                 :data="{
                     color:'#9b8bbc',
                     bgColor:'#ffffff',
-                    title:'其他服務',
-                    wrapTitle:'其他服務',
+                    title:language.a[3].title,
+                    wrapTitle:language.a[3].wrapTitle,
                     image0:'/_about/img2/350x350-10.png',
                     href0:{type:'url',url:data.href.qaForm},
                     image1:'/_about/img2/350x350-11.png',

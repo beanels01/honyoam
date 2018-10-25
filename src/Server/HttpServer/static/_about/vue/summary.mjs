@@ -1,53 +1,5 @@
 let summary={
     data:()=>({
-        table:[
-            {
-                key:'公司名稱',
-                value:`本葉国際資產管理株式会社
-Honyo International Assets Management LTD.`,
-
-            },
-            {
-                key:'公司地址',
-                value:`〒 105-0012
-日本國東京都港区芝大門 2‐4‐1 IZUMI ビル 4 階`,
-            },
-            {
-                key:'電話(日本)',
-                value:`TEL (81) 03－6809－1836`,
-            },
-            {
-                key:'代表取締役社長',
-                value:`林彦宏`,
-            },
-            {
-                key:'設立年月日',
-                value:`2013年12月12日`,
-            },
-            {
-                key:'營業執照',
-                value:`東京都知事（1）第96199號`,
-            },
-            {
-                key:'所屬團體',
-                value:`公益社団法人東京都宅地建物取引業協会
-公益社団法人全国宅地建物取引業保証協会
-公益財団法人東日本不動産流通機構`,
-            },
-            {
-                key:'公司網頁',
-                value:`https://www.honyoam.com`,
-            },
-            {
-                key:'顧問律師',
-                value:`諏訪坂法律事務所 弁護士 望月 晶子 Akiko Mochizuki`,
-            },
-            {
-                key:'台北事務所',
-                value:`104台北市中山區松江路122號11樓
-Tel：02-2785-5865`,
-            },
-        ],
         more:0,
     }),
     props:[
@@ -61,10 +13,10 @@ Tel：02-2785-5865`,
                 <img class=bga src=/_about/img2/bu01.jpg>
                 <img class=bgb src=/_about/img2/bu02.jpg>
                 <div class=a>
-                    <span class=a>公司概要</span> / OUTLINE
+                    <span class=a>{{language.公司概要}}</span> / OUTLINE
                 </div>
                 <div class=b>
-                    <div v-for="a in table">
+                    <div v-for="a in language.table">
                         <div class=a>{{a.key}}</div>
                         <div class=b>{{a.value}}</div>
                     </div>
@@ -89,37 +41,24 @@ Tel：02-2785-5865`,
                     <div v-html=language.p[2]></div>
                 </div>
             </div></div>
-            <!--
-            <div class=u>
-                <div v-html=language.u>
-                </div>
-                <img src=/_about/img/a0.png style=width:20%>
-                <img src=/_about/img/a1.png style=width:70%>
-            </div>
-            -->
             <div class=vla>
                 <div></div>
             </div>
-            <div class=n>團隊介紹</div>
+            <div class=n>{{language.團隊介紹}}</div>
             <div class=o>
-                <div class=a>代表取締役社長 林彦宏</div>
+                <div class=a>{{language.代表取締役社長}}</div>
                 <div class=b>
                     <p>
-                        對土地有熱情,對建築有專業,本著近30年不動產經驗,有感於客戶對日本不動產投資的需求,為提供客戶量身訂做的服務,召集了相關專業及有經驗人士,建立了這個專門提供日本不動產投資服務的團隊。簡歷
+                        {{language.p0}}
                     </p>
                     <ul>
-                    <li>1990 年進入信義房屋集團</li>
-                    <li>1996 年信義房屋集團安信建築經理(股)經理</li>
-                    <li>2003 年信義房屋集團義富資產管理服務公司副總經理</li>
-                    <li>2009 年信義房屋集團日本信義房屋的第一任代表取締役社長</li>
-                    <li>2014 年本葉國際資產管理株式会社代表取締役社長至今</li>
+                        <li v-for="a of language.ul0">{{a}}</li>
                     </ul>
-                    <div class=a>資格</div>
+                    <div class=a>{{language.資格}}</div>
                     <ul>
-                    <li>台灣首屆取得國際認證不動產投資師 (CCIM,Certified Commercial Investment Member）資格</li>
-                    <li>不動產經紀人執照字號:北市經字第01182號</li>
+                        <li v-for="a of language.ul1">{{a}}</li>
                     </ul>
-                    <div class=a>最新採訪與報導</div>
+                    <div class=a>{{language.最新採訪與報導}}</div>
                     <ul>
                     <li><a href=https://money.udn.com/money/story/5930/3253098>【經濟日報 2018,07.15 】東京銀座房市 投資客搶進</a></li>
                     <li><a href=https://goo.gl/A2U4ez>【經濟日報 2018,07.12 】日消費稅明年調漲 擬赴日置產應即早規劃</a></li>
@@ -146,59 +85,35 @@ Tel：02-2785-5865`,
                     <li><a :href=data.href.news>點此看更多</a></li>
                     </ul>
                 </div>
-                <div class=a>營業部部長 藤本 裕二</div>
+                <div class=a>{{language.營業部部長}}</div>
                 <div class=b>
                     <div>
-                    大京穴吹不動產公司28年經驗、很了解台灣客戶對不動產的需求。　　　
+                        {{language.p1}}
                     </div>
                     <ul>
-                    <li>1988年　進入株式會社大京住宅流通部
-                    <li>2001年　大京穴吹不動産 歷任店長、部長
-                    <li>2009年　信義不動産 就任
-                    <li>2013年　台灣大京穴吹 就任
-                    <li>2017年　本葉國際資產管理 營業部部長 就任
+                        <li v-for="a of language.ul2">{{a}}</li>
                     </ul>
-                    <div class=a>資格</div>
-                    <div>
-                        宅地建物取引業士　東京第139567 號
-                    </div>
+                    <div class=a>{{language.資格}}</div>
+                    <ul>
+                        <li v-for="a of language.ul3">{{a}}</li>
+                    </ul>
                 </div>
-                <div class=c>
-                    本葉團隊是由擁有相當專業與學經歷豐富的社長與部長帶領，成員們也都有專業的日本不動產知識與經驗，有來自台灣的社員、有日本在住的社員，也有在日本長大擁有台日血統的日籍社員,更有來自中國大陸因為對日本的喜愛在此落地生根的社員。雖然每個社員的本職學經歷與背景各有不同，卻因為對不動產投資與資產管理的熱愛而群聚在本葉，提供中華圈投資人對日本投資的最佳買賣及資產管理平台。
-                </div>
-                <div class=c>
-                    因為社員們來自不同的國籍與背景，反而讓我們得以因應不同國家的客人提供更多元化服務。讓您在日本購買不動產時，從投資規劃諮詢到來日本看屋、付款、簽約及貸款、交屋，我們全程陪同，更重要的是交屋後不管是出租或自用，本葉社員擁有多年累積的經驗，除一般租賃管理，您在日本生活的居家管理服務可透過社員在日生活經驗的交流，協助您以最短時間融入日本，打造您在日本的舒適生活。
-                </div>
-                <div class=c>
-                    如今在本葉社長、主管們的帶領之下，社員們因為彼此協助而持續創新也不斷學習成長。本葉國際資產管理提供社員快樂的學習環境，緊密交流的工作團隊，以最大的服務熱忱提供您更優質的服務。
-                </div>
+                <div class=c>{{language.p2}}</div>
+                <div class=c>{{language.p3}}</div>
+                <div class=c>{{language.p4}}</div>
             </div>
             <div class=vla>
                 <div></div>
             </div>
-            <div class=n>社長的話</div>
+            <div class=n>{{language.社長的話}}</div>
             <div class=o>
-                <p>
-                    從事不動產工作近 30 年 , 累積了從兩岸三地到日本的多方經驗 , 尤其旅居日本的這些年來歷經雷曼事件到 311 大地震 , 看到了日本經濟的大變化及不動產的價 值 , 也 慢慢發現日本這個民族的韌性 , 這個國家還有很大發展空間 , 就整體不 動 產市場 而言 , 像一顆未被雕琢的寶石 , 值 得你我共同去關注 。
-                </p>
-                <p>
-                    開設本葉國際的初衷與其說是為了開一家公司 , 不如說是個人累積的經驗很想與大家分享 , 從一個台灣人的眼中如何 看日本的不動產 , 從一個台灣人的眼中怎麼看東京 , 希望可以對大家有些許的幫助 !  期望能在這變動的時代裡 成為 投資人信任 的夥伴 , 且在我們提供方便貼心的溝通橋樑與在 地化的專業 服務下 , 能 夠 在日本不動產投資的過程中 買 的開心 、賣的放心 也 住 的 順心 。
-                </p>
-                <p>
-                    在客戶服務方面
-                </p>
-                <p>
-                    海外置產不同於國內購屋 , 因此本葉國際慣以資產管理之名 , 為客戶打造個別專屬的服務及資產配置與管理 , 不但提供日本不 動產投資買賣仲介 , 同時也提供資產管理與投資顧問的相關配套服務 , 本葉深深認為 , 服務是從成交之後開始
-                </p>
-                <p>
-                    在投資標的服務方面
-                </p>
-                <p>
-                    有 別於 其他不動產仲介公司最大的不同 , 在於本葉國際資產管理受到 三菱 地 所 Residence 及 NTT 都市 開發等日本大手建商 的 信賴 , 除一般中古物件外 , 針對大中華圈 客戶 代理 販售預售 屋及新成屋 , 提供與日本國內消費者相同的購屋服務 。
-                </p>
-                <p>
-                    有幸受到 投資客戶的信賴與支持 , 給予我們團隊源源不斷的動力 , 整體業務也持續成長中 , 今後 , 我們仍會 秉持 著創業時的初衷 以專業及熱忱精神貫徹並實行著 , 為 所有客戶提供更多附加價 值 的理念 。
-                </p>
+                <p>{{language.p5}}</p>
+                <p>{{language.p6}}</p>
+                <p>{{language.p7}}</p>
+                <p>{{language.p8}}</p>
+                <p>{{language.p9}}</p>
+                <p>{{language.p10}}</p>
+                <p>{{language.p11}}</p>
             </div>
         </div>
     `

@@ -179,7 +179,7 @@ let aMain={
                                 </div>
                                 <div>
                                     <div>{{data.data.balconyArea}} {{language.medieval.squaredMeter}}</div>
-                                    <div>{{data.data.level}}</div>
+                                    <div>{{data.data.level}} 樓</div>
                                     <div>地上{{data.data.levelCountUp}}層,地下{{data.data.levelCountDown}}層</div>
                                 </div>
                             </div>
