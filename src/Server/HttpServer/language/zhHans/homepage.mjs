@@ -1,0 +1,58 @@
+export default{
+    search:{
+        more:'更多搜寻条件',
+        less:'收起搜寻条件',
+        lessSearch:{
+            searchYouWant0:     '寻找你想',
+            searchYouWant1:     '要的物件',
+            presale:            '新成屋',
+            medieval:           '中古屋',
+            place0:             '地区',
+            place1:             '区域',
+            area:               '面积',
+            min:                '最低',
+            max:                '最高',
+            squaredMeter:       '平方公尺',
+            levelGround:        '坪',
+            price:              '价格',
+            e4JapaneseCurrency: '万日币',
+            search:             '搜寻',
+        },
+        moreSearch:{
+            age:        '屋龄',
+            freeValue:  '自由输入值',
+            inYear:     '年以内',
+            clear:      '清除',
+            search:     '搜寻',
+            pattern:    '格局',
+            multi:      '＊可复选',
+        },
+    },
+    hottest:{
+        hottest:            '最新物件',
+        browseAllPresale:   '浏览所有最新物件',
+        browseAllMedieval:  '浏览所有中古屋物件',
+    },
+    news:{
+        news:       '最新消息',
+        moreNews:   '更多消息',
+        normal:     '一般公告',
+        enews:      'E-news',
+        president:  '社长专栏',
+    },
+    seminar:{
+        seminar:    '说明会',
+        knowMore:   '了解更多',
+    },
+    caseStudy:{
+        caseStudy:  '成功案例',
+        more:       '观看更多成功案例',
+    },
+    aboutUs:{
+        aboutUs:'关于我们',
+        text0:'秉持专业、热忱，透过团队的力量，跨越不同文化与国界，为客户提供贴心、安全、优质的不动产投资顾问、仲介及资产管理服务。',
+        text1:'本叶在日本及台湾皆有据点；\n除了基本物件买卖，更提供投资及租赁管理。',
+        text2:'我们的服务不局限于台日两地，中国，香港及远至美国的华人圈，我们也同样提供专业的日本物件投资服务。',
+        text3:'本叶国际立足亚洲，放眼全世界，成为世界各地投资者的桥梁是本叶的宗旨及使命。',
+    },
+}

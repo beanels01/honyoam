@@ -19,7 +19,34 @@ export default{
             search:             '搜尋',
         },
         moreSearch:{
+            age:        '屋齡',
+            freeValue:  '自由輸入值',
+            inYear:     '年以內',
+            clear:      '清除',
+            search:     '搜尋',
+            pattern:    '格局',
+            multi:      '＊可複選',
         },
+    },
+    hottest:{
+        hottest:            '最新物件',
+        browseAllPresale:   '瀏覽所有最新物件',
+        browseAllMedieval:  '瀏覽所有中古屋物件',
+    },
+    news:{
+        news:       '最新消息',
+        moreNews:   '更多消息',
+        normal:     '一般公告',
+        enews:      'E-news',
+        president:  '社長專欄',
+    },
+    seminar:{
+        seminar:    '說明會',
+        knowMore:   '了解更多',
+    },
+    caseStudy:{
+        caseStudy:  '成功案例',
+        more:       '觀看更多成功案例',
     },
     aboutUs:{
         aboutUs:'關於我們',

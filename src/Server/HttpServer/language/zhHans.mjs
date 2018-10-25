@@ -3,6 +3,7 @@ import contact from     './zhHans/contact'
 import news from        './zhHans/news'
 import presale from     './zhHans/presale'
 import medieval from    './zhHans/medieval'
+import homepage from    './zhHans/homepage'
 export default{
     about,
     contact,
@@ -17,11 +18,7 @@ export default{
         class04:'购买后',
         class05:'租赁管理',
     },
-    homepage:{
-        missionTitle:'经营使命',
-        missionContent:`秉持专业、热忱，透过团队的力量，跨越不同文化与国界，为客户提供贴心安全优质的不动产投资顾问、仲介及资产管理服务。
-以房地产专业知识为投资人提供安全的跨国交易与贴心服务，并运用团队力量达成买卖快速成交，创造学习环境使同仁获得就业安全与成长股东获利稳定，客户安心满意的目的。`,
-    },
+    homepage,
     homepageLike:{
         news:           '最新消息',
         medieval:       '中古屋',

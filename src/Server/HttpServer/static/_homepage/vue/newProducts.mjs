@@ -6,11 +6,11 @@ let newProducts={
     data:()=>({
         focus:0,
     }),
-    props:['href','rotation'],
+    props:['data','href','rotation'],
     template:`
         <div class=newProducts>
             <div class=a>
-                <div class=n>最新物件</div>
+                <div class=n>{{data.language.hottest}}</div>
                 <div class=o>HOTTEST</div>
             </div>
             <rotation
@@ -26,12 +26,12 @@ let newProducts={
                 </div>
                 <div class=o>
                     <a :href=href.presale>
-                        瀏覽所有最新物件
+                        {{data.language.browseAllPresale}}
                         <img class=a src=img/na01.png>
                         <img class=b src=img/na02.png>
                     </a>
                     <a :href=href.medieval>
-                        瀏覽所有中古屋物件
+                        {{data.language.browseAllMedieval}}
                         <img class=a src=img/na01.png>
                         <img class=b src=img/na02.png>
                     </a>

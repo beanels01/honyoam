@@ -42,7 +42,7 @@ let events={
             <div class=n>
                 <div class=a>
                     <div class=n>
-                        <div class=a>說明會</div>
+                        <div class=a>{{data.language.seminar}}</div>
                         <div class=b>SEMINAR</div>
                     </div>
                     <div class=o></div>
@@ -65,7 +65,7 @@ let events={
                             </div>
                             <div class=more>
                                 <a :href="href(content[focus].seminar)">
-                                    了解更多
+                                    {{data.language.knowMore}}
                                     <img src=img/ie_icon03.png>
                                 </a>
                             </div>

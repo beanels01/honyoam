@@ -1,6 +1,6 @@
 let success={
     created(){
-        this.focus=~~((this.data.length-1)/2)
+        this.focus=~~((this.data.data.length-1)/2)
     },
     data:()=>({
         focus:0,
@@ -11,7 +11,7 @@ let success={
                 this.focus--
         },
         goRight(){
-            if(this.focus+1<this.data.length)
+            if(this.focus+1<this.data.data.length)
                 this.focus++
         },
         bnnStyle(){
@@ -29,7 +29,7 @@ let success={
     template:`
         <div class=success>
             <div class=a>
-                <div class=n>成功案例</div>
+                <div class=n>{{data.language.caseStudy}}</div>
                 <div class=o>CASE STUDY</div>
             </div>
             <div class=b>
@@ -39,7 +39,7 @@ let success={
                         :style=bnnStyle()
                     >
                         <div
-                            v-for="(c,i) in data"
+                            v-for="(c,i) in data.data"
                             class=a
                             :style=optionStyle(c,i)
                             @click="location=href+'/'+c._id"
@@ -60,7 +60,7 @@ let success={
                 </div>
             </div>
             <div class=c>
-                <button @click="location=href+'/success'">觀看更多成功案例</button>
+                <button @click="location=href+'/success'">{{data.language.more}}</button>
             </div>
         </div>
     `

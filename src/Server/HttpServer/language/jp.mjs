@@ -3,6 +3,7 @@ import contact from     './jp/contact'
 import news from        './jp/news'
 import presale from     './jp/presale'
 import medieval from    './jp/medieval'
+import homepage from    './jp/homepage'
 export default{
     about,
     contact,
@@ -17,11 +18,7 @@ export default{
         class04:'購買後',
         class05:'租賃管理',
     },
-    homepage:{
-        missionTitle:'經營使命',
-        missionContent:`秉持專業、熱忱，透過團隊的力量，跨越不同文化與國界，為客戶提供貼心安全優質的不動產投資顧問、仲介及資產管理服務。
-以房地產專業知識為投資人提供安全的跨國交易與貼心服務，並運用團隊力量達成買賣快速成交，創造學習環境使同仁獲得就業安全與成長股東獲利穩定，客戶安心滿意的目的。`,
-    },
+    homepage,
     homepageLike:{
         news:'最新消息',
         medieval:'中古屋',

@@ -67,19 +67,29 @@ let aMain={
                 <newProducts
                     :rotation=homepage.rotation
                     :href=href
+                    :data="{
+                        language:language.homepage.hottest,
+                    }"
                 ></newProducts>
                 <news1
                     :href=href.news
-                    :data=newsData
+                    :data="{
+                        data:newsData,
+                        language:language.homepage.news,
+                    }"
                 ></news1>
                 <events
                     :content=homepage.event
                     :data="{
-                        href:href.seminar
+                        href:href.seminar,
+                        language:language.homepage.seminar,
                     }"
                 ></events>
                 <success
-                    :data=successData
+                    :data="{
+                        data:successData,
+                        language:language.homepage.caseStudy,
+                    }"
                     :href=href.news
                 ></success>
                 <div class=about0>
@@ -91,13 +101,15 @@ let aMain={
                     <div class=n>
                         <div class=a><div><div>
                             <img src=img/a01.png><br>
-                            {{language.homepage.aboutUs.text0}}
+                            {{language.homepage.aboutUs.text1}}
                         </div></div></div>
                         <div class=b><div><div>
                             <img src=img/a02.png><br>
+                            {{language.homepage.aboutUs.text2}}
                         </div></div></div>
                         <div class=c><div><div>
                             <img src=img/a03.png><br>
+                            {{language.homepage.aboutUs.text3}}
                         </div></div></div>
                     </div>
                     <div class=vl></div>

@@ -1,0 +1,58 @@
+export default{
+    search:{
+        more:'その他の検索条件',
+        less:'検索条件を折りたたむ',
+        lessSearch:{
+            searchYouWant0:     '尋找你想',
+            searchYouWant1:     '要的物件',
+            presale:            '新鎮',
+            medieval:           'ミドルハウス',
+            place0:             'エリア',
+            place1:             'エリア',
+            area:               'エリア',
+            min:                '最小',
+            max:                '最高',
+            squaredMeter:       '平方メートル',
+            levelGround:        'Ping',
+            price:              '価格',
+            e4JapaneseCurrency: '万円',
+            search:             '検索',
+        },
+        moreSearch:{
+            age:        '家の年齢',
+            freeValue:  '自由入力値',
+            inYear:     '年以内',
+            clear:      'クリア',
+            search:     '検索',
+            pattern:    'パターン',
+            multi:      '*チェック可能',
+        },
+    },
+    hottest:{
+        hottest:            '最新のオブジェクト',
+        browseAllPresale:   '最新のオブジェクトをすべてブラウズする',
+        browseAllMedieval:  '中世のすべてのオブジェクトをブラウズ',
+    },
+    news:{
+        news:       '最新ニュース',
+        moreNews:   'その他のニュース',
+        normal:     '一般発表',
+        enews:      'E-news',
+        president:  '社長欄',
+    },
+    seminar:{
+        seminar:    '説明会',
+        knowMore:   '詳細',
+    },
+    caseStudy:{
+        caseStudy:  '成功事例',
+        more:       'もっと多くの成功事例を見る',
+    },
+    aboutUs:{
+        aboutUs:'私たちについて',
+        text0:'さまざまな文化や国境を越えたチームの強みを通じたプロフェッショナリズム、熱意にこだわって、親密で安全な高品質の不動産投資コンサルタント、代理店、資産管理サービスを顧客に提供します。',
+        text1:'この葉は日本と台湾に本拠地を持っています;\n基本的なアイテムに加えて、投資とリースの管理も提供します。',
+        text2:'当社のサービスは、台湾、中国、香港、中国のコミュニティに限らず、米国と同様に日本の専門サービスを提供しています。',
+        text3:'ベン・イェ・インターナショナルは、アジアを拠点として世界を俯瞰し、世界中の投資家の橋渡しをしています。',
+    },
+}

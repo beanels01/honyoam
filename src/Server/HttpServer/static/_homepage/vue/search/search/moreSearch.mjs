@@ -6,18 +6,19 @@ let moreSearch={
         <div>
             <div class=a>
                 <div class=n>
-                    屋　　齡：
+                    {{data.language.age}}：
                     <br class=a>
                     <input
                         type=text
-                        placeholder=自由輸入值
+                        :placeholder=data.language.freeValue
                         v-model=value.age
-                    > 年以內
+                    > {{data.language.inYear}}
                 </div>
             </div>
             <div class=b>
                 <pattern0
                     v-model=value.pattern
+                    :data=data
                 ></pattern0>
             </div>
             <div class=c>
@@ -25,14 +26,14 @@ let moreSearch={
                     <button
                         class=clearButton
                         @click="$emit('clear')"
-                    >清除</button>
+                    >{{data.language.clear}}</button>
                 </div>
                 <div class=o>
                     <button
                         class=searchButton
                         @click="$emit('search')"
                     >
-                        <img src=img/search.png> 搜尋
+                        <img src=img/search.png> {{data.language.search}}
                     </button>
                 </div>
             </div>

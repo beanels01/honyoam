@@ -1,11 +1,11 @@
 let pattern={
-    props:['value'],
+    props:['data','value'],
     template:`
         <div>
             <div class=a>
-                <span class=n>格　　局</span>
+                <span class=n>{{data.language.pattern}}</span>
                 <br class=o>
-                <span class=p>＊可複選</span>
+                <span class=p>{{data.language.multi}}</span>
             </div>
             <div class=b>
                 <div>

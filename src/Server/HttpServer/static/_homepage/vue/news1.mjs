@@ -12,9 +12,15 @@ let xRow={
         <div class=a>
             <div class=n>{{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日</div>
             <div class=o>
-                <div v-if="data.news.type=='normal'" class="tag gg">一般公告</div>
-                <div v-if="data.news.type=='enews'" class="tag xg">E-news</div>
-                <div v-if="data.news.type=='president'" class="tag shm">社長專欄</div>
+                <div v-if="data.news.type=='normal'" class="tag gg">{{
+                    data.language[data.news.type]
+                }}</div>
+                <div v-if="data.news.type=='enews'" class="tag xg">{{
+                    data.language[data.news.type]
+                }}</div>
+                <div v-if="data.news.type=='president'" class="tag shm">{{
+                    data.language[data.news.type]
+                }}</div>
                 <div class=title><a :href=href>{{data.news.title}}</a></div>
             </div>
             <div class=title><a :href=href>{{data.news.title}}</a></div>
@@ -27,28 +33,30 @@ let news1={
     template:`
         <div class=news1>
             <div class=a>
-                <div class=n>最新消息</div>
+                <div class=n>{{data.language.news}}</div>
                 <div class=o>NEWS</div>
             </div>
             <div class=b>
                 <div class=n>
                     <xRow class=b :data="{
-                        news:data[0],
+                        news:data.data[0],
                         href,
+                        language:data.language,
                     }"></xRow>
                     <div class=d><div></div></div>
                     <xRow
-                        v-for="a in data.slice(1)"
+                        v-for="a in data.data.slice(1)"
                         class=c
                         :data="{
                             news:a,
                             href,
+                            language:data.language,
                         }"
                     ></xRow>
                 </div>
                 <div class=o>
                     <a :href=href>
-                        更多消息
+                        {{data.language.moreNews}}
                         <img class=a src=img/na01.png>
                         <img class=b src=img/na02.png>
                     </a>
