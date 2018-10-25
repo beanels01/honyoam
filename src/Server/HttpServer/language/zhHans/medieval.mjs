@@ -1,5 +1,5 @@
 export default{
-    medieval:           '中古屋',
+    medieval:           '二手房',
     japaneseCurrency:   '日币',
     e4JapaneseCurrency: '万日币',
     homepage:           '首页',

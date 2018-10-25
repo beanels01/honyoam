@@ -23,7 +23,7 @@ export default{
     homepage,
     homepageLike:{
         news:           '最新消息',
-        medieval:       '中古屋',
+        medieval:       '二手房',
         presale:        '新成屋',
         qa:             '客服Q&A',
         contact:        '参加说明会',
@@ -36,7 +36,7 @@ export default{
             copyrightContent:   '© 2018 本叶国际资产管理股份有限公司. All Rights Reserved.',
             footer0:{
                 presale:        '新成屋',
-                medieval:       '中古屋',
+                medieval:       '二手房',
                 news:           '最新消息',
                 loan:           '貸款試算',
                 qa:             '客服Q&A',

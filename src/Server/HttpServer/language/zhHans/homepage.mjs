@@ -6,7 +6,7 @@ export default{
             searchYouWant0:     '寻找你想',
             searchYouWant1:     '要的物件',
             presale:            '新成屋',
-            medieval:           '中古屋',
+            medieval:           '二手房',
             place0:             '地区',
             place1:             '区域',
             area:               '面积',
@@ -30,8 +30,8 @@ export default{
     },
     hottest:{
         hottest:            '最新物件',
-        browseAllPresale:   '浏览所有最新物件',
-        browseAllMedieval:  '浏览所有中古屋物件',
+        browseAllPresale:   '浏览所有最新新成屋',
+        browseAllMedieval:  '浏览所有二手房',
     },
     news:{
         news:       '最新消息',
