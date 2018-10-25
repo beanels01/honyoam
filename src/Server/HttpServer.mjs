@@ -29,7 +29,9 @@ HttpServer.prototype.handleRequest=async function(rq,rs){
     if(!(
         this._isDefinedHost(rq.headers.host)
     )){
-        rs.writeHead(400)
+        rs.writeHead(301,{
+            location:'http://honyoam.com/',
+        })
         return rs.end()
     }
     let parsedUrl
