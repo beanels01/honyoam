@@ -4,12 +4,12 @@ export default{
     anyYear:    '任意の年',
     anyMonth:   '任意の月',
     type:{
-        normal:     '一般発表',
-        enews:      'E-news',
-        president:  '社長欄',
-        success:    '成功事例',
+        normal:     'お知らせ',
+        enews:      'Eニュース',
+        president:  '社長コラム',
+        success:    '実績',
     },
-    back:       'リストに戻る',
+    back:       '一覧へ戻る',
     previous:   '前のもの',
     next:       '次へ',
 }
