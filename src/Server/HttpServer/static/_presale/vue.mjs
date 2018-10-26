@@ -15,6 +15,17 @@ let aMain={
                 })
             }
             history.replaceState({},'',`/${this.currentLanguage}/presale?p=${this.currentPage}`)
+            onpopstate=e=>{
+                location.search.substring(1).split('&').map(a=>{
+                    let[k,v]=a.split('=')
+                    if(k=='a')
+                        this.search=this.searchIn=JSON.parse(
+                            decodeURIComponent(v)
+                        )
+                    if(k=='p')
+                        this.currentPage=+v
+                })
+            }
         }
     },
     components:{
