@@ -3,8 +3,18 @@ import presaleLike from     '../_presaleLike.mjs'
 let aMain={
     mounted(){
         if(typeof window!='undefined'){
-            if(location.search)
-                this.search=this.searchIn=JSON.parse(decodeURIComponent(location.search.substring(3)))
+            if(location.search){
+                location.search.substring(1).split('&').map(a=>{
+                    let[k,v]=a.split('=')
+                    if(k=='a')
+                        this.search=this.searchIn=JSON.parse(
+                            decodeURIComponent(v)
+                        )
+                    if(k=='p')
+                        this.currentPage=+v
+                })
+            }
+            history.replaceState({},'',`/${this.currentLanguage}/presale?p=${this.currentPage}`)
         }
     },
     components:{
@@ -40,7 +50,14 @@ let aMain={
         menu:0,
         search:0,
         searchIn:0,
+        currentPage:0,
     }),
+    methods:{
+        setCurrentPage(v){
+            this.currentPage=v
+            history.pushState({},'',`/${this.currentLanguage}/presale?p=${this.currentPage}`)
+        },
+    },
     props:['language','currentLanguage','data','mainSeminar'],
     template:`
         <div id=main>
@@ -79,6 +96,8 @@ let aMain={
                         currentLanguage,
                         language:language.homepageLike.houseList,
                     }"
+                    :value=currentPage
+                    @input="v=>setCurrentPage(v)"
                 ></homepageLikeHouseList>
                 <mightLike
                     :data="{
