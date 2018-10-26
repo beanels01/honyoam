@@ -1,4 +1,9 @@
 let housePattern={
+    computed:{
+        language(){
+            return this.data.language
+        }
+    },
     created(){
         this.checkValue()
     },
@@ -16,12 +21,12 @@ let housePattern={
                 })
         },
     },
-    props:['value'],
+    props:['data','value'],
     template:`
         <div class=block v-if=value>
             <div class=a>
-                房屋格局<br>
-                ＊可複選
+                {{language.房屋格局}}<br>
+                ＊{{language.可複選}}
             </div>
             <label>
                 <input type=checkbox v-model="value['1R']">

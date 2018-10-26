@@ -159,11 +159,17 @@ let houseSearch={
                 </div>
                 <div v-if="data.type=='presale'" class=a>
                     <housePattern
+                        :data="{
+                            language,
+                        }"
                         v-model="value.pattern"
                     ></housePattern>
                 </div>
                 <div v-if="data.type=='medieval'" class=b>
                     <housePattern
+                        :data="{
+                            language,
+                        }"
                         v-model="value.pattern"
                         class="block blockA"
                     ></housePattern>
@@ -176,10 +182,6 @@ let houseSearch={
                 </div>
                 <div class=c>
                     <div>
-房屋年齡:'房屋年齡',
-年以內:'年以內',
-清除:'清除',
-搜尋:'搜尋',
                         <button class=o @click="clear">
                             {{language.清除}}
                         </button><button class=o @click="search">
