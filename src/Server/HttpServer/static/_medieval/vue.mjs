@@ -4,7 +4,13 @@ let aMain={
     mounted(){
         if(typeof window!='undefined'){
             if(location.search)
-                this.search=this.searchIn=JSON.parse(decodeURIComponent(location.search.substring(3)))
+                this.search=this.searchIn=JSON.parse(decodeURIComponent(
+                    location.search.substring(3)
+                ))
+            history.replaceState({
+                currentPage
+            },'',`/${this.currentLanguage}/medieval`)
+            onpopstate=e=>this.currentPage=e.state.currentPage
         }
     },
     components:{
@@ -43,6 +49,7 @@ let aMain={
         menu:0,
         search:0,
         searchIn:0,
+        currentPage:0,
     }),
     props:['language','currentLanguage','mainSeminar','data',],
     template:`
@@ -82,6 +89,7 @@ let aMain={
                         currentLanguage,
                         language:language.homepageLike.houseList,
                     }"
+                    v-model=currentPage
                 ></houseList>
                 <mightLike
                     :data="{
@@ -107,6 +115,13 @@ let aMain={
             ></hlMenu>
         </div>
     `,
+    watch:{
+        currentPage(){
+            history.pushState({
+                currentPage
+            },'',`/${this.currentLanguage}/medieval`)
+        },
+    },
 }
 export default{
     components:{aMain},

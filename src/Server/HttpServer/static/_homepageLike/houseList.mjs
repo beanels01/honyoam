@@ -143,7 +143,11 @@ let medieval={
     `
 }
 let houseList={
-    components:{presale,medieval,pageSelect},
+    components:{
+        presale,
+        medieval,
+        pageSelect,
+    },
     computed:{
         language(){
             return this.data.language
@@ -218,8 +222,8 @@ let houseList={
         },
         sortArrayByPage(){
             return this.sortArray.slice(
-                this.page*this.housePerPage,
-                (this.page+1)*this.housePerPage
+                this.value*this.housePerPage,
+                (this.value+1)*this.housePerPage
             )
         },
         housePerPage(){
@@ -227,10 +231,9 @@ let houseList={
         },
     },
     data:()=>({
-        page:0,
         housePerPageData:{presale:10,medieval:20},
     }),
-    props:['data'],
+    props:['data','value'],
     template:`
         <div class=homepageLikeHouseList>
             <div class=d>
@@ -264,8 +267,8 @@ let houseList={
                 </div>
             </div>
             <pageSelect
-                :value=page
-                @input="v=>{scrollTo(0,0);page=v}"
+                :value=value
+                @input="v=>{scrollTo(0,0);$emit('input',v)}"
                 :length="Math.ceil(sortArray.length/housePerPage)"
             ></pageSelect>
         </div>
