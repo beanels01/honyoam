@@ -7,6 +7,7 @@ import homepage from        './zhHant/homepage'
 import qa from              './zhHant/qa'
 import homepageLike from    './zhHant/homepageLike'
 export default{
+    首頁:'首頁',
     about,
     contact,
     news,

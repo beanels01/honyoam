@@ -1,6 +1,7 @@
 import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_presaleIdConcept/vue'
 async function main(rq,rs,lang,patch,id){
+    let language=(await this._getLanguage()).res[lang]
     let presaleId=(await this._getPresaleObject(id)).res
     // i for input
     presaleId=(i=>{
@@ -23,7 +24,7 @@ async function main(rq,rs,lang,patch,id){
     })(presaleId)
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
-        title:              `建築設計 - ${presaleId.name}`,
+        title:              `${language.presale.concept} - ${presaleId.name}`,
         css:                [
                                 '_presaleLike/main.css',
                                 '_presaleIdLike/main.css',

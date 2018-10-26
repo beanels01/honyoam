@@ -2,6 +2,7 @@ import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_medievalId/vue'
 async function main(rq,rs,lang,patch,id){
     let medieval=(await this._getMedievalObject(id)).res
+    let language=(await this._getLanguage()).res[lang]
     // i for input
     medieval=(i=>{
         let o={
@@ -41,7 +42,7 @@ async function main(rq,rs,lang,patch,id){
     })(medieval)
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
-        title:              `${medieval.name} - 中古屋`,
+        title:              `${medieval.name} - ${language.homepageLike.medieval}`,
         css:                [
                                 '_medievalLike/main.css',
                                 '_medievalId/main.css',

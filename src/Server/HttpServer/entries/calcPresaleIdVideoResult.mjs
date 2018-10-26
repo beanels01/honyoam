@@ -1,6 +1,7 @@
 import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_presaleIdVideo/vue'
 async function main(rq,rs,lang,patch,id){
+    let language=(await this._getLanguage()).res[lang]
     let presaleId=(await this._getPresaleObject(id)).res
     // i for input
     presaleId=(i=>{
@@ -23,7 +24,7 @@ async function main(rq,rs,lang,patch,id){
     })(presaleId)
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
-        title:              `影音介紹 - ${presaleId.name}`,
+        title:              `${language.presale.video}- ${presaleId.name}`,
         css:                [
                                 '_presaleLike/main.css',
                                 '_presaleIdLike/main.css',

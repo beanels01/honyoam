@@ -7,6 +7,7 @@ import homepage from        './jp/homepage'
 import qa from              './jp/qa'
 import homepageLike from    './jp/homepageLike'
 export default{
+    首頁:'ホーム',
     about,
     contact,
     news,

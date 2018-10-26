@@ -7,6 +7,7 @@ import homepage from        './zhHans/homepage'
 import qa from              './zhHans/qa'
 import homepageLike from    './zhHans/homepageLike'
 export default{
+    首頁:'首页',
     about,
     contact,
     news,

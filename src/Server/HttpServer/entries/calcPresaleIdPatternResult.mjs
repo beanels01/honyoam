@@ -2,6 +2,7 @@ import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_presaleIdPattern/vue'
 async function main(rq,rs,lang,patch,id){
     let presaleId=(await this._getPresaleObject(id)).res
+    let language=(await this._getLanguage()).res[lang]
     // i for input
     presaleId=(i=>{
         let o={
@@ -23,7 +24,7 @@ async function main(rq,rs,lang,patch,id){
     })(presaleId)
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
-        title:              `空間格局 - ${presaleId.name}`,
+        title:              `${language.presale.pattern} - ${presaleId.name}`,
         css:                [
                                 '_presaleLike/main.css',
                                 '_presaleIdLike/main.css',

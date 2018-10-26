@@ -1,9 +1,10 @@
 import calcHomepageLikeResult from './calcHomepageLikeResult'
 import vue from '../static/_medieval/vue'
 async function main(rq,rs,lang,patch){
+    let language=(await this._getLanguage()).res[lang]
     return calcHomepageLikeResult.call(this,{
         currentLanguage:    lang,
-        title:              '中古屋',
+        title:              language.homepageLike.medieval,
         css:                [
                                 '_medieval/main.css',
                                 '_medievalLike/main.css',
