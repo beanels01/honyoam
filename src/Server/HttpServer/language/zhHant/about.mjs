@@ -18,11 +18,11 @@ export default{
         a:[
             {
                 title:'不動產仲介買賣服務',
-                wrapTitle:'不動產仲介\\n買賣服務',
+                wrapTitle:'不動產仲介\n買賣服務',
             },
             {
                 title:'租賃管理服務',
-                wrapTitle:'租賃管理\\n服務',
+                wrapTitle:'租賃管理\n服務',
             },
             {
                 title:'居家服務',

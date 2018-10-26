@@ -128,6 +128,13 @@ let aBlock={
     `,
 }
 let service={
+    computed:{
+        image(){
+            return[...Array(12)].map((e,i)=>
+                `/_about/img2/${this.currentLanguage}/350x350-${1+i}.png`
+            )
+        },
+    },
     components:{
         serviceContent,
         aBlock,
@@ -152,11 +159,11 @@ let service={
                     bgColor:'#f5f3f4',
                     title:language.a[0].title,
                     wrapTitle:language.a[0].wrapTitle,
-                    image0:'/_about/img2/350x350-1.png',
+                    image0:image[0],
                     href0:{type:'url',url:data.href.presale},
-                    image1:'/_about/img2/350x350-2.png',
+                    image1:image[1],
                     href1:{type:'url',url:data.href.medieval},
-                    image2:'/_about/img2/350x350-3.png',
+                    image2:image[2],
                     href2:{type:'url',url:data.href.qaForm},
                 }"
             ></aBlock>
@@ -166,11 +173,11 @@ let service={
                     bgColor:'#ffffff',
                     title:language.a[1].title,
                     wrapTitle:language.a[1].wrapTitle,
-                    image0:'/_about/img2/350x350-4.png',
+                    image0:image[3],
                     href0:{type:'none'},
-                    image1:'/_about/img2/350x350-5.png',
+                    image1:image[4],
                     href1:{type:'none'},
-                    image2:'/_about/img2/350x350-6.png',
+                    image2:image[5],
                     href2:{type:'none'},
                 }"
             ></aBlock>
@@ -180,11 +187,11 @@ let service={
                     bgColor:'#f5f3f4',
                     title:language.a[2].title,
                     wrapTitle:language.a[2].wrapTitle,
-                    image0:'/_about/img2/350x350-7.png',
+                    image0:image[6],
                     href0:{type:'none'},
-                    image1:'/_about/img2/350x350-8.png',
+                    image1:image[7],
                     href1:{type:'none'},
-                    image2:'/_about/img2/350x350-9.png',
+                    image2:image[8],
                     href2:{type:'none'},
                 }"
             ></aBlock>
@@ -194,11 +201,11 @@ let service={
                     bgColor:'#ffffff',
                     title:language.a[3].title,
                     wrapTitle:language.a[3].wrapTitle,
-                    image0:'/_about/img2/350x350-10.png',
+                    image0:image[9],
                     href0:{type:'url',url:data.href.qaForm},
-                    image1:'/_about/img2/350x350-11.png',
+                    image1:image[10],
                     href1:{type:'url',url:data.href.qaForm},
-                    image2:'/_about/img2/350x350-12.png',
+                    image2:image[11],
                     href2:{type:'none'},
                 }"
             ></aBlock>
