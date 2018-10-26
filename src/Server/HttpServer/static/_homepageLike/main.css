@@ -1004,13 +1004,13 @@ body{
     color:white;
     background-color:#1d98df;
 }
+#main .homepageLikePageSelect>*>*{
+    margin:0 5px;
+}
 @media(max-width:1279px){
     #main .homepageLikePageSelect>.mobile{
         display:block;
         margin:20px 0;
-    }
-    #main .homepageLikePageSelect>.mobile>*{
-        margin:0 5px;
     }
 }
 @media(min-width:1280px){
@@ -1020,8 +1020,5 @@ body{
     }
     #main .homepageLikePageSelect>.desktop>*{
         cursor:pointer;
-    }
-    #main .homepageLikePageSelect>.desktop>*+*{
-        margin-left:15px;
     }
 }
