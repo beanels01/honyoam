@@ -10,12 +10,10 @@ let languageComputed={
     },
     siteHref(){
         return[
-            ...this.language.showedLang.map(k=>(
-                {
-                    language:this.language.language[k],
-                    href:this.current.replace(/^\/[^\/]*/,`/${k}`)
-                }
-            )),
+            ...this.language.showedLang.map(k=>({
+                language:this.language.language[k],
+                href:k=='jp'?'/jp/about':this.current.replace(/^\/[^\/]*/,`/${k}`),
+            })),
         ]
     },
 }
