@@ -107,7 +107,7 @@ let aMain={
                         :data="{
                             pattern,
                             language:language.presale.patternPage,
-                        }",
+                        }"
                         :currentLanguage=currentLanguage
                         v-model=selectPattern
                     ></patternInput>
