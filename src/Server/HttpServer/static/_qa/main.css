@@ -299,4 +299,7 @@
     #main>.a>.huiKui>.c>.b>*{
         width:160px;
     }
+    #main>.a>.huiKui>.c>.b>*+*{
+        margin-left:40px;
+    }
 }
