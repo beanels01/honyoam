@@ -176,9 +176,10 @@ function rowToObject(s){
             videoId:"rNsgHMklBW0",
         },
         x={
+            secondId:id,
             version:0,
             publish:true,
-            source:{type:'daikyo',id},
+            source:{type:'daikyo'},
             area:a[9],
             balconyArea:a[10],
             date:new Date,

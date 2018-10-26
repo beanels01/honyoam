@@ -1,13 +1,30 @@
 import optionList from      './optionList.mjs'
 let youMightLikeElementInput={
+    computed:{
+        list(){
+            return this.data.filter(a=>
+                ~a.secondId.indexOf(this.prefix)
+            )
+        },
+    },
+    data:()=>({
+        prefix:''
+    }),
     props:['data','value'],
     template:`
-        <select
-            :value=value
-            @input="e=>$emit('input',e.target.value)"
-        >
-            <option v-for="a of data" :value=a.id>{{a.name}}</option>
-        </select>
+        <div>
+            <div>
+                <input placeholder=編號 v-model=prefix>
+            </div>
+            <select
+                :value=value
+                @input="e=>$emit('input',e.target.value)"
+            >
+                <option v-for="a of list" :value=a.id>
+                    {{a.secondId}} {{a.name}}
+                </option>
+            </select>
+        </div>
     `
 }
 let youMightLikeInput={

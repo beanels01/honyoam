@@ -40,7 +40,9 @@ export default{
         <div v-if=value>
             <h1>您可能會喜歡</h1>
             <div class=indent>
-                <youMightLikeInput :data=list v-model=value.youMightLike
+                <youMightLikeInput
+                    :data=list
+                    v-model=value.youMightLike
                 ></youMightLikeInput>
             </div>
             <div>

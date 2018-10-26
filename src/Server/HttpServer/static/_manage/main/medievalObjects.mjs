@@ -64,6 +64,9 @@ let inputForSpecificObject={
                 </label>
             </p>
             <p>
+                編號：<input v-model=value.secondId>
+            </p>
+            <p>
                 日期：<input type=date v-model=value.date>
             </p>
             <p>
@@ -215,6 +218,9 @@ export default{
                     >
                         <div
                             style="display:table-cell;"
+                        >{{a.secondId}}</div>
+                        <div
+                            style="display:table-cell;padding-left:16px;"
                         >{{a.name}}</div>
                         <div
                             style="display:table-cell;padding-left:8px;"

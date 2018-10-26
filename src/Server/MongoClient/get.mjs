@@ -84,8 +84,9 @@ o.getMedievalObject=async function(id){
 }
 o.getMedievalList=async function(){
     return(await this._medievalCol.find({}).toArray()).map(a=>({
-        id:     a._id,
-        date:   a.date||(new ObjectID(a._id)).getTimestamp(),
+        id:         a._id,
+        date:       a.date||(new ObjectID(a._id)).getTimestamp(),
+        secondId:   a.secondId,
         name:
             a.language&&
             a.language['zh-Hant']&&
