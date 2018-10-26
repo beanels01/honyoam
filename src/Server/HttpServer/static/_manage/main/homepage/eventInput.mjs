@@ -22,10 +22,10 @@ let singleEventInput={
                 標題：<input v-model=value.title>
             </p>
             <p>
-                日期：<input v-model=value.date>
+                日期：<input type=date v-model=value.date>
             </p>
             <p>
-                時間：<input type=date v-model=value.time>
+                時間：<input v-model=value.time>
             </p>
             <p>
                 副標：<input v-model=value.subtitle>
