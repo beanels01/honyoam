@@ -125,7 +125,7 @@ let aMain={
             }else{
                 this.setIdHistory(a._id)
                 setTimeout(()=>
-                    scrollTo(0,document.getElementById('typeSelect').getBoundingClientRect().y)
+                    scrollTo(0,document.getElementById('typeSelect').getBoundingClientRect().y-100)
                 )
             }
         },
