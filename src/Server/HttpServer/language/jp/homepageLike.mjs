@@ -1,0 +1,50 @@
+import houseSearch from './homepageLike/houseSearch'
+export default{
+    news:           '最新ニュース',
+    medieval:       '中古物件',
+    presale:        '青田売り',
+    qa:             'カスタマーサービスQ＆A',
+    contact:        '参加説明会',
+    user:           'メンバーログイン',
+    footer:{
+        privacyPolicy:      'プライバシーポリシー',
+        termOfService:      '利用規約',
+        copyright:          '著作権メッセージ',
+        sitemap:            'サイトマップ',
+        copyrightContent:   '© 2018 本葉國際資產管理股份有限公司. All Rights Reserved.',
+        footer0:{
+            presale:        '青田売り',
+            medieval:       '中古物件',
+            news:           '最新ニュース',
+            loan:           'ローントライアル',
+            qa:             'カスタマーサービスQ＆A',
+            about:          '私たちについて',
+            qaForm:         'お問い合わせ',
+            c:{
+                title:          'ニュースレターを購読する',
+                content:        '日本で家を借りるための最新情報を入手したいですか？<br>是非、ニュースレターを購読してください。ニュースは見逃せません。',
+                placeholder:    'あなたの Email',
+            },
+        }
+    },
+    houseSearch,
+    houseList:{
+        物件:           '物件',
+        新成屋:         '青田売り',
+        中古屋:         '中古物件',
+        所在地:         '所在地',
+        最近車站:       '最近車站',
+        格局:           '間取り',
+        面積:           '面積',
+        平方公尺:       '平方メートル',
+        價格:           '價格',
+        萬:             '万',
+        日幣:           '日本円',
+        臺幣:           '台湾ドル',
+        美金:           '米ドル',
+        人民幣:         '人民元',
+    },
+    mightLike:{
+        您可能會喜歡:   'あなたは好きかもしれません',
+    },
+}

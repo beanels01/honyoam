@@ -59,11 +59,13 @@ let mightLike={
             <div class=f>
                 <div>
                     <span class=homepageLikeBlueBar></span>
-                    <span class=homepageLikeTitle>您可能會喜歡</span>
+                    <span class=homepageLikeTitle>{{
+                        data.language.您可能會喜歡
+                    }}</span>
                 </div>
             </div>
             <mightLikeSwiper
-                :data=data
+                :data=data.data
             ></mightLikeSwiper>
         </div>
     `,

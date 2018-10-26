@@ -5,6 +5,9 @@ let price={
         currency:'jpy',
     }),
     computed:{
+        language(){
+            return this.data.language
+        },
         rateByCurrency(){
             return this.data.rate[this.currency]
         },
@@ -12,18 +15,18 @@ let price={
     methods:{commaNumber},
     props:['data'],
     template:`
-        <span><template v-if="currency!='jpy'">約 </template>{{
+        <span><template v-if="currency!='jpy'">{{language.約}} </template>{{
                 commaNumber(~~(data.min*rateByCurrency))
             }} <template v-if="data.min!=data.max"> - {{
                 commaNumber(~~(data.max*rateByCurrency))
-            }}</template> 萬 <select
+            }}</template> {{language.萬}} <select
                 @click="e=>e.stopPropagation()"
                 v-model=currency
             >
-                <option value=jpy>日幣</option>
-                <option value=ntd>臺幣</option>
-                <option value=usd>美金</option>
-                <option value=cny>人民幣</option>
+                <option value=jpy>{{language.日幣}}</option>
+                <option value=ntd>{{language.臺幣}}</option>
+                <option value=usd>{{language.美金}}</option>
+                <option value=cny>{{language.人民幣}}</option>
             </select>
         </span>
     `
@@ -35,7 +38,7 @@ let presale={
             location=`/${this.currentLanguage}/presale/${this.data.id}`
         },
     },
-    props:['data','rate','currentLanguage'],
+    props:['data','rate','currentLanguage','language'],
     template:`
         <div
             class="house presale"
@@ -59,13 +62,14 @@ let presale={
                 </div>
                 <div class=b>
                     <div>
-                        <div class=a>格局：{{data.patternMin}} - {{data.patternMax}}</div>
-                        <div class=a>面積：{{data.areaMin}} - {{data.areaMax}} 平方公尺</div>
-                        <div class=a>價格：<price
+                        <div class=a>{{language.格局}}：{{data.patternMin}} - {{data.patternMax}}</div>
+                        <div class=a>{{language.面積}}：{{data.areaMin}} - {{data.areaMax}} 平方公尺</div>
+                        <div class=a>{{language.價格}}：<price
                                 :data="{
                                     min:data.priceMin,
                                     max:data.priceMax,
                                     rate,
+                                    language,
                                 }"
                             ></price>
                         </div>
@@ -91,7 +95,7 @@ let medieval={
             e.stopPropagation()
         },
     },
-    props:['data','rate','currentLanguage'],
+    props:['data','rate','currentLanguage','language'],
     template:`
         <div
             class="house medieval"
@@ -122,6 +126,7 @@ let medieval={
                                     min:data.price,
                                     max:data.price,
                                     rate,
+                                    language,
                                 }"
                             ></price>
                         </div>
@@ -140,6 +145,9 @@ let medieval={
 let houseList={
     components:{presale,medieval,pageSelect},
     computed:{
+        language(){
+            return this.data.language
+        },
         sortArray(){
             let now=new Date
             return this.data.array.filter(o=>
@@ -229,8 +237,8 @@ let houseList={
                 <div>
                     <span class=homepageLikeBlueBar></span>
                     <span class=homepageLikeTitle>{{
-                        data.type=='presale'?'新成屋':'中古屋'
-                    }}物件</span>
+                        language[data.type=='presale'?'新成屋':'中古屋']
+                    }}{{language.物件}}</span>
                 </div>
             </div>
             <div class=e>
@@ -242,12 +250,14 @@ let houseList={
                                 :data=a
                                 :rate=data.rate
                                 :currentLanguage=data.currentLanguage
+                                :language=language
                             ></presale>
                             <medieval
                                 v-if="data.type=='medieval'"
                                 :data=a
                                 :rate=data.rate
                                 :currentLanguage=data.currentLanguage
+                                :language=language
                             ></medieval>
                         </div>
                     </div>

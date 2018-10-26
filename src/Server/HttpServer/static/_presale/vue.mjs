@@ -77,10 +77,14 @@ let aMain={
                         rate:data.rate,
                         search,
                         currentLanguage,
+                        language:language.homepageLike.houseList,
                     }"
                 ></homepageLikeHouseList>
                 <mightLike
-                    :data=mightLikeData
+                    :data="{
+                        data:mightLikeData,
+                        language:language.homepageLike.mightLike,
+                    }"
                 ></mightLike>
                 <hlFooter
                     :language=language.homepageLike.footer

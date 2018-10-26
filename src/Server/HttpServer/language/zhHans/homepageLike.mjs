@@ -1,0 +1,50 @@
+import houseSearch from './homepageLike/houseSearch'
+export default{
+    news:           '最新消息',
+    medieval:       '二手房',
+    presale:        '新成屋',
+    qa:             '客服Q&A',
+    contact:        '参加说明会',
+    user:           '会员登入',
+    footer:{
+        privacyPolicy:      '隐私政策',
+        termOfService:      '使用条款',
+        copyright:          '版权讯息',
+        sitemap:            '网站地图',
+        copyrightContent:   '© 2018 本叶国际资产管理股份有限公司. All Rights Reserved.',
+        footer0:{
+            presale:        '新成屋',
+            medieval:       '二手房',
+            news:           '最新消息',
+            loan:           '贷款试算',
+            qa:             '客服Q&A',
+            about:          '关于我们',
+            qaForm:         '联络我们',
+            c:{
+                title:          '订阅电子报',
+                content:        '想得到最新的日本购屋租屋讯息吗？ <br>快来订阅我们的电子报，消息不漏接。',
+                placeholder:    '输入您的E-mail',
+            },
+        }
+    },
+    houseSearch,
+    houseList:{
+        物件:           '物件',
+        新成屋:         '新成屋',
+        中古屋:         '二手房',
+        所在地:         '所在地',
+        最近車站:       '最近车站',
+        格局:           '格局',
+        面積:           '面积',
+        平方公尺:       '平方公尺',
+        價格:           '价格',
+        萬:             '万',
+        日幣:           '日币',
+        臺幣:           '台币',
+        美金:           '美金',
+        人民幣:         '人民币',
+    },
+    mightLike:{
+        您可能會喜歡:   '您可能会喜欢',
+    },
+}
