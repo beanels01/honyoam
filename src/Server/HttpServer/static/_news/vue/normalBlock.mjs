@@ -9,9 +9,11 @@ let normalBlock={
         <div
             class=a
             :class="{focus:value}"
-            @click="$emit('click')"
         >
-            <div class=a>
+            <div
+                class=a
+                @click="$emit('aClick')"
+            >
                 <div class=a>
                     {{1900+date.getYear()}}年{{1+date.getMonth()}}月{{date.getDate()}}日
                 </div>

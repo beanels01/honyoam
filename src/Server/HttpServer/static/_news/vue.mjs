@@ -124,6 +124,9 @@ let aMain={
                 this.setIdHistory()
             }else{
                 this.setIdHistory(a._id)
+                setTimeout(()=>
+                    scrollTo(0,document.getElementById('typeSelect').getBoundingClientRect().y)
+                )
             }
         },
         atYearInput(){
@@ -193,7 +196,7 @@ let aMain={
                         >{{m+1}} 月</option>
                     </select>
                 </div>
-                <div class=typeSelect>
+                <div id=typeSelect class=typeSelect>
                     <select class=mobile v-model=type
                         @input="
                             setIdHistory();
@@ -248,7 +251,7 @@ let aMain={
                     <normalBlock
                         v-for="(a,i) of newsByYearAndType.slice(8*page,8*(page+1))"
                         :value="normalFocus==8*page+i"
-                        @click="onNormalBlockClick(a,8*page+i)"
+                        @input="v=>onNormalBlockClick(a,8*page+i)"
                         :data="{
                             data:a,
                             language:language.news,
