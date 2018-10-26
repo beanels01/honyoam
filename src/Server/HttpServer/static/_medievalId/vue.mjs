@@ -116,6 +116,7 @@ let aMain={
                 <medievalLikeTop
                     :data="{
                         mobile:1,
+                        language:language.medieval,
                     }"
                 ></medievalLikeTop>
                 <div class=a>
@@ -420,7 +421,10 @@ let aMain={
                     </div>
                 </div>
                 <mightLike
-                    :data=mightLikeData
+                    :data="{
+                        data:mightLikeData,
+                        language:language.homepageLike.mightLike,
+                    }"
                 ></mightLike>
                 <hlFooter
                     :language=language.homepageLike.footer

@@ -3,14 +3,18 @@ import medievalLike from    '../_medievalLike.mjs'
 let aMain={
     mounted(){
         if(typeof window!='undefined'){
-            if(location.search)
-                this.search=this.searchIn=JSON.parse(decodeURIComponent(
-                    location.search.substring(3)
-                ))
-            history.replaceState({
-                currentPage
-            },'',`/${this.currentLanguage}/medieval`)
-            onpopstate=e=>this.currentPage=e.state.currentPage
+            if(location.search){
+                location.search.substring(1).split('&').map(a=>{
+                    let[k,v]=a.split('=')
+                    if(k=='a')
+                        this.search=this.searchIn=JSON.parse(
+                            decodeURIComponent(v)
+                        )
+                    if(k=='p')
+                        this.currentPage=+v
+                })
+            }
+            history.replaceState({},'',`/${this.currentLanguage}/medieval?p=${this.currentPage}`)
         }
     },
     components:{
@@ -51,6 +55,12 @@ let aMain={
         searchIn:0,
         currentPage:0,
     }),
+    methods:{
+        setCurrentPage(v){
+            this.currentPage=v
+            history.pushState({},'',`/${this.currentLanguage}/medieval?p=${this.currentPage}`)
+        },
+    },
     props:['language','currentLanguage','mainSeminar','data',],
     template:`
         <div id=main>
@@ -89,7 +99,8 @@ let aMain={
                         currentLanguage,
                         language:language.homepageLike.houseList,
                     }"
-                    v-model=currentPage
+                    :value=currentPage
+                    @input="v=>setCurrentPage(v)"
                 ></houseList>
                 <mightLike
                     :data="{
@@ -115,13 +126,6 @@ let aMain={
             ></hlMenu>
         </div>
     `,
-    watch:{
-        currentPage(){
-            history.pushState({
-                currentPage
-            },'',`/${this.currentLanguage}/medieval`)
-        },
-    },
 }
 export default{
     components:{aMain},
