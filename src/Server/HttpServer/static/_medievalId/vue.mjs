@@ -84,6 +84,148 @@ let aMain={
     data:()=>({
         menu:0,
         focus:0,
+        格局圖上常見的日文標示:[
+            [
+                'ワンルーム',
+                'R(Room)',
+                '房間',
+            ],
+            [
+                'キッチン',
+                'K(Kitchen)',
+                '廚房',
+            ],
+            [
+                'ダイニング',
+                'D(Dining Room)',
+                '餐廳',
+            ],
+            [
+                'リビング',
+                'L(Living Room)',
+                '客廳',
+            ],
+            [
+                '',
+                '3LDK',
+                '3房、客廳、飯廳、廚房',
+            ],
+            [
+                '畳/帖(たたみ/じょう)',
+                'J',
+                '1坪等於約2畳/帖',
+            ],
+            [
+                'ウォークインクローゼット',
+                'WIS(Walk-in Closet)',
+                '可容人進出的衣帽間',
+            ],
+            [
+                'シューズインクローゼット',
+                'SIC(Shoes-in Closet)',
+                '可容人進出的鞋櫃間',
+            ],
+            [
+                'バルコニー',
+                'Balcony',
+                '陽台',
+            ],
+            [
+                'ルーフバルコニー',
+                'Roof Balcony',
+                '屋頂陽台',
+            ],
+            [
+                'トイレ',
+                'Toilet',
+                '廁所',
+            ],
+            [
+                'ユーティリティ',
+                'Utility',
+                '家事室',
+            ],
+            [
+                'キッチン',
+                'Kitchen',
+                '廚房',
+            ],
+            [
+                'ポーチ',
+                '',
+                '外玄關',
+            ],
+            [
+                '玄関(げんかん)',
+                '',
+                '玄關',
+            ],
+            [
+                '浴室(よくしつ)',
+                'Bath',
+                '浴室',
+            ],
+            [
+                '納戶(なんど)',
+                'N',
+                '收納的小空間',
+            ],
+            [
+                '物入(ものいれ)',
+                '',
+                '置物櫃',
+            ],
+            [
+                'テラス',
+                'Terrace',
+                '一樓露臺',
+            ],
+            [
+                'エレベーター',
+                'ELV(Elevator)',
+                '電梯',
+            ],
+            [
+                'ゴミ持出し場所/ゴミ置場',
+                '',
+                '垃圾集中場',
+            ],
+            [
+                'ラウンジ/サロン',
+                'Lounge/Salon',
+                '交誼廳/沙龍',
+            ],
+            [
+                'エントランス',
+                'ENT(Entrance)',
+                '出入口',
+            ],
+            [
+                'メールコーナー',
+                'Mail Corner',
+                '信箱',
+            ],
+            [
+                'エレクトリックパイプスペース',
+                'EPS(Electric Pipe Space)',
+                '電氣管線間',
+            ],
+            [
+                'メーターボックス',
+                'MB(Meter Box)',
+                '水錶、電錶的收納空間',
+            ],
+            [
+                'トランクルーム',
+                'TR(Trunk Room)',
+                '倉庫',
+            ],
+            [
+                'パイプスペース',
+                'PS(Pipe Space)',
+                '管道間',
+            ],
+        ],
     }),
     methods:{
         commaNumber,
@@ -375,9 +517,25 @@ let aMain={
                         <div class=a>{{language.medieval.patternDrawing}}</div><div class=hl></div>
                         <div class=b>
                             <div class=n>
-                                <div class=a>{{data.data.patternTitle}}</div>
-                                <div class=b v-html=data.data.patternContent></div>
+                                <div class=a>
+                                    ※ 格局圖上常見的日文標示:
+                                </div>
+                                <div class=b>
+                                    <div class=a>
+                                        <div class=a>
+                                            <div class=a>日文</div>
+                                            <div class=b>英文</div>
+                                            <div class=b>中文</div>
+                                        </div>
+                                        <div v-for="a of 格局圖上常見的日文標示" class=b>
+                                            <div class=a>{{a[0]}}</div>
+                                            <div class=b>{{a[1]}}</div>
+                                            <div class=b>{{a[2]}}</div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class=c>
+                                    上述名詞皆為日文與外來語翻譯，各公司與建商表示皆不盡相同，以上翻譯僅供參考，實際仍以房屋內實際現況為主。<br>
                                     {{language.medieval.notice3}}
                                 </div>
                             </div>
