@@ -300,10 +300,10 @@ let aMain={
                             },
                             language:language.news,
                         }"
-                        @previous="setIdHistory(newsByYearAndType[enewsLikeFocus-1]._id)"
+                        @previous="scrollTo(0,0,);setIdHistory(newsByYearAndType[enewsLikeFocus-1]._id)"
 
-                        @next="setIdHistory(newsByYearAndType[enewsLikeFocus+1]._id)"
-                        @back="setIdHistory();enewsLikeFocus=null"
+                        @next="scrollTo(0,0,);setIdHistory(newsByYearAndType[enewsLikeFocus+1]._id)"
+                        @back="scrollTo(0,0,);setIdHistory();enewsLikeFocus=null"
                     ></enewsLikeContent>
                 </div>
                 <hlFooter
