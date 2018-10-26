@@ -1,74 +1,4 @@
-let aPartner={
-    props:['language'],
-    template:`
-        <div class=partner>
-            <div class=a>{{language.partner[0]}}</div>
-            <div class=b>
-                <div>
-                    <div class=a><img src=/_about/img/d0.png></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/d1.jpg></div>
-                </div>
-            </div>
-            <div class=c>{{language.partner[1]}}</div>
-            <div class=d>
-                <div class=a>
-                    <div class=a><img src=/_about/img/e0.png></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/e1.png></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/e2.png></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/e3.png></div>
-                </div>
-                <div class=b>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class=a>
-                    <div class=a><img src=/_about/img/e4.png></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/e5.png></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/e6.png></div>
-                </div>
-            </div>
-            <div class=c>{{language.partner[2]}}</div>
-            <div class=d>
-                <div class=a>
-                    <div class=a><img src=/_about/img/f0.jpg></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/f1.png></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/f2.jpeg></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/f3.png></div>
-                </div>
-                <div class=b>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class=a>
-                    <div class=a><img src=/_about/img/f4.jpg></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/f5.png></div>
-                    <div class=b></div>
-                    <div class=a><img src=/_about/img/f6.png></div>
-                </div>
-            </div>
-        </div>
-    `
-}
+import aPartner from './service/aPartner'
 let serviceContent={
     props:['data'],
     template:`
@@ -91,15 +21,27 @@ let aBlock={
                         :style="{backgroundColor:data.color}"
                     ></div> {{data.wrapTitle}}</div>
                     <div class="cell image">
-                        <img :src=data.image0>
+                        <template
+                            v-if="data.href0.type=='none'"
+                        ><img :src=data.image0></template><template
+                            v-if="data.href0.type=='url'"
+                        ><a :href=data.href0.url><img :src=data.image0></a></template>
                     </div>
                 </div>
                 <div class="row">
                     <div class="cell image">
-                        <img :src=data.image1>
+                        <template
+                            v-if="data.href1.type=='none'"
+                        ><img :src=data.image1></template><template
+                            v-if="data.href1.type=='url'"
+                        ><a :href=data.href1.url><img :src=data.image1></a></template>
                     </div>
                     <div class="cell image">
-                        <img :src=data.image2>
+                        <template
+                            v-if="data.href2.type=='none'"
+                        ><img :src=data.image2></template><template
+                            v-if="data.href2.type=='url'"
+                        ><a :href=data.href2.url><img :src=data.image2></a></template>
                     </div>
                 </div>
             </div>
