@@ -21,7 +21,7 @@ let aMain={
             return this.data.news.filter(a=>
                 ['normal','enews','president'].includes(a.type)
             ).sort((a,b)=>
-                new Date(b.timestamp)-new Date(a.timestamp)
+                new Date(b.date)-new Date(a.date)
             ).slice(0,6)
         },
         successData(){
