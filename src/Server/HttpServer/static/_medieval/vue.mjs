@@ -60,6 +60,7 @@ let aMain={
                     :data="{
                         desktop:1,
                         mobile:1,
+                        language:language.medieval,
                     }"
                 ></medievalLikeTop>
                 <houseSearch
@@ -67,6 +68,7 @@ let aMain={
                         place:data.place,
                         rate:data.rate,
                         type:'medieval',
+                        language,
                     }"
                     v-model="searchIn"
                     @search="search=JSON.parse(JSON.stringify(searchIn))"

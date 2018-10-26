@@ -7,6 +7,11 @@ let houseSearch={
     created(){
         this.checkValue()
     },
+    computed:{
+        language(){
+            return this.data.language.homepageLike.houseSearch
+        },
+    },
     components:{housePattern},
     data:()=>({
         currency:'jpy',
@@ -77,8 +82,8 @@ let houseSearch={
                 <div>
                     <span class=homepageLikeBlueBar></span>
                     <span class=homepageLikeTitle>
-                        尋找您想要的{{
-                            data.type=='presale'?'新成屋':'中古屋'
+                        {{language.尋找您想要的}}{{
+                            language[data.type=='presale'?'新成屋':'中古屋']
                         }}<i
                             class="material-icons"
                             style="font-size:1.5em;"
@@ -91,53 +96,48 @@ let houseSearch={
             <div class=c><div>
                 <div class=a>
                     <div class=block>
-                        <div class=a>搜尋區域</div>
+                        <div class=a>{{language.搜尋區域}}</div>
                         <select v-model=value.place0 @input="value.place1=''">
-                            <option value disabled>地區</option>
-                            <option value='all'>全部</option>
+                            <option value disabled>{{language.地區}}</option>
+                            <option value='all'>{{language.全部}}</option>
                             <option
                                 v-for="a of data.place.place0"
                                 :value=a
                             >{{a}}</option>
                         </select>
                         <select v-model=value.place1>
-                            <option value disabled>區域</option>
-                            <option value='all'>全部</option>
+                            <option value disabled>{{language.地區}}</option>
+                            <option value='all'>{{language.全部}}</option>
                             <option
                                 v-for="a of data.place.place1[data.type][value.place0=='東京都'?0:1]"
                                 :value=a
                             >{{a}}</option>
                         </select>
-<!--
-                        <select>
-                            <option>最近車站</option>
-                        </select>
--->
                     </div>
                 </div>
                 <div class=b>
                     <div class=block>
-                        <div class=a>房屋面積</div>
-                        <input placeholder=最低 v-model=areaMin>
+                        <div class=a>{{language.房屋面積}}</div>
+                        <input :placeholder=language.最低 v-model=areaMin>
                         ~
-                        <input placeholder=最高 v-model=areaMax>
+                        <input :placeholder=language.最高 v-model=areaMax>
                         <select v-model=areaUnit>
-                            <option value=0>平方公尺</option>
-                            <option value=1>坪</option>
+                            <option value=0>{{language.平方公尺}}</option>
+                            <option value=1>{{language.坪}}</option>
                         </select>
                     </div>
                     <div class=margin></div>
                     <div class=block>
-                        <div class=a>預算價格</div>
-                        <input placeholder=最低 v-model=priceMin>
+                        <div class=a>{{language.預算價格}}</div>
+                        <input :placeholder=language.最低 v-model=priceMin>
                         ~
-                        <input placeholder=最高 v-model=priceMax>
-                        萬
+                        <input :placeholder=language.最高 v-model=priceMax>
+                        {{language.萬}}
                         <select v-model=currency>
-                            <option value=jpy>日幣</option>
-                            <option value=ntd>臺幣</option>
-                            <option value=usd>美金</option>
-                            <option value=cny>人民幣</option>
+                            <option value=jpy>{{language.日幣}}</option>
+                            <option value=ntd>{{language.臺幣}}</option>
+                            <option value=usd>{{language.美金}}</option>
+                            <option value=cny>{{language.人民幣}}</option>
                         </select>
                         <div class=hint><div>
                             <template v-if="
@@ -147,13 +147,13 @@ let houseSearch={
                                 Number.isFinite(+priceMin)&&
                                 Number.isFinite(+priceMax)
                             ">
-                                約等於 {{
+                                {{language.約等於}} {{
                                     (~~(100*priceMin/data.rate[currency]))/100
                                 }} - {{
                                     (~~(100*priceMax/data.rate[currency]))/100
-                                }} 萬日幣。
+                                }} {{language.萬}}{{language.日幣}}。
                             </template>
-                            買賣交易均以日幣為主，其它幣別僅供參考，實際匯率請自行向銀行確認換算。
+                            {{language.notice0}}
                         </div></div>
                     </div>
                 </div>
@@ -169,17 +169,21 @@ let houseSearch={
                     ></housePattern>
                     <div class=margin></div>
                     <div class="block blockB">
-                        <div class=a>房屋年齡</div>
+                        <div class=a>{{language.房屋年齡}}</div>
                         <input placeholder=自由輸入值 v-model=value.age>
-                        年以內
+                        {{language.年以內}}
                     </div>
                 </div>
                 <div class=c>
                     <div>
+房屋年齡:'房屋年齡',
+年以內:'年以內',
+清除:'清除',
+搜尋:'搜尋',
                         <button class=o @click="clear">
-                            清除
+                            {{language.清除}}
                         </button><button class=o @click="search">
-                            搜尋
+                            {{language.搜尋}}
                         </button>
                     </div>
                 </div>

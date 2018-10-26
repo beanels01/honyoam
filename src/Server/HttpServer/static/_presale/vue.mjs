@@ -54,13 +54,18 @@ let aMain={
             ></hlHeader>
             <template v-if=!menu>
                 <presaleLikeTop
-                    :data="{mobile:1,desktop:1,language:language.presale}"
+                    :data="{
+                        mobile:1,
+                        desktop:1,
+                        language:language.presale,
+                    }"
                 ></presaleLikeTop>
                 <houseSearch
                     :data="{
                         place:data.place,
                         rate:data.rate,
                         type:'presale',
+                        language,
                     }"
                     v-model=searchIn
                     @search="search=JSON.parse(JSON.stringify(searchIn))"
