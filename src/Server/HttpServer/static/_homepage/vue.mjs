@@ -5,6 +5,17 @@ import events from          './vue/events.mjs'
 import search from          './vue/search.mjs'
 import news1 from           './vue/news1.mjs'
 let aMain={
+    created(){
+        if(typeof window!='undefined'&&(
+            !localStorage.honyoamLastHomepageAlert||
+            43200<=new Date-new Date(localStorage.honyoamLastHomepageAlert)
+        )){
+            localStorage.honyoamLastHomepageAlert=new Date
+            onload=()=>setTimeout(()=>
+                alert('為提供各位更良好的操作環境，新網頁已經於近日正式上線, 由於仍在持續更新建置中，許多功能仍尚未完備， 可能造成您使用上的不便。如果您在使用上有任何疑問或是建議，歡迎您隨時點擊旁邊的立即聯絡或是直撥 (02)5573-5143告訴我們。更新期間，若有任何不便之處，還請見諒。')
+            ,1000)
+        }
+    },
     components:{
         hlFooter:   homepageLike.footer,
         hlMenu:     homepageLike.menu,
