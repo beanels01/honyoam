@@ -1,5 +1,6 @@
 import fs from              'fs'
 import https from           'https'
+import mailgunJs from       'mailgun-js'
 import MongoClient from     './Server/MongoClient'
 import HttpServer from      './Server/HttpServer'
 import methods from         './Server/methods'
@@ -65,6 +66,20 @@ Server.prototype.handleRequest=async function(doc){
     if(doc.method in methods)
         return methods[doc.method].call(this,doc)
     throw Error('undefinedMethodBug')
+}
+Server.prototype.mailReport=function(option){
+    return new Promise((rs,rj)=>
+        mailgunJs({
+            apiKey:     this.config.mail.mailgunApiKey,
+            domain:     'mg.honyoam.com'
+        }).messages().send({
+            from:       'mailbot@mg.honyoam.com',
+            to:         this.config.mail.mailTo,
+            subject:    option.subject,
+            text:       option.text,
+            html:       option.html,
+        },err=>err?rj(err):rs())
+    )
 }
 async function ensureDirectory(path){
     try{

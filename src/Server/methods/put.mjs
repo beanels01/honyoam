@@ -1,5 +1,31 @@
 export default{
     async putApply(doc){
+        this.mailReport({
+            subject:'說明會 - 報名',
+            html:`
+                <p>
+                    時間：${(new Date).toLocaleString()}
+                </p>
+                <p>
+                    場次：${doc.title}
+                </p>
+                <p>
+                    人數：${doc.people.length}
+                </p>
+                <ul>${doc.people.map(a=>`<li>
+                    姓名：${a.name}<br>
+                    稱謂：${a.gender=='female'?'小姐':'先生'}<br>
+                    Email：${a.email}<br>
+                    電話：${a.phone}<br>
+                </li>`)}</ul>
+                <p>
+                    有興趣議題：
+                </p>
+                <ul>${doc.interested.split('\n').map(a=>`
+                    <li>${a}</li>
+                `).join('')}</ul>
+            `,
+        })
         return{res:await this.honyoamMongoClient.putApply(
             doc.people,
             doc.interested,
@@ -8,6 +34,10 @@ export default{
         )}
     },
     async putFeedback(doc){
+        this.mailReport({
+            subject:'客服Q&A - 回饋',
+            text:doc.content,
+        })
         return{res:await this.honyoamMongoClient.putFeedback(
             doc.content,
         )}

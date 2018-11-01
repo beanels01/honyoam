@@ -10,6 +10,7 @@
         "etag":                 "*",
         "events":               "*",
         "formidable":           "*",
+        "mailgun-js":           "*",
         "mime":                 "*",
         "mongodb":              "3.0.1",
         "rfc6265":              "*",
