@@ -55,6 +55,22 @@ let get={
     async getSeminars(doc,cu){
         return['responseJson',await this._getSeminars(cu)]
     },
+    async getNewsList(doc,cu){
+        if(!(
+            typeof doc.language=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._getNewsList(cu,doc.language)]
+    },
+    async getPresale(doc){
+        return['responseJson',await this._getPresale()]
+    },
+    async getPresaleList(doc,cu){
+        return['responseJson',await this._getPresaleList(cu)]
+    },
+    async getSubscribe(doc,cu){
+        return['responseJson',await this._getSubscribe(cu)]
+    },
     async getUserByType(doc,cu){
         if(!(
             typeof doc.type=='string'
@@ -75,19 +91,6 @@ let get={
     },
     async getUserlist(doc,cu){
         return['responseJson',await this._getUserlist(cu)]
-    },
-    async getPresale(doc){
-        return['responseJson',await this._getPresale()]
-    },
-    async getPresaleList(doc,cu){
-        return['responseJson',await this._getPresaleList(cu)]
-    },
-    async getNewsList(doc,cu){
-        if(!(
-            typeof doc.language=='string'
-        ))
-            return['status',400]
-        return['responseJson',await this._getNewsList(cu,doc.language)]
     },
 }
 export default get

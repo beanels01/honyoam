@@ -53,6 +53,9 @@ o.getSeminars=async function(id){
 o.getSite=async function(key){
     return(await this._siteCol.findOne({key})).value
 }
+o.getSubscribe=async function(id){
+    return this._subscribeCol.find({}).toArray()
+}
 o.getUserByCredential=function(c){
     return this._userCol.findOne({
         _id:        new ObjectID(c.id),

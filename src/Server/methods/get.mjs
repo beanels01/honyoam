@@ -114,6 +114,14 @@ export default{
             return{err:'permission denied'}
         return{res:await this.honyoamMongoClient.getSeminars()}
     },
+    async getSubscribe(doc){
+        if(!(
+            doc.currentUser&&
+            ['root','sysadmin'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.getSubscribe()}
+    },
     async getUserByCredential(doc){
         let u=await this.honyoamMongoClient.getUserByCredential(
             doc.credential

@@ -1,4 +1,17 @@
+import api from         '../../../_api.mjs'
 let footer0c={
+    data:()=>({
+        address:'',
+    }),
+    methods:{
+        async put(){
+            await api.post({
+                method:         'putSubscribe',
+                address:        this.address,
+            })
+            alert('訂閱成功。')
+        },
+    },
     props:['language'],
     template:`
         <div class=p>
@@ -9,10 +22,11 @@ let footer0c={
                 <div>
                     <input
                         :placeholder=language.placeholder
+                        v-model=address
                     >
                 </div>
                 <div>
-                    <button><img src=img/send.png></button>
+                    <button @click="put"><img src=img/send.png></button>
                 </div>
             </div>
         </div>

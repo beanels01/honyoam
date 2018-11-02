@@ -181,4 +181,10 @@ o._getPresaleList0=function(language){
         language,
     })
 }
+o._getSubscribe=function(cu){
+    return this._request({
+        method:             'getSubscribe',
+        currentUser:cu,
+    })
+}
 export default o

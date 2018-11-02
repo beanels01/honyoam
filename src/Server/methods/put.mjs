@@ -84,4 +84,7 @@ export default{
             return{err:'permission denied'}
         return{res:await this.honyoamMongoClient.putSeminar(doc.language)}
     },
+    async putSubscribe(doc){
+        return{res:await this.honyoamMongoClient.putSubscribe(doc.address)}
+    },
 }

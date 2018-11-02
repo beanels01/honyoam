@@ -44,6 +44,12 @@ o._putSeminar=function(currentUser,language){
         language,
     })
 }
+o._putSubscribe=function(address){
+    return this._request({
+        method:             'putSubscribe',
+        address,
+    })
+}
 o._putNews=function(currentUser,language){
     return this._request({
         method:             'putNews',

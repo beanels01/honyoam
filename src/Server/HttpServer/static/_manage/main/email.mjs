@@ -42,14 +42,18 @@ let email={
     methods:{
         async get(){
             this.getNewsList()
-            let x=[]
-            ;(await api.post({
-                method:'getApplies',
-            })).res.map(a=>a.people.map(p=>
-                x.push(p.email)
-            ))
-            x=[...new Set(x)].sort()
-            this.array=x
+            this.array=[...new Set([].concat(
+                ...(await api.post({
+                    method:'getApplies',
+                })).res.map(a=>a.people.map(p=>
+                    p.email
+                )),
+                (await api.post({
+                    method:'getSubscribe',
+                })).res.map(a=>
+                    a.address
+                )
+            ))].sort()
         },
         async getNewsList(){
             this.news=(await api.post({

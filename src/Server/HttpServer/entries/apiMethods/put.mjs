@@ -56,5 +56,12 @@ let put={
             await this._putPresaleObject(cu)
         ]
     },
+    async putSubscribe(doc){
+        if(!(
+            typeof doc.address=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._putSubscribe(doc.address)]
+    },
 }
 export default put

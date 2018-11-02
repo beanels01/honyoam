@@ -72,7 +72,10 @@ Server.prototype.broadcastMail=async function(option){
         [...new Set([].concat(
             ...(await this.honyoamMongoClient.getApplies()).map(a=>
                 a.people.map(b=>b.email)
-            )
+            ),
+            (await this.honyoamMongoClient.getSubscribe()).map(a=>
+                a.address
+            ),
         ))].map(async a=>{
             try{
                 await this.sendMail({

@@ -41,6 +41,9 @@ async function putPresaleObject(){
 async function putSeminar(language){
     return(await this._seminarCol.insertOne({language})).insertedId
 }
+async function putSubscribe(address){
+    return(await this._subscribeCol.insertOne({address})).insertedId
+}
 async function putUser(doc){
     return(await this._userCol.insertOne({
         username:       doc.username,
@@ -57,5 +60,6 @@ export default{
     putNews,
     putPresaleObject,
     putSeminar,
+    putSubscribe,
     putUser,
 }
