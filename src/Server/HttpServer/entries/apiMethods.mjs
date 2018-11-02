@@ -3,6 +3,14 @@ import get from './apiMethods/get'
 import put from './apiMethods/put'
 import set from './apiMethods/set'
 export default Object.assign({
+    async broadcastMail(doc,cu){
+        if(!(
+            typeof doc.subject=='string'&&
+            typeof doc.html=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._broadcastMail(cu,doc)]
+    },
     async freezeUser(doc,cu){
         let targetUser
         if(!(

@@ -9,6 +9,14 @@ export default o=>{
         this.emit('request',r)
         return r.res
     }
+    o._broadcastMail=function(cu,doc){
+        return this._request({
+            method:'broadcastMail',
+            currentUser:cu,
+            subject:doc.subject,
+            html:doc.html,
+        })
+    }
     o._freezeUser=function(cu,tu){
         return this._request({
             method:'freezeUser',

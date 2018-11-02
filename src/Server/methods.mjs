@@ -12,6 +12,15 @@ import set from             './methods/set'
 import cut from             './methods/cut'
 import user from            './methods/user'
 export default Object.assign({
+    async broadcastMail(doc){
+        if(!(
+            doc.currentUser&&
+            ['root','sysadmin'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        await this.broadcastMail(doc)
+        return{res:null}
+    },
     async freezeUser(doc){
         if(!(
             doc.currentUser&&

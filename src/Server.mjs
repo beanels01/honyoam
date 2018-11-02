@@ -67,19 +67,45 @@ Server.prototype.handleRequest=async function(doc){
         return methods[doc.method].call(this,doc)
     throw Error('undefinedMethodBug')
 }
-Server.prototype.mailReport=function(option){
+Server.prototype.broadcastMail=async function(option){
+    return Promise.all(
+        [...new Set([].concat(
+            ...(await this.honyoamMongoClient.getApplies()).map(a=>
+                a.people.map(b=>b.email)
+            )
+        ))].map(async a=>{
+            try{
+                await this.sendMail({
+                    to:         a,
+                    subject:    option.subject,
+                    html:       option.html,
+                })
+            }catch(e){
+            }
+        })
+    )
+}
+Server.prototype.sendMail=function(option){
     return new Promise((rs,rj)=>
         mailgunJs({
             apiKey:     this.config.mail.mailgunApiKey,
             domain:     'mg.honyoam.com'
         }).messages().send({
             from:       'mailbot@mg.honyoam.com',
-            to:         this.config.mail.mailTo,
+            to:         option.to,
             subject:    option.subject,
             text:       option.text,
             html:       option.html,
         },err=>err?rj(err):rs())
     )
+}
+Server.prototype.mailReport=function(option){
+    return this.sendMail({
+        to:         this.config.mail.mailTo,
+        subject:    option.subject,
+        text:       option.text,
+        html:       option.html,
+    })
 }
 async function ensureDirectory(path){
     try{
