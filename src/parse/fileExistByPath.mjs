@@ -1,3 +1,4 @@
+import fs from 'fs'
 function fileExistByPath(p){
     try{
         fs.statSync(p)
