@@ -1,61 +1,4 @@
-let county=[
-    '東京都',
-    '神奈川縣',
-    '千葉縣',
-    '埼玉縣',
-    '大阪府',
-    '京都府',
-    '其他',
-]
-let area={
-    presale:[
-        ['東京都心6區','東京都區部'],
-        ['全域'],
-        ['全域'],
-        ['全域'],
-        ['全域'],
-        ['全域'],
-    ],
-    medieval:[
-        [
-            '都心3區',
-            '東京都心6區',
-            '千代田區',
-            '中央區',
-            '港區',
-            '新宿區',
-            '文京區',
-            '品川區',
-            '目黑區',
-            '大田區',
-            '世田谷區',
-            '澀谷區',
-            '中野區',
-            '杉並區',
-            '豐島區',
-            '北區',
-            '板橋區',
-            '練馬區',
-            '台東區',
-            '墨田區',
-            '江東區',
-            '荒川區',
-            '足立區',
-            '葛飾區',
-            '江戶川區',
-        ],
-        ['全域'],
-        ['全域'],
-        ['全域'],
-        ['全域'],
-        ['全域'],
-    ]
-}
 let lessSearch={
-    data:()=>({
-        county,
-        area,
-    }),
     props:['value','data'],
     template:`
         <div class=a>
@@ -78,9 +21,10 @@ let lessSearch={
                         v-model=value.place0
                     >
                         <option value hidden>{{data.language.place0}}</option>
+                        <option value=all>全部</option>
                         <option
-                            v-for="(a,i) in county"
-                            :value=i
+                            v-for="a of data.place.place0"
+                            :value=a
                         >{{a}}</option>
                     </select>
                     <select
@@ -88,11 +32,15 @@ let lessSearch={
                         v-model=value.place1
                     >
                         <option value hidden>{{data.language.place1}}</option>
-                        <option
-                            v-if="typeof value.place0=='number'"
-                            v-for="(a,i) in area[value.usage==0?'presale':'medieval'][value.place0]"
-                            :value=i
-                        >{{a}}</option>
+                        <option value=all>全部</option>
+                        <template v-if="value.type&&value.place0">
+                            <option v-if="value.type=='medieval'&&value.place0=='東京都'" value='都心三區'>都心三區</option>
+                            <option v-if="value.place0=='東京都'" value='東京都心六區'>東京都心六區</option>
+                            <option
+                                v-for="a of data.place.place1[value.type][value.place0=='東京都'?0:1]"
+                                :value=a
+                            >{{a}}</option>
+                        </template>
                     </select>
                     <br>
                     {{data.language.area}}：

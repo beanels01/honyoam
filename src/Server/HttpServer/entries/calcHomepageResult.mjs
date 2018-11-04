@@ -17,6 +17,7 @@ async function main(rq,rs,lang,patch){
                 event:data.event[lang],
             },
             data:{
+                place:(await this._getPlace()).res,
                 current:rq.url,
                 news,
             },

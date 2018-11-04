@@ -72,6 +72,7 @@ let aMain={
                     :mission=homepage.mission
                     @search=search
                     :data="{
+                        place:data.place,
                         language:language.homepage.search,
                     }"
                 ></search>

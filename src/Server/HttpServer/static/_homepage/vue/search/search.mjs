@@ -15,6 +15,7 @@ let search={
                 :value=value
                 @search="$emit('search')"
                 :data="{
+                    place:data.place,
                     language:data.language.lessSearch
                 }"
             ></lessSearch>
