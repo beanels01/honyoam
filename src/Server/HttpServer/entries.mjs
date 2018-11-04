@@ -18,6 +18,7 @@ import calcPresaleIdSummaryResult from './entries/calcPresaleIdSummaryResult'
 import calcPresaleIdVideoResult from './entries/calcPresaleIdVideoResult'
 import calcAboutResult from     './entries/calcAboutResult'
 import calcSeminarResult from   './entries/calcSeminarResult'
+import calcPartnerResult from   './entries/calcPartnerResult'
 import manage from              './entries/manage'
 import form from                './entries/form'
 /*
@@ -120,6 +121,8 @@ export default async function(pathname){
                 f=calcPresaleResult
             else if(a[2]=='about')
                 f=calcAboutResult
+            else if(a[2]=='partner')
+                f=calcPartnerResult
             if(f)
                 return function(rq,rs){
                     if(!(

@@ -16,9 +16,9 @@ let footer={
                 <div class=n>
                     <div class=a>
                         <a href=#>{{language.privacyPolicy}}</a> |
-                        <a href=#>{{language.termOfService}}</a> |
+                        <a href=#>{{language.termOfService}}</a><!-- |
                         <a href=#>{{language.copyright}}</a> |
-                        <a href=#>{{language.sitemap}}</a>
+                        <a href=#>{{language.sitemap}}</a>-->
                     </div>
                     <div class=b>{{
                         language.copyrightContent
