@@ -22,6 +22,11 @@ export default{
     },
     homepage,
     homepageLike,
+    partner:{
+        0:'我們的簽約合作夥伴',
+        1:'有實績的合作夥伴',
+        2:'合作銀行（貸款相關）',
+    },
     language:{
         'jp':       '日文',
         'zh-Hans':  '簡體中文',

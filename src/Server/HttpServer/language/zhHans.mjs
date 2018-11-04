@@ -24,6 +24,11 @@ export default{
     },
     homepage,
     homepageLike,
+    partner:{
+        0:'我们的签约合作伙伴',
+        1:'有实绩的合作伙伴',
+        2:'合作银行（贷款相关）',
+    },
     language:{
         'jp':       '日文',
         'zh-Hans':  '简体中文',

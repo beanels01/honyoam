@@ -24,6 +24,11 @@ export default{
     },
     homepage,
     homepageLike,
+    partner:{
+        0:'私たちの署名パートナー',
+        1:'パフォーマンスパートナー',
+        2:'協調銀行（ローン関連）',
+    },
     language:{
         'jp':       '日文',
         'zh-Hans':  '簡體中文',

@@ -1,4 +1,3 @@
-import aPartner from './service/aPartner'
 let serviceContent={
     props:['data'],
     template:`
@@ -80,7 +79,6 @@ let service={
     components:{
         serviceContent,
         aBlock,
-        aPartner,
     },
     props:['currentLanguage','language','data'],
     template:`
@@ -148,10 +146,9 @@ let service={
                     image1:image[10],
                     href1:{type:'url',url:data.href.qaForm},
                     image2:image[11],
-                    href2:{type:'none'},
+                    href2:{type:'url',url:data.href.partner},
                 }"
             ></aBlock>
-            <aPartner :language=language></aPartner>
         </div>
     `,
 }

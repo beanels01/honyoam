@@ -1,12 +1,10 @@
 import homepageLike from    '../_homepageLike.mjs'
-import aPartner from        './vue/aPartner'
 let aMain={
     components:{
         hlFooter:           homepageLike.footer,
         hlMenu:             homepageLike.menu,
         hlHeader:           homepageLike.header,
         floatBall:          homepageLike.floatBall,
-        aPartner,
     },
     computed:{
         href(){
@@ -28,7 +26,6 @@ let aMain={
                 v-model=menu
             ></hlHeader>
             <template v-if=!menu>
-                <aPartner :language=language></aPartner>
                 <hlFooter
                     :language=language.homepageLike.footer
                     :currentLanguage=currentLanguage

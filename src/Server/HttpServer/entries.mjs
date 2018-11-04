@@ -19,6 +19,10 @@ import calcPresaleIdVideoResult from './entries/calcPresaleIdVideoResult'
 import calcAboutResult from     './entries/calcAboutResult'
 import calcSeminarResult from   './entries/calcSeminarResult'
 import calcPartnerResult from   './entries/calcPartnerResult'
+import calcRentResult from      './entries/calcRentResult'
+import calcEscrowResult from    './entries/calcEscrowResult'
+import calcTermsResult from     './entries/calcTermsResult'
+import calcPrivacyResult from   './entries/calcPrivacyResult'
 import manage from              './entries/manage'
 import form from                './entries/form'
 /*
@@ -123,6 +127,14 @@ export default async function(pathname){
                 f=calcAboutResult
             else if(a[2]=='partner')
                 f=calcPartnerResult
+            else if(a[2]=='rent')
+                f=calcRentResult
+            else if(a[2]=='escrow')
+                f=calcEscrowResult
+            else if(a[2]=='terms')
+                f=calcTermsResult
+            else if(a[2]=='privacy')
+                f=calcPrivacyResult
             if(f)
                 return function(rq,rs){
                     if(!(

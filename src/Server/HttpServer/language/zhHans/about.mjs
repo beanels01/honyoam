@@ -10,11 +10,6 @@ export default{
     },
     summary,
     service:{
-        partner:{
-            0:'我们的签约合作伙伴',
-            1:'有实绩的合作伙伴',
-            2:'合作银行（贷款相关）',
-        },
         a:[
             {
                 title:'不动产中介买卖服务',

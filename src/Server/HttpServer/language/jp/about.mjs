@@ -10,11 +10,6 @@ export default{
     },
     summary,
     service:{
-        partner:{
-            0:'私たちの署名パートナー',
-            1:'パフォーマンスパートナー',
-            2:'協調銀行（ローン関連）',
-        },
         a:[
             {
                 title:'不動産仲介',

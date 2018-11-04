@@ -1,0 +1,120 @@
+#main>.partner>.a{
+    color:rgba(37, 155, 214, 1.00);
+}
+#main>.partner>.c{
+    color:rgba(37, 155, 214, 1.00);
+}
+@media(max-width:1279px){
+    #main>.partner{
+        margin:30px 10px;
+    }
+    #main>.partner>*>.a{
+        font-size:20px;
+        margin-bottom:10px;
+    }
+    #main>.partner>*+*{
+        margin-top:30px;
+    }
+    #main>.partner>*>.b>img{
+        height:30px;
+    }
+    #main>.partner>.a{
+        font-size:25px;
+    }
+    #main>.partner>.b>*>.a{
+        height:100px;
+        margin-top:10px;
+        padding:10px;
+        border:1px solid lightgray;
+        text-align:center;
+        line-height:100px;
+    }
+    #main>.partner>.b>*>.a>*{
+        width:100%;
+        vertical-align:middle;
+    }
+    #main>.partner>.c{
+        font-size:15px;
+    }
+    #main>.partner>.d>.a>.a{
+        height:100px;
+        margin-top:10px;
+        padding:10px;
+        border:1px solid lightgray;
+        text-align:center;
+        line-height:100px;
+    }
+    #main>.partner>.d>.a>.a>*{
+        width:100%;
+        max-height:100%;
+        vertical-align:middle;
+    }
+}
+@media(min-width:1280px){
+    #main>.partner{
+        width:1170px;
+        margin:60px auto;
+    }
+    #main>.partner>*+*{
+        margin-top:40px;
+    }
+    #main>.partner>.a{
+        font-size:30px;
+        margin-top:50px;
+    }
+    #main>.partner>.b{
+        display:table;
+        width:100%;
+    }
+    #main>.partner>.b>*{
+        display:table-row;
+    }
+    #main>.partner>.b>*>*{
+        display:table-cell;
+    }
+    #main>.partner>.b>*>.a{
+        border:1px solid lightgray;
+        padding:15px 30px;
+        width:calc(calc(1170px - 50px) / 2);
+    }
+    #main>.partner>.b>*>.b{
+        width:50px;
+    }
+    #main>.partner>.b>*>*>img{
+        width:100%;
+    }
+    #main>.partner>.c{
+        font-size:20px;
+        margin-top:50px;
+    }
+    #main>.partner>.d{
+        display:table;
+        width:100%;
+    }
+    #main>.partner>.d>*{
+        display:table-row;
+    }
+    #main>.partner>.d>*>*{
+        display:table-cell;
+    }
+    #main>.partner>.d>.a>*{
+        height:125px;
+    }
+    #main>.partner>.d>.a>.a{
+        width:calc(calc(1170px - 60px) / 4);
+        box-sizing:border-box;
+        border:1px solid lightgray;
+        padding:15px;
+        vertical-align:middle;
+        text-align:center;
+    }
+    #main>.partner>.d>.a>.a>img{
+        width:100%;
+    }
+    #main>.partner>.d>.a>.b{
+        width:20px;
+    }
+    #main>.partner>.d>.b>*{
+        height:20px;
+    }
+}
