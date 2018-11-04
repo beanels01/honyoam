@@ -153,7 +153,7 @@ let inputForSpecificObject={
             <p>
                 區域：<select v-model=value.place1>
                     <option
-                        v-for="a of place.place1.presale[value.place0=='東京都'?0:1]"
+                        v-for="a of place.place1.medieval[value.place0=='東京都'?0:1]"
                         :value=a
                     >{{a}}</option>
                 </select>
