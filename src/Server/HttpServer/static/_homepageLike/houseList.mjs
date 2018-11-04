@@ -1,5 +1,8 @@
 import commaNumber from '../_commaNumber.mjs'
 import pageSelect from  './pageSelect.mjs'
+let
+    東京都心三區=['千代田区','中央区','港区'],
+    東京都心六區=['千代田区','中央区','港区','渋谷区','新宿区','文京区']
 let price={
     data:()=>({
         currency:'jpy',
@@ -162,7 +165,11 @@ let houseList={
                 )&&(
                     this.data.search.place1==''||
                     this.data.search.place1=='all'||
-                    o.place1==this.data.search.place1
+                    o.place1==this.data.search.place1||
+                    this.data.search.place1=='都心三區'&&
+                    東京都心三區.includes(o.place1)||
+                    this.data.search.place1=='都心六區'&&
+                    東京都心六區.includes(o.place1)
                 )&&(
                     this.data.type=='presale'?
                         (

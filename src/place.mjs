@@ -16,7 +16,9 @@ export default{
     ],
     place1:{
         presale:[
-            [],[],
+            [
+            ],[
+            ],
         ],medieval:[
             [
                 '千代田区',
