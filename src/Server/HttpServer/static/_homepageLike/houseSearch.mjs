@@ -106,7 +106,7 @@ let houseSearch={
                             >{{a}}</option>
                         </select>
                         <select v-model=value.place1>
-                            <option value disabled>{{language.地區}}</option>
+                            <option value disabled>{{language.區域}}</option>
                             <option value='all'>{{language.全部}}</option>
                             <option
                                 v-for="a of data.place.place1[data.type][value.place0=='東京都'?0:1]"
