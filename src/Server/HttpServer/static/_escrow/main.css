@@ -1,0 +1,15 @@
+#main>.a>*{
+    width:100%;
+}
+@media(max-width:1279px){
+    #main>.a{
+        padding-top:10px;
+    }
+}
+@media(min-width:1280px){
+    #main>.a{
+        width:1170px;
+        margin:0 auto;
+        padding-top:20px;
+    }
+}

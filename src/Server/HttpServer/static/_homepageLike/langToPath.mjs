@@ -11,6 +11,10 @@ function langToPath(lang){
             seminar:    `${lang}/seminar`,
             user:       `${lang}/about`,
             partner:    `${lang}/about`,
+            rent:       `${lang}/about`,
+            escrow:     `${lang}/about`,
+            terms:      `${lang}/about`,
+            privacy:    `${lang}/about`,
         }
     return{
         about:      `${lang}/about`,
@@ -22,6 +26,10 @@ function langToPath(lang){
         qaForm:     `${lang}/qa#form`,
         seminar:    `${lang}/seminar`,
         partner:    `${lang}/partner`,
+        rent:       `${lang}/rent`,
+        escrow:     `${lang}/escrow`,
+        terms:      `${lang}/terms`,
+        privacy:    `${lang}/privacy`,
         user:       `#`,
     }
 }

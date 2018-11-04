@@ -114,11 +114,11 @@ let service={
                     title:language.a[1].title,
                     wrapTitle:language.a[1].wrapTitle,
                     image0:image[3],
-                    href0:{type:'none'},
+                    href0:{type:'url',url:data.href.rent},
                     image1:image[4],
-                    href1:{type:'none'},
+                    href1:{type:'url',url:data.href.rent},
                     image2:image[5],
-                    href2:{type:'none'},
+                    href2:{type:'url',url:data.href.rent},
                 }"
             ></aBlock>
             <aBlock
@@ -128,11 +128,11 @@ let service={
                     title:language.a[2].title,
                     wrapTitle:language.a[2].wrapTitle,
                     image0:image[6],
-                    href0:{type:'none'},
+                    href0:{type:'url',url:data.href.escrow},
                     image1:image[7],
-                    href1:{type:'none'},
+                    href1:{type:'url',url:data.href.escrow},
                     image2:image[8],
-                    href2:{type:'none'},
+                    href2:{type:'url',url:data.href.escrow},
                 }"
             ></aBlock>
             <aBlock

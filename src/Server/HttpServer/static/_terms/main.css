@@ -1,0 +1,16 @@
+#main>.a>.a{
+    color:red;
+}
+@media(max-width:1279px){
+    #main>.a{
+        width:calc(100% - 20px);
+        margin:0 auto;
+    }
+}
+@media(min-width:1280px){
+    #main>.a{
+        width:1170px;
+        margin:0 auto;
+    }
+}
+

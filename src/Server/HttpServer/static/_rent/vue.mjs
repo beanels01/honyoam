@@ -26,6 +26,9 @@ let aMain={
                 v-model=menu
             ></hlHeader>
             <template v-if=!menu>
+                <div class=a>
+                    <img src=/_rent/main.png>
+                </div>
                 <hlFooter
                     :language=language.homepageLike.footer
                     :currentLanguage=currentLanguage
