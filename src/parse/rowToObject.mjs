@@ -1,16 +1,9 @@
-import fileExistByPath from './fileExistByPath'
+import fileExistByPath from     './fileExistByPath'
+import place from               '../place'
 function rowToObject(s,veki,inputDir){
     let
         a=JSON.parse(`[${s.replace(/\t/g,'\\t').replace(/\n/g,'\\n')}]`),
         id=a[1]
-/*
-    格局
-    格局圖
-    格局圖標題
-    格局圖內文
-    建物總樓層
-    停車場
-*/
     let
         y={
             name:a[33],
@@ -170,18 +163,13 @@ function rowToObject(s,veki,inputDir){
                 'zh-Hant':y,
             },
         }
-    for(let i of[
-        '東京都',
-        '千葉県',
-        '神奈川県',
-        '埼玉県',
-        '名古屋市',
-        '大阪府',
-        '京都府',
-        '福岡市',
-    ])
-        if(~x.language['zh-Hant'].place.indexOf(i))
+    for(let i of place.place0)
+        if(~x.language.jp.place.indexOf(i))
             x.place0=i
+    if(x.place0=='東京都')
+        for(let i of place.place1.medieval[0])
+            if(~x.language.jp.place.indexOf(i))
+                x.place1=i
     for(let i=0;i<10;i++){
         let p=`photo${i==0?'':i+1}/${id}.jpg`
         if(fileExistByPath(`${inputDir}/${p}`))

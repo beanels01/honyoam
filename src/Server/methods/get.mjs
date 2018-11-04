@@ -1,5 +1,5 @@
 import faqClasses from      './get/faqClasses'
-import place from           './get/place'
+import place from           '../../place'
 export default{
     async getAllNews(doc){
         return{res:await this.honyoamMongoClient.getAllNews(doc.language)}

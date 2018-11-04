@@ -2,6 +2,7 @@ import fs from              'fs'
 import mongodb from         'mongodb'
 import rowToObject from     './parse/rowToObject'
 import fileExistByPath from './parse/fileExistByPath'
+import place from           './place'
 let{
     MongoClient,
     ObjectID,
@@ -16,16 +17,7 @@ let a=fs.readFileSync(`${inputDir}/homenavi_all.csv`).toString().match(
     /"[^"]*"(,"[^"]*")*/g
 ).slice(0,-1).map(a=>rowToObject(a,veki,inputDir)).filter(a=>{
     let b=0
-    for(let i of[
-        '東京都',
-        '神奈川県',
-        '千葉県',
-        '埼玉県',
-        '大阪府',
-        '京都府',
-        '名古屋市',
-        '福岡市',
-    ])
+    for(let i of place.place0)
         b=b||~a.language['zh-Hant'].place.indexOf(i)
     return b&&1500<=a.price
 })
