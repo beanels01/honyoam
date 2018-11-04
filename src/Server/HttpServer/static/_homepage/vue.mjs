@@ -8,7 +8,7 @@ let aMain={
     created(){
         if(typeof window!='undefined'&&(
             !localStorage.honyoamLastHomepageAlert||
-            43200<=new Date-new Date(localStorage.honyoamLastHomepageAlert)
+            43200*1000<=new Date-new Date(localStorage.honyoamLastHomepageAlert)
         )){
             localStorage.honyoamLastHomepageAlert=new Date
             onload=()=>setTimeout(()=>
