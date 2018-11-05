@@ -28,6 +28,7 @@ export default{
     patternDrawing:     '格局圖',
     surroundingMap:     '周圍地圖',
     contactUs:          '聯絡我們',
+    situation:          '現況',
     notice0:            '每坪單價：請洽各店服務員',
     notice1:            '買賣交易均以日幣為主，其他幣別僅供參考，實際匯率請自行向銀行確認換算。',
     notice2:            '※ 本區提供資料僅供參考，房屋資料需以謄本標示資料為主。',

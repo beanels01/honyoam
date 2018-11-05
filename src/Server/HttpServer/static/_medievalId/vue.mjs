@@ -355,9 +355,9 @@ let aMain={
                                 <div class="hl"></div>
                                 <span class=a>{{language.medieval.date}}：</span>{{data.data.dateYear}} 年<template v-if=data.data.dateMonth> {{data.data.dateMonth}} 月</template>
                                 <div class="hl"></div>
-                                <span class=a>{{language.medieval.area}}：</span>{{data.data.area}} 平方公尺
+                                <span class=a>{{language.medieval.area}}：</span>{{data.data.area}} {{language.medieval.squaredMeter}}
                                 <div class="hl"></div>
-                                <span class=a>{{language.medieval.balconyArea}}：</span>{{data.data.balconyArea}}
+                                <span class=a>{{language.medieval.balconyArea}}：</span>{{data.data.balconyArea}} {{language.medieval.squaredMeter}}
                                 <div class="hl"></div>
                                 <span class=a>{{language.medieval.level}}：</span>{{data.data.level}} 樓
                                 <div class="hl"></div>
@@ -432,10 +432,10 @@ let aMain={
                                     </div><div class=o>{{data.data.pattern}}</div>
                                     <div class=n>
                                         · {{language.medieval.area}}
-                                    </div><div class=o>{{data.data.area}} 平方公尺</div>
+                                    </div><div class=o>{{data.data.area}} {{language.medieval.squaredMeter}}</div>
                                     <div class=n>
                                         · {{language.medieval.balconyArea}}
-                                    </div><div class=o>{{data.data.balconyArea}} 平方公尺</div>
+                                    </div><div class=o>{{data.data.balconyArea}} {{language.medieval.squaredMeter}}</div>
                                 </div>
                                 <div>
                                     <div class=n>
