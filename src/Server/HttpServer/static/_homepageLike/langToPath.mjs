@@ -17,8 +17,8 @@ function langToPath(lang){
             privacy:    `${lang}/about`,
         }
     return{
-        about:      `${lang}/about`,
         homepage:   `${lang}`,
+        about:      `${lang}/about`,
         news:       `${lang}/news`,
         medieval:   `${lang}/medieval`,
         presale:    `${lang}/presale`,
@@ -30,6 +30,7 @@ function langToPath(lang){
         escrow:     `${lang}/escrow`,
         terms:      `${lang}/terms`,
         privacy:    `${lang}/privacy`,
+        loan:       `${lang}/loan`,
         user:       `#`,
     }
 }

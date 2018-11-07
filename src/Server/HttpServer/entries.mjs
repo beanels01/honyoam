@@ -21,6 +21,7 @@ import calcSeminarResult from   './entries/calcSeminarResult'
 import calcPartnerResult from   './entries/calcPartnerResult'
 import calcRentResult from      './entries/calcRentResult'
 import calcEscrowResult from    './entries/calcEscrowResult'
+import calcLoanResult from      './entries/calcLoanResult'
 import calcTermsResult from     './entries/calcTermsResult'
 import calcPrivacyResult from   './entries/calcPrivacyResult'
 import manage from              './entries/manage'
@@ -135,6 +136,8 @@ export default async function(pathname){
                 f=calcTermsResult
             else if(a[2]=='privacy')
                 f=calcPrivacyResult
+            else if(a[2]=='loan')
+                f=calcLoanResult
             if(f)
                 return function(rq,rs){
                     if(!(
