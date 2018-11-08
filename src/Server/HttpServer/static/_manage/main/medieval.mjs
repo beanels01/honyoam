@@ -41,7 +41,10 @@ export default{
             <h1>您可能會喜歡</h1>
             <div class=indent>
                 <youMightLikeInput
-                    :data=list
+                    :data="{
+                        type:'medieval',
+                        data:list,
+                    }"
                     v-model=value.youMightLike
                 ></youMightLikeInput>
             </div>

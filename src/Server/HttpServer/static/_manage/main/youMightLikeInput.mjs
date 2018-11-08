@@ -2,9 +2,12 @@ import optionList from      './optionList.mjs'
 let youMightLikeElementInput={
     computed:{
         list(){
-            return this.data.filter(a=>
-                ~a.secondId.indexOf(this.prefix)
-            )
+            let x=this.data.data
+            if(this.data.type=='medieval')
+                x=x.filter(a=>
+                    ~a.secondId.indexOf(this.prefix)
+                )
+            return x
         },
     },
     data:()=>({
@@ -13,7 +16,7 @@ let youMightLikeElementInput={
     props:['data','value'],
     template:`
         <div>
-            <div>
+            <div v-if="data.type=='medieval'">
                 <input placeholder=編號 v-model=prefix>
             </div>
             <select
@@ -21,7 +24,10 @@ let youMightLikeElementInput={
                 @input="e=>$emit('input',e.target.value)"
             >
                 <option v-for="a of list" :value=a.id>
-                    {{a.secondId}} {{a.name}}
+                    <template v-if="data.type=='medieval'">
+                        {{a.secondId}}
+                    </template>
+                    {{a.name}}
                 </option>
             </select>
         </div>
