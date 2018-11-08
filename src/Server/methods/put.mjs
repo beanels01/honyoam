@@ -1,7 +1,7 @@
 export default{
     async putApply(doc){
         this.mailReport({
-            subject:'說明會 - 報名',
+            subject:'說明會報名通知',
             html:`
                 <p>
                     時間：${(new Date).toLocaleString()}
@@ -35,7 +35,7 @@ export default{
     },
     async putFeedback(doc){
         this.mailReport({
-            subject:'客服Q&A - 回饋',
+            subject:'客戶回饋通知',
             text:doc.content,
         })
         return{res:await this.honyoamMongoClient.putFeedback(
@@ -85,6 +85,14 @@ export default{
         return{res:await this.honyoamMongoClient.putSeminar(doc.language)}
     },
     async putSubscribe(doc){
+        this.mailReport({
+            subject:'客戶訂閱通知',
+            html:`
+                <p>
+                    Email 地址：${doc.address}
+                </p>
+            `,
+        })
         return{res:await this.honyoamMongoClient.putSubscribe(doc.address)}
     },
 }
