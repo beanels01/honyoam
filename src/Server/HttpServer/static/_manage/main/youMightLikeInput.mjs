@@ -5,7 +5,7 @@ let youMightLikeElementInput={
             let x=this.data.data
             if(this.data.type=='medieval')
                 x=x.filter(a=>
-                    ~a.secondId.indexOf(this.prefix)
+                    ~(a.secondId||'').indexOf(this.prefix)
                 )
             return x
         },
