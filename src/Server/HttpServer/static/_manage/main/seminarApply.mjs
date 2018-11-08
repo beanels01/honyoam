@@ -15,7 +15,7 @@ let statusInput={
     props:['value'],
     methods:{
         checkValue(){
-            if(this.value==undefined)
+            if(!this.value)
                 this.$emit('input',{version:0,main:0,})
             else if(typeof this.value=='string')
                 this.$emit('input',{version:0,main:+this.value,})
