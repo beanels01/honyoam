@@ -225,10 +225,10 @@ console.log(o)
                                 +this.data.search.age
                         )
                 )
-            }).sort((a,b)=>{
-                let ad=new Date(a.date),bd=new Date(b.date)
-                return bd-ad
-            })
+            }).sort((a,b)=>
+                new Date(b.date)-new Date(a.date)||
+                a.id.localeCompate(b.id)
+            )
         },
         sortArrayByPage(){
             return this.sortArray.slice(
