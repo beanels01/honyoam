@@ -18,11 +18,11 @@ let price={
     methods:{commaNumber},
     props:['data'],
     template:`
-        <span><span v-if="currency!='jpy'">{{language.約}} </span>{{
+        <span><template v-if="currency!='jpy'">{{language.約}} </template>{{
                 commaNumber(~~(data.min*rateByCurrency))
-            }} <span v-if="data.min!=data.max"> - {{
+            }} <template v-if="data.min!=data.max"> - {{
                 commaNumber(~~(data.max*rateByCurrency))
-            }}</span> {{language.萬}} <select
+            }}</template> {{language.萬}} <select
                 @click="e=>e.stopPropagation()"
                 v-model=currency
             >
@@ -158,6 +158,7 @@ let houseList={
         sortArray(){
             let now=new Date
             return this.data.array.filter(o=>{
+console.log(o)
                 return!this.data.search||(
                     this.data.search.place0==''||
                     this.data.search.place0=='all'||
@@ -224,9 +225,10 @@ let houseList={
                                 +this.data.search.age
                         )
                 )
-            }).sort((a,b)=>
-                new Date(b.date)-new Date(a.date)
-            )
+            }).sort((a,b)=>{
+                let ad=new Date(a.date),bd=new Date(b.date)
+                return bd-ad
+            })
         },
         sortArrayByPage(){
             return this.sortArray.slice(
