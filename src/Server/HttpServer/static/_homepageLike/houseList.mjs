@@ -227,7 +227,7 @@ console.log(o.id)
                 )
             }).sort((a,b)=>
                 new Date(b.date)-new Date(a.date)||
-                a.id.localeCompate(b.id)
+                a.id.localeCompare(b.id)
             )
         },
         sortArrayByPage(){
