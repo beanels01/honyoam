@@ -26,14 +26,14 @@ HttpServer.prototype._isTrustedOrigin=function(origin){
     return origin==this.computed.allowedOrigin.origin
 }
 HttpServer.prototype.handleRequest=async function(rq,rs){
-    if(!(
+    /*if(!(
         this._isDefinedHost(rq.headers.host)
     )){
         rs.writeHead(301,{
             location:'http://honyoam.com/',
         })
         return rs.end()
-    }
+    }*/
     let parsedUrl
     try{
         parsedUrl=new url.URL(rq.url,'a://a')
