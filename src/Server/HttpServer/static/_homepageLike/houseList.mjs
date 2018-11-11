@@ -158,7 +158,7 @@ let houseList={
         sortArray(){
             let now=new Date
             return this.data.array.filter(o=>{
-console.log(o)
+console.log(o.id)
                 return!this.data.search||(
                     this.data.search.place0==''||
                     this.data.search.place0=='all'||
