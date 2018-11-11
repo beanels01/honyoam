@@ -18,11 +18,11 @@ let price={
     methods:{commaNumber},
     props:['data'],
     template:`
-        <span><template v-if="currency!='jpy'">{{language.約}} </template>{{
+        <span><span v-if="currency!='jpy'">{{language.約}} </span>{{
                 commaNumber(~~(data.min*rateByCurrency))
-            }} <template v-if="data.min!=data.max"> - {{
+            }} <span v-if="data.min!=data.max"> - {{
                 commaNumber(~~(data.max*rateByCurrency))
-            }}</template> {{language.萬}} <select
+            }}</span> {{language.萬}} <select
                 @click="e=>e.stopPropagation()"
                 v-model=currency
             >
