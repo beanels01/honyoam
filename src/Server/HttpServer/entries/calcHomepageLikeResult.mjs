@@ -75,7 +75,7 @@ let
 </script>
 <script async src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit"></script>
 <script src="https://unpkg.com/swiper@4.2.6/dist/js/swiper.min.js"></script>
-<script async src=_vue/vue.min.js onload=onVueLoad()></script>
+<script async src=_vue/vue.js onload=onVueLoad()></script>
 ${
     this.config.dev
     ?`<script type=module src=${doc.clientScript}></script>`
