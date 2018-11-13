@@ -114,8 +114,8 @@ let aMain={
                 </div>
                 <div class=b v-if=pattern.length>
                     <img :src="
-                        currentLanguage in presale.presaleId.pattern[selectPattern].language&&presale.presaleId.pattern[selectPattern].language[currentLanguage].image?
-                            '/image/'+presale.presaleId.pattern[selectPattern].language[currentLanguage].image
+                        currentLanguage in pattern[selectPattern].language&&pattern[selectPattern].language[currentLanguage].image?
+                            '/image/'+pattern[selectPattern].language[currentLanguage].image
                         :
                             'none1000.png'
                     ">
