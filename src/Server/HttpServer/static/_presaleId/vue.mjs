@@ -188,7 +188,7 @@ let aMain={
                         part:[language.presale.information,'INFORMATION'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
-                        href:href.qaForm,
+                        href,
                     }"
                 ></presaleIdLikeMain>
                 <block

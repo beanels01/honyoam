@@ -131,12 +131,16 @@ let main={
                     <div class=n>
                         <reserveButton
                             :data="{
-                                href:data.href
+                                href:data.href.qaForm
                             }"
                         ></reserveButton>
                     </div>
                     <div class=o>
-                        <moreButton></moreButton>
+                        <moreButton
+                            :data="{
+                                href:data.href.loan
+                            }"
+                        ></moreButton>
                     </div>
                 </div>
             </div>

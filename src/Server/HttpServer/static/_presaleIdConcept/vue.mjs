@@ -64,7 +64,7 @@ let aMain={
                         part:[language.presale.concept,'DESIGN CONCEPT'],
                         title:presale.presaleId.informationTitle,
                         content:presale.presaleId.informationContent,
-                        href:href.qaForm,
+                        href,
                     }"
                 ></presaleIdLikeMain>
                 <presaleIdLikeHypertext

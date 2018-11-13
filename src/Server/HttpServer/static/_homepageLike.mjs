@@ -79,8 +79,12 @@ let reserveButton={
     `,
 }
 let moreButton={
+    props:['data'],
     template:`
-        <a class=homepageLikeMoreButton><span>> 貸款試算</span></a>
+        <a
+            class=homepageLikeMoreButton
+            :href=data.href
+        ><span>> 貸款試算</span></a>
     `,
 }
 export default{
