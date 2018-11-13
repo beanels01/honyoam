@@ -158,7 +158,6 @@ let houseList={
         sortArray(){
             let now=new Date
             return this.data.array.filter(o=>{
-console.log(o.date,o)
                 return!this.data.search||(
                     this.data.search.place0==''||
                     this.data.search.place0=='all'||
@@ -227,7 +226,7 @@ console.log(o.date,o)
                 )
             }).sort((a,b)=>
                 new Date(b.date)-new Date(a.date)||
-                a.id.localeCompare(b.id)
+                a.id.toString().localeCompare(b.id.toString())
             )
         },
         sortArrayByPage(){
