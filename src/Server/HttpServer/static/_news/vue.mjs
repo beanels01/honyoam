@@ -259,7 +259,7 @@ let aMain={
                     ></normalBlock>
                     <pageSelect
                         v-model=page
-                        @input="setIdHistory()"
+                        @input="scrollTo(0,0);setIdHistory()"
                         :length="
                             Math.max(1,Math.ceil(newsByYearAndType.length/8))
                         "

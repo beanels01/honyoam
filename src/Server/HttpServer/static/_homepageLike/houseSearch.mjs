@@ -109,7 +109,10 @@ let houseSearch={
                             <option value disabled>{{language.區域}}</option>
                             <option value='all'>{{language.全部}}</option>
                             <option v-if="data.type=='medieval'&&value.place0=='東京都'" value='都心三區'>都心三區</option>
-                            <option v-if="value.place0=='東京都'" value='東京都心六區'>東京都心六區</option>
+                            <option
+                                v-if="value.place0=='東京都'"
+                                value='都心六區'
+                            >東京都心六區</option>
                             <option
                                 v-for="a of data.place.place1[data.type][value.place0=='東京都'?0:1]"
                                 :value=a
