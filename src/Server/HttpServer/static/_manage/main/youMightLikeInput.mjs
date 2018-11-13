@@ -13,16 +13,27 @@ let youMightLikeElementInput={
     data:()=>({
         prefix:''
     }),
+    methods:{
+        prefixInput(){
+            this.$emit('input',this.list.length==1?this.list[0].id:'')
+        },
+    },
     props:['data','value'],
     template:`
         <div>
             <div v-if="data.type=='medieval'">
-                <input placeholder=編號 v-model=prefix>
+                <input
+                    placeholder=編號
+                    v-model=prefix
+                    @input="prefixInput"
+                >
             </div>
             <select
                 :value=value
                 @input="e=>$emit('input',e.target.value)"
+                required
             >
+                <option value hidden disabled>物件</option>
                 <option v-for="a of list" :value=a.id>
                     <template v-if="data.type=='medieval'">
                         {{a.secondId}}

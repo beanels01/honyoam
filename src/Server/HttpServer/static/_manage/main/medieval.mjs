@@ -39,7 +39,7 @@ export default{
     template:`
         <div v-if=value>
             <h1>您可能會喜歡</h1>
-            <div class=indent>
+            <div class=indent style="margin-top:32px;margin-bottom:32px;">
                 <youMightLikeInput
                     :data="{
                         type:'medieval',
