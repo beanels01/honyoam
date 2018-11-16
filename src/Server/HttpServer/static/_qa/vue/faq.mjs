@@ -1,16 +1,25 @@
 import homepageLike from '../../_homepageLike.mjs'
 let faq={
     components:{contactInfo:homepageLike.contactInfo},
+    created(){
+        this.setQuestionStatus()
+    },
     data(){
         return{
             selectedClass:this.classes[0],
-            selectedQuestion:null,
+            questionStatus:0,
         }
     },
     props:['language','classes','faq'],
     methods:{
-        selectQuestion(q){
-            this.selectedQuestion=this.selectedQuestion==q?null:q
+        setQuestionStatus(){
+            let x={}
+            for(let i=0;i<this.faq[this.selectedClass].length;i++)
+                x[i]=0
+            this.questionStatus=x
+        },
+        selectQuestion(i){
+            this.questionStatus[i]=!this.questionStatus[i]
         },
     },
     template:`
@@ -40,28 +49,31 @@ let faq={
                 <contactInfo></contactInfo>
             </div>
             <div class=hb></div>
-            <div class=a>
+            <div
+                class=a
+                v-if=questionStatus
+            >
                 <div class=title>
                     {{language.faqClasses[selectedClass]}}
                 </div>
                 <div
                     class=question
-                    v-for="q in faq[selectedClass]"
+                    v-for="(q,i) in faq[selectedClass]"
                 >
                     <div
                         class=question
-                        :class="{active:selectedQuestion==q}"
-                        @click=selectQuestion(q)
+                        :class="{active:questionStatus[i]}"
+                        @click=selectQuestion(i)
                     >
                         <div>
                             <div class=left>
                                 {{q.question}}
                             </div>
                             <div class=right>
-                                <span v-if="selectedQuestion!=q">
+                                <span v-if="!questionStatus[i]">
                                     <img src=img/qa/arrow01.png>
                                 </span>
-                                <span v-if="selectedQuestion==q">
+                                <span v-if="questionStatus[i]">
                                     <img src=img/qa/arrow02.png>
                                 </span>
                             </div>
@@ -69,7 +81,7 @@ let faq={
                     </div>
                     <div
                         class=answer
-                        :class="{active:selectedQuestion==q}"
+                        :class="{active:questionStatus[i]}"
                         v-html=q.answer
                     ></div>
                 </div>

@@ -10,6 +10,7 @@ let galleryCropImageUploader={
                 fixedNumber:[16,9],
                 width:1920,
                 height:1080,
+                scale:1,
             }"
             :value=value
             @input="a=>$emit('input',a)"
