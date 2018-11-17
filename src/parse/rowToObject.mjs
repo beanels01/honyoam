@@ -90,10 +90,10 @@ function rowToObject(s,veki,inputDir){
                 4:'未完成',
             }[a[45]],
             traffic:
-                (a[13]?`${veki[a[13]+a[14]]}  徒步 ${a[16]} 分\n`:'')+
+                (a[13]?`${veki[a[13]+a[14]]} 徒步 ${a[16]} 分\n`:'')+
                 (a[22]?`${a[22]}\n`:'')+
-                (a[105]?`${veki[a[105]+a[106]]}  徒步 ${a[108]} 分\n`:'')+
-                (a[110]?`${veki[a[110]+a[111]]}  徒步 ${a[113]} 分\n`:'')
+                (a[105]?`${veki[a[105]+a[106]]} 徒步 ${a[108]} 分\n`:'')+
+                (a[110]?`${veki[a[110]+a[111]]} 徒步 ${a[113]} 分\n`:'')
             ,
             nearestStation:veki[a[13]+a[14]],
             place:a[35],
@@ -134,7 +134,12 @@ function rowToObject(s,veki,inputDir){
             }[a[97]]+(+a[26]),
             gallery:[],
             householdCount:+a[63],
-            image:{url:`daikyo/photo/${id}.jpg`},
+            image:
+                fileExistByPath(`${inputDir}/photo/${id}.jpg`)?
+                    {url:`daikyo/photo/${id}.jpg`}
+                :
+                    0
+            ,
             level:+a[61],
             managementFee:+a[34],
             map:"0",

@@ -67,18 +67,12 @@ let aMain={
             return homepageLike.langToPath(this.currentLanguage)
         },
         mightLikeData(){
-            let a={}
-            for(let b of this.data.medieval.list)
-                a[b.id]=b
-            return this.data.medieval.medieval.youMightLike.map(b=>{
-                let c=a[b]
-                return{
-                    image:'/image/'+c.image,
-                    title:c.name,
-                    subtitle:`${c.price} ${this.language.medieval.e4JapaneseCurrency}`,
-                    href:`${this.currentLanguage}/medieval/${c.id}`
-                }
-            })
+            return medievalLike.mightLikeData(
+                this.data.medieval.list,
+                this.data.medieval.medieval.youMightLike,
+                this.language.medieval.e4JapaneseCurrency,
+                this.currentLanguage
+            )
         },
     },
     data:()=>({
@@ -267,6 +261,7 @@ let aMain={
                         <div class=a>
                             <div class=n>
                                 <img
+                                    v-if=data.data.gallery[focus]
                                     :src="
                                         typeof data.data.gallery[focus]=='string'?
                                             '/image/'+data.data.gallery[focus]
@@ -378,19 +373,24 @@ let aMain={
                                 <reserveButton
                                     :data="{href:href.qaForm}"
                                 ></reserveButton>
-                                <moreButton></moreButton>
+                                <moreButton
+                                    :data="{href:href.loan}"
+                                ></moreButton>
                             </div>
                         </div>
                         <div class=c>
                             <div
                                 class=n
                             >
-                                <img :src="
-                                    typeof data.data.gallery[focus]=='string'?
-                                        '/image/'+data.data.gallery[focus]
-                                    :
-                                        data.data.gallery[focus].url
-                                ">
+                                <img
+                                    v-if=data.data.gallery[focus]
+                                    :src="
+                                        typeof data.data.gallery[focus]=='string'?
+                                            '/image/'+data.data.gallery[focus]
+                                        :
+                                            data.data.gallery[focus].url
+                                    "
+                                >
                             </div>
                             <div
                                 class=o

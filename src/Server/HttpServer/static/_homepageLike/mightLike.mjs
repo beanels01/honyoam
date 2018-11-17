@@ -11,7 +11,7 @@ let mightLikeBlock={
     template:`
         <a class=mightLikeBlock :href=data.href>
             <div class=a>
-                <img :src=data.image>
+                <img v-if="data.image" :src=data.image>
             </div>
             <div class=b>{{data.title}}</div>
             <div class=c>{{data.subtitle}}</div>

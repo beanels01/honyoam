@@ -105,12 +105,15 @@ let medieval={
             @click=click
         >
             <div class=a>
-                <img :src="
-                    typeof data.image=='string'?
-                        '/image/'+data.image
-                    :
-                        data.image.url
-                ">
+                <img
+                    v-if=data.image
+                    :src="
+                        typeof data.image=='string'?
+                            '/image/'+data.image
+                        :
+                            data.image.url
+                    "
+                >
             </div>
             <div class=b><div>
                 <div class=a>
