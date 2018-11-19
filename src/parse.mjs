@@ -33,18 +33,24 @@ let a=fs.readFileSync(`${inputDir}/homenavi_all.csv`).toString().match(
     }).toArray()).map(a=>a.secondId))
     let inputSet=new Set(a.map(a=>a.secondId))
     //let unionSet=new Set([...databaseSet,..inputSet])
-    let promise=[]
-    for(let id of databaseSet)if(!inputSet.has(id))
+    let
+        promise=[],
+        operationCount={cut:0,put:0,set:0}
+    for(let id of databaseSet)if(!inputSet.has(id)){
         promise.push(col.deleteOne({
             secondId:id
         }))
+        operationCount.cut++
+    }
     for(let o of a)
-        promise.push(
-            databaseSet.has(o.secondId)?
-                col.updateOne({secondId:o.secondId},{$set:o})
-            :
-                col.insertOne(o)
-        )
+        if(databaseSet.has(o.secondId)){
+            promise.push(col.updateOne({secondId:o.secondId},{$set:o}))
+            operationCount.set++
+        }else{
+            promise.push(col.insertOne(o))
+            operationCount.put++
+        }
+    console.log(operationCount)
     await Promise.all(promise)
     client.close()
 })(a)
