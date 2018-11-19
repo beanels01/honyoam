@@ -62,9 +62,7 @@ function Server(config){
     }
     let pull=async()=>{
         getRate()
-console.log(await
         parseMedieval(this.config.parse.inputDir)
-)
     }
     pull()
     setInterval(pull,24*60*60*1000)
