@@ -4,6 +4,7 @@ import mailgunJs from       'mailgun-js'
 import MongoClient from     './Server/MongoClient'
 import HttpServer from      './Server/HttpServer'
 import methods from         './Server/methods'
+import parseMedieval from   './parseMedieval'
 function getStringContentByResponse(res){
     return new Promise(rs=>{
         let a=[]
@@ -59,8 +60,14 @@ function Server(config){
             }
         })
     }
-    getRate()
-    setInterval(getRate,60*60*1000)
+    let pull=async()=>{
+        getRate()
+console.log(await
+        parseMedieval(this.config.parse.inputDir)
+)
+    }
+    pull()
+    setInterval(pull,24*60*60*1000)
 }
 Server.prototype.handleRequest=async function(doc){
     if(doc.method in methods)

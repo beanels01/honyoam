@@ -1,7 +1,7 @@
 import fs from              'fs'
 function parseVeki(){
     let x={}
-    let a=fs.readFileSync(`honyoam/src/parse/150130_veki.csv`).toString().split('\n')
+    let a=fs.readFileSync(`honyoam/src/parseMedieval/150130_veki.csv`).toString().split('\n')
     a.pop()
     a.map(a=>{
         a=a.split(',')

@@ -7,5 +7,12 @@
         "host":             "http://localhost:8000",
         "allowedOrigin":    "http://localhost:8000",
         "recaptchaSecret":  ""
+    },
+    "mail":{
+        "mailgunApiKey":"",
+        "mailTo":""
+    },
+    "parse":{
+        "inputDir":""
     }
 }
