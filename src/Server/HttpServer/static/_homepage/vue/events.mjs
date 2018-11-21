@@ -49,6 +49,7 @@ let events={
                     <div class=p>
                         <selectOption
                             v-for="(e,i) in content"
+                            v-if="e.title"
                             :class="{focus:focus==i}"
                             @click="focus=i"
                             :value=e
