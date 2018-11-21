@@ -31,7 +31,13 @@ let patternInput={
                         <div>{{data.language.pattern}}：{{e.name}}</div>
                         <div>{{data.language.area}}：{{e.area}} {{data.language.squaredMeter}}</div>
                         <div>{{data.language.balconyArea}}：{{e.balconyArea}} {{data.language.squaredMeter}}</div>
-                        <div>{{data.language.price}}：{{e.price}} {{data.language.e4JapaneseCurrency}}</div>
+                        <div>{{data.language.price}}：{{
+                            e.price?
+                                e.price+' '+data.language.e4JapaneseCurrency
+                            :
+                                '未定'
+                        }}
+                        </div>
                     </div>
                 </div>
             </div>

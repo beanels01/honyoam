@@ -1,4 +1,4 @@
-import{dom}from'../_simple.mjs'
+import{dom}from             '../_simple.mjs'
 import homepageLike from    '../_homepageLike.mjs'
 import presaleIdLike from   '../_presaleIdLike.mjs'
 import presaleLike from     '../_presaleLike.mjs'
