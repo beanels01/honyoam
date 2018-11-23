@@ -58,8 +58,7 @@ let presale={
                             {{data.subName}}
                         </div>
                         <div class=brief>
-                            {{data.brief0}}<br>
-                            {{data.brief1}}
+                            {{data.brief0}}
                         </div>
                     </div>
                 </div>

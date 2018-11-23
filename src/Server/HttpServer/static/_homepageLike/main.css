@@ -841,10 +841,7 @@ body{
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.title{
         font-size:22px;
-        width: 307px;
-        word-break: keep-all;
-        white-space: pre;
-        overflow-x: hidden;
+        width:307px;
     }
     #main>.homepageLikeHouseList>.e>*>*>*>.house>.b>*>*>*>.subtitle{
         font-size:16px;
