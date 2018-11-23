@@ -62,8 +62,8 @@ let aMain={
                 <presaleIdLikeMain
                     :data="{
                         part:[language.presale.concept,'DESIGN CONCEPT'],
-                        title:presale.presaleId.informationTitle,
-                        content:presale.presaleId.informationContent,
+                        title:'',
+                        content:'',
                         href,
                     }"
                 ></presaleIdLikeMain>
