@@ -67,6 +67,9 @@ export default{
                     ></languageSelect>
                 </p>
                 <template v-if="selectedLanguageForEvent&&seminars">
+                    <p>
+                        只有當第一個說明會的標題不是空的的時候，說明會版塊才會顯示。對於每一個說明會，也只有它的標題不是空的的時候，它的選項才會顯示。
+                    </p>
                     <eventInput
                         :data="seminars.filter(a=>a.language==selectedLanguageForEvent)"
                         v-model=homepage.event[selectedLanguageForEvent]

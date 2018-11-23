@@ -38,7 +38,7 @@ let events={
     },
     props:['data','content'],
     template:`
-        <div class=events>
+        <div class=events v-if="content[0].title">
             <div class=n>
                 <div class=a>
                     <div class=n>
