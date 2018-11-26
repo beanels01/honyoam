@@ -259,30 +259,35 @@ let aMain={
                     <div class=n>{{data.data.name}}</div>
                     <div class=o>
                         <div class=a>
-                            <div class=n>
-                                <img
-                                    v-if=data.data.gallery[focus]
-                                    :src="
-                                        typeof data.data.gallery[focus]=='string'?
-                                            '/image/'+data.data.gallery[focus]
-                                        :
-                                            data.data.gallery[focus].url
-                                    "
-                                >
-                            </div>
-                            <div class=o>
-                                <div class="button left"
-                                    @click="focus=Math.max(0,focus-1)"
-                                ></div><swiper
+                            <template v-if="!data.data.gallery.length">
+                                暫無照片。
+                            </template>
+                            <template v-if="data.data.gallery.length">
+                                <div class=n>
+                                    <img
+                                        v-if=data.data.gallery[focus]
+                                        :src="
+                                            typeof data.data.gallery[focus]=='string'?
+                                                '/image/'+data.data.gallery[focus]
+                                            :
+                                                data.data.gallery[focus].url
+                                        "
+                                    >
+                                </div>
+                                <div class=o>
+                                    <div class="button left"
+                                        @click="focus=Math.max(0,focus-1)"
+                                    ></div><swiper
 
-                                    :data="{gallery:data.data.gallery}"
-                                    class=swiper
-                                    v-model=focus
-                                ></swiper><div
-                                    class="button right"
-                                    @click="focus=Math.min(data.data.gallery.length-1,focus+1)"
-                                ></div>
-                            </div>
+                                        :data="{gallery:data.data.gallery}"
+                                        class=swiper
+                                        v-model=focus
+                                    ></swiper><div
+                                        class="button right"
+                                        @click="focus=Math.min(data.data.gallery.length-1,focus+1)"
+                                    ></div>
+                                </div>
+                            </template>
                         </div><div class=b>
                             <div class=n>
                                 <span class=a>{{
@@ -379,31 +384,36 @@ let aMain={
                             </div>
                         </div>
                         <div class=c>
-                            <div
-                                class=n
-                            >
-                                <img
-                                    v-if=data.data.gallery[focus]
-                                    :src="
-                                        typeof data.data.gallery[focus]=='string'?
-                                            '/image/'+data.data.gallery[focus]
-                                        :
-                                            data.data.gallery[focus].url
-                                    "
+                            <template v-if="!data.data.gallery.length">
+                                暫無照片。
+                            </template>
+                            <template v-if="data.data.gallery.length">
+                                <div
+                                    class=n
                                 >
-                            </div>
-                            <div
-                                class=o
-                                @click="focus=Math.max(0,focus-1)"
-                            >
-                                <img src=/_medievalId/swiper-ml.png>
-                            </div>
-                            <div
-                                class=p
-                                @click="focus=Math.min(data.data.gallery.length-1,focus+1)"
-                            >
-                                <img src=/_medievalId/swiper-mr.png>
-                            </div>
+                                    <img
+                                        v-if=data.data.gallery[focus]
+                                        :src="
+                                            typeof data.data.gallery[focus]=='string'?
+                                                '/image/'+data.data.gallery[focus]
+                                            :
+                                                data.data.gallery[focus].url
+                                        "
+                                    >
+                                </div>
+                                <div
+                                    class=o
+                                    @click="focus=Math.max(0,focus-1)"
+                                >
+                                    <img src=/_medievalId/swiper-ml.png>
+                                </div>
+                                <div
+                                    class=p
+                                    @click="focus=Math.min(data.data.gallery.length-1,focus+1)"
+                                >
+                                    <img src=/_medievalId/swiper-mr.png>
+                                </div>
+                            </template>
                         </div>
                     </div>
                 </div>
