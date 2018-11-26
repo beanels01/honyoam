@@ -213,6 +213,7 @@ let houseList={
                             o.price<=this.data.search.priceMax
                         )&&(
                             Object.entries(this.data.search.pattern).every(([k,v])=>!v)||
+                            this.data.search.pattern['1R']&&o.pattern=='1R'||
                             this.data.search.pattern['1K']&&o.pattern=='1K'||
                             this.data.search.pattern['1DK']&&o.pattern=='1DK'||
                             this.data.search.pattern['1LDK']&&o.pattern=='1LDK'||
