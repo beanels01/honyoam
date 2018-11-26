@@ -189,6 +189,7 @@ let houseList={
                         )&&(
                             Object.entries(this.data.search.pattern).every(([k,v])=>!v)||
                             o.pattern.some(a=>
+                                this.data.search.pattern['1R']&&a=='1R'||
                                 this.data.search.pattern['1K']&&a=='1K'||
                                 this.data.search.pattern['1DK']&&a=='1DK'||
                                 this.data.search.pattern['1LDK']&&a=='1LDK'||
