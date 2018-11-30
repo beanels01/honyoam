@@ -102,6 +102,7 @@ o.getMedievalList0=async function(language){
         try{
             return{
                 id:             a._id,
+                secondId:       a.secondId,
                 date:           a.date||(new ObjectID(a._id)).getTimestamp(),
                 place0:         a.place0,
                 place1:         a.place1,

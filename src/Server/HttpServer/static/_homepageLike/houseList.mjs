@@ -229,6 +229,12 @@ let houseList={
                         )
                 )
             }).sort((a,b)=>
+                (
+                    this.data.type=='presale'?
+                        0
+                    :
+                        a.secondId.localeCompare(b.secondId)
+                )||
                 new Date(b.date)-new Date(a.date)||
                 a.id.toString().localeCompare(b.id.toString())
             )
