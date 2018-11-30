@@ -39,6 +39,7 @@ let apply={
                 currentLanguage:this.currentLanguage,
             })
             this.success=1
+            location=location.pathname+'#form'
         },
     },
     props:[

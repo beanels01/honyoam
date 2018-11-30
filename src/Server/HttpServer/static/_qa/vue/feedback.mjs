@@ -42,6 +42,7 @@ E-mail：${this.email}
 `,
             })
             this.success=1
+            location=location.pathname+'#form'
         },
     },
     props:['data'],
