@@ -134,6 +134,8 @@ function rowToObject(s,veki,inputDir){
             }[a[97]]+(+a[26]),
             gallery:[],
             householdCount:+a[63],
+            traffic:[
+            ],
             image:
                 fileExistByPath(`${inputDir}/photo/${id}.jpg`)?
                     {url:`daikyo/photo/${id}.jpg`}
@@ -168,6 +170,12 @@ function rowToObject(s,veki,inputDir){
                 'zh-Hant':y,
             },
         }
+    for(let i of[13,105,110])if(a[i])
+        x.traffic.push({
+            line:a[i],
+            station:a[i+1],
+            time:a[i+3],
+        })
     for(let i of place.place0)
         if(~x.language.jp.place.indexOf(i))
             x.place0=i

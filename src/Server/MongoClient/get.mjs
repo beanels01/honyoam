@@ -115,6 +115,7 @@ o.getMedievalList0=async function(language){
                 price:          a.price,
                 dateYear:       a.dateYear,
                 dateMonth:      a.dateMonth,
+                traffic:        a.traffic,
             }
         }catch(e){
             return 0

@@ -623,6 +623,9 @@ body{
     #main>.homepageLikeHouseSearch>.c>*>.a>.block>select{
         width:320px;
     }
+    #main>.homepageLikeHouseSearch>.c>*>.a>.rail>select{
+        width:240px;
+    }
     #main>.homepageLikeHouseSearch>.c>*>.b>.block{
         width:565px;
     }

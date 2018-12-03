@@ -200,6 +200,20 @@ let houseList={
                         )
                     :
                         (
+                            this.data.search.traffic.line==''||
+                            o.traffic&&
+                            o.traffic.some(t=>{
+                                let x=this.data.search.traffic.line==t.line.substring(1)
+                                if(this.data.search.traffic.startStation&&this.data.search.traffic.endStation){
+                                    let a=Math.min(this.data.search.traffic.startStation,this.data.search.traffic.endStation)
+                                    let b=Math.max(this.data.search.traffic.startStation,this.data.search.traffic.endStation)
+                                    x=x&&a<=t.station&&t.station<=b
+                                    if(this.data.search.traffic.time)
+                                        x=x&&t.time<=this.data.search.traffic.time
+                                }
+                                return x
+                            })
+                        )&&(
                             this.data.search.areaMin==''||
                             this.data.search.areaMin<=o.area
                         )&&(

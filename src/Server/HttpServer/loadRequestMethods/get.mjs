@@ -1,4 +1,5 @@
 import language from '../language'
+import fs from 'fs'
 let o={}
 o._getApplies=function(currentUser){
     return this._request({
@@ -97,6 +98,11 @@ o._getPresaleObject=function(id){
         method:'getPresaleObject',
         id,
     })
+}
+o._getRail=function(){
+    if(!o._getRail.rail)
+        o._getRail.rail=JSON.parse(fs.readFileSync('honyoam/src/rail.json').toString())
+    return{res:o._getRail.rail}
 }
 o._getRate=function(){
     return this._request({

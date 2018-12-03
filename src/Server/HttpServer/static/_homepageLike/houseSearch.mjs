@@ -3,6 +3,30 @@ let areaRate=[
     1,
     0.3025,
 ]
+let emptyValue=()=>({
+    place0:'',
+    place1:'',
+    areaMin:'',
+    areaMax:'',
+    priceMin:'',
+    priceMax:'',
+    age:'',
+    pattern:{
+        '1R':0,
+        '1K':0,
+        '1DK':0,
+        '1LDK':0,
+        '2LDK':0,
+        '3LDK':0,
+        '>3LDK':0,
+    },
+    traffic:{
+        line:           '',
+        startStation:   '',
+        endStation:     '',
+        time:           '',
+    },
+})
 let houseSearch={
     created(){
         this.checkValue()
@@ -11,6 +35,9 @@ let houseSearch={
         language(){
             return this.data.language.homepageLike.houseSearch
         },
+        station(){
+            return this.data.rail[this.value.traffic.line].station
+        }
     },
     components:{housePattern},
     data:()=>({
@@ -24,44 +51,10 @@ let houseSearch={
     methods:{
         checkValue(){
             if(!this.value)
-                this.$emit('input',{
-                    place0:'',
-                    place1:'',
-                    areaMin:'',
-                    areaMax:'',
-                    priceMin:'',
-                    priceMax:'',
-                    age:'',
-                    pattern:{
-                        '1R':0,
-                        '1K':0,
-                        '1DK':0,
-                        '1LDK':0,
-                        '2LDK':0,
-                        '3LDK':0,
-                        '>3LDK':0,
-                    }
-                })
+                this.$emit('input',emptyValue())
         },
         clear(){
-            this.value={
-                place0:'',
-                place1:'',
-                areaMin:'',
-                areaMax:'',
-                priceMin:'',
-                priceMax:'',
-                age:'',
-                pattern:{
-                    '1R':0,
-                    '1K':0,
-                    '1DK':0,
-                    '1LDK':0,
-                    '2LDK':0,
-                    '3LDK':0,
-                    '>3LDK':0,
-                }
-            }
+            this.$emit('input',emptyValue())
             this.areaMin=''
             this.areaMax=''
             this.priceMin=''
@@ -120,6 +113,45 @@ let houseSearch={
                         </select>
                     </div>
                 </div>
+                <div v-if="data.type=='medieval'" class=a>
+                    <div class="block rail">
+                        <div class=a>搜尋車站</div>
+                        <select
+                            v-model=value.traffic.line
+                        >
+                            <option value disabled>線</option>
+                            <option
+                                v-for="k of Object.keys(data.rail)"
+                                :value=k
+                            >{{data.rail[k].name}}</option>
+                        </select>
+                        <select
+                            v-model=value.traffic.startStation
+                        >
+                            <option value disabled>起點車站</option>
+                            <template v-if=value.traffic.line>
+                                <option
+                                    v-for="k of Object.keys(station).sort()"
+                                    :value=k
+                                >{{station[k]}}</option>>
+                            </template>
+                        </select>
+                        <select
+                            v-model=value.traffic.endStation
+                        >
+                            <option value disabled>終點車站</option>
+                            <template v-if=value.traffic.line>
+                                <option
+                                    v-for="k of Object.keys(station).sort()"
+                                    :value=k
+                                >{{station[k]}}</option>>
+                            </template>
+                        </select>
+                        徒步
+                        <input placeholder="" v-model=value.traffic.time>
+                        分鐘以內
+                    </div>
+                </div>
                 <div class=b>
                     <div class=block>
                         <div class=a>{{language.房屋面積}}</div>
@@ -161,14 +193,6 @@ let houseSearch={
                             {{language.notice0}}
                         </div></div>
                     </div>
-                </div>
-                <div v-if="data.type=='presale'" class=a>
-                    <housePattern
-                        :data="{
-                            language,
-                        }"
-                        v-model="value.pattern"
-                    ></housePattern>
                 </div>
                 <div v-if="data.type=='medieval'" class=b>
                     <housePattern

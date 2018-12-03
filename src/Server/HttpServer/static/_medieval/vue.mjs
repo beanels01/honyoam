@@ -74,6 +74,7 @@ let aMain={
                 <houseSearch
                     :data="{
                         place:data.place,
+                        rail:data.rail,
                         rate:data.rate,
                         type:'medieval',
                         language,
