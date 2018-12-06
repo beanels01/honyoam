@@ -254,6 +254,8 @@ let houseList={
                     this.data.type=='presale'?
                         0
                     :
+                        (a.secondId.substring(3)!='HNY')-
+                        (b.secondId.substring(3)!='HNY')||
                         a.secondId.localeCompare(b.secondId)
                 )||
                 new Date(b.date)-new Date(a.date)||
