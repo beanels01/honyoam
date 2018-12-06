@@ -191,10 +191,14 @@ export default{
         async in(){
             this.value=(await api.post({
                 method:'getMedievalList',
-            })).res.sort((a,b)=>
-                a.secondId.localeCompare(b.secondId)||
+            })).res.sort((a,b)=>{
+                let
+                    aHny=a.secondId.substring(3)!='HNY',
+                    bHny=b.secondId.substring(3)!='HNY'
+                return aHny-bHny||
+                    a.secondId.localeCompare(b.secondId)||
                     new Date(b.date)-new Date(a.date)
-            )
+            })
         },
         async out(){
             await api.post({

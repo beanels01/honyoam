@@ -260,7 +260,11 @@ let aMain={
                     <div class=o>
                         <div class=a>
                             <template v-if="!data.data.gallery.length">
-                                暫無照片。
+                                <div class=a>
+                                    <div class=a>
+                                        暫無照片
+                                    </div>
+                                </div>
                             </template>
                             <template v-if="data.data.gallery.length">
                                 <div class=n>

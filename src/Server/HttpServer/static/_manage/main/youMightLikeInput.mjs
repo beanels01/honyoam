@@ -6,7 +6,14 @@ let youMightLikeElementInput={
             if(this.data.type=='medieval')
                 x=x.filter(a=>
                     ~(a.secondId||'').indexOf(this.prefix)
-                )
+                ).sort((a,b)=>{
+                    let
+                        aHny=a.secondId.substring(3)!='HNY',
+                        bHny=a.secondId.substring(3)!='HNY'
+                    return aHny-bHny||
+                        a.secondId.localeCompare(b.secondId)||
+                        new Date(b.date)-new Date(a.date)
+                })
             return x
         },
     },

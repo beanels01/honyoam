@@ -106,6 +106,7 @@ let medieval={
             <div class=a>
                 <img
                     v-if=data.image
+                    class=a
                     :src="
                         typeof data.image=='string'?
                             '/image/'+data.image
@@ -113,6 +114,12 @@ let medieval={
                             data.image.url
                     "
                 >
+                <div
+                    v-if=!data.image
+                    class=b
+                ><div>
+                    暫無照片
+                </div></div>
             </div>
             <div class=b><div>
                 <div class=a>

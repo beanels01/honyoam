@@ -124,6 +124,17 @@
         display:inline-block;
         width:730px;
     }
+    #main>.a>.o>.a>.a{
+        display:table;
+        height:555px;
+        width:100%;
+        background-color:#eee;
+    }
+    #main>.a>.o>.a>.a>.a{
+        display:table-cell;
+        vertical-align:middle;
+        text-align:center;
+    }
     #main>.a>.o>.a>.n{
         height:460px;
         text-align:center;
