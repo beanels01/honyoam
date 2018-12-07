@@ -40,7 +40,9 @@ let aMain={
                 a.type=='success'
             ).sort((a,b)=>
                 new Date(b.timestamp)-new Date(a.timestamp)
-            ).slice(0,5)
+            ).slice(0,5).sort((a,b)=>
+                (a|1)-(b|1)||a-b
+            )
         },
         href(){
             return homepageLike.langToPath(this.currentLanguage)
