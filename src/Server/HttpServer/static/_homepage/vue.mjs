@@ -36,13 +36,12 @@ let aMain={
             ).slice(0,6)
         },
         successData(){
-            return this.data.news.filter(a=>
+            let a=this.data.news.filter(a=>
                 a.type=='success'
             ).sort((a,b)=>
                 new Date(b.timestamp)-new Date(a.timestamp)
-            ).slice(0,5).sort((a,b)=>
-                (a|1)-(b|1)||a-b
-            )
+            ).slice(0,5)
+            return[a[3],a[1],a[0],a[2],a[4]]
         },
         href(){
             return homepageLike.langToPath(this.currentLanguage)
