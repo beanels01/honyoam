@@ -3,18 +3,9 @@ import medievalLike from    '../_medievalLike.mjs'
 let aMain={
     mounted(){
         if(typeof window!='undefined'){
-            if(location.search){
-                location.search.substring(1).split('&').map(a=>{
-                    let[k,v]=a.split('=')
-                    if(k=='a')
-                        this.search=this.searchIn=JSON.parse(
-                            decodeURIComponent(v)
-                        )
-                    if(k=='p')
-                        this.currentPage=+v
-                })
-            }
-            history.replaceState({},'',`/${this.currentLanguage}/medieval?p=${this.currentPage}`)
+            this.checkSearch()
+            onpopstate=_=>this.checkSearch()
+            history.replaceState({},'',this.url)
         }
     },
     components:{
@@ -39,18 +30,66 @@ let aMain={
                 this.currentLanguage,
             )
         },
+        url(){
+            return`/${this.currentLanguage}/medieval?a=${
+                encodeURIComponent(JSON.stringify({
+                    search:this.search,
+                    page:this.currentPage,
+                }))
+            }`
+        },
     },
     data:()=>({
         menu:0,
-        search:0,
+        search:{
+            place0:'',
+            place1:'',
+            areaMin:'',
+            areaMax:'',
+            priceMin:'',
+            priceMax:'',
+            age:'',
+            pattern:{
+                '1R':0,
+                '1K':0,
+                '1DK':0,
+                '1LDK':0,
+                '2LDK':0,
+                '3LDK':0,
+                '>3LDK':0,
+            },
+            traffic:{
+                line:           '',
+                startStation:   '',
+                endStation:     '',
+                time:           '',
+            },
+        },
         searchIn:0,
         currentPage:0,
     }),
     methods:{
+        checkSearch(){
+            location.search.substring(1).split('&').map(a=>{
+                let[k,v]=a.split('=')
+                if(k=='a'){
+                    let a=JSON.parse(decodeURIComponent(v))
+                    this.searchIn=a.search
+                    this.currentPage=a.page
+                }
+            })
+        },
+        setHistory(){
+            history.pushState({},'',this.url)
+        },
         setCurrentPage(v){
             this.currentPage=v
-            history.pushState({},'',`/${this.currentLanguage}/medieval?p=${this.currentPage}`)
+            this.setHistory()
         },
+        doSearch(){
+            this.search=JSON.parse(JSON.stringify(this.searchIn))
+            this.setHistory()
+        }
     },
     props:['language','currentLanguage','mainSeminar','data',],
     template:`
@@ -79,8 +118,8 @@ let aMain={
                         type:'medieval',
                         language,
                     }"
-                    v-model="searchIn"
-                    @search="search=JSON.parse(JSON.stringify(searchIn))"
+                    v-model=searchIn
+                    @search=doSearch
                 ></houseSearch>
                 <houseList
                     :data="{

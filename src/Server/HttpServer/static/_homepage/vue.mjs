@@ -41,7 +41,7 @@ let aMain={
             ).sort((a,b)=>
                 new Date(b.timestamp)-new Date(a.timestamp)
             ).slice(0,5)
-            return[a[3],a[1],a[0],a[2],a[4]]
+            return a.length<5?a:[a[3],a[1],a[0],a[2],a[4]]
         },
         href(){
             return homepageLike.langToPath(this.currentLanguage)

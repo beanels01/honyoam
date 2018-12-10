@@ -17,6 +17,12 @@ let initialValue=JSON.stringify({
         '3LDK':     0,
         '>3LDK':    0,
     },
+    traffic:{
+        line:           '',
+        startStation:   '',
+        endStation:     '',
+        time:           '',
+    },
 })
 let search={
     components:{

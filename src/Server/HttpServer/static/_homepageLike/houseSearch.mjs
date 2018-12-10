@@ -211,9 +211,9 @@ let houseSearch={
                 </div>
                 <div class=c>
                     <div>
-                        <button class=o @click="clear">
+                        <button class=o @click=clear>
                             {{language.清除}}
-                        </button><button class=o @click="search">
+                        </button><button class=o @click=search>
                             {{language.搜尋}}
                         </button>
                     </div>
