@@ -37,7 +37,7 @@ let aMain={
             }).filter(a=>a)
         },
         url(){
-            return`/${this.currentLanguage}/medieval?a=${
+            return`/${this.currentLanguage}/presale?a=${
                 encodeURIComponent(JSON.stringify({
                     search:this.search,
                     page:this.currentPage,

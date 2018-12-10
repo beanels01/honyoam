@@ -48,7 +48,10 @@ let presale={
             @click=click
         >
             <div class=a>
-                <img :src="'/image/'+data.image">
+                <img
+                    class=a
+                    :src="'/image/'+data.image"
+                >
             </div>
             <div class=b><div>
                 <div class=a>

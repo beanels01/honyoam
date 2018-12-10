@@ -194,6 +194,15 @@ let houseSearch={
                         </div></div>
                     </div>
                 </div>
+                <div v-if="data.type=='presale'" class=a>
+                    <housePattern
+                        :data="{
+                            language,
+                        }"
+                        v-model="value.pattern"
+                        class="block"
+                    ></housePattern>
+                </div>
                 <div v-if="data.type=='medieval'" class=b>
                     <housePattern
                         :data="{
