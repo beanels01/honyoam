@@ -37,7 +37,7 @@ let houseSearch={
         },
         station(){
             return this.data.rail[this.value.traffic.line].station
-        }
+        },
     },
     components:{housePattern},
     data:()=>({
@@ -128,7 +128,10 @@ let houseSearch={
                         <select
                             v-model=value.traffic.startStation
                         >
-                            <option value disabled>起點車站</option>
+                            <option
+                                value
+                                :disabled="!!value.traffic.line"
+                            >起點車站</option>
                             <template v-if=value.traffic.line>
                                 <option
                                     v-for="k of Object.keys(station).sort()"
@@ -139,7 +142,10 @@ let houseSearch={
                         <select
                             v-model=value.traffic.endStation
                         >
-                            <option value disabled>終點車站</option>
+                            <option
+                                value
+                                :disabled="!!value.traffic.line"
+                            >終點車站</option>
                             <template v-if=value.traffic.line>
                                 <option
                                     v-for="k of Object.keys(station).sort()"
