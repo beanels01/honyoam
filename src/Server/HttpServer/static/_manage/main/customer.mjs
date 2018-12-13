@@ -9,18 +9,18 @@ let inputForSpecificObject={
     }),
     methods:{
         async in(){
-            let value=(await api.post({
+            this.value=(await api.post({
                 method: 'getCustomer',
                 id:     this.id,
             })).res
-            delete value._id
-            this.value=value
         },
         async out(){
+            let value=JSON.parse(JSON.stringify(this.value))
+            delete value._id
             await api.post({
                 method: 'setCustomer',
                 id:     this.id,
-                value:  this.value,
+                value,
             })
             alert('儲存完成。')
         },
@@ -130,10 +130,16 @@ export default{
                         style="display:table-row;"
                     >
                         <div
-                            style="display:table-cell;"
+                            style="
+                                display:table-cell;
+                                font-family:monospace;
+                            "
                         >{{a._id.substring(20)}}</div>
                         <div
-                            style="display:table-cell;padding-left:16px;"
+                            style="
+                                display:table-cell;padding-left:16px;
+                                font-family:monospace;
+                            "
                         >{{a.rank}}</div>
                         <div
                             style="display:table-cell;padding-left:16px;"
