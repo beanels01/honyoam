@@ -22,6 +22,7 @@ function MongoClient(config){
         this._medievalCol=  this.db.collection('medieval')
         this._newsCol=      this.db.collection('news')
         this._subscribeCol= this.db.collection('subscribe')
+        this._customerCol=  this.db.collection('customer')
         await Promise.all([
             (async()=>{
                 if(!await this.getUserByType('root'))

@@ -31,10 +31,10 @@ o._setPresale=function(cu,value){
 }
 o._setPresaleObject=function(currentUser,doc){
     return this._request({
-        method:'setPresaleObject',
+        method: 'setPresaleObject',
         currentUser,
-        id:doc.id,
-        value:doc.value,
+        id:     doc.id,
+        value:  doc.value,
     })
 }
 o._setContact=function(currentUser,value){
@@ -42,6 +42,14 @@ o._setContact=function(currentUser,value){
         method:         'setContact',
         currentUser,
         value,
+    })
+}
+o._setCustomer=function(currentUser,id,value){
+    return this._request({
+        method:             'setCustomer',
+        id,
+        value,
+        currentUser,
     })
 }
 o._setFaq=function(currentUser,value){

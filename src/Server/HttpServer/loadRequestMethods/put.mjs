@@ -13,6 +13,12 @@ o._putApply=function(doc){
         currentLanguage:    doc.currentLanguage,
     })
 }
+o._putCustomer=function(currentUser){
+    return this._request({
+        method:             'putCustomer',
+        currentUser,
+    })
+}
 o._putMedievalObject=function(currentUser){
     return this._request({
         method:             'putMedievalObject',

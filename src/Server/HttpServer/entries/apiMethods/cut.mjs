@@ -34,6 +34,13 @@ export default{
             return['status',400]
         return['responseJson',await this._cutApply(cu,doc.id)]
     },
+    async cutCustomer(doc,cu){
+        if(!(
+            typeof doc.id=='string'
+        ))
+            return['status',400]
+        return['responseJson',await this._cutCustomer(cu,doc.id)]
+    },
     async cutFeedback(doc,cu){
         if(!(
             typeof doc.id=='string'

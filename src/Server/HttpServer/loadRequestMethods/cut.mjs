@@ -34,6 +34,13 @@ o._cutApply=function(currentUser,id){
         currentUser,
     })
 }
+o._cutCustomer=function(currentUser,id){
+    return this._request({
+        method:             'cutCustomer',
+        id,
+        currentUser,
+    })
+}
 o._cutFeedback=function(currentUser,id){
     return this._request({
         method:             'cutFeedback',

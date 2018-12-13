@@ -20,6 +20,16 @@ export default{
             'contact',doc.value
         )}
     },
+    async setCustomer(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.setCustomer(
+            doc.id,doc.value
+        )}
+    },
     async setFeedbackStatus(doc){
         if(!(
             doc.currentUser&&

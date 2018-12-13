@@ -14,6 +14,9 @@ async function putApply(
         currentLanguage,
     })).insertedId
 }
+async function putCustomer(){
+    return(await this._customerCol.insertOne({})).insertedId
+}
 async function putFeedback(
     content,
 ){
@@ -54,6 +57,7 @@ async function putUser(doc){
 }
 export default{
     putApply,
+    putCustomer,
     putFeedback,
     putImage,
     putMedievalObject,

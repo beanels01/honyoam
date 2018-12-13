@@ -5,6 +5,12 @@ let get={
     async getCurrentUser(doc,cu){
         return['responseJson',cu]
     },
+    async getCustomer(doc,cu){
+        return['responseJson',await this._getCustomer(cu,doc.id)]
+    },
+    async getCustomerList(doc,cu){
+        return['responseJson',await this._getCustomerList(cu)]
+    },
     async getFaqClasses(doc,cu){
         return['responseJson',await this._getFaqClasses(cu)]
     },

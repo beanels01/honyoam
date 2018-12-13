@@ -27,6 +27,9 @@ let put={
             return['status',400]
         return['responseJson',await this._putApply(doc)]
     },
+    async putCustomer(doc,cu){
+        return['responseJson',await this._putCustomer(cu,doc)]
+    },
     async putFeedback(doc,cu){
         if(!(
             typeof doc.recaptcha=='string'&&

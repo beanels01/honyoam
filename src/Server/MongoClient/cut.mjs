@@ -8,6 +8,11 @@ async function cutApply(id){
         _id:new ObjectID(id),
     })
 }
+async function cutCustomer(id){
+    await this._customerCol.deleteOne({
+        _id:new ObjectID(id),
+    })
+}
 async function cutFeedback(id){
     await this._feedbackCol.deleteOne({
         _id:new ObjectID(id),
@@ -35,6 +40,7 @@ async function cutSeminar(id){
 }
 export default{
     cutApply,
+    cutCustomer,
     cutFeedback,
     cutMedievalObject,
     cutNews,

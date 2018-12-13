@@ -12,6 +12,22 @@ export default{
             return{err:'permission denied'}
         return{res:await this.honyoamMongoClient.getApplies()}
     },
+    async getCustomer(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.getCustomer(doc.id)}
+    },
+    async getCustomerList(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.getCustomerList()}
+    },
     async getContact(doc){
         return{res:await this.honyoamMongoClient.getSite('contact')}
     },

@@ -13,6 +13,13 @@ let set={
             return['status',400]
         return['responseJson',await this._setMedieval(cu,doc.value)]
     },
+    async setCustomer(doc,cu){
+        if(!(
+            typeof doc.value=='object'
+        ))
+            return['status',400]
+        return['responseJson',await this._setCustomer(cu,doc.id,doc.value)]
+    },
     async setMedievalObject(doc,cu){
         if(!(
             typeof doc.id=='string'&&

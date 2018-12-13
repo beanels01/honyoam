@@ -33,6 +33,14 @@ export default{
             doc.currentLanguage,
         )}
     },
+    async putCustomer(doc){
+        if(!(
+            doc.currentUser&&
+            ['root'].includes(doc.currentUser.type)
+        ))
+            return{err:'permission denied'}
+        return{res:await this.honyoamMongoClient.putCustomer()}
+    },
     async putFeedback(doc){
         this.mailReport({
             subject:'客戶回饋通知',

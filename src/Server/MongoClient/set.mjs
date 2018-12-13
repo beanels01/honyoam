@@ -15,6 +15,13 @@ async function setApplyStatus(id,status){
         },
     })
 }
+async function setCustomer(id,value){
+    await this._customerCol.updateOne({
+        _id:new ObjectID(id),
+    },{
+        $set:value,
+    })
+}
 async function setFeedbackStatus(id,status){
     await this._feedbackCol.updateOne({
         _id:new ObjectID(id),
@@ -67,6 +74,7 @@ function setUserPassword(user,password){
 }
 export default{
     setApplyStatus,
+    setCustomer,
     setFeedbackStatus,
     setSeminar,
     setSite,

@@ -16,6 +16,14 @@ o.getApplies=async function(){
     })
     return a
 }
+o.getCustomer=async function(id){
+    return this._customerCol.findOne({
+        _id:new ObjectID(id),
+    })
+}
+o.getCustomerList=async function(){
+    return this._customerCol.find({}).toArray()
+}
 o.getFeedbacks=async function(){
     return this._feedbackCol.find({}).toArray()
 }

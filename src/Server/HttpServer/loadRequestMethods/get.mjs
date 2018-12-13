@@ -19,6 +19,20 @@ o._getContact=function(currentUser){
         currentUser,
     })
 }
+o._getCustomer=function(currentUser,id){
+    return this._request({
+        method:             'getCustomer',
+        id,
+        currentUser,
+    })
+}
+o._getCustomerList=function(currentUser,id){
+    return this._request({
+        method:             'getCustomerList',
+        id,
+        currentUser,
+    })
+}
 o._getFaq=function(currentUser){
     return this._request({
         method:'getFaq',
